@@ -174,22 +174,25 @@ function Index() {
             </span>
           </div>
           <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
-            <a href="#catalogo" className="transition-colors hover:text-foreground">
-              Catálogo
-            </a>
-            <a href="#esportes" className="transition-colors hover:text-foreground">
-              Esportes
-            </a>
-            <a href="#economia" className="transition-colors hover:text-foreground">
-              Economia
-            </a>
-            <a href="#planos" className="transition-colors hover:text-foreground">
-              Planos
-            </a>
+            {[
+              { h: "#catalogo", l: "Catálogo" },
+              { h: "#esportes", l: "Esportes" },
+              { h: "#economia", l: "Economia" },
+              { h: "#planos", l: "Planos" },
+            ].map((n) => (
+              <SmoothLink
+                key={n.h}
+                href={n.h}
+                className="transition-colors hover:text-foreground"
+              >
+                {n.l}
+              </SmoothLink>
+            ))}
           </nav>
-          <a href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs">
+          <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs">
             Assinar
-          </a>
+          </SmoothLink>
+
         </div>
       </header>
 
