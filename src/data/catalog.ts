@@ -1,4 +1,15 @@
+import netflixLogo from "@/assets/logos/netflix.svg";
+import primeLogo from "@/assets/logos/primevideo.svg";
+import disneyLogo from "@/assets/logos/disneyplus.svg";
+import hboLogo from "@/assets/logos/hbomax.svg";
+import globoplayLogo from "@/assets/logos/globoplay.svg";
+import paramountLogo from "@/assets/logos/paramountplus.svg";
+import appletvLogo from "@/assets/logos/appletv.svg";
+import crunchyrollLogo from "@/assets/logos/crunchyroll.svg";
+import daznLogo from "@/assets/logos/dazn.svg";
+
 export const img = (path: string, size = "w500") =>
+
   `https://image.tmdb.org/t/p/${size}${path}`;
 
 export type Title = {
