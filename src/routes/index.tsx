@@ -15,10 +15,12 @@ import {
   Zap,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { BrandLogo } from "@/components/BrandLogo";
 import futebol from "@/assets/futebol.jpg";
 import {
   animes,
   heroSlides,
+
   icon,
   img,
   infantil,
@@ -398,12 +400,15 @@ function Index() {
           {plataformas.map((p, i) => (
             <Reveal key={p.nome} delay={i * 45}>
               <div className="glass card-lift flex h-full flex-col items-center justify-center gap-3 rounded-3xl px-4 py-7">
-                <img
-                  src={icon(p.slug)}
-                  alt={p.nome}
-                  loading="lazy"
-                  className="h-6 w-auto opacity-90"
-                />
+                <div className="flex h-7 items-center">
+                  <BrandLogo
+                    nome={p.nome}
+                    slug={p.slug}
+                    cor={p.cor}
+                    className="h-6"
+                  />
+                </div>
+
                 <p className="text-xs text-muted-foreground">{p.nome}</p>
                 <p className="font-display text-lg font-bold line-through decoration-primary decoration-2">
                   {p.preco}
