@@ -327,7 +327,7 @@ function Index() {
         <Rail
           icon={Flame}
           title="Terror — lançamentos"
-          subtitle="Obsessão, Backrooms, Undertone, Maldição da Múmia, Mestres do Universo e mais"
+          subtitle="Obsessão, Backrooms, Undertone, Maldição da Múmia, Passageiro do Mal e mais"
           items={terror}
         />
         <Rail
