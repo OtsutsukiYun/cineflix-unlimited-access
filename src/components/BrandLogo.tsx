@@ -1,23 +1,28 @@
-import { icon } from "@/data/catalog";
-
 export function BrandLogo({
   nome,
-  slug,
+  logo,
+  invert = false,
+  escala = 1,
   cor,
   className = "h-7",
 }: {
   nome: string;
-  slug: string | null;
+  logo: string | null;
+  invert?: boolean;
+  escala?: number;
   cor: string;
   className?: string;
 }) {
-  if (slug) {
+  if (logo) {
     return (
       <img
-        src={icon(slug)}
-        alt={nome}
+        src={logo}
+        alt={`Logo ${nome}`}
         loading="lazy"
-        className={`${className} w-auto`}
+        style={escala !== 1 ? { transform: `scale(${escala})` } : undefined}
+        className={`${className} w-auto max-w-[130px] object-contain ${
+          invert ? "brightness-0 invert" : ""
+        }`}
       />
     );
   }

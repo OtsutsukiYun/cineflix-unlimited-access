@@ -1,4 +1,15 @@
+import netflixLogo from "@/assets/logos/netflix.svg";
+import primeLogo from "@/assets/logos/primevideo.svg";
+import disneyLogo from "@/assets/logos/disneyplus.svg";
+import hboLogo from "@/assets/logos/hbomax.svg";
+import globoplayLogo from "@/assets/logos/globoplay.svg";
+import paramountLogo from "@/assets/logos/paramountplus.svg";
+import appletvLogo from "@/assets/logos/appletv.svg";
+import crunchyrollLogo from "@/assets/logos/crunchyroll.svg";
+import daznLogo from "@/assets/logos/dazn.svg";
+
 export const img = (path: string, size = "w500") =>
+
   `https://image.tmdb.org/t/p/${size}${path}`;
 
 export type Title = {
@@ -39,12 +50,13 @@ export const heroSlides = [
     poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg",
   },
   {
-    title: "Mestres do Universo",
-    year: "2026",
-    genre: "Ação / Aventura",
-    backdrop: "/yQIdU11DYQQp0neGtGtGxbGfRer.jpg",
-    poster: "/atpb7NKSyM4bJSUY8vQTunzK4Na.jpg",
+    title: "Passageiro do Mal",
+    year: "2025",
+    genre: "Terror / Suspense",
+    backdrop: "/3pDfu71mrzSuFYyIfnKEjt8z4BC.jpg",
+    poster: "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg",
   },
+
 ];
 
 export const terror: Title[] = [
@@ -52,7 +64,7 @@ export const terror: Title[] = [
   { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "Lançamento" },
   { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "Novo" },
   { title: "Maldição da Múmia", poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", year: "2026", tag: "Lançamento" },
-  { title: "Mestres do Universo", poster: "/atpb7NKSyM4bJSUY8vQTunzK4Na.jpg", year: "2026", tag: "Novo" },
+  { title: "Passageiro do Mal", poster: "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg", year: "2025", tag: "Novo" },
   { title: "O Telefone Preto 2", poster: "/p3epSUdF9qSWWHTBlA3mJ0w2i2Y.jpg", year: "2025", tag: "Em alta" },
   { title: "A Substância", poster: "/vWeOgzlhnP1sS23H3rzctGHB9Nb.jpg", year: "2024" },
   { title: "Premonição 6: Laços de Sangue", poster: "/x3J781PsdMrjenzQKM5eJXqK5Nd.jpg", year: "2025" },
@@ -75,19 +87,29 @@ export const infantil: Title[] = [
   { title: "Moana 2", poster: "/dnqgkKoIGf6hErzRm6VtaK1OJrD.jpg", year: "2024" },
 ];
 
-export const plataformas = [
-  { nome: "Netflix", slug: "netflix", cor: "#E50914", preco: "R$ 59,90" },
-  { nome: "Disney+", slug: null, cor: "#4BA3FF", preco: "R$ 55,90" },
-  { nome: "HBO Max", slug: "max", cor: "#A855F7", preco: "R$ 62,90" },
-  { nome: "Prime Video", slug: null, cor: "#38BDF8", preco: "R$ 19,90" },
-  { nome: "Apple TV+", slug: "appletv", cor: "#FFFFFF", preco: "R$ 21,90" },
-  { nome: "Paramount+", slug: "paramountplus", cor: "#4C8DFF", preco: "R$ 19,90" },
-  { nome: "Crunchyroll", slug: "crunchyroll", cor: "#F47521", preco: "R$ 29,90" },
-  { nome: "Globoplay", slug: null, cor: "#FF5C5C", preco: "R$ 34,90" },
-  { nome: "DAZN", slug: "dazn", cor: "#F8FF13", preco: "R$ 34,90" },
-  { nome: "Star+", slug: null, cor: "#FF8A3D", preco: "R$ 39,90" },
-  { nome: "Telecine", slug: null, cor: "#2DE0C0", preco: "R$ 44,95" },
-  { nome: "Premiere", slug: null, cor: "#4ADE80", preco: "R$ 89,90" },
+export type Plataforma = {
+  nome: string;
+  logo: string | null;
+  invert?: boolean;
+  escala?: number;
+  cor: string;
+  preco: string;
+};
+
+export const plataformas: Plataforma[] = [
+  { nome: "Netflix", logo: netflixLogo, cor: "#E50914", preco: "R$ 59,90" },
+  { nome: "Disney+", logo: disneyLogo, invert: true, cor: "#4BA3FF", preco: "R$ 55,90" },
+  { nome: "HBO Max", logo: hboLogo, cor: "#A855F7", preco: "R$ 62,90" },
+  { nome: "Prime Video", logo: primeLogo, cor: "#38BDF8", preco: "R$ 19,90" },
+  { nome: "Apple TV+", logo: appletvLogo, invert: true, cor: "#FFFFFF", preco: "R$ 21,90" },
+  { nome: "Paramount+", logo: paramountLogo, cor: "#4C8DFF", preco: "R$ 19,90" },
+  { nome: "Crunchyroll", logo: crunchyrollLogo, invert: true, escala: 1.9, cor: "#F47521", preco: "R$ 29,90" },
+  { nome: "Globoplay", logo: globoplayLogo, cor: "#FF5C5C", preco: "R$ 34,90" },
+  { nome: "DAZN", logo: daznLogo, escala: 1.8, cor: "#F8FF13", preco: "R$ 34,90" },
+  { nome: "Star+", logo: null, cor: "#FF8A3D", preco: "R$ 39,90" },
+  { nome: "Telecine", logo: null, cor: "#2DE0C0", preco: "R$ 44,95" },
+  { nome: "Premiere", logo: null, cor: "#4ADE80", preco: "R$ 89,90" },
 ];
+
 
 export const icon = (slug: string) => `https://cdn.simpleicons.org/${slug}/white`;

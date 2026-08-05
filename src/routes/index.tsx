@@ -16,18 +16,18 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { BrandLogo } from "@/components/BrandLogo";
+import { SocialProof } from "@/components/SocialProof";
 import futebol from "@/assets/futebol.jpg";
 import {
   animes,
   heroSlides,
-
-  icon,
   img,
   infantil,
   plataformas,
   terror,
   type Title,
 } from "@/data/catalog";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -51,14 +51,43 @@ export const Route = createFileRoute("/")({
 
 const CTA_HREF = "#planos";
 
-function Cta({ children = "ADQUIRA O SEU AGORA" }: { children?: string }) {
+function smoothTo(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+  const el = document.querySelector(href);
+  if (!el) return;
+  e.preventDefault();
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.history.replaceState(null, "", href);
+}
+
+function SmoothLink({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
   return (
-    <a href={CTA_HREF} className="btn-cta animate-pulse-ring">
-      <Zap className="size-4" />
+    <a
+      href={href}
+      className={className ?? ""}
+      onClick={(e) => smoothTo(e, href)}
+    >
       {children}
     </a>
   );
 }
+
+function Cta({ children = "ADQUIRA O SEU AGORA" }: { children?: string }) {
+  return (
+    <SmoothLink href={CTA_HREF} className="btn-cta animate-pulse-ring">
+      <Zap className="size-4" />
+      {children}
+    </SmoothLink>
+  );
+}
+
 
 function Poster({ item, wide = false }: { item: Title; wide?: boolean }) {
   return (
@@ -110,10 +139,13 @@ function Rail({
         </div>
       </div>
       <div className="no-scrollbar flex gap-4 overflow-x-auto px-5 pb-4 md:px-10">
-        {items.map((t) => (
-          <Poster key={t.title} item={t} />
+        {items.map((t, i) => (
+          <Reveal key={t.title} delay={Math.min(i, 6) * 70} className="shrink-0">
+            <Poster item={t} />
+          </Reveal>
         ))}
       </div>
+
     </Reveal>
   );
 }
@@ -145,22 +177,25 @@ function Index() {
             </span>
           </div>
           <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
-            <a href="#catalogo" className="transition-colors hover:text-foreground">
-              Catálogo
-            </a>
-            <a href="#esportes" className="transition-colors hover:text-foreground">
-              Esportes
-            </a>
-            <a href="#economia" className="transition-colors hover:text-foreground">
-              Economia
-            </a>
-            <a href="#planos" className="transition-colors hover:text-foreground">
-              Planos
-            </a>
+            {[
+              { h: "#catalogo", l: "Catálogo" },
+              { h: "#esportes", l: "Esportes" },
+              { h: "#economia", l: "Economia" },
+              { h: "#planos", l: "Planos" },
+            ].map((n) => (
+              <SmoothLink
+                key={n.h}
+                href={n.h}
+                className="transition-colors hover:text-foreground"
+              >
+                {n.l}
+              </SmoothLink>
+            ))}
           </nav>
-          <a href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs">
+          <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs">
             Assinar
-          </a>
+          </SmoothLink>
+
         </div>
       </header>
 
@@ -181,7 +216,7 @@ function Index() {
         <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-background/20" />
         <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-background/70" />
 
-        <div className="relative z-10 mx-auto w-[94%] max-w-6xl pt-28 pb-16">
+        <div className="animate-rise relative z-10 mx-auto w-[94%] max-w-6xl pt-28 pb-16">
           <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
               <span className="glass mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wide uppercase">
@@ -200,9 +235,10 @@ function Index() {
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-4">
                 <Cta />
-                <a href="#catalogo" className="btn-ghost">
+                <SmoothLink href="#catalogo" className="btn-ghost">
                   <Clapperboard className="size-4" /> Ver catálogo
-                </a>
+                </SmoothLink>
+
               </div>
               <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
                 <span className="flex items-center gap-2">
@@ -264,13 +300,19 @@ function Index() {
             {[...plataformas, ...plataformas].map((p, i) => (
               <div
                 key={p.nome + i}
-                className="opacity-60 transition-opacity duration-300 hover:opacity-100"
+                className="opacity-70 transition-opacity duration-300 hover:opacity-100"
               >
-                <BrandLogo nome={p.nome} slug={p.slug} cor={p.cor} />
+                <BrandLogo
+                  nome={p.nome}
+                  logo={p.logo}
+                  invert={p.invert === true}
+                  escala={p.escala ?? 1}
+                  cor={p.cor}
+                />
               </div>
             ))}
-
           </div>
+
         </div>
       </section>
 
@@ -289,7 +331,7 @@ function Index() {
         <Rail
           icon={Flame}
           title="Terror — lançamentos"
-          subtitle="Obsessão, Backrooms, Undertone, Maldição da Múmia, Mestres do Universo e mais"
+          subtitle="Obsessão, Backrooms, Undertone, Maldição da Múmia, Passageiro do Mal e mais"
           items={terror}
         />
         <Rail
@@ -403,15 +445,18 @@ function Index() {
                 <div className="flex h-7 items-center">
                   <BrandLogo
                     nome={p.nome}
-                    slug={p.slug}
+                    logo={p.logo}
+                    invert={p.invert === true}
+                    escala={p.escala ?? 1}
                     cor={p.cor}
                     className="h-6"
                   />
                 </div>
 
-                {p.slug && (
+                {p.logo && (
                   <p className="text-xs text-muted-foreground">{p.nome}</p>
                 )}
+
 
                 <p className="font-display text-lg font-bold line-through decoration-primary decoration-2">
                   {p.preco}
@@ -557,6 +602,9 @@ function Index() {
           </p>
         </div>
       </footer>
+
+      <SocialProof />
+
     </div>
   );
 }
