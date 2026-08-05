@@ -1,24 +1,554 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import {
+  Check,
+  Clapperboard,
+  Flame,
+  Gamepad2,
+  Baby,
+  Trophy,
+  Tv,
+  Play,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  Zap,
+} from "lucide-react";
+import { Reveal } from "@/components/Reveal";
+import futebol from "@/assets/futebol.jpg";
+import {
+  animes,
+  heroSlides,
+  icon,
+  img,
+  infantil,
+  plataformas,
+  terror,
+  type Title,
+} from "@/data/catalog";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Cineflix — Streaming ilimitado por R$20/mês" },
+      {
+        name: "description",
+        content:
+          "Mais de 60.000 filmes, séries, animes, infantil e futebol ao vivo em um só app. Lançamentos de terror, Netflix, Disney+, HBO Max e mais por R$20/mês.",
+      },
+      { property: "og:title", content: "Cineflix — Streaming ilimitado por R$20/mês" },
+      {
+        property: "og:description",
+        content:
+          "Todos os streamings em uma única plataforma. Lançamentos de terror, animes, infantil e esportes ao vivo em 4K.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+const CTA_HREF = "#planos";
+
+function Cta({ children = "ADQUIRA O SEU AGORA" }: { children?: string }) {
+  return (
+    <a href={CTA_HREF} className="btn-cta animate-pulse-ring">
+      <Zap className="size-4" />
+      {children}
+    </a>
+  );
+}
+
+function Poster({ item, wide = false }: { item: Title; wide?: boolean }) {
   return (
     <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
+      className={`card-lift group relative shrink-0 overflow-hidden rounded-3xl border border-border bg-surface ${
+        wide ? "w-[210px] sm:w-[240px]" : "w-[160px] sm:w-[185px]"
+      }`}
     >
       <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
+        src={img(item.poster)}
+        alt={`Pôster de ${item.title}`}
+        loading="lazy"
+        className="aspect-2/3 w-full object-cover transition-transform duration-700 group-hover:scale-110"
       />
+      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background via-background/10 to-transparent opacity-90" />
+      {item.tag && (
+        <span className="bg-hot absolute top-3 left-3 rounded-full px-3 py-1 text-[10px] font-bold tracking-wide text-primary-foreground uppercase">
+          {item.tag}
+        </span>
+      )}
+      <div className="absolute inset-x-0 bottom-0 p-3">
+        <p className="truncate text-sm font-bold">{item.title}</p>
+        <p className="text-xs text-muted-foreground">{item.year}</p>
+      </div>
+    </div>
+  );
+}
+
+function Rail({
+  title,
+  subtitle,
+  items,
+  icon: Icon,
+}: {
+  title: string;
+  subtitle: string;
+  items: Title[];
+  icon: typeof Flame;
+}) {
+  return (
+    <Reveal className="py-8">
+      <div className="mb-5 flex items-end justify-between gap-4 px-5 md:px-10">
+        <div>
+          <div className="mb-1 flex items-center gap-2">
+            <Icon className="size-5 text-accent" />
+            <h3 className="text-xl font-bold md:text-2xl">{title}</h3>
+          </div>
+          <p className="text-sm text-muted-foreground">{subtitle}</p>
+        </div>
+      </div>
+      <div className="no-scrollbar flex gap-4 overflow-x-auto px-5 pb-4 md:px-10">
+        {items.map((t) => (
+          <Poster key={t.title} item={t} />
+        ))}
+      </div>
+    </Reveal>
+  );
+}
+
+function Index() {
+  const [slide, setSlide] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setSlide((s) => (s + 1) % heroSlides.length),
+      6000,
+    );
+    return () => clearInterval(id);
+  }, []);
+
+  const current = heroSlides[slide]!;
+
+  return (
+    <div className="min-h-screen overflow-x-hidden bg-background">
+      {/* NAV */}
+      <header className="fixed inset-x-0 top-0 z-50">
+        <div className="glass mx-auto mt-4 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-5 py-3">
+          <div className="flex items-center gap-2">
+            <div className="bg-hot flex size-8 items-center justify-center rounded-full">
+              <Play className="size-4 fill-current text-primary-foreground" />
+            </div>
+            <span className="font-display text-lg font-extrabold tracking-tight">
+              CINE<span className="text-hot">FLIX</span>
+            </span>
+          </div>
+          <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
+            <a href="#catalogo" className="transition-colors hover:text-foreground">
+              Catálogo
+            </a>
+            <a href="#esportes" className="transition-colors hover:text-foreground">
+              Esportes
+            </a>
+            <a href="#economia" className="transition-colors hover:text-foreground">
+              Economia
+            </a>
+            <a href="#planos" className="transition-colors hover:text-foreground">
+              Planos
+            </a>
+          </nav>
+          <a href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs">
+            Assinar
+          </a>
+        </div>
+      </header>
+
+      {/* HERO */}
+      <section className="relative flex min-h-[100svh] items-center overflow-hidden">
+        {heroSlides.map((s, i) => (
+          <img
+            key={s.title}
+            src={img(s.backdrop, "w1280")}
+            alt={`Cena do filme ${s.title}`}
+            className="absolute inset-0 size-full object-cover transition-all duration-[2200ms] ease-out"
+            style={{
+              opacity: i === slide ? 1 : 0,
+              transform: i === slide ? "scale(1.06)" : "scale(1)",
+            }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-linear-to-r from-background via-background/85 to-background/30" />
+        <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-background/70" />
+
+        <div className="relative z-10 mx-auto w-[94%] max-w-6xl pt-28 pb-16">
+          <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+            <div>
+              <span className="glass mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wide uppercase">
+                <Sparkles className="size-3.5 text-accent" />
+                Lançamentos de terror toda semana
+              </span>
+              <h1 className="text-5xl leading-[0.95] font-extrabold md:text-7xl">
+                Conteúdo ilimitado
+                <br />
+                <span className="text-hot">por um preço que cabe no bolso</span>
+              </h1>
+              <p className="mt-6 max-w-xl text-lg text-muted-foreground">
+                Mais de 2 mil canais e 60.000 conteúdos — Netflix, Disney+, HBO
+                Max, Prime Video, Apple TV+ e muito mais em um único app. Com
+                qualidade 4K, estabilidade e suporte dedicado.
+              </p>
+              <div className="mt-9 flex flex-wrap items-center gap-4">
+                <Cta />
+                <a href="#catalogo" className="btn-ghost">
+                  <Clapperboard className="size-4" /> Ver catálogo
+                </a>
+              </div>
+              <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+                <span className="flex items-center gap-2">
+                  <Star className="size-4 fill-accent text-accent" /> 4.9 de
+                  satisfação
+                </span>
+                <span className="flex items-center gap-2">
+                  <ShieldCheck className="size-4 text-accent" /> Cancele quando
+                  quiser
+                </span>
+              </div>
+            </div>
+
+            <div className="hidden justify-end lg:flex">
+              <div className="animate-float relative w-[280px]">
+                <img
+                  key={current.poster}
+                  src={img(current.poster, "w500")}
+                  alt={`Pôster de ${current.title}`}
+                  className="w-full rounded-4xl border border-border shadow-[var(--shadow-neon)]"
+                />
+                <div className="glass absolute -bottom-6 -left-8 rounded-2xl px-4 py-3">
+                  <p className="text-xs text-muted-foreground">
+                    Em destaque agora
+                  </p>
+                  <p className="font-display text-sm font-bold">
+                    {current.title}
+                  </p>
+                  <p className="text-xs text-accent">
+                    {current.genre} · {current.year}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-14 flex gap-2">
+            {heroSlides.map((s, i) => (
+              <button
+                key={s.title}
+                onClick={() => setSlide(i)}
+                aria-label={`Ver ${s.title}`}
+                className={`h-1.5 rounded-full transition-all duration-500 ${
+                  i === slide ? "bg-hot w-14" : "w-6 bg-muted hover:bg-surface-2"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* MARQUEE PLATAFORMAS */}
+      <section className="border-y border-border bg-surface/40 py-8">
+        <p className="mb-6 text-center text-xs tracking-[0.25em] text-muted-foreground uppercase">
+          Todos os streamings em um só lugar
+        </p>
+        <div className="flex overflow-hidden">
+          <div className="animate-marquee flex shrink-0 items-center gap-14 pr-14">
+            {[...plataformas, ...plataformas].map((p, i) => (
+              <img
+                key={p.nome + i}
+                src={icon(p.slug)}
+                alt={p.nome}
+                loading="lazy"
+                className="h-7 w-auto opacity-55 transition-opacity duration-300 hover:opacity-100"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CATÁLOGO */}
+      <section id="catalogo" className="py-16">
+        <Reveal className="mx-auto mb-4 w-[94%] max-w-6xl text-center">
+          <h2 className="text-4xl font-extrabold md:text-5xl">
+            Os mais assistidos <span className="text-hot">agora</span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            Seus filmes, séries e animes favoritos com a experiência que você
+            merece — em alta definição, sem antena e sem decodificador.
+          </p>
+        </Reveal>
+
+        <Rail
+          icon={Flame}
+          title="Terror — lançamentos"
+          subtitle="Obsessão, Backrooms, Undertone, Maldição da Múmia, Mestres do Universo e mais"
+          items={terror}
+        />
+        <Rail
+          icon={Gamepad2}
+          title="Animes Crunchyroll"
+          subtitle="Demon Slayer, o anime mais assistido do momento, e todos os simulcasts em HD"
+          items={animes}
+        />
+        <Rail
+          icon={Baby}
+          title="Canais infantis"
+          subtitle="Disney+, desenhos e muito mais para a criançada se divertir com segurança"
+          items={infantil}
+        />
+      </section>
+
+      {/* FEATURES */}
+      <section className="mx-auto w-[94%] max-w-6xl py-16">
+        <div className="grid gap-5 md:grid-cols-3">
+          {[
+            {
+              icon: Clapperboard,
+              t: "Filmes incríveis",
+              d: "Clássicos, lançamentos e grandes produções premiadas em alta definição.",
+            },
+            {
+              icon: Tv,
+              t: "Séries imperdíveis",
+              d: "Temporadas completas dos sucessos do momento para maratonar sem limites.",
+            },
+            {
+              icon: Gamepad2,
+              t: "Animes atualizados",
+              d: "Lista enorme com todos os animes do momento, sempre em dia e em HD.",
+            },
+            {
+              icon: Baby,
+              t: "Canais infantis",
+              d: "Toda a lista para a criançada, incluindo Disney+ e muito mais.",
+            },
+            {
+              icon: ShieldCheck,
+              t: "Canais adultos",
+              d: "Opcional e protegido por senha, para a segurança das crianças.",
+            },
+            {
+              icon: Trophy,
+              t: "Esportes ao vivo",
+              d: "Futebol, artes marciais e todos os canais esportivos ao vivo.",
+            },
+          ].map((f, i) => (
+            <Reveal key={f.t} delay={i * 80}>
+              <div className="glass card-lift h-full rounded-3xl p-7">
+                <div className="bg-hot mb-5 flex size-11 items-center justify-center rounded-2xl">
+                  <f.icon className="size-5 text-primary-foreground" />
+                </div>
+                <h3 className="mb-2 text-lg font-bold">{f.t}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {f.d}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ESPORTES */}
+      <section id="esportes" className="relative my-10 overflow-hidden">
+        <div className="relative mx-auto w-[94%] max-w-6xl overflow-hidden rounded-4xl border border-border">
+          <img
+            src={futebol}
+            alt="Torcida em estádio de futebol lotado à noite"
+            loading="lazy"
+            width={1280}
+            height={720}
+            className="absolute inset-0 size-full object-cover"
+          />
+          <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-transparent" />
+          <Reveal className="relative p-8 md:p-16">
+            <span className="glass mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase">
+              <Trophy className="size-3.5 text-accent" /> Esportes ao vivo
+            </span>
+            <h2 className="max-w-lg text-4xl font-extrabold md:text-5xl">
+              Para quem é <span className="text-hot">fanático por futebol</span>
+            </h2>
+            <p className="mt-5 max-w-lg text-muted-foreground">
+              Acompanhe os maiores campeonatos do Brasil e do mundo, além de
+              lutas, NBA, NFL e tudo que você ama — sem travar, em 4K.
+            </p>
+            <div className="mt-8">
+              <Cta />
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ECONOMIA */}
+      <section id="economia" className="mx-auto w-[94%] max-w-6xl py-20">
+        <Reveal className="text-center">
+          <h2 className="text-4xl font-extrabold md:text-5xl">
+            Isso é o que você pagaria
+            <br />
+            <span className="text-hot">assinando tudo separado</span>
+          </h2>
+        </Reveal>
+
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          {plataformas.map((p, i) => (
+            <Reveal key={p.nome} delay={i * 45}>
+              <div className="glass card-lift flex h-full flex-col items-center justify-center gap-3 rounded-3xl px-4 py-7">
+                <img
+                  src={icon(p.slug)}
+                  alt={p.nome}
+                  loading="lazy"
+                  className="h-6 w-auto opacity-90"
+                />
+                <p className="text-xs text-muted-foreground">{p.nome}</p>
+                <p className="font-display text-lg font-bold line-through decoration-primary decoration-2">
+                  {p.preco}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal className="mt-12">
+          <div className="glass rounded-4xl p-8 text-center md:p-12">
+            <p className="text-muted-foreground">
+              Ao todo você pagaria{" "}
+              <span className="font-bold text-foreground line-through">
+                R$ 514,85
+              </span>{" "}
+              por mês
+            </p>
+            <p className="font-display mt-4 text-4xl font-extrabold md:text-6xl">
+              Com a Cineflix você paga{" "}
+              <span className="text-hot">apenas R$20/mês</span>
+            </p>
+            <div className="mt-9">
+              <Cta />
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* PLANOS */}
+      <section id="planos" className="mx-auto w-[94%] max-w-6xl py-16">
+        <Reveal className="text-center">
+          <h2 className="text-4xl font-extrabold md:text-5xl">
+            Aproveite e <span className="text-hot">assine já</span>
+          </h2>
+          <p className="mt-4 text-muted-foreground">
+            Cancele quando quiser. Ativação imediata e suporte dedicado.
+          </p>
+        </Reveal>
+
+        <div className="mt-14 grid items-center gap-6 lg:grid-cols-3">
+          {[
+            {
+              nome: "Plano START",
+              preco: "R$20",
+              periodo: "mensal",
+              telas: "Use 2 telas simultaneamente",
+              extra: "Plano Mensal",
+              destaque: false,
+            },
+            {
+              nome: "Plano PRIME",
+              preco: "R$149,90",
+              periodo: "2 anos",
+              telas: "Use 4 telas simultaneamente",
+              extra: "2 anos de acesso",
+              destaque: true,
+            },
+            {
+              nome: "Plano PRO",
+              preco: "R$69,90",
+              periodo: "semestral",
+              telas: "Use 2 telas simultaneamente",
+              extra: "Plano Semestral",
+              destaque: false,
+            },
+          ].map((p, i) => (
+            <Reveal key={p.nome} delay={i * 100}>
+              <div
+                className={`card-lift relative h-full rounded-4xl p-8 ${
+                  p.destaque
+                    ? "border-2 border-primary bg-surface shadow-[var(--shadow-glow)] lg:scale-[1.06]"
+                    : "glass"
+                }`}
+              >
+                {p.destaque && (
+                  <span className="bg-hot absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-4 py-1.5 text-[11px] font-bold tracking-wide text-primary-foreground uppercase">
+                    Recomendado
+                  </span>
+                )}
+                <h3 className="font-display text-sm font-bold tracking-[0.18em] text-accent uppercase">
+                  {p.nome}
+                </h3>
+                <div className="mt-4 flex items-end gap-2">
+                  <span
+                    className={`font-display text-5xl font-extrabold ${
+                      p.destaque ? "text-hot" : ""
+                    }`}
+                  >
+                    {p.preco}
+                  </span>
+                  <span className="pb-2 text-sm text-muted-foreground">
+                    /{p.periodo}
+                  </span>
+                </div>
+                <p className="mt-4 text-sm text-muted-foreground">
+                  Acesso ilimitado a todos os conteúdos, a diversão é garantida.
+                </p>
+
+                <a href="#planos" className="btn-cta mt-7 w-full">
+                  Comprar agora
+                </a>
+
+                <ul className="mt-8 space-y-3 text-sm">
+                  {[
+                    p.extra,
+                    p.telas,
+                    "Mais de 60.000 conteúdos",
+                    "Qualidade SD/HD/FHD/4K",
+                    "Guia de Programação [EPG]",
+                    "Smartphone / Tablet",
+                    "TV Box / Chromecast",
+                    "Smart TV e Computador",
+                    "Programação Adultos [Opcional]",
+                    "Pacote Filmes e Séries",
+                  ].map((v) => (
+                    <li key={v} className="flex items-start gap-2.5">
+                      <Check className="mt-0.5 size-4 shrink-0 text-accent" />
+                      <span className="text-muted-foreground">{v}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="mt-10 border-t border-border py-12">
+        <div className="mx-auto flex w-[94%] max-w-6xl flex-col items-center gap-5 text-center">
+          <span className="font-display text-xl font-extrabold">
+            CINE<span className="text-hot">FLIX</span>
+          </span>
+          <p className="max-w-xl text-sm text-muted-foreground">
+            A televisão do futuro é pela internet — sem antenas, sem
+            decodificadores. Assista quando e onde quiser.
+          </p>
+          <Cta />
+          <p className="mt-4 text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Cineflix. Imagens de divulgação dos
+            respectivos estúdios (fonte: TMDB).
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }
