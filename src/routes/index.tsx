@@ -178,7 +178,7 @@ function Index() {
             }}
           />
         ))}
-        <div className="absolute inset-0 bg-linear-to-r from-background via-background/85 to-background/30" />
+        <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-background/20" />
         <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-background/70" />
 
         <div className="relative z-10 mx-auto w-[94%] max-w-6xl pt-28 pb-16">
