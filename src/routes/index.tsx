@@ -16,18 +16,18 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { BrandLogo } from "@/components/BrandLogo";
+import { SocialProof } from "@/components/SocialProof";
 import futebol from "@/assets/futebol.jpg";
 import {
   animes,
   heroSlides,
-
-  icon,
   img,
   infantil,
   plataformas,
   terror,
   type Title,
 } from "@/data/catalog";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
