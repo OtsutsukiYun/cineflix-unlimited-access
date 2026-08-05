@@ -139,10 +139,13 @@ function Rail({
         </div>
       </div>
       <div className="no-scrollbar flex gap-4 overflow-x-auto px-5 pb-4 md:px-10">
-        {items.map((t) => (
-          <Poster key={t.title} item={t} />
+        {items.map((t, i) => (
+          <Reveal key={t.title} delay={Math.min(i, 6) * 70} className="shrink-0">
+            <Poster item={t} />
+          </Reveal>
         ))}
       </div>
+
     </Reveal>
   );
 }
