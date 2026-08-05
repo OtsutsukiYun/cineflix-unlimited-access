@@ -264,13 +264,18 @@ function Index() {
             {[...plataformas, ...plataformas].map((p, i) => (
               <div
                 key={p.nome + i}
-                className="opacity-60 transition-opacity duration-300 hover:opacity-100"
+                className="opacity-70 transition-opacity duration-300 hover:opacity-100"
               >
-                <BrandLogo nome={p.nome} slug={p.slug} cor={p.cor} />
+                <BrandLogo
+                  nome={p.nome}
+                  logo={p.logo}
+                  invert={p.invert}
+                  cor={p.cor}
+                />
               </div>
             ))}
-
           </div>
+
         </div>
       </section>
 
