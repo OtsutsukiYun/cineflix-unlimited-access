@@ -260,14 +260,14 @@ function Index() {
         <div className="flex overflow-hidden">
           <div className="animate-marquee flex shrink-0 items-center gap-14 pr-14">
             {[...plataformas, ...plataformas].map((p, i) => (
-              <img
+              <div
                 key={p.nome + i}
-                src={icon(p.slug)}
-                alt={p.nome}
-                loading="lazy"
-                className="h-7 w-auto opacity-55 transition-opacity duration-300 hover:opacity-100"
-              />
+                className="opacity-60 transition-opacity duration-300 hover:opacity-100"
+              >
+                <BrandLogo nome={p.nome} slug={p.slug} cor={p.cor} />
+              </div>
             ))}
+
           </div>
         </div>
       </section>
