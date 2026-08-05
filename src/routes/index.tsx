@@ -232,9 +232,10 @@ function Index() {
               </p>
               <div className="mt-9 flex flex-wrap items-center gap-4">
                 <Cta />
-                <a href="#catalogo" className="btn-ghost">
+                <SmoothLink href="#catalogo" className="btn-ghost">
                   <Clapperboard className="size-4" /> Ver catálogo
-                </a>
+                </SmoothLink>
+
               </div>
               <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
                 <span className="flex items-center gap-2">
