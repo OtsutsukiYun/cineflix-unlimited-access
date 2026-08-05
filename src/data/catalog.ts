@@ -87,19 +87,28 @@ export const infantil: Title[] = [
   { title: "Moana 2", poster: "/dnqgkKoIGf6hErzRm6VtaK1OJrD.jpg", year: "2024" },
 ];
 
-export const plataformas = [
-  { nome: "Netflix", slug: "netflix", cor: "#E50914", preco: "R$ 59,90" },
-  { nome: "Disney+", slug: null, cor: "#4BA3FF", preco: "R$ 55,90" },
-  { nome: "HBO Max", slug: "max", cor: "#A855F7", preco: "R$ 62,90" },
-  { nome: "Prime Video", slug: null, cor: "#38BDF8", preco: "R$ 19,90" },
-  { nome: "Apple TV+", slug: "appletv", cor: "#FFFFFF", preco: "R$ 21,90" },
-  { nome: "Paramount+", slug: "paramountplus", cor: "#4C8DFF", preco: "R$ 19,90" },
-  { nome: "Crunchyroll", slug: "crunchyroll", cor: "#F47521", preco: "R$ 29,90" },
-  { nome: "Globoplay", slug: null, cor: "#FF5C5C", preco: "R$ 34,90" },
-  { nome: "DAZN", slug: "dazn", cor: "#F8FF13", preco: "R$ 34,90" },
-  { nome: "Star+", slug: null, cor: "#FF8A3D", preco: "R$ 39,90" },
-  { nome: "Telecine", slug: null, cor: "#2DE0C0", preco: "R$ 44,95" },
-  { nome: "Premiere", slug: null, cor: "#4ADE80", preco: "R$ 89,90" },
+export type Plataforma = {
+  nome: string;
+  logo: string | null;
+  invert?: boolean;
+  cor: string;
+  preco: string;
+};
+
+export const plataformas: Plataforma[] = [
+  { nome: "Netflix", logo: netflixLogo, cor: "#E50914", preco: "R$ 59,90" },
+  { nome: "Disney+", logo: disneyLogo, invert: true, cor: "#4BA3FF", preco: "R$ 55,90" },
+  { nome: "HBO Max", logo: hboLogo, cor: "#A855F7", preco: "R$ 62,90" },
+  { nome: "Prime Video", logo: primeLogo, cor: "#38BDF8", preco: "R$ 19,90" },
+  { nome: "Apple TV+", logo: appletvLogo, invert: true, cor: "#FFFFFF", preco: "R$ 21,90" },
+  { nome: "Paramount+", logo: paramountLogo, cor: "#4C8DFF", preco: "R$ 19,90" },
+  { nome: "Crunchyroll", logo: crunchyrollLogo, invert: true, cor: "#F47521", preco: "R$ 29,90" },
+  { nome: "Globoplay", logo: globoplayLogo, cor: "#FF5C5C", preco: "R$ 34,90" },
+  { nome: "DAZN", logo: daznLogo, cor: "#F8FF13", preco: "R$ 34,90" },
+  { nome: "Star+", logo: null, cor: "#FF8A3D", preco: "R$ 39,90" },
+  { nome: "Telecine", logo: null, cor: "#2DE0C0", preco: "R$ 44,95" },
+  { nome: "Premiere", logo: null, cor: "#4ADE80", preco: "R$ 89,90" },
 ];
+
 
 export const icon = (slug: string) => `https://cdn.simpleicons.org/${slug}/white`;
