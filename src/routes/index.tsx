@@ -408,15 +408,17 @@ function Index() {
                 <div className="flex h-7 items-center">
                   <BrandLogo
                     nome={p.nome}
-                    slug={p.slug}
+                    logo={p.logo}
+                    invert={p.invert === true}
                     cor={p.cor}
                     className="h-6"
                   />
                 </div>
 
-                {p.slug && (
+                {p.logo && (
                   <p className="text-xs text-muted-foreground">{p.nome}</p>
                 )}
+
 
                 <p className="font-display text-lg font-bold line-through decoration-primary decoration-2">
                   {p.preco}
