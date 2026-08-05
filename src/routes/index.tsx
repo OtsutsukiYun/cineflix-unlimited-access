@@ -306,6 +306,7 @@ function Index() {
                   nome={p.nome}
                   logo={p.logo}
                   invert={p.invert === true}
+                  escala={p.escala ?? 1}
                   cor={p.cor}
                 />
               </div>
@@ -446,6 +447,7 @@ function Index() {
                     nome={p.nome}
                     logo={p.logo}
                     invert={p.invert === true}
+                    escala={p.escala ?? 1}
                     cor={p.cor}
                     className="h-6"
                   />
