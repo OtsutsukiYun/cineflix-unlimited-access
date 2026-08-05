@@ -77,17 +77,17 @@ export const infantil: Title[] = [
 
 export const plataformas = [
   { nome: "Netflix", slug: "netflix", cor: "#E50914", preco: "R$ 59,90" },
-  { nome: "Disney+", slug: "disneyplus", cor: "#0063E5", preco: "R$ 55,90" },
-  { nome: "HBO Max", slug: "hbo", cor: "#8A2BE2", preco: "R$ 62,90" },
-  { nome: "Prime Video", slug: "primevideo", cor: "#00A8E1", preco: "R$ 19,90" },
+  { nome: "Disney+", slug: null, cor: "#4BA3FF", preco: "R$ 55,90" },
+  { nome: "HBO Max", slug: "max", cor: "#A855F7", preco: "R$ 62,90" },
+  { nome: "Prime Video", slug: null, cor: "#38BDF8", preco: "R$ 19,90" },
   { nome: "Apple TV+", slug: "appletv", cor: "#FFFFFF", preco: "R$ 21,90" },
-  { nome: "Paramount+", slug: "paramountplus", cor: "#0064FF", preco: "R$ 19,90" },
+  { nome: "Paramount+", slug: "paramountplus", cor: "#4C8DFF", preco: "R$ 19,90" },
   { nome: "Crunchyroll", slug: "crunchyroll", cor: "#F47521", preco: "R$ 29,90" },
-  { nome: "Globoplay", slug: "globo", cor: "#FF4D4D", preco: "R$ 34,90" },
+  { nome: "Globoplay", slug: null, cor: "#FF5C5C", preco: "R$ 34,90" },
   { nome: "DAZN", slug: "dazn", cor: "#F8FF13", preco: "R$ 34,90" },
-  { nome: "Star+", slug: "star", cor: "#FF6B00", preco: "R$ 39,90" },
-  { nome: "Telecine", slug: "telecine", cor: "#00E0B8", preco: "R$ 44,95" },
-  { nome: "Premiere", slug: "premiere", cor: "#00C853", preco: "R$ 89,90" },
+  { nome: "Star+", slug: null, cor: "#FF8A3D", preco: "R$ 39,90" },
+  { nome: "Telecine", slug: null, cor: "#2DE0C0", preco: "R$ 44,95" },
+  { nome: "Premiere", slug: null, cor: "#4ADE80", preco: "R$ 89,90" },
 ];
 
 export const icon = (slug: string) => `https://cdn.simpleicons.org/${slug}/white`;
