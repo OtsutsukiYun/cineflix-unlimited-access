@@ -216,7 +216,7 @@ function Index() {
         <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-background/20" />
         <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-background/70" />
 
-        <div className="relative z-10 mx-auto w-[94%] max-w-6xl pt-28 pb-16">
+        <div className="animate-rise relative z-10 mx-auto w-[94%] max-w-6xl pt-28 pb-16">
           <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
               <span className="glass mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wide uppercase">
