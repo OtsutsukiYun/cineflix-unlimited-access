@@ -50,12 +50,13 @@ export const heroSlides = [
     poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg",
   },
   {
-    title: "Mestres do Universo",
-    year: "2026",
-    genre: "Ação / Aventura",
-    backdrop: "/yQIdU11DYQQp0neGtGtGxbGfRer.jpg",
-    poster: "/atpb7NKSyM4bJSUY8vQTunzK4Na.jpg",
+    title: "Passageiro do Mal",
+    year: "2025",
+    genre: "Terror / Suspense",
+    backdrop: "/3pDfu71mrzSuFYyIfnKEjt8z4BC.jpg",
+    poster: "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg",
   },
+
 ];
 
 export const terror: Title[] = [
