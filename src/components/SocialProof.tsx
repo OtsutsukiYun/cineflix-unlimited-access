@@ -5,7 +5,7 @@ const NOMES = [
   "Lucas Almeida",
   "Mariana Rocha",
   "Rafael Nogueira",
-  "Julianaప",
+  "Juliana Martins",
   "Bruno Carvalho",
   "Camila Fernandes",
   "Thiago Barbosa",
