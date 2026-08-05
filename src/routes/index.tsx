@@ -409,7 +409,10 @@ function Index() {
                   />
                 </div>
 
-                <p className="text-xs text-muted-foreground">{p.nome}</p>
+                {p.slug && (
+                  <p className="text-xs text-muted-foreground">{p.nome}</p>
+                )}
+
                 <p className="font-display text-lg font-bold line-through decoration-primary decoration-2">
                   {p.preco}
                 </p>
