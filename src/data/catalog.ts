@@ -91,6 +91,7 @@ export type Plataforma = {
   nome: string;
   logo: string | null;
   invert?: boolean;
+  escala?: number;
   cor: string;
   preco: string;
 };
@@ -102,9 +103,9 @@ export const plataformas: Plataforma[] = [
   { nome: "Prime Video", logo: primeLogo, cor: "#38BDF8", preco: "R$ 19,90" },
   { nome: "Apple TV+", logo: appletvLogo, invert: true, cor: "#FFFFFF", preco: "R$ 21,90" },
   { nome: "Paramount+", logo: paramountLogo, cor: "#4C8DFF", preco: "R$ 19,90" },
-  { nome: "Crunchyroll", logo: crunchyrollLogo, invert: true, cor: "#F47521", preco: "R$ 29,90" },
+  { nome: "Crunchyroll", logo: crunchyrollLogo, invert: true, escala: 1.9, cor: "#F47521", preco: "R$ 29,90" },
   { nome: "Globoplay", logo: globoplayLogo, cor: "#FF5C5C", preco: "R$ 34,90" },
-  { nome: "DAZN", logo: daznLogo, cor: "#F8FF13", preco: "R$ 34,90" },
+  { nome: "DAZN", logo: daznLogo, escala: 1.8, cor: "#F8FF13", preco: "R$ 34,90" },
   { nome: "Star+", logo: null, cor: "#FF8A3D", preco: "R$ 39,90" },
   { nome: "Telecine", logo: null, cor: "#2DE0C0", preco: "R$ 44,95" },
   { nome: "Premiere", logo: null, cor: "#4ADE80", preco: "R$ 89,90" },
