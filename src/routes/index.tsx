@@ -51,14 +51,43 @@ export const Route = createFileRoute("/")({
 
 const CTA_HREF = "#planos";
 
-function Cta({ children = "ADQUIRA O SEU AGORA" }: { children?: string }) {
+function smoothTo(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
+  const el = document.querySelector(href);
+  if (!el) return;
+  e.preventDefault();
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.history.replaceState(null, "", href);
+}
+
+function SmoothLink({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
   return (
-    <a href={CTA_HREF} className="btn-cta animate-pulse-ring">
-      <Zap className="size-4" />
+    <a
+      href={href}
+      className={className ?? ""}
+      onClick={(e) => smoothTo(e, href)}
+    >
       {children}
     </a>
   );
 }
+
+function Cta({ children = "ADQUIRA O SEU AGORA" }: { children?: string }) {
+  return (
+    <SmoothLink href={CTA_HREF} className="btn-cta animate-pulse-ring">
+      <Zap className="size-4" />
+      {children}
+    </SmoothLink>
+  );
+}
+
 
 function Poster({ item, wide = false }: { item: Title; wide?: boolean }) {
   return (
