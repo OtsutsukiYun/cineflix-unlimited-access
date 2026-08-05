@@ -269,7 +269,7 @@ function Index() {
                 <BrandLogo
                   nome={p.nome}
                   logo={p.logo}
-                  invert={p.invert}
+                  invert={p.invert === true}
                   cor={p.cor}
                 />
               </div>
