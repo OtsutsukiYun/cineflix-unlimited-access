@@ -597,6 +597,9 @@ function Index() {
           </p>
         </div>
       </footer>
+
+      <SocialProof />
+
     </div>
   );
 }
