@@ -128,6 +128,7 @@ function Index() {
               { h: "#esportes", l: "Esportes" },
               { h: "#economia", l: "Economia" },
               { h: "#planos", l: "Planos" },
+              { h: "#faq", l: "FAQ" },
             ].map((n) => (
               <SmoothLink
                 key={n.h}
@@ -137,7 +138,14 @@ function Index() {
                 {n.l}
               </SmoothLink>
             ))}
+            <Link
+              to="/suporte"
+              className="transition-colors hover:text-foreground"
+            >
+              Suporte
+            </Link>
           </nav>
+
           <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs">
             Assinar
           </SmoothLink>
