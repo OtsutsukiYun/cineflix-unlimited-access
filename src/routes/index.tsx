@@ -276,22 +276,29 @@ function Index() {
 
         <Rail
           icon={Flame}
-          title="Terror — lançamentos"
-          subtitle="Obsessão, Backrooms, Undertone, Maldição da Múmia, Passageiro do Mal e mais"
+          title="Terror — lançamentos e clássicos"
+          subtitle="Obsessão, Backrooms, Undertone, Maldição da Múmia, Hokum, Passageiro do Mal e dezenas de outros"
           items={terror}
         />
         <Rail
-          icon={Gamepad2}
+          icon={Ghost}
+          title="Séries de terror para você maratonar"
+          subtitle="Cabo do Medo, IT: Bem-Vindos a Derry, From, A Maldição da Residência Hill e muito mais"
+          items={series}
+        />
+        <Rail
+          icon={Torii}
           title="Animes Crunchyroll"
-          subtitle="Demon Slayer, o anime mais assistido do momento, e todos os simulcasts em HD"
+          subtitle="Demon Slayer, Jujutsu Kaisen, Solo Leveling, Dan Da Dan e todos os simulcasts em HD"
           items={animes}
         />
         <Rail
           icon={Baby}
-          title="Canais infantis"
-          subtitle="Disney+, desenhos e muito mais para a criançada se divertir com segurança"
+          title="Canais e desenhos infantis"
+          subtitle="Bluey, Patrulha Canina, Bob Esponja, Disney+ e muito mais para a criançada"
           items={infantil}
         />
+
       </section>
 
       {/* FEATURES */}
