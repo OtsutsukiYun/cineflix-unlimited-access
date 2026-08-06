@@ -1,10 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Check,
   Clapperboard,
   Flame,
-  Gamepad2,
+  Ghost,
   Baby,
   Trophy,
   Tv,
@@ -15,6 +15,10 @@ import {
   Zap,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { Rail } from "@/components/Rail";
+import { Faq } from "@/components/Faq";
+import { TrustSection } from "@/components/TrustSection";
+import { Torii } from "@/components/icons";
 import { BrandLogo } from "@/components/BrandLogo";
 import { SocialProof } from "@/components/SocialProof";
 import futebol from "@/assets/futebol.jpg";
@@ -24,9 +28,10 @@ import {
   img,
   infantil,
   plataformas,
+  series,
   terror,
-  type Title,
 } from "@/data/catalog";
+
 
 
 export const Route = createFileRoute("/")({
