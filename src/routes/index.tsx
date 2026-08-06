@@ -459,14 +459,18 @@ function Index() {
               telas: "Use 2 telas simultaneamente",
               extra: "Plano Mensal",
               destaque: false,
+              selo: null as string | null,
+              link: "https://ev.braip.com/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
             },
             {
               nome: "Plano PRIME",
-              preco: "R$149,90",
-              periodo: "2 anos",
+              preco: "R$97",
+              periodo: "1 ano",
               telas: "Use 4 telas simultaneamente",
-              extra: "2 anos de acesso",
+              extra: "1 ano de acesso · sem mensalidade",
               destaque: true,
+              selo: "Mais escolhido",
+              link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
             },
             {
               nome: "Plano PRO",
@@ -475,6 +479,8 @@ function Index() {
               telas: "Use 2 telas simultaneamente",
               extra: "Plano Semestral",
               destaque: false,
+              selo: null as string | null,
+              link: "https://ev.braip.com/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
             },
           ].map((p, i) => (
             <Reveal key={p.nome} delay={i * 100}>
@@ -485,9 +491,9 @@ function Index() {
                     : "glass"
                 }`}
               >
-                {p.destaque && (
+                {p.selo && (
                   <span className="bg-hot absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-4 py-1.5 text-[11px] font-bold tracking-wide text-primary-foreground uppercase">
-                    Recomendado
+                    {p.selo}
                   </span>
                 )}
                 <h3 className="font-display text-sm font-bold tracking-[0.18em] text-accent uppercase">
@@ -509,7 +515,12 @@ function Index() {
                   Acesso ilimitado a todos os conteúdos, a diversão é garantida.
                 </p>
 
-                <a href="#planos" className="btn-cta mt-7 w-full">
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-cta mt-7 w-full"
+                >
                   Comprar agora
                 </a>
 
@@ -538,6 +549,17 @@ function Index() {
         </div>
       </section>
 
+      {/* PAGAMENTO E SEGURANÇA */}
+      <TrustSection />
+
+      {/* FAQ */}
+      <Faq>
+        <SmoothLink href={CTA_HREF} className="btn-cta">
+          <Zap className="size-4" />
+          VER PLANOS DISPONÍVEIS
+        </SmoothLink>
+      </Faq>
+
       {/* FOOTER */}
       <footer className="mt-10 border-t border-border py-12">
         <div className="mx-auto flex w-[94%] max-w-6xl flex-col items-center gap-5 text-center">
@@ -549,6 +571,12 @@ function Index() {
             decodificadores. Assista quando e onde quiser.
           </p>
           <Cta />
+          <Link
+            to="/suporte"
+            className="text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+          >
+            Precisa de ajuda? Fale com o suporte
+          </Link>
           <p className="mt-4 text-xs text-muted-foreground">
             © {new Date().getFullYear()} Cineflix. Imagens de divulgação dos
             respectivos estúdios (fonte: TMDB).
@@ -561,3 +589,4 @@ function Index() {
     </div>
   );
 }
+
