@@ -316,7 +316,7 @@ function Index() {
               d: "Temporadas completas dos sucessos do momento para maratonar sem limites.",
             },
             {
-              icon: Gamepad2,
+              icon: Torii,
               t: "Animes atualizados",
               d: "Lista enorme com todos os animes do momento, sempre em dia e em HD.",
             },
