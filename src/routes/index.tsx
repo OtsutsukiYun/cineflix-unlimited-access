@@ -1,10 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import {
   Check,
   Clapperboard,
   Flame,
-  Gamepad2,
+  Ghost,
   Baby,
   Trophy,
   Tv,
@@ -15,6 +15,10 @@ import {
   Zap,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { Rail } from "@/components/Rail";
+import { Faq } from "@/components/Faq";
+import { TrustSection } from "@/components/TrustSection";
+import { Torii } from "@/components/icons";
 import { BrandLogo } from "@/components/BrandLogo";
 import { SocialProof } from "@/components/SocialProof";
 import futebol from "@/assets/futebol.jpg";
@@ -24,9 +28,10 @@ import {
   img,
   infantil,
   plataformas,
+  series,
   terror,
-  type Title,
 } from "@/data/catalog";
+
 
 
 export const Route = createFileRoute("/")({
@@ -89,66 +94,7 @@ function Cta({ children = "ADQUIRA O SEU AGORA" }: { children?: string }) {
 }
 
 
-function Poster({ item, wide = false }: { item: Title; wide?: boolean }) {
-  return (
-    <div
-      className={`card-lift group relative shrink-0 overflow-hidden rounded-3xl border border-border bg-surface ${
-        wide ? "w-[210px] sm:w-[240px]" : "w-[160px] sm:w-[185px]"
-      }`}
-    >
-      <img
-        src={img(item.poster)}
-        alt={`Pôster de ${item.title}`}
-        loading="lazy"
-        className="aspect-2/3 w-full object-cover transition-transform duration-700 group-hover:scale-110"
-      />
-      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background via-background/10 to-transparent opacity-90" />
-      {item.tag && (
-        <span className="bg-hot absolute top-3 left-3 rounded-full px-3 py-1 text-[10px] font-bold tracking-wide text-primary-foreground uppercase">
-          {item.tag}
-        </span>
-      )}
-      <div className="absolute inset-x-0 bottom-0 p-3">
-        <p className="truncate text-sm font-bold">{item.title}</p>
-        <p className="text-xs text-muted-foreground">{item.year}</p>
-      </div>
-    </div>
-  );
-}
 
-function Rail({
-  title,
-  subtitle,
-  items,
-  icon: Icon,
-}: {
-  title: string;
-  subtitle: string;
-  items: Title[];
-  icon: typeof Flame;
-}) {
-  return (
-    <Reveal className="py-8">
-      <div className="mb-5 flex items-end justify-between gap-4 px-5 md:px-10">
-        <div>
-          <div className="mb-1 flex items-center gap-2">
-            <Icon className="size-5 text-accent" />
-            <h3 className="text-xl font-bold md:text-2xl">{title}</h3>
-          </div>
-          <p className="text-sm text-muted-foreground">{subtitle}</p>
-        </div>
-      </div>
-      <div className="no-scrollbar flex gap-4 overflow-x-auto px-5 pb-4 md:px-10">
-        {items.map((t, i) => (
-          <Reveal key={t.title} delay={Math.min(i, 6) * 70} className="shrink-0">
-            <Poster item={t} />
-          </Reveal>
-        ))}
-      </div>
-
-    </Reveal>
-  );
-}
 
 function Index() {
   const [slide, setSlide] = useState(0);
@@ -182,6 +128,7 @@ function Index() {
               { h: "#esportes", l: "Esportes" },
               { h: "#economia", l: "Economia" },
               { h: "#planos", l: "Planos" },
+              { h: "#faq", l: "FAQ" },
             ].map((n) => (
               <SmoothLink
                 key={n.h}
@@ -191,7 +138,14 @@ function Index() {
                 {n.l}
               </SmoothLink>
             ))}
+            <Link
+              to="/suporte"
+              className="transition-colors hover:text-foreground"
+            >
+              Suporte
+            </Link>
           </nav>
+
           <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs">
             Assinar
           </SmoothLink>
@@ -330,22 +284,29 @@ function Index() {
 
         <Rail
           icon={Flame}
-          title="Terror — lançamentos"
-          subtitle="Obsessão, Backrooms, Undertone, Maldição da Múmia, Passageiro do Mal e mais"
+          title="Terror — lançamentos e clássicos"
+          subtitle="Obsessão, Backrooms, Undertone, Maldição da Múmia, Hokum, Passageiro do Mal e dezenas de outros"
           items={terror}
         />
         <Rail
-          icon={Gamepad2}
+          icon={Ghost}
+          title="Séries de terror para você maratonar"
+          subtitle="Cabo do Medo, IT: Bem-Vindos a Derry, From, A Maldição da Residência Hill e muito mais"
+          items={series}
+        />
+        <Rail
+          icon={Torii}
           title="Animes Crunchyroll"
-          subtitle="Demon Slayer, o anime mais assistido do momento, e todos os simulcasts em HD"
+          subtitle="Demon Slayer, Jujutsu Kaisen, Solo Leveling, Dan Da Dan e todos os simulcasts em HD"
           items={animes}
         />
         <Rail
           icon={Baby}
-          title="Canais infantis"
-          subtitle="Disney+, desenhos e muito mais para a criançada se divertir com segurança"
+          title="Canais e desenhos infantis"
+          subtitle="Bluey, Patrulha Canina, Bob Esponja, Disney+ e muito mais para a criançada"
           items={infantil}
         />
+
       </section>
 
       {/* FEATURES */}
@@ -363,7 +324,7 @@ function Index() {
               d: "Temporadas completas dos sucessos do momento para maratonar sem limites.",
             },
             {
-              icon: Gamepad2,
+              icon: Torii,
               t: "Animes atualizados",
               d: "Lista enorme com todos os animes do momento, sempre em dia e em HD.",
             },
@@ -506,14 +467,18 @@ function Index() {
               telas: "Use 2 telas simultaneamente",
               extra: "Plano Mensal",
               destaque: false,
+              selo: null as string | null,
+              link: "https://ev.braip.com/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
             },
             {
               nome: "Plano PRIME",
-              preco: "R$149,90",
-              periodo: "2 anos",
+              preco: "R$97",
+              periodo: "1 ano",
               telas: "Use 4 telas simultaneamente",
-              extra: "2 anos de acesso",
+              extra: "1 ano de acesso · sem mensalidade",
               destaque: true,
+              selo: "Mais escolhido",
+              link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
             },
             {
               nome: "Plano PRO",
@@ -522,6 +487,8 @@ function Index() {
               telas: "Use 2 telas simultaneamente",
               extra: "Plano Semestral",
               destaque: false,
+              selo: null as string | null,
+              link: "https://ev.braip.com/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
             },
           ].map((p, i) => (
             <Reveal key={p.nome} delay={i * 100}>
@@ -532,9 +499,9 @@ function Index() {
                     : "glass"
                 }`}
               >
-                {p.destaque && (
+                {p.selo && (
                   <span className="bg-hot absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full px-4 py-1.5 text-[11px] font-bold tracking-wide text-primary-foreground uppercase">
-                    Recomendado
+                    {p.selo}
                   </span>
                 )}
                 <h3 className="font-display text-sm font-bold tracking-[0.18em] text-accent uppercase">
@@ -556,7 +523,12 @@ function Index() {
                   Acesso ilimitado a todos os conteúdos, a diversão é garantida.
                 </p>
 
-                <a href="#planos" className="btn-cta mt-7 w-full">
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-cta mt-7 w-full"
+                >
                   Comprar agora
                 </a>
 
@@ -585,6 +557,17 @@ function Index() {
         </div>
       </section>
 
+      {/* PAGAMENTO E SEGURANÇA */}
+      <TrustSection />
+
+      {/* FAQ */}
+      <Faq>
+        <SmoothLink href={CTA_HREF} className="btn-cta">
+          <Zap className="size-4" />
+          VER PLANOS DISPONÍVEIS
+        </SmoothLink>
+      </Faq>
+
       {/* FOOTER */}
       <footer className="mt-10 border-t border-border py-12">
         <div className="mx-auto flex w-[94%] max-w-6xl flex-col items-center gap-5 text-center">
@@ -596,6 +579,12 @@ function Index() {
             decodificadores. Assista quando e onde quiser.
           </p>
           <Cta />
+          <Link
+            to="/suporte"
+            className="text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+          >
+            Precisa de ajuda? Fale com o suporte
+          </Link>
           <p className="mt-4 text-xs text-muted-foreground">
             © {new Date().getFullYear()} Cineflix. Imagens de divulgação dos
             respectivos estúdios (fonte: TMDB).
@@ -608,3 +597,4 @@ function Index() {
     </div>
   );
 }
+
