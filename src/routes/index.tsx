@@ -94,66 +94,7 @@ function Cta({ children = "ADQUIRA O SEU AGORA" }: { children?: string }) {
 }
 
 
-function Poster({ item, wide = false }: { item: Title; wide?: boolean }) {
-  return (
-    <div
-      className={`card-lift group relative shrink-0 overflow-hidden rounded-3xl border border-border bg-surface ${
-        wide ? "w-[210px] sm:w-[240px]" : "w-[160px] sm:w-[185px]"
-      }`}
-    >
-      <img
-        src={img(item.poster)}
-        alt={`Pôster de ${item.title}`}
-        loading="lazy"
-        className="aspect-2/3 w-full object-cover transition-transform duration-700 group-hover:scale-110"
-      />
-      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background via-background/10 to-transparent opacity-90" />
-      {item.tag && (
-        <span className="bg-hot absolute top-3 left-3 rounded-full px-3 py-1 text-[10px] font-bold tracking-wide text-primary-foreground uppercase">
-          {item.tag}
-        </span>
-      )}
-      <div className="absolute inset-x-0 bottom-0 p-3">
-        <p className="truncate text-sm font-bold">{item.title}</p>
-        <p className="text-xs text-muted-foreground">{item.year}</p>
-      </div>
-    </div>
-  );
-}
 
-function Rail({
-  title,
-  subtitle,
-  items,
-  icon: Icon,
-}: {
-  title: string;
-  subtitle: string;
-  items: Title[];
-  icon: typeof Flame;
-}) {
-  return (
-    <Reveal className="py-8">
-      <div className="mb-5 flex items-end justify-between gap-4 px-5 md:px-10">
-        <div>
-          <div className="mb-1 flex items-center gap-2">
-            <Icon className="size-5 text-accent" />
-            <h3 className="text-xl font-bold md:text-2xl">{title}</h3>
-          </div>
-          <p className="text-sm text-muted-foreground">{subtitle}</p>
-        </div>
-      </div>
-      <div className="no-scrollbar flex gap-4 overflow-x-auto px-5 pb-4 md:px-10">
-        {items.map((t, i) => (
-          <Reveal key={t.title} delay={Math.min(i, 6) * 70} className="shrink-0">
-            <Poster item={t} />
-          </Reveal>
-        ))}
-      </div>
-
-    </Reveal>
-  );
-}
 
 function Index() {
   const [slide, setSlide] = useState(0);
