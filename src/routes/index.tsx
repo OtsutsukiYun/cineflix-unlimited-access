@@ -5,7 +5,6 @@ import {
   Clapperboard,
   Flame,
   Ghost,
-  Baby,
   Trophy,
   Tv,
   Play,
@@ -20,17 +19,24 @@ import { Faq } from "@/components/Faq";
 import { TrustSection } from "@/components/TrustSection";
 import { Torii } from "@/components/icons";
 import { BrandLogo } from "@/components/BrandLogo";
+import { PromoBar } from "@/components/PromoBar";
+import { FeaturedCarousel } from "@/components/FeaturedCarousel";
 import { SocialProof } from "@/components/SocialProof";
 import futebol from "@/assets/futebol.jpg";
 import {
   animes,
   heroSlides,
   img,
-  infantil,
   plataformas,
   series,
   terror,
 } from "@/data/catalog";
+
+const destaques = [
+  ...terror.slice(0, 9),
+  ...series.slice(0, 6),
+  ...animes.slice(0, 3),
+];
 
 
 
@@ -41,13 +47,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Mais de 60.000 filmes, séries, animes, infantil e futebol ao vivo em um só app. Lançamentos de terror, Netflix, Disney+, HBO Max e mais por R$20/mês.",
+          "Mais de 60.000 filmes, séries, animes e futebol ao vivo em um só app. Lançamentos de terror, Netflix, Disney+, HBO Max e mais por R$20/mês.",
       },
       { property: "og:title", content: "Cineflix — Streaming ilimitado por R$20/mês" },
       {
         property: "og:description",
         content:
-          "Todos os streamings em uma única plataforma. Lançamentos de terror, animes, infantil e esportes ao vivo em 4K.",
+          "Todos os streamings em uma única plataforma. Lançamentos de terror, séries, animes e esportes ao vivo em 4K.",
       },
     ],
   }),
@@ -113,7 +119,8 @@ function Index() {
     <div className="min-h-screen overflow-x-hidden bg-background">
       {/* NAV */}
       <header className="fixed inset-x-0 top-0 z-50">
-        <div className="glass mx-auto mt-4 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-5 py-3">
+        <PromoBar />
+        <div className="glass mx-auto mt-3 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-5 py-3">
           <div className="flex items-center gap-2">
             <div className="bg-hot flex size-8 items-center justify-center rounded-full">
               <Play className="size-4 fill-current text-primary-foreground" />
@@ -128,7 +135,7 @@ function Index() {
               { h: "#esportes", l: "Esportes" },
               { h: "#economia", l: "Economia" },
               { h: "#planos", l: "Planos" },
-              { h: "#faq", l: "FAQ" },
+              { h: "#perguntas", l: "Perguntas frequentes" },
             ].map((n) => (
               <SmoothLink
                 key={n.h}
@@ -146,7 +153,11 @@ function Index() {
             </Link>
           </nav>
 
-          <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs">
+          <SmoothLink
+            href={CTA_HREF}
+            className="btn-cta animate-cta-attention animate-pulse-ring shrink-0 px-5 py-2.5 text-xs sm:px-6 sm:text-sm"
+          >
+            <Zap className="size-3.5" />
             Assinar
           </SmoothLink>
 
@@ -156,21 +167,32 @@ function Index() {
       {/* HERO */}
       <section className="relative flex min-h-[100svh] items-center overflow-hidden">
         {heroSlides.map((s, i) => (
-          <img
+          <div
             key={s.title}
-            src={img(s.backdrop, "w1280")}
-            alt={`Cena do filme ${s.title}`}
-            className="absolute inset-0 size-full object-cover transition-all duration-[2200ms] ease-out"
-            style={{
-              opacity: i === slide ? 1 : 0,
-              transform: i === slide ? "scale(1.06)" : "scale(1)",
-            }}
-          />
+            aria-hidden={i !== slide}
+            className="absolute inset-0 transition-opacity duration-[1600ms] ease-out"
+            style={{ opacity: i === slide ? 1 : 0 }}
+          >
+            {/* mobile: capa inteira, sem cortar o personagem */}
+            <div className="absolute inset-x-0 top-[7.5rem] h-[46vh] md:hidden">
+              <img
+                src={img(s.poster, "w780")}
+                alt={`Capa do filme ${s.title}`}
+                className="size-full object-contain object-center"
+              />
+            </div>
+            {/* desktop: imagem panorâmica em alta resolução */}
+            <img
+              src={img(s.backdrop, "original")}
+              alt={`Cena do filme ${s.title}`}
+              className="hidden size-full object-cover object-center md:block"
+            />
+          </div>
         ))}
-        <div className="absolute inset-0 bg-linear-to-r from-background via-background/80 to-background/20" />
-        <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-background/70" />
+        <div className="absolute inset-0 bg-linear-to-r from-background via-background/70 to-background/10 max-md:hidden" />
+        <div className="absolute inset-0 bg-linear-to-t from-background via-background/60 to-background/10 md:from-background md:via-transparent md:to-background/60" />
 
-        <div className="animate-rise relative z-10 mx-auto w-[94%] max-w-6xl pt-28 pb-16">
+        <div className="animate-rise relative z-10 mx-auto w-[92%] max-w-6xl pt-[calc(7.5rem+48vh)] pb-16 md:pt-32">
           <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
               <span className="glass mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wide uppercase">
@@ -270,6 +292,13 @@ function Index() {
         </div>
       </section>
 
+      {/* CARROSSEL DESTAQUES */}
+      <FeaturedCarousel
+        title="Em destaque na Cineflix"
+        subtitle="Arraste ou use as setas para navegar pelos filmes e séries do momento."
+        items={destaques}
+      />
+
       {/* CATÁLOGO */}
       <section id="catalogo" className="py-16">
         <Reveal className="mx-auto mb-4 w-[94%] max-w-6xl text-center">
@@ -300,12 +329,6 @@ function Index() {
           subtitle="Demon Slayer, Jujutsu Kaisen, Solo Leveling, Dan Da Dan e todos os simulcasts em HD"
           items={animes}
         />
-        <Rail
-          icon={Baby}
-          title="Canais e desenhos infantis"
-          subtitle="Bluey, Patrulha Canina, Bob Esponja, Disney+ e muito mais para a criançada"
-          items={infantil}
-        />
 
       </section>
 
@@ -329,14 +352,9 @@ function Index() {
               d: "Lista enorme com todos os animes do momento, sempre em dia e em HD.",
             },
             {
-              icon: Baby,
-              t: "Canais infantis",
-              d: "Toda a lista para a criançada, incluindo Disney+ e muito mais.",
-            },
-            {
               icon: ShieldCheck,
               t: "Canais adultos",
-              d: "Opcional e protegido por senha, para a segurança das crianças.",
+              d: "Opcional e protegido por senha, liberado apenas com o seu código.",
             },
             {
               icon: Trophy,
@@ -560,7 +578,7 @@ function Index() {
       {/* PAGAMENTO E SEGURANÇA */}
       <TrustSection />
 
-      {/* FAQ */}
+      {/* PERGUNTAS FREQUENTES */}
       <Faq>
         <SmoothLink href={CTA_HREF} className="btn-cta">
           <Zap className="size-4" />

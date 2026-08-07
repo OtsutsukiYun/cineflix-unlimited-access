@@ -24,8 +24,8 @@ const PERGUNTAS = [
     a: "A partir de 10 Mbps você assiste em HD com estabilidade. Para 4K recomendamos 25 Mbps ou mais.",
   },
   {
-    q: "Tem conteúdo adulto? É seguro para crianças?",
-    a: "O pacote adulto é totalmente opcional e fica protegido por senha, então a criançada navega apenas pelos canais infantis com segurança.",
+    q: "Tem conteúdo adulto? Como funciona o bloqueio?",
+    a: "O pacote adulto é totalmente opcional e vem bloqueado por senha, liberado apenas por quem contratou o plano.",
   },
   {
     q: "Preciso pagar mensalidade nos planos anuais?",
@@ -33,7 +33,7 @@ const PERGUNTAS = [
   },
   {
     q: "Quais são as formas de pagamento?",
-    a: "Cartão de crédito (com parcelamento), PIX e boleto bancário. O checkout é criptografado e processado por plataforma segura.",
+    a: "Cartão de crédito (com parcelamento) e PIX. O checkout é criptografado e processado por plataforma segura.",
   },
   {
     q: "E se eu tiver algum problema?",
@@ -45,7 +45,7 @@ export function Faq({ children }: { children?: React.ReactNode }) {
   const [aberta, setAberta] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="mx-auto w-[94%] max-w-3xl py-20">
+    <section id="perguntas" className="mx-auto w-[94%] max-w-3xl py-20">
       <Reveal className="text-center">
         <span className="glass mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase">
           <HelpCircle className="size-3.5 text-accent" /> Dúvidas frequentes
