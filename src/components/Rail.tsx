@@ -5,7 +5,7 @@ import { img, type Title } from "@/data/catalog";
 
 function Poster({ item }: { item: Title }) {
   return (
-    <div className="card-lift group relative shrink-0 overflow-hidden rounded-3xl border border-border bg-surface w-[150px] sm:w-[175px]">
+    <div className="card-lift group relative shrink-0 overflow-hidden rounded-3xl border border-border bg-surface w-[145px] sm:w-[175px]">
       <img
         src={img(item.poster)}
         alt={`Pôster de ${item.title}`}
@@ -47,7 +47,7 @@ export function Rail({
 
   return (
     <Reveal className="py-8">
-      <div className="mb-5 flex items-end justify-between gap-4 px-5 md:px-10">
+      <div className="mx-auto mb-5 flex w-[92%] max-w-6xl items-end justify-between gap-4">
         <div>
           <div className="mb-1 flex items-center gap-2">
             <Icon className="size-5 text-accent" />
@@ -76,7 +76,7 @@ export function Rail({
       </div>
       <div
         ref={ref}
-        className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 md:px-10"
+        className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-[4vw] pb-4 lg:px-[max(4vw,calc((100vw-72rem)/2))]"
       >
         {items.map((t, i) => (
           <Reveal

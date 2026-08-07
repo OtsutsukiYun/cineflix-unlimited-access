@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, Clock, Headset, MessageCircleQuestion, Wrench } from "lucide-react";
+import { ArrowLeft, Clock, Headset, RefreshCcw, Wrench } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { WhatsAppIcon } from "@/components/icons";
 import { img, terror } from "@/data/catalog";
@@ -26,29 +26,24 @@ export const Route = createFileRoute("/suporte")({
   component: Suporte,
 });
 
-const WHATSAPP = "5511999999999";
-
-const wa = (msg: string) =>
-  `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
-
 const BOTOES = [
   {
     icon: Wrench,
-    titulo: "Ajuda com instalação",
+    titulo: "Iniciar instalação",
     desc: "Configurar o app na Smart TV, TV Box, celular ou computador.",
-    msg: "Olá! Acabei de assinar a Cineflix e preciso de ajuda para instalar o aplicativo no meu aparelho.",
+    link: "https://wa.me/5519981875907?text=INICIAR%20INSTALA%C3%87%C3%83O%20CINEFLIX",
+  },
+  {
+    icon: RefreshCcw,
+    titulo: "Desejo renovar",
+    desc: "Renove seu plano e continue assistindo sem interrupção.",
+    link: "https://wa.me/5519981875907?text=Ol%C3%A1%2C%20quero%20renovar%20o%20meu%20plano",
   },
   {
     icon: Headset,
-    titulo: "Suporte técnico",
-    desc: "App travando, canal fora do ar ou erro de login.",
-    msg: "Olá! Estou com um problema técnico na Cineflix (travamento / canal fora do ar / erro de acesso) e preciso de suporte.",
-  },
-  {
-    icon: MessageCircleQuestion,
-    titulo: "Dúvidas sobre planos e pagamento",
-    desc: "Valores, renovação, telas simultâneas e formas de pagamento.",
-    msg: "Olá! Gostaria de tirar dúvidas sobre os planos e as formas de pagamento da Cineflix.",
+    titulo: "Falar com o suporte",
+    desc: "Ajuda técnica, dúvidas sobre planos, telas e pagamento.",
+    link: "https://wa.me/5519981875907?text=Ol%C3%A1%2C%20preciso%20de%20suporte",
   },
 ];
 
@@ -97,7 +92,7 @@ function Suporte() {
           {BOTOES.map((b, i) => (
             <Reveal key={b.titulo} delay={i * 110}>
               <a
-                href={wa(b.msg)}
+                href={b.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="glass card-lift flex w-full items-center gap-5 rounded-4xl p-6 md:p-7"

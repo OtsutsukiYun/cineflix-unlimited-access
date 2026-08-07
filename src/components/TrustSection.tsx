@@ -1,4 +1,4 @@
-import { CreditCard, Lock, QrCode, Barcode, ShieldCheck, RefreshCcw } from "lucide-react";
+import { CreditCard, Lock, QrCode, ShieldCheck, RefreshCcw } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
 export function TrustSection() {
@@ -14,7 +14,6 @@ export function TrustSection() {
               {[
                 { icon: CreditCard, l: "Cartão de crédito" },
                 { icon: QrCode, l: "PIX" },
-                { icon: Barcode, l: "Boleto" },
               ].map((f) => (
                 <span
                   key={f.l}
