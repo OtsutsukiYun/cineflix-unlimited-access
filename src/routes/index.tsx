@@ -576,7 +576,7 @@ function Index() {
       {/* PAGAMENTO E SEGURANÇA */}
       <TrustSection />
 
-      {/* FAQ */}
+      {/* PERGUNTAS FREQUENTES */}
       <Faq>
         <SmoothLink href={CTA_HREF} className="btn-cta">
           <Zap className="size-4" />
