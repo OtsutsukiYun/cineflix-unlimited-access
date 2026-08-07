@@ -173,12 +173,14 @@ function Index() {
             className="absolute inset-0 transition-opacity duration-[1600ms] ease-out"
             style={{ opacity: i === slide ? 1 : 0 }}
           >
-            {/* mobile: enquadramento vertical (personagem sempre visível) */}
-            <img
-              src={img(s.poster, "w780")}
-              alt={`Cena do filme ${s.title}`}
-              className="size-full object-cover object-top md:hidden"
-            />
+            {/* mobile: capa inteira, sem cortar o personagem */}
+            <div className="absolute inset-x-0 top-[7.5rem] h-[46vh] md:hidden">
+              <img
+                src={img(s.poster, "w780")}
+                alt={`Capa do filme ${s.title}`}
+                className="size-full object-contain object-center"
+              />
+            </div>
             {/* desktop: imagem panorâmica em alta resolução */}
             <img
               src={img(s.backdrop, "original")}
@@ -188,9 +190,9 @@ function Index() {
           </div>
         ))}
         <div className="absolute inset-0 bg-linear-to-r from-background via-background/70 to-background/10 max-md:hidden" />
-        <div className="absolute inset-0 bg-linear-to-t from-background via-background/45 to-background/25 md:from-background md:via-transparent md:to-background/60" />
+        <div className="absolute inset-0 bg-linear-to-t from-background via-background/60 to-background/10 md:from-background md:via-transparent md:to-background/60" />
 
-        <div className="animate-rise relative z-10 mx-auto w-[92%] max-w-6xl pt-[58vh] pb-16 md:pt-32">
+        <div className="animate-rise relative z-10 mx-auto w-[92%] max-w-6xl pt-[calc(7.5rem+48vh)] pb-16 md:pt-32">
           <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
               <span className="glass mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold tracking-wide uppercase">
