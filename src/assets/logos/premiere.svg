@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <path d="M15 18 H42 C56 18 64 25 64 39 C64 53 56 60 42 60 H28 V66 H15 V18 Z M28 29 V49 H41 C46 49 51 45 51 39 C51 33 46 29 41 29 H28 Z" fill="#00E676" />
+  <circle cx="39.5" cy="39" r="4" fill="#00E676" />
+  <text x="78" y="53" font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="33" fill="#FFFFFF" letter-spacing="3">PREMIERE</text>
+</svg>

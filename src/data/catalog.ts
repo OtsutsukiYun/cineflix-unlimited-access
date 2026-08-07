@@ -7,9 +7,24 @@ import paramountLogo from "@/assets/logos/paramountplus.svg";
 import appletvLogo from "@/assets/logos/appletv.svg";
 import crunchyrollLogo from "@/assets/logos/crunchyroll.svg";
 import daznLogo from "@/assets/logos/dazn.svg";
+import starLogo from "@/assets/logos/starplus.svg";
+import telecineLogo from "@/assets/logos/telecine.svg";
+import premiereLogo from "@/assets/logos/premiere.svg";
 
 export const img = (path: string, size = "w780") =>
   `https://image.tmdb.org/t/p/${size}${path}`;
+
+export type HeroSlide = {
+  title: string;
+  year: string;
+  genre: string;
+  tagline: string;
+  backdrop: string;
+  poster: string;
+  objectPosition?: string;
+  objectPositionMobile?: string;
+  brightness?: string;
+};
 
 export type Title = {
   title: string;
@@ -19,48 +34,95 @@ export type Title = {
 };
 
 /** Destaques do carrossel de fundo (lançamentos de terror reais - TMDB) */
-export const heroSlides = [
-  {
-    title: "Hokum",
-    year: "2026",
-    genre: "Terror / Sobrenatural",
-    backdrop: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg",
-    poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg",
-  },
-  {
-    title: "Backrooms: Um Não-Lugar",
-    year: "2026",
-    genre: "Terror / Mistério",
-    backdrop: "/dqmMWNWfLnExDRpMtIMqI97GQFR.jpg",
-    poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg",
-  },
+export const heroSlides: HeroSlide[] = [
   {
     title: "Obsessão",
     year: "2026",
     genre: "Terror / Suspense",
-    backdrop: "/rZfmzpixLKLR3Hg2u0WgC7XLFl8.jpg",
+    tagline: "Quando o desejo se torna um pesadelo sem saída.",
+    backdrop: "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg",
     poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
+    objectPosition: "center 18%",
+    objectPositionMobile: "50% 12%",
   },
   {
     title: "Undertone",
     year: "2026",
     genre: "Terror Psicológico",
-    backdrop: "/4BSJVRQ3EsHMIVZSiKz1l58jDhg.jpg",
+    tagline: "Existe um som que não deveria ser ouvido.",
+    backdrop: "/6SDxrzyfGyCQvDwTfNbcajzrSwh.jpg",
     poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg",
+    objectPosition: "center 25%",
+    objectPositionMobile: "50% 20%",
   },
   {
-    title: "Maldição da Múmia",
+    title: "Passageiro do Mal",
+    year: "2026",
+    genre: "Terror / Suspense",
+    tagline: "Depois de um acidente na estrada, uma força maligna não os deixará em paz.",
+    backdrop: "/3pDfu71mrzSuFYyIfnKEjt8z4BC.jpg",
+    poster: "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+  },
+  {
+    title: "Hokum",
     year: "2026",
     genre: "Terror / Sobrenatural",
-    backdrop: "/xugEpZk9YQ0DIz1aFvH5HGkqpZK.jpg",
-    poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg",
+    tagline: "Segredos sombrios despertam na hospedaria amaldiçoada.",
+    backdrop: "/qY7zVZ7liULhfRoXg4c9Xl83LcR.jpg",
+    poster: "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg",
+    objectPosition: "center 15%",
+    objectPositionMobile: "50% 12%",
+  },
+  {
+    title: "Origem (FROM)",
+    year: "Série",
+    genre: "Série de Terror / Mistério",
+    tagline: "Uma cidade sem saída onde o mal se esconde na noite.",
+    backdrop: "/xLdw1xdHocKYFFvx7w41NchXMfJ.jpg",
+    poster: "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+    brightness: "brightness(0.72)",
+  },
+  {
+    title: "Backrooms: Um Não-Lugar",
+    year: "2026",
+    genre: "Terror / Mistério",
+    tagline: "O labirinto infinito além dos limites da realidade.",
+    backdrop: "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg",
+    poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg",
+    objectPosition: "45% 20%",
+    objectPositionMobile: "45% 15%",
+  },
+  {
+    title: "Channel Zero",
+    year: "Série",
+    genre: "Série de Terror Psicológico",
+    tagline: "O medo ganha vida a cada episódio macabro.",
+    backdrop: "/cVQXO6EpAaYLp14037tXyqfsSy3.jpg",
+    poster: "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+  },
+  {
+    title: "O Segredo de Widow's Bay",
+    year: "2026",
+    genre: "Série de Terror / Mistério",
+    tagline: "Uma cidade amaldiçoada onde os segredos do passado voltam à tona.",
+    backdrop: "/u6XtMg9Ai9siEbEs0UudPS3EaZY.jpg",
+    poster: "/vKq8XEJKxQTHd2Bm5zZMFPUrke7.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
   },
 ];
 
 export const terror: Title[] = [
+  { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Mais assistido" },
+  { title: "Boca do Diabo", poster: "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg", year: "2026", tag: "Novo" },
   { title: "Hokum", poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", year: "2026", tag: "Lançamento 2026" },
   { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "Lançamento 2026" },
-  { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "Lançamento" },
   { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "Novo" },
   { title: "Maldição da Múmia", poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", year: "2026", tag: "Lançamento" },
   { title: "Passageiro do Mal", poster: "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg", year: "2025", tag: "Novo" },
@@ -140,19 +202,19 @@ export const series: Title[] = [
 
 export const animes: Title[] = [
   { title: "Demon Slayer: Castelo Infinito", poster: "/41XdjOXGQoH0HTDNqEfwKGvGgwm.jpg", year: "2025", tag: "#1 mais assistido" },
+  { title: "Frieren e a Jornada para o Além", poster: "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", year: "Série", tag: "Em alta" },
   { title: "Jujutsu Kaisen", poster: "/8R1mMSC1gX1cg5ed7ns49JOEqw3.jpg", year: "Série" },
+  { title: "Solo Leveling", poster: "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", year: "Série" },
   { title: "One Piece", poster: "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", year: "Série" },
-  { title: "Demon Slayer: Mugen Train", poster: "/q9Vmd2FmDoiPWsBymwweDkwM4md.jpg", year: "Filme" },
+  { title: "One-Punch Man", poster: "/dT10AxJIXVvRwFAew4tt2RhzJrD.jpg", year: "Série" },
   { title: "Attack on Titan", poster: "/8aMqmB5xSblsZc7bLMEhE28yHa2.jpg", year: "Série" },
   { title: "Chainsaw Man", poster: "/iFM1dyFi0rByvEomEkmm7NpQeeb.jpg", year: "Série" },
-  { title: "Solo Leveling", poster: "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", year: "Série", tag: "Em alta" },
   { title: "Dan Da Dan", poster: "/vtQug1eOyeU2VXIpNoDF1lTlcH4.jpg", year: "Série" },
   { title: "Sakamoto Days", poster: "/wRpCqsJFyKNuh5FMegNPrhzp2NF.jpg", year: "Série" },
   { title: "Kaiju No. 8", poster: "/bJxGs0w5RAhaX4fIUQu511rvm0S.jpg", year: "Série" },
   { title: "Spy x Family", poster: "/7NAvPYPAu7MeHwP8E9sn81PqsRh.jpg", year: "Série" },
   { title: "My Hero Academia", poster: "/cfESQ8y8oNAeLuRbs7NkW7Qjwhy.jpg", year: "Série" },
   { title: "Blue Lock", poster: "/fcKH1NQzoTXiYO1OrhaFFwTKhBp.jpg", year: "Série" },
-  { title: "Frieren e a Jornada para o Além", poster: "/d9IuDqPWoUYukwblQhqV00jlCzZ.jpg", year: "Série" },
   { title: "Dragon Ball Daima", poster: "/qlLJvJO8rsltmnWWbKgT13hP90I.jpg", year: "Série" },
   { title: "Tokyo Revengers", poster: "/XbjlgUJknGCv7cNuinxdaFUFNt.jpg", year: "Série" },
   { title: "Naruto Shippuden", poster: "/nRJmByfK9XdtOY73VArcN8KpKVs.jpg", year: "Série" },
@@ -193,18 +255,18 @@ export type Plataforma = {
 };
 
 export const plataformas: Plataforma[] = [
-  { nome: "Netflix", logo: netflixLogo, cor: "#E50914", preco: "R$ 59,90" },
-  { nome: "Disney+", logo: disneyLogo, invert: true, cor: "#4BA3FF", preco: "R$ 55,90" },
-  { nome: "HBO Max", logo: hboLogo, cor: "#A855F7", preco: "R$ 62,90" },
+  { nome: "Netflix", logo: netflixLogo, cor: "#E50914", preco: "R$ 20,90" },
+  { nome: "Disney+", logo: disneyLogo, invert: true, cor: "#4BA3FF", preco: "R$ 20,90" },
+  { nome: "HBO Max", logo: hboLogo, cor: "#A855F7", preco: "R$ 22,90" },
   { nome: "Prime Video", logo: primeLogo, cor: "#38BDF8", preco: "R$ 19,90" },
-  { nome: "Apple TV+", logo: appletvLogo, invert: true, cor: "#FFFFFF", preco: "R$ 21,90" },
-  { nome: "Paramount+", logo: paramountLogo, cor: "#4C8DFF", preco: "R$ 19,90" },
-  { nome: "Crunchyroll", logo: crunchyrollLogo, cor: "#F47521", preco: "R$ 29,90" },
-  { nome: "Globoplay", logo: globoplayLogo, cor: "#FF5C5C", preco: "R$ 34,90" },
-  { nome: "DAZN", logo: daznLogo, cor: "#F8FF13", preco: "R$ 34,90" },
-  { nome: "Star+", logo: null, cor: "#FF8A3D", preco: "R$ 39,90" },
-  { nome: "Telecine", logo: null, cor: "#2DE0C0", preco: "R$ 44,95" },
-  { nome: "Premiere", logo: null, cor: "#4ADE80", preco: "R$ 89,90" },
+  { nome: "Apple TV+", logo: appletvLogo, invert: true, cor: "#FFFFFF", preco: "R$ 29,90" },
+  { nome: "Paramount+", logo: paramountLogo, cor: "#4C8DFF", preco: "R$ 34,90" },
+  { nome: "Premiere", logo: premiereLogo, cor: "#4ADE80", preco: "R$ 29,90" },
+  { nome: "Crunchyroll", logo: crunchyrollLogo, cor: "#F47521", preco: "R$ 19,90" },
+  { nome: "Claro TV+", logo: null, cor: "#E50914", preco: "R$ 99,90" },
+  { nome: "Combate", logo: null, cor: "#E50914", preco: "R$ 34,90" },
+  { nome: "Globoplay", logo: globoplayLogo, cor: "#FF5C5C", preco: "R$ 22,90" },
+  { nome: "Telecine", logo: telecineLogo, cor: "#2DE0C0", preco: "R$ 29,90" },
 ];
 
 export const icon = (slug: string) => `https://cdn.simpleicons.org/${slug}/white`;

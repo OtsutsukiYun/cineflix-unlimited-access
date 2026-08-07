@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" fill="none">
+  <path d="M12 18 L28 40 L12 62 H25 L41 40 L25 18 H12 Z" fill="#E50914" />
+  <path d="M28 18 L44 40 L28 62 H41 L57 40 L41 18 H28 Z" fill="#00E5FF" />
+  <text x="70" y="53" font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="34" fill="#FFFFFF" letter-spacing="4">TELECINE</text>
+</svg>

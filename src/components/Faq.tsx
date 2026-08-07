@@ -43,9 +43,44 @@ const PERGUNTAS = [
 
 export function Faq({ children }: { children?: React.ReactNode }) {
   const [aberta, setAberta] = useState<number | null>(0);
+  const col1 = PERGUNTAS.filter((_, i) => i % 2 === 0);
+  const col2 = PERGUNTAS.filter((_, i) => i % 2 !== 0);
+
+  const renderQuestion = (p: (typeof PERGUNTAS)[0], origIndex: number) => {
+    const open = aberta === origIndex;
+    return (
+      <Reveal key={p.q} delay={Math.min(origIndex, 6) * 60}>
+        <div className="glass overflow-hidden rounded-3xl">
+          <button
+            type="button"
+            aria-expanded={open}
+            onClick={() => setAberta(open ? null : origIndex)}
+            className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+          >
+            <span className="font-semibold">{p.q}</span>
+            <ChevronDown
+              className={`size-5 shrink-0 text-accent transition-transform duration-300 ${
+                open ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+          <div
+            className="grid transition-all duration-400 ease-out"
+            style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+          >
+            <div className="overflow-hidden">
+              <p className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground">
+                {p.a}
+              </p>
+            </div>
+          </div>
+        </div>
+      </Reveal>
+    );
+  };
 
   return (
-    <section id="faq" className="mx-auto w-[94%] max-w-3xl py-20">
+    <section id="faq" className="mx-auto w-[94%] max-w-6xl py-10 sm:py-12">
       <Reveal className="text-center">
         <span className="glass mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase">
           <HelpCircle className="size-3.5 text-accent" /> Dúvidas frequentes
@@ -55,39 +90,13 @@ export function Faq({ children }: { children?: React.ReactNode }) {
         </h2>
       </Reveal>
 
-      <div className="mt-10 space-y-3">
-        {PERGUNTAS.map((p, i) => {
-          const open = aberta === i;
-          return (
-            <Reveal key={p.q} delay={Math.min(i, 6) * 60}>
-              <div className="glass overflow-hidden rounded-3xl">
-                <button
-                  type="button"
-                  aria-expanded={open}
-                  onClick={() => setAberta(open ? null : i)}
-                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
-                >
-                  <span className="font-semibold">{p.q}</span>
-                  <ChevronDown
-                    className={`size-5 shrink-0 text-accent transition-transform duration-300 ${
-                      open ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                <div
-                  className="grid transition-all duration-400 ease-out"
-                  style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
-                >
-                  <div className="overflow-hidden">
-                    <p className="px-6 pb-6 text-sm leading-relaxed text-muted-foreground">
-                      {p.a}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          );
-        })}
+      <div className="mt-8 grid items-start gap-3 md:grid-cols-2">
+        <div className="space-y-3">
+          {col1.map((p, i) => renderQuestion(p, i * 2))}
+        </div>
+        <div className="space-y-3">
+          {col2.map((p, i) => renderQuestion(p, i * 2 + 1))}
+        </div>
       </div>
 
       {children && <Reveal className="mt-10 flex justify-center">{children}</Reveal>}

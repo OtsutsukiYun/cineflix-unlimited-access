@@ -46,7 +46,6 @@ export function SocialProof() {
   const [vendas, setVendas] = useState(0);
 
   useEffect(() => {
-    // contador do dia: base estável + incrementos suaves
     const hoje = new Date();
     const base =
       28 + ((hoje.getDate() * 7 + hoje.getMonth() * 13) % 22);
@@ -85,32 +84,31 @@ export function SocialProof() {
 
   return (
     <>
-      {/* Contador de assinaturas do dia */}
-      <div className="pointer-events-none fixed bottom-4 left-1/2 z-40 -translate-x-1/2 md:bottom-6 md:left-6 md:translate-x-0">
+      {/* Contador de assinaturas do dia — canto inferior esquerdo (desktop) ou topo centralizado (mobile) */}
+      <div className="pointer-events-none fixed bottom-4 left-4 z-40 md:bottom-6 md:left-6">
         <div className="glass flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold shadow-[var(--shadow-glow)]">
-          <TrendingUp className="size-3.5 text-accent" />
-          <span>
-            <span className="text-hot font-extrabold">{vendas}</span> pessoas
-            assinaram hoje
+          <TrendingUp className="size-3.5 text-accent shrink-0" />
+          <span className="whitespace-nowrap">
+            <span className="text-hot font-extrabold">{vendas}</span> pessoas assinaram hoje
           </span>
         </div>
       </div>
 
-      {/* Notificação de compra recente */}
+      {/* Notificação de compra recente — canto inferior direito (desktop e mobile) */}
       <div
         aria-live="polite"
-        className="pointer-events-none fixed inset-x-3 bottom-16 z-40 flex justify-center md:inset-x-auto md:right-6 md:bottom-6 md:justify-end"
+        className="pointer-events-none fixed bottom-4 right-4 z-40 md:bottom-6 md:right-6"
       >
         {notif && (
           <div
             key={notif.id}
-            className="glass toast-in flex max-w-[340px] items-center gap-3 rounded-2xl px-4 py-3 shadow-[var(--shadow-neon)]"
+            className="glass toast-in flex max-w-[280px] sm:max-w-[320px] items-center gap-3 rounded-2xl px-4 py-3 shadow-[var(--shadow-neon)]"
           >
             <div className="bg-hot flex size-9 shrink-0 items-center justify-center rounded-full">
               <BadgeCheck className="size-4 text-primary-foreground" />
             </div>
-            <div className="text-left">
-              <p className="text-sm leading-snug font-semibold">
+            <div className="text-left min-w-0">
+              <p className="text-sm leading-snug font-semibold truncate">
                 {notif.nome}, de {notif.estado}
               </p>
               <p className="text-xs text-muted-foreground">

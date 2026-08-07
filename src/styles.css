@@ -55,44 +55,44 @@
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.12 0.005 0);
+  --background: oklch(0.09 0.02 295);
   --foreground: oklch(0.98 0 0);
-  --surface: oklch(0.16 0.005 0);
-  --surface-2: oklch(0.22 0.008 0);
-  --card: oklch(0.16 0.005 0);
+  --surface: oklch(0.13 0.025 295);
+  --surface-2: oklch(0.18 0.035 295);
+  --card: oklch(0.13 0.025 295);
   --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.16 0.005 0);
+  --popover: oklch(0.13 0.025 295);
   --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.53 0.25 25);
+  --primary: oklch(0.48 0.28 295);
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.22 0.008 0);
+  --secondary: oklch(0.18 0.035 295);
   --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.22 0.008 0);
-  --muted-foreground: oklch(0.72 0.01 0);
-  --accent: oklch(0.62 0.24 25);
+  --muted: oklch(0.18 0.025 295);
+  --muted-foreground: oklch(0.72 0.02 295);
+  --accent: oklch(0.65 0.24 300);
   --accent-foreground: oklch(0.99 0 0);
-  --neon: oklch(0.58 0.26 25);
+  --neon: oklch(0.55 0.28 295);
   --neon-foreground: oklch(0.99 0 0);
-  --destructive: oklch(0.55 0.25 25);
+  --destructive: oklch(0.50 0.25 295);
   --destructive-foreground: oklch(0.99 0 0);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.53 0.25 25);
+  --ring: oklch(0.48 0.28 295);
 
   --gradient-hot: linear-gradient(
     100deg,
-    oklch(0.53 0.25 25),
-    oklch(0.48 0.26 20),
-    oklch(0.62 0.24 25)
+    oklch(0.48 0.28 295),
+    oklch(0.42 0.29 285),
+    oklch(0.56 0.26 305)
   );
   --gradient-glass: linear-gradient(
     160deg,
     oklch(1 0 0 / 8%),
     oklch(1 0 0 / 2%)
   );
-  --shadow-glow: 0 18px 50px -14px oklch(0.53 0.25 25 / 75%);
-  --shadow-neon: 0 0 0 1px oklch(0.53 0.25 25 / 45%),
-    0 24px 60px -18px oklch(0.53 0.25 25 / 60%);
+  --shadow-glow: 0 18px 50px -14px oklch(0.48 0.28 295 / 80%);
+  --shadow-neon: 0 0 0 1px oklch(0.48 0.28 295 / 45%),
+    0 24px 60px -18px oklch(0.48 0.28 295 / 65%);
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -137,7 +137,12 @@
 }
 
 @utility text-hot {
-  background-image: var(--gradient-hot);
+  background-image: linear-gradient(
+    100deg,
+    oklch(0.85 0.18 305),
+    oklch(0.75 0.24 295),
+    oklch(0.88 0.16 315)
+  );
   background-clip: text;
   color: transparent;
 }
@@ -146,6 +151,37 @@
   background-image: var(--gradient-glass);
   backdrop-filter: blur(14px);
   border: 1px solid var(--color-border);
+}
+
+@keyframes vibrate-btn {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  65% {
+    transform: scale(1) rotate(0deg);
+  }
+  68% {
+    transform: scale(1.04) translate(-2px, -1px) rotate(-1.8deg);
+  }
+  71% {
+    transform: scale(1.04) translate(2px, 1px) rotate(1.8deg);
+  }
+  74% {
+    transform: scale(1.04) translate(-2px, 1px) rotate(-1.8deg);
+  }
+  77% {
+    transform: scale(1.04) translate(2px, -1px) rotate(1.8deg);
+  }
+  80% {
+    transform: scale(1.02) translate(-1px, 0) rotate(-0.5deg);
+  }
+  83% {
+    transform: scale(1) translate(0, 0) rotate(0deg);
+  }
+}
+
+@utility animate-vibrate {
+  animation: vibrate-btn 2.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
 }
 
 @utility btn-cta {
@@ -163,13 +199,15 @@
   background-image: var(--gradient-hot);
   background-size: 200% 100%;
   box-shadow: var(--shadow-glow);
+  animation: vibrate-btn 2.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
   transition:
     transform 0.35s var(--ease-smooth),
     background-position 0.6s var(--ease-smooth),
     box-shadow 0.35s var(--ease-smooth);
 
   &:hover {
-    transform: translateY(-3px) scale(1.03);
+    animation-play-state: paused;
+    transform: translateY(-3px) scale(1.05);
     background-position: 100% 0;
   }
 }
@@ -206,14 +244,17 @@
 
 @utility reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(45px) scale(0.88);
   transition:
-    opacity 0.9s var(--ease-smooth),
-    transform 0.9s var(--ease-smooth);
+    opacity 0.75s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.75s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  will-change: opacity, transform;
 
   &[data-visible="true"] {
     opacity: 1;
-    transform: none;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -310,4 +351,10 @@
     transform: none !important;
     transition: none !important;
   }
+}
+
+@keyframes promo-slide {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }

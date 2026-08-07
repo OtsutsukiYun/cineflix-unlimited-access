@@ -46,15 +46,15 @@ export function Rail({
   };
 
   return (
-    <Reveal className="py-8">
+    <Reveal className="py-3 sm:py-4">
       <div className="mx-auto w-[94%] max-w-6xl">
         <div className="mb-5 flex items-end justify-between gap-4 px-2 sm:px-4">
           <div>
             <div className="mb-1 flex items-center gap-2">
-              <Icon className="size-5 text-accent" />
-              <h3 className="text-xl font-bold md:text-2xl">{title}</h3>
+              <Icon className="size-4.5 sm:size-5 text-accent shrink-0" />
+              <h3 className="text-lg font-bold sm:text-xl md:text-2xl leading-snug">{title}</h3>
             </div>
-            <p className="text-sm text-muted-foreground">{subtitle}</p>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{subtitle}</p>
           </div>
           <div className="hidden shrink-0 gap-2 md:flex">
             <button
