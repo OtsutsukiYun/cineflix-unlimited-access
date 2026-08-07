@@ -24,15 +24,15 @@ export const heroSlides = [
     title: "Obsessão",
     year: "2026",
     genre: "Terror / Suspense",
-    backdrop: "/rZfmzpixLKLR3Hg2u0WgC7XLFl8.jpg",
-    poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
+    backdrop: "/4k99kV4R1bbbrsnjR205v91Xbin.jpg",
+    poster: "/s0LjkFRyBNTXXkLbHrVLvUOtUMD.jpg",
   },
   {
     title: "Backrooms: Um Não-Lugar",
     year: "2026",
     genre: "Terror / Mistério",
     backdrop: "/dqmMWNWfLnExDRpMtIMqI97GQFR.jpg",
-    poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg",
+    poster: "/4jRhhI1fgYsGi1vB0iVgBfWLeV4.jpg",
   },
   {
     title: "Undertone",
@@ -58,8 +58,8 @@ export const heroSlides = [
 ];
 
 export const terror: Title[] = [
-  { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "Lançamento" },
-  { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "Lançamento" },
+  { title: "Obsessão", poster: "/s0LjkFRyBNTXXkLbHrVLvUOtUMD.jpg", year: "2026", tag: "Lançamento" },
+  { title: "Backrooms: Um Não-Lugar", poster: "/4jRhhI1fgYsGi1vB0iVgBfWLeV4.jpg", year: "2026", tag: "Lançamento" },
   { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "Novo" },
   { title: "Maldição da Múmia", poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", year: "2026", tag: "Lançamento" },
   { title: "Hokum: O Pesadelo da Bruxa", poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", year: "2026", tag: "Lançamento" },
@@ -159,28 +159,6 @@ export const animes: Title[] = [
   { title: "Bleach", poster: "/dx28DE7EgLy0FatOvnaUg0k9j92.jpg", year: "Série" },
   { title: "Hunter x Hunter", poster: "/eobAuhCJA8oRp814V67WhezVXtQ.jpg", year: "Série" },
   { title: "Death Note", poster: "/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg", year: "Série" },
-];
-
-export const infantil: Title[] = [
-  { title: "Bluey", poster: "/9p4pNoGcuyCfHcGWKNrTopqMWtq.jpg", year: "Série" },
-  { title: "Patrulha Canina", poster: "/pQ0bBHR9Q3wurjNMjnqal0gJaYo.jpg", year: "Série" },
-  { title: "Divertida Mente 2", poster: "/lHKNS35r4RTa9GO72vdadMLxoiV.jpg", year: "2024" },
-  { title: "Moana 2", poster: "/dnqgkKoIGf6hErzRm6VtaK1OJrD.jpg", year: "2024" },
-  { title: "Zootopia 2", poster: "/sOgzzmyHJ3uWjEU509AwrcXoE71.jpg", year: "2025", tag: "Novo" },
-  { title: "Mufasa: O Rei Leão", poster: "/iMVuv6Gz5fj7vZ51IjRF3AiW87y.jpg", year: "2024" },
-  { title: "Meu Malvado Favorito 4", poster: "/s8BefU3RIJrfipTpsDtOiatlp8j.jpg", year: "2024" },
-  { title: "Sonic 3: O Filme", poster: "/tfM1T6tAivjvy0sLwt6Y9WvlmzB.jpg", year: "2024" },
-  { title: "Toy Story 4", poster: "/csiyO6q8rR74pfgJDjwINzhoick.jpg", year: "2019" },
-  { title: "Vida de Inseto", poster: "/vvlbdBCuLt7nkQG7anNE6xHNbAO.jpg", year: "1998" },
-  { title: "Bob Esponja", poster: "/yXrtQINkVRyNmfUQFyVG2LuoTqm.jpg", year: "Série" },
-  { title: "Peppa Pig", poster: "/iVaiv0S34JnRKHnYkEiObOI15k5.jpg", year: "Série" },
-  { title: "Masha e o Urso", poster: "/ze2ocNwb3d2R3DLmzdL7kNFrx50.jpg", year: "Série" },
-  { title: "A Casa do Mickey Mouse", poster: "/4vNQVFa4icNSphODjw1wFXTfDcJ.jpg", year: "Série" },
-  { title: "Turma da Mônica", poster: "/jsI9PztwfMBE9LyJqPkWJOAvHD6.jpg", year: "Série" },
-  { title: "Miraculous: Ladybug", poster: "/24wf3O8SJeUSJJvDowQR5FDgHGO.jpg", year: "Série" },
-  { title: "Octonautas", poster: "/iYUhUSKWKpSBahaWLUQIPckAy8p.jpg", year: "Série" },
-  { title: "Pocoyo", poster: "/1fmaC3t96Napg7TR9SsfOX8q11X.jpg", year: "Série" },
-  { title: "Gravity Falls", poster: "/21WVSbe9BB3GYnlxr4UF9H4DmO6.jpg", year: "Série" },
 ];
 
 export type Plataforma = {
