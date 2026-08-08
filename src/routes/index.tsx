@@ -458,65 +458,79 @@ function Index() {
 
         {/* ECONOMIA */}
         <section id="economia" className="relative z-10 mx-auto w-[94%] max-w-6xl py-10 sm:py-12">
-          <Reveal className="text-center">
-            <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl">
-              Isso é o que você pagaria{" "}
-              <span className="text-hot">assinando tudo separado</span>
-            </h2>
-          </Reveal>
+          <Reveal>
+            <div className="relative overflow-hidden rounded-4xl border border-purple-500/30 bg-gradient-to-b from-[#18082c]/90 via-[#100420]/95 to-[#070210]/98 p-6 sm:p-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(168,85,247,0.22)]">
+              {/* LUZES E GLOW DE VIDRO DE FUNDO */}
+              <div className="pointer-events-none absolute -top-32 -left-32 size-64 rounded-full bg-primary/20 blur-3xl" />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent" />
 
-          <CascadeGrid className="mt-8 grid grid-cols-3 gap-2 sm:gap-2.5 sm:grid-cols-4 lg:grid-cols-6">
-            {(visible) =>
-              plataformas.map((p, i) => (
-                <div
-                  key={p.nome}
-                  data-visible={visible}
-                  style={{
-                    transitionDelay: `${i * 45}ms`,
-                  }}
-                  className="reveal relative group flex flex-col items-center justify-center gap-1.5 rounded-2xl px-2.5 py-3.5 border border-white/15 bg-gradient-to-b from-white/10 via-purple-950/25 to-black/70 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-all duration-300 hover:border-purple-400/60 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] overflow-hidden"
-                >
-                  {/* BRILHO REFLEXIVO DE VIDRO 3D */}
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-80" />
+              {/* TÍTULO DO PAINEL */}
+              <div className="relative z-10 text-center mb-8">
+                <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl">
+                  Isso é o que você pagaria{" "}
+                  <span className="text-hot">assinando tudo separado</span>
+                </h2>
+              </div>
 
-                  <div className="flex h-6 items-center">
-                    <BrandLogo
-                      nome={p.nome}
-                      logo={p.logo}
-                      invert={p.invert === true}
-                      escala={p.escala ?? 1}
-                      cor={p.cor}
-                      className="h-5"
-                    />
-                  </div>
+              {/* GRID DOS 12 CARDS DE STREAMING */}
+              <CascadeGrid className="relative z-10 grid grid-cols-3 gap-2 sm:gap-2.5 sm:grid-cols-4 lg:grid-cols-6">
+                {(visible) =>
+                  plataformas.map((p, i) => (
+                    <div
+                      key={p.nome}
+                      data-visible={visible}
+                      style={{
+                        transitionDelay: `${i * 40}ms`,
+                      }}
+                      className="reveal relative group flex flex-col items-center justify-center gap-1.5 rounded-2xl px-2.5 py-3.5 border border-white/12 bg-white/5 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-all duration-300 hover:border-purple-400/60 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(168,85,247,0.35)] overflow-hidden"
+                    >
+                      {/* BRILHO REFLEXIVO DE VIDRO 3D */}
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-80" />
 
-                  {p.logo && (
-                    <p className="text-[10px] text-muted-foreground font-medium truncate max-w-full px-1">{p.nome}</p>
-                  )}
+                      <div className="flex h-6 items-center">
+                        <BrandLogo
+                          nome={p.nome}
+                          logo={p.logo}
+                          invert={p.invert === true}
+                          escala={p.escala ?? 1}
+                          cor={p.cor}
+                          className="h-5"
+                        />
+                      </div>
 
-                  <p className="font-display text-sm sm:text-base font-bold line-through decoration-primary decoration-2 text-white/95 drop-shadow-sm">
-                    {p.preco}
-                  </p>
+                      {p.logo && (
+                        <p className="text-[10px] text-muted-foreground font-medium truncate max-w-full px-1">{p.nome}</p>
+                      )}
+
+                      <p className="font-display text-sm sm:text-base font-bold line-through decoration-primary decoration-2 text-white/95 drop-shadow-sm">
+                        {p.preco}
+                      </p>
+                    </div>
+                  ))
+                }
+              </CascadeGrid>
+
+              {/* LINHA DIVISÓRIA COM GLOW NEON */}
+              <div className="relative z-10 my-8 sm:my-10 h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent" />
+
+              {/* RESUMO DE ECONOMIA UNIFICADO NO PAINEL */}
+              <div className="relative z-10 flex flex-col items-center text-center">
+                <p className="text-muted-foreground text-sm sm:text-base">
+                  Ao todo você pagaria{" "}
+                  <span className="font-bold text-foreground line-through decoration-primary decoration-2">
+                    R$ 386,80
+                  </span>{" "}
+                  por mês
+                </p>
+
+                <p className="font-display mt-3 text-2xl font-extrabold sm:text-4xl md:text-5xl">
+                  Com a Cineflix você paga{" "}
+                  <span className="text-hot">apenas R$20/mês</span>
+                </p>
+
+                <div className="mt-7">
+                  <Cta />
                 </div>
-              ))
-            }
-          </CascadeGrid>
-
-          <Reveal className="mt-8 sm:mt-10" delay={250}>
-            <div className="glass rounded-4xl p-8 text-center md:p-12 border border-primary/40 bg-gradient-to-b from-purple-900/40 via-purple-950/70 to-black/90 backdrop-blur-2xl shadow-[0_0_50px_rgba(229,9,20,0.2)] transition-all duration-700 hover:shadow-[0_0_80px_rgba(168,85,247,0.4)]">
-              <p className="text-muted-foreground text-sm sm:text-base">
-                Ao todo você pagaria{" "}
-                <span className="font-bold text-foreground line-through decoration-primary decoration-2">
-                  R$ 386,80
-                </span>{" "}
-                por mês
-              </p>
-              <p className="font-display mt-4 text-3xl font-extrabold sm:text-4xl md:text-6xl">
-                Com a Cineflix você paga{" "}
-                <span className="text-hot">apenas R$20/mês</span>
-              </p>
-              <div className="mt-8 sm:mt-9">
-                <Cta />
               </div>
             </div>
           </Reveal>
