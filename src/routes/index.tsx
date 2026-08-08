@@ -292,19 +292,18 @@ function Index() {
 
               <HeroHeading />
 
-              <p className="mt-3 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg font-medium text-foreground/90 drop-shadow-md">
-                Mais de 2 mil canais e 60.000 conteúdos — Netflix, Disney+, HBO
-                Max, Prime Video, Apple TV+ e muito mais em um único app. Com a Cineflix você paga <span className="font-extrabold text-white">apenas R$20/mês</span>.
+              <p className="mt-3 sm:mt-5 max-w-lg text-sm sm:text-base md:text-lg font-medium text-foreground/90 drop-shadow-md">
+                Todas as plataformas de streaming e mais de 2.000 canais por <span className="font-extrabold text-white">apenas R$20/mês</span>.
               </p>
 
-              <div className="mt-9 flex flex-wrap items-center gap-4">
+              <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Cta />
                 <SmoothLink href="#catalogo" className="btn-ghost">
                   <Clapperboard className="size-4" /> Ver catálogo
                 </SmoothLink>
               </div>
 
-              <div className="mt-6 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+              <div className="mt-5 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-muted-foreground">
                 <span className="flex items-center gap-2">
                   <Star className="size-4 fill-accent text-accent" /> 4.9 de
                   satisfação
@@ -315,14 +314,11 @@ function Index() {
                 </span>
               </div>
 
-              {/* OBSERVAÇÕES E SINOPSE DO FILME/SÉRIE */}
-              <div className="mt-6 border-l-2 border-primary/80 pl-4 py-1 backdrop-blur-xs max-w-xl">
-                <p className="font-display text-sm font-bold tracking-wide text-foreground">
-                  {heroSlides[slide]?.title}
-                </p>
-                <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground min-h-[2.5rem] line-clamp-2">
-                  {heroSlides[slide]?.genre} · {heroSlides[slide]?.year} — <span className="text-foreground/90 font-medium">{heroSlides[slide]?.tagline}</span>
-                </p>
+              {/* TAG DO SLIDE ATUAL — ULTRA COMPACTA */}
+              <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/40 backdrop-blur-xs px-3.5 py-1 text-xs">
+                <span className="font-bold text-white">{heroSlides[slide]?.title}</span>
+                <span className="text-white/40">•</span>
+                <span className="text-muted-foreground">{heroSlides[slide]?.genre} ({heroSlides[slide]?.year})</span>
               </div>
             </div>
           </div>
