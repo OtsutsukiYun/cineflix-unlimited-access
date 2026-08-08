@@ -13,91 +13,18 @@ function HeroHeading() {
   );
 }
 
-function TypewriterHeading({
-  text,
-  highlightText,
-  onComplete,
-}: {
-  text: string;
-  highlightText: string;
-  onComplete?: () => void;
-}) {
-  const [displayText, setDisplayText] = useState("");
-  const [started, setStarted] = useState(false);
-  const ref = useRef<HTMLHeadingElement>(null);
-  const completedRef = useRef(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !started) {
-          setStarted(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [started]);
-
-  useEffect(() => {
-    if (!started) return;
-    let i = 0;
-    const full = `${text} ${highlightText}`;
-    const timer = setInterval(() => {
-      if (i <= full.length) {
-        setDisplayText(full.slice(0, i));
-        i++;
-      } else {
-        clearInterval(timer);
-        if (onComplete && !completedRef.current) {
-          completedRef.current = true;
-          onComplete();
-        }
-      }
-    }, 28);
-
-    return () => clearInterval(timer);
-  }, [started, text, highlightText, onComplete]);
-
-  const textLength = text.length;
-  const mainPart = displayText.slice(0, textLength);
-  const hotPart = displayText.length > textLength ? displayText.slice(textLength + 1) : "";
-
-  return (
-    <h2 ref={ref} className="text-3xl font-extrabold sm:text-4xl md:text-5xl min-h-[2.4em] flex flex-col justify-center items-center">
-      <span>
-        {mainPart}
-        {displayText.length <= textLength && (
-          <span className="animate-pulse text-primary border-r-2 border-primary ml-1 inline-block h-[0.85em] align-middle" />
-        )}
-      </span>
-      {hotPart && (
-        <span className="text-hot mt-1">
-          {hotPart}
-          <span className="animate-pulse text-accent border-r-2 border-accent ml-1 inline-block h-[0.85em] align-middle" />
-        </span>
-      )}
-    </h2>
-  );
-}
 
 function CascadeGrid({
   children,
-  manualTrigger,
+  className = "mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4",
 }: {
   children: (visible: boolean) => React.ReactNode;
-  manualTrigger?: boolean;
+  className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    if (manualTrigger !== undefined) {
-      if (manualTrigger) setVisible(true);
-      return;
-    }
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(
@@ -111,10 +38,10 @@ function CascadeGrid({
     );
     io.observe(el);
     return () => io.disconnect();
-  }, [manualTrigger]);
+  }, []);
 
   return (
-    <div ref={ref} className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+    <div ref={ref} className={className}>
       {children(visible)}
     </div>
   );
@@ -531,41 +458,43 @@ function Index() {
 
         {/* ECONOMIA */}
         <section id="economia" className="relative z-10 mx-auto w-[94%] max-w-6xl py-10 sm:py-12">
-          <div className="text-center">
-            <TypewriterHeading
-              text="Isso é o que você pagaria"
-              highlightText="assinando tudo separado"
-              onComplete={() => setEconomiaTextDone(true)}
-            />
-          </div>
+          <Reveal className="text-center">
+            <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl">
+              Isso é o que você pagaria{" "}
+              <span className="text-hot">assinando tudo separado</span>
+            </h2>
+          </Reveal>
 
-          <CascadeGrid manualTrigger={economiaTextDone}>
+          <CascadeGrid className="mt-8 grid grid-cols-3 gap-2 sm:gap-2.5 sm:grid-cols-4 lg:grid-cols-6">
             {(visible) =>
               plataformas.map((p, i) => (
                 <div
                   key={p.nome}
                   data-visible={visible}
                   style={{
-                    transitionDelay: `${i * 90}ms`,
+                    transitionDelay: `${i * 45}ms`,
                   }}
-                  className="reveal glass card-lift flex h-full flex-col items-center justify-center gap-3 rounded-3xl px-4 py-7 border border-purple-500/20 bg-gradient-to-b from-purple-950/30 to-black/60 backdrop-blur-md transition-all duration-700 hover:border-primary/60 hover:scale-105 hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]"
+                  className="reveal relative group flex flex-col items-center justify-center gap-1.5 rounded-2xl px-2.5 py-3.5 border border-white/15 bg-gradient-to-b from-white/10 via-purple-950/25 to-black/70 backdrop-blur-xl shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-all duration-300 hover:border-purple-400/60 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(168,85,247,0.4)] overflow-hidden"
                 >
-                  <div className="flex h-7 items-center">
+                  {/* BRILHO REFLEXIVO DE VIDRO 3D */}
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-80" />
+
+                  <div className="flex h-6 items-center">
                     <BrandLogo
                       nome={p.nome}
                       logo={p.logo}
                       invert={p.invert === true}
                       escala={p.escala ?? 1}
                       cor={p.cor}
-                      className="h-6"
+                      className="h-5"
                     />
                   </div>
 
                   {p.logo && (
-                    <p className="text-xs text-muted-foreground font-medium">{p.nome}</p>
+                    <p className="text-[10px] text-muted-foreground font-medium truncate max-w-full px-1">{p.nome}</p>
                   )}
 
-                  <p className="font-display text-lg font-bold line-through decoration-primary decoration-2 text-white/90">
+                  <p className="font-display text-sm sm:text-base font-bold line-through decoration-primary decoration-2 text-white/95 drop-shadow-sm">
                     {p.preco}
                   </p>
                 </div>
