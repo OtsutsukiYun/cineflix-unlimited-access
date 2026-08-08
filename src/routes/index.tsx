@@ -424,89 +424,108 @@ function Index() {
             {[
               {
                 icon: Clapperboard,
+                banner: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1000&auto=format&fit=crop",
                 gradient: "from-rose-600 via-primary to-purple-600",
                 glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
-                corBorda: "border border-rose-500/35 hover:border-rose-400/80",
-                corGlow: "shadow-[0_0_25px_rgba(225,29,72,0.15)] hover:shadow-[0_0_40px_rgba(225,29,72,0.45)]",
-                bgCard: "bg-gradient-to-b from-rose-950/30 via-[#1a061c]/90 to-[#0c0210]/98",
+                corBorda: "border border-rose-500/40 hover:border-rose-300",
+                corGlow: "shadow-[0_0_30px_rgba(225,29,72,0.2)] hover:shadow-[0_0_50px_rgba(225,29,72,0.55)]",
+                bgOverlay: "bg-gradient-to-t from-[#0d0212] via-[#0d0212]/80 to-[#0d0212]/30",
                 titleHover: "group-hover:text-rose-200",
                 t: "Filmes incríveis",
-                d: "Clássicos, lançamentos e grandes produções premiadas em alta definição.",
+                d: "Clássicos, lançamentos do cinema e superproduções premiadas em 4K.",
               },
               {
                 icon: Tv,
+                banner: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1000&auto=format&fit=crop",
                 gradient: "from-purple-600 via-primary to-accent",
                 glow: "shadow-[0_0_22px_rgba(168,85,247,0.85)] border-purple-300/80",
-                corBorda: "border border-purple-500/35 hover:border-purple-400/80",
-                corGlow: "shadow-[0_0_25px_rgba(168,85,247,0.15)] hover:shadow-[0_0_40px_rgba(168,85,247,0.45)]",
-                bgCard: "bg-gradient-to-b from-purple-950/30 via-[#16072b]/90 to-[#0b0314]/98",
+                corBorda: "border border-purple-500/40 hover:border-purple-300",
+                corGlow: "shadow-[0_0_30px_rgba(168,85,247,0.2)] hover:shadow-[0_0_50px_rgba(168,85,247,0.55)]",
+                bgOverlay: "bg-gradient-to-t from-[#0b0314] via-[#0b0314]/80 to-[#0b0314]/30",
                 titleHover: "group-hover:text-purple-200",
                 t: "Séries imperdíveis",
-                d: "Temporadas completas dos sucessos do momento para maratonar sem limites.",
+                d: "Temporadas completas dos sucessos globais para maratonar sem limites.",
               },
               {
                 icon: Torii,
+                banner: img("/qY7zVZ7liULhfRoXg4c9Xl83LcR.jpg", "w780"),
                 gradient: "from-fuchsia-600 via-purple-600 to-pink-500",
                 glow: "shadow-[0_0_22px_rgba(217,70,239,0.85)] border-fuchsia-300/80",
-                corBorda: "border border-fuchsia-500/35 hover:border-fuchsia-400/80",
-                corGlow: "shadow-[0_0_25px_rgba(217,70,239,0.15)] hover:shadow-[0_0_40px_rgba(217,70,239,0.45)]",
-                bgCard: "bg-gradient-to-b from-fuchsia-950/30 via-[#1b0626]/90 to-[#0e0214]/98",
+                corBorda: "border border-fuchsia-500/40 hover:border-fuchsia-300",
+                corGlow: "shadow-[0_0_30px_rgba(217,70,239,0.2)] hover:shadow-[0_0_50px_rgba(217,70,239,0.55)]",
+                bgOverlay: "bg-gradient-to-t from-[#0e0214] via-[#0e0214]/80 to-[#0e0214]/30",
                 titleHover: "group-hover:text-fuchsia-200",
                 t: "Animes atualizados",
-                d: "Lista enorme com todos os animes do momento, sempre em dia e em HD.",
+                d: "Acervo completo com os animes mais populares do momento em HD.",
               },
               {
                 icon: Baby,
+                banner: img("/xg27NrXi7VXCGUr7MG75UqLl6Vg.jpg", "w780"),
                 gradient: "from-amber-500 via-orange-500 to-rose-500",
                 glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-amber-300/80",
-                corBorda: "border border-amber-500/35 hover:border-amber-400/80",
-                corGlow: "shadow-[0_0_25px_rgba(245,158,11,0.15)] hover:shadow-[0_0_40px_rgba(245,158,11,0.45)]",
-                bgCard: "bg-gradient-to-b from-amber-950/25 via-[#1a1008]/90 to-[#0e0703]/98",
+                corBorda: "border border-amber-500/40 hover:border-amber-300",
+                corGlow: "shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:shadow-[0_0_50px_rgba(245,158,11,0.55)]",
+                bgOverlay: "bg-gradient-to-t from-[#140802] via-[#140802]/80 to-[#140802]/25",
                 titleHover: "group-hover:text-amber-200",
                 t: "Canais infantis",
-                d: "Toda a lista para a criançada, incluindo Disney+ e muito mais.",
+                d: "Desenhos, filmes animados e toda a programação para a criançada.",
               },
               {
                 icon: Trophy,
+                banner: futebol,
                 gradient: "from-cyan-500 via-teal-600 to-emerald-500",
                 glow: "shadow-[0_0_22px_rgba(6,182,212,0.85)] border-cyan-300/80",
-                corBorda: "border border-cyan-500/35 hover:border-cyan-400/80",
-                corGlow: "shadow-[0_0_25px_rgba(6,182,212,0.15)] hover:shadow-[0_0_40px_rgba(6,182,212,0.45)]",
-                bgCard: "bg-gradient-to-b from-cyan-950/30 via-[#071824]/90 to-[#030d14]/98",
+                corBorda: "border border-cyan-500/40 hover:border-cyan-300",
+                corGlow: "shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:shadow-[0_0_50px_rgba(6,182,212,0.55)]",
+                bgOverlay: "bg-gradient-to-t from-[#030e17] via-[#030e17]/80 to-[#030e17]/25",
                 titleHover: "group-hover:text-cyan-200",
                 t: "Esportes ao vivo",
-                d: "Futebol, artes marciais e todos os canais esportivos ao vivo.",
+                d: "Futebol, artes marciais, basquete e grandes campeonatos ao vivo.",
               },
               {
                 icon: Lock,
-                gradient: "from-red-600 via-rose-600 to-pink-600",
+                banner: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1000&auto=format&fit=crop",
+                gradient: "from-rose-600 via-red-600 to-pink-600",
                 glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
-                corBorda: "border border-rose-500/35 hover:border-rose-400/80",
-                corGlow: "shadow-[0_0_25px_rgba(225,29,72,0.15)] hover:shadow-[0_0_40px_rgba(225,29,72,0.45)]",
-                bgCard: "bg-gradient-to-b from-rose-950/40 via-[#1e0714]/90 to-[#0d0209]/98",
+                corBorda: "border border-rose-500/40 hover:border-rose-300",
+                corGlow: "shadow-[0_0_30px_rgba(225,29,72,0.2)] hover:shadow-[0_0_50px_rgba(225,29,72,0.55)]",
+                bgOverlay: "bg-gradient-to-t from-[#12020a] via-[#12020a]/80 to-[#12020a]/30",
                 titleHover: "group-hover:text-rose-200",
                 t: "Canais adultos",
-                d: "Opcional e protegido por senha, para a segurança das crianças.",
+                d: "Conteúdo exclusivo opcional e totalmente protegido por senha.",
               },
             ].map((f, i) => (
               <SmoothCardReveal key={f.t} delay={100 + i * 80}>
                 <div
-                  className={`group relative h-full rounded-4xl p-7 ${f.corBorda} ${f.bgCard} ${f.corGlow} backdrop-blur-md transition-all duration-300 hover:-translate-y-2`}
+                  className={`group relative h-full min-h-[220px] overflow-hidden rounded-4xl p-7 ${f.corBorda} ${f.corGlow} transition-all duration-500 hover:-translate-y-2.5`}
                 >
-                  {/* ÍCONE 3D RELUZENTE E FLUTUANTE */}
-                  <div className="relative mb-5 shrink-0">
-                    <div className={`animate-icon-float-3d relative flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${f.gradient} p-0.5 border ${f.glow} transform-gpu transition-all duration-300 group-hover:scale-110`}>
-                      <div className="relative flex size-full items-center justify-center rounded-[14px] bg-black/25 overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-90" />
-                        <f.icon className="size-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] relative z-10" />
+                  {/* IMAGEM BANNER ILUSTRATIVA DE FUNDO (SEM DESFOQUE) */}
+                  <img
+                    src={f.banner}
+                    alt={`Ilustração ${f.t}`}
+                    className="absolute inset-0 size-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                  />
+                  {/* SOBREPOSIÇÃO DE GRADIENTE ESCURO LÍMPIDO */}
+                  <div className={`absolute inset-0 ${f.bgOverlay} transition-opacity duration-500 group-hover:opacity-85`} />
+
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    {/* ÍCONE 3D RELUZENTE E FLUTUANTE */}
+                    <div className="relative mb-6 shrink-0">
+                      <div className={`animate-icon-float-3d relative flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${f.gradient} p-0.5 border ${f.glow} transform-gpu transition-all duration-300 group-hover:scale-110`}>
+                        <div className="relative flex size-full items-center justify-center rounded-[14px] bg-black/25 overflow-hidden">
+                          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-90" />
+                          <f.icon className="size-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] relative z-10" />
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <h3 className={`mb-2 text-lg sm:text-xl font-extrabold text-white transition-colors duration-300 ${f.titleHover}`}>{f.t}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {f.d}
-                  </p>
+                    <div>
+                      <h3 className={`mb-2 text-xl font-black text-white tracking-tight transition-colors duration-300 ${f.titleHover}`}>{f.t}</h3>
+                      <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground/90 font-medium drop-shadow-md">
+                        {f.d}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </SmoothCardReveal>
             ))}
