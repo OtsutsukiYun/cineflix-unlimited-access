@@ -1,10 +1,31 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 
-function TypewriterHeading({ text, highlightText }: { text: string; highlightText: string }) {
+function HeroHeading() {
+  return (
+    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-tight md:leading-[0.95] font-extrabold drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+      <span>Conteúdo ilimitado</span>
+      <br />
+      <span className="text-hot drop-shadow-[0_0_35px_rgba(168,85,247,0.6)]">
+        por um preço que cabe no bolso
+      </span>
+    </h1>
+  );
+}
+
+function TypewriterHeading({
+  text,
+  highlightText,
+  onComplete,
+}: {
+  text: string;
+  highlightText: string;
+  onComplete?: () => void;
+}) {
   const [displayText, setDisplayText] = useState("");
   const [started, setStarted] = useState(false);
   const ref = useRef<HTMLHeadingElement>(null);
+  const completedRef = useRef(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -30,11 +51,15 @@ function TypewriterHeading({ text, highlightText }: { text: string; highlightTex
         i++;
       } else {
         clearInterval(timer);
+        if (onComplete && !completedRef.current) {
+          completedRef.current = true;
+          onComplete();
+        }
       }
     }, 28);
 
     return () => clearInterval(timer);
-  }, [started, text, highlightText]);
+  }, [started, text, highlightText, onComplete]);
 
   const textLength = text.length;
   const mainPart = displayText.slice(0, textLength);
@@ -58,11 +83,21 @@ function TypewriterHeading({ text, highlightText }: { text: string; highlightTex
   );
 }
 
-function CascadeGrid({ children }: { children: (visible: boolean) => React.ReactNode }) {
+function CascadeGrid({
+  children,
+  manualTrigger,
+}: {
+  children: (visible: boolean) => React.ReactNode;
+  manualTrigger?: boolean;
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    if (manualTrigger !== undefined) {
+      if (manualTrigger) setVisible(true);
+      return;
+    }
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(
@@ -76,7 +111,7 @@ function CascadeGrid({ children }: { children: (visible: boolean) => React.React
     );
     io.observe(el);
     return () => io.disconnect();
-  }, []);
+  }, [manualTrigger]);
 
   return (
     <div ref={ref} className="mt-8 sm:mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
@@ -182,6 +217,7 @@ function Cta({ children = "ADQUIRA O SEU AGORA" }: { children?: string }) {
 
 function Index() {
   const [slide, setSlide] = useState(0);
+  const [economiaTextDone, setEconomiaTextDone] = useState(false);
 
   useEffect(() => {
     const id = setInterval(
@@ -262,30 +298,29 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.85)_100%)]" />
         <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.8)]" />
 
-        <div className="animate-rise relative z-10 mx-auto w-[94%] max-w-6xl pt-36 pb-12 sm:pt-44 md:pt-48 lg:pt-52">
+        <div className="relative z-10 mx-auto w-[94%] max-w-6xl pt-36 pb-12 sm:pt-44 md:pt-48 lg:pt-52">
           <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
-              <span className="mb-4 sm:mb-6 inline-flex items-center gap-2 rounded-full border border-border/60 bg-surface/90 px-3.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold tracking-wide uppercase">
+              <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-surface/90 px-3.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold tracking-wide uppercase shadow-[0_0_20px_rgba(168,85,247,0.3)] mb-4 sm:mb-6">
                 <Sparkles className="size-3.5 text-accent" />
                 Os principais lançamentos de terror
-              </span>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-tight md:leading-[0.95] font-extrabold drop-shadow-[0_2px_4px_rgba(0,0,0,0.45)]">
-                Conteúdo ilimitado
-                <br />
-                <span className="text-hot">por um preço que cabe no bolso</span>
-              </h1>
+              </div>
+
+              <HeroHeading />
+
               <p className="mt-3 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg font-medium text-foreground/90 drop-shadow-md">
                 Mais de 2 mil canais e 60.000 conteúdos — Netflix, Disney+, HBO
                 Max, Prime Video, Apple TV+ e muito mais em um único app. Com
-                qualidade 4K, estabilidade e suporte dedicado.
+                qualidade 4K, estabilidade e suporte dedicated.
               </p>
+
               <div className="mt-9 flex flex-wrap items-center gap-4">
                 <Cta />
                 <SmoothLink href="#catalogo" className="btn-ghost">
                   <Clapperboard className="size-4" /> Ver catálogo
                 </SmoothLink>
-
               </div>
+
               <div className="mt-6 flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
                 <span className="flex items-center gap-2">
                   <Star className="size-4 fill-accent text-accent" /> 4.9 de
@@ -389,75 +424,80 @@ function Index() {
         </section>
 
         {/* FEATURES */}
-        <Reveal>
-          <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-8 sm:py-10">
-            <div className="grid gap-5 md:grid-cols-3">
-            {[
-              {
-                icon: Clapperboard,
-                gradient: "from-rose-600 via-primary to-purple-600",
-                glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
-                t: "Filmes incríveis",
-                d: "Clássicos, lançamentos e grandes produções premiadas em alta definição.",
-              },
-              {
-                icon: Tv,
-                gradient: "from-purple-600 via-primary to-accent",
-                glow: "shadow-[0_0_22px_rgba(168,85,247,0.85)] border-purple-300/80",
-                t: "Séries imperdíveis",
-                d: "Temporadas completas dos sucessos do momento para maratonar sem limites.",
-              },
-              {
-                icon: Torii,
-                gradient: "from-fuchsia-600 via-purple-600 to-pink-500",
-                glow: "shadow-[0_0_22px_rgba(217,70,239,0.85)] border-fuchsia-300/80",
-                t: "Animes atualizados",
-                d: "Lista enorme com todos os animes do momento, sempre em dia e em HD.",
-              },
-              {
-                icon: Baby,
-                gradient: "from-amber-500 via-orange-500 to-rose-500",
-                glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-amber-300/80",
-                t: "Canais infantis",
-                d: "Toda a lista para a criançada, incluindo Disney+ e muito mais.",
-              },
-              {
-                icon: ShieldCheck,
-                gradient: "from-violet-700 via-purple-800 to-indigo-900",
-                glow: "shadow-[0_0_22px_rgba(139,92,246,0.85)] border-violet-300/80",
-                t: "Canais adultos",
-                d: "Opcional e protegido por senha, para a segurança das crianças.",
-              },
-              {
-                icon: Trophy,
-                gradient: "from-emerald-500 via-teal-600 to-cyan-500",
-                glow: "shadow-[0_0_22px_rgba(16,185,129,0.85)] border-emerald-300/80",
-                t: "Esportes ao vivo",
-                d: "Futebol, artes marciais e todos os canais esportivos ao vivo.",
-              },
-            ].map((f, i) => (
-              <Reveal key={f.t} delay={i * 80}>
-                <div className="group relative h-full rounded-4xl p-7 border border-purple-500/30 bg-gradient-to-b from-[#1a082c]/90 via-[#110420]/90 to-[#0a0214]/90 backdrop-blur-md shadow-[0_0_25px_rgba(0,0,0,0.4)] transition-all duration-500 hover:border-purple-400/80 hover:shadow-[0_0_40px_rgba(168,85,247,0.35)] hover:-translate-y-2">
-                  {/* ÍCONE 3D RELUZENTE COM NEON NÍTIDO */}
-                  <div className="relative mb-5 shrink-0">
-                    <div className={`relative flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${f.gradient} p-0.5 border ${f.glow} transform-gpu transition-all duration-300 group-hover:-translate-y-1.5 group-hover:scale-110`}>
-                      <div className="relative flex size-full items-center justify-center rounded-[14px] bg-black/25 overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-90" />
-                        <f.icon className="size-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] relative z-10" />
+        <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-8 sm:py-10">
+          <CascadeGrid>
+            {(visible) => (
+              <div className="grid gap-5 md:grid-cols-3 col-span-full">
+                {[
+                  {
+                    icon: Clapperboard,
+                    gradient: "from-rose-600 via-primary to-purple-600",
+                    glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
+                    t: "Filmes incríveis",
+                    d: "Clássicos, lançamentos e grandes produções premiadas em alta definição.",
+                  },
+                  {
+                    icon: Tv,
+                    gradient: "from-purple-600 via-primary to-accent",
+                    glow: "shadow-[0_0_22px_rgba(168,85,247,0.85)] border-purple-300/80",
+                    t: "Séries imperdíveis",
+                    d: "Temporadas completas dos sucessos do momento para maratonar sem limites.",
+                  },
+                  {
+                    icon: Torii,
+                    gradient: "from-fuchsia-600 via-purple-600 to-pink-500",
+                    glow: "shadow-[0_0_22px_rgba(217,70,239,0.85)] border-fuchsia-300/80",
+                    t: "Animes atualizados",
+                    d: "Lista enorme com todos os animes do momento, sempre em dia e em HD.",
+                  },
+                  {
+                    icon: Baby,
+                    gradient: "from-amber-500 via-orange-500 to-rose-500",
+                    glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-amber-300/80",
+                    t: "Canais infantis",
+                    d: "Toda a lista para a criançada, incluindo Disney+ e muito mais.",
+                  },
+                  {
+                    icon: ShieldCheck,
+                    gradient: "from-violet-700 via-purple-800 to-indigo-900",
+                    glow: "shadow-[0_0_22px_rgba(139,92,246,0.85)] border-violet-300/80",
+                    t: "Canais adultos",
+                    d: "Opcional e protegido por senha, para a segurança das crianças.",
+                  },
+                  {
+                    icon: Trophy,
+                    gradient: "from-emerald-500 via-teal-600 to-cyan-500",
+                    glow: "shadow-[0_0_22px_rgba(16,185,129,0.85)] border-emerald-300/80",
+                    t: "Esportes ao vivo",
+                    d: "Futebol, artes marciais e todos os canais esportivos ao vivo.",
+                  },
+                ].map((f, i) => (
+                  <div
+                    key={f.t}
+                    data-visible={visible}
+                    style={{ transitionDelay: `${i * 90}ms` }}
+                    className="reveal group relative h-full rounded-4xl p-7 border border-purple-500/30 bg-gradient-to-b from-[#1a082c]/90 via-[#110420]/90 to-[#0a0214]/90 backdrop-blur-md shadow-[0_0_25px_rgba(0,0,0,0.4)] transition-all duration-500 hover:border-purple-400/80 hover:shadow-[0_0_40px_rgba(168,85,247,0.35)] hover:-translate-y-2"
+                  >
+                    {/* ÍCONE 3D RELUZENTE E FLUTUANTE */}
+                    <div className="relative mb-5 shrink-0">
+                      <div className={`animate-icon-float-3d relative flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${f.gradient} p-0.5 border ${f.glow} transform-gpu transition-all duration-300 group-hover:scale-110`}>
+                        <div className="relative flex size-full items-center justify-center rounded-[14px] bg-black/25 overflow-hidden">
+                          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-90" />
+                          <f.icon className="size-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] relative z-10" />
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <h3 className="mb-2 text-lg sm:text-xl font-extrabold text-white transition-colors duration-300 group-hover:text-purple-200">{f.t}</h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
-                    {f.d}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-            </div>
-          </section>
-        </Reveal>
+                    <h3 className="mb-2 text-lg sm:text-xl font-extrabold text-white transition-colors duration-300 group-hover:text-purple-200">{f.t}</h3>
+                    <p className="text-sm leading-relaxed text-muted-foreground">
+                      {f.d}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </CascadeGrid>
+        </section>
 
         {/* ESPORTES */}
         <section id="esportes" className="relative z-10 my-6 sm:my-8 overflow-hidden">
@@ -468,7 +508,7 @@ function Index() {
               loading="lazy"
               width={1280}
               height={720}
-              className="absolute inset-0 size-full object-cover transition-transform duration-1000 hover:scale-105"
+              className="absolute inset-0 size-full object-cover animate-kenburns"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-transparent" />
             <Reveal className="relative p-8 md:p-16">
@@ -495,10 +535,11 @@ function Index() {
             <TypewriterHeading
               text="Isso é o que você pagaria"
               highlightText="assinando tudo separado"
+              onComplete={() => setEconomiaTextDone(true)}
             />
           </div>
 
-          <CascadeGrid>
+          <CascadeGrid manualTrigger={economiaTextDone}>
             {(visible) =>
               plataformas.map((p, i) => (
                 <div
@@ -579,8 +620,8 @@ function Index() {
               telas: "Use 2 telas simultaneamente",
               extra: "Plano Mensal Sem Fidelidade",
               destaque: false,
-              selo: null as string | null,
-              badge: "Ideal para experimentar",
+              selo: "Ideal para experimentar",
+              badge: "Sem Fidelidade",
               corBorda: "border border-purple-500/40 hover:border-purple-300",
               corGlow: "shadow-[0_0_40px_rgba(168,85,247,0.25)] hover:shadow-[0_0_60px_rgba(168,85,247,0.55)]",
               bgCard: "bg-gradient-to-b from-purple-950/40 via-[#120522]/80 to-[#0b0316]/95 backdrop-blur-2xl",
@@ -613,8 +654,8 @@ function Index() {
               telas: "Use 2 telas simultaneamente",
               extra: "Plano Semestral Economia",
               destaque: false,
-              selo: null as string | null,
-              badge: "Economize 42%",
+              selo: "Economize 42%",
+              badge: "Semestral",
               corBorda: "border border-fuchsia-500/40 hover:border-fuchsia-300",
               corGlow: "shadow-[0_0_40px_rgba(217,70,239,0.25)] hover:shadow-[0_0_60px_rgba(217,70,239,0.55)]",
               bgCard: "bg-gradient-to-b from-fuchsia-950/40 via-[#1a0428]/80 to-[#0e0216]/95 backdrop-blur-2xl",
@@ -628,7 +669,7 @@ function Index() {
                 className={`group relative h-full rounded-4xl transition-all duration-500 ${p.corBorda} ${p.corGlow} ${p.bgCard} ${
                   p.destaque
                     ? "pt-10 pb-8 px-8 lg:scale-[1.08] z-20 hover:scale-[1.10]"
-                    : "p-8 hover:-translate-y-2"
+                    : "pt-10 pb-8 px-8 hover:-translate-y-2"
                 }`}
               >
                 {/* BRILHO REFLEXIVO DE VIDRO 3D NO CARD */}
