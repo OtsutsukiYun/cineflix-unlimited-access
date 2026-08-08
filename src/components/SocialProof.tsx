@@ -83,41 +83,35 @@ export function SocialProof() {
   }, []);
 
   return (
-    <>
-      {/* Contador de assinaturas do dia — canto inferior esquerdo (desktop) ou topo centralizado (mobile) */}
-      <div className="pointer-events-none fixed bottom-4 left-4 z-40 md:bottom-6 md:left-6">
-        <div className="glass flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold shadow-[var(--shadow-glow)]">
-          <TrendingUp className="size-3.5 text-accent shrink-0" />
-          <span className="whitespace-nowrap">
-            <span className="text-hot font-extrabold">{vendas}</span> pessoas assinaram hoje
+    <div
+      aria-live="polite"
+      className="pointer-events-none fixed bottom-6 left-6 z-30 hidden md:block"
+    >
+      {notif ? (
+        <div
+          key={notif.id}
+          className="glass toast-in flex max-w-[320px] items-center gap-3 rounded-2xl px-4 py-3 shadow-[0_0_30px_rgba(168,85,247,0.35)] border border-purple-500/40 bg-purple-950/90 backdrop-blur-xl"
+        >
+          <div className="bg-hot flex size-9 shrink-0 items-center justify-center rounded-full">
+            <BadgeCheck className="size-4 text-primary-foreground" />
+          </div>
+          <div className="text-left min-w-0">
+            <p className="text-xs font-bold text-white truncate">
+              {notif.nome}, de {notif.estado}
+            </p>
+            <p className="text-[11px] text-muted-foreground">
+              acabou de assinar o <span className="text-purple-300 font-semibold">{notif.plano}</span>
+            </p>
+          </div>
+        </div>
+      ) : (
+        <div className="glass flex items-center gap-2.5 rounded-full px-4 py-2.5 text-xs font-semibold shadow-[0_0_20px_rgba(168,85,247,0.3)] border border-purple-500/40 bg-purple-950/90 backdrop-blur-xl">
+          <TrendingUp className="size-4 text-accent shrink-0" />
+          <span className="whitespace-nowrap text-white">
+            <span className="text-hot font-black text-sm">{vendas}</span> pessoas assinaram hoje
           </span>
         </div>
-      </div>
-
-      {/* Notificação de compra recente — canto inferior direito (desktop e mobile) */}
-      <div
-        aria-live="polite"
-        className="pointer-events-none fixed bottom-4 right-4 z-40 md:bottom-6 md:right-6"
-      >
-        {notif && (
-          <div
-            key={notif.id}
-            className="glass toast-in flex max-w-[280px] sm:max-w-[320px] items-center gap-3 rounded-2xl px-4 py-3 shadow-[var(--shadow-neon)]"
-          >
-            <div className="bg-hot flex size-9 shrink-0 items-center justify-center rounded-full">
-              <BadgeCheck className="size-4 text-primary-foreground" />
-            </div>
-            <div className="text-left min-w-0">
-              <p className="text-sm leading-snug font-semibold truncate">
-                {notif.nome}, de {notif.estado}
-              </p>
-              <p className="text-xs text-muted-foreground">
-                acabou de assinar o {notif.plano}.
-              </p>
-            </div>
-          </div>
-        )}
-      </div>
-    </>
+      )}
+    </div>
   );
 }
