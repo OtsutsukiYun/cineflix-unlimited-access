@@ -710,11 +710,8 @@ function Index() {
               <span className="flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-4 py-2 text-xs font-bold text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.25)]">
                 <QrCode className="size-4 text-emerald-400" /> PIX (Ativação Instantânea)
               </span>
-              <span className="flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-950/40 px-4 py-2 text-xs font-bold text-purple-200">
+              <span className="flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-950/40 px-4 py-2 text-xs font-bold text-purple-200 shadow-[0_0_15px_rgba(168,85,247,0.25)]">
                 <CreditCard className="size-4 text-purple-400" /> Cartão de Crédito (até 12x)
-              </span>
-              <span className="flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-xs font-bold text-muted-foreground">
-                <Barcode className="size-4 text-muted-foreground" /> Boleto Bancário
               </span>
             </div>
           </div>
