@@ -424,7 +424,7 @@ function Index() {
             {[
               {
                 icon: Clapperboard,
-                banner: img("/neeNHeXjMF5fXoCJRsOmkNGC7q.jpg", "w780"),
+                banner: img("/yQIdU11DYQQp0neGtGtGxbGfRer.jpg", "w780"),
                 gradient: "from-rose-600 via-primary to-purple-600",
                 glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
                 corBorda: "border border-rose-500/40 hover:border-rose-300",
@@ -432,11 +432,11 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#0d0212] via-[#0d0212]/75 to-[#0d0212]/20",
                 titleHover: "group-hover:text-rose-200",
                 t: "Filmes incríveis",
-                d: "Clássicos, lançamentos do cinema e superproduções premiadas em 4K.",
+                d: "He-Man, grandes lançamentos do cinema e superproduções premiadas em 4K.",
               },
               {
                 icon: Tv,
-                banner: img("/2meX1nMdScFOoV4370rqHWKmXhY.jpg", "w780"),
+                banner: img("/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg", "w780"),
                 gradient: "from-purple-600 via-primary to-accent",
                 glow: "shadow-[0_0_22px_rgba(168,85,247,0.85)] border-purple-300/80",
                 corBorda: "border border-purple-500/40 hover:border-purple-300",
@@ -444,11 +444,11 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#0b0314] via-[#0b0314]/75 to-[#0b0314]/20",
                 titleHover: "group-hover:text-purple-200",
                 t: "Séries imperdíveis",
-                d: "Temporadas completas dos sucessos globais para maratonar sem limites.",
+                d: "Silo, Squid Game e todos os sucessos globais para maratonar sem limites.",
               },
               {
                 icon: Torii,
-                banner: img("/3GQKYh6Trm8pxd2AypovoYQf4Ay.jpg", "w780"),
+                banner: img("/oUmWLyeko3kYdUr8DBLIsxwcugl.jpg", "w780"),
                 gradient: "from-fuchsia-600 via-purple-600 to-pink-500",
                 glow: "shadow-[0_0_22px_rgba(217,70,239,0.85)] border-fuchsia-300/80",
                 corBorda: "border border-fuchsia-500/40 hover:border-fuchsia-300",
@@ -456,11 +456,11 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#0e0214] via-[#0e0214]/75 to-[#0e0214]/20",
                 titleHover: "group-hover:text-fuchsia-200",
                 t: "Animes atualizados",
-                d: "Acervo completo com os animes mais populares do momento em HD.",
+                d: "Dragon Ball DAIMA, Demon Slayer e todos os animes do momento em HD.",
               },
               {
                 icon: Baby,
-                banner: img("/xg27NrXi7VXCGUr7MG75UqLl6Vg.jpg", "w780"),
+                banner: img("/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg", "w780"),
                 gradient: "from-amber-500 via-orange-500 to-rose-500",
                 glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-amber-300/80",
                 corBorda: "border border-amber-500/40 hover:border-amber-300",
@@ -468,11 +468,11 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#140802] via-[#140802]/75 to-[#140802]/20",
                 titleHover: "group-hover:text-amber-200",
                 t: "Canais infantis",
-                d: "Desenhos, filmes animados e toda a programação para a criançada.",
+                d: "Moana 2, Disney+ e toda a programação para a criançada.",
               },
               {
                 icon: Trophy,
-                banner: img("/hpuWR2rfcjRMni6HLtxPet4o4P4.jpg", "w780"),
+                banner: futebol,
                 gradient: "from-cyan-500 via-teal-600 to-emerald-500",
                 glow: "shadow-[0_0_22px_rgba(6,182,212,0.85)] border-cyan-300/80",
                 corBorda: "border border-cyan-500/40 hover:border-cyan-300",
@@ -480,7 +480,7 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#030e17] via-[#030e17]/75 to-[#030e17]/20",
                 titleHover: "group-hover:text-cyan-200",
                 t: "Esportes ao vivo",
-                d: "Futebol, artes marciais, basquete e grandes campeonatos ao vivo.",
+                d: "Brasileirão, Champions League, Premier League e todos os campeonatos ao vivo.",
               },
               {
                 icon: Lock,
@@ -532,38 +532,6 @@ function Index() {
           </div>
         </section>
 
-
-        {/* ESPORTES */}
-        <section id="esportes" className="relative z-10 my-4 sm:my-6 overflow-hidden">
-          <SmoothCardReveal delay={100}>
-            <div className="relative mx-auto w-[94%] max-w-6xl overflow-hidden rounded-4xl border border-border/80 shadow-[0_0_40px_rgba(0,0,0,0.5)] bg-black">
-              <img
-                src={futebol}
-                alt="Torcida em estádio de futebol lotado à noite"
-                decoding="async"
-                width={1280}
-                height={720}
-                className="absolute inset-0 size-full object-cover animate-kenburns"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-transparent" />
-              <div className="relative p-8 md:p-16">
-                <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-950/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-purple-200 uppercase shadow-[0_0_20px_rgba(168,85,247,0.25)] mb-5">
-                  <Trophy className="size-3.5 text-accent" /> Esportes ao vivo
-                </span>
-                <h2 className="max-w-lg text-4xl font-extrabold md:text-5xl">
-                  Para quem é <span className="text-hot">fanático por futebol</span>
-                </h2>
-                <p className="mt-5 max-w-lg text-muted-foreground">
-                  Acompanhe os maiores campeonatos do Brasil e do mundo, além de
-                  lutas, NBA, NFL e tudo que você ama — sem travar, em 4K.
-                </p>
-                <div className="mt-8">
-                  <Cta />
-                </div>
-              </div>
-            </div>
-          </SmoothCardReveal>
-        </section>
 
 
         {/* ECONOMIA */}
