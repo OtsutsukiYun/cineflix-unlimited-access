@@ -65,7 +65,7 @@ export const heroSlides: HeroSlide[] = [
     backdrop: "/3pDfu71mrzSuFYyIfnKEjt8z4BC.jpg",
     poster: "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg",
     objectPosition: "center 20%",
-    objectPositionMobile: "50% 15%",
+    objectPositionMobile: "75% 15%",
   },
   {
     title: "Hokum",
