@@ -11,7 +11,7 @@ import starLogo from "@/assets/logos/starplus.svg";
 import telecineLogo from "@/assets/logos/telecine.svg";
 import premiereLogo from "@/assets/logos/premiere.svg";
 
-export const img = (path: string, size = "w780") =>
+export const img = (path: string, size = "w500") =>
   `https://image.tmdb.org/t/p/${size}${path}`;
 
 export type HeroSlide = {
@@ -31,6 +31,7 @@ export type Title = {
   poster: string;
   year: string;
   tag?: string;
+  rating?: string;
 };
 
 /** Destaques do carrossel de fundo (lançamentos de terror reais - TMDB) */
@@ -119,12 +120,12 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
-  { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Mais assistido" },
-  { title: "Boca do Diabo", poster: "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg", year: "2026", tag: "Novo" },
-  { title: "Hokum", poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", year: "2026", tag: "Lançamento 2026" },
-  { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "Lançamento 2026" },
-  { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "Novo" },
-  { title: "Maldição da Múmia", poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", year: "2026", tag: "Lançamento" },
+  { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Mais assistido", rating: "5.0" },
+  { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "Lançamento 2026", rating: "4.9" },
+  { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "Novo", rating: "4.8" },
+  { title: "Hokum", poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", year: "2026", tag: "Lançamento 2026", rating: "4.7" },
+  { title: "A Maldição da Múmia", poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", year: "2026", tag: "Lançamento", rating: "4.7" },
+  { title: "A Boca do Diabo", poster: "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg", year: "2026", tag: "Novo", rating: "4.5" },
   { title: "Passageiro do Mal", poster: "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg", year: "2025", tag: "Novo" },
   { title: "A Hora do Mal", poster: "/psEJSjQr6I9GSJTdW28CKC4Kffs.jpg", year: "2025", tag: "Em alta" },
   { title: "Pecadores", poster: "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg", year: "2025", tag: "Em alta" },
@@ -137,7 +138,6 @@ export const terror: Title[] = [
   { title: "O Macaco", poster: "/2jME1L29XGE3T4f0zUHgpiKsPrV.jpg", year: "2025" },
   { title: "Acompanhante Perfeita", poster: "/7LbrEQvturE05hljvTCWST7rLQL.jpg", year: "2025" },
   { title: "Predador: Terras Selvagens", poster: "/f3yLlUrJDdDL8d4nxywyotN45SL.jpg", year: "2025" },
-  { title: "A Morte de um Unicórnio", poster: "/yViLU5fnT4r6sGRMFfgQ0KrFYR8.jpg", year: "2025" },
   { title: "Nosferatu", poster: "/fbkUfzmVzEBFSt6p7VigknREIJT.jpg", year: "2024" },
   { title: "Herege", poster: "/j5e2YS1PRUVC1YgSool0JJyNLxJ.jpg", year: "2024" },
   { title: "A Substância", poster: "/vWeOgzlhnP1sS23H3rzctGHB9Nb.jpg", year: "2024" },
@@ -165,6 +165,16 @@ export const terror: Title[] = [
   { title: "Corra!", poster: "/A0RoSZh8PEYJgDMgM2EV7Ycz3dR.jpg", year: "2017" },
   { title: "Atividade Paranormal", poster: "/jV5eAsOTf7zsL4glY51gTW6Vb05.jpg", year: "2007" },
   { title: "[REC]", poster: "/nfbO00NKXSzBIzcN3KbUMdPT1EU.jpg", year: "2007" },
+  { title: "O Chamado", poster: "/AeRpUynJKDpJveklBJipOYrVxCS.jpg", year: "2002", tag: "Clássico Anos 2000" },
+  { title: "Jogos Mortais", poster: "/rLNSOudrayDBo1uqXjrhxcjODIC.jpg", year: "2004", tag: "Clássico Anos 2000" },
+  { title: "O Grito", poster: "/7vPAVPKYexQVmvC578wPLn2CGCL.jpg", year: "2004", tag: "Clássico Anos 2000" },
+  { title: "Premonição", poster: "/1mXhlQMnlfvJ2frxTjZSQNnA9Vp.jpg", year: "2000", tag: "Clássico Anos 2000" },
+  { title: "Madrugada dos Mortos", poster: "/ttquyxStEEctzghtA2f4PUGprDr.jpg", year: "2004", tag: "Clássico Anos 2000" },
+  { title: "Extermínio", poster: "/sQckQRt17VaWbo39GIu0TMOiszq.jpg", year: "2002", tag: "Clássico Anos 2000" },
+  { title: "Silent Hill", poster: "/r0bEDWO2w4a43K2xTNSF284qOsc.jpg", year: "2006", tag: "Clássico Anos 2000" },
+  { title: "O Albergue", poster: "/dDrtuWUKhgUGp12kgUWuP0NpTdF.jpg", year: "2005", tag: "Clássico Anos 2000" },
+  { title: "Arraste-me para o Inferno", poster: "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", year: "2009", tag: "Clássico Anos 2000" },
+  { title: "Olhos Famintos", poster: "/g410Y1U1ELbmJG14Zru3UAimm1G.jpg", year: "2001", tag: "Clássico Anos 2000" },
   { title: "A Bruxa de Blair", poster: "/jAKX4midH0vSm2XT54g5TWluQqw.jpg", year: "1999" },
 ];
 
@@ -205,7 +215,7 @@ export const animes: Title[] = [
   { title: "Frieren e a Jornada para o Além", poster: "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", year: "Série", tag: "Em alta" },
   { title: "Jujutsu Kaisen", poster: "/8R1mMSC1gX1cg5ed7ns49JOEqw3.jpg", year: "Série" },
   { title: "Solo Leveling", poster: "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", year: "Série" },
-  { title: "One Piece", poster: "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", year: "Série" },
+  { title: "One Piece", poster: "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", year: "Série", rating: "5.0" },
   { title: "One-Punch Man", poster: "/dT10AxJIXVvRwFAew4tt2RhzJrD.jpg", year: "Série" },
   { title: "Attack on Titan", poster: "/8aMqmB5xSblsZc7bLMEhE28yHa2.jpg", year: "Série" },
   { title: "Chainsaw Man", poster: "/iFM1dyFi0rByvEomEkmm7NpQeeb.jpg", year: "Série" },

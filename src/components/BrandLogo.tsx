@@ -4,7 +4,7 @@ export function BrandLogo({
   invert = false,
   escala = 1,
   cor,
-  className = "h-7",
+  className = "h-5 sm:h-6",
 }: {
   nome: string;
   logo: string | null;
@@ -18,9 +18,9 @@ export function BrandLogo({
       <img
         src={logo}
         alt={`Logo ${nome}`}
-        loading="lazy"
+        decoding="async"
         style={escala !== 1 ? { transform: `scale(${escala})` } : undefined}
-        className={`${className} w-auto max-w-[130px] object-contain ${
+        className={`${className} w-auto max-w-[85px] sm:max-w-[100px] max-h-7 object-contain ${
           invert ? "brightness-0 invert" : ""
         }`}
       />
@@ -28,7 +28,7 @@ export function BrandLogo({
   }
   return (
     <span
-      className={`font-display flex items-center text-base font-extrabold tracking-tight whitespace-nowrap ${className}`}
+      className="font-display flex items-center justify-center text-[11px] sm:text-xs font-black tracking-tight whitespace-nowrap drop-shadow-sm"
       style={{ color: cor }}
     >
       {nome}

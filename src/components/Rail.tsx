@@ -1,26 +1,43 @@
 import { useRef, type ComponentType } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { img, type Title } from "@/data/catalog";
 
 function Poster({ item }: { item: Title }) {
   return (
-    <div className="card-lift group relative shrink-0 overflow-hidden rounded-3xl border border-border bg-surface w-[150px] sm:w-[175px]">
+    <div className="group relative shrink-0 overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-b from-purple-950/60 via-[#140828]/95 to-[#0b0316] w-[168px] sm:w-[195px] transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/80 hover:shadow-[0_10px_35px_rgba(168,85,247,0.45)]">
+      {/* SHINE GLOW EFFECT ON HOVER */}
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      
+      {/* POSTER IMAGE */}
       <img
         src={img(item.poster)}
         alt={`Pôster de ${item.title}`}
-        loading="lazy"
-        className="aspect-2/3 w-full object-cover transition-transform duration-700 group-hover:scale-110"
+        decoding="async"
+        className="aspect-[2/3] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
       />
-      <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background via-background/10 to-transparent opacity-90" />
+
+      {/* OVERLAY GRADIENTE DE LEITURA E CONTRASTE */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#090312] via-[#090312]/35 via-45% to-transparent opacity-95 group-hover:opacity-90 transition-opacity" />
+
+      {/* BADGE DE TAG (UNICA NO TOPO) */}
       {item.tag && (
-        <span className="bg-hot absolute top-3 left-3 rounded-full px-3 py-1 text-[10px] font-bold tracking-wide text-primary-foreground uppercase">
+        <span className="absolute top-2.5 left-2.5 z-20 max-w-[88%] truncate inline-flex items-center gap-1 rounded-full border border-purple-300/40 bg-purple-950/85 backdrop-blur-md px-2.5 py-1 text-[9px] font-extrabold tracking-wider text-purple-200 uppercase shadow-[0_0_15px_rgba(168,85,247,0.5)]">
           {item.tag}
         </span>
       )}
-      <div className="absolute inset-x-0 bottom-0 p-3">
-        <p className="truncate text-sm font-bold">{item.title}</p>
-        <p className="text-xs text-muted-foreground">{item.year}</p>
+
+      {/* TEXTO INFERIOR */}
+      <div className="absolute inset-x-0 bottom-0 z-20 p-3.5 sm:p-4">
+        <p className="truncate text-base font-black text-white drop-shadow-md transition-colors group-hover:text-purple-300 sm:text-lg">
+          {item.title}
+        </p>
+        <div className="mt-1 flex items-center justify-between text-xs font-semibold text-purple-200/80">
+          <span>{item.year}</span>
+          <span className="flex items-center gap-1 text-amber-400 font-bold text-[11px]">
+            <Star className="size-3 fill-amber-400 text-amber-400" /> {item.rating ?? "4.9"}
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -33,7 +50,7 @@ export function Rail({
   icon: Icon,
 }: {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   items: Title[];
   icon: ComponentType<{ className?: string }>;
 }) {
@@ -46,15 +63,17 @@ export function Rail({
   };
 
   return (
-    <Reveal className="py-3 sm:py-4">
+    <div className="py-3 sm:py-4">
       <div className="mx-auto w-[94%] max-w-6xl">
-        <div className="mb-5 flex items-end justify-between gap-4 px-2 sm:px-4">
+        <div className="mb-2.5 sm:mb-3 flex items-end justify-between gap-4 px-2 sm:px-4">
           <div>
-            <div className="mb-1 flex items-center gap-2">
+            <div className="flex items-center gap-2">
               <Icon className="size-4.5 sm:size-5 text-accent shrink-0" />
-              <h3 className="text-lg font-bold sm:text-xl md:text-2xl leading-snug">{title}</h3>
+              <h3 className="text-lg font-bold sm:text-xl md:text-2xl leading-snug text-white">{title}</h3>
             </div>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">{subtitle}</p>
+            {subtitle && (
+              <p className="mt-0.5 text-xs sm:text-sm text-muted-foreground leading-tight">{subtitle}</p>
+            )}
           </div>
           <div className="hidden shrink-0 gap-2 md:flex">
             <button
@@ -79,17 +98,13 @@ export function Rail({
           ref={ref}
           className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto px-2 sm:px-4 pb-4 scroll-px-2 sm:scroll-px-4"
         >
-          {items.map((t, i) => (
-            <Reveal
-              key={t.title}
-              delay={Math.min(i, 6) * 70}
-              className="shrink-0 snap-start"
-            >
+          {items.map((t) => (
+            <div key={t.title} className="shrink-0 snap-start">
               <Poster item={t} />
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>
-    </Reveal>
+    </div>
   );
 }

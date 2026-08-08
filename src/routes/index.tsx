@@ -1,17 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 
-function HeroHeading() {
-  return (
-    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-tight md:leading-[0.95] font-extrabold drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
-      <span>Conteúdo ilimitado</span>
-      <br />
-      <span className="text-hot drop-shadow-[0_0_35px_rgba(168,85,247,0.6)]">
-        por um preço que cabe no bolso
-      </span>
-    </h1>
-  );
-}
+
 
 
 function CascadeGrid({
@@ -22,7 +12,7 @@ function CascadeGrid({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
     const el = ref.current;
@@ -31,10 +21,9 @@ function CascadeGrid({
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true);
-          io.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.01 }
     );
     io.observe(el);
     return () => io.disconnect();
@@ -43,6 +32,50 @@ function CascadeGrid({
   return (
     <div ref={ref} className={className}>
       {children(visible)}
+    </div>
+  );
+}
+
+function SmoothCardReveal({
+  children,
+  delay = 0,
+}: {
+  children: React.ReactNode;
+  delay?: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [shown, setShown] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShown(true);
+        }
+      },
+      { threshold: 0.05, rootMargin: "60px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      style={{
+        transitionDuration: "650ms",
+        transitionDelay: `${delay}ms`,
+        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
+      }}
+      className={`transition-all duration-700 ${
+        shown
+          ? "opacity-100 translate-y-0 scale-100"
+          : "opacity-0 translate-y-7 scale-[0.98]"
+      }`}
+    >
+      {children}
     </div>
   );
 }
@@ -64,6 +97,8 @@ import {
   QrCode,
   Barcode,
   RefreshCcw,
+  DollarSign,
+  Film,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -92,13 +127,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Mais de 60.000 filmes, séries, animes, infantil e futebol ao vivo em um só app. Lançamentos de terror, Netflix, Disney+, HBO Max e mais por R$20/mês.",
+          "Mais de 60.000 filmes, séries, animes, infantil e futebol ao vivo em um só app. Lançamentos do cinema, Netflix, Disney+, HBO Max e mais por R$20/mês.",
       },
       { property: "og:title", content: "Cineflix — Streaming ilimitado por R$20/mês" },
       {
         property: "og:description",
         content:
-          "Todos os streamings em uma única plataforma. Lançamentos de terror, animes, infantil e esportes ao vivo em 4K.",
+          "Todos os streamings em uma única plataforma. Lançamentos do cinema, animes, infantil e esportes ao vivo em 4K.",
       },
     ],
   }),
@@ -138,112 +173,128 @@ function SmoothLink({
 function Cta({ children = "ADQUIRA O SEU AGORA" }: { children?: string }) {
   return (
     <SmoothLink href={CTA_HREF} className="btn-cta animate-pulse-ring">
-      <Zap className="size-4" />
       {children}
     </SmoothLink>
   );
 }
 
+function HeroHeading() {
+  return (
+    <h1 className="font-display text-4xl font-extrabold sm:text-6xl md:text-7xl leading-[1.04] text-white tracking-tight drop-shadow-xl">
+      Todos os{" "}
+      <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-indigo-300 via-purple-400 to-amber-300 animate-text-shine font-black drop-shadow-[0_4px_20px_rgba(168,85,247,0.45)]">
+        filmes, séries e esportes
+      </span>
+      <br />
+      em um só lugar.
+    </h1>
+  );
+}
 
 
 
 function Index() {
   const [slide, setSlide] = useState(0);
-  const [economiaTextDone, setEconomiaTextDone] = useState(false);
 
   useEffect(() => {
-    const id = setInterval(
-      () => setSlide((s) => (s + 1) % heroSlides.length),
-      6000,
-    );
-    return () => clearInterval(id);
+    const timer = setInterval(() => {
+      setSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 6000);
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-background">
+    <div className="min-h-screen bg-background font-sans text-foreground antialiased selection:bg-accent selection:text-white">
       {/* BARRA PROMOCIONAL + NAV — empilhados para mobile funcionar */}
       <div className="fixed inset-x-0 top-0 z-50 flex flex-col">
         <div className="z-[60]">
           <PromoBanner />
         </div>
-        <header>
-          <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-5 py-3">
-          <div className="flex items-center gap-2">
-            <div className="bg-hot flex size-8 items-center justify-center rounded-full">
-              <Play className="size-4 fill-current text-primary-foreground" />
-            </div>
-            <span className="font-display text-lg font-extrabold tracking-tight">
-              CINE<span className="text-hot">FLIX</span>
-            </span>
-          </div>
-          <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
-            {[
-              { h: "#catalogo", l: "Catálogo" },
-              { h: "#esportes", l: "Esportes" },
-              { h: "#economia", l: "Comparar Preços" },
-              { h: "#planos", l: "Planos" },
-              { h: "#faq", l: "Dúvidas Frequentes" },
-            ].map((n) => (
+        <header className="z-50">
+          <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-5 py-3 border border-white/10 bg-black/60 backdrop-blur-md shadow-[0_4px_25px_rgba(0,0,0,0.5)]">
+            <SmoothLink href="#" className="flex items-center gap-2">
+              <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-tr from-purple-600 via-primary to-accent text-white shadow-[0_0_15px_rgba(168,85,247,0.5)]">
+                <Play className="size-4 fill-current ml-0.5" />
+              </span>
+              <span className="font-display text-xl font-extrabold tracking-tight text-white">
+                Cine<span className="text-hot">flix</span>
+              </span>
+            </SmoothLink>
+
+            <nav className="hidden items-center gap-7 text-sm font-semibold md:flex">
               <SmoothLink
-                key={n.h}
-                href={n.h}
-                className="transition-colors hover:text-foreground"
+                href="#catalogo"
+                className="text-muted-foreground transition-colors hover:text-white"
               >
-                {n.l}
+                Catálogo
               </SmoothLink>
-            ))}
-            <Link
-              to="/suporte"
-              className="transition-colors hover:text-foreground"
-            >
-              Suporte
-            </Link>
-          </nav>
+              <SmoothLink
+                href="#comparativo"
+                className="text-muted-foreground transition-colors hover:text-white"
+              >
+                Comparativo
+              </SmoothLink>
+              <SmoothLink
+                href="#planos"
+                className="text-muted-foreground transition-colors hover:text-white"
+              >
+                Planos
+              </SmoothLink>
+              <SmoothLink
+                href="#faq"
+                className="text-muted-foreground transition-colors hover:text-white"
+              >
+                FAQ
+              </SmoothLink>
+              <Link
+                to="/suporte"
+                className="text-purple-300 transition-colors hover:text-white"
+              >
+                Suporte
+              </Link>
+            </nav>
 
-          <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs">
-            Assinar
-          </SmoothLink>
+            <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs">
+              Assinar
+            </SmoothLink>
 
-        </div>
+          </div>
         </header>
       </div>
 
       {/* HERO */}
-      <section className="relative flex min-h-[100svh] items-center overflow-hidden">
+      <section className="relative flex items-center overflow-hidden">
         {heroSlides.map((s, i) => (
           <img
             key={s.title}
-            src={img(s.backdrop, "original")}
+            src={img(s.backdrop, "w1280")}
             alt={`Cena do filme ${s.title}`}
             className="absolute inset-0 size-full object-cover transition-all duration-[2200ms] ease-out"
             style={{
               opacity: i === slide ? 1 : 0,
               transform: i === slide ? "scale(1.02)" : "scale(1)",
               objectPosition: s.objectPositionMobile ?? s.objectPosition ?? "center 15%",
-              filter: s.brightness ?? "none",
+              filter: s.brightness ? `${s.brightness} brightness(0.93)` : "brightness(0.93)",
             }}
           />
         ))}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/80 via-background/55 to-transparent md:via-background/60 md:to-background/10" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
-        {/* VINHETA CINEMATOGRÁFICA (VIGNETTE) NAS BORDAS */}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.85)_100%)]" />
-        <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.8)]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/75 via-background/50 to-transparent md:via-background/55 md:to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/20 to-background/35" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(0,0,0,0.65)_100%)]" />
 
-        <div className="relative z-10 mx-auto w-[94%] max-w-6xl pt-36 pb-12 sm:pt-44 md:pt-48 lg:pt-52">
+        <div className="relative z-10 mx-auto w-[94%] max-w-6xl pt-28 pb-10 sm:pt-36 sm:pb-12 md:pt-40 md:pb-14">
           <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
-              <div className="glass inline-flex items-center gap-2.5 rounded-full border border-purple-400/50 bg-gradient-to-r from-purple-950/60 via-purple-900/40 to-fuchsia-950/60 px-4 py-2 text-[11px] sm:text-xs font-bold tracking-wider text-purple-200 uppercase shadow-[0_0_25px_rgba(168,85,247,0.4)] backdrop-blur-xl mb-4 sm:mb-6 [transform:translateZ(0)] [isolation:isolate]">
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-black/60 backdrop-blur-md px-4 py-2 text-[11px] sm:text-xs font-bold tracking-wider text-white uppercase shadow-[0_4px_25px_rgba(0,0,0,0.5)] mb-4 sm:mb-6 [transform:translateZ(0)] [isolation:isolate]">
                 <Sparkles className="size-3.5 text-accent animate-pulse" />
-                <span>Os principais lançamentos de terror</span>
+                <span>Os principais lançamentos do cinema e streaming</span>
               </div>
 
               <HeroHeading />
 
               <p className="mt-3 sm:mt-6 max-w-xl text-sm sm:text-base md:text-lg font-medium text-foreground/90 drop-shadow-md">
                 Mais de 2 mil canais e 60.000 conteúdos — Netflix, Disney+, HBO
-                Max, Prime Video, Apple TV+ e muito mais em um único app. Com
-                qualidade 4K, estabilidade e suporte dedicated.
+                Max, Prime Video, Apple TV+ e muito mais em um único app. Com a Cineflix você paga <span className="font-extrabold text-white">apenas R$20/mês</span>.
               </p>
 
               <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -265,11 +316,11 @@ function Index() {
               </div>
 
               {/* OBSERVAÇÕES E SINOPSE DO FILME/SÉRIE */}
-              <div className="mt-6 border-l-2 border-primary/80 pl-4 py-1 backdrop-blur-xs transition-all duration-500 max-w-xl">
+              <div className="mt-6 border-l-2 border-primary/80 pl-4 py-1 backdrop-blur-xs max-w-xl">
                 <p className="font-display text-sm font-bold tracking-wide text-foreground">
                   {heroSlides[slide]?.title}
                 </p>
-                <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+                <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground min-h-[2.5rem] line-clamp-2">
                   {heroSlides[slide]?.genre} · {heroSlides[slide]?.year} — <span className="text-foreground/90 font-medium">{heroSlides[slide]?.tagline}</span>
                 </p>
               </div>
@@ -293,6 +344,7 @@ function Index() {
 
       {/* SEÇÃO INFERIOR — GRADIENTE AMBIENTE ROXO VIBRANTE NO TOPO E ESCURO NOS PLANOS */}
       <div className="relative bg-gradient-to-b from-background via-[#1a092b] via-20% via-[#120520] via-65% to-[#06030c] overflow-hidden">
+
         {/* LUZES AMBIENTES FLUTUANTES VIBRANTES NO TOPO */}
         <div className="pointer-events-none absolute top-12 left-1/2 -translate-x-1/2 size-[750px] rounded-full bg-primary/18 blur-[150px]" />
         <div className="pointer-events-none absolute top-[35%] right-0 size-[650px] rounded-full bg-primary/12 blur-[140px]" />
@@ -308,7 +360,7 @@ function Index() {
               {[...plataformas, ...plataformas].map((p, i) => (
                 <div
                   key={p.nome + i}
-                  className="opacity-75 transition-all duration-300 hover:opacity-100 hover:scale-110"
+                  className="transition-transform duration-200 hover:scale-110"
                 >
                   <BrandLogo
                     nome={p.nome}
@@ -324,241 +376,287 @@ function Index() {
         </section>
 
         {/* CATÁLOGO */}
-        <section id="catalogo" className="relative z-10 pt-8 pb-4">
-          <Reveal className="mx-auto mb-4 w-[94%] max-w-6xl text-center">
-            <h2 className="text-4xl font-extrabold md:text-5xl">
-              Os mais assistidos <span className="text-hot">agora</span>
+        <section id="catalogo" className="relative z-10 pt-10 pb-4">
+          <Reveal className="mx-auto mb-6 w-[94%] max-w-6xl text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-950/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-purple-200 uppercase shadow-[0_0_20px_rgba(168,85,247,0.25)] mb-4">
+              <Film className="size-3.5 text-accent" /> Catálogo em alta definição
+            </span>
+            <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white">
+              Tudo o que você ama em <span className="text-hot">um só lugar</span>
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-              Seus filmes, séries e animes favoritos com a experiência que você
-              merece — em alta definição, sem antena e sem decodificador.
+            <p className="mx-auto mt-3 max-w-xl text-xs sm:text-sm text-muted-foreground font-medium leading-relaxed">
+              Filmes, séries de sucesso e animes em alta definição — assista quando e onde quiser, sem complicações.
             </p>
           </Reveal>
 
           <Rail
             icon={Flame}
-            title="Terror — lançamentos e clássicos"
-            subtitle="Obsessão, Boca do Diabo, Undertone, Hokum, Passageiro do Mal e mais"
+            title="Filmes — lançamentos e grandes sucessos"
             items={terror}
           />
           <Rail
-            icon={Ghost}
-            title="Séries de terror para você maratonar"
-            subtitle="Cabo do Medo, Origem (FROM), Channel Zero, O Segredo de Widow's Bay e mais"
+            icon={Film}
+            title="Séries em alta para maratonar"
             items={series}
           />
           <Rail
             icon={Torii}
             title="Animes Crunchyroll"
-            subtitle="Demon Slayer, Frieren, Jujutsu Kaisen, Solo Leveling e mais"
             items={animes}
           />
         </section>
 
         {/* FEATURES */}
-        <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-8 sm:py-10">
-          <CascadeGrid>
-            {(visible) => (
-              <div className="grid gap-5 md:grid-cols-3 col-span-full">
-                {[
-                  {
-                    icon: Clapperboard,
-                    gradient: "from-rose-600 via-primary to-purple-600",
-                    glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
-                    t: "Filmes incríveis",
-                    d: "Clássicos, lançamentos e grandes produções premiadas em alta definição.",
-                  },
-                  {
-                    icon: Tv,
-                    gradient: "from-purple-600 via-primary to-accent",
-                    glow: "shadow-[0_0_22px_rgba(168,85,247,0.85)] border-purple-300/80",
-                    t: "Séries imperdíveis",
-                    d: "Temporadas completas dos sucessos do momento para maratonar sem limites.",
-                  },
-                  {
-                    icon: Torii,
-                    gradient: "from-fuchsia-600 via-purple-600 to-pink-500",
-                    glow: "shadow-[0_0_22px_rgba(217,70,239,0.85)] border-fuchsia-300/80",
-                    t: "Animes atualizados",
-                    d: "Lista enorme com todos os animes do momento, sempre em dia e em HD.",
-                  },
-                  {
-                    icon: Baby,
-                    gradient: "from-amber-500 via-orange-500 to-rose-500",
-                    glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-amber-300/80",
-                    t: "Canais infantis",
-                    d: "Toda a lista para a criançada, incluindo Disney+ e muito mais.",
-                  },
-                  {
-                    icon: ShieldCheck,
-                    gradient: "from-violet-700 via-purple-800 to-indigo-900",
-                    glow: "shadow-[0_0_22px_rgba(139,92,246,0.85)] border-violet-300/80",
-                    t: "Canais adultos",
-                    d: "Opcional e protegido por senha, para a segurança das crianças.",
-                  },
-                  {
-                    icon: Trophy,
-                    gradient: "from-emerald-500 via-teal-600 to-cyan-500",
-                    glow: "shadow-[0_0_22px_rgba(16,185,129,0.85)] border-emerald-300/80",
-                    t: "Esportes ao vivo",
-                    d: "Futebol, artes marciais e todos os canais esportivos ao vivo.",
-                  },
-                ].map((f, i) => (
-                  <div
-                    key={f.t}
-                    data-visible={visible}
-                    style={{ transitionDelay: `${i * 90}ms` }}
-                    className="reveal group relative h-full rounded-4xl p-7 border border-purple-500/30 bg-gradient-to-b from-[#1a082c]/90 via-[#110420]/90 to-[#0a0214]/90 backdrop-blur-md shadow-[0_0_25px_rgba(0,0,0,0.4)] transition-all duration-500 hover:border-purple-400/80 hover:shadow-[0_0_40px_rgba(168,85,247,0.35)] hover:-translate-y-2"
-                  >
-                    {/* ÍCONE 3D RELUZENTE E FLUTUANTE */}
-                    <div className="relative mb-5 shrink-0">
-                      <div className={`animate-icon-float-3d relative flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${f.gradient} p-0.5 border ${f.glow} transform-gpu transition-all duration-300 group-hover:scale-110`}>
-                        <div className="relative flex size-full items-center justify-center rounded-[14px] bg-black/25 overflow-hidden">
-                          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-90" />
-                          <f.icon className="size-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] relative z-10" />
-                        </div>
+        <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-6 sm:py-8">
+          <SmoothCardReveal delay={0}>
+            <div className="text-center mb-8">
+              <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-950/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-purple-200 uppercase shadow-[0_0_20px_rgba(168,85,247,0.25)] mb-4">
+                <Sparkles className="size-3.5 text-accent" /> Diferenciais da plataforma
+              </span>
+              <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white">
+                Por que escolher a <span className="text-hot">Cineflix</span>
+              </h2>
+              <p className="mx-auto mt-3 max-w-xl text-xs sm:text-sm text-muted-foreground font-medium leading-relaxed">
+                Qualidade 4K sem travamentos, suporte humano 7 dias por semana e compatível com todos os seus aparelhos.
+              </p>
+            </div>
+          </SmoothCardReveal>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {[
+              {
+                icon: Clapperboard,
+                gradient: "from-rose-600 via-primary to-purple-600",
+                glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
+                corBorda: "border border-rose-500/35 hover:border-rose-400/80",
+                corGlow: "shadow-[0_0_25px_rgba(225,29,72,0.15)] hover:shadow-[0_0_40px_rgba(225,29,72,0.45)]",
+                bgCard: "bg-gradient-to-b from-rose-950/30 via-[#1a061c]/90 to-[#0c0210]/98",
+                titleHover: "group-hover:text-rose-200",
+                t: "Filmes incríveis",
+                d: "Clássicos, lançamentos e grandes produções premiadas em alta definição.",
+              },
+              {
+                icon: Tv,
+                gradient: "from-purple-600 via-primary to-accent",
+                glow: "shadow-[0_0_22px_rgba(168,85,247,0.85)] border-purple-300/80",
+                corBorda: "border border-purple-500/35 hover:border-purple-400/80",
+                corGlow: "shadow-[0_0_25px_rgba(168,85,247,0.15)] hover:shadow-[0_0_40px_rgba(168,85,247,0.45)]",
+                bgCard: "bg-gradient-to-b from-purple-950/30 via-[#16072b]/90 to-[#0b0314]/98",
+                titleHover: "group-hover:text-purple-200",
+                t: "Séries imperdíveis",
+                d: "Temporadas completas dos sucessos do momento para maratonar sem limites.",
+              },
+              {
+                icon: Torii,
+                gradient: "from-fuchsia-600 via-purple-600 to-pink-500",
+                glow: "shadow-[0_0_22px_rgba(217,70,239,0.85)] border-fuchsia-300/80",
+                corBorda: "border border-fuchsia-500/35 hover:border-fuchsia-400/80",
+                corGlow: "shadow-[0_0_25px_rgba(217,70,239,0.15)] hover:shadow-[0_0_40px_rgba(217,70,239,0.45)]",
+                bgCard: "bg-gradient-to-b from-fuchsia-950/30 via-[#1b0626]/90 to-[#0e0214]/98",
+                titleHover: "group-hover:text-fuchsia-200",
+                t: "Animes atualizados",
+                d: "Lista enorme com todos os animes do momento, sempre em dia e em HD.",
+              },
+              {
+                icon: Baby,
+                gradient: "from-amber-500 via-orange-500 to-rose-500",
+                glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-amber-300/80",
+                corBorda: "border border-amber-500/35 hover:border-amber-400/80",
+                corGlow: "shadow-[0_0_25px_rgba(245,158,11,0.15)] hover:shadow-[0_0_40px_rgba(245,158,11,0.45)]",
+                bgCard: "bg-gradient-to-b from-amber-950/25 via-[#1a1008]/90 to-[#0e0703]/98",
+                titleHover: "group-hover:text-amber-200",
+                t: "Canais infantis",
+                d: "Toda a lista para a criançada, incluindo Disney+ e muito mais.",
+              },
+              {
+                icon: Trophy,
+                gradient: "from-cyan-500 via-teal-600 to-emerald-500",
+                glow: "shadow-[0_0_22px_rgba(6,182,212,0.85)] border-cyan-300/80",
+                corBorda: "border border-cyan-500/35 hover:border-cyan-400/80",
+                corGlow: "shadow-[0_0_25px_rgba(6,182,212,0.15)] hover:shadow-[0_0_40px_rgba(6,182,212,0.45)]",
+                bgCard: "bg-gradient-to-b from-cyan-950/30 via-[#071824]/90 to-[#030d14]/98",
+                titleHover: "group-hover:text-cyan-200",
+                t: "Esportes ao vivo",
+                d: "Futebol, artes marciais e todos os canais esportivos ao vivo.",
+              },
+              {
+                icon: Lock,
+                gradient: "from-red-600 via-rose-600 to-pink-600",
+                glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
+                corBorda: "border border-rose-500/35 hover:border-rose-400/80",
+                corGlow: "shadow-[0_0_25px_rgba(225,29,72,0.15)] hover:shadow-[0_0_40px_rgba(225,29,72,0.45)]",
+                bgCard: "bg-gradient-to-b from-rose-950/40 via-[#1e0714]/90 to-[#0d0209]/98",
+                titleHover: "group-hover:text-rose-200",
+                t: "Canais adultos",
+                d: "Opcional e protegido por senha, para a segurança das crianças.",
+              },
+            ].map((f, i) => (
+              <SmoothCardReveal key={f.t} delay={100 + i * 80}>
+                <div
+                  className={`group relative h-full rounded-4xl p-7 ${f.corBorda} ${f.bgCard} ${f.corGlow} backdrop-blur-md transition-all duration-300 hover:-translate-y-2`}
+                >
+                  {/* ÍCONE 3D RELUZENTE E FLUTUANTE */}
+                  <div className="relative mb-5 shrink-0">
+                    <div className={`animate-icon-float-3d relative flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${f.gradient} p-0.5 border ${f.glow} transform-gpu transition-all duration-300 group-hover:scale-110`}>
+                      <div className="relative flex size-full items-center justify-center rounded-[14px] bg-black/25 overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-90" />
+                        <f.icon className="size-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] relative z-10" />
                       </div>
                     </div>
-
-                    <h3 className="mb-2 text-lg sm:text-xl font-extrabold text-white transition-colors duration-300 group-hover:text-purple-200">{f.t}</h3>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {f.d}
-                    </p>
                   </div>
-                ))}
-              </div>
-            )}
-          </CascadeGrid>
-        </section>
 
-        {/* ESPORTES */}
-        <section id="esportes" className="relative z-10 my-6 sm:my-8 overflow-hidden">
-          <div className="relative mx-auto w-[94%] max-w-6xl overflow-hidden rounded-4xl border border-border/80 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
-            <img
-              src={futebol}
-              alt="Torcida em estádio de futebol lotado à noite"
-              loading="lazy"
-              width={1280}
-              height={720}
-              className="absolute inset-0 size-full object-cover animate-kenburns"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-transparent" />
-            <Reveal className="relative p-8 md:p-16">
-              <span className="glass mb-5 inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold uppercase border border-primary/30 animate-pulse">
-                <Trophy className="size-3.5 text-accent" /> Esportes ao vivo
-              </span>
-              <h2 className="max-w-lg text-4xl font-extrabold md:text-5xl">
-                Para quem é <span className="text-hot">fanático por futebol</span>
-              </h2>
-              <p className="mt-5 max-w-lg text-muted-foreground">
-                Acompanhe os maiores campeonatos do Brasil e do mundo, além de
-                lutas, NBA, NFL e tudo que você ama — sem travar, em 4K.
-              </p>
-              <div className="mt-8">
-                <Cta />
-              </div>
-            </Reveal>
+                  <h3 className={`mb-2 text-lg sm:text-xl font-extrabold text-white transition-colors duration-300 ${f.titleHover}`}>{f.t}</h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {f.d}
+                  </p>
+                </div>
+              </SmoothCardReveal>
+            ))}
           </div>
         </section>
 
-        {/* ECONOMIA */}
-        <section id="economia" className="relative z-10 mx-auto w-[94%] max-w-6xl py-10 sm:py-12">
-          <Reveal>
-            <div className="relative overflow-hidden rounded-4xl border border-purple-500/30 bg-gradient-to-b from-[#18082c]/90 via-[#100420]/95 to-[#070210]/98 p-6 sm:p-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(168,85,247,0.22)]">
-              {/* LUZES E GLOW DE VIDRO DE FUNDO */}
-              <div className="pointer-events-none absolute -top-32 -left-32 size-64 rounded-full bg-primary/20 blur-3xl" />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent" />
 
-              {/* TÍTULO DO PAINEL */}
-              <div className="relative z-10 text-center mb-8">
-                <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl">
-                  Isso é o que você pagaria{" "}
-                  <span className="text-hot">assinando tudo separado</span>
+        {/* ESPORTES */}
+        <section id="esportes" className="relative z-10 my-4 sm:my-6 overflow-hidden">
+          <SmoothCardReveal delay={100}>
+            <div className="relative mx-auto w-[94%] max-w-6xl overflow-hidden rounded-4xl border border-border/80 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+              <img
+                src={futebol}
+                alt="Torcida em estádio de futebol lotado à noite"
+                decoding="async"
+                width={1280}
+                height={720}
+                className="absolute inset-0 size-full object-cover animate-kenburns"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-transparent" />
+              <div className="relative p-8 md:p-16">
+                <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-950/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-purple-200 uppercase shadow-[0_0_20px_rgba(168,85,247,0.25)] mb-5">
+                  <Trophy className="size-3.5 text-accent" /> Esportes ao vivo
+                </span>
+                <h2 className="max-w-lg text-4xl font-extrabold md:text-5xl">
+                  Para quem é <span className="text-hot">fanático por futebol</span>
                 </h2>
+                <p className="mt-5 max-w-lg text-muted-foreground">
+                  Acompanhe os maiores campeonatos do Brasil e do mundo, além de
+                  lutas, NBA, NFL e tudo que você ama — sem travar, em 4K.
+                </p>
+                <div className="mt-8">
+                  <Cta />
+                </div>
               </div>
+            </div>
+          </SmoothCardReveal>
+        </section>
 
-              {/* GRID DOS 12 CARDS DE STREAMING */}
-              <CascadeGrid className="relative z-10 grid grid-cols-3 gap-2 sm:gap-2.5 sm:grid-cols-4 lg:grid-cols-6">
-                {(visible) =>
-                  plataformas.map((p, i) => (
-                    <div
-                      key={p.nome}
-                      data-visible={visible}
-                      style={{
-                        transitionDelay: `${i * 40}ms`,
-                      }}
-                      className="reveal relative group flex flex-col items-center justify-center gap-1.5 rounded-2xl px-2.5 py-3.5 border border-white/12 bg-white/5 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-all duration-300 hover:border-purple-400/60 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(168,85,247,0.35)] overflow-hidden"
-                    >
-                      {/* BRILHO REFLEXIVO DE VIDRO 3D */}
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-80" />
 
-                      <div className="flex h-6 items-center">
-                        <BrandLogo
-                          nome={p.nome}
-                          logo={p.logo}
-                          invert={p.invert === true}
-                          escala={p.escala ?? 1}
-                          cor={p.cor}
-                          className="h-5"
-                        />
-                      </div>
+        {/* ECONOMIA */}
+        <section id="economia" className="relative z-10 mx-auto w-[94%] max-w-6xl py-8 sm:py-10">
+          <div className="relative overflow-hidden rounded-4xl border border-purple-500/30 bg-gradient-to-b from-[#18082c]/90 via-[#100420]/95 to-[#070210]/98 p-6 sm:p-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(168,85,247,0.22)]">
+            {/* LUZES E GLOW DE VIDRO DE FUNDO */}
+            <div className="pointer-events-none absolute -top-32 -left-32 size-64 rounded-full bg-primary/20 blur-3xl" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent" />
 
-                      {p.logo && (
-                        <p className="text-[10px] text-muted-foreground font-medium truncate max-w-full px-1">{p.nome}</p>
-                      )}
+            {/* TÍTULO DO PAINEL */}
+            <SmoothCardReveal delay={50}>
+              <div className="relative z-10 text-center mb-8">
+                <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-950/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-purple-200 uppercase shadow-[0_0_20px_rgba(168,85,247,0.25)] mb-4">
+                  <DollarSign className="size-3.5 text-accent" /> Comparativo de preços
+                </span>
+                <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl">
+                  Quanto você economiza <span className="text-hot">assinando a Cineflix</span>
+                </h2>
+                <p className="mx-auto mt-3 max-w-xl text-xs sm:text-sm text-muted-foreground font-medium leading-relaxed">
+                  Valor mensal de cada serviço assinado individualmente:
+                </p>
+              </div>
+            </SmoothCardReveal>
 
-                      <p className="font-display text-sm sm:text-base font-bold line-through decoration-primary decoration-2 text-white/95 drop-shadow-sm">
-                        {p.preco}
-                      </p>
+            {/* GRID DOS 12 CARDS DE STREAMING */}
+            <div className="relative z-10 grid grid-cols-3 gap-2 sm:gap-2.5 sm:grid-cols-4 lg:grid-cols-6">
+              {plataformas.map((p, i) => (
+                <SmoothCardReveal key={p.nome} delay={80 + i * 35}>
+                  <div
+                    className="relative group flex flex-col items-center justify-center gap-2 rounded-2xl px-2 py-3 sm:py-3.5 border border-white/12 bg-white/5 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-all duration-300 hover:border-purple-400/60 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(168,85,247,0.35)] overflow-hidden"
+                  >
+                    {/* BRILHO REFLEXIVO DE VIDRO 3D */}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-80" />
+
+                    <div className="flex h-7 sm:h-8 w-full items-center justify-center px-1 overflow-hidden">
+                      <BrandLogo
+                        nome={p.nome}
+                        logo={p.logo}
+                        invert={p.invert === true}
+                        escala={p.escala ?? 1}
+                        cor={p.cor}
+                      />
                     </div>
-                  ))
-                }
-              </CascadeGrid>
+                    <span className="font-display text-xs font-black tracking-tight text-white/90 drop-shadow-sm">
+                      {p.preco}
+                    </span>
+                  </div>
+                </SmoothCardReveal>
+              ))}
+            </div>
 
-              {/* LINHA DIVISÓRIA COM GLOW NEON */}
-              <div className="relative z-10 my-8 sm:my-10 h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent" />
+            {/* LINHA DIVISÓRIA COM GLOW NEON */}
+            <div className="relative z-10 my-4 sm:my-5 h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent" />
 
-              {/* RESUMO DE ECONOMIA UNIFICADO NO PAINEL */}
-              <div className="relative z-10 flex flex-col items-center text-center">
-                <p className="text-muted-foreground text-sm sm:text-base">
+            {/* RESUMO DE ECONOMIA UNIFICADO NO PAINEL COM ANIMAÇÃO */}
+            <SmoothCardReveal delay={250}>
+              <div className="relative z-10 mx-auto max-w-2xl rounded-3xl border border-purple-500/40 bg-gradient-to-b from-purple-950/60 via-[#18092f]/95 to-[#0c0318]/98 p-4 sm:p-7 text-center backdrop-blur-xl shadow-[0_0_35px_rgba(168,85,247,0.35)]">
+                <p className="text-muted-foreground text-xs sm:text-base font-semibold">
                   Ao todo você pagaria{" "}
-                  <span className="font-bold text-foreground line-through decoration-primary decoration-2">
+                  <span className="font-bold text-foreground">
                     R$ 386,80
                   </span>{" "}
                   por mês
                 </p>
 
-                <p className="font-display mt-3 text-2xl font-extrabold sm:text-4xl md:text-5xl">
-                  Com a Cineflix você paga{" "}
-                  <span className="text-hot">apenas R$20/mês</span>
-                </p>
+                <div className="mt-1.5 sm:mt-3 flex flex-col items-center justify-center text-center">
+                  <span className="font-display text-base sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-tight">
+                    Com a Cineflix você paga
+                  </span>
+                  <span className="font-display mt-0.5 inline-flex items-center justify-center gap-1.5 text-xl sm:text-4xl md:text-5xl font-black leading-tight">
+                    <span className="bg-gradient-to-r from-rose-500 via-purple-400 via-pink-400 to-amber-300 bg-clip-text text-transparent animate-text-shine drop-shadow-[0_0_25px_rgba(244,63,94,0.7)]">
+                      apenas R$20/mês
+                    </span>
+                    <Flame className="size-5 sm:size-8 text-rose-500 animate-bounce shrink-0 drop-shadow-[0_0_12px_rgba(244,63,94,0.9)]" />
+                  </span>
+                </div>
 
-                <div className="mt-7">
+                <div className="mt-4 sm:mt-6">
                   <Cta />
                 </div>
               </div>
-            </div>
-          </Reveal>
+            </SmoothCardReveal>
+          </div>
         </section>
 
-      {/* PLANOS */}
-      <section id="planos" className="relative z-10 mx-auto w-[94%] max-w-6xl py-10 sm:py-12">
-        {/* GLOW AMBIENTE PULSANTE DINÂMICO DOS PLANOS */}
-        <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[650px] rounded-full bg-primary/20 blur-[180px] animate-pulse" />
 
-        <Reveal className="relative z-10 text-center">
-          <span className="glass mb-4 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface/90 px-4 py-2 text-xs font-bold tracking-wide uppercase text-accent shadow-[0_0_20px_rgba(168,85,247,0.3)]">
-            <Sparkles className="size-3.5 fill-current" /> Oferta por tempo limitado
-          </span>
-          <h2 className="text-4xl font-extrabold md:text-5xl">
-            Aproveite e <span className="text-hot">assine já</span>
-          </h2>
-          <p className="mt-2 text-muted-foreground">
-            Cancele quando quiser. Ativação imediata e suporte dedicado 24/7.
-          </p>
-        </Reveal>
+        {/* PLANOS */}
+        <section id="planos" className="relative z-10 mx-auto w-[94%] max-w-6xl py-8 sm:py-10">
+          {/* GLOW AMBIENTE PULSANTE DINÂMICO DOS PLANOS */}
+          <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[650px] rounded-full bg-primary/20 blur-[180px] animate-pulse" />
 
-        <div className="relative z-10 mt-14 sm:mt-16 pt-4 grid items-center gap-6 lg:grid-cols-3">
+          <Reveal className="relative z-10 text-center">
+            <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/50 bg-purple-950/70 backdrop-blur-md px-4 py-2 text-xs font-extrabold tracking-wider text-purple-200 uppercase shadow-[0_0_25px_rgba(168,85,247,0.4)] mb-5 animate-pulse">
+              <Sparkles className="size-3.5 text-accent animate-spin" /> Oferta por tempo limitado
+            </span>
+            <h2 className="text-4xl font-black sm:text-5xl md:text-6xl tracking-tight text-white">
+              Aproveite e{" "}
+              <span className="relative inline-flex items-center gap-1.5">
+                <span className="bg-gradient-to-r from-rose-500 via-purple-400 via-pink-400 to-amber-300 bg-clip-text text-transparent animate-text-shine drop-shadow-[0_0_30px_rgba(244,63,94,0.6)]">
+                  assine já
+                </span>
+                <Zap className="size-8 sm:size-10 text-amber-400 animate-bounce drop-shadow-[0_0_15px_rgba(251,191,36,0.9)]" />
+              </span>
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto font-medium leading-relaxed">
+              Cancele quando quiser, com ativação imediata e suporte 24/7.
+            </p>
+          </Reveal>
+
+        <div className="relative z-10 mt-12 grid items-center gap-6 lg:grid-cols-3">
           {[
             {
               id: "start",
@@ -568,13 +666,13 @@ function Index() {
               telas: "Use 2 telas simultaneamente",
               extra: "Plano Mensal Sem Fidelidade",
               destaque: false,
-              selo: "Ideal para experimentar",
+              selo: null as string | null,
               badge: "Sem Fidelidade",
-              corBorda: "border border-purple-500/40 hover:border-purple-300",
-              corGlow: "shadow-[0_0_40px_rgba(168,85,247,0.25)] hover:shadow-[0_0_60px_rgba(168,85,247,0.55)]",
-              bgCard: "bg-gradient-to-b from-purple-950/40 via-[#120522]/80 to-[#0b0316]/95 backdrop-blur-2xl",
-              badgeStyle: "bg-purple-900/80 text-purple-200 border-purple-400/50 shadow-[0_0_15px_rgba(168,85,247,0.4)]",
-              btnStyle: "animate-vibrate bg-gradient-to-r from-purple-600 via-primary to-purple-700 text-white shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:shadow-[0_0_35px_rgba(168,85,247,0.8)] hover:scale-[1.03]",
+              corBorda: "border border-cyan-500/40 hover:border-cyan-300",
+              corGlow: "shadow-[0_0_35px_rgba(6,182,212,0.35)] hover:shadow-[0_0_55px_rgba(6,182,212,0.65)]",
+              bgCard: "bg-gradient-to-b from-cyan-950/40 via-[#0a1828]/90 to-[#060e1a]/98 backdrop-blur-2xl",
+              badgeStyle: "bg-cyan-900/60 text-cyan-200 border-cyan-400/50 shadow-[0_0_12px_rgba(6,182,212,0.35)]",
+              btnStyle: "bg-gradient-to-r from-cyan-600 via-teal-600 to-blue-600 text-white shadow-[0_0_25px_rgba(6,182,212,0.6)] hover:shadow-[0_0_45px_rgba(6,182,212,0.9)] hover:scale-[1.03]",
               link: "https://ev.braip.com/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
             },
             {
@@ -585,13 +683,13 @@ function Index() {
               telas: "Use 4 telas simultaneamente",
               extra: "1 ano de acesso · sem mensalidade",
               destaque: true,
-              selo: "Mais escolhido · 60% OFF",
-              badge: "🔥 Máxima Economia",
-              corBorda: "border-2 border-primary/90",
-              corGlow: "shadow-[0_0_75px_rgba(168,85,247,0.7)] hover:shadow-[0_0_100px_rgba(168,85,247,0.95)]",
-              bgCard: "bg-gradient-to-b from-purple-900/60 via-[#28073e]/90 to-[#12021c]/98 backdrop-blur-2xl",
-              badgeStyle: "bg-primary/70 text-white border-purple-200/90 shadow-[0_0_20px_rgba(168,85,247,0.7)] font-black",
-              btnStyle: "animate-vibrate bg-gradient-to-r from-purple-600 via-primary to-accent text-white shadow-[0_0_35px_rgba(168,85,247,0.8)] hover:shadow-[0_0_50px_rgba(168,85,247,1)] hover:scale-[1.04]",
+              selo: "🔥 Mais escolhido — 60% OFF",
+              badge: "Máxima Economia",
+              corBorda: "border-2 border-purple-300 shadow-[0_0_55px_rgba(168,85,247,0.65)]",
+              corGlow: "shadow-[0_0_80px_rgba(168,85,247,0.75)] hover:shadow-[0_0_100px_rgba(168,85,247,1)]",
+              bgCard: "bg-gradient-to-b from-purple-900/90 via-[#3c0c61]/95 to-[#1a042e] backdrop-blur-2xl",
+              badgeStyle: "bg-primary text-white border-purple-200 shadow-[0_0_20px_rgba(168,85,247,0.8)] font-black",
+              btnStyle: "animate-vibrate bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_35px_rgba(168,85,247,0.85)] hover:shadow-[0_0_55px_rgba(168,85,247,1)] hover:scale-[1.04]",
               link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
             },
             {
@@ -602,26 +700,26 @@ function Index() {
               telas: "Use 2 telas simultaneamente",
               extra: "Plano Semestral Economia",
               destaque: false,
-              selo: "Economize 42%",
-              badge: "Semestral",
-              corBorda: "border border-fuchsia-500/40 hover:border-fuchsia-300",
-              corGlow: "shadow-[0_0_40px_rgba(217,70,239,0.25)] hover:shadow-[0_0_60px_rgba(217,70,239,0.55)]",
-              bgCard: "bg-gradient-to-b from-fuchsia-950/40 via-[#1a0428]/80 to-[#0e0216]/95 backdrop-blur-2xl",
-              badgeStyle: "bg-fuchsia-950/80 text-fuchsia-200 border-fuchsia-400/50 shadow-[0_0_15px_rgba(217,70,239,0.4)]",
-              btnStyle: "animate-vibrate bg-gradient-to-r from-fuchsia-700 via-purple-600 to-primary text-white shadow-[0_0_20px_rgba(217,70,239,0.5)] hover:shadow-[0_0_35px_rgba(217,70,239,0.8)] hover:scale-[1.03]",
+              selo: null as string | null,
+              badge: "Economize 42%",
+              corBorda: "border border-amber-500/40 hover:border-amber-300",
+              corGlow: "shadow-[0_0_35px_rgba(245,158,11,0.35)] hover:shadow-[0_0_55px_rgba(245,158,11,0.65)]",
+              bgCard: "bg-gradient-to-b from-amber-950/30 via-[#180e24]/90 to-[#0b0314]/98 backdrop-blur-2xl",
+              badgeStyle: "bg-amber-950/80 text-amber-300 border-amber-400/50 shadow-[0_0_12px_rgba(245,158,11,0.35)]",
+              btnStyle: "bg-gradient-to-r from-amber-600 via-amber-700 to-purple-800 text-white shadow-[0_0_25px_rgba(245,158,11,0.55)] hover:shadow-[0_0_45px_rgba(245,158,11,0.85)] hover:scale-[1.03]",
               link: "https://ev.braip.com/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
             },
           ].map((p, i) => (
-            <Reveal key={p.nome} delay={i * 120}>
+            <SmoothCardReveal key={p.nome} delay={100 + i * 120}>
               <div
-                className={`group relative h-full rounded-4xl transition-all duration-500 ${p.corBorda} ${p.corGlow} ${p.bgCard} ${
+                className={`group relative h-full rounded-4xl [transform:translateZ(0)] [backface-visibility:hidden] transition-[transform,border-color,box-shadow] duration-300 ${p.corBorda} ${p.corGlow} ${p.bgCard} ${
                   p.destaque
-                    ? "pt-10 pb-8 px-8 lg:scale-[1.08] z-20 hover:scale-[1.10]"
-                    : "pt-10 pb-8 px-8 hover:-translate-y-2"
+                    ? "pt-10 pb-9 px-8 sm:px-9 lg:scale-[1.06] z-20 hover:scale-[1.08]"
+                    : "p-8 sm:p-9 hover:-translate-y-2"
                 }`}
               >
                 {/* BRILHO REFLEXIVO DE VIDRO 3D NO CARD */}
-                <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-4xl">
+                <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-4xl [transform:translateZ(0)] [isolation:isolate]">
                   <div className="pointer-events-none absolute -top-24 -left-24 size-48 rounded-full bg-white/10 blur-2xl transition-all duration-700 group-hover:scale-150 group-hover:bg-white/15" />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-80" />
                 </div>
@@ -633,7 +731,7 @@ function Index() {
                   </span>
                 )}
 
-                <div className="flex items-center justify-between">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <h3 className={`font-display text-sm font-extrabold tracking-[0.18em] uppercase ${p.destaque ? "text-purple-200" : "text-accent"}`}>
                     {p.nome}
                   </h3>
@@ -689,34 +787,61 @@ function Index() {
                   ))}
                 </ul>
               </div>
-            </Reveal>
+            </SmoothCardReveal>
           ))}
         </div>
 
-        {/* FORMAS DE PAGAMENTO LOGO ABAIXO DOS PLANOS */}
-        <Reveal className="relative z-10 mt-10 sm:mt-12">
-          <div className="glass flex flex-col md:flex-row items-center justify-between gap-6 rounded-3xl p-6 sm:p-8 border border-purple-500/30 bg-gradient-to-r from-purple-950/40 via-background/80 to-purple-950/40 backdrop-blur-xl shadow-[0_0_30px_rgba(0,0,0,0.4)]">
-            <div className="flex items-center gap-4 text-left">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/20 border border-primary/40 text-accent">
-                <CreditCard className="size-6" />
+        {/* PAINEL COMPACTO DE GARANTIA E PAGAMENTO */}
+        <SmoothCardReveal delay={150}>
+          <div className="glass rounded-3xl p-6 sm:p-8 border border-white/10 bg-black/50 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)] mt-10">
+            <div className="grid gap-6 md:grid-cols-2 md:items-center md:divide-x md:divide-white/10">
+              {/* LADO ESQUERDO: GARANTIA DE 7 DIAS COMPACTA */}
+              <div className="flex items-center gap-4">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.25)]">
+                  <ShieldCheck className="size-6" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">Garantia 7 Dias</span>
+                    <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] font-extrabold text-emerald-300">Sem Riscos</span>
+                  </div>
+                  <h4 className="font-display text-base sm:text-lg font-extrabold text-white">
+                    Experimente sem compromisso por 7 dias
+                  </h4>
+                  <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                    Se dentro de 7 dias você decidir não continuar por qualquer motivo, devolveremos 100% do seu dinheiro sem perguntas.
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-display text-base font-extrabold text-white">Formas de Pagamento Aceitas</h4>
-                <p className="text-xs text-muted-foreground">Liberação imediata no PIX · Parcelamento em até 12x no Cartão de Crédito</p>
-              </div>
-            </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              <span className="flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-4 py-2 text-xs font-bold text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.25)]">
-                <QrCode className="size-4 text-emerald-400" /> PIX (Ativação Instantânea)
-              </span>
-              <span className="flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-950/40 px-4 py-2 text-xs font-bold text-purple-200 shadow-[0_0_15px_rgba(168,85,247,0.25)]">
-                <CreditCard className="size-4 text-purple-400" /> Cartão de Crédito (até 12x)
-              </span>
+              {/* LADO DIREITO: FORMAS DE PAGAMENTO ACEITAS */}
+              <div className="flex items-center gap-4 md:pl-6">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-purple-500/15 border border-purple-400/30 text-purple-300 shadow-[0_0_20px_rgba(168,85,247,0.25)]">
+                  <CreditCard className="size-6" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-xs font-bold uppercase tracking-wider text-purple-300">Pagamento Seguro</span>
+                    <span className="rounded-full bg-purple-500/20 px-2 py-0.5 text-[10px] font-extrabold text-purple-200">Ativação Imediata</span>
+                  </div>
+                  <h4 className="font-display text-base sm:text-lg font-extrabold text-white">
+                    Formas de Pagamento Aceitas
+                  </h4>
+                  <div className="flex flex-wrap items-center gap-2 mt-2">
+                    <span className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3 py-1 text-[11px] font-bold text-emerald-300">
+                      <QrCode className="size-3.5 text-emerald-400" /> PIX Instantâneo
+                    </span>
+                    <span className="flex items-center gap-1.5 rounded-full border border-purple-500/30 bg-purple-950/40 px-3 py-1 text-[11px] font-bold text-purple-200">
+                      <CreditCard className="size-3.5 text-purple-400" /> Cartão (até 12x)
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </Reveal>
+        </SmoothCardReveal>
       </section>
+
 
       {/* FAQ */}
       <Faq>
@@ -727,31 +852,31 @@ function Index() {
       </Faq>
 
       {/* SEGURANÇA E CERTIFICADOS BEM EMBAIXO DA PÁGINA */}
-      <Reveal>
-        <section className="border-t border-border/70 bg-surface/30 py-12">
-          <div className="mx-auto w-[94%] max-w-6xl">
-            <p className="mb-8 text-center text-xs font-semibold tracking-[0.25em] text-muted-foreground uppercase">
-              Segurança &amp; Certificados de Garantia
-            </p>
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-              {[
-                { icon: Lock, title: "Pagamento Seguro", desc: "SSL 256-bit" },
-                { icon: Zap, title: "Ativação Imediata", desc: "Acesso na hora" },
-                { icon: CreditCard, title: "Parcelamento", desc: "Até 12x no cartão" },
-                { icon: ShieldCheck, title: "Suporte 7 dias", desc: "Via WhatsApp" },
-                { icon: RefreshCcw, title: "Sem Fidelidade", desc: "Cancele quando quiser" },
-                { icon: Star, title: "+10 mil clientes", desc: "Satisfação garantida" },
-              ].map((c) => (
-                <div key={c.title} className="glass flex flex-col items-center gap-2 rounded-2xl p-4 text-center transition-all duration-300 hover:border-primary/50 hover:scale-105">
+      <section className="border-t border-border/70 bg-surface/30 py-12">
+        <div className="mx-auto w-[94%] max-w-6xl">
+          <p className="mb-8 text-center text-xs font-semibold tracking-[0.25em] text-muted-foreground uppercase">
+            Segurança &amp; Certificados de Garantia
+          </p>
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+            {[
+              { icon: Lock, title: "Pagamento Seguro", desc: "SSL 256-bit" },
+              { icon: Zap, title: "Ativação Imediata", desc: "Acesso na hora" },
+              { icon: CreditCard, title: "Parcelamento", desc: "Até 12x no cartão" },
+              { icon: ShieldCheck, title: "Suporte 7 dias", desc: "Via WhatsApp" },
+              { icon: RefreshCcw, title: "Sem Fidelidade", desc: "Cancele quando quiser" },
+              { icon: Star, title: "+10 mil clientes", desc: "Satisfação garantida" },
+            ].map((c, i) => (
+              <SmoothCardReveal key={c.title} delay={60 + i * 40}>
+                <div className="glass flex flex-col items-center gap-2 rounded-2xl p-4 text-center transition-all duration-300 hover:border-primary/50 hover:scale-105">
                   <c.icon className="size-6 text-accent mb-1" />
                   <p className="text-xs font-bold text-white">{c.title}</p>
                   <p className="text-[10px] text-muted-foreground">{c.desc}</p>
                 </div>
-              ))}
-            </div>
+              </SmoothCardReveal>
+            ))}
           </div>
-        </section>
-      </Reveal>
+        </div>
+      </section>
 
       {/* FOOTER */}
       <Reveal>

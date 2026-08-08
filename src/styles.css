@@ -236,35 +236,19 @@
 }
 
 @utility card-lift {
-  isolation: isolate;
-  backface-visibility: hidden;
-  transform: translateZ(0);
   transition:
-    transform 0.5s var(--ease-smooth),
-    box-shadow 0.5s var(--ease-smooth);
+    transform 0.3s ease-out,
+    box-shadow 0.3s ease-out;
 
   &:hover {
-    transform: translateY(-8px) scale(1.02) translateZ(0);
+    transform: translateY(-6px) scale(1.02);
     box-shadow: var(--shadow-neon);
   }
 }
 
 @utility reveal {
-  opacity: 0;
-  isolation: isolate;
-  backface-visibility: hidden;
-  transform: translateY(45px) scale(0.88) translateZ(0);
-  transition:
-    opacity 0.75s cubic-bezier(0.34, 1.56, 0.64, 1),
-    transform 0.75s cubic-bezier(0.34, 1.56, 0.64, 1),
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
-  will-change: opacity, transform;
-
-  &[data-visible="true"] {
-    opacity: 1;
-    transform: translateY(0) scale(1) translateZ(0);
-  }
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 @utility no-scrollbar {
@@ -340,7 +324,28 @@
 }
 
 @utility animate-marquee {
-  animation: marquee 40s linear infinite;
+  animation: marquee 95s linear infinite;
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@utility animate-marquee-reverse {
+  animation: marquee-reverse 105s linear infinite;
+}
+
+@utility animate-marquee-slow {
+  animation: marquee 240s linear infinite;
+}
+
+@utility animate-marquee-reverse-slow {
+  animation: marquee-reverse 260s linear infinite;
 }
 
 @utility animate-pulse-ring {
@@ -395,4 +400,56 @@
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+  66% {
+    transform: translateY(-6px) rotate(-2deg);
+  }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+@keyframes glow-pulse-purple {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 55px rgba(168, 85, 247, 0.7);
+  }
+}
+
+@keyframes glow-pulse-fuchsia {
+  0%, 100% {
+    box-shadow: 0 0 25px rgba(217, 70, 239, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 55px rgba(217, 70, 239, 0.7);
+  }
+}
+
+@keyframes text-shine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-text-shine {
+  background-size: 250% auto;
+  animation: text-shine 4s ease infinite;
 }

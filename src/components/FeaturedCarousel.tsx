@@ -75,25 +75,31 @@ export function FeaturedCarousel({
         {items.map((t) => (
           <article
             key={t.title}
-            className="card-lift group relative w-[62vw] shrink-0 snap-center overflow-hidden rounded-3xl border border-border bg-surface sm:w-[300px]"
+            className="group relative w-[68vw] shrink-0 snap-center overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-b from-purple-950/60 via-[#140828]/95 to-[#0b0316] sm:w-[325px] transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/80 hover:shadow-[0_12px_40px_rgba(168,85,247,0.45)]"
           >
+            {/* SHINE GLOW EFFECT ON HOVER */}
+            <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
             <img
               src={img(t.poster, "w500")}
               alt={`Capa de ${t.title}`}
-              loading="lazy"
+              decoding="async"
               width={500}
               height={750}
-              className="aspect-2/3 w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+              className="aspect-2/3 w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-108"
             />
-            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-background via-background/15 to-transparent" />
+
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#090312] via-[#090312]/35 via-45% to-transparent opacity-95 group-hover:opacity-90 transition-opacity" />
+
             {t.tag && (
-              <span className="bg-hot absolute top-4 left-4 rounded-full px-3 py-1 text-[10px] font-bold tracking-wide text-primary-foreground uppercase">
+              <span className="absolute top-3.5 left-3.5 z-20 max-w-[88%] truncate inline-flex items-center gap-1 rounded-full border border-purple-300/40 bg-purple-950/85 backdrop-blur-md px-3 py-1 text-[10px] font-extrabold tracking-wider text-purple-200 uppercase shadow-[0_0_15px_rgba(168,85,247,0.5)]">
                 {t.tag}
               </span>
             )}
-            <div className="absolute inset-x-0 bottom-0 p-5">
-              <p className="truncate text-base font-bold">{t.title}</p>
-              <p className="text-sm text-muted-foreground">{t.year}</p>
+
+            <div className="absolute inset-x-0 bottom-0 z-20 p-5">
+              <p className="truncate text-lg font-black text-white drop-shadow-md transition-colors group-hover:text-purple-300 sm:text-xl">{t.title}</p>
+              <p className="text-sm font-semibold text-purple-200/80 mt-1">{t.year}</p>
             </div>
           </article>
         ))}
