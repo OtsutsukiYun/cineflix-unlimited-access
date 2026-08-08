@@ -233,9 +233,9 @@ function Index() {
         <div className="relative z-10 mx-auto w-[94%] max-w-6xl pt-36 pb-12 sm:pt-44 md:pt-48 lg:pt-52">
           <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-surface/90 px-3.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold tracking-wide uppercase shadow-[0_0_20px_rgba(168,85,247,0.3)] mb-4 sm:mb-6">
-                <Sparkles className="size-3.5 text-accent" />
-                Os principais lançamentos de terror
+              <div className="glass inline-flex items-center gap-2.5 rounded-full border border-purple-400/50 bg-gradient-to-r from-purple-950/60 via-purple-900/40 to-fuchsia-950/60 px-4 py-2 text-[11px] sm:text-xs font-bold tracking-wider text-purple-200 uppercase shadow-[0_0_25px_rgba(168,85,247,0.4)] backdrop-blur-xl mb-4 sm:mb-6 [transform:translateZ(0)] [isolation:isolate]">
+                <Sparkles className="size-3.5 text-accent animate-pulse" />
+                <span>Os principais lançamentos de terror</span>
               </div>
 
               <HeroHeading />
