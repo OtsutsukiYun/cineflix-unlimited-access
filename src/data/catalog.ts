@@ -45,6 +45,7 @@ export const heroSlides: HeroSlide[] = [
     poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
     objectPosition: "center 18%",
     objectPositionMobile: "50% 12%",
+    brightness: "brightness(1.15)",
   },
   {
     title: "Undertone",
