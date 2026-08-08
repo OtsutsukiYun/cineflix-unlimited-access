@@ -424,36 +424,36 @@ function Index() {
             {[
               {
                 icon: Clapperboard,
-                banner: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1000&auto=format&fit=crop",
+                banner: img("/neeNHeXjMF5fXoCJRsOmkNGC7q.jpg", "w780"),
                 gradient: "from-rose-600 via-primary to-purple-600",
                 glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
                 corBorda: "border border-rose-500/40 hover:border-rose-300",
                 corGlow: "shadow-[0_0_30px_rgba(225,29,72,0.2)] hover:shadow-[0_0_50px_rgba(225,29,72,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#0d0212] via-[#0d0212]/80 to-[#0d0212]/30",
+                bgOverlay: "bg-gradient-to-t from-[#0d0212] via-[#0d0212]/75 to-[#0d0212]/20",
                 titleHover: "group-hover:text-rose-200",
                 t: "Filmes incríveis",
                 d: "Clássicos, lançamentos do cinema e superproduções premiadas em 4K.",
               },
               {
                 icon: Tv,
-                banner: "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?q=80&w=1000&auto=format&fit=crop",
+                banner: img("/2meX1nMdScFOoV4370rqHWKmXhY.jpg", "w780"),
                 gradient: "from-purple-600 via-primary to-accent",
                 glow: "shadow-[0_0_22px_rgba(168,85,247,0.85)] border-purple-300/80",
                 corBorda: "border border-purple-500/40 hover:border-purple-300",
                 corGlow: "shadow-[0_0_30px_rgba(168,85,247,0.2)] hover:shadow-[0_0_50px_rgba(168,85,247,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#0b0314] via-[#0b0314]/80 to-[#0b0314]/30",
+                bgOverlay: "bg-gradient-to-t from-[#0b0314] via-[#0b0314]/75 to-[#0b0314]/20",
                 titleHover: "group-hover:text-purple-200",
                 t: "Séries imperdíveis",
                 d: "Temporadas completas dos sucessos globais para maratonar sem limites.",
               },
               {
                 icon: Torii,
-                banner: img("/qY7zVZ7liULhfRoXg4c9Xl83LcR.jpg", "w780"),
+                banner: img("/3GQKYh6Trm8pxd2AypovoYQf4Ay.jpg", "w780"),
                 gradient: "from-fuchsia-600 via-purple-600 to-pink-500",
                 glow: "shadow-[0_0_22px_rgba(217,70,239,0.85)] border-fuchsia-300/80",
                 corBorda: "border border-fuchsia-500/40 hover:border-fuchsia-300",
                 corGlow: "shadow-[0_0_30px_rgba(217,70,239,0.2)] hover:shadow-[0_0_50px_rgba(217,70,239,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#0e0214] via-[#0e0214]/80 to-[#0e0214]/30",
+                bgOverlay: "bg-gradient-to-t from-[#0e0214] via-[#0e0214]/75 to-[#0e0214]/20",
                 titleHover: "group-hover:text-fuchsia-200",
                 t: "Animes atualizados",
                 d: "Acervo completo com os animes mais populares do momento em HD.",
@@ -465,31 +465,31 @@ function Index() {
                 glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-amber-300/80",
                 corBorda: "border border-amber-500/40 hover:border-amber-300",
                 corGlow: "shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:shadow-[0_0_50px_rgba(245,158,11,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#140802] via-[#140802]/80 to-[#140802]/25",
+                bgOverlay: "bg-gradient-to-t from-[#140802] via-[#140802]/75 to-[#140802]/20",
                 titleHover: "group-hover:text-amber-200",
                 t: "Canais infantis",
                 d: "Desenhos, filmes animados e toda a programação para a criançada.",
               },
               {
                 icon: Trophy,
-                banner: futebol,
+                banner: img("/hpuWR2rfcjRMni6HLtxPet4o4P4.jpg", "w780"),
                 gradient: "from-cyan-500 via-teal-600 to-emerald-500",
                 glow: "shadow-[0_0_22px_rgba(6,182,212,0.85)] border-cyan-300/80",
                 corBorda: "border border-cyan-500/40 hover:border-cyan-300",
                 corGlow: "shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:shadow-[0_0_50px_rgba(6,182,212,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#030e17] via-[#030e17]/80 to-[#030e17]/25",
+                bgOverlay: "bg-gradient-to-t from-[#030e17] via-[#030e17]/75 to-[#030e17]/20",
                 titleHover: "group-hover:text-cyan-200",
                 t: "Esportes ao vivo",
                 d: "Futebol, artes marciais, basquete e grandes campeonatos ao vivo.",
               },
               {
                 icon: Lock,
-                banner: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1000&auto=format&fit=crop",
+                banner: img("/7IGKrY1f1KfwMipx9wZC4NRgIdF.jpg", "w780"),
                 gradient: "from-rose-600 via-red-600 to-pink-600",
                 glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
                 corBorda: "border border-rose-500/40 hover:border-rose-300",
                 corGlow: "shadow-[0_0_30px_rgba(225,29,72,0.2)] hover:shadow-[0_0_50px_rgba(225,29,72,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#12020a] via-[#12020a]/80 to-[#12020a]/30",
+                bgOverlay: "bg-gradient-to-t from-[#12020a] via-[#12020a]/75 to-[#12020a]/20",
                 titleHover: "group-hover:text-rose-200",
                 t: "Canais adultos",
                 d: "Conteúdo exclusivo opcional e totalmente protegido por senha.",
@@ -536,7 +536,7 @@ function Index() {
         {/* ESPORTES */}
         <section id="esportes" className="relative z-10 my-4 sm:my-6 overflow-hidden">
           <SmoothCardReveal delay={100}>
-            <div className="relative mx-auto w-[94%] max-w-6xl overflow-hidden rounded-4xl border border-border/80 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+            <div className="relative mx-auto w-[94%] max-w-6xl overflow-hidden rounded-4xl border border-border/80 shadow-[0_0_40px_rgba(0,0,0,0.5)] bg-black">
               <img
                 src={futebol}
                 alt="Torcida em estádio de futebol lotado à noite"
