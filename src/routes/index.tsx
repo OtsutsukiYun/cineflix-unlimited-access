@@ -59,6 +59,11 @@ import {
   Sparkles,
   Star,
   Zap,
+  CreditCard,
+  Lock,
+  QrCode,
+  Barcode,
+  RefreshCcw,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -687,6 +692,33 @@ function Index() {
             </Reveal>
           ))}
         </div>
+
+        {/* FORMAS DE PAGAMENTO LOGO ABAIXO DOS PLANOS */}
+        <Reveal className="relative z-10 mt-10 sm:mt-12">
+          <div className="glass flex flex-col md:flex-row items-center justify-between gap-6 rounded-3xl p-6 sm:p-8 border border-purple-500/30 bg-gradient-to-r from-purple-950/40 via-background/80 to-purple-950/40 backdrop-blur-xl shadow-[0_0_30px_rgba(0,0,0,0.4)]">
+            <div className="flex items-center gap-4 text-left">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/20 border border-primary/40 text-accent">
+                <CreditCard className="size-6" />
+              </div>
+              <div>
+                <h4 className="font-display text-base font-extrabold text-white">Formas de Pagamento Aceitas</h4>
+                <p className="text-xs text-muted-foreground">Liberação imediata no PIX · Parcelamento em até 12x no Cartão de Crédito</p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              <span className="flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-4 py-2 text-xs font-bold text-emerald-300 shadow-[0_0_15px_rgba(16,185,129,0.25)]">
+                <QrCode className="size-4 text-emerald-400" /> PIX (Ativação Instantânea)
+              </span>
+              <span className="flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-950/40 px-4 py-2 text-xs font-bold text-purple-200">
+                <CreditCard className="size-4 text-purple-400" /> Cartão de Crédito (até 12x)
+              </span>
+              <span className="flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-2 text-xs font-bold text-muted-foreground">
+                <Barcode className="size-4 text-muted-foreground" /> Boleto Bancário
+              </span>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       {/* FAQ */}
@@ -697,14 +729,36 @@ function Index() {
         </SmoothLink>
       </Faq>
 
-      {/* PAGAMENTO E SEGURANÇA */}
+      {/* SEGURANÇA E CERTIFICADOS BEM EMBAIXO DA PÁGINA */}
       <Reveal>
-        <TrustSection />
+        <section className="border-t border-border/70 bg-surface/30 py-12">
+          <div className="mx-auto w-[94%] max-w-6xl">
+            <p className="mb-8 text-center text-xs font-semibold tracking-[0.25em] text-muted-foreground uppercase">
+              Segurança &amp; Certificados de Garantia
+            </p>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+              {[
+                { icon: Lock, title: "Pagamento Seguro", desc: "SSL 256-bit" },
+                { icon: Zap, title: "Ativação Imediata", desc: "Acesso na hora" },
+                { icon: CreditCard, title: "Parcelamento", desc: "Até 12x no cartão" },
+                { icon: ShieldCheck, title: "Suporte 7 dias", desc: "Via WhatsApp" },
+                { icon: RefreshCcw, title: "Sem Fidelidade", desc: "Cancele quando quiser" },
+                { icon: Star, title: "+10 mil clientes", desc: "Satisfação garantida" },
+              ].map((c) => (
+                <div key={c.title} className="glass flex flex-col items-center gap-2 rounded-2xl p-4 text-center transition-all duration-300 hover:border-primary/50 hover:scale-105">
+                  <c.icon className="size-6 text-accent mb-1" />
+                  <p className="text-xs font-bold text-white">{c.title}</p>
+                  <p className="text-[10px] text-muted-foreground">{c.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </Reveal>
 
       {/* FOOTER */}
       <Reveal>
-        <footer className="mt-10 border-t border-border py-12">
+        <footer className="border-t border-border py-12">
           <div className="mx-auto flex w-[94%] max-w-6xl flex-col items-center gap-5 text-center">
           <span className="font-display text-xl font-extrabold">
             CINE<span className="text-hot">FLIX</span>
