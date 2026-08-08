@@ -178,6 +178,8 @@ function Cta({ children = "ADQUIRA O SEU AGORA" }: { children?: string }) {
   );
 }
 
+
+
 function HeroHeading() {
   return (
     <h1 className="font-display text-4xl font-extrabold sm:text-6xl md:text-7xl leading-[1.04] text-white tracking-tight drop-shadow-xl">
@@ -378,7 +380,7 @@ function Index() {
               <Film className="size-3.5 text-accent" /> Catálogo em alta definição
             </span>
             <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white">
-              Tudo o que você ama em <span className="text-hot">um só lugar</span>
+              Tudo o que você ama em <span className="text-hot font-black">um só lugar</span>
             </h2>
             <p className="mx-auto mt-3 max-w-xl text-xs sm:text-sm text-muted-foreground font-medium leading-relaxed">
               Filmes, séries de sucesso e animes em alta definição — assista quando e onde quiser, sem complicações.
