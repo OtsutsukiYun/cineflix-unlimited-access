@@ -69,20 +69,30 @@ export function Rail({
     const cards = Array.from(el.querySelectorAll<HTMLElement>(".rail-item"));
     if (cards.length === 0) return;
 
+    const currentScroll = el.scrollLeft;
+
+    // Encontrar qual card é o mais próximo do scroll atual
+    let currentIndex = 0;
+    let minDistance = Infinity;
+    for (let i = 0; i < cards.length; i++) {
+      const dist = Math.abs(cards[i].offsetLeft - currentScroll);
+      if (dist < minDistance) {
+        minDistance = dist;
+        currentIndex = i;
+      }
+    }
+
     const firstCard = cards[0];
     const style = window.getComputedStyle(el);
     const gap = parseFloat(style.columnGap || style.gap) || 14;
     const cardStep = firstCard.offsetWidth + gap;
-    const currentScroll = el.scrollLeft;
-
-    // Calcular o índice limpo da primeira capa visível
-    const currentIndex = Math.round(currentScroll / cardStep);
     const visibleCards = Math.max(1, Math.floor((el.clientWidth + gap) / cardStep));
 
     let targetIndex = dir > 0 ? currentIndex + visibleCards : currentIndex - visibleCards;
     targetIndex = Math.max(0, Math.min(cards.length - 1, targetIndex));
 
-    const targetScrollLeft = targetIndex * cardStep;
+    // Alinhamento exato: o primeiro card rola para 0; páginas seguintes vão exatamente para o offsetLeft do card
+    const targetScrollLeft = targetIndex === 0 ? 0 : cards[targetIndex].offsetLeft;
     el.scrollTo({ left: targetScrollLeft, behavior: "smooth" });
   };
 
