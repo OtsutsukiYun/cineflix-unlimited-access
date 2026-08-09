@@ -676,7 +676,7 @@ function Index() {
             </div>
           </Reveal>
 
-        <div className="relative z-10 mt-8 sm:mt-10 grid items-stretch gap-6 lg:grid-cols-3">
+        <div className="relative z-10 mt-8 sm:mt-12 grid items-stretch gap-6 lg:gap-6 lg:grid-cols-3">
           {[
             {
               id: "start",
@@ -687,7 +687,7 @@ function Index() {
               destaque: false,
               selo: null as string | null,
               badge: "Sem Fidelidade",
-              btnStyle: "bg-gradient-to-r from-purple-900/70 via-surface-2/90 to-purple-900/70 hover:from-purple-800 hover:to-purple-800 border border-purple-400/40 text-white shadow-md hover:border-purple-300/60",
+              btnStyle: "bg-gradient-to-r from-purple-900/80 via-primary/30 to-purple-900/80 hover:from-primary/60 hover:to-purple-800 border border-primary/50 text-white shadow-md hover:shadow-glow",
               link: "https://ev.braip.com/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
               features: [
                 "2 Telas simultâneas",
@@ -703,14 +703,14 @@ function Index() {
               nome: "Plano PRIME",
               preco: "R$ 97",
               periodo: "1 ano",
-              sub: "Equivale a R$ 8,08/mês · 1 ano sem mensalidades",
+              sub: "⚡ Equivale a apenas R$ 8,08/mês · 1 ano sem mensalidades",
               destaque: true,
-              selo: "MAIS POPULAR — ECONOMIZE 60%",
+              selo: "🔥 MAIS POPULAR — ECONOMIZE 60%",
               badge: "Recomendado",
-              btnStyle: "btn-cta text-white shadow-[0_0_30px_rgba(168,85,247,0.7)] hover:scale-[1.03]",
+              btnStyle: "btn-cta bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_35px_rgba(168,85,247,0.85)] hover:scale-[1.03] font-black",
               link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
               features: [
-                "4 Telas simultâneas (Para a família)",
+                "4 Telas simultâneas (Para a família toda)",
                 "1 Ano completo de acesso sem mensalidades",
                 "Economize mais de R$ 140/ano",
                 "Acervo completo em alta qualidade até 4K",
@@ -727,7 +727,7 @@ function Index() {
               destaque: false,
               selo: null as string | null,
               badge: "Economia 42%",
-              btnStyle: "bg-gradient-to-r from-purple-900/70 via-surface-2/90 to-purple-900/70 hover:from-purple-800 hover:to-purple-800 border border-purple-400/40 text-white shadow-md hover:border-purple-300/60",
+              btnStyle: "bg-gradient-to-r from-purple-900/80 via-primary/30 to-purple-900/80 hover:from-primary/60 hover:to-purple-800 border border-primary/50 text-white shadow-md hover:shadow-glow",
               link: "https://ev.braip.com/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
               features: [
                 "2 Telas simultâneas",
@@ -741,41 +741,49 @@ function Index() {
           ].map((p, i) => (
             <SmoothCardReveal key={p.nome} delay={100 + i * 120}>
               <div
-                className={`glass group relative flex flex-col justify-between h-full rounded-2xl p-6 sm:p-8 backdrop-blur-2xl transition-all duration-300 shadow-2xl ${
+                className={`glass group relative flex flex-col justify-between h-full rounded-3xl backdrop-blur-2xl transition-all duration-500 ${
                   p.destaque
-                    ? "border-2 border-purple-400/90 bg-gradient-to-b from-purple-900/40 via-surface/60 to-purple-950/70 shadow-[0_0_45px_rgba(168,85,247,0.35)] hover:border-primary"
-                    : "border border-white/20 bg-surface/40 hover:border-white/35 hover:bg-surface/60"
+                    ? "border-2 border-purple-400 bg-gradient-to-b from-purple-900/60 via-surface/90 to-purple-950/80 p-7 sm:p-9 shadow-[0_0_55px_rgba(168,85,247,0.45)] lg:-translate-y-3 lg:scale-[1.04] z-20 hover:border-accent hover:shadow-[0_0_70px_rgba(168,85,247,0.65)]"
+                    : "border border-white/20 bg-surface/60 p-6 sm:p-8 hover:border-white/35 hover:bg-surface/80 shadow-xl"
                 }`}
               >
                 {p.selo && (
-                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 via-primary to-accent px-4 py-1 text-[11px] font-extrabold tracking-wider text-white uppercase shadow-lg">
-                    <Sparkles className="size-3 text-white" />
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 via-primary to-accent px-5 py-1.5 text-xs font-black tracking-wider text-white uppercase shadow-[0_0_20px_rgba(168,85,247,0.8)]">
+                    <Sparkles className="size-3.5 fill-current" />
                     {p.selo}
                   </span>
                 )}
 
                 <div>
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className="font-display font-black text-lg text-white tracking-tight">
+                    <h3 className={`font-display font-black tracking-tight uppercase ${p.destaque ? "text-xl text-purple-100" : "text-lg text-white"}`}>
                       {p.nome}
                     </h3>
                     <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider border ${
                       p.destaque
-                        ? "bg-primary/20 text-purple-200 border-primary/50 shadow-sm"
+                        ? "bg-primary/30 text-purple-100 border-purple-300/50 shadow-sm"
                         : "bg-white/5 text-muted-foreground border-white/15"
                     }`}>
                       {p.badge}
                     </span>
                   </div>
 
-                  <div className="mt-4 flex items-baseline gap-1.5 whitespace-nowrap">
-                    <span className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-white drop-shadow-sm whitespace-nowrap">
+                  <div className="mt-5 flex items-baseline gap-1.5 whitespace-nowrap">
+                    <span
+                      className={`font-display font-black text-white whitespace-nowrap ${
+                        p.destaque
+                          ? "text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-fuchsia-300 drop-shadow-[0_2px_15px_rgba(168,85,247,0.8)]"
+                          : "text-3xl sm:text-4xl md:text-5xl drop-shadow-sm"
+                      }`}
+                    >
                       {p.preco}
                     </span>
-                    <span className="text-xs sm:text-sm font-semibold text-purple-200/80 shrink-0">/{p.periodo}</span>
+                    <span className={`font-semibold shrink-0 ${p.destaque ? "text-purple-200 text-base" : "text-xs sm:text-sm text-purple-200/80"}`}>
+                      /{p.periodo}
+                    </span>
                   </div>
 
-                  <p className="mt-1.5 text-xs text-muted-foreground font-medium">
+                  <p className={`mt-2 text-xs font-semibold leading-relaxed ${p.destaque ? "text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-xl border border-emerald-500/20" : "text-muted-foreground"}`}>
                     {p.sub}
                   </p>
 
@@ -783,19 +791,19 @@ function Index() {
                     href={p.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`mt-6 w-full flex items-center justify-center gap-2 rounded-xl py-3.5 px-4 text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-200 ${p.btnStyle}`}
+                    className={`mt-6 w-full flex items-center justify-center gap-2 rounded-xl py-3.5 px-4 text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 ${p.btnStyle}`}
                   >
-                    <Zap className="size-4" />
+                    <Zap className={p.destaque ? "size-4 text-amber-300" : "size-4"} />
                     Assinar Agora
                   </a>
 
-                  <div className="my-6 h-px w-full bg-white/15" />
+                  <div className={`my-6 h-px w-full ${p.destaque ? "bg-purple-400/30" : "bg-white/15"}`} />
 
-                  <ul className="space-y-3 text-xs sm:text-sm">
+                  <ul className="space-y-3.5 text-xs sm:text-sm">
                     {p.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5">
-                        <Check className="mt-0.5 size-4 shrink-0 text-accent" />
-                        <span className="text-foreground/90 font-medium">{f}</span>
+                        <Check className={`mt-0.5 size-4 shrink-0 ${p.destaque ? "text-accent font-bold" : "text-primary"}`} />
+                        <span className={p.destaque ? "text-white font-semibold" : "text-foreground/90 font-medium"}>{f}</span>
                       </li>
                     ))}
                   </ul>
