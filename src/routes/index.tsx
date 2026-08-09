@@ -275,18 +275,12 @@ function Index() {
               </span>
             </SmoothLink>
 
-            <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
+            <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
               <SmoothLink
                 href="#catalogo"
                 className="text-white/80 transition-colors hover:text-white"
               >
                 Catálogo
-              </SmoothLink>
-              <SmoothLink
-                href="#comparativo"
-                className="text-white/80 transition-colors hover:text-white"
-              >
-                Comparativo
               </SmoothLink>
               <SmoothLink
                 href="#planos"
