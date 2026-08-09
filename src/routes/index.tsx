@@ -236,26 +236,24 @@ function Index() {
 
   return (
     <div className="relative w-full overflow-x-hidden min-h-screen bg-[#070110] font-sans text-foreground antialiased selection:bg-accent selection:text-white">
-      {/* BACKGROUND AURORA MESH & PARTICLES VIVAS EM MOVIMENTO */}
+      {/* BACKGROUND CINEMÁTICO ALTO IMPACTO: CYBER GRID + AURORA DRIFT + BEAM SPOTLIGHT */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden [transform:translateZ(0)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/30 via-[#070110] to-[#030006]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/40 via-[#070110] to-[#030006]" />
         
-        {/* BLOBO 1: PURPLE AURORA DRIFT */}
-        <div className="animate-aurora-1 absolute -top-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[70vw] sm:h-[70vw] max-w-[800px] max-h-[800px] rounded-full bg-gradient-to-tr from-purple-600/30 to-fuchsia-600/20 blur-[110px]" />
-        
-        {/* BLOBO 2: MAGENTA / CYAN DRIFT */}
-        <div className="animate-aurora-2 absolute top-[25%] -right-[15%] w-[90vw] h-[90vw] sm:w-[65vw] sm:h-[65vw] max-w-[750px] max-h-[750px] rounded-full bg-gradient-to-br from-pink-500/25 via-purple-700/20 to-cyan-500/15 blur-[110px]" />
-        
-        {/* BLOBO 3: INDIGO NEBULA DRIFT */}
-        <div className="animate-aurora-3 absolute -bottom-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[80vw] sm:h-[80vw] max-w-[900px] max-h-[900px] rounded-full bg-gradient-to-t from-indigo-700/30 to-purple-800/20 blur-[130px]" />
+        {/* TEXTURA CYBER GRID MODERNA EM 3D */}
+        <div className="bg-cyber-grid absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_90%)]" />
 
-        {/* EFEITO DE POEIRA ESTELAR / PARTICULAS FLUTUANTES DE CINEMA */}
-        <div className="absolute inset-0 opacity-40">
-          <div className="animate-particle-1 absolute top-[20%] left-[15%] size-1.5 rounded-full bg-purple-300 blur-[1px]" />
-          <div className="animate-particle-2 absolute top-[40%] right-[20%] size-2 rounded-full bg-amber-300 blur-[1px]" />
-          <div className="animate-particle-3 absolute top-[70%] left-[30%] size-1.5 rounded-full bg-cyan-300 blur-[1px]" />
-          <div className="animate-particle-1 absolute top-[85%] right-[25%] size-2.5 rounded-full bg-fuchsia-400 blur-[1.5px]" />
-        </div>
+        {/* HAROSH / RAIO DE LUZ DE HOLOFOTE DE CINEMA */}
+        <div className="animate-beam-sweep absolute -top-[30%] left-[10%] w-[80vw] h-[1000px] bg-gradient-to-b from-purple-500/20 via-primary/10 to-transparent blur-[80px] pointer-events-none" />
+
+        {/* BLOBO 1: PURPLE NEON DRIFT */}
+        <div className="animate-aurora-1 absolute -top-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[70vw] sm:h-[70vw] max-w-[800px] max-h-[800px] rounded-full bg-gradient-to-tr from-purple-600/35 via-fuchsia-600/25 to-indigo-600/20 blur-[110px]" />
+        
+        {/* BLOBO 2: MAGENTA / ELECTRIC CYAN DRIFT */}
+        <div className="animate-aurora-2 absolute top-[25%] -right-[15%] w-[90vw] h-[90vw] sm:w-[65vw] sm:h-[65vw] max-w-[750px] max-h-[750px] rounded-full bg-gradient-to-br from-pink-500/30 via-purple-700/25 to-cyan-400/20 blur-[110px]" />
+        
+        {/* BLOBO 3: INDIGO DEEP NEBULA */}
+        <div className="animate-aurora-3 absolute -bottom-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[80vw] sm:h-[80vw] max-w-[900px] max-h-[900px] rounded-full bg-gradient-to-t from-indigo-700/35 to-purple-800/25 blur-[130px]" />
       </div>
       {/* BARRA PROMOCIONAL + NAV — empilhados para mobile funcionar */}
       <div className="fixed inset-x-0 top-0 z-50 flex flex-col [transform:translateZ(0)]">
