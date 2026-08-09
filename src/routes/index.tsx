@@ -142,7 +142,6 @@ import { TrustSection } from "@/components/TrustSection";
 import { Torii } from "@/components/icons";
 import { BrandLogo } from "@/components/BrandLogo";
 import { SocialProof } from "@/components/SocialProof";
-import { Devices } from "@/components/Devices";
 import futebol from "@/assets/futebol.jpg";
 import {
   animes,
@@ -687,9 +686,6 @@ function Index() {
             })}
           </div>
         </section>
-
-        {/* SEÇÃO DE DISPOSITIVOS COMPATÍVEIS */}
-        <Devices />
 
         {/* PLANOS */}
         <section id="planos" className="relative z-10 mx-auto w-[94%] max-w-6xl py-8 sm:py-12">
