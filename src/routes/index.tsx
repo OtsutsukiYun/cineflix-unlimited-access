@@ -1,8 +1,35 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, Fragment } from "react";
 
 
 
+
+function SlideshowBanner({ banners, alt, objectPosition = "object-cover" }: { banners: string[]; alt: string; objectPosition?: string }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (banners.length <= 1) return;
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % banners.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [banners.length]);
+
+  return (
+    <>
+      {banners.map((banner, i) => (
+        <img
+          key={banner}
+          src={banner}
+          alt={alt}
+          className={`absolute inset-0 size-full ${objectPosition} transition-opacity duration-[1500ms] ease-in-out group-hover:scale-110 ${
+            i === index ? "opacity-100 z-0" : "opacity-0 -z-10"
+          }`}
+        />
+      ))}
+    </>
+  );
+}
 
 function CascadeGrid({
   children,
@@ -99,6 +126,8 @@ import {
   RefreshCcw,
   DollarSign,
   Film,
+  MonitorPlay,
+  Download,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -133,7 +162,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Todos os streamings em uma única plataforma. Lançamentos do cinema, animes, infantil e esportes ao vivo em 4K.",
+          "Todos os streamings em uma única plataforma. Lançamentos do cinema, animes, infantil e esportes ao vivo em até 4K.",
       },
     ],
   }),
@@ -182,12 +211,11 @@ function Cta({ children = "ADQUIRA O SEU AGORA" }: { children?: string }) {
 
 function HeroHeading() {
   return (
-    <h1 className="font-display text-4xl font-extrabold sm:text-6xl md:text-7xl leading-[1.04] text-white tracking-tight drop-shadow-xl">
+    <h1 className="font-display text-3xl font-extrabold sm:text-6xl md:text-7xl leading-[1.08] sm:leading-[1.04] text-white tracking-tight drop-shadow-xl">
       Todos os{" "}
-      <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-indigo-300 via-purple-400 to-amber-300 animate-text-shine font-black drop-shadow-[0_4px_20px_rgba(168,85,247,0.45)]">
+      <span className="relative inline text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-indigo-300 via-purple-400 to-amber-300 animate-text-shine font-black drop-shadow-[0_4px_20px_rgba(168,85,247,0.45)]">
         filmes, séries e esportes
-      </span>
-      <br />
+      </span>{" "}
       em um só lugar.
     </h1>
   );
@@ -206,16 +234,23 @@ function Index() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background font-sans text-foreground antialiased selection:bg-accent selection:text-white">
+    <div className="relative w-full overflow-x-hidden min-h-screen bg-[#070110] font-sans text-foreground antialiased selection:bg-accent selection:text-white">
+      {/* BACKGROUND AURORA MESH — OTIMIZADO SEM MIX-BLEND-SCREEN PARA EVITAR FLICKER */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden [transform:translateZ(0)]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/20 via-[#070110] to-[#030006]" />
+        <div className="absolute -top-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[70vw] sm:h-[70vw] max-w-[800px] max-h-[800px] rounded-full bg-purple-600/20 blur-[100px] opacity-70" />
+        <div className="absolute top-[25%] -right-[15%] w-[90vw] h-[90vw] sm:w-[60vw] sm:h-[60vw] max-w-[700px] max-h-[700px] rounded-full bg-pink-500/15 blur-[100px] opacity-60" />
+        <div className="absolute -bottom-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[80vw] sm:h-[80vw] max-w-[900px] max-h-[900px] rounded-full bg-indigo-700/20 blur-[120px] opacity-60" />
+      </div>
       {/* BARRA PROMOCIONAL + NAV — empilhados para mobile funcionar */}
-      <div className="fixed inset-x-0 top-0 z-50 flex flex-col">
+      <div className="fixed inset-x-0 top-0 z-50 flex flex-col [transform:translateZ(0)]">
         <div className="z-[60]">
           <PromoBanner />
         </div>
         <header className="z-50">
-          <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-5 py-3 border border-white/10 bg-black/60 backdrop-blur-md shadow-[0_4px_25px_rgba(0,0,0,0.5)]">
+          <div className="mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-4 sm:px-5 py-2.5 sm:py-3 border border-white/10 bg-[#0c0418]/90 backdrop-blur-md shadow-[0_4px_25px_rgba(0,0,0,0.5)] [transform:translateZ(0)]">
             <SmoothLink href="#" className="flex items-center gap-2">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-tr from-purple-600 via-primary to-accent text-white shadow-[0_0_15px_rgba(168,85,247,0.5)]">
+              <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-tr from-primary/80 via-primary to-accent text-white shadow-glow">
                 <Play className="size-4 fill-current ml-0.5" />
               </span>
               <span className="font-display text-xl font-extrabold tracking-tight text-white">
@@ -280,17 +315,14 @@ function Index() {
             }}
           />
         ))}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/75 via-background/50 to-transparent md:via-background/55 md:to-transparent" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/20 to-background/35" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(0,0,0,0.65)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent md:via-background/50 md:to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/40" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 sm:h-64 bg-gradient-to-t from-background to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.7)_100%)]" />
 
-        <div className="relative z-10 mx-auto w-[94%] max-w-6xl pt-28 pb-10 sm:pt-36 sm:pb-12 md:pt-40 md:pb-14">
+        <div className="relative z-10 mx-auto w-[94%] max-w-6xl pt-40 pb-10 sm:pt-48 sm:pb-12 md:pt-56 md:pb-14">
           <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
             <div>
-              <div className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-black/60 backdrop-blur-md px-4 py-2 text-[11px] sm:text-xs font-bold tracking-wider text-white uppercase shadow-[0_4px_25px_rgba(0,0,0,0.5)] mb-4 sm:mb-6 [transform:translateZ(0)] [isolation:isolate]">
-                <Sparkles className="size-3.5 text-accent animate-pulse" />
-                <span>Os principais lançamentos do cinema e streaming</span>
-              </div>
 
               <HeroHeading />
 
@@ -341,82 +373,78 @@ function Index() {
       </section>
 
       {/* SEÇÃO INFERIOR — GRADIENTE AMBIENTE ROXO VIBRANTE NO TOPO E ESCURO NOS PLANOS */}
-      <div className="relative bg-gradient-to-b from-background via-[#1a092b] via-20% via-[#120520] via-65% to-[#06030c] overflow-hidden">
-
-        {/* LUZES AMBIENTES FLUTUANTES VIBRANTES NO TOPO */}
-        <div className="pointer-events-none absolute top-12 left-1/2 -translate-x-1/2 size-[750px] rounded-full bg-primary/18 blur-[150px]" />
-        <div className="pointer-events-none absolute top-[35%] right-0 size-[650px] rounded-full bg-primary/12 blur-[140px]" />
-        <div className="pointer-events-none absolute top-[75%] left-0 size-[650px] rounded-full bg-primary/10 blur-[160px]" />
-
-        {/* MARQUEE PLATAFORMAS */}
-        <section className="relative z-10 border-y border-border/70 bg-background/40 backdrop-blur-md py-5 sm:py-6">
-          <p className="mb-4 text-center text-xs tracking-[0.25em] text-muted-foreground uppercase font-semibold">
-            Todos os streamings em um só lugar
-          </p>
+      <div className="relative bg-gradient-to-b from-transparent via-purple-900/15 to-transparent">
+        {/* TEXT MARQUEE ELEGANTE */}
+        <div className="relative z-20 w-full overflow-hidden border-b border-white/5 py-4 sm:py-5 bg-black/20 backdrop-blur-sm">
           <div className="flex overflow-hidden">
-            <div className="animate-marquee flex shrink-0 items-center gap-14 pr-14">
-              {[...plataformas, ...plataformas].map((p, i) => (
-                <div
-                  key={p.nome + i}
-                  className="transition-transform duration-200 hover:scale-110"
-                >
-                  <BrandLogo
-                    nome={p.nome}
-                    logo={p.logo}
-                    invert={p.invert === true}
-                    escala={p.escala ?? 1}
-                    cor={p.cor}
-                  />
-                </div>
+            <div className="animate-marquee flex shrink-0 items-center gap-8 sm:gap-16 pr-8 sm:pr-16 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-muted-foreground uppercase">
+              {Array.from({ length: 4 }).fill(0).map((_, i) => (
+                <Fragment key={i}>
+                  <span className="flex items-center gap-2 text-purple-200"><Sparkles className="size-3.5 text-accent" /> Qualidade em até 4K</span>
+                  <span className="flex items-center gap-2"><Film className="size-3.5 text-accent" /> Todos os Streamings</span>
+                  <span className="flex items-center gap-2 text-pink-200"><Tv className="size-3.5 text-accent" /> +2000 Canais VIP</span>
+                  <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-accent" /> Múltiplas Telas</span>
+                  <span className="flex items-center gap-2 text-emerald-200"><RefreshCcw className="size-3.5 text-accent" /> Lançamentos Semanais</span>
+                  <span className="flex items-center gap-2"><Zap className="size-3.5 text-accent" /> Ativação Imediata</span>
+                  <span className="flex items-center gap-2 text-rose-200"><ShieldCheck className="size-3.5 text-accent" /> Sem Fidelidade</span>
+                </Fragment>
               ))}
             </div>
           </div>
-        </section>
+        </div>
 
         {/* CATÁLOGO */}
-        <section id="catalogo" className="relative z-10 pt-10 pb-4">
-          <Reveal className="mx-auto mb-6 w-[94%] max-w-6xl text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-950/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-purple-200 uppercase shadow-[0_0_20px_rgba(168,85,247,0.25)] mb-4">
-              <Film className="size-3.5 text-accent" /> Catálogo em alta definição
-            </span>
-            <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white">
-              Tudo o que você ama em <span className="text-hot font-black">um só lugar</span>
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl text-xs sm:text-sm text-muted-foreground font-medium leading-relaxed">
-              Filmes, séries de sucesso e animes em alta definição — assista quando e onde quiser, sem complicações.
+        <section id="catalogo" className="relative z-10 py-4 sm:py-6 overflow-hidden">
+          <Reveal className="relative z-10 mx-auto mb-0 sm:mb-2 w-[94%] max-w-6xl px-2 sm:px-4 flex flex-col sm:flex-row sm:items-end justify-between gap-1 sm:gap-4">
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface/60 backdrop-blur-md px-3 py-1.5 text-[10px] font-extrabold tracking-[0.2em] text-accent uppercase shadow-sm mb-2 sm:mb-4">
+                <Film className="size-3.5 text-accent" /> Acervo Premium
+              </span>
+              <h2 className="text-2xl font-black sm:text-4xl md:text-5xl tracking-tight text-white drop-shadow-md text-balance">
+                Explore o que está <span className="whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400">em alta</span>
+              </h2>
+            </div>
+            <p className="max-w-xs text-xs sm:text-sm text-muted-foreground font-semibold leading-relaxed sm:text-right">
+              Mais de 60.000 títulos em qualidade até 4K atualizados toda semana.
             </p>
           </Reveal>
 
-          <Rail
-            icon={Flame}
-            title="Filmes — lançamentos e grandes sucessos"
-            items={terror}
-          />
-          <Rail
-            icon={Film}
-            title="Séries em alta para maratonar"
-            items={series}
-          />
-          <Rail
-            icon={Torii}
-            title="Animes Crunchyroll"
-            items={animes}
-          />
+          <div className="relative">
+            <Reveal>
+              <Rail
+                icon={Flame}
+                title="Filmes — Lançamentos e Sucessos"
+                items={terror}
+              />
+            </Reveal>
+            <SmoothCardReveal delay={150}>
+              <Rail
+                icon={Tv}
+                title="Séries em alta para maratonar"
+                items={series}
+              />
+            </SmoothCardReveal>
+            <SmoothCardReveal delay={300}>
+              <Rail
+                icon={Torii}
+                title="Animes — Simulcasts e Clássicos"
+                items={animes}
+              />
+            </SmoothCardReveal>
+          </div>
         </section>
 
         {/* FEATURES */}
-        <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-6 sm:py-8">
+        <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-4 sm:py-6">
           <SmoothCardReveal delay={0}>
-            <div className="text-center mb-8">
-              <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-950/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-purple-200 uppercase shadow-[0_0_20px_rgba(168,85,247,0.25)] mb-4">
+            <div className="text-center mb-3">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-accent uppercase shadow-sm mb-4">
                 <Sparkles className="size-3.5 text-accent" /> Diferenciais da plataforma
               </span>
-              <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white">
-                Por que escolher a <span className="text-hot">Cineflix</span>
+              <h2 className="text-2xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white flex flex-col items-center sm:block text-center">
+                <span>Por que escolher a</span>
+                <span className="text-hot mt-0.5 sm:mt-0 sm:ml-2">Cineflix</span>
               </h2>
-              <p className="mx-auto mt-3 max-w-xl text-xs sm:text-sm text-muted-foreground font-medium leading-relaxed">
-                Qualidade 4K sem travamentos, suporte humano 7 dias por semana e compatível com todos os seus aparelhos.
-              </p>
             </div>
           </SmoothCardReveal>
 
@@ -424,31 +452,46 @@ function Index() {
             {[
               {
                 icon: Clapperboard,
-                banner: img("/yQIdU11DYQQp0neGtGtGxbGfRer.jpg", "w780"),
-                gradient: "from-rose-600 via-primary to-purple-600",
-                glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
-                corBorda: "border border-rose-500/40 hover:border-rose-300",
-                corGlow: "shadow-[0_0_30px_rgba(225,29,72,0.2)] hover:shadow-[0_0_50px_rgba(225,29,72,0.55)]",
+                banners: [
+                  img("/yQIdU11DYQQp0neGtGtGxbGfRer.jpg", "w780"), // He-Man
+                  img("/neeNHeXjMF5fXoCJRsOmkNGC7q.jpg", "w780"), // Oppenheimer
+                  img("/7I6VUdPj6tQECNHdviJkUHD2u89.jpg", "w780") // John Wick 4
+                ],
+                objectPosition: "object-cover",
+                gradient: "from-orange-500 via-amber-500 to-yellow-500",
+                glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-orange-300/80",
+                corBorda: "border border-orange-500/40 hover:border-orange-300",
+                corGlow: "shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:shadow-[0_0_50px_rgba(245,158,11,0.55)]",
                 bgOverlay: "bg-gradient-to-t from-[#0d0212] via-[#0d0212]/75 to-[#0d0212]/20",
-                titleHover: "group-hover:text-rose-200",
+                titleHover: "group-hover:text-orange-200",
                 t: "Filmes incríveis",
-                d: "He-Man, grandes lançamentos do cinema e superproduções premiadas em 4K.",
+                d: "He-Man, grandes lançamentos do cinema e superproduções premiadas em até 4K.",
               },
               {
                 icon: Tv,
-                banner: img("/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg", "w780"),
-                gradient: "from-purple-600 via-primary to-accent",
-                glow: "shadow-[0_0_22px_rgba(168,85,247,0.85)] border-purple-300/80",
-                corBorda: "border border-purple-500/40 hover:border-purple-300",
-                corGlow: "shadow-[0_0_30px_rgba(168,85,247,0.2)] hover:shadow-[0_0_50px_rgba(168,85,247,0.55)]",
+                banners: [
+                  img("/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg", "w780"), // Silo
+                  img("/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg", "w780"), // Squid Game
+                  img("/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg", "w780") // The Last of Us
+                ],
+                objectPosition: "object-cover",
+                gradient: "from-teal-500 via-cyan-500 to-blue-500",
+                glow: "shadow-[0_0_22px_rgba(6,182,212,0.85)] border-teal-300/80",
+                corBorda: "border border-teal-500/40 hover:border-teal-300",
+                corGlow: "shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:shadow-[0_0_50px_rgba(6,182,212,0.55)]",
                 bgOverlay: "bg-gradient-to-t from-[#0b0314] via-[#0b0314]/75 to-[#0b0314]/20",
-                titleHover: "group-hover:text-purple-200",
+                titleHover: "group-hover:text-teal-200",
                 t: "Séries imperdíveis",
                 d: "Silo, Squid Game e todos os sucessos globais para maratonar sem limites.",
               },
               {
                 icon: Torii,
-                banner: img("/oUmWLyeko3kYdUr8DBLIsxwcugl.jpg", "w780"),
+                banners: [
+                  img("/oUmWLyeko3kYdUr8DBLIsxwcugl.jpg", "w780"), // DAIMA
+                  img("/1RgPyOhN4DRs225BGTlHJqCudII.jpg", "w780"), // Demon Slayer
+                  img("/gtKglOSEq3d4MgQE4VsrT1sRkd0.jpg", "w780") // Jujutsu Kaisen
+                ],
+                objectPosition: "object-cover",
                 gradient: "from-fuchsia-600 via-purple-600 to-pink-500",
                 glow: "shadow-[0_0_22px_rgba(217,70,239,0.85)] border-fuchsia-300/80",
                 corBorda: "border border-fuchsia-500/40 hover:border-fuchsia-300",
@@ -460,31 +503,46 @@ function Index() {
               },
               {
                 icon: Baby,
-                banner: img("/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg", "w780"),
-                gradient: "from-amber-500 via-orange-500 to-rose-500",
-                glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-amber-300/80",
-                corBorda: "border border-amber-500/40 hover:border-amber-300",
-                corGlow: "shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:shadow-[0_0_50px_rgba(245,158,11,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#140802] via-[#140802]/75 to-[#140802]/20",
-                titleHover: "group-hover:text-amber-200",
+                banners: [
+                  img("/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg", "w780"), // Moana 2
+                  img("/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg", "w780"), // Inside Out 2
+                  img("/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg", "w780") // Super Mario
+                ],
+                objectPosition: "object-cover",
+                gradient: "from-cyan-400 via-blue-500 to-indigo-500",
+                glow: "shadow-[0_0_22px_rgba(6,182,212,0.85)] border-cyan-300/80",
+                corBorda: "border border-cyan-500/40 hover:border-cyan-300",
+                corGlow: "shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:shadow-[0_0_50px_rgba(6,182,212,0.55)]",
+                bgOverlay: "bg-gradient-to-t from-[#020814] via-[#020814]/75 to-[#020814]/20",
+                titleHover: "group-hover:text-cyan-200",
                 t: "Canais infantis",
                 d: "Moana 2, Disney+ e toda a programação para a criançada.",
               },
               {
                 icon: Trophy,
-                banner: futebol,
-                gradient: "from-cyan-500 via-teal-600 to-emerald-500",
-                glow: "shadow-[0_0_22px_rgba(6,182,212,0.85)] border-cyan-300/80",
-                corBorda: "border border-cyan-500/40 hover:border-cyan-300",
-                corGlow: "shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:shadow-[0_0_50px_rgba(6,182,212,0.55)]",
+                banners: [
+                  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Erling_Haaland_France_v_Norway_26_June_26-008.jpg/1280px-Erling_Haaland_France_v_Norway_26_June_26-008.jpg", // Haaland
+                  "https://upload.wikimedia.org/wikipedia/commons/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg", // Mbappe 2026
+                  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg/1280px-Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg" // Harry Kane
+                ],
+                objectPosition: "object-cover object-[center_20%]", // Keep faces in view without stretching
+                gradient: "from-green-500 via-emerald-600 to-teal-500",
+                glow: "shadow-[0_0_22px_rgba(34,197,94,0.85)] border-green-300/80",
+                corBorda: "border border-green-500/40 hover:border-green-300",
+                corGlow: "shadow-[0_0_30px_rgba(34,197,94,0.2)] hover:shadow-[0_0_50px_rgba(34,197,94,0.55)]",
                 bgOverlay: "bg-gradient-to-t from-[#030e17] via-[#030e17]/75 to-[#030e17]/20",
-                titleHover: "group-hover:text-cyan-200",
+                titleHover: "group-hover:text-green-200",
                 t: "Esportes ao vivo",
                 d: "Brasileirão, Champions League, Premier League e todos os campeonatos ao vivo.",
               },
               {
                 icon: Lock,
-                banner: img("/7IGKrY1f1KfwMipx9wZC4NRgIdF.jpg", "w780"),
+                banners: [
+                  img("/7FRraud59N3s10bbf9bfYjvwx3v.jpg", "w780"), // Basic Instinct
+                  img("/rpsHpJj7FgnNBXhaO2KFthPwqH6.jpg", "w780"), // Love (2015)
+                  img("/xqIstzB0ELbYyfzKcYaSwLb4Whs.jpg", "w780") // Emmanuelle
+                ],
+                objectPosition: "object-cover",
                 gradient: "from-rose-600 via-red-600 to-pink-600",
                 glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
                 corBorda: "border border-rose-500/40 hover:border-rose-300",
@@ -497,14 +555,10 @@ function Index() {
             ].map((f, i) => (
               <SmoothCardReveal key={f.t} delay={100 + i * 80}>
                 <div
-                  className={`group relative h-full min-h-[220px] overflow-hidden rounded-4xl p-7 ${f.corBorda} ${f.corGlow} transition-all duration-500 hover:-translate-y-2.5`}
+                  className={`group relative h-full min-h-[200px] sm:min-h-[220px] overflow-hidden rounded-2xl p-5 sm:p-7 ${f.corBorda} ${f.corGlow} transition-all duration-500 hover:-translate-y-2.5 animate-float`}
                 >
-                  {/* IMAGEM BANNER ILUSTRATIVA DE FUNDO (SEM DESFOQUE) */}
-                  <img
-                    src={f.banner}
-                    alt={`Ilustração ${f.t}`}
-                    className="absolute inset-0 size-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                  />
+                  {/* IMAGEM BANNER ILUSTRATIVA DE FUNDO (SEM DESFOQUE) COM SLIDESHOW */}
+                  <SlideshowBanner banners={f.banners} alt={`Ilustração ${f.t}`} objectPosition={f.objectPosition} />
                   {/* SOBREPOSIÇÃO DE GRADIENTE ESCURO LÍMPIDO */}
                   <div className={`absolute inset-0 ${f.bgOverlay} transition-opacity duration-500 group-hover:opacity-85`} />
 
@@ -534,114 +588,33 @@ function Index() {
 
 
 
-        {/* ECONOMIA */}
-        <section id="economia" className="relative z-10 mx-auto w-[94%] max-w-6xl py-8 sm:py-10">
-          <div className="relative overflow-hidden rounded-4xl border border-purple-500/30 bg-gradient-to-b from-[#18082c]/90 via-[#100420]/95 to-[#070210]/98 p-6 sm:p-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(168,85,247,0.22)]">
-            {/* LUZES E GLOW DE VIDRO DE FUNDO */}
-            <div className="pointer-events-none absolute -top-32 -left-32 size-64 rounded-full bg-primary/20 blur-3xl" />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent" />
-
-            {/* TÍTULO DO PAINEL */}
-            <SmoothCardReveal delay={50}>
-              <div className="relative z-10 text-center mb-8">
-                <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-950/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-purple-200 uppercase shadow-[0_0_20px_rgba(168,85,247,0.25)] mb-4">
-                  <DollarSign className="size-3.5 text-accent" /> Comparativo de preços
-                </span>
-                <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl">
-                  Quanto você economiza <span className="text-hot">assinando a Cineflix</span>
-                </h2>
-                <p className="mx-auto mt-3 max-w-xl text-xs sm:text-sm text-muted-foreground font-medium leading-relaxed">
-                  Valor mensal de cada serviço assinado individualmente:
-                </p>
-              </div>
-            </SmoothCardReveal>
-
-            {/* GRID DOS 12 CARDS DE STREAMING */}
-            <div className="relative z-10 grid grid-cols-3 gap-2 sm:gap-2.5 sm:grid-cols-4 lg:grid-cols-6">
-              {plataformas.map((p, i) => (
-                <SmoothCardReveal key={p.nome} delay={80 + i * 35}>
-                  <div
-                    className="relative group flex flex-col items-center justify-center gap-2 rounded-2xl px-2 py-3 sm:py-3.5 border border-white/12 bg-white/5 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.3)] transition-all duration-300 hover:border-purple-400/60 hover:scale-105 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(168,85,247,0.35)] overflow-hidden"
-                  >
-                    {/* BRILHO REFLEXIVO DE VIDRO 3D */}
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-80" />
-
-                    <div className="flex h-7 sm:h-8 w-full items-center justify-center px-1 overflow-hidden">
-                      <BrandLogo
-                        nome={p.nome}
-                        logo={p.logo}
-                        invert={p.invert === true}
-                        escala={p.escala ?? 1}
-                        cor={p.cor}
-                      />
-                    </div>
-                    <span className="font-display text-xs font-black tracking-tight text-white/90 drop-shadow-sm">
-                      {p.preco}
-                    </span>
-                  </div>
-                </SmoothCardReveal>
-              ))}
-            </div>
-
-            {/* LINHA DIVISÓRIA COM GLOW NEON */}
-            <div className="relative z-10 my-4 sm:my-5 h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent" />
-
-            {/* RESUMO DE ECONOMIA UNIFICADO NO PAINEL COM ANIMAÇÃO */}
-            <SmoothCardReveal delay={250}>
-              <div className="relative z-10 mx-auto max-w-2xl rounded-3xl border border-purple-500/40 bg-gradient-to-b from-purple-950/60 via-[#18092f]/95 to-[#0c0318]/98 p-4 sm:p-7 text-center backdrop-blur-xl shadow-[0_0_35px_rgba(168,85,247,0.35)]">
-                <p className="text-muted-foreground text-xs sm:text-base font-semibold">
-                  Ao todo você pagaria{" "}
-                  <span className="font-bold text-foreground">
-                    R$ 386,80
-                  </span>{" "}
-                  por mês
-                </p>
-
-                <div className="mt-1.5 sm:mt-3 flex flex-col items-center justify-center text-center">
-                  <span className="font-display text-base sm:text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-tight">
-                    Com a Cineflix você paga
-                  </span>
-                  <span className="font-display mt-0.5 inline-flex items-center justify-center gap-1.5 text-xl sm:text-4xl md:text-5xl font-black leading-tight">
-                    <span className="bg-gradient-to-r from-rose-500 via-purple-400 via-pink-400 to-amber-300 bg-clip-text text-transparent animate-text-shine drop-shadow-[0_0_25px_rgba(244,63,94,0.7)]">
-                      apenas R$20/mês
-                    </span>
-                    <Flame className="size-5 sm:size-8 text-rose-500 animate-bounce shrink-0 drop-shadow-[0_0_12px_rgba(244,63,94,0.9)]" />
-                  </span>
-                </div>
-
-                <div className="mt-4 sm:mt-6">
-                  <Cta />
-                </div>
-              </div>
-            </SmoothCardReveal>
-          </div>
-        </section>
 
 
         {/* PLANOS */}
-        <section id="planos" className="relative z-10 mx-auto w-[94%] max-w-6xl py-8 sm:py-10">
-          {/* GLOW AMBIENTE PULSANTE DINÂMICO DOS PLANOS */}
-          <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[650px] rounded-full bg-primary/20 blur-[180px] animate-pulse" />
+        {/* PLANOS */}
+        <section id="planos" className="relative z-10 mx-auto w-[94%] max-w-6xl py-4 sm:py-6">
+          {/* GLOW AMBIENTE DOS PLANOS */}
+          <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[650px] rounded-full bg-primary/20 blur-[180px]" />
 
           <Reveal className="relative z-10 text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/50 bg-purple-950/70 backdrop-blur-md px-4 py-2 text-xs font-extrabold tracking-wider text-purple-200 uppercase shadow-[0_0_25px_rgba(168,85,247,0.4)] mb-5 animate-pulse">
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-surface-2/70 backdrop-blur-md px-4 py-2 text-xs font-extrabold tracking-wider text-accent uppercase shadow-glow mb-5">
               <Sparkles className="size-3.5 text-accent animate-spin" /> Oferta por tempo limitado
             </span>
-            <h2 className="text-4xl font-black sm:text-5xl md:text-6xl tracking-tight text-white">
-              Aproveite e{" "}
-              <span className="relative inline-flex items-center gap-1.5">
+            <h2 className="text-3xl font-black sm:text-5xl md:text-6xl tracking-tight text-white flex flex-wrap items-center justify-center gap-x-2">
+              <span>Aproveite e</span>
+              <span className="inline-flex items-center gap-1.5">
                 <span className="bg-gradient-to-r from-rose-500 via-purple-400 via-pink-400 to-amber-300 bg-clip-text text-transparent animate-text-shine drop-shadow-[0_0_30px_rgba(244,63,94,0.6)]">
                   assine já
                 </span>
-                <Zap className="size-8 sm:size-10 text-amber-400 animate-bounce drop-shadow-[0_0_15px_rgba(251,191,36,0.9)]" />
+                <Zap className="size-6 sm:size-9 text-amber-400 animate-bounce drop-shadow-[0_0_15px_rgba(251,191,36,0.9)]" />
               </span>
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto font-medium leading-relaxed">
+            <p className="mt-0.5 sm:mt-1 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto font-medium leading-relaxed">
               Cancele quando quiser, com ativação imediata e suporte 24/7.
             </p>
           </Reveal>
 
-        <div className="relative z-10 mt-12 grid items-center gap-6 lg:grid-cols-3">
+        <div className="relative z-10 mt-6 sm:mt-7 pt-5 sm:pt-6 grid items-start gap-8 lg:gap-6 lg:grid-cols-3">
           {[
             {
               id: "start",
@@ -697,10 +670,10 @@ function Index() {
           ].map((p, i) => (
             <SmoothCardReveal key={p.nome} delay={100 + i * 120}>
               <div
-                className={`group relative h-full rounded-4xl [transform:translateZ(0)] [backface-visibility:hidden] transition-[transform,border-color,box-shadow] duration-300 ${p.corBorda} ${p.corGlow} ${p.bgCard} ${
+                className={`group relative h-full rounded-2xl [transform:translateZ(0)] [backface-visibility:hidden] transition-[transform,border-color,box-shadow] duration-300 ${p.corBorda} ${p.corGlow} ${p.bgCard} ${
                   p.destaque
-                    ? "pt-10 pb-9 px-8 sm:px-9 lg:scale-[1.06] z-20 hover:scale-[1.08]"
-                    : "p-8 sm:p-9 hover:-translate-y-2"
+                    ? "pt-9 pb-8 px-6 sm:px-9 lg:scale-[1.04] z-20 hover:scale-[1.06]"
+                    : "p-6 sm:p-9 hover:-translate-y-2"
                 }`}
               >
                 {/* BRILHO REFLEXIVO DE VIDRO 3D NO CARD */}
@@ -710,7 +683,7 @@ function Index() {
                 </div>
 
                 {p.selo && (
-                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 via-primary to-accent px-5 py-1.5 text-xs font-black tracking-wider text-white uppercase shadow-[0_0_25px_rgba(168,85,247,0.85)] animate-pulse">
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 via-primary to-accent px-5 py-1.5 text-xs font-black tracking-wider text-white uppercase shadow-[0_0_25px_rgba(168,85,247,0.85)]">
                     <Sparkles className="size-3.5 fill-current" />
                     {p.selo}
                   </span>
@@ -747,7 +720,7 @@ function Index() {
                   href={p.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`mt-7 w-full flex items-center justify-center gap-2 rounded-full py-4 text-sm font-extrabold uppercase tracking-wide transition-all duration-300 ${p.btnStyle}`}
+                  className={`mt-7 w-full flex items-center justify-center gap-2 rounded-full py-4 text-sm font-extrabold uppercase tracking-wide transition-all duration-300 animate-float ${p.btnStyle}`}
                 >
                   Comprar agora
                 </a>
@@ -757,7 +730,7 @@ function Index() {
                     p.extra,
                     p.telas,
                     "Mais de 60.000 conteúdos",
-                    "Qualidade SD/HD/FHD/4K",
+                    "Qualidade até 4K (SD/HD/FHD/4K)",
                     "Guia de Programação [EPG]",
                     "Smartphone / Tablet",
                     "TV Box / Chromecast",
@@ -778,46 +751,49 @@ function Index() {
 
         {/* PAINEL COMPACTO DE GARANTIA E PAGAMENTO */}
         <SmoothCardReveal delay={150}>
-          <div className="glass rounded-3xl p-6 sm:p-8 border border-white/10 bg-black/50 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.5)] mt-10">
-            <div className="grid gap-6 md:grid-cols-2 md:items-center md:divide-x md:divide-white/10">
-              {/* LADO ESQUERDO: GARANTIA DE 7 DIAS COMPACTA */}
-              <div className="flex items-center gap-4">
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.25)]">
-                  <ShieldCheck className="size-6" />
+          <div className="mx-auto max-w-5xl rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-8 border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[0_8px_30px_rgb(0,0,0,0.5)] mt-10 sm:mt-16 relative overflow-hidden">
+            {/* Brilho de topo sutil para dar acabamento premium sem parecer um plano */}
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+            
+            <div className="relative z-10 grid gap-5 sm:gap-8 md:grid-cols-2 md:items-center md:divide-x md:divide-white/10">
+              {/* LADO ESQUERDO: GARANTIA DE 7 DIAS */}
+              <div className="flex flex-row items-center gap-4 sm:gap-6">
+                <div className="flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full bg-primary/10 border border-primary/20 text-accent shadow-sm">
+                  <ShieldCheck className="size-6 sm:size-7" />
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">Garantia 7 Dias</span>
-                    <span className="rounded-full bg-emerald-500/20 px-2 py-0.5 text-[10px] font-extrabold text-emerald-300">Sem Riscos</span>
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-purple-300">Garantia</span>
+                    <span className="rounded-full bg-purple-500/20 px-2 py-0.5 text-[9px] font-extrabold tracking-wider text-purple-200 uppercase">7 Dias Sem Risco</span>
                   </div>
-                  <h4 className="font-display text-base sm:text-lg font-extrabold text-white">
-                    Experimente sem compromisso por 7 dias
+                  <h4 className="font-display text-sm sm:text-lg font-bold text-white drop-shadow-md leading-tight">
+                    Experimente sem compromisso
                   </h4>
-                  <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                    Se dentro de 7 dias você decidir não continuar por qualquer motivo, devolveremos 100% do seu dinheiro sem perguntas.
+                  <p className="mt-1 text-[11px] sm:text-xs text-muted-foreground leading-relaxed max-w-[280px]">
+                    Se não gostar, devolvemos 100% do valor.
                   </p>
                 </div>
               </div>
 
               {/* LADO DIREITO: FORMAS DE PAGAMENTO ACEITAS */}
-              <div className="flex items-center gap-4 md:pl-6">
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-purple-500/15 border border-purple-400/30 text-purple-300 shadow-[0_0_20px_rgba(168,85,247,0.25)]">
-                  <CreditCard className="size-6" />
+              <div className="flex flex-row items-center gap-4 sm:gap-6 md:pl-10">
+                <div className="flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full bg-primary/10 border border-primary/20 text-accent shadow-sm">
+                  <CreditCard className="size-6 sm:size-7" />
                 </div>
                 <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-bold uppercase tracking-wider text-purple-300">Pagamento Seguro</span>
-                    <span className="rounded-full bg-purple-500/20 px-2 py-0.5 text-[10px] font-extrabold text-purple-200">Ativação Imediata</span>
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-purple-300">Pagamento</span>
+                    <span className="rounded-full bg-purple-500/20 px-2 py-0.5 text-[9px] font-extrabold tracking-wider text-purple-200 uppercase">Seguro</span>
                   </div>
-                  <h4 className="font-display text-base sm:text-lg font-extrabold text-white">
-                    Formas de Pagamento Aceitas
+                  <h4 className="font-display text-sm sm:text-lg font-bold text-white drop-shadow-md leading-tight">
+                    Ativação Imediata
                   </h4>
                   <div className="flex flex-wrap items-center gap-2 mt-2">
-                    <span className="flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-950/40 px-3 py-1 text-[11px] font-bold text-emerald-300">
-                      <QrCode className="size-3.5 text-emerald-400" /> PIX Instantâneo
+                    <span className="flex items-center gap-1.5 rounded-full border border-purple-400/30 bg-purple-950/40 px-2.5 py-1 text-[10px] sm:text-xs font-bold text-purple-100 backdrop-blur-md transition-all hover:border-purple-400/60">
+                      <QrCode className="size-3.5 text-purple-400" /> PIX
                     </span>
-                    <span className="flex items-center gap-1.5 rounded-full border border-purple-500/30 bg-purple-950/40 px-3 py-1 text-[11px] font-bold text-purple-200">
-                      <CreditCard className="size-3.5 text-purple-400" /> Cartão (até 12x)
+                    <span className="flex items-center gap-1.5 rounded-full border border-purple-400/30 bg-purple-950/40 px-2.5 py-1 text-[10px] sm:text-xs font-bold text-purple-100 backdrop-blur-md transition-all hover:border-purple-400/60">
+                      <CreditCard className="size-3.5 text-purple-400" /> Cartão 12x
                     </span>
                   </div>
                 </div>
@@ -837,7 +813,7 @@ function Index() {
       </Faq>
 
       {/* SEGURANÇA E CERTIFICADOS BEM EMBAIXO DA PÁGINA */}
-      <section className="border-t border-border/70 bg-surface/30 py-12">
+      <section className="border-t border-white/5 bg-black/20 py-4 sm:py-6 backdrop-blur-xl">
         <div className="mx-auto w-[94%] max-w-6xl">
           <p className="mb-8 text-center text-xs font-semibold tracking-[0.25em] text-muted-foreground uppercase">
             Segurança &amp; Certificados de Garantia

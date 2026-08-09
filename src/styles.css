@@ -55,10 +55,10 @@
 
 :root {
   --radius: 1rem;
-  --background: oklch(0.09 0.02 295);
+  --background: oklch(0.14 0.04 290);
   --foreground: oklch(0.98 0 0);
-  --surface: oklch(0.13 0.025 295);
-  --surface-2: oklch(0.18 0.035 295);
+  --surface: oklch(0.18 0.05 290);
+  --surface-2: oklch(0.22 0.06 290);
   --card: oklch(0.13 0.025 295);
   --card-foreground: oklch(0.98 0 0);
   --popover: oklch(0.13 0.025 295);
@@ -103,6 +103,7 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 
   [id] {
@@ -120,6 +121,7 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
 

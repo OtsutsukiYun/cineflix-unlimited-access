@@ -93,7 +93,7 @@ export function Faq({ children }: { children?: React.ReactNode }) {
     const open = aberta === origIndex;
     return (
       <SmoothCardReveal key={p.q} delay={Math.min(origIndex, 6) * 70}>
-        <div className="glass border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden rounded-3xl transition-all duration-300 hover:border-purple-400/40">
+        <div className="glass border border-white/10 bg-white/5 backdrop-blur-xl overflow-hidden rounded-2xl transition-all duration-300 hover:border-primary/40 shadow-sm">
           <button
             type="button"
             aria-expanded={open}
@@ -123,10 +123,10 @@ export function Faq({ children }: { children?: React.ReactNode }) {
   };
 
   return (
-    <section id="faq" className="mx-auto w-[94%] max-w-6xl py-10 sm:py-12">
+    <section id="faq" className="mx-auto w-[94%] max-w-6xl py-4 sm:py-6">
       <SmoothCardReveal delay={50}>
         <div className="text-center">
-          <span className="inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-950/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-purple-200 uppercase shadow-[0_0_20px_rgba(168,85,247,0.25)] mb-4">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-accent uppercase shadow-sm mb-4">
             <HelpCircle className="size-3.5 text-accent" /> Central de Ajuda
           </span>
           <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white">

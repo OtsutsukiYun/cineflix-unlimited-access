@@ -70,12 +70,12 @@ export function FeaturedCarousel({
         onPointerDown={() => setPausado(true)}
         onMouseEnter={() => setPausado(true)}
         onMouseLeave={() => setPausado(false)}
-        className="no-scrollbar mx-auto flex w-full snap-x snap-mandatory gap-5 overflow-x-auto px-[4vw] pb-4 lg:px-[max(4vw,calc((100vw-72rem)/2))]"
+        className="no-scrollbar mx-auto flex w-full snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-4 lg:px-[calc((100%-72rem)/2)]"
       >
         {items.map((t) => (
           <article
             key={t.title}
-            className="group relative w-[68vw] shrink-0 snap-center overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-b from-purple-950/60 via-[#140828]/95 to-[#0b0316] sm:w-[325px] transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/80 hover:shadow-[0_12px_40px_rgba(168,85,247,0.45)]"
+            className="group relative w-[75%] shrink-0 snap-center overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-b from-purple-950/60 via-[#140828]/95 to-[#0b0316] sm:w-[325px] transition-all duration-300 hover:-translate-y-2 hover:border-purple-400/80 hover:shadow-[0_12px_40px_rgba(168,85,247,0.45)]"
           >
             {/* SHINE GLOW EFFECT ON HOVER */}
             <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
