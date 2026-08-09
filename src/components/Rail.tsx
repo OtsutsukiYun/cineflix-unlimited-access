@@ -139,3 +139,80 @@ export function Rail({
     </section>
   );
 }
+
+export function Top10Rail({
+  title = "TOP 10 HOJE NA CINEFLIX",
+  subtitle = "Os títulos mais assistidos pelos assinantes no Brasil hoje",
+  items,
+}: {
+  title?: string;
+  subtitle?: string;
+  items: Title[];
+}) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = (direction: "left" | "right") => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const step = 280;
+    container.scrollBy({ left: direction === "right" ? step : -step, behavior: "smooth" });
+  };
+
+  return (
+    <section className="py-6 sm:py-8 relative z-10">
+      <div className="mx-auto w-[94%] max-w-6xl">
+        <div className="mb-4 flex items-end justify-between gap-4 px-1 sm:px-2">
+          <div>
+            <div className="flex items-center gap-2.5">
+              <span className="flex size-7 sm:size-8 items-center justify-center rounded-xl bg-gradient-to-tr from-rose-600 via-primary to-accent font-black text-xs sm:text-sm text-white shadow-[0_0_20px_rgba(225,29,72,0.8)]">
+                10
+              </span>
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-black leading-none text-white tracking-tight">
+                {title}
+              </h3>
+            </div>
+            {subtitle && (
+              <p className="mt-1.5 text-xs sm:text-sm text-muted-foreground font-medium">{subtitle}</p>
+            )}
+          </div>
+          
+          <div className="hidden shrink-0 gap-2 md:flex">
+            <button
+              type="button"
+              onClick={() => handleScroll("left")}
+              aria-label="Anterior"
+              className="glass flex size-10 items-center justify-center rounded-full transition-all hover:bg-white/10 hover:text-accent"
+            >
+              <ChevronLeft className="size-5" />
+            </button>
+            <button
+              type="button"
+              onClick={() => handleScroll("right")}
+              aria-label="Próximo"
+              className="glass flex size-10 items-center justify-center rounded-full transition-all hover:bg-white/10 hover:text-accent"
+            >
+              <ChevronRight className="size-5" />
+            </button>
+          </div>
+        </div>
+
+        <div
+          ref={scrollRef}
+          className="no-scrollbar flex gap-2 sm:gap-4 overflow-x-auto pb-4 pt-2 scroll-smooth px-1"
+        >
+          {items.slice(0, 10).map((t, idx) => (
+            <div key={t.title} className="group relative flex shrink-0 items-end">
+              {/* NÚMERO GIGANTE ESTILO NETFLIX TOP 10 */}
+              <span className="font-display font-black text-7xl sm:text-9xl text-transparent bg-clip-text bg-gradient-to-b from-white via-white/80 to-white/10 opacity-90 filter drop-shadow-[0_4px_25px_rgba(168,85,247,0.6)] select-none -mr-5 sm:-mr-8 z-0 pointer-events-none tracking-tighter leading-none">
+                {idx + 1}
+              </span>
+              <div className="relative z-10">
+                <PosterCard item={t} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

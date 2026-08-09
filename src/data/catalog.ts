@@ -181,6 +181,19 @@ export const terror: Title[] = [
   { title: "A Bruxa de Blair", poster: "/jAKX4midH0vSm2XT54g5TWluQqw.jpg", year: "1999" },
 ];
 
+export const top10Hoje: Title[] = [
+  { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
+  { title: "Silo", poster: "/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg", year: "2024", tag: "🔥 Top 2", rating: "4.9" },
+  { title: "Backrooms", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Top 3", rating: "4.9" },
+  { title: "Round 6", poster: "/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg", year: "2024", tag: "🔥 Top 4", rating: "4.8" },
+  { title: "The Last of Us", poster: "/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg", year: "2023", tag: "🔥 Top 5", rating: "4.9" },
+  { title: "Demon Slayer", poster: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", year: "2024", tag: "🔥 Top 6", rating: "4.9" },
+  { title: "Premonição 6", poster: "/x3J781PsdMrjenzQKM5eJXqK5Nd.jpg", year: "2025", tag: "🔥 Top 7", rating: "4.8" },
+  { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "🔥 Top 8", rating: "4.8" },
+  { title: "Moana 2", poster: "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg", year: "2024", tag: "🔥 Top 9", rating: "4.9" },
+  { title: "Dragon Ball DAIMA", poster: "/oUmWLyeko3kYdUr8DBLIsxwcugl.jpg", year: "2024", tag: "🔥 Top 10", rating: "4.9" },
+];
+
 export const series: Title[] = [
   { title: "Cabo do Medo", poster: "/2gi4vszQOpVsB33FDgt000VIQMo.jpg", year: "2026", tag: "Lançamento" },
   { title: "O Segredo de Widow's Bay", poster: "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", year: "2026", tag: "Novo" },
