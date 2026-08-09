@@ -249,7 +249,7 @@ function Index() {
           <PromoBanner />
         </div>
         <header className="z-50">
-          <div className="mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-4 sm:px-5 py-2.5 sm:py-3 border border-white/10 bg-[#0c0418]/90 backdrop-blur-md shadow-[0_4px_25px_rgba(0,0,0,0.5)] [transform:translateZ(0)]">
+          <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-4 sm:px-6 py-2.5 sm:py-3 border border-white/25 bg-surface/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
             <SmoothLink href="#" className="flex items-center gap-2">
               <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-tr from-primary/80 via-primary to-accent text-white shadow-glow">
                 <Play className="size-4 fill-current ml-0.5" />
@@ -259,34 +259,34 @@ function Index() {
               </span>
             </SmoothLink>
 
-            <nav className="hidden items-center gap-7 text-sm font-semibold md:flex">
+            <nav className="hidden items-center gap-7 text-sm font-medium md:flex">
               <SmoothLink
                 href="#catalogo"
-                className="text-muted-foreground transition-colors hover:text-white"
+                className="text-white/80 transition-colors hover:text-white"
               >
                 Catálogo
               </SmoothLink>
               <SmoothLink
                 href="#comparativo"
-                className="text-muted-foreground transition-colors hover:text-white"
+                className="text-white/80 transition-colors hover:text-white"
               >
                 Comparativo
               </SmoothLink>
               <SmoothLink
                 href="#planos"
-                className="text-muted-foreground transition-colors hover:text-white"
+                className="text-white/80 transition-colors hover:text-white"
               >
                 Planos
               </SmoothLink>
               <SmoothLink
                 href="#faq"
-                className="text-muted-foreground transition-colors hover:text-white"
+                className="text-white/80 transition-colors hover:text-white"
               >
                 FAQ
               </SmoothLink>
               <Link
                 to="/suporte"
-                className="text-purple-300 transition-colors hover:text-white"
+                className="text-purple-300 transition-colors hover:text-white font-semibold"
               >
                 Suporte
               </Link>
@@ -295,7 +295,6 @@ function Index() {
             <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs">
               Assinar
             </SmoothLink>
-
           </div>
         </header>
       </div>
