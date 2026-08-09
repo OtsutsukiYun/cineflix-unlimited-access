@@ -669,7 +669,7 @@ function Index() {
                 Economize mais de <strong className="text-white font-black ml-1 text-sm sm:text-base">R$ 360,00/mês</strong>
               </div>
 
-              {/* LADO DIREITO: ÍCONES REAIS DAS PLATAFORMAS (CÍRCULOS VIBRANTES DAS MARCAS) */}
+              {/* LADO DIREITO: ÍCONES REAIS DAS PLATAFORMAS (RECORTADOS POR CLIP-PATH CIRCLE PARA NUNCA MOSTRAR QUADRADOS) */}
               <div className="flex items-center justify-center gap-2.5 sm:gap-4 overflow-x-auto no-scrollbar py-2">
                 <span className="text-[11px] font-bold text-emerald-200/90 uppercase tracking-wider shrink-0 mr-1 hidden sm:inline">
                   Substitua:
@@ -677,17 +677,30 @@ function Index() {
                 {plataformas.slice(0, 6).map((p) => (
                   <div
                     key={p.nome}
-                    className={`group relative flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full border-2 border-white/40 bg-gradient-to-b ${p.bgGradient} p-2 sm:p-2.5 overflow-hidden transition-all duration-300 hover:scale-115 hover:border-white/90 shadow-xl`}
-                    style={{
-                      boxShadow: `0 0 18px ${p.glowColor}`,
-                    }}
+                    className="group relative flex size-12 sm:size-14 shrink-0 items-center justify-center transition-transform duration-300 hover:scale-115"
                     title={p.nome}
                   >
-                    <img
-                      src={p.logo}
-                      alt={p.nome}
-                      className={`size-7 sm:size-8.5 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] transition-transform ${p.logoScale || 'scale-100'}`}
+                    {/* BRIHO NÉON 100% RADIAL (CIRCULAR) */}
+                    <div
+                      className="absolute -inset-1 rounded-full opacity-60 blur-sm transition-opacity duration-300 group-hover:opacity-100 -z-10"
+                      style={{
+                        background: `radial-gradient(circle at center, ${p.cor} 0%, transparent 70%)`,
+                      }}
                     />
+
+                    {/* MEDALHÃO CIRCULAR COM CLIP-PATH SUBPIXEL (ZERO CONTORNO QUADRADO) */}
+                    <div
+                      className={`relative flex size-full items-center justify-center rounded-full border-2 border-white/40 bg-gradient-to-b ${p.bgGradient} p-2 sm:p-2.5 transition-colors duration-300 group-hover:border-white/90`}
+                      style={{
+                        clipPath: "circle(49.5% at 50% 50%)",
+                      }}
+                    >
+                      <img
+                        src={p.logo}
+                        alt={p.nome}
+                        className={`size-7 sm:size-8.5 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] transition-transform ${p.logoScale || 'scale-100'}`}
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
