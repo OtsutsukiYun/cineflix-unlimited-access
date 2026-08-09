@@ -686,6 +686,7 @@ function Index() {
               iconColor: "text-purple-400",
               titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 drop-shadow-[0_2px_12px_rgba(168,85,247,0.5)]",
               preco: "R$ 20",
+              priceSize: "text-4xl sm:text-5xl text-white drop-shadow-[0_2px_15px_rgba(168,85,247,0.6)]",
               periodo: "mensal",
               sub: "Renovação mensal · Cancele a qualquer momento",
               destaque: false,
@@ -710,6 +711,7 @@ function Index() {
               iconColor: "text-amber-300 drop-shadow-[0_0_12px_rgba(245,158,11,0.8)]",
               titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-fuchsia-300 drop-shadow-[0_2px_18px_rgba(236,72,153,0.75)]",
               preco: "R$ 97",
+              priceSize: "text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-white to-fuchsia-300 drop-shadow-[0_4px_25px_rgba(236,72,153,0.85)]",
               periodo: "1 ano",
               sub: "⚡ Equivale a apenas R$ 8,08/mês · 1 ano sem mensalidades",
               destaque: true,
@@ -734,6 +736,7 @@ function Index() {
               iconColor: "text-fuchsia-400",
               titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 drop-shadow-[0_2px_12px_rgba(168,85,247,0.5)]",
               preco: "R$ 69,90",
+              priceSize: "text-3xl sm:text-4xl lg:text-[2.6rem] text-white drop-shadow-[0_2px_15px_rgba(168,85,247,0.6)]",
               periodo: "semestral",
               sub: "Equivale a R$ 11,65/mês · 6 meses de acesso",
               destaque: false,
@@ -785,17 +788,11 @@ function Index() {
                     </span>
                   </div>
 
-                  <div className="mt-5 flex items-baseline gap-2 whitespace-nowrap">
-                    <span
-                      className={`font-display font-black whitespace-nowrap ${
-                        p.destaque
-                          ? "text-6xl sm:text-7xl text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-white to-fuchsia-300 drop-shadow-[0_4px_25px_rgba(236,72,153,0.85)]"
-                          : "text-5xl sm:text-6xl text-white drop-shadow-[0_4px_20px_rgba(168,85,247,0.7)]"
-                      }`}
-                    >
+                  <div className="mt-5 flex items-baseline gap-1.5 whitespace-nowrap overflow-hidden">
+                    <span className={`font-display font-black whitespace-nowrap ${p.priceSize}`}>
                       {p.preco}
                     </span>
-                    <span className={`font-black shrink-0 ${p.destaque ? "text-amber-200 text-lg sm:text-2xl" : "text-base sm:text-xl text-purple-200"}`}>
+                    <span className={`font-extrabold shrink-0 ${p.destaque ? "text-amber-200 text-base sm:text-lg" : "text-xs sm:text-sm text-purple-200"}`}>
                       /{p.periodo}
                     </span>
                   </div>
