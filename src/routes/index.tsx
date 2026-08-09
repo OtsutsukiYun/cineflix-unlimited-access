@@ -603,15 +603,12 @@ function Index() {
             </div>
           </SmoothCardReveal>
 
-          {/* GRID DE PLATAFORMAS — ESTILO STREAMING PREMIUM */}
+          {/* GRID DE PLATAFORMAS — ESTILO GLASSMORPHISM PREMIUM */}
           <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {plataformas.map((p, i) => (
               <SmoothCardReveal key={p.nome} delay={40 + i * 30}>
                 <div
-                  className="group relative flex flex-col items-center justify-between rounded-2xl p-4 text-center border border-white/10 bg-surface/50 backdrop-blur-xl transition-all duration-300 hover:border-white/30 hover:-translate-y-1.5 h-full overflow-hidden"
-                  style={{
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.4)",
-                  }}
+                  className="glass group relative flex flex-col items-center justify-between rounded-2xl p-4 text-center border border-white/15 bg-surface/40 backdrop-blur-xl transition-all duration-300 hover:border-primary/50 hover:bg-surface/60 hover:-translate-y-1.5 h-full overflow-hidden shadow-xl"
                 >
                   {/* GLOW DE HOVER COM A COR DA MARCA */}
                   <div
@@ -621,18 +618,18 @@ function Index() {
                     }}
                   />
 
-                  {/* NICHOS DE LOGOTIPO COM CONTRASTE LÍMPIDO */}
-                  <div className="relative z-10 flex h-12 w-full items-center justify-center rounded-xl bg-black/60 border border-white/10 p-2 transition-colors group-hover:border-white/20">
+                  {/* NICHOS DE LOGOTIPO COM EFEITO VIDRO TRANSLÚCIDO */}
+                  <div className="glass relative z-10 flex h-12 w-full items-center justify-center rounded-xl bg-white/[0.06] backdrop-blur-md border border-white/15 p-2 transition-all group-hover:bg-white/[0.12] group-hover:border-white/30 shadow-sm">
                     <img
                       src={p.logo}
                       alt={p.nome}
-                      className="max-h-8 max-w-[95px] object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] transition-transform duration-300 group-hover:scale-110"
+                      className="max-h-8 max-w-[95px] object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] transition-transform duration-300 group-hover:scale-110"
                     />
                   </div>
 
                   <div className="relative z-10 mt-3 w-full">
                     <p className="text-[11px] font-semibold text-muted-foreground mb-1">{p.nome}</p>
-                    <span className="inline-block w-full rounded-full border border-white/10 bg-white/5 py-1 px-2 text-xs font-black text-rose-400 font-mono transition-colors group-hover:border-rose-500/30 group-hover:bg-rose-500/10">
+                    <span className="inline-block w-full rounded-full border border-white/15 bg-white/5 backdrop-blur-md py-1 px-2 text-xs font-black text-rose-400 font-mono transition-colors group-hover:border-rose-500/40 group-hover:bg-rose-500/15">
                       {p.preco}/mês
                     </span>
                   </div>
@@ -643,18 +640,18 @@ function Index() {
 
           {/* BANNER DE COMPARATIVO DE ECONOMIA HARMONIOSO */}
           <SmoothCardReveal delay={200}>
-            <div className="relative mt-8 overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-r from-surface-2/90 via-surface/80 to-purple-950/40 p-6 sm:p-9 backdrop-blur-2xl shadow-glow flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="glass relative mt-8 overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-r from-surface-2/95 via-surface/90 to-purple-950/50 p-6 sm:p-9 backdrop-blur-2xl shadow-glow flex flex-col md:flex-row items-center justify-between gap-6">
               {/* LUZ DE AMBIENTE */}
-              <div className="pointer-events-none absolute -right-10 -top-10 size-60 rounded-full bg-primary/20 blur-3xl" />
-              <div className="pointer-events-none absolute -left-10 -bottom-10 size-60 rounded-full bg-emerald-500/15 blur-3xl" />
+              <div className="pointer-events-none absolute -right-10 -top-10 size-60 rounded-full bg-primary/25 blur-3xl" />
+              <div className="pointer-events-none absolute -left-10 -bottom-10 size-60 rounded-full bg-emerald-500/20 blur-3xl" />
 
               <div className="relative z-10 text-center md:text-left">
-                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/60 px-3.5 py-1.5 text-xs font-bold text-emerald-300 mb-3 shadow-sm">
+                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/50 bg-emerald-950/70 backdrop-blur-md px-3.5 py-1.5 text-xs font-bold text-emerald-300 mb-3 shadow-sm">
                   <Check className="size-4 text-emerald-400" /> Economize mais de R$ 360,00/mês
                 </div>
                 <h3 className="text-xl sm:text-3xl font-black text-white tracking-tight flex flex-wrap items-center justify-center md:justify-start gap-2">
                   <span>Total individual:</span>
-                  <span className="inline-block rounded-xl border border-rose-500/40 bg-rose-950/60 px-3 py-1 text-rose-400 line-through font-mono">
+                  <span className="inline-block rounded-xl border border-rose-500/50 bg-rose-950/70 backdrop-blur-md px-3 py-1 text-rose-300 line-through font-mono shadow-sm">
                     R$ 380,00/mês
                   </span>
                 </h3>
@@ -663,7 +660,7 @@ function Index() {
                 </p>
               </div>
 
-              <SmoothLink href="#planos" className="btn-cta relative z-10 shrink-0 text-sm sm:text-base px-8 py-4">
+              <SmoothLink href="#planos" className="btn-cta relative z-10 shrink-0 text-sm sm:text-base px-8 py-4 shadow-[0_0_35px_rgba(168,85,247,0.5)] hover:shadow-[0_0_55px_rgba(168,85,247,0.8)]">
                 <Zap className="size-5" /> QUERO ECONOMIZAR AGORA
               </SmoothLink>
             </div>
