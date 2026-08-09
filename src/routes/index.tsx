@@ -756,8 +756,8 @@ function Index() {
                 }`}
               >
                 {/* BRILHO REFLEXIVO DE VIDRO 3D NO CARD */}
-                <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-4xl [transform:translateZ(0)] [isolation:isolate]">
-                  <div className="pointer-events-none absolute -top-24 -left-24 size-48 rounded-full bg-white/10 blur-2xl transition-all duration-700 group-hover:scale-150 group-hover:bg-white/15" />
+                <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl [transform:translateZ(0)] [isolation:isolate]">
+                  <div className="pointer-events-none absolute -top-20 -left-20 size-40 rounded-full bg-white/5 blur-2xl transition-all duration-700 group-hover:scale-150 group-hover:bg-white/10" />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-80" />
                 </div>
 
