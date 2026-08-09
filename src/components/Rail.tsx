@@ -1,35 +1,34 @@
 import { useRef, type ComponentType } from "react";
 import { ChevronLeft, ChevronRight, Star, Play } from "lucide-react";
-import { Reveal } from "@/components/Reveal";
 import { img, type Title } from "@/data/catalog";
 
-function Poster({ item }: { item: Title }) {
+function PosterCard({ item }: { item: Title }) {
   return (
-    <div className="group relative shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-background w-[168px] sm:w-[195px] transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.03] hover:border-primary/60 hover:shadow-glow cursor-pointer">
-      {/* SHINE GLOW EFFECT ON HOVER */}
-      <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+    <div className="group relative shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-surface/80 w-[150px] sm:w-[172px] md:w-[185px] transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.03] hover:border-primary/60 hover:shadow-[0_10px_30px_rgba(168,85,247,0.35)] cursor-pointer">
+      {/* SHINE GLOW EFFECT */}
+      <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       
       {/* POSTER IMAGE */}
       <img
         src={img(item.poster)}
         alt={`Pôster de ${item.title}`}
         decoding="async"
-        className="aspect-[2/3] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        className="aspect-[2/3] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
       />
 
-      {/* OVERLAY PLAY BUTTON ON HOVER */}
-      <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:backdrop-blur-[2px] bg-black/10">
-        <div className="flex size-12 items-center justify-center rounded-full bg-primary/80 text-white backdrop-blur-md shadow-md transform scale-50 transition-transform duration-500 group-hover:scale-100 border border-primary/50">
+      {/* OVERLAY PLAY BUTTON */}
+      <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100 bg-black/20 backdrop-blur-[2px]">
+        <div className="flex size-12 items-center justify-center rounded-full bg-primary text-white shadow-[0_0_25px_rgba(168,85,247,0.9)] transform scale-75 transition-transform duration-300 group-hover:scale-100 border border-primary/50">
           <Play className="size-5 ml-0.5 fill-white" />
         </div>
       </div>
 
-      {/* OVERLAY GRADIENTE DE LEITURA E CONTRASTE */}
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background via-background/40 via-50% to-transparent opacity-95 transition-opacity duration-300 group-hover:opacity-100" />
+      {/* OVERLAY GRADIENTE DE CONTRASTE */}
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background via-background/40 to-transparent opacity-95" />
 
-      {/* BADGE DE TAG (UNICA NO TOPO) */}
+      {/* BADGE DE TAG */}
       {item.tag && (
-        <span className="absolute top-2.5 left-2.5 z-40 max-w-[85%] truncate inline-flex items-center gap-1 rounded-full border border-primary/40 bg-surface/85 backdrop-blur-md px-2 py-0.5 text-[9px] sm:text-xs font-extrabold tracking-wider text-accent uppercase shadow-sm">
+        <span className="absolute top-2.5 left-2.5 z-40 max-w-[85%] truncate inline-flex items-center gap-1 rounded-full border border-primary/40 bg-surface/90 backdrop-blur-md px-2.5 py-0.5 text-[9px] sm:text-[10px] font-extrabold tracking-wider text-accent uppercase shadow-sm">
           {item.tag}
         </span>
       )}
@@ -61,84 +60,93 @@ export function Rail({
   items: Title[];
   icon: ComponentType<{ className?: string }>;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const scrollBy = (dir: number) => {
-    const el = ref.current;
-    if (!el) return;
-    const cards = Array.from(el.querySelectorAll<HTMLElement>(".rail-item"));
+  const handleScroll = (direction: "left" | "right") => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const cards = Array.from(container.querySelectorAll<HTMLElement>(".rail-card"));
     if (cards.length === 0) return;
 
-    const currentScroll = el.scrollLeft;
+    const gap = 14;
+    const cardWidth = cards[0].offsetWidth;
+    const step = cardWidth + gap;
+    const visibleCards = Math.max(1, Math.floor((container.clientWidth + gap) / step));
+    const pageAmount = visibleCards * step;
 
-    // Encontrar qual card é o mais próximo do scroll atual
-    let currentIndex = 0;
-    let minDistance = Infinity;
-    for (let i = 0; i < cards.length; i++) {
-      const dist = Math.abs(cards[i].offsetLeft - currentScroll);
-      if (dist < minDistance) {
-        minDistance = dist;
-        currentIndex = i;
+    if (direction === "right") {
+      const targetOffset = container.scrollLeft + pageAmount;
+      let bestTarget = targetOffset;
+      for (let i = 0; i < cards.length; i++) {
+        if (cards[i].offsetLeft >= targetOffset - step / 2) {
+          bestTarget = cards[i].offsetLeft;
+          break;
+        }
       }
+      container.scrollTo({ left: bestTarget, behavior: "smooth" });
+    } else {
+      const targetOffset = container.scrollLeft - pageAmount;
+      let bestTarget = Math.max(0, targetOffset);
+      for (let i = cards.length - 1; i >= 0; i--) {
+        if (cards[i].offsetLeft <= targetOffset + step / 2) {
+          bestTarget = cards[i].offsetLeft;
+          break;
+        }
+      }
+      container.scrollTo({ left: bestTarget, behavior: "smooth" });
     }
-
-    const firstCard = cards[0];
-    const style = window.getComputedStyle(el);
-    const gap = parseFloat(style.columnGap || style.gap) || 14;
-    const cardStep = firstCard.offsetWidth + gap;
-    const visibleCards = Math.max(1, Math.floor((el.clientWidth + gap) / cardStep));
-
-    let targetIndex = dir > 0 ? currentIndex + visibleCards : currentIndex - visibleCards;
-    targetIndex = Math.max(0, Math.min(cards.length - 1, targetIndex));
-
-    // Alinhamento exato: o primeiro card rola para 0; páginas seguintes vão exatamente para o offsetLeft do card
-    const targetScrollLeft = targetIndex === 0 ? 0 : cards[targetIndex].offsetLeft;
-    el.scrollTo({ left: targetScrollLeft, behavior: "smooth" });
   };
 
   return (
-    <div className="py-2.5 sm:py-3.5">
+    <section className="py-3 sm:py-4">
       <div className="mx-auto w-[94%] max-w-6xl">
-        <div className="mb-2 sm:mb-3 flex items-end justify-between gap-4 px-2 sm:px-4">
+        {/* HEADER DO TRILHO */}
+        <div className="mb-3 flex items-end justify-between gap-4 px-1 sm:px-2">
           <div>
             <div className="flex items-center gap-2 sm:gap-2.5">
               <Icon className="size-5 sm:size-6 text-fuchsia-300 shrink-0 animate-pulse drop-shadow-[0_0_20px_rgba(232,121,249,0.9)]" />
               <h3 className="text-lg font-bold sm:text-xl md:text-2xl leading-none text-white">{title}</h3>
             </div>
             {subtitle && (
-              <p className="mt-0.5 text-xs sm:text-sm text-muted-foreground leading-tight">{subtitle}</p>
+              <p className="mt-1 text-xs sm:text-sm text-muted-foreground leading-tight">{subtitle}</p>
             )}
           </div>
+          
           <div className="hidden shrink-0 gap-2 md:flex">
             <button
               type="button"
-              onClick={() => scrollBy(-1)}
+              onClick={() => handleScroll("left")}
               aria-label={`Rolar ${title} para a esquerda`}
-              className="glass flex size-10 items-center justify-center rounded-full transition-colors hover:text-accent"
+              className="glass flex size-10 items-center justify-center rounded-full transition-all hover:bg-white/10 hover:text-accent active:scale-95"
             >
               <ChevronLeft className="size-5" />
             </button>
             <button
               type="button"
-              onClick={() => scrollBy(1)}
+              onClick={() => handleScroll("right")}
               aria-label={`Rolar ${title} para a direita`}
-              className="glass flex size-10 items-center justify-center rounded-full transition-colors hover:text-accent"
+              className="glass flex size-10 items-center justify-center rounded-full transition-all hover:bg-white/10 hover:text-accent active:scale-95"
             >
               <ChevronRight className="size-5" />
             </button>
           </div>
         </div>
-        <div
-          ref={ref}
-          className="no-scrollbar flex gap-3 sm:gap-3.5 overflow-x-auto px-2 sm:px-4 pb-3 sm:pb-4 scroll-smooth"
-        >
-          {items.map((t) => (
-            <div key={t.title} className="rail-item shrink-0">
-              <Poster item={t} />
-            </div>
-          ))}
+
+        {/* CONTÊINER COM CORTE MATEMÁTICO PERFEITO */}
+        <div className="relative overflow-hidden rounded-2xl">
+          <div
+            ref={scrollRef}
+            className="no-scrollbar flex gap-3.5 overflow-x-auto pb-4 scroll-smooth px-1 sm:px-2"
+          >
+            {items.map((t) => (
+              <div key={t.title} className="rail-card shrink-0">
+                <PosterCard item={t} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
