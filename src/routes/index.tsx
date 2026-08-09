@@ -668,20 +668,20 @@ function Index() {
               </span>
               <div className="flex flex-wrap items-center justify-center gap-2 border-t sm:border-t-0 sm:border-l border-emerald-500/30 pt-2 sm:pt-0 sm:pl-4">
                 <span className="text-[11px] font-bold text-emerald-200/90 uppercase tracking-wider">Substitua:</span>
-                <div className="flex items-center justify-center gap-2 sm:gap-2.5">
+                <div className="flex items-center justify-center gap-2 sm:gap-3">
                   {plataformas.slice(0, 6).map((p) => (
                     <div
                       key={p.nome}
-                      className={`group relative flex size-8 sm:size-9 items-center justify-center rounded-xl sm:rounded-2xl border border-white/30 bg-gradient-to-b ${p.bgGradient} p-1.5 shadow-lg transition-all duration-300 hover:scale-115 hover:border-white/70`}
+                      className={`group relative flex size-10 sm:size-12 items-center justify-center rounded-xl sm:rounded-2xl border border-white/35 bg-gradient-to-b ${p.bgGradient} p-1.5 sm:p-2 shadow-xl transition-all duration-300 hover:scale-115 hover:border-white/80`}
                       style={{
-                        boxShadow: `0 0 16px ${p.glowColor}`,
+                        boxShadow: `0 0 18px ${p.glowColor}`,
                       }}
                       title={p.nome}
                     >
                       <img
                         src={p.logo}
                         alt={p.nome}
-                        className="size-4 sm:size-5 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+                        className="size-6 sm:size-7 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
                       />
                     </div>
                   ))}
