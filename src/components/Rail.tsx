@@ -4,43 +4,49 @@ import { img, type Title } from "@/data/catalog";
 
 function PosterCard({ item }: { item: Title }) {
   return (
-    <div className="group relative shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-surface/80 w-[150px] sm:w-[172px] md:w-[185px] transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.03] hover:border-primary/60 hover:shadow-[0_10px_30px_rgba(168,85,247,0.35)] cursor-pointer">
+    <div className="group relative shrink-0 overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-surface/90 to-background w-[150px] sm:w-[172px] md:w-[185px] transition-all duration-500 ease-out hover:-translate-y-2.5 hover:scale-[1.04] hover:border-purple-400/90 hover:shadow-[0_14px_40px_rgba(168,85,247,0.45)] cursor-pointer">
       {/* SHINE GLOW EFFECT */}
-      <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-tr from-transparent via-white/15 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       
       {/* POSTER IMAGE */}
       <img
         src={img(item.poster)}
         alt={`Pôster de ${item.title}`}
         decoding="async"
-        className="aspect-[2/3] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+        className="aspect-[2/3] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
       />
 
-      {/* OVERLAY PLAY BUTTON */}
-      <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100 bg-black/20 backdrop-blur-[2px]">
-        <div className="flex size-12 items-center justify-center rounded-full bg-primary text-white shadow-[0_0_25px_rgba(168,85,247,0.9)] transform scale-75 transition-transform duration-300 group-hover:scale-100 border border-primary/50">
-          <Play className="size-5 ml-0.5 fill-white" />
+      {/* OVERLAY PLAY BUTTON COM ANEL PULSANTE */}
+      <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 transition-all duration-300 group-hover:opacity-100 bg-black/35 backdrop-blur-[2px]">
+        <div className="relative flex size-12 items-center justify-center rounded-full bg-gradient-to-tr from-primary to-accent text-white shadow-[0_0_30px_rgba(168,85,247,0.95)] transform scale-75 transition-transform duration-300 group-hover:scale-100 border border-white/40">
+          <span className="absolute -inset-1 rounded-full bg-primary/40 animate-ping opacity-75" />
+          <Play className="size-5 ml-0.5 fill-white relative z-10" />
         </div>
       </div>
 
       {/* OVERLAY GRADIENTE DE CONTRASTE */}
-      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-background via-background/40 to-transparent opacity-95" />
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-[#080212] via-[#080212]/40 to-transparent opacity-95" />
 
       {/* BADGE DE TAG */}
       {item.tag && (
-        <span className="absolute top-2.5 left-2.5 z-40 max-w-[85%] truncate inline-flex items-center gap-1 rounded-full border border-primary/40 bg-surface/90 backdrop-blur-md px-2.5 py-0.5 text-[9px] sm:text-[10px] font-extrabold tracking-wider text-accent uppercase shadow-sm">
+        <span className="absolute top-2.5 left-2.5 z-40 max-w-[70%] truncate inline-flex items-center gap-1 rounded-full border border-purple-400/40 bg-purple-950/85 backdrop-blur-md px-2 py-0.5 text-[9px] font-extrabold tracking-wider text-purple-200 uppercase shadow-sm">
           {item.tag}
         </span>
       )}
 
+      {/* SELO DE QUALIDADE 4K HDR */}
+      <span className="absolute top-2.5 right-2.5 z-40 rounded-md border border-white/20 bg-black/70 backdrop-blur-md px-1.5 py-0.5 text-[8px] font-black text-amber-300 uppercase tracking-tight shadow-sm">
+        4K HDR
+      </span>
+
       {/* TEXTO INFERIOR */}
       <div className="absolute inset-x-0 bottom-0 z-40 p-3 sm:p-4">
-        <p className="truncate text-xs sm:text-sm font-bold text-white drop-shadow-md transition-colors group-hover:text-accent">
+        <p className="truncate text-xs sm:text-sm font-black text-white drop-shadow-md transition-colors group-hover:text-purple-200">
           {item.title}
         </p>
-        <div className="mt-1 flex items-center justify-between text-[11px] font-semibold text-muted-foreground">
+        <div className="mt-1 flex items-center justify-between text-[11px] font-semibold text-muted-foreground/90">
           <span>{item.year}</span>
-          <span className="flex items-center gap-0.5 text-amber-400 font-bold text-[10px] bg-amber-400/10 px-1.5 py-0.5 rounded-md">
+          <span className="flex items-center gap-0.5 text-amber-300 font-extrabold text-[10px] bg-amber-400/15 border border-amber-400/30 px-1.5 py-0.5 rounded-md shadow-xs">
             <Star className="size-2.5 fill-amber-400 text-amber-400" /> {item.rating ?? "4.9"}
           </span>
         </div>

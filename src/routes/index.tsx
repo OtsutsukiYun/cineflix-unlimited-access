@@ -226,6 +226,7 @@ function HeroHeading() {
 
 function Index() {
   const [slide, setSlide] = useState(0);
+  const [activeCategory, setActiveCategory] = useState("todos");
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -405,7 +406,7 @@ function Index() {
           </div>
         </div>
 
-        {/* CATÁLOGO */}
+        {/* CATÁLOGO E SELETOR DE RITMO */}
         <section id="catalogo" className="relative z-10 py-4 sm:py-6 overflow-hidden">
           <Reveal className="relative z-10 mx-auto mb-0 sm:mb-2 w-[94%] max-w-6xl px-2 sm:px-4 flex flex-col sm:flex-row sm:items-end justify-between gap-1 sm:gap-4">
             <div>
@@ -421,28 +422,62 @@ function Index() {
             </p>
           </Reveal>
 
-          <div className="relative">
-            <Reveal>
-              <Rail
-                icon={Flame}
-                title="Filmes — Lançamentos e Sucessos"
-                items={terror}
-              />
-            </Reveal>
-            <SmoothCardReveal delay={150}>
-              <Rail
-                icon={Tv}
-                title="Séries em alta para maratonar"
-                items={series}
-              />
-            </SmoothCardReveal>
-            <SmoothCardReveal delay={300}>
-              <Rail
-                icon={Torii}
-                title="Animes — Simulcasts e Clássicos"
-                items={animes}
-              />
-            </SmoothCardReveal>
+          {/* BARRA DE RITMO & FILTROS DE CATEGORIA */}
+          <Reveal className="mx-auto mt-4 mb-4 w-[94%] max-w-6xl px-2 sm:px-4">
+            <div className="flex items-center gap-2.5 overflow-x-auto no-scrollbar py-1">
+              {[
+                { id: "todos", label: "🔥 Todos os Títulos", icon: Sparkles },
+                { id: "filmes", label: "🎬 Filmes 2026", icon: Flame },
+                { id: "series", label: "📺 Séries VIP", icon: Tv },
+                { id: "animes", label: "🎌 Animes 4K", icon: Torii },
+              ].map((cat) => (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`flex shrink-0 items-center gap-2 rounded-full px-4 py-2 text-xs sm:text-sm font-extrabold transition-all duration-300 ${
+                    activeCategory === cat.id
+                      ? "bg-gradient-to-r from-purple-600 via-primary to-accent text-white shadow-[0_0_20px_rgba(168,85,247,0.6)] scale-105 border border-white/30"
+                      : "bg-surface/60 border border-white/10 text-muted-foreground hover:text-white hover:border-white/30"
+                  }`}
+                >
+                  <cat.icon className="size-3.5" />
+                  {cat.label}
+                </button>
+              ))}
+            </div>
+          </Reveal>
+
+          <div className="relative space-y-4">
+            {(activeCategory === "todos" || activeCategory === "filmes") && (
+              <Reveal>
+                <Rail
+                  icon={Flame}
+                  title="Filmes — Lançamentos e Sucessos 2026"
+                  subtitle="Títulos recém-saídos do cinema em 4K Ultra HD"
+                  items={terror}
+                />
+              </Reveal>
+            )}
+            {(activeCategory === "todos" || activeCategory === "series") && (
+              <SmoothCardReveal delay={100}>
+                <Rail
+                  icon={Tv}
+                  title="Séries em alta para maratonar"
+                  subtitle="Temporadas completas com áudio dublado e legendado"
+                  items={series}
+                />
+              </SmoothCardReveal>
+            )}
+            {(activeCategory === "todos" || activeCategory === "animes") && (
+              <SmoothCardReveal delay={200}>
+                <Rail
+                  icon={Torii}
+                  title="Animes — Simulcasts e Clássicos"
+                  subtitle="Episódios atualizados poucas horas após o Japão"
+                  items={animes}
+                />
+              </SmoothCardReveal>
+            )}
           </div>
         </section>
 
