@@ -516,8 +516,8 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#14020a] via-[#14020a]/75 to-[#14020a]/20",
                 titleHover: "group-hover:text-pink-200",
                 t: "Doramas & K-Dramas",
-                qtd: "+2.500 Doramas",
-                d: "Rainha das Lágrimas, Pousando no Amor e os maiores sucessos asiáticos com dublagem em português.",
+                qtd: "+1.600 Doramas",
+                d: "+1.600 doramas como Rainha das Lágrimas, Pousando no Amor e os maiores sucessos asiáticos dublados.",
               },
               {
                 icon: Torii,
