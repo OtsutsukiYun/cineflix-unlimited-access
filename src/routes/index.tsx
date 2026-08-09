@@ -798,15 +798,13 @@ function Index() {
                     </span>
                   </div>
 
-                  {/* BLOCO DE PREÇO IMPACTANTE E PERFEITAMENTE ALINHADO */}
+                  {/* BLOCO DE PREÇO IMPACTANTE E PERFEITAMENTE UNIFORME */}
                   <div className="mt-5 flex items-baseline gap-1.5 whitespace-nowrap">
                     <span
                       className={`font-display font-black whitespace-nowrap ${
                         p.destaque
-                          ? "text-4xl sm:text-5xl lg:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-white to-fuchsia-300 drop-shadow-[0_4px_25px_rgba(236,72,153,0.85)]"
-                          : p.id === "pro"
-                          ? "text-3xl sm:text-4xl lg:text-[2.6rem] text-white drop-shadow-[0_2px_15px_rgba(168,85,247,0.6)]"
-                          : "text-4xl sm:text-5xl text-white drop-shadow-[0_2px_15px_rgba(168,85,247,0.6)]"
+                          ? "text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-white to-fuchsia-300 drop-shadow-[0_4px_25px_rgba(236,72,153,0.85)]"
+                          : "text-4xl sm:text-5xl lg:text-[2.75rem] text-white drop-shadow-[0_2px_15px_rgba(168,85,247,0.6)]"
                       }`}
                     >
                       {p.preco}
