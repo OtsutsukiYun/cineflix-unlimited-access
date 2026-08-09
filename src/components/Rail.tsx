@@ -73,29 +73,17 @@ export function Rail({
     const cardWidth = cards[0].offsetWidth;
     const step = cardWidth + gap;
     const visibleCards = Math.max(1, Math.floor((container.clientWidth + gap) / step));
-    const pageAmount = visibleCards * step;
+    const pageStep = visibleCards * step;
 
-    if (direction === "right") {
-      const targetOffset = container.scrollLeft + pageAmount;
-      let bestTarget = targetOffset;
-      for (let i = 0; i < cards.length; i++) {
-        if (cards[i].offsetLeft >= targetOffset - step / 2) {
-          bestTarget = cards[i].offsetLeft;
-          break;
-        }
-      }
-      container.scrollTo({ left: bestTarget, behavior: "smooth" });
-    } else {
-      const targetOffset = container.scrollLeft - pageAmount;
-      let bestTarget = Math.max(0, targetOffset);
-      for (let i = cards.length - 1; i >= 0; i--) {
-        if (cards[i].offsetLeft <= targetOffset + step / 2) {
-          bestTarget = cards[i].offsetLeft;
-          break;
-        }
-      }
-      container.scrollTo({ left: bestTarget, behavior: "smooth" });
-    }
+    const currentScroll = container.scrollLeft;
+    const currentPage = Math.round(currentScroll / pageStep);
+
+    let targetPage = direction === "right" ? currentPage + 1 : currentPage - 1;
+    const maxPage = Math.ceil(cards.length / visibleCards) - 1;
+    targetPage = Math.max(0, Math.min(maxPage, targetPage));
+
+    const targetScrollLeft = Math.min(targetPage * pageStep, container.scrollWidth - container.clientWidth);
+    container.scrollTo({ left: targetScrollLeft, behavior: "smooth" });
   };
 
   return (
@@ -137,7 +125,7 @@ export function Rail({
         <div className="relative overflow-hidden rounded-2xl">
           <div
             ref={scrollRef}
-            className="no-scrollbar flex gap-3.5 overflow-x-auto pb-4 scroll-smooth px-1 sm:px-2"
+            className="no-scrollbar flex gap-3.5 overflow-x-auto pb-4 scroll-smooth px-0"
           >
             {items.map((t) => (
               <div key={t.title} className="rail-card shrink-0">
