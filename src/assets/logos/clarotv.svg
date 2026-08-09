@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" fill="none">
+  <defs>
+    <linearGradient id="claroGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E50914" />
+      <stop offset="100%" stop-color="#FF3B30" />
+    </linearGradient>
+  </defs>
+  <circle cx="36" cy="40" r="24" fill="url(#claroGrad)" />
+  <path d="M30 28 L48 40 L30 52 Z" fill="#FFFFFF" />
+  <text x="76" y="52" font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="34" fill="#FFFFFF" letter-spacing="2">CLARO</text>
+  <text x="238" y="52" font-family="'Outfit', 'Inter', sans-serif" font-weight="900" font-size="36" fill="url(#claroGrad)">+</text>
+</svg>

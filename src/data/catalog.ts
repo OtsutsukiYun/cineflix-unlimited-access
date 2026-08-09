@@ -10,6 +10,8 @@ import daznLogo from "@/assets/logos/dazn.svg";
 import starLogo from "@/assets/logos/starplus.svg";
 import telecineLogo from "@/assets/logos/telecine.svg";
 import premiereLogo from "@/assets/logos/premiere.svg";
+import claroLogo from "@/assets/logos/clarotv.svg";
+import combateLogo from "@/assets/logos/combate.svg";
 
 export const img = (path: string, size = "w500") =>
   `https://image.tmdb.org/t/p/${size}${path}`;
@@ -267,15 +269,15 @@ export type Plataforma = {
 
 export const plataformas: Plataforma[] = [
   { nome: "Netflix", logo: netflixLogo, cor: "#E50914", preco: "R$ 20,90" },
-  { nome: "Disney+", logo: disneyLogo, invert: true, cor: "#4BA3FF", preco: "R$ 20,90" },
+  { nome: "Disney+", logo: disneyLogo, cor: "#38BDF8", preco: "R$ 20,90" },
   { nome: "HBO Max", logo: hboLogo, cor: "#A855F7", preco: "R$ 22,90" },
   { nome: "Prime Video", logo: primeLogo, cor: "#38BDF8", preco: "R$ 19,90" },
-  { nome: "Apple TV+", logo: appletvLogo, invert: true, cor: "#FFFFFF", preco: "R$ 29,90" },
+  { nome: "Apple TV+", logo: appletvLogo, cor: "#FFFFFF", preco: "R$ 29,90" },
   { nome: "Paramount+", logo: paramountLogo, cor: "#4C8DFF", preco: "R$ 34,90" },
   { nome: "Premiere", logo: premiereLogo, cor: "#4ADE80", preco: "R$ 29,90" },
   { nome: "Crunchyroll", logo: crunchyrollLogo, cor: "#F47521", preco: "R$ 19,90" },
-  { nome: "Claro TV+", logo: null, cor: "#E50914", preco: "R$ 99,90" },
-  { nome: "Combate", logo: null, cor: "#E50914", preco: "R$ 34,90" },
+  { nome: "Claro TV+", logo: claroLogo, cor: "#E50914", preco: "R$ 99,90" },
+  { nome: "Combate", logo: combateLogo, cor: "#FF2D55", preco: "R$ 34,90" },
   { nome: "Globoplay", logo: globoplayLogo, cor: "#FF5C5C", preco: "R$ 22,90" },
   { nome: "Telecine", logo: telecineLogo, cor: "#2DE0C0", preco: "R$ 29,90" },
 ];

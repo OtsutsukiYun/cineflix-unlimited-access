@@ -607,13 +607,18 @@ function Index() {
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {plataformas.map((p, i) => (
               <SmoothCardReveal key={p.nome} delay={40 + i * 30}>
-                <div className="glass flex flex-col items-center justify-between rounded-2xl p-4 text-center border border-white/10 bg-black/40 backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:scale-105 h-full">
-                  <div className="flex h-10 items-center justify-center mb-2">
+                <div
+                  className="glass flex flex-col items-center justify-between rounded-2xl p-4 text-center border border-white/10 bg-black/40 backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:scale-105 h-full group"
+                  style={{
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
+                  }}
+                >
+                  <div className="flex h-11 items-center justify-center mb-2 w-full">
                     {p.logo ? (
                       <img
                         src={p.logo}
                         alt={p.nome}
-                        className={`max-h-7 max-w-[90px] object-contain ${p.invert ? "brightness-0 invert" : ""}`}
+                        className="max-h-8 max-w-[100px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-110"
                       />
                     ) : (
                       <span className="font-extrabold text-sm text-white" style={{ color: p.cor }}>
@@ -622,7 +627,7 @@ function Index() {
                     )}
                   </div>
                   <div>
-                    <p className="text-[11px] font-medium text-muted-foreground mb-0.5">{p.nome}</p>
+                    <p className="text-[11px] font-semibold text-muted-foreground mb-0.5">{p.nome}</p>
                     <p className="text-xs font-black text-rose-400 font-mono">{p.preco}/mês</p>
                   </div>
                 </div>
