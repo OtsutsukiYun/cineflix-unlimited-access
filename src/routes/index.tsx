@@ -142,6 +142,7 @@ import { TrustSection } from "@/components/TrustSection";
 import { Torii } from "@/components/icons";
 import { BrandLogo } from "@/components/BrandLogo";
 import { SocialProof } from "@/components/SocialProof";
+import { Testimonials } from "@/components/Testimonials";
 import futebol from "@/assets/futebol.jpg";
 import {
   animes,
@@ -956,6 +957,9 @@ function Index() {
 
       </section>
 
+
+      {/* MURAL DE DEPOIMENTOS E PROVA SOCIAL */}
+      <Testimonials />
 
       {/* FAQ */}
       <Faq>
