@@ -661,31 +661,42 @@ function Index() {
               Substitua Netflix, Disney+, Max, Prime Video e Globoplay por um único valor acessível.
             </p>
 
-            {/* CÁPSULA ELEGANTE DE ECONOMIA E LOGOS — VISÍVEL NO MOBILE E DESKTOP */}
-            <div className="glass mx-auto mt-6 max-w-3xl rounded-2xl sm:rounded-full border border-emerald-500/40 bg-emerald-950/40 backdrop-blur-md p-3.5 sm:px-6 sm:py-3 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 shadow-[0_0_30px_rgba(16,185,129,0.2)] text-center">
-              <span className="text-xs sm:text-sm font-extrabold text-emerald-300 flex items-center gap-1.5 justify-center">
-                <Check className="size-4 text-emerald-400 shrink-0" /> Economize mais de <strong className="text-white font-black">R$ 360,00/mês</strong>
-              </span>
-              <div className="flex flex-wrap items-center justify-center gap-2 border-t sm:border-t-0 sm:border-l border-emerald-500/30 pt-2 sm:pt-0 sm:pl-4">
-                <span className="text-[11px] font-bold text-emerald-200/90 uppercase tracking-wider">Substitua:</span>
-                <div className="flex items-center justify-center gap-2 sm:gap-3">
-                  {plataformas.slice(0, 6).map((p) => (
-                    <div
-                      key={p.nome}
-                      className={`group relative flex size-10 sm:size-12 items-center justify-center rounded-xl sm:rounded-2xl border border-white/35 bg-gradient-to-b ${p.bgGradient} p-1.5 sm:p-2 shadow-xl transition-all duration-300 hover:scale-115 hover:border-white/80`}
-                      style={{
-                        boxShadow: `0 0 18px ${p.glowColor}`,
-                      }}
-                      title={p.nome}
-                    >
-                      <img
-                        src={p.logo}
-                        alt={p.nome}
-                        className="size-6 sm:size-7 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
-                      />
-                    </div>
-                  ))}
+            {/* CÁPSULA ELEGANTE DE ECONOMIA E LOGOS — PERFEITAMENTE ALINHADA E SEM SERRILHADO */}
+            <div className="glass mx-auto mt-6 max-w-4xl rounded-2xl sm:rounded-full border border-emerald-500/40 bg-gradient-to-r from-emerald-950/60 via-surface/90 to-emerald-950/60 p-3.5 sm:px-6 sm:py-3 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 shadow-[0_0_35px_rgba(16,185,129,0.25)]">
+              {/* LADO ESQUERDO: ECONOMIA DE VALOR */}
+              <div className="flex items-center gap-2.5 text-center sm:text-left justify-center">
+                <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-400 shadow-sm">
+                  <Check className="size-4" />
                 </div>
+                <span className="text-xs sm:text-sm font-extrabold text-emerald-300">
+                  Economize mais de <strong className="text-white font-black text-sm sm:text-base ml-1">R$ 360,00/mês</strong>
+                </span>
+              </div>
+
+              {/* DIVISOR NO DESKTOP */}
+              <div className="hidden md:block h-6 w-px bg-emerald-500/30" />
+
+              {/* LADO DIREITO: ÍCONES REAIS DAS PLATAFORMAS (SEM SERRILHADO) */}
+              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+                <span className="text-[11px] font-bold text-emerald-200/90 uppercase tracking-wider shrink-0 mr-1">
+                  Substitua:
+                </span>
+                {plataformas.slice(0, 6).map((p) => (
+                  <div
+                    key={p.nome}
+                    className={`group relative flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-full border-2 border-white/30 bg-gradient-to-b ${p.bgGradient} p-2 shadow-lg transition-all duration-300 hover:scale-115 hover:border-white/80 overflow-hidden`}
+                    style={{
+                      boxShadow: `0 0 16px ${p.glowColor}, inset 0 0 8px rgba(255, 255, 255, 0.2)`,
+                    }}
+                    title={p.nome}
+                  >
+                    <img
+                      src={p.logo}
+                      alt={p.nome}
+                      className="size-6 sm:size-7 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </Reveal>
