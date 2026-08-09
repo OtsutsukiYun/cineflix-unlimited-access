@@ -669,7 +669,7 @@ function Index() {
                 Economize mais de <strong className="text-white font-black ml-1 text-sm sm:text-base">R$ 360,00/mês</strong>
               </div>
 
-              {/* LADO DIREITO: ÍCONES REAIS DAS PLATAFORMAS (CÍRCULOS PERFEITOS DE VIDRO ESCURO) */}
+              {/* LADO DIREITO: ÍCONES REAIS DAS PLATAFORMAS (CÍRCULOS VIBRANTES DAS MARCAS) */}
               <div className="flex items-center justify-center gap-2.5 sm:gap-4 overflow-x-auto no-scrollbar py-2">
                 <span className="text-[11px] font-bold text-emerald-200/90 uppercase tracking-wider shrink-0 mr-1 hidden sm:inline">
                   Substitua:
@@ -677,9 +677,9 @@ function Index() {
                 {plataformas.slice(0, 6).map((p) => (
                   <div
                     key={p.nome}
-                    className="group relative flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full border-2 border-white/30 bg-[#090a16]/85 backdrop-blur-md p-2.5 overflow-hidden transition-all duration-300 hover:scale-115 hover:border-white/80 shadow-xl"
+                    className={`group relative flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full border-2 border-white/40 bg-gradient-to-b ${p.bgGradient} p-2 sm:p-2.5 overflow-hidden transition-all duration-300 hover:scale-115 hover:border-white/90 shadow-xl`}
                     style={{
-                      boxShadow: `0 0 16px ${p.glowColor}`,
+                      boxShadow: `0 0 18px ${p.glowColor}`,
                     }}
                     title={p.nome}
                   >
