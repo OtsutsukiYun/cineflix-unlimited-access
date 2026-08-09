@@ -129,6 +129,10 @@ import {
   Film,
   MonitorPlay,
   Download,
+  Cpu,
+  Users,
+  Headphones,
+  Rocket,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -617,37 +621,50 @@ function Index() {
           <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                icon: Zap,
-                title: "Instalação em poucos minutos",
-                desc: "Sem cabos ou técnicos. Baixe o aplicativo na sua Smart TV, TV Box, Celular ou PC e acesse na hora.",
+                icon: Cpu,
+                badge: "Servidores 10 Gbps",
+                title: "Tecnologia Anti-Buffer 4K",
+                desc: "Servidores CDN com rota dedicada no Brasil. Assista a jogos decisivos e filmes sem congelamentos ou travamentos.",
                 color: "text-amber-400 bg-amber-400/10 border-amber-400/30",
+                glow: "shadow-[0_0_20px_rgba(245,158,11,0.15)] hover:border-amber-400/60",
               },
               {
-                icon: Trophy,
-                title: "Esportes & Canais Ao Vivo",
-                desc: "Servidores dedicados de alta velocidade para você assistir aos seus jogos e canais ao vivo sem travamentos.",
+                icon: Users,
+                badge: "Sem Bloqueio de IP",
+                title: "Até 4 Telas Simultâneas",
+                desc: "Toda a sua família assiste ao mesmo tempo em aparelhos diferentes, sem restrições de IP ou localidade.",
+                color: "text-cyan-400 bg-cyan-400/10 border-cyan-400/30",
+                glow: "shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:border-cyan-400/60",
+              },
+              {
+                icon: Headphones,
+                badge: "Atendimento Humano",
+                title: "Suporte VIP no WhatsApp",
+                desc: "Equipe especializada pronta para te guiar passo a passo na instalação em qualquer aparelho, 7 dias por semana.",
                 color: "text-emerald-400 bg-emerald-400/10 border-emerald-400/30",
+                glow: "shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400/60",
               },
               {
-                icon: Film,
-                title: "Lançamentos do Cinema",
-                desc: "Filmes recém-saídos das telonas atualizados toda semana com áudio dublado e legendas em até 4K.",
-                color: "text-sky-400 bg-sky-400/10 border-sky-400/30",
-              },
-              {
-                icon: RefreshCcw,
-                title: "Zero Fidelidade",
-                desc: "Sem multas e sem contrato preso. Cancele quando quiser diretamente com 1 clique.",
-                color: "text-rose-400 bg-rose-400/10 border-rose-400/30",
+                icon: Rocket,
+                badge: "Sem Fidelidade",
+                title: "Ativação Imediata & Cancelamento Livre",
+                desc: "Receba seus dados na hora no e-mail. Teste à vontade e cancele com 1 clique a qualquer momento sem pegadinhas.",
+                color: "text-fuchsia-400 bg-fuchsia-400/10 border-fuchsia-400/30",
+                glow: "shadow-[0_0_20px_rgba(217,70,239,0.15)] hover:border-fuchsia-400/60",
               },
             ].map((item, i) => (
               <SmoothCardReveal key={item.title} delay={50 + i * 80}>
-                <div className="glass flex flex-col justify-between rounded-2xl p-6 bg-surface/50 h-full hover:border-white/30 hover:-translate-y-1 transition-all">
+                <div className={`glass flex flex-col justify-between rounded-2xl p-6 bg-surface/50 h-full border border-white/15 transition-all duration-300 hover:-translate-y-1.5 ${item.glow}`}>
                   <div>
-                    <div className={`inline-flex size-11 items-center justify-center rounded-xl border ${item.color} mb-4`}>
-                      <item.icon className="size-5" />
+                    <div className="flex items-center justify-between mb-4">
+                      <div className={`inline-flex size-11 items-center justify-center rounded-xl border ${item.color}`}>
+                        <item.icon className="size-5" />
+                      </div>
+                      <span className="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-white/80">
+                        {item.badge}
+                      </span>
                     </div>
-                    <h3 className="text-base font-bold text-white mb-1.5">{item.title}</h3>
+                    <h3 className="text-base font-extrabold text-white mb-2 tracking-tight">{item.title}</h3>
                     <p className="text-xs text-muted-foreground leading-relaxed font-medium">{item.desc}</p>
                   </div>
                 </div>
