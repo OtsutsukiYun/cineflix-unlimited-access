@@ -533,8 +533,8 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#020814] via-[#020814]/75 to-[#020814]/20",
                 titleHover: "group-hover:text-cyan-200",
                 t: "Canais infantis",
-                qtd: "+50 Canais Kids & Desenhos",
-                d: "+50 canais infantis 24h ao vivo e milhares de filmes e desenhos para toda a família.",
+                qtd: "Dezenas de Canais Infantis",
+                d: "Dezenas de canais infantis 24h ao vivo e milhares de filmes e desenhos para toda a família.",
               },
               {
                 icon: Trophy,
