@@ -586,154 +586,140 @@ function Index() {
           </div>
         </section>
 
-        {/* COMPARATIVO DE PREÇOS DE PLATAFORMAS */}
-        <section id="comparativo" className="relative z-10 mx-auto w-[94%] max-w-6xl py-6 sm:py-10">
+        {/* QUEBRA DE OBJEÇÕES E COMO FUNCIONA */}
+        <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-8 sm:py-12">
           <SmoothCardReveal delay={0}>
-            <div className="text-center mb-6">
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-accent uppercase shadow-sm mb-4">
-                <DollarSign className="size-3.5 text-accent" /> Economia Real
+            <div className="text-center mb-8 sm:mb-10">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-accent uppercase shadow-sm mb-3">
+                <ShieldCheck className="size-3.5 text-accent" /> Sem Burocracia &amp; Sem Risco
               </span>
-              <h2 className="text-2xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white flex flex-col items-center sm:block text-center">
-                <span>Por que pagar caro em</span>{" "}
-                <span className="text-hot mt-0.5 sm:mt-0 sm:ml-2">várias assinaturas?</span>
+              <h2 className="text-2xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white">
+                Tudo o que você precisa saber <span className="text-hot">antes de assinar</span>
               </h2>
-              <p className="mx-auto mt-2 max-w-xl text-xs sm:text-sm text-muted-foreground font-medium leading-relaxed">
-                Veja o valor mensal das principais plataformas se contratadas individualmente:
-              </p>
             </div>
           </SmoothCardReveal>
 
-          {/* GRID DE PLATAFORMAS — ESTILO GLASSMORPHISM PREMIUM */}
-          <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-            {plataformas.map((p, i) => (
-              <SmoothCardReveal key={p.nome} delay={40 + i * 30}>
-                <div
-                  className="glass group relative flex flex-col items-center justify-between rounded-2xl p-4 text-center border border-white/15 bg-surface/40 backdrop-blur-xl transition-all duration-300 hover:border-primary/50 hover:bg-surface/60 hover:-translate-y-1.5 h-full overflow-hidden shadow-xl"
-                >
-                  {/* GLOW DE HOVER COM A COR DA MARCA */}
-                  <div
-                    className="pointer-events-none absolute -inset-px rounded-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    style={{
-                      background: `radial-gradient(220px circle at center, ${p.glowColor}, transparent 70%)`,
-                    }}
-                  />
-
-                  {/* NICHOS DE LOGOTIPO COM EFEITO VIDRO TRANSLÚCIDO */}
-                  <div className="glass relative z-10 flex h-12 w-full items-center justify-center rounded-xl bg-white/[0.06] backdrop-blur-md border border-white/15 p-2 transition-all group-hover:bg-white/[0.12] group-hover:border-white/30 shadow-sm">
-                    <img
-                      src={p.logo}
-                      alt={p.nome}
-                      className="max-h-8 max-w-[95px] object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </div>
-
-                  <div className="relative z-10 mt-3 w-full">
-                    <p className="text-[11px] font-semibold text-muted-foreground mb-1">{p.nome}</p>
-                    <span className="inline-block w-full rounded-full border border-white/15 bg-white/5 backdrop-blur-md py-1 px-2 text-xs font-black text-rose-400 font-mono transition-colors group-hover:border-rose-500/40 group-hover:bg-rose-500/15">
-                      {p.preco}/mês
-                    </span>
+          <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                icon: Zap,
+                title: "Instalação em 2 minutos",
+                desc: "Sem cabos ou técnicos. Baixe o aplicativo na sua Smart TV, TV Box, Celular ou PC e acesse na hora.",
+                color: "text-amber-400 bg-amber-400/10 border-amber-400/30",
+              },
+              {
+                icon: Trophy,
+                title: "Futebol 60fps sem lag",
+                desc: "Servidores dedicados de ultra-alta velocidade para você assistir aos jogos ao vivo sem travamentos.",
+                color: "text-emerald-400 bg-emerald-400/10 border-emerald-400/30",
+              },
+              {
+                icon: Film,
+                title: "Lançamentos do Cinema",
+                desc: "Filmes recém-saídos das telonas atualizados toda semana com áudio dublado e legendas em até 4K.",
+                color: "text-sky-400 bg-sky-400/10 border-sky-400/30",
+              },
+              {
+                icon: RefreshCcw,
+                title: "Zero Fidelidade",
+                desc: "Sem multas e sem contrato preso. Cancele quando quiser diretamente com 1 clique.",
+                color: "text-rose-400 bg-rose-400/10 border-rose-400/30",
+              },
+            ].map((item, i) => (
+              <SmoothCardReveal key={item.title} delay={50 + i * 80}>
+                <div className="glass flex flex-col justify-between rounded-2xl p-6 border border-white/10 bg-surface/40 backdrop-blur-xl h-full hover:border-white/25 hover:-translate-y-1 transition-all">
+                  <div>
+                    <div className={`inline-flex size-11 items-center justify-center rounded-xl border ${item.color} mb-4`}>
+                      <item.icon className="size-5" />
+                    </div>
+                    <h3 className="text-base font-bold text-white mb-1.5">{item.title}</h3>
+                    <p className="text-xs text-muted-foreground leading-relaxed font-medium">{item.desc}</p>
                   </div>
                 </div>
               </SmoothCardReveal>
             ))}
           </div>
-
-          {/* BANNER DE COMPARATIVO DE ECONOMIA HARMONIOSO */}
-          <SmoothCardReveal delay={200}>
-            <div className="glass relative mt-8 overflow-hidden rounded-3xl border border-white/20 bg-gradient-to-r from-surface-2/95 via-surface/90 to-purple-950/50 p-6 sm:p-9 backdrop-blur-2xl shadow-glow flex flex-col md:flex-row items-center justify-between gap-6">
-              {/* LUZ DE AMBIENTE */}
-              <div className="pointer-events-none absolute -right-10 -top-10 size-60 rounded-full bg-primary/25 blur-3xl" />
-              <div className="pointer-events-none absolute -left-10 -bottom-10 size-60 rounded-full bg-emerald-500/20 blur-3xl" />
-
-              <div className="relative z-10 text-center md:text-left">
-                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/50 bg-emerald-950/70 backdrop-blur-md px-3.5 py-1.5 text-xs font-bold text-emerald-300 mb-3 shadow-sm">
-                  <Check className="size-4 text-emerald-400" /> Economize mais de R$ 360,00/mês
-                </div>
-                <h3 className="text-xl sm:text-3xl font-black text-white tracking-tight flex flex-wrap items-center justify-center md:justify-start gap-2">
-                  <span>Total individual:</span>
-                  <span className="inline-block rounded-xl border border-rose-500/50 bg-rose-950/70 backdrop-blur-md px-3 py-1 text-rose-300 line-through font-mono shadow-sm">
-                    R$ 380,00/mês
-                  </span>
-                </h3>
-                <p className="text-xs sm:text-base text-muted-foreground mt-2 font-medium">
-                  Na <strong className="text-white font-bold">Cineflix</strong>, você assiste a <strong className="text-emerald-400 font-extrabold">TUDO</strong> isso por apenas <strong className="text-accent text-base sm:text-xl font-black font-mono">R$ 20,00/mês</strong>!
-                </p>
-              </div>
-
-              <SmoothLink href="#planos" className="btn-cta relative z-10 shrink-0 text-sm sm:text-base px-8 py-4 shadow-[0_0_35px_rgba(168,85,247,0.5)] hover:shadow-[0_0_55px_rgba(168,85,247,0.8)]">
-                <Zap className="size-5" /> QUERO ECONOMIZAR AGORA
-              </SmoothLink>
-            </div>
-          </SmoothCardReveal>
         </section>
 
         {/* PLANOS */}
-        <section id="planos" className="relative z-10 mx-auto w-[94%] max-w-6xl py-4 sm:py-6">
+        <section id="planos" className="relative z-10 mx-auto w-[94%] max-w-6xl py-8 sm:py-12">
           {/* GLOW AMBIENTE DOS PLANOS */}
           <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[650px] rounded-full bg-primary/20 blur-[180px]" />
 
           <Reveal className="relative z-10 text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-surface-2/70 backdrop-blur-md px-4 py-2 text-xs font-extrabold tracking-wider text-accent uppercase shadow-glow mb-5">
-              <Sparkles className="size-3.5 text-accent animate-spin" /> Oferta por tempo limitado
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-surface-2/70 backdrop-blur-md px-4 py-2 text-xs font-extrabold tracking-wider text-accent uppercase shadow-glow mb-4">
+              <Sparkles className="size-3.5 text-accent animate-spin" /> Oferta Especial por Tempo Limitado
             </span>
             <h2 className="text-3xl font-black sm:text-5xl md:text-6xl tracking-tight text-white flex flex-wrap items-center justify-center gap-x-2">
-              <span>Aproveite e</span>
-              <span className="inline-flex items-center gap-1.5">
-                <span className="bg-gradient-to-r from-rose-500 via-purple-400 via-pink-400 to-amber-300 bg-clip-text text-transparent animate-text-shine drop-shadow-[0_0_30px_rgba(244,63,94,0.6)]">
-                  assine já
-                </span>
-                <Zap className="size-6 sm:size-9 text-amber-400 animate-bounce drop-shadow-[0_0_15px_rgba(251,191,36,0.9)]" />
+              <span>Escolha o plano ideal para</span>
+              <span className="bg-gradient-to-r from-rose-500 via-purple-400 via-pink-400 to-amber-300 bg-clip-text text-transparent animate-text-shine drop-shadow-[0_0_30px_rgba(244,63,94,0.6)]">
+                você e sua família
               </span>
             </h2>
-            <p className="mt-0.5 sm:mt-1 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto font-medium leading-relaxed">
-              Cancele quando quiser, com ativação imediata e suporte 24/7.
+            <p className="mt-2 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto font-medium leading-relaxed">
+              Substitua Netflix, Disney+, Max, Prime Video e Globoplay por um único valor acessível.
             </p>
+
+            {/* CÁPSULA ELEGANTE DE ECONOMIA E LOGOS */}
+            <div className="mx-auto mt-6 max-w-3xl rounded-full border border-emerald-500/40 bg-emerald-950/40 backdrop-blur-md p-2 sm:px-6 sm:py-3 flex flex-wrap items-center justify-center gap-3 sm:gap-6 shadow-[0_0_30px_rgba(16,185,129,0.15)]">
+              <span className="text-xs sm:text-sm font-bold text-emerald-300 flex items-center gap-1.5">
+                <Check className="size-4 text-emerald-400" /> Economize mais de <strong>R$ 360,00/mês</strong>
+              </span>
+              <div className="hidden sm:flex items-center gap-2 border-l border-emerald-500/30 pl-4">
+                <span className="text-[11px] text-muted-foreground">Tudo incluso:</span>
+                <div className="flex items-center gap-1.5">
+                  {plataformas.slice(0, 6).map((p) => (
+                    <img key={p.nome} src={p.logo} alt={p.nome} className="h-4 max-w-[50px] object-contain opacity-85" />
+                  ))}
+                </div>
+              </div>
+            </div>
           </Reveal>
 
-        <div className="relative z-10 mt-6 sm:mt-7 pt-3 sm:pt-4 grid items-stretch gap-6 lg:gap-6 lg:grid-cols-3">
+        <div className="relative z-10 mt-8 sm:mt-10 grid items-stretch gap-6 lg:gap-6 lg:grid-cols-3">
           {[
             {
               id: "start",
               nome: "Plano START",
               preco: "R$ 20",
               periodo: "mensal",
-              sub: "Renovação mensal sem fidelidade",
-              telas: "2 telas simultâneas",
+              sub: "Cobrado mensalmente · Cancele quando quiser",
+              telas: "2 Telas simultâneas",
               destaque: false,
               selo: null as string | null,
               badge: "Sem Fidelidade",
-              badgeStyle: "bg-surface-2/80 text-foreground/80 border-white/15",
+              badgeStyle: "bg-surface-2/80 text-foreground/90 border-white/15",
               btnStyle: "border border-white/20 bg-white/10 text-white hover:bg-white/20 hover:border-white/30 shadow-md",
               link: "https://ev.braip.com/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
               features: [
                 "2 Telas simultâneas",
-                "Mais de 60.000 conteúdos",
-                "Futebol & Esportes Ao Vivo",
-                "Qualidade em até 4K (SD/HD/FHD/4K)",
+                "Mais de 60.000 conteúdos em até 4K",
+                "Futebol & Esportes Ao Vivo (60fps)",
                 "Smart TV, Celular, TV Box e PC",
                 "Sem fidelidade — cancelamento livre",
+                "Suporte via WhatsApp",
               ],
             },
             {
               id: "prime",
               nome: "Plano PRIME",
               preco: "R$ 97",
-              periodo: "1 ano",
-              sub: "Apenas R$ 8,08/mês · Sem mensalidades",
-              telas: "4 telas simultâneas",
+              periodo: "1 ano completo",
+              sub: "Equivale a R$ 8,08/mês · Sem mensalidades",
+              telas: "4 Telas simultâneas",
               destaque: true,
-              selo: "🔥 MAIS ESCOLHIDO — 60% OFF",
+              selo: "🌟 MAIS POPULAR — 60% DE DESCONTO",
               badge: "Máxima Economia",
               badgeStyle: "bg-primary text-white border-purple-300/50 shadow-[0_0_15px_rgba(168,85,247,0.6)] font-extrabold",
-              btnStyle: "btn-cta bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_35px_rgba(168,85,247,0.7)] hover:shadow-[0_0_55px_rgba(168,85,247,0.95)] hover:scale-[1.03]",
+              btnStyle: "btn-cta bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_35px_rgba(168,85,247,0.8)] hover:shadow-[0_0_55px_rgba(168,85,247,1)] hover:scale-[1.03]",
               link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
               features: [
-                "4 Telas simultâneas (Família)",
-                "1 Ano completo de acesso",
-                "Economize mais de R$ 140/ano",
+                "4 Telas simultâneas (Família toda)",
+                "1 Ano completo sem pagar nada a mais",
+                "Economia real de R$ 143,00 no ano",
                 "Mais de 60.000 conteúdos em até 4K",
                 "Todos os canais VIP & Esportes Ao Vivo",
-                "Suporte prioritário 24/7",
+                "Suporte Prioritário VIP 24/7",
               ],
             },
             {
@@ -741,8 +727,8 @@ function Index() {
               nome: "Plano PRO",
               preco: "R$ 69,90",
               periodo: "semestral",
-              sub: "Apenas R$ 11,65/mês · 6 meses de acesso",
-              telas: "2 telas simultâneas",
+              sub: "Equivale a R$ 11,65/mês · 6 meses de acesso",
+              telas: "2 Telas simultâneas",
               destaque: false,
               selo: null as string | null,
               badge: "Economize 42%",
@@ -751,11 +737,11 @@ function Index() {
               link: "https://ev.braip.com/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
               features: [
                 "2 Telas simultâneas",
-                "6 Meses de acesso contínuo",
+                "6 Meses de acesso sem mensalidades",
                 "Mais de 60.000 conteúdos em até 4K",
                 "Futebol & Esportes Ao Vivo",
                 "Smart TV, Celular, TV Box e PC",
-                "Ativação imediata sem burocracia",
+                "Ativação imediata em 2 minutos",
               ],
             },
           ].map((p, i) => (
@@ -763,7 +749,7 @@ function Index() {
               <div
                 className={`glass group relative flex flex-col justify-between h-full rounded-3xl transition-all duration-300 ${
                   p.destaque
-                    ? "border-2 border-primary/70 bg-gradient-to-b from-purple-950/70 via-surface/90 to-surface/95 backdrop-blur-2xl p-7 sm:p-9 shadow-[0_0_50px_rgba(168,85,247,0.35)] lg:-translate-y-2 z-20 hover:border-accent"
+                    ? "border-2 border-primary/80 bg-gradient-to-b from-purple-950/70 via-surface/90 to-surface/95 backdrop-blur-2xl p-7 sm:p-9 shadow-[0_0_50px_rgba(168,85,247,0.4)] lg:-translate-y-3 z-20 hover:border-accent"
                     : "border border-white/15 bg-surface/40 backdrop-blur-xl p-6 sm:p-8 hover:border-white/30 hover:-translate-y-1.5"
                 }`}
               >
@@ -795,7 +781,9 @@ function Index() {
                     <span className="text-sm font-semibold text-muted-foreground">/{p.periodo}</span>
                   </div>
 
-                  <p className="mt-1 text-xs text-muted-foreground font-medium">{p.sub}</p>
+                  <p className={`mt-1.5 text-xs font-semibold ${p.destaque ? "text-emerald-400" : "text-muted-foreground"}`}>
+                    {p.sub}
+                  </p>
 
                   <a
                     href={p.link}
