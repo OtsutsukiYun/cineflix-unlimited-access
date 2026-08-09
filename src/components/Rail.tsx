@@ -66,30 +66,23 @@ export function Rail({
   const scrollBy = (dir: number) => {
     const el = ref.current;
     if (!el) return;
-    const cards = Array.from(el.querySelectorAll<HTMLElement>(".snap-start"));
+    const cards = Array.from(el.querySelectorAll<HTMLElement>(".rail-item"));
     if (cards.length === 0) return;
 
+    const firstCard = cards[0];
     const style = window.getComputedStyle(el);
-    const paddingLeft = parseFloat(style.paddingLeft) || 16;
+    const gap = parseFloat(style.columnGap || style.gap) || 14;
+    const cardStep = firstCard.offsetWidth + gap;
     const currentScroll = el.scrollLeft;
 
-    // Encontrar o índice do primeiro card totalmente visível
-    let currentIndex = 0;
-    for (let i = 0; i < cards.length; i++) {
-      if (cards[i].offsetLeft - paddingLeft >= currentScroll - 10) {
-        currentIndex = i;
-        break;
-      }
-    }
-
-    const gap = parseFloat(style.columnGap || style.gap) || 14;
-    const cardStep = cards[0].offsetWidth + gap;
-    const visibleCards = Math.max(1, Math.floor((el.clientWidth - paddingLeft * 2) / cardStep));
+    // Calcular o índice limpo da primeira capa visível
+    const currentIndex = Math.round(currentScroll / cardStep);
+    const visibleCards = Math.max(1, Math.floor((el.clientWidth + gap) / cardStep));
 
     let targetIndex = dir > 0 ? currentIndex + visibleCards : currentIndex - visibleCards;
     targetIndex = Math.max(0, Math.min(cards.length - 1, targetIndex));
 
-    const targetScrollLeft = cards[targetIndex].offsetLeft - paddingLeft;
+    const targetScrollLeft = targetIndex * cardStep;
     el.scrollTo({ left: targetScrollLeft, behavior: "smooth" });
   };
 
@@ -127,10 +120,10 @@ export function Rail({
         </div>
         <div
           ref={ref}
-          className="no-scrollbar flex snap-x snap-mandatory gap-3 sm:gap-3.5 overflow-x-auto px-2 sm:px-4 pb-3 sm:pb-4 scroll-px-2 sm:scroll-px-4 scroll-smooth"
+          className="no-scrollbar flex gap-3 sm:gap-3.5 overflow-x-auto px-2 sm:px-4 pb-3 sm:pb-4 scroll-smooth"
         >
           {items.map((t) => (
-            <div key={t.title} className="shrink-0 snap-start">
+            <div key={t.title} className="rail-item shrink-0">
               <Poster item={t} />
             </div>
           ))}
