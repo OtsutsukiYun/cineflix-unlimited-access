@@ -571,7 +571,7 @@ function Index() {
                 titleHover: "group-hover:text-green-200",
                 t: "Esportes ao vivo",
                 qtd: "+500 Canais de Esporte",
-                d: "+500 canais ao vivo (Brasileirão, Champions League, Premier League, UFC e F1 em 60 FPS).",
+                d: "+500 canais ao vivo (Brasileirão, Champions League, Premier League, UFC e F1 sem travamentos).",
               },
               {
                 icon: Lock,
