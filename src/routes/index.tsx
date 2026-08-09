@@ -46,7 +46,7 @@ function CascadeGrid({
     if (!el) return;
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setVisible(true);
         }
       },
@@ -78,7 +78,7 @@ function SmoothCardReveal({
     if (!el) return;
     const io = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry?.isIntersecting) {
           setShown(true);
         }
       },
@@ -504,9 +504,9 @@ function Index() {
               {
                 icon: Heart,
                 banners: [
-                  img("/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", "w780"), // Queen of Tears
-                  img("/3yEHM2HT2vrUtO93YzTJNgEfiZG.jpg", "w780"), // Crash Landing on You
-                  img("/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg", "w780")  // Round 6
+                  img("/6ekykPwvAywJRjFEnUoCFWTO9O3.jpg", "w780"), // A Coroa Perfeita (2026)
+                  img("/sjOTFlGapgXFjwV3LmD9eHZEp3d.jpg", "w780"), // Namorado por Assinatura (2026)
+                  img("/svnZYhAboLrwHEtkKRm2mIdjocB.jpg", "w780")  // O Amor Pode Ser Traduzido? (2026)
                 ],
                 objectPosition: "object-cover",
                 gradient: "from-pink-500 via-rose-500 to-purple-600",

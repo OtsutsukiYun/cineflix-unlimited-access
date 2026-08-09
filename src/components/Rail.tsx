@@ -71,7 +71,7 @@ export function Rail({
     if (cards.length === 0) return;
 
     const gap = 14;
-    const cardWidth = cards[0].offsetWidth;
+    const cardWidth = cards[0]!.offsetWidth;
     const step = cardWidth + gap;
     const visibleCards = Math.max(1, Math.floor((container.clientWidth + gap) / step));
     const pageStep = visibleCards * step;
