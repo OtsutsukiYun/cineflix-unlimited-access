@@ -721,7 +721,7 @@ function Index() {
             </div>
           </Reveal>
 
-        <div className="relative z-10 mt-10 sm:mt-12 pt-6 grid items-stretch gap-6 lg:gap-6 lg:grid-cols-3">
+        <div className="relative z-10 mt-6 sm:mt-8 pt-3 grid items-stretch gap-6 lg:gap-6 lg:grid-cols-3">
           {[
             {
               id: "start",
