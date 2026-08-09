@@ -627,6 +627,7 @@ function Index() {
                 desc: "Servidores otimizados com rota direta no Brasil. Assista a jogos decisivos e filmes sem congelamentos ou travamentos.",
                 color: "text-amber-400 bg-amber-400/10 border-amber-400/30",
                 glow: "shadow-[0_0_20px_rgba(245,158,11,0.15)] hover:border-amber-400/60",
+                link: null,
               },
               {
                 icon: Users,
@@ -635,6 +636,7 @@ function Index() {
                 desc: "Toda a sua família assiste ao mesmo tempo em aparelhos diferentes, sem restrições de IP ou localidade.",
                 color: "text-cyan-400 bg-cyan-400/10 border-cyan-400/30",
                 glow: "shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:border-cyan-400/60",
+                link: null,
               },
               {
                 icon: Headphones,
@@ -643,6 +645,7 @@ function Index() {
                 desc: "Equipe especializada pronta para te guiar passo a passo na instalação em qualquer aparelho, 7 dias por semana.",
                 color: "text-emerald-400 bg-emerald-400/10 border-emerald-400/30",
                 glow: "shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400/60",
+                link: "/suporte",
               },
               {
                 icon: Rocket,
@@ -651,10 +654,11 @@ function Index() {
                 desc: "Receba seus dados na hora no e-mail. Teste à vontade e cancele com 1 clique a qualquer momento sem pegadinhas.",
                 color: "text-fuchsia-400 bg-fuchsia-400/10 border-fuchsia-400/30",
                 glow: "shadow-[0_0_20px_rgba(217,70,239,0.15)] hover:border-fuchsia-400/60",
+                link: null,
               },
-            ].map((item, i) => (
-              <SmoothCardReveal key={item.title} delay={50 + i * 80}>
-                <div className={`glass flex flex-col justify-between rounded-2xl p-6 bg-surface/50 h-full border border-white/15 transition-all duration-300 hover:-translate-y-1.5 ${item.glow}`}>
+            ].map((item, i) => {
+              const CardInner = (
+                <div className={`glass flex flex-col justify-between rounded-2xl p-6 bg-surface/50 h-full border border-white/15 transition-all duration-300 hover:-translate-y-1.5 ${item.glow} ${item.link ? 'hover:border-emerald-400/90 cursor-pointer' : ''}`}>
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       <div className={`inline-flex size-11 items-center justify-center rounded-xl border ${item.color}`}>
@@ -664,12 +668,27 @@ function Index() {
                         {item.badge}
                       </span>
                     </div>
-                    <h3 className="text-base font-extrabold text-white mb-2 tracking-tight">{item.title}</h3>
+                    <h3 className="text-base font-extrabold text-white mb-2 tracking-tight flex items-center justify-between">
+                      <span>{item.title}</span>
+                      {item.link && <span className="text-xs text-emerald-400 font-bold underline ml-2">Falar no WhatsApp &rarr;</span>}
+                    </h3>
                     <p className="text-xs text-muted-foreground leading-relaxed font-medium">{item.desc}</p>
                   </div>
                 </div>
-              </SmoothCardReveal>
-            ))}
+              );
+
+              return (
+                <SmoothCardReveal key={item.title} delay={50 + i * 80}>
+                  {item.link ? (
+                    <Link to={item.link} className="block h-full">
+                      {CardInner}
+                    </Link>
+                  ) : (
+                    CardInner
+                  )}
+                </SmoothCardReveal>
+              );
+            })}
           </div>
         </section>
 
@@ -959,21 +978,33 @@ function Index() {
           </p>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
             {[
-              { icon: Lock, title: "Pagamento Seguro", desc: "SSL 256-bit" },
-              { icon: Zap, title: "Ativação Imediata", desc: "Acesso na hora" },
-              { icon: CreditCard, title: "Parcelamento", desc: "Até 12x no cartão" },
-              { icon: ShieldCheck, title: "Suporte 7 dias", desc: "Via WhatsApp" },
-              { icon: RefreshCcw, title: "Sem Fidelidade", desc: "Cancele quando quiser" },
-              { icon: Star, title: "+10 mil clientes", desc: "Satisfação garantida" },
-            ].map((c, i) => (
-              <SmoothCardReveal key={c.title} delay={60 + i * 40}>
-                <div className="glass flex flex-col items-center gap-2 rounded-2xl p-4 text-center transition-all duration-300 hover:border-primary/50 hover:scale-105">
-                  <c.icon className="size-6 text-accent mb-1" />
+              { icon: Lock, title: "Pagamento Seguro", desc: "SSL 256-bit", link: null },
+              { icon: Zap, title: "Ativação Imediata", desc: "Acesso na hora", link: null },
+              { icon: CreditCard, title: "Parcelamento", desc: "Até 12x no cartão", link: null },
+              { icon: ShieldCheck, title: "Suporte 7 dias", desc: "Via WhatsApp", link: "/suporte" },
+              { icon: RefreshCcw, title: "Sem Fidelidade", desc: "Cancele quando quiser", link: null },
+              { icon: Star, title: "+10 mil clientes", desc: "Satisfação garantida", link: null },
+            ].map((c, i) => {
+              const BadgeInner = (
+                <div className={`glass flex flex-col items-center gap-2 rounded-2xl p-4 text-center transition-all duration-300 hover:border-primary/50 hover:scale-105 ${c.link ? 'hover:border-emerald-400 cursor-pointer' : ''}`}>
+                  <c.icon className={`size-6 mb-1 ${c.link ? 'text-emerald-400' : 'text-accent'}`} />
                   <p className="text-xs font-bold text-white">{c.title}</p>
                   <p className="text-[10px] text-muted-foreground">{c.desc}</p>
                 </div>
-              </SmoothCardReveal>
-            ))}
+              );
+
+              return (
+                <SmoothCardReveal key={c.title} delay={60 + i * 40}>
+                  {c.link ? (
+                    <Link to={c.link} className="block h-full">
+                      {BadgeInner}
+                    </Link>
+                  ) : (
+                    BadgeInner
+                  )}
+                </SmoothCardReveal>
+              );
+            })}
           </div>
         </div>
       </section>
