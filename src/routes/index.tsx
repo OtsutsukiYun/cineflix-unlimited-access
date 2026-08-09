@@ -604,14 +604,14 @@ function Index() {
             {[
               {
                 icon: Zap,
-                title: "Instalação em 2 minutos",
+                title: "Instalação em poucos minutos",
                 desc: "Sem cabos ou técnicos. Baixe o aplicativo na sua Smart TV, TV Box, Celular ou PC e acesse na hora.",
                 color: "text-amber-400 bg-amber-400/10 border-amber-400/30",
               },
               {
                 icon: Trophy,
-                title: "Futebol 60fps sem lag",
-                desc: "Servidores dedicados de ultra-alta velocidade para você assistir aos jogos ao vivo sem travamentos.",
+                title: "Esportes & Canais Ao Vivo",
+                desc: "Servidores dedicados de alta velocidade para você assistir aos seus jogos e canais ao vivo sem travamentos.",
                 color: "text-emerald-400 bg-emerald-400/10 border-emerald-400/30",
               },
               {
@@ -697,7 +697,7 @@ function Index() {
               features: [
                 "2 Telas simultâneas",
                 "Acervo completo (+60.000 títulos)",
-                "Futebol & Esportes Ao Vivo em HD/4K",
+                "Esportes & Canais Ao Vivo em HD/4K",
                 "Smart TV, Celular, TV Box e PC",
                 "Sem fidelidade — cancelamento livre",
                 "Suporte 7 dias via WhatsApp",
@@ -746,7 +746,7 @@ function Index() {
                 "2 Telas simultâneas",
                 "6 Meses de acesso sem mensalidades",
                 "Acervo completo (+60.000 títulos)",
-                "Futebol & Esportes Ao Vivo em HD/4K",
+                "Esportes & Canais Ao Vivo em HD/4K",
                 "Smart TV, Celular, TV Box e PC",
                 "Ativação imediata sem burocracia",
               ],
