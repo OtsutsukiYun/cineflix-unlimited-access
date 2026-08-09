@@ -136,7 +136,7 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { PromoBanner } from "@/components/PromoBanner";
-import { Rail, Top10Rail } from "@/components/Rail";
+import { Rail } from "@/components/Rail";
 import { Faq } from "@/components/Faq";
 import { TrustSection } from "@/components/TrustSection";
 import { Torii } from "@/components/icons";
@@ -420,12 +420,7 @@ function Index() {
             </p>
           </Reveal>
 
-          <div className="relative space-y-6 mt-6">
-            {/* TRILHO DE DESTAQUE TOP 10 BRASIL ESTILO NETFLIX */}
-            <Reveal>
-              <Top10Rail items={top10Hoje} />
-            </Reveal>
-
+          <div className="relative space-y-4 mt-6">
             <Reveal>
               <Rail
                 icon={Flame}
