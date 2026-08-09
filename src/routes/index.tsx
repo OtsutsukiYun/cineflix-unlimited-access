@@ -338,7 +338,7 @@ function Index() {
               <HeroHeading />
 
               <p className="mt-3 sm:mt-5 max-w-lg text-sm sm:text-base md:text-lg font-medium text-foreground/90 drop-shadow-md">
-                Todas as plataformas de streaming e mais de <span className="font-extrabold text-white">60.000 conteúdos</span> por apenas <span className="font-extrabold text-white">R$20/mês</span>.
+                Todas as plataformas de streaming e mais de <span className="font-extrabold text-white">80.000 conteúdos</span> por apenas <span className="font-extrabold text-white">R$20/mês</span>.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -393,7 +393,7 @@ function Index() {
                 <Fragment key={i}>
                   <span className="flex items-center gap-2 text-purple-200"><Sparkles className="size-3.5 text-accent" /> Qualidade em até 4K</span>
                   <span className="flex items-center gap-2"><Film className="size-3.5 text-accent" /> Todos os Streamings</span>
-                  <span className="flex items-center gap-2 text-pink-200"><Tv className="size-3.5 text-accent" /> +60.000 Conteúdos</span>
+                  <span className="flex items-center gap-2 text-pink-200"><Tv className="size-3.5 text-accent" /> +80.000 Conteúdos</span>
                   <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-accent" /> Múltiplas Telas</span>
                   <span className="flex items-center gap-2 text-emerald-200"><RefreshCcw className="size-3.5 text-accent" /> Lançamentos Semanais</span>
                   <span className="flex items-center gap-2"><Zap className="size-3.5 text-accent" /> Ativação Imediata</span>
@@ -416,7 +416,7 @@ function Index() {
               </h2>
             </div>
             <p className="max-w-xs text-xs sm:text-sm text-muted-foreground font-semibold leading-relaxed sm:text-right">
-              Mais de 60.000 títulos em qualidade até 4K atualizados toda semana.
+              Mais de 80.000 conteúdos em qualidade até 4K atualizados toda semana.
             </p>
           </Reveal>
 
@@ -497,8 +497,8 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#0b0314] via-[#0b0314]/75 to-[#0b0314]/20",
                 titleHover: "group-hover:text-teal-200",
                 t: "Séries imperdíveis",
-                qtd: "+12.000 Séries",
-                d: "+12.000 séries das maiores plataformas mundiais com temporadas completas dubladas.",
+                qtd: "+20.000 Séries",
+                d: "+20.000 séries das maiores plataformas mundiais com temporadas completas dubladas e legendadas.",
               },
               {
                 icon: Torii,
@@ -515,8 +515,8 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#0e0214] via-[#0e0214]/75 to-[#0e0214]/20",
                 titleHover: "group-hover:text-fuchsia-200",
                 t: "Animes atualizados",
-                qtd: "+3.500 Animes",
-                d: "+3.500 animes com simulcast semanal, dublagem em português e áudio original.",
+                qtd: "Centenas de Animes",
+                d: "Centenas de animes com simulcast semanal, dublagem em português e áudio original.",
               },
               {
                 icon: Baby,
