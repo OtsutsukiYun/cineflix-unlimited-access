@@ -265,6 +265,7 @@ export type Plataforma = {
   preco: string;
   glowColor: string;
   bgGradient: string;
+  logoScale?: string;
 };
 
 export const plataformas: Plataforma[] = [
@@ -275,6 +276,7 @@ export const plataformas: Plataforma[] = [
     preco: "R$ 20,90",
     glowColor: "rgba(229, 9, 20, 0.6)",
     bgGradient: "from-[#2b0507] via-[#170204] to-[#080001]",
+    logoScale: "scale-100",
   },
   {
     nome: "Disney+",
@@ -283,6 +285,7 @@ export const plataformas: Plataforma[] = [
     preco: "R$ 20,90",
     glowColor: "rgba(56, 189, 248, 0.6)",
     bgGradient: "from-[#0d3056] via-[#071d38] to-[#030d1c]",
+    logoScale: "scale-[1.45]",
   },
   {
     nome: "Max",
@@ -291,6 +294,7 @@ export const plataformas: Plataforma[] = [
     preco: "R$ 22,90",
     glowColor: "rgba(168, 85, 247, 0.6)",
     bgGradient: "from-[#2d0b54] via-[#190433] to-[#0a0117]",
+    logoScale: "scale-[1.2]",
   },
   {
     nome: "Prime Video",
@@ -299,6 +303,7 @@ export const plataformas: Plataforma[] = [
     preco: "R$ 19,90",
     glowColor: "rgba(0, 168, 225, 0.6)",
     bgGradient: "from-[#004263] via-[#00273d] to-[#00111c]",
+    logoScale: "scale-[1.5]",
   },
   {
     nome: "Apple TV+",
@@ -307,6 +312,7 @@ export const plataformas: Plataforma[] = [
     preco: "R$ 29,90",
     glowColor: "rgba(255, 255, 255, 0.5)",
     bgGradient: "from-[#333336] via-[#1c1c1e] to-[#0d0d0f]",
+    logoScale: "scale-[1.15]",
   },
   {
     nome: "Paramount+",
@@ -315,6 +321,7 @@ export const plataformas: Plataforma[] = [
     preco: "R$ 34,90",
     glowColor: "rgba(0, 100, 255, 0.6)",
     bgGradient: "from-[#0044b3] via-[#00286e] to-[#001133]",
+    logoScale: "scale-[1.25]",
   },
   {
     nome: "Globoplay",
@@ -323,6 +330,7 @@ export const plataformas: Plataforma[] = [
     preco: "R$ 22,90",
     glowColor: "rgba(255, 92, 92, 0.6)",
     bgGradient: "from-[#40060d] via-[#240206] to-[#120002]",
+    logoScale: "scale-[1.2]",
   },
   {
     nome: "Crunchyroll",
@@ -331,6 +339,7 @@ export const plataformas: Plataforma[] = [
     preco: "R$ 19,90",
     glowColor: "rgba(244, 117, 33, 0.6)",
     bgGradient: "from-[#451f08] via-[#291003] to-[#120600]",
+    logoScale: "scale-[1.15]",
   },
 ];
 
