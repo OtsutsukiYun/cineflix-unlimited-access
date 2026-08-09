@@ -622,9 +622,9 @@ function Index() {
             {[
               {
                 icon: Cpu,
-                badge: "Servidores 10 Gbps",
-                title: "Tecnologia Anti-Buffer 4K",
-                desc: "Servidores CDN com rota dedicada no Brasil. Assista a jogos decisivos e filmes sem congelamentos ou travamentos.",
+                badge: "Rota Dedicada",
+                title: "Tecnologia Anti-Trava 4K",
+                desc: "Servidores otimizados com rota direta no Brasil. Assista a jogos decisivos e filmes sem congelamentos ou travamentos.",
                 color: "text-amber-400 bg-amber-400/10 border-amber-400/30",
                 glow: "shadow-[0_0_20px_rgba(245,158,11,0.15)] hover:border-amber-400/60",
               },
