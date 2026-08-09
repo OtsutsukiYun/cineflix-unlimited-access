@@ -676,24 +676,24 @@ function Index() {
               {/* DIVISOR NO DESKTOP */}
               <div className="hidden md:block h-6 w-px bg-emerald-500/30" />
 
-              {/* LADO DIREITO: ÍCONES REAIS DAS PLATAFORMAS (SEM SERRILHADO E PROPORCIONAIS) */}
-              <div className="flex items-center justify-center gap-1.5 sm:gap-2.5 overflow-x-auto no-scrollbar py-1">
+              {/* LADO DIREITO: ÍCONES REAIS DAS PLATAFORMAS (LARGOS, LIMPOS E SEM CORTES) */}
+              <div className="flex items-center justify-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar py-1">
                 <span className="text-[11px] font-bold text-emerald-200/90 uppercase tracking-wider shrink-0 mr-1 hidden sm:inline">
                   Substitua:
                 </span>
                 {plataformas.slice(0, 6).map((p) => (
                   <div
                     key={p.nome}
-                    className={`group relative flex size-9.5 sm:size-12 shrink-0 items-center justify-center rounded-full border-2 border-white/30 bg-gradient-to-b ${p.bgGradient} p-1.5 sm:p-2 shadow-lg transition-all duration-300 hover:scale-115 hover:border-white/80 overflow-hidden`}
+                    className={`group relative flex size-11 sm:size-13 shrink-0 items-center justify-center rounded-full border-2 border-white/35 bg-gradient-to-b ${p.bgGradient} p-2 shadow-xl transition-all duration-300 hover:scale-115 hover:border-white/80`}
                     style={{
-                      boxShadow: `0 0 16px ${p.glowColor}, inset 0 0 8px rgba(255, 255, 255, 0.2)`,
+                      boxShadow: `0 0 18px ${p.glowColor}, inset 0 0 8px rgba(255, 255, 255, 0.25)`,
                     }}
                     title={p.nome}
                   >
                     <img
                       src={p.logo}
                       alt={p.nome}
-                      className={`size-5 sm:size-7 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] transition-transform ${p.logoScale || 'scale-100'}`}
+                      className={`size-6 sm:size-7.5 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] transition-transform ${p.logoScale || 'scale-100'}`}
                     />
                   </div>
                 ))}

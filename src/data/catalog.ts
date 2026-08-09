@@ -285,7 +285,7 @@ export const plataformas: Plataforma[] = [
     preco: "R$ 20,90",
     glowColor: "rgba(56, 189, 248, 0.6)",
     bgGradient: "from-[#0d3056] via-[#071d38] to-[#030d1c]",
-    logoScale: "scale-[1.45]",
+    logoScale: "scale-[1.2]",
   },
   {
     nome: "Max",
@@ -294,7 +294,7 @@ export const plataformas: Plataforma[] = [
     preco: "R$ 22,90",
     glowColor: "rgba(168, 85, 247, 0.6)",
     bgGradient: "from-[#2d0b54] via-[#190433] to-[#0a0117]",
-    logoScale: "scale-[1.2]",
+    logoScale: "scale-[1.1]",
   },
   {
     nome: "Prime Video",
@@ -303,7 +303,7 @@ export const plataformas: Plataforma[] = [
     preco: "R$ 19,90",
     glowColor: "rgba(0, 168, 225, 0.6)",
     bgGradient: "from-[#004263] via-[#00273d] to-[#00111c]",
-    logoScale: "scale-[1.5]",
+    logoScale: "scale-[1.25]",
   },
   {
     nome: "Apple TV+",
