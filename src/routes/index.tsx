@@ -676,7 +676,7 @@ function Index() {
             </div>
           </Reveal>
 
-        <div className="relative z-10 mt-8 sm:mt-10 grid items-stretch gap-6 lg:gap-6 lg:grid-cols-3">
+        <div className="relative z-10 mt-8 sm:mt-12 grid items-center gap-6 lg:gap-8 lg:grid-cols-3">
           {[
             {
               id: "start",
@@ -684,7 +684,6 @@ function Index() {
               preco: "R$ 20",
               periodo: "mensal",
               sub: "Cobrado mensalmente · Cancele quando quiser",
-              telas: "2 Telas simultâneas",
               destaque: false,
               selo: null as string | null,
               badge: "Sem Fidelidade",
@@ -705,13 +704,12 @@ function Index() {
               nome: "Plano PRIME",
               preco: "R$ 97",
               periodo: "1 ano completo",
-              sub: "Equivale a R$ 8,08/mês · Sem mensalidades",
-              telas: "4 Telas simultâneas",
+              sub: "⚡ Apenas R$ 8,08/mês · Economia de R$ 143/ano",
               destaque: true,
-              selo: "🌟 MAIS POPULAR — 60% DE DESCONTO",
+              selo: "🔥 MAIS VENDIDO — 60% DE DESCONTO",
               badge: "Máxima Economia",
-              badgeStyle: "bg-primary text-white border-purple-300/50 shadow-[0_0_15px_rgba(168,85,247,0.6)] font-extrabold",
-              btnStyle: "btn-cta bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_35px_rgba(168,85,247,0.8)] hover:shadow-[0_0_55px_rgba(168,85,247,1)] hover:scale-[1.03]",
+              badgeStyle: "bg-amber-400/20 text-amber-300 border-amber-400/50 shadow-[0_0_15px_rgba(251,191,36,0.5)] font-black tracking-widest",
+              btnStyle: "btn-cta bg-gradient-to-r from-amber-400 via-primary via-purple-500 to-pink-500 text-white font-black text-base py-4 shadow-[0_0_40px_rgba(168,85,247,0.9)] hover:scale-105 animate-pulse-ring",
               link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
               features: [
                 "4 Telas simultâneas (Família toda)",
@@ -728,7 +726,6 @@ function Index() {
               preco: "R$ 69,90",
               periodo: "semestral",
               sub: "Equivale a R$ 11,65/mês · 6 meses de acesso",
-              telas: "2 Telas simultâneas",
               destaque: false,
               selo: null as string | null,
               badge: "Economize 42%",
@@ -747,41 +744,45 @@ function Index() {
           ].map((p, i) => (
             <SmoothCardReveal key={p.nome} delay={100 + i * 120}>
               <div
-                className={`glass group relative flex flex-col justify-between h-full rounded-3xl transition-all duration-300 ${
+                className={`group relative flex flex-col justify-between rounded-3xl transition-all duration-500 ${
                   p.destaque
-                    ? "border-2 border-primary/80 bg-gradient-to-b from-purple-950/70 via-surface/90 to-surface/95 backdrop-blur-2xl p-7 sm:p-9 shadow-[0_0_50px_rgba(168,85,247,0.4)] lg:-translate-y-3 z-20 hover:border-accent"
-                    : "border border-white/15 bg-surface/40 backdrop-blur-xl p-6 sm:p-8 hover:border-white/30 hover:-translate-y-1.5"
+                    ? "glass border-2 border-purple-400/90 bg-gradient-to-b from-purple-900/90 via-[#3a0963]/95 to-[#160226] p-8 sm:p-10 shadow-[0_0_70px_rgba(168,85,247,0.65)] lg:scale-110 z-30 hover:border-pink-400 hover:shadow-[0_0_90px_rgba(168,85,247,0.85)]"
+                    : "glass border border-white/15 bg-surface/50 backdrop-blur-xl p-6 sm:p-7 opacity-90 hover:opacity-100 hover:border-white/30 hover:-translate-y-1.5"
                 }`}
               >
                 {p.selo && (
-                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 via-primary to-accent px-5 py-1.5 text-xs font-black tracking-wider text-white uppercase shadow-[0_0_25px_rgba(168,85,247,0.8)]">
-                    <Sparkles className="size-3.5 fill-current" />
+                  <span className="absolute -top-5 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-400 via-primary to-accent px-6 py-2 text-xs font-black tracking-widest text-white uppercase shadow-[0_0_30px_rgba(168,85,247,0.9)] animate-pulse">
+                    <Sparkles className="size-4 fill-amber-200 text-amber-200" />
                     {p.selo}
                   </span>
                 )}
 
                 <div>
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className={`font-display text-base font-black tracking-widest uppercase ${p.destaque ? "text-purple-200" : "text-white"}`}>
+                    <h3 className={`font-display font-black tracking-widest uppercase ${p.destaque ? "text-xl text-amber-300 drop-shadow-md" : "text-base text-white"}`}>
                       {p.nome}
                     </h3>
-                    <span className={`rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider border ${p.badgeStyle}`}>
+                    <span className={`rounded-full px-3 py-1 text-[10px] uppercase tracking-wider border ${p.badgeStyle}`}>
                       {p.badge}
                     </span>
                   </div>
 
                   <div className="mt-5 flex items-baseline gap-1.5">
                     <span
-                      className={`font-display text-4xl sm:text-5xl font-black text-white ${
-                        p.destaque ? "drop-shadow-[0_2px_15px_rgba(168,85,247,0.8)] text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-fuchsia-300" : ""
+                      className={`font-display font-black text-white ${
+                        p.destaque
+                          ? "text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-purple-200 drop-shadow-[0_0_25px_rgba(168,85,247,0.9)]"
+                          : "text-4xl sm:text-5xl"
                       }`}
                     >
                       {p.preco}
                     </span>
-                    <span className="text-sm font-semibold text-muted-foreground">/{p.periodo}</span>
+                    <span className={`font-semibold ${p.destaque ? "text-purple-200 text-base" : "text-muted-foreground text-sm"}`}>
+                      /{p.periodo}
+                    </span>
                   </div>
 
-                  <p className={`mt-1.5 text-xs font-semibold ${p.destaque ? "text-emerald-400" : "text-muted-foreground"}`}>
+                  <p className={`mt-2 text-xs font-bold leading-snug ${p.destaque ? "text-amber-300 bg-amber-400/10 px-3 py-1.5 rounded-xl border border-amber-400/30" : "text-muted-foreground"}`}>
                     {p.sub}
                   </p>
 
@@ -789,18 +790,19 @@ function Index() {
                     href={p.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`mt-6 w-full flex items-center justify-center gap-2 rounded-2xl py-3.5 px-4 text-xs sm:text-sm font-extrabold uppercase tracking-wide transition-all duration-300 ${p.btnStyle}`}
+                    className={`mt-7 w-full flex items-center justify-center gap-2 rounded-2xl tracking-wider uppercase transition-all duration-300 ${p.btnStyle}`}
                   >
+                    <Zap className={p.destaque ? "size-5 text-amber-300" : "size-4"} />
                     Comprar agora
                   </a>
 
-                  <div className="my-6 h-px w-full bg-white/10" />
+                  <div className={`my-6 h-px w-full ${p.destaque ? "bg-purple-400/30" : "bg-white/10"}`} />
 
-                  <ul className="space-y-3 text-xs sm:text-sm">
+                  <ul className="space-y-3.5 text-xs sm:text-sm">
                     {p.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5">
-                        <Check className={`mt-0.5 size-4 shrink-0 ${p.destaque ? "text-accent" : "text-emerald-400"}`} />
-                        <span className="text-foreground/90 font-medium">{f}</span>
+                        <Check className={`mt-0.5 size-4 shrink-0 ${p.destaque ? "text-amber-400 font-bold" : "text-emerald-400"}`} />
+                        <span className={p.destaque ? "text-white font-semibold" : "text-foreground/90 font-medium"}>{f}</span>
                       </li>
                     ))}
                   </ul>

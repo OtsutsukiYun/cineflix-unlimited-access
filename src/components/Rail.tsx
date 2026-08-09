@@ -70,10 +70,18 @@ export function Rail({
     if (firstCard) {
       const style = window.getComputedStyle(el);
       const gap = parseFloat(style.columnGap || style.gap) || 14;
-      const cardWidthWithGap = firstCard.offsetWidth + gap;
-      const visibleCards = Math.max(1, Math.floor((el.clientWidth - 16) / cardWidthWithGap));
-      const scrollAmount = visibleCards * cardWidthWithGap;
-      el.scrollBy({ left: dir * scrollAmount, behavior: "smooth" });
+      const cardStep = firstCard.offsetWidth + gap;
+      const visibleCards = Math.max(1, Math.floor((el.clientWidth - 16) / cardStep));
+      const pageStep = visibleCards * cardStep;
+      
+      const currentScroll = el.scrollLeft;
+      let targetScroll = 0;
+      if (dir > 0) {
+        targetScroll = Math.floor((currentScroll + pageStep + 5) / pageStep) * pageStep;
+      } else {
+        targetScroll = Math.ceil((currentScroll - pageStep - 5) / pageStep) * pageStep;
+      }
+      el.scrollTo({ left: Math.max(0, targetScroll), behavior: "smooth" });
     } else {
       el.scrollBy({ left: dir * (el.clientWidth * 0.8), behavior: "smooth" });
     }
@@ -113,7 +121,7 @@ export function Rail({
         </div>
         <div
           ref={ref}
-          className="no-scrollbar flex snap-x snap-mandatory gap-3 sm:gap-3.5 overflow-x-auto px-2 sm:px-4 pb-3 sm:pb-4 scroll-px-2 sm:scroll-px-4"
+          className="no-scrollbar flex snap-x snap-mandatory gap-3 sm:gap-3.5 overflow-x-auto px-2 sm:px-4 pb-3 sm:pb-4 scroll-px-2 sm:scroll-px-4 scroll-smooth"
         >
           {items.map((t) => (
             <div key={t.title} className="shrink-0 snap-start">
