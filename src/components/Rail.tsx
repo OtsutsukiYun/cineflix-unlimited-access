@@ -66,25 +66,31 @@ export function Rail({
   const scrollBy = (dir: number) => {
     const el = ref.current;
     if (!el) return;
-    const firstCard = el.querySelector<HTMLElement>(".snap-start");
-    if (firstCard) {
-      const style = window.getComputedStyle(el);
-      const gap = parseFloat(style.columnGap || style.gap) || 14;
-      const cardStep = firstCard.offsetWidth + gap;
-      const visibleCards = Math.max(1, Math.floor((el.clientWidth - 16) / cardStep));
-      const pageStep = visibleCards * cardStep;
-      
-      const currentScroll = el.scrollLeft;
-      let targetScroll = 0;
-      if (dir > 0) {
-        targetScroll = Math.floor((currentScroll + pageStep + 5) / pageStep) * pageStep;
-      } else {
-        targetScroll = Math.ceil((currentScroll - pageStep - 5) / pageStep) * pageStep;
+    const cards = Array.from(el.querySelectorAll<HTMLElement>(".snap-start"));
+    if (cards.length === 0) return;
+
+    const style = window.getComputedStyle(el);
+    const paddingLeft = parseFloat(style.paddingLeft) || 16;
+    const currentScroll = el.scrollLeft;
+
+    // Encontrar o índice do primeiro card totalmente visível
+    let currentIndex = 0;
+    for (let i = 0; i < cards.length; i++) {
+      if (cards[i].offsetLeft - paddingLeft >= currentScroll - 10) {
+        currentIndex = i;
+        break;
       }
-      el.scrollTo({ left: Math.max(0, targetScroll), behavior: "smooth" });
-    } else {
-      el.scrollBy({ left: dir * (el.clientWidth * 0.8), behavior: "smooth" });
     }
+
+    const gap = parseFloat(style.columnGap || style.gap) || 14;
+    const cardStep = cards[0].offsetWidth + gap;
+    const visibleCards = Math.max(1, Math.floor((el.clientWidth - paddingLeft * 2) / cardStep));
+
+    let targetIndex = dir > 0 ? currentIndex + visibleCards : currentIndex - visibleCards;
+    targetIndex = Math.max(0, Math.min(cards.length - 1, targetIndex));
+
+    const targetScrollLeft = cards[targetIndex].offsetLeft - paddingLeft;
+    el.scrollTo({ left: targetScrollLeft, behavior: "smooth" });
   };
 
   return (

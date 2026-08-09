@@ -687,7 +687,8 @@ function Index() {
               destaque: false,
               selo: null as string | null,
               badge: "Sem Fidelidade",
-              btnStyle: "bg-gradient-to-r from-purple-900/80 via-primary/30 to-purple-900/80 hover:from-primary/60 hover:to-purple-800 border border-primary/50 text-white shadow-md hover:shadow-glow",
+              btnStyle: "bg-gradient-to-r from-purple-600 via-primary to-purple-600 hover:from-purple-500 hover:to-primary text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.45)] hover:shadow-[0_0_30px_rgba(168,85,247,0.75)] hover:scale-[1.02]",
+              btnText: "ASSINAR PLANO START",
               link: "https://ev.braip.com/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
               features: [
                 "2 Telas simultâneas",
@@ -707,7 +708,8 @@ function Index() {
               destaque: true,
               selo: "🔥 MAIS POPULAR — ECONOMIZE 60%",
               badge: "Recomendado",
-              btnStyle: "btn-cta bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_35px_rgba(168,85,247,0.85)] hover:scale-[1.03] font-black",
+              btnStyle: "btn-cta bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_35px_rgba(168,85,247,0.85)] hover:shadow-[0_0_55px_rgba(168,85,247,1)] hover:scale-[1.04] font-black py-4 px-6 text-sm sm:text-base",
+              btnText: "QUERO ASSINAR AGORA",
               link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
               features: [
                 "4 Telas simultâneas (Para a família toda)",
@@ -727,7 +729,8 @@ function Index() {
               destaque: false,
               selo: null as string | null,
               badge: "Economia 42%",
-              btnStyle: "bg-gradient-to-r from-purple-900/80 via-primary/30 to-purple-900/80 hover:from-primary/60 hover:to-purple-800 border border-primary/50 text-white shadow-md hover:shadow-glow",
+              btnStyle: "bg-gradient-to-r from-purple-600 via-primary to-purple-600 hover:from-purple-500 hover:to-primary text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.45)] hover:shadow-[0_0_30px_rgba(168,85,247,0.75)] hover:scale-[1.02]",
+              btnText: "ASSINAR PLANO PRO",
               link: "https://ev.braip.com/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
               features: [
                 "2 Telas simultâneas",
@@ -791,10 +794,10 @@ function Index() {
                     href={p.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`mt-6 w-full flex items-center justify-center gap-2 rounded-xl py-3.5 px-4 text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 ${p.btnStyle}`}
+                    className={`mt-6 w-full flex items-center justify-center gap-2 rounded-xl text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 ${p.btnStyle}`}
                   >
-                    <Zap className={p.destaque ? "size-4 text-amber-300" : "size-4"} />
-                    Assinar Agora
+                    <Zap className={p.destaque ? "size-5 fill-amber-300 text-amber-300 animate-pulse" : "size-4 text-purple-200"} />
+                    {p.btnText}
                   </a>
 
                   <div className={`my-6 h-px w-full ${p.destaque ? "bg-purple-400/30" : "bg-white/15"}`} />
