@@ -66,7 +66,17 @@ export function Rail({
   const scrollBy = (dir: number) => {
     const el = ref.current;
     if (!el) return;
-    el.scrollBy({ left: dir * Math.max(el.clientWidth * 0.8, 200), behavior: "smooth" });
+    const firstCard = el.querySelector<HTMLElement>(".snap-start");
+    if (firstCard) {
+      const style = window.getComputedStyle(el);
+      const gap = parseFloat(style.columnGap || style.gap) || 14;
+      const cardWidthWithGap = firstCard.offsetWidth + gap;
+      const visibleCards = Math.max(1, Math.floor((el.clientWidth - 16) / cardWidthWithGap));
+      const scrollAmount = visibleCards * cardWidthWithGap;
+      el.scrollBy({ left: dir * scrollAmount, behavior: "smooth" });
+    } else {
+      el.scrollBy({ left: dir * (el.clientWidth * 0.8), behavior: "smooth" });
+    }
   };
 
   return (
