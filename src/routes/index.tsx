@@ -693,9 +693,8 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
                         {item.badge}
                       </span>
                     </div>
-                    <h3 className="text-base font-extrabold text-white mb-2 tracking-tight flex items-center justify-between">
-                      <span>{item.title}</span>
-                      {item.link && <span className="text-xs text-emerald-400 font-bold underline ml-2">Falar no WhatsApp &rarr;</span>}
+                    <h3 className="text-base font-extrabold text-white mb-2 tracking-tight">
+                      {item.title}
                     </h3>
                     <p className="text-xs text-muted-foreground leading-relaxed font-medium">{item.desc}</p>
                   </div>
