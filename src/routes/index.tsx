@@ -119,6 +119,7 @@ import {
   Sparkles,
   Star,
   Zap,
+  Crown,
   CreditCard,
   Lock,
   QrCode,
@@ -681,6 +682,9 @@ function Index() {
             {
               id: "start",
               nome: "Plano START",
+              icon: Zap,
+              iconColor: "text-purple-400",
+              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 drop-shadow-[0_2px_12px_rgba(168,85,247,0.5)]",
               preco: "R$ 20",
               periodo: "mensal",
               sub: "Renovação mensal · Cancele a qualquer momento",
@@ -702,12 +706,15 @@ function Index() {
             {
               id: "prime",
               nome: "Plano PRIME",
+              icon: Crown,
+              iconColor: "text-amber-300 drop-shadow-[0_0_12px_rgba(245,158,11,0.8)]",
+              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-fuchsia-300 drop-shadow-[0_2px_18px_rgba(236,72,153,0.75)]",
               preco: "R$ 97",
               periodo: "1 ano",
               sub: "⚡ Equivale a apenas R$ 8,08/mês · 1 ano sem mensalidades",
               destaque: true,
               selo: "🔥 MAIS POPULAR — ECONOMIZE 60%",
-              badge: "Recomendado",
+              badge: "👑 Recomendado",
               btnStyle: "btn-cta bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_35px_rgba(168,85,247,0.85)] hover:shadow-[0_0_55px_rgba(168,85,247,1)] hover:scale-[1.04] font-black py-4 px-6 text-sm sm:text-base",
               btnText: "QUERO ASSINAR AGORA",
               link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
@@ -723,6 +730,9 @@ function Index() {
             {
               id: "pro",
               nome: "Plano PRO",
+              icon: Sparkles,
+              iconColor: "text-fuchsia-400",
+              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 drop-shadow-[0_2px_12px_rgba(168,85,247,0.5)]",
               preco: "R$ 69,90",
               periodo: "semestral",
               sub: "Equivale a R$ 11,65/mês · 6 meses de acesso",
@@ -746,7 +756,7 @@ function Index() {
               <div
                 className={`glass group relative flex flex-col justify-between h-full rounded-3xl backdrop-blur-2xl transition-all duration-500 ${
                   p.destaque
-                    ? "border-2 border-purple-400 bg-gradient-to-b from-purple-900/60 via-surface/90 to-purple-950/80 p-7 sm:p-9 shadow-[0_0_55px_rgba(168,85,247,0.45)] lg:-translate-y-3 lg:scale-[1.04] z-20 hover:border-accent hover:shadow-[0_0_70px_rgba(168,85,247,0.65)]"
+                    ? "border-2 border-purple-400 bg-gradient-to-b from-purple-900/70 via-surface/90 to-purple-950/80 p-7 sm:p-9 shadow-[0_0_55px_rgba(168,85,247,0.45)] lg:-translate-y-3 lg:scale-[1.04] z-20 hover:border-accent hover:shadow-[0_0_70px_rgba(168,85,247,0.65)]"
                     : "border border-white/20 bg-surface/60 p-6 sm:p-8 hover:border-white/35 hover:bg-surface/80 shadow-xl"
                 }`}
               >
@@ -758,14 +768,18 @@ function Index() {
                 )}
 
                 <div>
-                  <div className="flex items-center justify-between gap-2">
-                    <h3 className={`font-display font-black tracking-tight uppercase ${p.destaque ? "text-xl text-purple-100" : "text-lg text-white"}`}>
-                      {p.nome}
-                    </h3>
-                    <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider border ${
+                  {/* CABEÇALHO COM NOME DO PLANO EM DESTAQUE E ÍCONE */}
+                  <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-4">
+                    <div className="flex items-center gap-2.5">
+                      <p.icon className={`size-6 sm:size-7 shrink-0 ${p.iconColor}`} />
+                      <h3 className={`font-display font-black tracking-tight uppercase ${p.titleGradient} ${p.destaque ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}>
+                        {p.nome}
+                      </h3>
+                    </div>
+                    <span className={`shrink-0 rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-wider border ${
                       p.destaque
-                        ? "bg-primary/30 text-purple-100 border-purple-300/50 shadow-sm"
-                        : "bg-white/5 text-muted-foreground border-white/15"
+                        ? "bg-gradient-to-r from-amber-500/30 to-purple-600/30 text-amber-200 border-amber-400/50 shadow-[0_0_12px_rgba(245,158,11,0.4)]"
+                        : "bg-white/10 text-purple-200 border-white/20"
                     }`}>
                       {p.badge}
                     </span>
