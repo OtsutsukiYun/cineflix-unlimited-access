@@ -434,6 +434,72 @@ function Index() {
           </div>
         </section>
 
+        {/* COMPARATIVO DE PREÇOS DE PLATAFORMAS */}
+        <section id="comparativo" className="relative z-10 mx-auto w-[94%] max-w-6xl py-6 sm:py-10">
+          <SmoothCardReveal delay={0}>
+            <div className="text-center mb-6">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-accent uppercase shadow-sm mb-4">
+                <DollarSign className="size-3.5 text-accent" /> Economia Real
+              </span>
+              <h2 className="text-2xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white flex flex-col items-center sm:block text-center">
+                <span>Por que pagar caro em</span>{" "}
+                <span className="text-hot mt-0.5 sm:mt-0 sm:ml-2">várias assinaturas?</span>
+              </h2>
+              <p className="mx-auto mt-2 max-w-xl text-xs sm:text-sm text-muted-foreground font-medium leading-relaxed">
+                Veja o valor mensal das principais plataformas se contratadas individualmente:
+              </p>
+            </div>
+          </SmoothCardReveal>
+
+          {/* GRID DE PLATAFORMAS */}
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            {plataformas.map((p, i) => (
+              <SmoothCardReveal key={p.nome} delay={40 + i * 30}>
+                <div className="glass flex flex-col items-center justify-between rounded-2xl p-4 text-center border border-white/10 bg-black/40 backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:scale-105 h-full">
+                  <div className="flex h-10 items-center justify-center mb-2">
+                    {p.logo ? (
+                      <img
+                        src={p.logo}
+                        alt={p.nome}
+                        className={`max-h-7 max-w-[90px] object-contain ${p.invert ? "brightness-0 invert" : ""}`}
+                      />
+                    ) : (
+                      <span className="font-extrabold text-sm text-white" style={{ color: p.cor }}>
+                        {p.nome}
+                      </span>
+                    )}
+                  </div>
+                  <div>
+                    <p className="text-[11px] font-medium text-muted-foreground mb-0.5">{p.nome}</p>
+                    <p className="text-xs font-black text-rose-400 font-mono">{p.preco}/mês</p>
+                  </div>
+                </div>
+              </SmoothCardReveal>
+            ))}
+          </div>
+
+          {/* BANNER DE COMPARATIVO DE ECONOMIA */}
+          <SmoothCardReveal delay={200}>
+            <div className="mt-6 rounded-3xl border border-emerald-500/30 bg-gradient-to-r from-emerald-950/50 via-[#0a1f18] to-purple-950/50 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_45px_rgba(16,185,129,0.15)] flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="text-center md:text-left">
+                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-900/40 px-3 py-1 text-[11px] font-bold text-emerald-300 mb-3">
+                  <Check className="size-3.5 text-emerald-400" /> Economize mais de R$ 360,00/mês
+                </div>
+                <h3 className="text-xl sm:text-2xl font-black text-white">
+                  Total individual: <span className="line-through text-rose-400">R$ 380,00/mês</span>
+                </h3>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1">
+                  Na <strong className="text-white">Cineflix</strong>, você assiste a <strong className="text-emerald-400">TUDO</strong> isso por apenas <strong className="text-accent text-sm sm:text-base">R$ 20,00/mês</strong>!
+                </p>
+              </div>
+
+              <SmoothLink href="#planos" className="btn-cta text-xs sm:text-sm px-6 py-3 shrink-0">
+                <Zap className="size-4" /> QUERO ECONOMIZAR AGORA
+              </SmoothLink>
+            </div>
+          </SmoothCardReveal>
+        </section>
+
         {/* FEATURES */}
         <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-4 sm:py-6">
           <SmoothCardReveal delay={0}>
