@@ -676,48 +676,46 @@ function Index() {
             </div>
           </Reveal>
 
-        <div className="relative z-10 mt-8 sm:mt-12 grid items-center gap-6 lg:gap-8 lg:grid-cols-3">
+        <div className="relative z-10 mt-8 sm:mt-10 grid items-stretch gap-6 lg:grid-cols-3">
           {[
             {
               id: "start",
               nome: "Plano START",
               preco: "R$ 20",
               periodo: "mensal",
-              sub: "Cobrado mensalmente · Cancele quando quiser",
+              sub: "Renovação mensal · Cancele a qualquer momento",
               destaque: false,
               selo: null as string | null,
               badge: "Sem Fidelidade",
-              badgeStyle: "bg-surface-2/80 text-foreground/90 border-white/15",
-              btnStyle: "border border-white/20 bg-white/10 text-white hover:bg-white/20 hover:border-white/30 shadow-md",
+              btnStyle: "bg-white/10 hover:bg-white/20 border border-white/15 text-white",
               link: "https://ev.braip.com/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
               features: [
                 "2 Telas simultâneas",
-                "Mais de 60.000 conteúdos em até 4K",
-                "Futebol & Esportes Ao Vivo (60fps)",
+                "Acervo completo (+60.000 títulos)",
+                "Futebol & Esportes Ao Vivo em HD/4K",
                 "Smart TV, Celular, TV Box e PC",
                 "Sem fidelidade — cancelamento livre",
-                "Suporte via WhatsApp",
+                "Suporte 7 dias via WhatsApp",
               ],
             },
             {
               id: "prime",
               nome: "Plano PRIME",
               preco: "R$ 97",
-              periodo: "1 ano completo",
-              sub: "⚡ Apenas R$ 8,08/mês · Economia de R$ 143/ano",
+              periodo: "1 ano",
+              sub: "Equivale a R$ 8,08/mês · 1 ano sem mensalidades",
               destaque: true,
-              selo: "🔥 MAIS VENDIDO — 60% DE DESCONTO",
-              badge: "Máxima Economia",
-              badgeStyle: "bg-amber-400/20 text-amber-300 border-amber-400/50 shadow-[0_0_15px_rgba(251,191,36,0.5)] font-black tracking-widest",
-              btnStyle: "btn-cta bg-gradient-to-r from-amber-400 via-primary via-purple-500 to-pink-500 text-white font-black text-base py-4 shadow-[0_0_40px_rgba(168,85,247,0.9)] hover:scale-105 animate-pulse-ring",
+              selo: "MAIS POPULAR — ECONOMIZE 60%",
+              badge: "Recomendado",
+              btnStyle: "btn-cta text-white shadow-glow",
               link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
               features: [
-                "4 Telas simultâneas (Família toda)",
-                "1 Ano completo sem pagar nada a mais",
-                "Economia real de R$ 143,00 no ano",
-                "Mais de 60.000 conteúdos em até 4K",
+                "4 Telas simultâneas (Para a família)",
+                "1 Ano completo de acesso sem mensalidades",
+                "Economize mais de R$ 140/ano",
+                "Acervo completo em alta qualidade até 4K",
                 "Todos os canais VIP & Esportes Ao Vivo",
-                "Suporte Prioritário VIP 24/7",
+                "Suporte VIP prioritário 24/7",
               ],
             },
             {
@@ -728,61 +726,56 @@ function Index() {
               sub: "Equivale a R$ 11,65/mês · 6 meses de acesso",
               destaque: false,
               selo: null as string | null,
-              badge: "Economize 42%",
-              badgeStyle: "bg-surface-2/80 text-amber-300 border-amber-500/30",
-              btnStyle: "border border-white/20 bg-white/10 text-white hover:bg-white/20 hover:border-white/30 shadow-md",
+              badge: "Economia 42%",
+              btnStyle: "bg-white/10 hover:bg-white/20 border border-white/15 text-white",
               link: "https://ev.braip.com/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
               features: [
                 "2 Telas simultâneas",
                 "6 Meses de acesso sem mensalidades",
-                "Mais de 60.000 conteúdos em até 4K",
-                "Futebol & Esportes Ao Vivo",
+                "Acervo completo (+60.000 títulos)",
+                "Futebol & Esportes Ao Vivo em HD/4K",
                 "Smart TV, Celular, TV Box e PC",
-                "Ativação imediata em 2 minutos",
+                "Ativação imediata sem burocracia",
               ],
             },
           ].map((p, i) => (
             <SmoothCardReveal key={p.nome} delay={100 + i * 120}>
               <div
-                className={`group relative flex flex-col justify-between rounded-3xl transition-all duration-500 ${
+                className={`group relative flex flex-col justify-between h-full rounded-2xl p-6 sm:p-8 backdrop-blur-xl transition-all duration-300 ${
                   p.destaque
-                    ? "glass border-2 border-purple-400/90 bg-gradient-to-b from-purple-900/90 via-[#3a0963]/95 to-[#160226] p-8 sm:p-10 shadow-[0_0_70px_rgba(168,85,247,0.65)] lg:scale-110 z-30 hover:border-pink-400 hover:shadow-[0_0_90px_rgba(168,85,247,0.85)]"
-                    : "glass border border-white/15 bg-surface/50 backdrop-blur-xl p-6 sm:p-7 opacity-90 hover:opacity-100 hover:border-white/30 hover:-translate-y-1.5"
+                    ? "border-2 border-primary/80 bg-purple-950/40 shadow-[0_0_40px_rgba(168,85,247,0.3)] hover:border-primary"
+                    : "border border-white/10 bg-surface/50 hover:border-white/25 hover:bg-surface/70"
                 }`}
               >
                 {p.selo && (
-                  <span className="absolute -top-5 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-400 via-primary to-accent px-6 py-2 text-xs font-black tracking-widest text-white uppercase shadow-[0_0_30px_rgba(168,85,247,0.9)] animate-pulse">
-                    <Sparkles className="size-4 fill-amber-200 text-amber-200" />
+                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-1 text-[11px] font-extrabold tracking-wider text-white uppercase shadow-md">
+                    <Sparkles className="size-3 text-white" />
                     {p.selo}
                   </span>
                 )}
 
                 <div>
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className={`font-display font-black tracking-widest uppercase ${p.destaque ? "text-xl text-amber-300 drop-shadow-md" : "text-base text-white"}`}>
+                    <h3 className="font-display font-bold text-lg text-white">
                       {p.nome}
                     </h3>
-                    <span className={`rounded-full px-3 py-1 text-[10px] uppercase tracking-wider border ${p.badgeStyle}`}>
+                    <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider border ${
+                      p.destaque
+                        ? "bg-primary/20 text-purple-200 border-primary/40"
+                        : "bg-white/5 text-muted-foreground border-white/10"
+                    }`}>
                       {p.badge}
                     </span>
                   </div>
 
-                  <div className="mt-5 flex items-baseline gap-1.5">
-                    <span
-                      className={`font-display font-black text-white ${
-                        p.destaque
-                          ? "text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-purple-200 drop-shadow-[0_0_25px_rgba(168,85,247,0.9)]"
-                          : "text-4xl sm:text-5xl"
-                      }`}
-                    >
+                  <div className="mt-4 flex items-baseline gap-1.5">
+                    <span className="font-display text-4xl sm:text-5xl font-extrabold text-white">
                       {p.preco}
                     </span>
-                    <span className={`font-semibold ${p.destaque ? "text-purple-200 text-base" : "text-muted-foreground text-sm"}`}>
-                      /{p.periodo}
-                    </span>
+                    <span className="text-sm font-semibold text-muted-foreground">/{p.periodo}</span>
                   </div>
 
-                  <p className={`mt-2 text-xs font-bold leading-snug ${p.destaque ? "text-amber-300 bg-amber-400/10 px-3 py-1.5 rounded-xl border border-amber-400/30" : "text-muted-foreground"}`}>
+                  <p className="mt-1.5 text-xs text-muted-foreground font-medium">
                     {p.sub}
                   </p>
 
@@ -790,19 +783,18 @@ function Index() {
                     href={p.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`mt-7 w-full flex items-center justify-center gap-2 rounded-2xl tracking-wider uppercase transition-all duration-300 ${p.btnStyle}`}
+                    className={`mt-6 w-full flex items-center justify-center gap-2 rounded-xl py-3 px-4 text-xs sm:text-sm font-bold uppercase tracking-wide transition-all duration-200 ${p.btnStyle}`}
                   >
-                    <Zap className={p.destaque ? "size-5 text-amber-300" : "size-4"} />
-                    Comprar agora
+                    Assinar Agora
                   </a>
 
-                  <div className={`my-6 h-px w-full ${p.destaque ? "bg-purple-400/30" : "bg-white/10"}`} />
+                  <div className="my-6 h-px w-full bg-white/10" />
 
-                  <ul className="space-y-3.5 text-xs sm:text-sm">
+                  <ul className="space-y-3 text-xs sm:text-sm">
                     {p.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5">
-                        <Check className={`mt-0.5 size-4 shrink-0 ${p.destaque ? "text-amber-400 font-bold" : "text-emerald-400"}`} />
-                        <span className={p.destaque ? "text-white font-semibold" : "text-foreground/90 font-medium"}>{f}</span>
+                        <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <span className="text-foreground/90 font-medium">{f}</span>
                       </li>
                     ))}
                   </ul>
