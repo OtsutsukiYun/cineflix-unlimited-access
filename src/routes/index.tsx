@@ -690,136 +690,133 @@ function Index() {
             </p>
           </Reveal>
 
-        <div className="relative z-10 mt-6 sm:mt-7 pt-5 sm:pt-6 grid items-start gap-8 lg:gap-6 lg:grid-cols-3">
+        <div className="relative z-10 mt-6 sm:mt-7 pt-3 sm:pt-4 grid items-stretch gap-6 lg:gap-6 lg:grid-cols-3">
           {[
             {
               id: "start",
               nome: "Plano START",
-              preco: "R$20",
+              preco: "R$ 20",
               periodo: "mensal",
-              telas: "Use 2 telas simultaneamente",
-              extra: "Plano Mensal Sem Fidelidade",
+              sub: "Renovação mensal sem fidelidade",
+              telas: "2 telas simultâneas",
               destaque: false,
               selo: null as string | null,
               badge: "Sem Fidelidade",
-              corBorda: "border border-cyan-500/40 hover:border-cyan-300",
-              corGlow: "shadow-[0_0_35px_rgba(6,182,212,0.35)] hover:shadow-[0_0_55px_rgba(6,182,212,0.65)]",
-              bgCard: "bg-gradient-to-b from-cyan-950/40 via-[#0a1828]/90 to-[#060e1a]/98 backdrop-blur-2xl",
-              badgeStyle: "bg-cyan-900/60 text-cyan-200 border-cyan-400/50 shadow-[0_0_12px_rgba(6,182,212,0.35)]",
-              btnStyle: "bg-gradient-to-r from-cyan-600 via-teal-600 to-blue-600 text-white shadow-[0_0_25px_rgba(6,182,212,0.6)] hover:shadow-[0_0_45px_rgba(6,182,212,0.9)] hover:scale-[1.03]",
+              badgeStyle: "bg-surface-2/80 text-foreground/80 border-white/15",
+              btnStyle: "border border-white/20 bg-white/10 text-white hover:bg-white/20 hover:border-white/30 shadow-md",
               link: "https://ev.braip.com/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
+              features: [
+                "2 Telas simultâneas",
+                "Mais de 60.000 conteúdos",
+                "Futebol & Esportes Ao Vivo",
+                "Qualidade em até 4K (SD/HD/FHD/4K)",
+                "Smart TV, Celular, TV Box e PC",
+                "Sem fidelidade — cancelamento livre",
+              ],
             },
             {
               id: "prime",
               nome: "Plano PRIME",
-              preco: "R$97",
+              preco: "R$ 97",
               periodo: "1 ano",
-              telas: "Use 4 telas simultaneamente",
-              extra: "1 ano de acesso · sem mensalidade",
+              sub: "Apenas R$ 8,08/mês · Sem mensalidades",
+              telas: "4 telas simultâneas",
               destaque: true,
-              selo: "🔥 Mais escolhido — 60% OFF",
+              selo: "🔥 MAIS ESCOLHIDO — 60% OFF",
               badge: "Máxima Economia",
-              corBorda: "border-2 border-purple-300 shadow-[0_0_55px_rgba(168,85,247,0.65)]",
-              corGlow: "shadow-[0_0_80px_rgba(168,85,247,0.75)] hover:shadow-[0_0_100px_rgba(168,85,247,1)]",
-              bgCard: "bg-gradient-to-b from-purple-900/90 via-[#3c0c61]/95 to-[#1a042e] backdrop-blur-2xl",
-              badgeStyle: "bg-primary text-white border-purple-200 shadow-[0_0_20px_rgba(168,85,247,0.8)] font-black",
-              btnStyle: "animate-vibrate bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_35px_rgba(168,85,247,0.85)] hover:shadow-[0_0_55px_rgba(168,85,247,1)] hover:scale-[1.04]",
+              badgeStyle: "bg-primary text-white border-purple-300/50 shadow-[0_0_15px_rgba(168,85,247,0.6)] font-extrabold",
+              btnStyle: "btn-cta bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_35px_rgba(168,85,247,0.7)] hover:shadow-[0_0_55px_rgba(168,85,247,0.95)] hover:scale-[1.03]",
               link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
+              features: [
+                "4 Telas simultâneas (Família)",
+                "1 Ano completo de acesso",
+                "Economize mais de R$ 140/ano",
+                "Mais de 60.000 conteúdos em até 4K",
+                "Todos os canais VIP & Esportes Ao Vivo",
+                "Suporte prioritário 24/7",
+              ],
             },
             {
               id: "pro",
               nome: "Plano PRO",
-              preco: "R$69,90",
+              preco: "R$ 69,90",
               periodo: "semestral",
-              telas: "Use 2 telas simultaneamente",
-              extra: "Plano Semestral Economia",
+              sub: "Apenas R$ 11,65/mês · 6 meses de acesso",
+              telas: "2 telas simultâneas",
               destaque: false,
               selo: null as string | null,
               badge: "Economize 42%",
-              corBorda: "border border-amber-500/40 hover:border-amber-300",
-              corGlow: "shadow-[0_0_35px_rgba(245,158,11,0.35)] hover:shadow-[0_0_55px_rgba(245,158,11,0.65)]",
-              bgCard: "bg-gradient-to-b from-amber-950/30 via-[#180e24]/90 to-[#0b0314]/98 backdrop-blur-2xl",
-              badgeStyle: "bg-amber-950/80 text-amber-300 border-amber-400/50 shadow-[0_0_12px_rgba(245,158,11,0.35)]",
-              btnStyle: "bg-gradient-to-r from-amber-600 via-amber-700 to-purple-800 text-white shadow-[0_0_25px_rgba(245,158,11,0.55)] hover:shadow-[0_0_45px_rgba(245,158,11,0.85)] hover:scale-[1.03]",
+              badgeStyle: "bg-surface-2/80 text-amber-300 border-amber-500/30",
+              btnStyle: "border border-white/20 bg-white/10 text-white hover:bg-white/20 hover:border-white/30 shadow-md",
               link: "https://ev.braip.com/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
+              features: [
+                "2 Telas simultâneas",
+                "6 Meses de acesso contínuo",
+                "Mais de 60.000 conteúdos em até 4K",
+                "Futebol & Esportes Ao Vivo",
+                "Smart TV, Celular, TV Box e PC",
+                "Ativação imediata sem burocracia",
+              ],
             },
           ].map((p, i) => (
             <SmoothCardReveal key={p.nome} delay={100 + i * 120}>
               <div
-                className={`group relative h-full rounded-2xl [transform:translateZ(0)] [backface-visibility:hidden] transition-[transform,border-color,box-shadow] duration-300 ${p.corBorda} ${p.corGlow} ${p.bgCard} ${
+                className={`glass group relative flex flex-col justify-between h-full rounded-3xl transition-all duration-300 ${
                   p.destaque
-                    ? "pt-9 pb-8 px-6 sm:px-9 lg:scale-[1.04] z-20 hover:scale-[1.06]"
-                    : "p-6 sm:p-9 hover:-translate-y-2"
+                    ? "border-2 border-primary/70 bg-gradient-to-b from-purple-950/70 via-surface/90 to-surface/95 backdrop-blur-2xl p-7 sm:p-9 shadow-[0_0_50px_rgba(168,85,247,0.35)] lg:-translate-y-2 z-20 hover:border-accent"
+                    : "border border-white/15 bg-surface/40 backdrop-blur-xl p-6 sm:p-8 hover:border-white/30 hover:-translate-y-1.5"
                 }`}
               >
-                {/* BRILHO REFLEXIVO DE VIDRO 3D NO CARD */}
-                <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl [transform:translateZ(0)] [isolation:isolate]">
-                  <div className="pointer-events-none absolute -top-20 -left-20 size-40 rounded-full bg-white/5 blur-2xl transition-all duration-700 group-hover:scale-150 group-hover:bg-white/10" />
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent opacity-80" />
-                </div>
-
                 {p.selo && (
-                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 via-primary to-accent px-5 py-1.5 text-xs font-black tracking-wider text-white uppercase shadow-[0_0_25px_rgba(168,85,247,0.85)]">
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 via-primary to-accent px-5 py-1.5 text-xs font-black tracking-wider text-white uppercase shadow-[0_0_25px_rgba(168,85,247,0.8)]">
                     <Sparkles className="size-3.5 fill-current" />
                     {p.selo}
                   </span>
                 )}
 
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <h3 className={`font-display text-sm font-extrabold tracking-[0.18em] uppercase ${p.destaque ? "text-purple-200" : "text-accent"}`}>
-                    {p.nome}
-                  </h3>
-                  <span className={`rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider border transition-all duration-300 ${p.badgeStyle}`}>
-                    {p.badge}
-                  </span>
-                </div>
+                <div>
+                  <div className="flex items-center justify-between gap-2">
+                    <h3 className={`font-display text-base font-black tracking-widest uppercase ${p.destaque ? "text-purple-200" : "text-white"}`}>
+                      {p.nome}
+                    </h3>
+                    <span className={`rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider border ${p.badgeStyle}`}>
+                      {p.badge}
+                    </span>
+                  </div>
 
-                <div className="mt-5 flex items-end gap-2">
-                  <span
-                    className={`font-display leading-none transition-transform duration-300 group-hover:scale-105 ${
-                      p.destaque
-                        ? "text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-fuchsia-300 drop-shadow-[0_2px_12px_rgba(168,85,247,0.8)]"
-                        : "text-5xl font-extrabold text-white drop-shadow-md"
-                    }`}
+                  <div className="mt-5 flex items-baseline gap-1.5">
+                    <span
+                      className={`font-display text-4xl sm:text-5xl font-black text-white ${
+                        p.destaque ? "drop-shadow-[0_2px_15px_rgba(168,85,247,0.8)] text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-fuchsia-300" : ""
+                      }`}
+                    >
+                      {p.preco}
+                    </span>
+                    <span className="text-sm font-semibold text-muted-foreground">/{p.periodo}</span>
+                  </div>
+
+                  <p className="mt-1 text-xs text-muted-foreground font-medium">{p.sub}</p>
+
+                  <a
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`mt-6 w-full flex items-center justify-center gap-2 rounded-2xl py-3.5 px-4 text-xs sm:text-sm font-extrabold uppercase tracking-wide transition-all duration-300 ${p.btnStyle}`}
                   >
-                    {p.preco}
-                  </span>
-                  <span className={`pb-2 text-sm ${p.destaque ? "text-purple-200/90 font-semibold" : "text-purple-300/80 font-medium"}`}>
-                    /{p.periodo}
-                  </span>
+                    Comprar agora
+                  </a>
+
+                  <div className="my-6 h-px w-full bg-white/10" />
+
+                  <ul className="space-y-3 text-xs sm:text-sm">
+                    {p.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5">
+                        <Check className={`mt-0.5 size-4 shrink-0 ${p.destaque ? "text-accent" : "text-emerald-400"}`} />
+                        <span className="text-foreground/90 font-medium">{f}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <p className={`mt-4 text-sm ${p.destaque ? "text-purple-100/90 font-medium" : "text-muted-foreground"}`}>
-                  Acesso ilimitado a todos os conteúdos, a diversão é garantida.
-                </p>
-
-                <a
-                  href={p.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`mt-7 w-full flex items-center justify-center gap-2 rounded-full py-4 text-sm font-extrabold uppercase tracking-wide transition-all duration-300 animate-float ${p.btnStyle}`}
-                >
-                  Comprar agora
-                </a>
-
-                <ul className="mt-8 space-y-3 text-sm">
-                  {[
-                    p.extra,
-                    p.telas,
-                    "Mais de 60.000 conteúdos",
-                    "Qualidade até 4K (SD/HD/FHD/4K)",
-                    "Guia de Programação [EPG]",
-                    "Smartphone / Tablet",
-                    "TV Box / Chromecast",
-                    "Smart TV e Computador",
-                    "Programação Adultos [Opcional]",
-                    "Pacote Filmes e Séries",
-                  ].map((v) => (
-                    <li key={v} className="flex items-start gap-2.5">
-                      <Check className={`mt-0.5 size-4 shrink-0 transition-transform duration-300 group-hover:scale-110 ${p.destaque ? "text-purple-300" : "text-accent"}`} />
-                      <span className={p.destaque ? "text-foreground font-medium" : "text-muted-foreground"}>{v}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </SmoothCardReveal>
           ))}
