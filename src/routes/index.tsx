@@ -604,21 +604,16 @@ function Index() {
           </SmoothCardReveal>
 
           {/* GRID DE PLATAFORMAS */}
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {plataformas.map((p, i) => (
               <SmoothCardReveal key={p.nome} delay={40 + i * 30}>
-                <div
-                  className="glass flex flex-col items-center justify-between rounded-2xl p-4 text-center border border-white/10 bg-black/40 backdrop-blur-md transition-all duration-300 hover:border-primary/50 hover:scale-105 h-full group"
-                  style={{
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
-                  }}
-                >
-                  <div className="flex h-11 items-center justify-center mb-2 w-full">
+                <div className="group relative flex flex-col items-center justify-between rounded-2xl p-4 text-center border-2 border-white/15 bg-gradient-to-b from-white/10 via-surface-2/80 to-surface/90 backdrop-blur-xl shadow-[0_8px_25px_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-accent/70 hover:shadow-[0_0_30px_rgba(244,63,94,0.35)] hover:-translate-y-1.5 h-full">
+                  <div className="flex h-12 items-center justify-center mb-2.5 w-full rounded-xl bg-black/60 border border-white/10 p-2 shadow-inner group-hover:border-white/25 transition-colors">
                     {p.logo ? (
                       <img
                         src={p.logo}
                         alt={p.nome}
-                        className="max-h-8 max-w-[100px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] transition-transform duration-300 group-hover:scale-110"
+                        className="max-h-8 max-w-[100px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] transition-transform duration-300 group-hover:scale-110"
                       />
                     ) : (
                       <span className="font-extrabold text-sm text-white" style={{ color: p.cor }}>
@@ -626,9 +621,11 @@ function Index() {
                       </span>
                     )}
                   </div>
-                  <div>
-                    <p className="text-[11px] font-semibold text-muted-foreground mb-0.5">{p.nome}</p>
-                    <p className="text-xs font-black text-rose-400 font-mono">{p.preco}/mês</p>
+                  <div className="w-full">
+                    <p className="text-[11px] font-bold text-muted-foreground/90 mb-1">{p.nome}</p>
+                    <span className="inline-block w-full rounded-full border border-rose-500/30 bg-rose-500/15 py-1 px-2 text-xs font-black text-rose-300 font-mono shadow-[0_0_12px_rgba(244,63,94,0.2)]">
+                      {p.preco}/mês
+                    </span>
                   </div>
                 </div>
               </SmoothCardReveal>
@@ -637,21 +634,31 @@ function Index() {
 
           {/* BANNER DE COMPARATIVO DE ECONOMIA */}
           <SmoothCardReveal delay={200}>
-            <div className="mt-6 rounded-3xl border border-emerald-500/30 bg-gradient-to-r from-emerald-950/50 via-[#0a1f18] to-purple-950/50 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_45px_rgba(16,185,129,0.15)] flex flex-col md:flex-row items-center justify-between gap-6">
-              <div className="text-center md:text-left">
-                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-900/40 px-3 py-1 text-[11px] font-bold text-emerald-300 mb-3">
-                  <Check className="size-3.5 text-emerald-400" /> Economize mais de R$ 360,00/mês
+            <div className="relative mt-8 overflow-hidden rounded-3xl border-2 border-emerald-400/60 bg-gradient-to-r from-emerald-950/90 via-[#072418] to-purple-950/90 p-6 sm:p-9 backdrop-blur-2xl shadow-[0_0_55px_rgba(16,185,129,0.3)] flex flex-col md:flex-row items-center justify-between gap-6">
+              {/* GLOW DE FUNDO INTERNO */}
+              <div className="pointer-events-none absolute -right-10 -top-10 size-60 rounded-full bg-emerald-500/20 blur-3xl" />
+              <div className="pointer-events-none absolute -left-10 -bottom-10 size-60 rounded-full bg-purple-500/20 blur-3xl" />
+
+              <div className="relative z-10 text-center md:text-left">
+                <div className="inline-flex items-center gap-2 rounded-full border-2 border-emerald-400/50 bg-emerald-900/60 px-3.5 py-1.5 text-xs font-extrabold text-emerald-200 mb-3 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                  <Check className="size-4 text-emerald-400" /> Economize mais de R$ 360,00/mês
                 </div>
-                <h3 className="text-xl sm:text-2xl font-black text-white">
-                  Total individual: <span className="line-through text-rose-400">R$ 380,00/mês</span>
+                <h3 className="text-xl sm:text-3xl font-black text-white tracking-tight flex flex-wrap items-center justify-center md:justify-start gap-2">
+                  <span>Total individual:</span>
+                  <span className="inline-block rounded-xl border-2 border-rose-500/50 bg-rose-950/70 px-3 py-1 text-rose-300 line-through font-mono shadow-[0_0_20px_rgba(244,63,94,0.4)]">
+                    R$ 380,00/mês
+                  </span>
                 </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground mt-1">
-                  Na <strong className="text-white">Cineflix</strong>, você assiste a <strong className="text-emerald-400">TUDO</strong> isso por apenas <strong className="text-accent text-sm sm:text-base">R$ 20,00/mês</strong>!
+                <p className="text-xs sm:text-base text-muted-foreground mt-2 font-medium">
+                  Na <strong className="text-white font-black">Cineflix</strong>, você assiste a <strong className="text-emerald-400 font-extrabold underline decoration-emerald-400/50 underline-offset-4">TUDO</strong> isso por apenas <strong className="text-accent text-base sm:text-xl font-black font-mono">R$ 20,00/mês</strong>!
                 </p>
               </div>
 
-              <SmoothLink href="#planos" className="btn-cta text-xs sm:text-sm px-6 py-3 shrink-0">
-                <Zap className="size-4" /> QUERO ECONOMIZAR AGORA
+              <SmoothLink
+                href="#planos"
+                className="relative z-10 shrink-0 inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 px-8 py-4 text-sm sm:text-base font-black text-slate-950 tracking-wide uppercase shadow-[0_0_40px_rgba(16,185,129,0.85)] hover:shadow-[0_0_65px_rgba(16,185,129,1)] hover:scale-105 transition-all duration-300 active:scale-95"
+              >
+                <Zap className="size-5 fill-slate-950 text-slate-950 animate-pulse" /> QUERO ECONOMIZAR AGORA
               </SmoothLink>
             </div>
           </SmoothCardReveal>
