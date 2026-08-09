@@ -628,7 +628,7 @@ function Index() {
               },
             ].map((item, i) => (
               <SmoothCardReveal key={item.title} delay={50 + i * 80}>
-                <div className="glass flex flex-col justify-between rounded-2xl p-6 border border-white/10 bg-surface/40 backdrop-blur-xl h-full hover:border-white/25 hover:-translate-y-1 transition-all">
+                <div className="glass flex flex-col justify-between rounded-2xl p-6 bg-surface/50 h-full hover:border-white/30 hover:-translate-y-1 transition-all">
                   <div>
                     <div className={`inline-flex size-11 items-center justify-center rounded-xl border ${item.color} mb-4`}>
                       <item.icon className="size-5" />
@@ -754,7 +754,7 @@ function Index() {
           ].map((p, i) => (
             <SmoothCardReveal key={p.nome} delay={100 + i * 120}>
               <div
-                className={`glass group relative flex flex-col justify-between h-full rounded-3xl backdrop-blur-2xl transition-all duration-500 ${
+                className={`glass group relative flex flex-col justify-between h-full rounded-3xl overflow-hidden transition-all duration-500 ${
                   p.destaque
                     ? "border-2 border-purple-400 bg-gradient-to-b from-purple-900/70 via-surface/90 to-purple-950/80 p-7 sm:p-9 shadow-[0_0_55px_rgba(168,85,247,0.45)] lg:-translate-y-3 lg:scale-[1.04] z-20 hover:border-accent hover:shadow-[0_0_70px_rgba(168,85,247,0.65)]"
                     : "border border-white/20 bg-surface/60 p-6 sm:p-8 hover:border-white/35 hover:bg-surface/80 shadow-xl"
@@ -835,7 +835,7 @@ function Index() {
 
         {/* PAINEL COMPACTO DE GARANTIA E PAGAMENTO */}
         <SmoothCardReveal delay={150}>
-          <div className="mx-auto max-w-5xl rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-8 border border-white/10 bg-white/5 backdrop-blur-2xl shadow-[0_8px_30px_rgb(0,0,0,0.5)] mt-10 sm:mt-16 relative overflow-hidden">
+          <div className="glass mx-auto max-w-5xl rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-8 border border-white/10 bg-surface/80 shadow-[0_8px_30px_rgb(0,0,0,0.5)] mt-10 sm:mt-16 relative overflow-hidden">
             {/* Brilho de topo sutil para dar acabamento premium sem parecer um plano */}
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
             
@@ -853,38 +853,34 @@ function Index() {
                   <h4 className="font-display text-sm sm:text-lg font-bold text-white drop-shadow-md leading-tight">
                     Experimente sem compromisso
                   </h4>
-                  <p className="mt-1 text-[11px] sm:text-xs text-muted-foreground leading-relaxed max-w-[280px]">
-                    Se não gostar, devolvemos 100% do valor.
+                  <p className="mt-0.5 text-xs text-muted-foreground font-medium">
+                    Satisfação garantida ou seu dinheiro de volta em até 7 dias.
                   </p>
                 </div>
               </div>
 
-              {/* LADO DIREITO: FORMAS DE PAGAMENTO ACEITAS */}
-              <div className="flex flex-row items-center gap-4 sm:gap-6 md:pl-10">
-                <div className="flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full bg-primary/10 border border-primary/20 text-accent shadow-sm">
-                  <CreditCard className="size-6 sm:size-7" />
+              {/* LADO DIREITO: FORMAS DE PAGAMENTO */}
+              <div className="flex flex-col justify-center gap-2 md:pl-8">
+                <div className="flex items-center gap-2">
+                  <Lock className="size-3.5 text-emerald-400" />
+                  <span className="text-xs font-bold text-white">Pagamento 100% Seguro &amp; Encriptado</span>
                 </div>
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-purple-300">Pagamento</span>
-                    <span className="rounded-full bg-purple-500/20 px-2 py-0.5 text-[9px] font-extrabold tracking-wider text-purple-200 uppercase">Seguro</span>
-                  </div>
-                  <h4 className="font-display text-sm sm:text-lg font-bold text-white drop-shadow-md leading-tight">
-                    Ativação Imediata
-                  </h4>
-                  <div className="flex flex-wrap items-center gap-2 mt-2">
-                    <span className="flex items-center gap-1.5 rounded-full border border-purple-400/30 bg-purple-950/40 px-2.5 py-1 text-[10px] sm:text-xs font-bold text-purple-100 backdrop-blur-md transition-all hover:border-purple-400/60">
-                      <QrCode className="size-3.5 text-purple-400" /> PIX
-                    </span>
-                    <span className="flex items-center gap-1.5 rounded-full border border-purple-400/30 bg-purple-950/40 px-2.5 py-1 text-[10px] sm:text-xs font-bold text-purple-100 backdrop-blur-md transition-all hover:border-purple-400/60">
-                      <CreditCard className="size-3.5 text-purple-400" /> Cartão 12x
-                    </span>
-                  </div>
+                <p className="text-[11px] text-muted-foreground font-medium">
+                  Aceitamos Pix (aprovação imediata) e cartão de crédito em até 12x.
+                </p>
+                <div className="mt-1 flex flex-wrap items-center gap-2">
+                  <span className="flex items-center gap-1.5 rounded-full border border-purple-400/30 bg-purple-950/40 px-2.5 py-1 text-[10px] sm:text-xs font-bold text-purple-100 transition-all hover:border-purple-400/60">
+                    <QrCode className="size-3.5 text-emerald-400" /> Pix Instantâneo
+                  </span>
+                  <span className="flex items-center gap-1.5 rounded-full border border-purple-400/30 bg-purple-950/40 px-2.5 py-1 text-[10px] sm:text-xs font-bold text-purple-100 transition-all hover:border-purple-400/60">
+                    <CreditCard className="size-3.5 text-purple-300" /> Cartão até 12x
+                  </span>
                 </div>
               </div>
             </div>
           </div>
         </SmoothCardReveal>
+
       </section>
 
 
