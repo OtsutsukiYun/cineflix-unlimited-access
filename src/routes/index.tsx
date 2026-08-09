@@ -661,42 +661,35 @@ function Index() {
               Substitua Netflix, Disney+, Max, Prime Video e Globoplay por um único valor acessível.
             </p>
 
-            {/* CÁPSULA ELEGANTE DE ECONOMIA E LOGOS — PERFEITAMENTE ALINHADA E SEM SERRILHADO */}
-            <div className="glass mx-auto mt-6 max-w-4xl rounded-2xl sm:rounded-full border border-emerald-500/40 bg-gradient-to-r from-emerald-950/60 via-surface/90 to-emerald-950/60 p-3.5 sm:px-6 sm:py-3 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 shadow-[0_0_35px_rgba(16,185,129,0.25)]">
-              {/* LADO ESQUERDO: ECONOMIA DE VALOR */}
-              <div className="flex items-center gap-2.5 text-center sm:text-left justify-center">
-                <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-400 shadow-sm">
-                  <Check className="size-4" />
-                </div>
-                <span className="text-xs sm:text-sm font-extrabold text-emerald-300">
-                  Economize mais de <strong className="text-white font-black text-sm sm:text-base ml-1">R$ 360,00/mês</strong>
-                </span>
+            {/* ELEVADO & FLUTUANTE — SEM RETÂNGULO OU GRADIENTE POLUÍDO AO REDOR */}
+            <div className="mx-auto mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center">
+              {/* SELO DE ECONOMIA */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/40 px-4 py-2 text-xs sm:text-sm font-extrabold text-emerald-300 shadow-lg backdrop-blur-sm">
+                <Check className="size-4 text-emerald-400 shrink-0" />
+                Economize mais de <strong className="text-white font-black ml-1 text-sm sm:text-base">R$ 360,00/mês</strong>
               </div>
 
-              {/* DIVISOR NO DESKTOP */}
-              <div className="hidden md:block h-6 w-px bg-emerald-500/30" />
-
-              {/* LADO DIREITO: ÍCONES REAIS DAS PLATAFORMAS (AURA DE NÉON 100% CIRCULAR) */}
-              <div className="flex items-center justify-center gap-2.5 sm:gap-4 overflow-x-auto no-scrollbar py-2">
+              {/* LADO DIREITO: ÍCONES REAIS DAS PLATAFORMAS FLUTUANTES (AURA CIRCULAR) */}
+              <div className="flex items-center justify-center gap-2.5 sm:gap-3.5 overflow-x-auto no-scrollbar py-2">
                 <span className="text-[11px] font-bold text-emerald-200/90 uppercase tracking-wider shrink-0 mr-1 hidden sm:inline">
                   Substitua:
                 </span>
                 {plataformas.slice(0, 6).map((p) => (
                   <div
                     key={p.nome}
-                    className={`group relative flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full border-2 border-white/40 bg-gradient-to-b ${p.bgGradient} p-2 sm:p-2.5 transition-all duration-300 hover:scale-115 hover:border-white/90`}
+                    className={`group relative flex size-11.5 sm:size-13.5 shrink-0 items-center justify-center rounded-full border-2 border-white/40 bg-gradient-to-b ${p.bgGradient} p-2 transition-all duration-300 hover:scale-115 hover:border-white/90`}
                     title={p.nome}
                   >
-                    {/* AURA CIRCULAR PERFEITA DE NÉON (ZERO QUADRADOS DE LUZ) */}
+                    {/* AURA CIRCULAR DE NÉON (ZERO RETÂNGULOS OU CAIXAS) */}
                     <div
-                      className="absolute -inset-1.5 rounded-full opacity-50 blur-md transition-opacity duration-300 group-hover:opacity-90 -z-10"
+                      className="absolute -inset-1 rounded-full opacity-40 blur-sm transition-opacity duration-300 group-hover:opacity-80 -z-10"
                       style={{ backgroundColor: p.cor }}
                     />
                     
                     <img
                       src={p.logo}
                       alt={p.nome}
-                      className={`size-6.5 sm:size-8.5 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] transition-transform ${p.logoScale || 'scale-100'}`}
+                      className={`size-6.5 sm:size-8 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] transition-transform ${p.logoScale || 'scale-100'}`}
                     />
                   </div>
                 ))}
