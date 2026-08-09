@@ -687,7 +687,7 @@ function Index() {
               destaque: false,
               selo: null as string | null,
               badge: "Sem Fidelidade",
-              btnStyle: "bg-white/10 hover:bg-white/20 border border-white/15 text-white",
+              btnStyle: "bg-gradient-to-r from-purple-900/70 via-surface-2/90 to-purple-900/70 hover:from-purple-800 hover:to-purple-800 border border-purple-400/40 text-white shadow-md hover:border-purple-300/60",
               link: "https://ev.braip.com/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
               features: [
                 "2 Telas simultâneas",
@@ -707,7 +707,7 @@ function Index() {
               destaque: true,
               selo: "MAIS POPULAR — ECONOMIZE 60%",
               badge: "Recomendado",
-              btnStyle: "btn-cta text-white shadow-glow",
+              btnStyle: "btn-cta text-white shadow-[0_0_30px_rgba(168,85,247,0.7)] hover:scale-[1.03]",
               link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
               features: [
                 "4 Telas simultâneas (Para a família)",
@@ -727,7 +727,7 @@ function Index() {
               destaque: false,
               selo: null as string | null,
               badge: "Economia 42%",
-              btnStyle: "bg-white/10 hover:bg-white/20 border border-white/15 text-white",
+              btnStyle: "bg-gradient-to-r from-purple-900/70 via-surface-2/90 to-purple-900/70 hover:from-purple-800 hover:to-purple-800 border border-purple-400/40 text-white shadow-md hover:border-purple-300/60",
               link: "https://ev.braip.com/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
               features: [
                 "2 Telas simultâneas",
@@ -741,14 +741,14 @@ function Index() {
           ].map((p, i) => (
             <SmoothCardReveal key={p.nome} delay={100 + i * 120}>
               <div
-                className={`group relative flex flex-col justify-between h-full rounded-2xl p-6 sm:p-8 backdrop-blur-xl transition-all duration-300 ${
+                className={`glass group relative flex flex-col justify-between h-full rounded-2xl p-6 sm:p-8 backdrop-blur-2xl transition-all duration-300 shadow-2xl ${
                   p.destaque
-                    ? "border-2 border-primary/80 bg-purple-950/40 shadow-[0_0_40px_rgba(168,85,247,0.3)] hover:border-primary"
-                    : "border border-white/10 bg-surface/50 hover:border-white/25 hover:bg-surface/70"
+                    ? "border-2 border-purple-400/90 bg-gradient-to-b from-purple-900/40 via-surface/60 to-purple-950/70 shadow-[0_0_45px_rgba(168,85,247,0.35)] hover:border-primary"
+                    : "border border-white/20 bg-surface/40 hover:border-white/35 hover:bg-surface/60"
                 }`}
               >
                 {p.selo && (
-                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-1 text-[11px] font-extrabold tracking-wider text-white uppercase shadow-md">
+                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 via-primary to-accent px-4 py-1 text-[11px] font-extrabold tracking-wider text-white uppercase shadow-lg">
                     <Sparkles className="size-3 text-white" />
                     {p.selo}
                   </span>
@@ -756,23 +756,23 @@ function Index() {
 
                 <div>
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className="font-display font-bold text-lg text-white">
+                    <h3 className="font-display font-black text-lg text-white tracking-tight">
                       {p.nome}
                     </h3>
-                    <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider border ${
+                    <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider border ${
                       p.destaque
-                        ? "bg-primary/20 text-purple-200 border-primary/40"
-                        : "bg-white/5 text-muted-foreground border-white/10"
+                        ? "bg-primary/20 text-purple-200 border-primary/50 shadow-sm"
+                        : "bg-white/5 text-muted-foreground border-white/15"
                     }`}>
                       {p.badge}
                     </span>
                   </div>
 
                   <div className="mt-4 flex items-baseline gap-1.5">
-                    <span className="font-display text-4xl sm:text-5xl font-extrabold text-white">
+                    <span className="font-display text-4xl sm:text-5xl font-black text-white drop-shadow-sm">
                       {p.preco}
                     </span>
-                    <span className="text-sm font-semibold text-muted-foreground">/{p.periodo}</span>
+                    <span className="text-sm font-semibold text-purple-200/80">/{p.periodo}</span>
                   </div>
 
                   <p className="mt-1.5 text-xs text-muted-foreground font-medium">
@@ -783,17 +783,18 @@ function Index() {
                     href={p.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`mt-6 w-full flex items-center justify-center gap-2 rounded-xl py-3 px-4 text-xs sm:text-sm font-bold uppercase tracking-wide transition-all duration-200 ${p.btnStyle}`}
+                    className={`mt-6 w-full flex items-center justify-center gap-2 rounded-xl py-3.5 px-4 text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-200 ${p.btnStyle}`}
                   >
+                    <Zap className="size-4" />
                     Assinar Agora
                   </a>
 
-                  <div className="my-6 h-px w-full bg-white/10" />
+                  <div className="my-6 h-px w-full bg-white/15" />
 
                   <ul className="space-y-3 text-xs sm:text-sm">
                     {p.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5">
-                        <Check className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <Check className="mt-0.5 size-4 shrink-0 text-accent" />
                         <span className="text-foreground/90 font-medium">{f}</span>
                       </li>
                     ))}
