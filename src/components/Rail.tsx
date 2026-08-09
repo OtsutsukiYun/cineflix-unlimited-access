@@ -5,7 +5,7 @@ import { img, type Title } from "@/data/catalog";
 
 function Poster({ item }: { item: Title }) {
   return (
-    <div className="group relative shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-background w-[130px] sm:w-[152px] md:w-[162px] transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.03] hover:border-primary/60 hover:shadow-glow cursor-pointer">
+    <div className="group relative shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-background w-[135px] sm:w-[165px] md:w-[190px] lg:w-[205px] transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.03] hover:border-primary/60 hover:shadow-glow cursor-pointer">
       {/* SHINE GLOW EFFECT ON HOVER */}
       <div className="pointer-events-none absolute inset-0 z-20 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       
@@ -19,8 +19,8 @@ function Poster({ item }: { item: Title }) {
 
       {/* OVERLAY PLAY BUTTON ON HOVER */}
       <div className="absolute inset-0 z-30 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:backdrop-blur-[2px] bg-black/10">
-        <div className="flex size-12 items-center justify-center rounded-full bg-primary/80 text-white backdrop-blur-md shadow-md transform scale-50 transition-transform duration-500 group-hover:scale-100 border border-primary/50">
-          <Play className="size-5 ml-0.5 fill-white" />
+        <div className="flex size-12 sm:size-14 items-center justify-center rounded-full bg-primary/80 text-white backdrop-blur-md shadow-md transform scale-50 transition-transform duration-500 group-hover:scale-100 border border-primary/50">
+          <Play className="size-5 sm:size-6 ml-0.5 fill-white" />
         </div>
       </div>
 
@@ -29,20 +29,20 @@ function Poster({ item }: { item: Title }) {
 
       {/* BADGE DE TAG (UNICA NO TOPO) */}
       {item.tag && (
-        <span className="absolute top-2.5 left-2.5 z-40 max-w-[85%] truncate inline-flex items-center gap-1 rounded-full border border-primary/40 bg-surface/85 backdrop-blur-md px-2 py-0.5 text-[8.5px] font-extrabold tracking-wider text-accent uppercase shadow-sm">
+        <span className="absolute top-2.5 left-2.5 z-40 max-w-[85%] truncate inline-flex items-center gap-1 rounded-full border border-primary/40 bg-surface/85 backdrop-blur-md px-2.5 py-0.5 text-[9px] sm:text-[10px] font-extrabold tracking-wider text-accent uppercase shadow-sm">
           {item.tag}
         </span>
       )}
 
       {/* TEXTO INFERIOR */}
       <div className="absolute inset-x-0 bottom-0 z-40 p-3 sm:p-4">
-        <p className="truncate text-xs sm:text-sm font-bold text-white drop-shadow-md transition-colors group-hover:text-accent">
+        <p className="truncate text-xs sm:text-sm md:text-base font-bold text-white drop-shadow-md transition-colors group-hover:text-accent">
           {item.title}
         </p>
-        <div className="mt-1 flex items-center justify-between text-[11px] font-semibold text-muted-foreground">
+        <div className="mt-1 flex items-center justify-between text-[11px] sm:text-xs font-semibold text-muted-foreground">
           <span>{item.year}</span>
-          <span className="flex items-center gap-0.5 text-amber-400 font-bold text-[10px] bg-amber-400/10 px-1.5 py-0.5 rounded-md">
-            <Star className="size-2.5 fill-amber-400 text-amber-400" /> {item.rating ?? "4.9"}
+          <span className="flex items-center gap-0.5 text-amber-400 font-bold text-[10px] sm:text-[11px] bg-amber-400/10 px-1.5 py-0.5 rounded-md">
+            <Star className="size-2.5 sm:size-3 fill-amber-400 text-amber-400" /> {item.rating ?? "4.9"}
           </span>
         </div>
       </div>
