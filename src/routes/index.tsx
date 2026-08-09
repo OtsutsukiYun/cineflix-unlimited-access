@@ -768,11 +768,11 @@ function Index() {
                     </span>
                   </div>
 
-                  <div className="mt-4 flex items-baseline gap-1.5">
-                    <span className="font-display text-4xl sm:text-5xl font-black text-white drop-shadow-sm">
+                  <div className="mt-4 flex items-baseline gap-1.5 whitespace-nowrap">
+                    <span className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-white drop-shadow-sm whitespace-nowrap">
                       {p.preco}
                     </span>
-                    <span className="text-sm font-semibold text-purple-200/80">/{p.periodo}</span>
+                    <span className="text-xs sm:text-sm font-semibold text-purple-200/80 shrink-0">/{p.periodo}</span>
                   </div>
 
                   <p className="mt-1.5 text-xs text-muted-foreground font-medium">
