@@ -264,21 +264,74 @@ export type Plataforma = {
   cor: string;
   preco: string;
   glowColor: string;
+  bgGradient: string;
 };
 
 export const plataformas: Plataforma[] = [
-  { nome: "Netflix", logo: netflixLogo, cor: "#E50914", preco: "R$ 20,90", glowColor: "rgba(229, 9, 20, 0.45)" },
-  { nome: "Disney+", logo: disneyLogo, cor: "#38BDF8", preco: "R$ 20,90", glowColor: "rgba(56, 189, 248, 0.45)" },
-  { nome: "HBO Max", logo: hboLogo, cor: "#A855F7", preco: "R$ 22,90", glowColor: "rgba(168, 85, 247, 0.45)" },
-  { nome: "Prime Video", logo: primeLogo, cor: "#00A8E1", preco: "R$ 19,90", glowColor: "rgba(0, 168, 225, 0.45)" },
-  { nome: "Apple TV+", logo: appletvLogo, cor: "#FFFFFF", preco: "R$ 29,90", glowColor: "rgba(255, 255, 255, 0.35)" },
-  { nome: "Paramount+", logo: paramountLogo, cor: "#0064FF", preco: "R$ 34,90", glowColor: "rgba(0, 100, 255, 0.45)" },
-  { nome: "Premiere", logo: premiereLogo, cor: "#00E676", preco: "R$ 29,90", glowColor: "rgba(0, 230, 118, 0.45)" },
-  { nome: "Crunchyroll", logo: crunchyrollLogo, cor: "#F47521", preco: "R$ 19,90", glowColor: "rgba(244, 117, 33, 0.45)" },
-  { nome: "Claro TV+", logo: claroLogo, cor: "#E50914", preco: "R$ 99,90", glowColor: "rgba(229, 9, 20, 0.45)" },
-  { nome: "Combate", logo: combateLogo, cor: "#FF2D55", preco: "R$ 34,90", glowColor: "rgba(255, 45, 85, 0.45)" },
-  { nome: "Globoplay", logo: globoplayLogo, cor: "#FF5C5C", preco: "R$ 22,90", glowColor: "rgba(255, 92, 92, 0.45)" },
-  { nome: "Telecine", logo: telecineLogo, cor: "#00E5FF", preco: "R$ 29,90", glowColor: "rgba(0, 229, 255, 0.45)" },
+  {
+    nome: "Netflix",
+    logo: netflixLogo,
+    cor: "#E50914",
+    preco: "R$ 20,90",
+    glowColor: "rgba(229, 9, 20, 0.6)",
+    bgGradient: "from-[#2b0507] via-[#170204] to-[#080001]",
+  },
+  {
+    nome: "Disney+",
+    logo: disneyLogo,
+    cor: "#38BDF8",
+    preco: "R$ 20,90",
+    glowColor: "rgba(56, 189, 248, 0.6)",
+    bgGradient: "from-[#0d3056] via-[#071d38] to-[#030d1c]",
+  },
+  {
+    nome: "Max",
+    logo: hboLogo,
+    cor: "#A855F7",
+    preco: "R$ 22,90",
+    glowColor: "rgba(168, 85, 247, 0.6)",
+    bgGradient: "from-[#2d0b54] via-[#190433] to-[#0a0117]",
+  },
+  {
+    nome: "Prime Video",
+    logo: primeLogo,
+    cor: "#00A8E1",
+    preco: "R$ 19,90",
+    glowColor: "rgba(0, 168, 225, 0.6)",
+    bgGradient: "from-[#004263] via-[#00273d] to-[#00111c]",
+  },
+  {
+    nome: "Apple TV+",
+    logo: appletvLogo,
+    cor: "#FFFFFF",
+    preco: "R$ 29,90",
+    glowColor: "rgba(255, 255, 255, 0.5)",
+    bgGradient: "from-[#333336] via-[#1c1c1e] to-[#0d0d0f]",
+  },
+  {
+    nome: "Paramount+",
+    logo: paramountLogo,
+    cor: "#0064FF",
+    preco: "R$ 34,90",
+    glowColor: "rgba(0, 100, 255, 0.6)",
+    bgGradient: "from-[#0044b3] via-[#00286e] to-[#001133]",
+  },
+  {
+    nome: "Globoplay",
+    logo: globoplayLogo,
+    cor: "#FF5C5C",
+    preco: "R$ 22,90",
+    glowColor: "rgba(255, 92, 92, 0.6)",
+    bgGradient: "from-[#40060d] via-[#240206] to-[#120002]",
+  },
+  {
+    nome: "Crunchyroll",
+    logo: crunchyrollLogo,
+    cor: "#F47521",
+    preco: "R$ 19,90",
+    glowColor: "rgba(244, 117, 33, 0.6)",
+    bgGradient: "from-[#451f08] via-[#291003] to-[#120600]",
+  },
 ];
 
 export const icon = (slug: string) => `https://cdn.simpleicons.org/${slug}/white`;
