@@ -479,7 +479,8 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#0d0212] via-[#0d0212]/75 to-[#0d0212]/20",
                 titleHover: "group-hover:text-orange-200",
                 t: "Filmes incríveis",
-                d: "He-Man, grandes lançamentos do cinema e superproduções premiadas em até 4K.",
+                qtd: "+45.000 Filmes",
+                d: "+45.000 filmes incluindo lançamentos recém-saídos do cinema e superproduções em até 4K.",
               },
               {
                 icon: Tv,
@@ -496,7 +497,8 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#0b0314] via-[#0b0314]/75 to-[#0b0314]/20",
                 titleHover: "group-hover:text-teal-200",
                 t: "Séries imperdíveis",
-                d: "Silo, Squid Game e todos os sucessos globais para maratonar sem limites.",
+                qtd: "+12.000 Séries",
+                d: "+12.000 séries das maiores plataformas mundiais com temporadas completas dubladas.",
               },
               {
                 icon: Torii,
@@ -513,7 +515,8 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#0e0214] via-[#0e0214]/75 to-[#0e0214]/20",
                 titleHover: "group-hover:text-fuchsia-200",
                 t: "Animes atualizados",
-                d: "Dragon Ball DAIMA, Demon Slayer e todos os animes do momento em HD.",
+                qtd: "+3.500 Animes",
+                d: "+3.500 animes com simulcast semanal, dublagem em português e áudio original.",
               },
               {
                 icon: Baby,
@@ -530,7 +533,8 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#020814] via-[#020814]/75 to-[#020814]/20",
                 titleHover: "group-hover:text-cyan-200",
                 t: "Canais infantis",
-                d: "Moana 2, Disney+ e toda a programação para a criançada.",
+                qtd: "+50 Canais Kids & Desenhos",
+                d: "+50 canais infantis 24h ao vivo e milhares de filmes e desenhos para toda a família.",
               },
               {
                 icon: Trophy,
@@ -547,7 +551,8 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#030e17] via-[#030e17]/75 to-[#030e17]/20",
                 titleHover: "group-hover:text-green-200",
                 t: "Esportes ao vivo",
-                d: "Brasileirão, Champions League, Premier League e todos os campeonatos ao vivo.",
+                qtd: "+500 Canais de Esporte",
+                d: "+500 canais ao vivo (Brasileirão, Champions League, Premier League, UFC e F1 em 60 FPS).",
               },
               {
                 icon: Lock,
@@ -564,7 +569,8 @@ function Index() {
                 bgOverlay: "bg-gradient-to-t from-[#12020a] via-[#12020a]/75 to-[#12020a]/20",
                 titleHover: "group-hover:text-rose-200",
                 t: "Canais adultos",
-                d: "Conteúdo exclusivo opcional e totalmente protegido por senha.",
+                qtd: "+80 Canais Privados",
+                d: "+80 canais e conteúdos adultos opcionais protegidos por senha master parental.",
               },
             ].map((f, i) => (
               <SmoothCardReveal key={f.t} delay={100 + i * 80}>
@@ -577,14 +583,19 @@ function Index() {
                   <div className={`absolute inset-0 ${f.bgOverlay} transition-opacity duration-500 group-hover:opacity-85`} />
 
                   <div className="relative z-10 flex flex-col justify-between h-full">
-                    {/* ÍCONE 3D RELUZENTE E FLUTUANTE */}
-                    <div className="relative mb-6 shrink-0">
+                    {/* ÍCONE 3D RELUZENTE E BADGE DE QUANTIDADE */}
+                    <div className="relative mb-6 shrink-0 flex items-center justify-between">
                       <div className={`animate-icon-float-3d relative flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${f.gradient} p-0.5 border ${f.glow} transform-gpu transition-all duration-300 group-hover:scale-110`}>
                         <div className="relative flex size-full items-center justify-center rounded-[14px] bg-black/25 overflow-hidden">
                           <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-90" />
                           <f.icon className="size-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] relative z-10" />
                         </div>
                       </div>
+
+                      {/* BADGE DE QUANTIDADE EM DESTAQUE */}
+                      <span className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-black/70 backdrop-blur-md px-3 py-1 text-[11px] font-black text-white shadow-[0_4px_15px_rgba(0,0,0,0.6)]">
+                        {f.qtd}
+                      </span>
                     </div>
 
                     <div>
