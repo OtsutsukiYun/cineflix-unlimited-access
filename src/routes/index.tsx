@@ -686,13 +686,12 @@ function Index() {
               iconColor: "text-purple-400",
               titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 drop-shadow-[0_2px_12px_rgba(168,85,247,0.5)]",
               preco: "R$ 20",
-              priceSize: "text-4xl sm:text-5xl text-white drop-shadow-[0_2px_15px_rgba(168,85,247,0.6)]",
               periodo: "mensal",
               sub: "Renovação mensal · Cancele a qualquer momento",
               destaque: false,
               selo: null as string | null,
               badge: "Sem Fidelidade",
-              btnStyle: "bg-gradient-to-r from-purple-600 via-primary to-purple-600 hover:from-purple-500 hover:to-primary text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.45)] hover:shadow-[0_0_30px_rgba(168,85,247,0.75)] hover:scale-[1.02]",
+              btnStyle: "bg-gradient-to-r from-purple-600 via-primary to-purple-600 hover:from-purple-500 hover:to-primary text-white font-black py-4 px-4 rounded-xl shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:scale-[1.02]",
               btnText: "ASSINAR PLANO START",
               link: "https://ev.braip.com/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
               features: [
@@ -711,13 +710,12 @@ function Index() {
               iconColor: "text-amber-300 drop-shadow-[0_0_12px_rgba(245,158,11,0.8)]",
               titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-fuchsia-300 drop-shadow-[0_2px_18px_rgba(236,72,153,0.75)]",
               preco: "R$ 97",
-              priceSize: "text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-white to-fuchsia-300 drop-shadow-[0_4px_25px_rgba(236,72,153,0.85)]",
               periodo: "1 ano",
               sub: "⚡ Equivale a apenas R$ 8,08/mês · 1 ano sem mensalidades",
               destaque: true,
               selo: "🔥 MAIS POPULAR — ECONOMIZE 60%",
-              badge: "👑 Recomendado",
-              btnStyle: "btn-cta bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_35px_rgba(168,85,247,0.85)] hover:shadow-[0_0_55px_rgba(168,85,247,1)] hover:scale-[1.04] font-black py-4 px-6 text-sm sm:text-base",
+              badge: "⭐ Recomendado",
+              btnStyle: "btn-cta bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_40px_rgba(168,85,247,0.9)] hover:scale-[1.04] font-black py-4 px-6 text-sm sm:text-base",
               btnText: "QUERO ASSINAR AGORA",
               link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
               features: [
@@ -736,13 +734,12 @@ function Index() {
               iconColor: "text-fuchsia-400",
               titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 drop-shadow-[0_2px_12px_rgba(168,85,247,0.5)]",
               preco: "R$ 69,90",
-              priceSize: "text-3xl sm:text-4xl lg:text-[2.6rem] text-white drop-shadow-[0_2px_15px_rgba(168,85,247,0.6)]",
               periodo: "semestral",
               sub: "Equivale a R$ 11,65/mês · 6 meses de acesso",
               destaque: false,
               selo: null as string | null,
               badge: "Economia 42%",
-              btnStyle: "bg-gradient-to-r from-purple-600 via-primary to-purple-600 hover:from-purple-500 hover:to-primary text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_20px_rgba(168,85,247,0.45)] hover:shadow-[0_0_30px_rgba(168,85,247,0.75)] hover:scale-[1.02]",
+              btnStyle: "bg-gradient-to-r from-purple-600 via-primary to-purple-600 hover:from-purple-500 hover:to-primary text-white font-black py-4 px-4 rounded-xl shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:scale-[1.02]",
               btnText: "ASSINAR PLANO PRO",
               link: "https://ev.braip.com/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
               features: [
@@ -771,8 +768,8 @@ function Index() {
                 )}
 
                 <div>
-                  {/* CABEÇALHO COM NOME DO PLANO EM DESTAQUE E ÍCONE */}
-                  <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-4">
+                  {/* CABEÇALHO DO PLANO */}
+                  <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
                     <div className="flex items-center gap-2.5">
                       <p.icon className={`size-6 sm:size-7 shrink-0 ${p.iconColor}`} />
                       <h3 className={`font-display font-black tracking-tight uppercase ${p.titleGradient} ${p.destaque ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}>
@@ -788,16 +785,27 @@ function Index() {
                     </span>
                   </div>
 
-                  <div className="mt-5 flex items-baseline gap-1.5 whitespace-nowrap overflow-hidden">
-                    <span className={`font-display font-black whitespace-nowrap ${p.priceSize}`}>
+                  {/* BLOCO DE PREÇO IMPACTANTE */}
+                  <div className="mt-5 flex flex-wrap items-baseline gap-2">
+                    <span
+                      className={`font-display font-black tracking-tight ${
+                        p.destaque
+                          ? "text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-white to-fuchsia-300 drop-shadow-[0_4px_25px_rgba(236,72,153,0.85)]"
+                          : "text-4xl sm:text-5xl text-white drop-shadow-[0_2px_15px_rgba(168,85,247,0.6)]"
+                      }`}
+                    >
                       {p.preco}
                     </span>
-                    <span className={`font-extrabold shrink-0 ${p.destaque ? "text-amber-200 text-base sm:text-lg" : "text-xs sm:text-sm text-purple-200"}`}>
+                    <span className={`rounded-md border px-2.5 py-1 text-xs sm:text-sm font-extrabold uppercase tracking-wider shrink-0 ${
+                      p.destaque
+                        ? "bg-amber-400/15 text-amber-200 border-amber-300/40"
+                        : "bg-purple-500/15 text-purple-200 border-purple-400/30"
+                    }`}>
                       /{p.periodo}
                     </span>
                   </div>
 
-                  <p className={`mt-2 text-xs font-semibold leading-relaxed ${p.destaque ? "text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-xl border border-emerald-500/20" : "text-muted-foreground"}`}>
+                  <p className={`mt-2.5 text-xs font-semibold leading-relaxed ${p.destaque ? "text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-xl border border-emerald-500/20" : "text-muted-foreground"}`}>
                     {p.sub}
                   </p>
 
