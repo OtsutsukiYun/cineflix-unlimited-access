@@ -133,6 +133,7 @@ import {
   Users,
   Headphones,
   Rocket,
+  Heart,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -499,6 +500,24 @@ function Index() {
                 t: "Séries imperdíveis",
                 qtd: "+20.000 Séries",
                 d: "+20.000 séries das maiores plataformas mundiais com temporadas completas dubladas e legendadas.",
+              },
+              {
+                icon: Heart,
+                banners: [
+                  img("/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", "w780"), // Queen of Tears
+                  img("/3yEHM2HT2vrUtO93YzTJNgEfiZG.jpg", "w780"), // Crash Landing on You
+                  img("/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg", "w780")  // Round 6
+                ],
+                objectPosition: "object-cover",
+                gradient: "from-pink-500 via-rose-500 to-purple-600",
+                glow: "shadow-[0_0_22px_rgba(244,63,94,0.85)] border-pink-300/80",
+                corBorda: "border border-pink-500/40 hover:border-pink-300",
+                corGlow: "shadow-[0_0_30px_rgba(244,63,94,0.2)] hover:shadow-[0_0_50px_rgba(244,63,94,0.55)]",
+                bgOverlay: "bg-gradient-to-t from-[#14020a] via-[#14020a]/75 to-[#14020a]/20",
+                titleHover: "group-hover:text-pink-200",
+                t: "Doramas & K-Dramas",
+                qtd: "+2.500 Doramas",
+                d: "Rainha das Lágrimas, Pousando no Amor e os maiores sucessos asiáticos com dublagem em português.",
               },
               {
                 icon: Torii,
