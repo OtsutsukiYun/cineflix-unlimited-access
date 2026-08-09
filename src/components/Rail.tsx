@@ -34,11 +34,6 @@ function PosterCard({ item }: { item: Title }) {
         </span>
       )}
 
-      {/* SELO DE QUALIDADE 4K HDR */}
-      <span className="absolute top-2.5 right-2.5 z-40 rounded-md border border-white/20 bg-black/70 backdrop-blur-md px-1.5 py-0.5 text-[8px] font-black text-amber-300 uppercase tracking-tight shadow-sm">
-        4K HDR
-      </span>
-
       {/* TEXTO INFERIOR */}
       <div className="absolute inset-x-0 bottom-0 z-40 p-3 sm:p-4">
         <p className="truncate text-xs sm:text-sm font-black text-white drop-shadow-md transition-colors group-hover:text-purple-200">
