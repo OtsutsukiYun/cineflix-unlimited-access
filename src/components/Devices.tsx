@@ -12,11 +12,11 @@ const DEVICES_LIST = [
   },
   {
     icon: Flame,
-    title: "TV Box & Streaming Sticks",
-    subtitle: "Fire TV Stick, Chromecast, Mi Box e Apple TV",
+    title: "TV Box & Aparelhos Android",
+    subtitle: "TV Box Android, Chromecast e Mi Box",
     desc: "Transforme qualquer televisão antiga em uma Smart TV moderna. Instalação rápida em menos de 2 minutos.",
     badgeColor: "from-pink-500/20 to-rose-500/20 border-pink-500/30 text-pink-300",
-    tags: ["Fire TV Stick", "Chromecast", "Mi TV Box", "Apple TV 4K", "TV Box Android"],
+    tags: ["TV Box Android", "Chromecast", "Mi TV Box", "Sistemas Android"],
   },
   {
     icon: Smartphone,
