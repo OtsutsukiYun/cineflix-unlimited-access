@@ -669,27 +669,24 @@ function Index() {
                 Economize mais de <strong className="text-white font-black ml-1 text-sm sm:text-base">R$ 360,00/mês</strong>
               </div>
 
-              {/* LADO DIREITO: ÍCONES REAIS DAS PLATAFORMAS FLUTUANTES (AURA CIRCULAR) */}
-              <div className="flex items-center justify-center gap-2.5 sm:gap-3.5 overflow-x-auto no-scrollbar py-2">
+              {/* LADO DIREITO: ÍCONES REAIS DAS PLATAFORMAS (CÍRCULOS PERFEITOS DE VIDRO ESCURO) */}
+              <div className="flex items-center justify-center gap-2.5 sm:gap-4 overflow-x-auto no-scrollbar py-2">
                 <span className="text-[11px] font-bold text-emerald-200/90 uppercase tracking-wider shrink-0 mr-1 hidden sm:inline">
                   Substitua:
                 </span>
                 {plataformas.slice(0, 6).map((p) => (
                   <div
                     key={p.nome}
-                    className={`group relative flex size-11.5 sm:size-13.5 shrink-0 items-center justify-center rounded-full border-2 border-white/40 bg-gradient-to-b ${p.bgGradient} p-2 transition-all duration-300 hover:scale-115 hover:border-white/90`}
+                    className="group relative flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full border-2 border-white/30 bg-[#090a16]/85 backdrop-blur-md p-2.5 overflow-hidden transition-all duration-300 hover:scale-115 hover:border-white/80 shadow-xl"
+                    style={{
+                      boxShadow: `0 0 16px ${p.glowColor}`,
+                    }}
                     title={p.nome}
                   >
-                    {/* AURA CIRCULAR DE NÉON (ZERO RETÂNGULOS OU CAIXAS) */}
-                    <div
-                      className="absolute -inset-1 rounded-full opacity-40 blur-sm transition-opacity duration-300 group-hover:opacity-80 -z-10"
-                      style={{ backgroundColor: p.cor }}
-                    />
-                    
                     <img
                       src={p.logo}
                       alt={p.nome}
-                      className={`size-6.5 sm:size-8 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] transition-transform ${p.logoScale || 'scale-100'}`}
+                      className={`size-7 sm:size-8.5 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] transition-transform ${p.logoScale || 'scale-100'}`}
                     />
                   </div>
                 ))}
