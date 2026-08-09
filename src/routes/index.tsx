@@ -517,7 +517,7 @@ function Index() {
                 titleHover: "group-hover:text-pink-200",
                 t: "Doramas & K-Dramas",
                 qtd: "+1.600 Doramas",
-                d: "+1.600 doramas como Rainha das Lágrimas, Pousando no Amor e os maiores sucessos asiáticos dublados.",
+d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode Ser Traduzido? e os maiores sucessos asiáticos dublados.",
               },
               {
                 icon: Torii,
