@@ -787,15 +787,15 @@ function Index() {
 
                   <div className="mt-5 flex items-baseline gap-1.5 whitespace-nowrap">
                     <span
-                      className={`font-display font-black text-white whitespace-nowrap ${
+                      className={`font-display font-black whitespace-nowrap ${
                         p.destaque
-                          ? "text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-fuchsia-300 drop-shadow-[0_2px_15px_rgba(168,85,247,0.8)]"
-                          : "text-3xl sm:text-4xl md:text-5xl drop-shadow-sm"
+                          ? "text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-fuchsia-300 drop-shadow-[0_2px_18px_rgba(168,85,247,0.85)]"
+                          : "text-4xl sm:text-5xl text-white drop-shadow-[0_2px_12px_rgba(168,85,247,0.5)]"
                       }`}
                     >
                       {p.preco}
                     </span>
-                    <span className={`font-semibold shrink-0 ${p.destaque ? "text-purple-200 text-base" : "text-xs sm:text-sm text-purple-200/80"}`}>
+                    <span className={`font-bold shrink-0 ${p.destaque ? "text-purple-200 text-base sm:text-lg" : "text-sm sm:text-base text-purple-200/90"}`}>
                       /{p.periodo}
                     </span>
                   </div>
