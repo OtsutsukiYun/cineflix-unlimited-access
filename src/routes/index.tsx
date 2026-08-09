@@ -338,7 +338,7 @@ function Index() {
               <HeroHeading />
 
               <p className="mt-3 sm:mt-5 max-w-lg text-sm sm:text-base md:text-lg font-medium text-foreground/90 drop-shadow-md">
-                Todas as plataformas de streaming e mais de 2.000 canais por <span className="font-extrabold text-white">apenas R$20/mês</span>.
+                Todas as plataformas de streaming e mais de <span className="font-extrabold text-white">60.000 conteúdos</span> por apenas <span className="font-extrabold text-white">R$20/mês</span>.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -393,7 +393,7 @@ function Index() {
                 <Fragment key={i}>
                   <span className="flex items-center gap-2 text-purple-200"><Sparkles className="size-3.5 text-accent" /> Qualidade em até 4K</span>
                   <span className="flex items-center gap-2"><Film className="size-3.5 text-accent" /> Todos os Streamings</span>
-                  <span className="flex items-center gap-2 text-pink-200"><Tv className="size-3.5 text-accent" /> +2000 Canais VIP</span>
+                  <span className="flex items-center gap-2 text-pink-200"><Tv className="size-3.5 text-accent" /> +60.000 Conteúdos</span>
                   <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-accent" /> Múltiplas Telas</span>
                   <span className="flex items-center gap-2 text-emerald-200"><RefreshCcw className="size-3.5 text-accent" /> Lançamentos Semanais</span>
                   <span className="flex items-center gap-2"><Zap className="size-3.5 text-accent" /> Ativação Imediata</span>
