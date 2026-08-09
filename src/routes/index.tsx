@@ -677,7 +677,7 @@ function Index() {
             </div>
           </Reveal>
 
-        <div className="relative z-10 mt-8 sm:mt-12 grid items-stretch gap-6 lg:gap-6 lg:grid-cols-3">
+        <div className="relative z-10 mt-10 sm:mt-14 pt-4 grid items-stretch gap-6 lg:gap-6 lg:grid-cols-3">
           {[
             {
               id: "start",
@@ -754,7 +754,7 @@ function Index() {
           ].map((p, i) => (
             <SmoothCardReveal key={p.nome} delay={100 + i * 120}>
               <div
-                className={`glass group relative flex flex-col justify-between h-full rounded-3xl overflow-hidden transition-all duration-500 ${
+                className={`glass group relative flex flex-col justify-between h-full rounded-3xl transition-all duration-500 ${
                   p.destaque
                     ? "border-2 border-purple-400 bg-gradient-to-b from-purple-900/70 via-surface/90 to-purple-950/80 p-7 sm:p-9 shadow-[0_0_55px_rgba(168,85,247,0.45)] lg:-translate-y-3 lg:scale-[1.04] z-20 hover:border-accent hover:shadow-[0_0_70px_rgba(168,85,247,0.65)]"
                     : "border border-white/20 bg-surface/60 p-6 sm:p-8 hover:border-white/35 hover:bg-surface/80 shadow-xl"
