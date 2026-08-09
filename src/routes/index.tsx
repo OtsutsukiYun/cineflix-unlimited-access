@@ -607,13 +607,17 @@ function Index() {
           <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {plataformas.map((p, i) => (
               <SmoothCardReveal key={p.nome} delay={40 + i * 30}>
-                <div className="group relative flex flex-col items-center justify-between rounded-2xl p-4 text-center border-2 border-white/15 bg-gradient-to-b from-white/10 via-surface-2/80 to-surface/90 backdrop-blur-xl shadow-[0_8px_25px_rgba(0,0,0,0.5)] transition-all duration-300 hover:border-accent/70 hover:shadow-[0_0_30px_rgba(244,63,94,0.35)] hover:-translate-y-1.5 h-full">
-                  <div className="flex h-12 items-center justify-center mb-2.5 w-full rounded-xl bg-black/60 border border-white/10 p-2 shadow-inner group-hover:border-white/25 transition-colors">
+                <div
+                  className={`group relative flex flex-col items-center justify-between rounded-2xl p-4 text-center border-2 ${p.bordaCard} ${p.bgCard} backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 h-full`}
+                >
+                  <div
+                    className={`flex h-12 items-center justify-center mb-2.5 w-full rounded-xl ${p.logoBg} p-2 shadow-inner group-hover:scale-[1.03] transition-all`}
+                  >
                     {p.logo ? (
                       <img
                         src={p.logo}
                         alt={p.nome}
-                        className="max-h-8 max-w-[100px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] transition-transform duration-300 group-hover:scale-110"
+                        className="max-h-8 max-w-[100px] object-contain drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] transition-transform duration-300 group-hover:scale-110"
                       />
                     ) : (
                       <span className="font-extrabold text-sm text-white" style={{ color: p.cor }}>
@@ -622,8 +626,8 @@ function Index() {
                     )}
                   </div>
                   <div className="w-full">
-                    <p className="text-[11px] font-bold text-muted-foreground/90 mb-1">{p.nome}</p>
-                    <span className="inline-block w-full rounded-full border border-rose-500/30 bg-rose-500/15 py-1 px-2 text-xs font-black text-rose-300 font-mono shadow-[0_0_12px_rgba(244,63,94,0.2)]">
+                    <p className="text-[11px] font-bold text-white/90 mb-1">{p.nome}</p>
+                    <span className="inline-block w-full rounded-full border border-rose-500/40 bg-rose-950/60 py-1 px-2 text-xs font-black text-rose-300 font-mono shadow-[0_0_12px_rgba(244,63,94,0.3)]">
                       {p.preco}/mês
                     </span>
                   </div>
