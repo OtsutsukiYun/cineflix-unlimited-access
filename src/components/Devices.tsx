@@ -9,6 +9,8 @@ const DEVICES_LIST = [
     desc: "Baixe o aplicativo diretamente na loja oficial da sua TV. Assista em até 4K HDR com áudio dublado e legendado.",
     badgeColor: "from-purple-500/20 to-indigo-500/20 border-purple-500/30 text-purple-300",
     tags: ["Samsung Tizen", "LG webOS", "Android TV", "Roku TV", "TCL & Philips"],
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/LG_smart_TV.jpg/1280px-LG_smart_TV.jpg",
+    alt: "Smart TV LG com tela de alta definição",
   },
   {
     icon: Flame,
@@ -17,6 +19,8 @@ const DEVICES_LIST = [
     desc: "Transforme qualquer televisão antiga em uma Smart TV moderna. Instalação rápida em menos de 2 minutos.",
     badgeColor: "from-pink-500/20 to-rose-500/20 border-pink-500/30 text-pink-300",
     tags: ["TV Box Android", "Chromecast", "Mi TV Box", "Sistemas Android"],
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Xiaomi_Mi_Box_S.jpg/1280px-Xiaomi_Mi_Box_S.jpg",
+    alt: "Xiaomi Mi Box S Android TV Box real",
   },
   {
     icon: Smartphone,
@@ -25,6 +29,8 @@ const DEVICES_LIST = [
     desc: "Leve seus filmes, séries e jogos de futebol ao vivo para onde quiser. Baixe seus episódios favoritos e assista offline.",
     badgeColor: "from-emerald-500/20 to-teal-500/20 border-emerald-500/30 text-emerald-300",
     tags: ["iPhone (iOS)", "iPad", "Android Phones", "Tablets Android"],
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/IPhone_15_Pro.jpeg/960px-IPhone_15_Pro.jpeg",
+    alt: "Smartphone iPhone real",
   },
   {
     icon: Monitor,
@@ -33,6 +39,8 @@ const DEVICES_LIST = [
     desc: "Acesse pelo Chrome, Edge, Safari ou Firefox sem precisar instalar nada extra. Interface web fluida e ultra-rápida.",
     badgeColor: "from-amber-500/20 to-orange-500/20 border-amber-500/30 text-amber-300",
     tags: ["Windows 10 / 11", "macOS", "Google Chrome", "Safari & Edge"],
+    imagem: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/MacBook_Pro_and_SurfaceBook.jpg/1280px-MacBook_Pro_and_SurfaceBook.jpg",
+    alt: "Notebook MacBook Pro real",
   },
 ];
 
@@ -53,27 +61,42 @@ export function Devices() {
         </div>
       </Reveal>
 
-      {/* CARDS DE DISPOSITIVOS */}
-      <div className="grid gap-5 sm:gap-6 md:grid-cols-2">
+      {/* CARDS DE DISPOSITIVOS COM IMAGENS REAIS DE HARDWARE */}
+      <div className="grid gap-6 sm:gap-8 md:grid-cols-2">
         {DEVICES_LIST.map((d) => (
           <Reveal key={d.title}>
-            <div className="group relative flex flex-col justify-between h-full rounded-3xl border border-white/10 bg-gradient-to-b from-surface/80 via-surface/40 to-surface/70 p-6 sm:p-8 transition-all duration-300 hover:border-purple-400/60 hover:shadow-[0_12px_40px_rgba(168,85,247,0.25)]">
+            <div className="group relative flex flex-col justify-between overflow-hidden h-full rounded-3xl border border-white/10 bg-gradient-to-b from-surface/90 via-surface/50 to-surface/80 p-6 sm:p-7 transition-all duration-300 hover:border-purple-400/60 hover:shadow-[0_16px_50px_rgba(168,85,247,0.25)]">
               <div>
-                <div className="flex items-center justify-between gap-4 mb-4">
-                  <div className={`flex size-12 sm:size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${d.badgeColor} border shadow-md transition-transform duration-300 group-hover:scale-110`}>
-                    <d.icon className="size-6 sm:size-7 text-white" />
-                  </div>
-                  <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[10px] sm:text-xs font-extrabold text-emerald-400 uppercase tracking-wider">
+                {/* CONTAINER DA IMAGEM REAL */}
+                <div className="relative mb-5 h-48 sm:h-52 w-full overflow-hidden rounded-2xl border border-white/10 bg-black/40">
+                  <img
+                    src={d.imagem}
+                    alt={d.alt}
+                    loading="lazy"
+                    decoding="async"
+                    className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80" />
+                  
+                  {/* BADGE DE COMPATIBILIDADE */}
+                  <span className="absolute top-3 right-3 z-10 inline-flex items-center gap-1 rounded-full border border-emerald-500/40 bg-emerald-950/80 backdrop-blur-md px-3 py-1 text-[10px] sm:text-xs font-extrabold text-emerald-300 uppercase tracking-wider shadow-md">
                     <CheckCircle2 className="size-3" /> 100% Compatível
                   </span>
                 </div>
 
-                <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
-                  {d.title}
-                </h3>
-                <p className="text-xs sm:text-sm font-semibold text-purple-300/90 mt-0.5">
-                  {d.subtitle}
-                </p>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className={`flex size-10 items-center justify-center rounded-xl bg-gradient-to-br ${d.badgeColor} border shadow-sm`}>
+                    <d.icon className="size-5 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight leading-none">
+                      {d.title}
+                    </h3>
+                    <p className="text-xs font-semibold text-purple-300/90 mt-1">
+                      {d.subtitle}
+                    </p>
+                  </div>
+                </div>
 
                 <p className="mt-3 text-xs sm:text-sm text-muted-foreground font-medium leading-relaxed">
                   {d.desc}

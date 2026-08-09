@@ -688,6 +688,9 @@ function Index() {
           </div>
         </section>
 
+        {/* SEÇÃO DE DISPOSITIVOS COMPATÍVEIS */}
+        <Devices />
+
         {/* PLANOS */}
         <section id="planos" className="relative z-10 mx-auto w-[94%] max-w-6xl py-8 sm:py-12">
           {/* GLOW AMBIENTE DOS PLANOS */}
@@ -957,9 +960,6 @@ function Index() {
 
       </section>
 
-
-      {/* SEÇÃO DE DISPOSITIVOS COMPATÍVEIS */}
-      <Devices />
 
       {/* FAQ */}
       <Faq>
