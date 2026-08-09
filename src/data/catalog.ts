@@ -260,123 +260,25 @@ export const infantil: Title[] = [
 
 export type Plataforma = {
   nome: string;
-  logo: string | null;
+  logo: string;
   cor: string;
   preco: string;
-  bgCard: string;
-  bordaCard: string;
-  logoBg: string;
+  glowColor: string;
 };
 
 export const plataformas: Plataforma[] = [
-  {
-    nome: "Netflix",
-    logo: netflixLogo,
-    cor: "#E50914",
-    preco: "R$ 20,90",
-    bgCard: "bg-gradient-to-b from-red-950/80 via-[#1c0409]/90 to-black/95",
-    bordaCard: "border-red-500/40 hover:border-red-400 shadow-[0_0_25px_rgba(229,9,20,0.25)]",
-    logoBg: "bg-black/90 border border-red-500/30",
-  },
-  {
-    nome: "Disney+",
-    logo: disneyLogo,
-    cor: "#38BDF8",
-    preco: "R$ 20,90",
-    bgCard: "bg-gradient-to-b from-blue-950/80 via-[#07152b]/90 to-black/95",
-    bordaCard: "border-sky-500/40 hover:border-sky-300 shadow-[0_0_25px_rgba(56,189,248,0.25)]",
-    logoBg: "bg-slate-950/90 border border-sky-400/30",
-  },
-  {
-    nome: "HBO Max",
-    logo: hboLogo,
-    cor: "#A855F7",
-    preco: "R$ 22,90",
-    bgCard: "bg-gradient-to-b from-purple-950/80 via-[#18072b]/90 to-black/95",
-    bordaCard: "border-purple-500/40 hover:border-purple-300 shadow-[0_0_25px_rgba(168,85,247,0.25)]",
-    logoBg: "bg-slate-950/90 border border-purple-400/30",
-  },
-  {
-    nome: "Prime Video",
-    logo: primeLogo,
-    cor: "#38BDF8",
-    preco: "R$ 19,90",
-    bgCard: "bg-gradient-to-b from-cyan-950/80 via-[#051a29]/90 to-black/95",
-    bordaCard: "border-cyan-500/40 hover:border-cyan-300 shadow-[0_0_25px_rgba(6,182,212,0.25)]",
-    logoBg: "bg-slate-950/90 border border-cyan-400/30",
-  },
-  {
-    nome: "Apple TV+",
-    logo: appletvLogo,
-    cor: "#FFFFFF",
-    preco: "R$ 29,90",
-    bgCard: "bg-gradient-to-b from-zinc-900/90 via-[#141416]/90 to-black/95",
-    bordaCard: "border-zinc-400/40 hover:border-zinc-200 shadow-[0_0_25px_rgba(255,255,255,0.15)]",
-    logoBg: "bg-black/90 border border-zinc-500/40",
-  },
-  {
-    nome: "Paramount+",
-    logo: paramountLogo,
-    cor: "#4C8DFF",
-    preco: "R$ 34,90",
-    bgCard: "bg-gradient-to-b from-blue-950/80 via-[#061430]/90 to-black/95",
-    bordaCard: "border-blue-500/40 hover:border-blue-300 shadow-[0_0_25px_rgba(59,130,246,0.25)]",
-    logoBg: "bg-slate-950/90 border border-blue-400/30",
-  },
-  {
-    nome: "Premiere",
-    logo: premiereLogo,
-    cor: "#4ADE80",
-    preco: "R$ 29,90",
-    bgCard: "bg-gradient-to-b from-emerald-950/80 via-[#041c12]/90 to-black/95",
-    bordaCard: "border-emerald-500/40 hover:border-emerald-300 shadow-[0_0_25px_rgba(16,185,129,0.25)]",
-    logoBg: "bg-slate-950/90 border border-emerald-400/30",
-  },
-  {
-    nome: "Crunchyroll",
-    logo: crunchyrollLogo,
-    cor: "#F47521",
-    preco: "R$ 19,90",
-    bgCard: "bg-gradient-to-b from-orange-950/80 via-[#1d0d04]/90 to-black/95",
-    bordaCard: "border-orange-500/40 hover:border-orange-300 shadow-[0_0_25px_rgba(249,115,22,0.25)]",
-    logoBg: "bg-slate-950/90 border border-orange-400/30",
-  },
-  {
-    nome: "Claro TV+",
-    logo: claroLogo,
-    cor: "#E50914",
-    preco: "R$ 99,90",
-    bgCard: "bg-gradient-to-b from-rose-950/80 via-[#1c040b]/90 to-black/95",
-    bordaCard: "border-rose-500/40 hover:border-rose-300 shadow-[0_0_25px_rgba(244,63,94,0.25)]",
-    logoBg: "bg-slate-950/90 border border-rose-400/30",
-  },
-  {
-    nome: "Combate",
-    logo: combateLogo,
-    cor: "#FF2D55",
-    preco: "R$ 34,90",
-    bgCard: "bg-gradient-to-b from-red-950/80 via-[#210309]/90 to-black/95",
-    bordaCard: "border-rose-500/40 hover:border-rose-300 shadow-[0_0_25px_rgba(225,29,72,0.25)]",
-    logoBg: "bg-slate-950/90 border border-rose-400/30",
-  },
-  {
-    nome: "Globoplay",
-    logo: globoplayLogo,
-    cor: "#FF5C5C",
-    preco: "R$ 22,90",
-    bgCard: "bg-gradient-to-b from-rose-950/80 via-[#1d050d]/90 to-black/95",
-    bordaCard: "border-rose-400/40 hover:border-rose-300 shadow-[0_0_25px_rgba(244,63,94,0.25)]",
-    logoBg: "bg-slate-950/90 border border-rose-400/30",
-  },
-  {
-    nome: "Telecine",
-    logo: telecineLogo,
-    cor: "#2DE0C0",
-    preco: "R$ 29,90",
-    bgCard: "bg-gradient-to-b from-teal-950/80 via-[#041a18]/90 to-black/95",
-    bordaCard: "border-teal-500/40 hover:border-teal-300 shadow-[0_0_25px_rgba(20,184,166,0.25)]",
-    logoBg: "bg-slate-950/90 border border-teal-400/30",
-  },
+  { nome: "Netflix", logo: netflixLogo, cor: "#E50914", preco: "R$ 20,90", glowColor: "rgba(229, 9, 20, 0.45)" },
+  { nome: "Disney+", logo: disneyLogo, cor: "#38BDF8", preco: "R$ 20,90", glowColor: "rgba(56, 189, 248, 0.45)" },
+  { nome: "HBO Max", logo: hboLogo, cor: "#A855F7", preco: "R$ 22,90", glowColor: "rgba(168, 85, 247, 0.45)" },
+  { nome: "Prime Video", logo: primeLogo, cor: "#00A8E1", preco: "R$ 19,90", glowColor: "rgba(0, 168, 225, 0.45)" },
+  { nome: "Apple TV+", logo: appletvLogo, cor: "#FFFFFF", preco: "R$ 29,90", glowColor: "rgba(255, 255, 255, 0.35)" },
+  { nome: "Paramount+", logo: paramountLogo, cor: "#0064FF", preco: "R$ 34,90", glowColor: "rgba(0, 100, 255, 0.45)" },
+  { nome: "Premiere", logo: premiereLogo, cor: "#00E676", preco: "R$ 29,90", glowColor: "rgba(0, 230, 118, 0.45)" },
+  { nome: "Crunchyroll", logo: crunchyrollLogo, cor: "#F47521", preco: "R$ 19,90", glowColor: "rgba(244, 117, 33, 0.45)" },
+  { nome: "Claro TV+", logo: claroLogo, cor: "#E50914", preco: "R$ 99,90", glowColor: "rgba(229, 9, 20, 0.45)" },
+  { nome: "Combate", logo: combateLogo, cor: "#FF2D55", preco: "R$ 34,90", glowColor: "rgba(255, 45, 85, 0.45)" },
+  { nome: "Globoplay", logo: globoplayLogo, cor: "#FF5C5C", preco: "R$ 22,90", glowColor: "rgba(255, 92, 92, 0.45)" },
+  { nome: "Telecine", logo: telecineLogo, cor: "#00E5FF", preco: "R$ 29,90", glowColor: "rgba(0, 229, 255, 0.45)" },
 ];
 
 export const icon = (slug: string) => `https://cdn.simpleicons.org/${slug}/white`;
