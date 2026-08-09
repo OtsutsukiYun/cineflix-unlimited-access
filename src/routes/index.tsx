@@ -670,7 +670,20 @@ function Index() {
                 <span className="text-[11px] font-bold text-emerald-200/90 uppercase tracking-wider">Substitua:</span>
                 <div className="flex items-center justify-center gap-2">
                   {plataformas.slice(0, 6).map((p) => (
-                    <img key={p.nome} src={p.logo} alt={p.nome} className="h-4 sm:h-4.5 max-w-[50px] object-contain opacity-90 filter drop-shadow" />
+                    <div
+                      key={p.nome}
+                      className="group relative flex size-7 sm:size-8 items-center justify-center rounded-full border border-white/20 bg-black/60 p-1.5 shadow-md transition-all duration-300 hover:scale-110 hover:border-white/50"
+                      style={{
+                        boxShadow: `0 0 12px ${p.glowColor}`,
+                      }}
+                      title={p.nome}
+                    >
+                      <img
+                        src={p.logo}
+                        alt={p.nome}
+                        className="size-4 sm:size-4.5 object-contain filter drop-shadow"
+                      />
+                    </div>
                   ))}
                 </div>
               </div>
