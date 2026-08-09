@@ -661,16 +661,16 @@ function Index() {
               Substitua Netflix, Disney+, Max, Prime Video e Globoplay por um único valor acessível.
             </p>
 
-            {/* CÁPSULA ELEGANTE DE ECONOMIA E LOGOS */}
-            <div className="mx-auto mt-6 max-w-3xl rounded-full border border-emerald-500/40 bg-emerald-950/40 backdrop-blur-md p-2 sm:px-6 sm:py-3 flex flex-wrap items-center justify-center gap-3 sm:gap-6 shadow-[0_0_30px_rgba(16,185,129,0.15)]">
-              <span className="text-xs sm:text-sm font-bold text-emerald-300 flex items-center gap-1.5">
-                <Check className="size-4 text-emerald-400" /> Economize mais de <strong>R$ 360,00/mês</strong>
+            {/* CÁPSULA ELEGANTE DE ECONOMIA E LOGOS — VISÍVEL NO MOBILE E DESKTOP */}
+            <div className="glass mx-auto mt-6 max-w-3xl rounded-2xl sm:rounded-full border border-emerald-500/40 bg-emerald-950/40 backdrop-blur-md p-3.5 sm:px-6 sm:py-3 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 shadow-[0_0_30px_rgba(16,185,129,0.2)] text-center">
+              <span className="text-xs sm:text-sm font-extrabold text-emerald-300 flex items-center gap-1.5 justify-center">
+                <Check className="size-4 text-emerald-400 shrink-0" /> Economize mais de <strong className="text-white font-black">R$ 360,00/mês</strong>
               </span>
-              <div className="hidden sm:flex items-center gap-2 border-l border-emerald-500/30 pl-4">
-                <span className="text-[11px] text-muted-foreground">Tudo incluso:</span>
-                <div className="flex items-center gap-1.5">
+              <div className="flex flex-wrap items-center justify-center gap-2 border-t sm:border-t-0 sm:border-l border-emerald-500/30 pt-2 sm:pt-0 sm:pl-4">
+                <span className="text-[11px] font-bold text-emerald-200/90 uppercase tracking-wider">Substitua:</span>
+                <div className="flex items-center justify-center gap-2">
                   {plataformas.slice(0, 6).map((p) => (
-                    <img key={p.nome} src={p.logo} alt={p.nome} className="h-4 max-w-[50px] object-contain opacity-85" />
+                    <img key={p.nome} src={p.logo} alt={p.nome} className="h-4 sm:h-4.5 max-w-[50px] object-contain opacity-90 filter drop-shadow" />
                   ))}
                 </div>
               </div>
