@@ -797,7 +797,7 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
               badge: "Sem Fidelidade",
               btnStyle: "bg-gradient-to-r from-purple-600 via-primary to-purple-600 hover:from-purple-500 hover:to-primary text-white font-black py-4 px-4 rounded-xl shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:scale-[1.02]",
               btnText: "ASSINAR PLANO START",
-              link: "https://ev.braip.com/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
+              link: "https://pay.braip.co/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
               features: [
                 "2 Telas simultâneas",
                 "Acervo completo (+60.000 títulos)",
@@ -821,7 +821,7 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
               badge: "⭐ Recomendado",
               btnStyle: "btn-cta bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_40px_rgba(168,85,247,0.9)] hover:scale-[1.04] font-black py-4 px-6 text-sm sm:text-base",
               btnText: "QUERO ASSINAR AGORA",
-              link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
+              link: "https://pay.braip.co/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
               features: [
                 "4 Telas simultâneas (Para a família toda)",
                 "1 Ano completo de acesso sem mensalidades",
@@ -845,7 +845,7 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
               badge: "Economia 42%",
               btnStyle: "bg-gradient-to-r from-purple-600 via-primary to-purple-600 hover:from-purple-500 hover:to-primary text-white font-black py-4 px-4 rounded-xl shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:scale-[1.02]",
               btnText: "ASSINAR PLANO PRO",
-              link: "https://ev.braip.com/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
+              link: "https://pay.braip.co/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
               features: [
                 "2 Telas simultâneas",
                 "6 Meses de acesso sem mensalidades",
