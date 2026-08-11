@@ -797,7 +797,7 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
               badge: "Sem Fidelidade",
               btnStyle: "bg-gradient-to-r from-purple-600 via-primary to-purple-600 hover:from-purple-500 hover:to-primary text-white font-black py-4 px-4 rounded-xl shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:scale-[1.02]",
               btnText: "ASSINAR PLANO START",
-              link: "https://ev.braip.com/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
+              link: "https://pay.braip.co/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
               features: [
                 "2 Telas simultâneas",
                 "Acervo completo (+60.000 títulos)",
