@@ -74,7 +74,7 @@ const BOTOES = [
   {
     icon: Headset,
     badge3d: "🎧",
-    gradient: "from-orange-600 via-blue-600 to-primary",
+    gradient: "from-orange-600 via-orange-500 to-amber-500",
     glow: "shadow-[0_12px_35px_rgba(249,115,22,0.6)]",
     titulo: "Desejo renovar",
     desc: "Renove sua assinatura rapidamente sem perder suas configurações.",
