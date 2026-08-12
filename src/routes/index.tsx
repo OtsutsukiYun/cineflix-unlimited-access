@@ -159,13 +159,13 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Cineflix — Streaming ilimitado por R$20/mês" },
+      { title: "UniTV PRO — Streaming ilimitado por R$20/mês" },
       {
         name: "description",
         content:
           "Mais de 60.000 filmes, séries, animes, infantil e futebol ao vivo em um só app. Lançamentos do cinema, Netflix, Disney+, HBO Max e mais por R$20/mês.",
       },
-      { property: "og:title", content: "Cineflix — Streaming ilimitado por R$20/mês" },
+      { property: "og:title", content: "UniTV PRO — Streaming ilimitado por R$20/mês" },
       {
         property: "og:description",
         content:
@@ -220,7 +220,7 @@ function HeroHeading() {
   return (
     <h1 className="font-display text-3xl font-extrabold sm:text-6xl md:text-7xl leading-[1.08] sm:leading-[1.04] text-white tracking-tight drop-shadow-xl">
       Todos os{" "}
-      <span className="relative inline text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-indigo-300 via-purple-400 to-amber-300 animate-text-shine font-black drop-shadow-[0_4px_20px_rgba(168,85,247,0.45)]">
+      <span className="relative inline text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-300 via-blue-400 to-amber-300 animate-text-shine font-black drop-shadow-[0_4px_20px_rgba(249,115,22,0.45)]">
         filmes, séries e esportes
       </span>{" "}
       em um só lugar.
@@ -241,25 +241,25 @@ function Index() {
   }, []);
 
   return (
-    <div className="relative w-full overflow-x-hidden min-h-screen bg-[#070110] font-sans text-foreground antialiased selection:bg-accent selection:text-white">
+    <div className="relative w-full overflow-x-hidden min-h-screen bg-[#040814] font-sans text-foreground antialiased selection:bg-accent selection:text-white">
       {/* BACKGROUND CINEMÁTICO ALTO IMPACTO: CYBER GRID + AURORA DRIFT + BEAM SPOTLIGHT */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden [transform:translateZ(0)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/40 via-[#070110] to-[#030006]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/40 via-[#040814] to-[#020308]" />
         
         {/* TEXTURA CYBER GRID MODERNA EM 3D */}
         <div className="bg-cyber-grid absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_90%)]" />
 
         {/* HAROSH / RAIO DE LUZ DE HOLOFOTE DE CINEMA */}
-        <div className="animate-beam-sweep absolute -top-[30%] left-[10%] w-[80vw] h-[1000px] bg-gradient-to-b from-purple-500/20 via-primary/10 to-transparent blur-[80px] pointer-events-none" />
+        <div className="animate-beam-sweep absolute -top-[30%] left-[10%] w-[80vw] h-[1000px] bg-gradient-to-b from-blue-500/20 via-primary/10 to-transparent blur-[80px] pointer-events-none" />
 
         {/* BLOBO 1: PURPLE NEON DRIFT */}
-        <div className="animate-aurora-1 absolute -top-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[70vw] sm:h-[70vw] max-w-[800px] max-h-[800px] rounded-full bg-gradient-to-tr from-purple-600/35 via-fuchsia-600/25 to-indigo-600/20 blur-[110px]" />
+        <div className="animate-aurora-1 absolute -top-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[70vw] sm:h-[70vw] max-w-[800px] max-h-[800px] rounded-full bg-gradient-to-tr from-blue-600/35 via-orange-600/25 to-blue-600/20 blur-[110px]" />
         
         {/* BLOBO 2: MAGENTA / ELECTRIC CYAN DRIFT */}
-        <div className="animate-aurora-2 absolute top-[25%] -right-[15%] w-[90vw] h-[90vw] sm:w-[65vw] sm:h-[65vw] max-w-[750px] max-h-[750px] rounded-full bg-gradient-to-br from-pink-500/30 via-purple-700/25 to-cyan-400/20 blur-[110px]" />
+        <div className="animate-aurora-2 absolute top-[25%] -right-[15%] w-[90vw] h-[90vw] sm:w-[65vw] sm:h-[65vw] max-w-[750px] max-h-[750px] rounded-full bg-gradient-to-br from-orange-500/30 via-blue-700/25 to-blue-400/20 blur-[110px]" />
         
         {/* BLOBO 3: INDIGO DEEP NEBULA */}
-        <div className="animate-aurora-3 absolute -bottom-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[80vw] sm:h-[80vw] max-w-[900px] max-h-[900px] rounded-full bg-gradient-to-t from-indigo-700/35 to-purple-800/25 blur-[130px]" />
+        <div className="animate-aurora-3 absolute -bottom-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[80vw] sm:h-[80vw] max-w-[900px] max-h-[900px] rounded-full bg-gradient-to-t from-blue-700/35 to-blue-800/25 blur-[130px]" />
       </div>
       {/* BARRA PROMOCIONAL + NAV — empilhados para mobile funcionar */}
       <div className="fixed inset-x-0 top-0 z-50 flex flex-col [transform:translateZ(0)]">
@@ -273,7 +273,7 @@ function Index() {
                 <Play className="size-4 fill-current ml-0.5" />
               </span>
               <span className="font-display text-xl font-extrabold tracking-tight text-white">
-                Cine<span className="text-hot">flix</span>
+                UniTV <span className="text-hot">PRO</span>
               </span>
             </SmoothLink>
 
@@ -298,7 +298,7 @@ function Index() {
               </SmoothLink>
               <Link
                 to="/suporte"
-                className="text-purple-300 transition-colors hover:text-white font-semibold"
+                className="text-blue-300 transition-colors hover:text-white font-semibold"
               >
                 Suporte
               </Link>
@@ -385,20 +385,20 @@ function Index() {
       </section>
 
       {/* SEÇÃO INFERIOR — GRADIENTE AMBIENTE ROXO VIBRANTE NO TOPO E ESCURO NOS PLANOS */}
-      <div className="relative bg-gradient-to-b from-transparent via-purple-900/15 to-transparent">
+      <div className="relative bg-gradient-to-b from-transparent via-blue-900/15 to-transparent">
         {/* TEXT MARQUEE ELEGANTE */}
         <div className="relative z-20 w-full overflow-hidden border-b border-white/5 py-4 sm:py-5 bg-black/20 backdrop-blur-sm">
           <div className="flex overflow-hidden">
             <div className="animate-marquee flex shrink-0 items-center gap-8 sm:gap-16 pr-8 sm:pr-16 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-muted-foreground uppercase">
               {Array.from({ length: 4 }).fill(0).map((_, i) => (
                 <Fragment key={i}>
-                  <span className="flex items-center gap-2 text-purple-200"><Sparkles className="size-3.5 text-accent" /> Qualidade em até 4K</span>
+                  <span className="flex items-center gap-2 text-blue-200"><Sparkles className="size-3.5 text-accent" /> Qualidade em até 4K</span>
                   <span className="flex items-center gap-2"><Film className="size-3.5 text-accent" /> Todos os Streamings</span>
-                  <span className="flex items-center gap-2 text-pink-200"><Tv className="size-3.5 text-accent" /> +60.000 Conteúdos</span>
+                  <span className="flex items-center gap-2 text-orange-200"><Tv className="size-3.5 text-accent" /> +60.000 Conteúdos</span>
                   <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-accent" /> Múltiplas Telas</span>
                   <span className="flex items-center gap-2 text-emerald-200"><RefreshCcw className="size-3.5 text-accent" /> Lançamentos Semanais</span>
                   <span className="flex items-center gap-2"><Zap className="size-3.5 text-accent" /> Ativação Imediata</span>
-                  <span className="flex items-center gap-2 text-rose-200"><ShieldCheck className="size-3.5 text-accent" /> Sem Fidelidade</span>
+                  <span className="flex items-center gap-2 text-orange-200"><ShieldCheck className="size-3.5 text-accent" /> Sem Fidelidade</span>
                 </Fragment>
               ))}
             </div>
@@ -413,7 +413,7 @@ function Index() {
                 <Film className="size-3.5 text-accent" /> Acervo Premium
               </span>
               <h2 className="text-2xl font-black sm:text-4xl md:text-5xl tracking-tight text-white drop-shadow-md text-balance">
-                Explore o que está <span className="whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400">em alta</span>
+                Explore o que está <span className="whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-orange-400 to-orange-400">em alta</span>
               </h2>
             </div>
             <p className="max-w-xs text-xs sm:text-sm text-muted-foreground font-semibold leading-relaxed sm:text-right">
@@ -458,7 +458,7 @@ function Index() {
               </span>
               <h2 className="text-2xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white flex flex-col items-center sm:block text-center">
                 <span>Por que escolher a</span>
-                <span className="text-hot mt-0.5 sm:mt-0 sm:ml-2">Cineflix</span>
+                <span className="text-hot mt-0.5 sm:mt-0 sm:ml-2">UniTV PRO</span>
               </h2>
             </div>
           </SmoothCardReveal>
@@ -477,7 +477,7 @@ function Index() {
                 glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-orange-300/80",
                 corBorda: "border border-orange-500/40 hover:border-orange-300",
                 corGlow: "shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:shadow-[0_0_50px_rgba(245,158,11,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#0d0212] via-[#0d0212]/75 to-[#0d0212]/20",
+                bgOverlay: "bg-gradient-to-t from-[#050b18] via-[#050b18]/75 to-[#050b18]/20",
                 titleHover: "group-hover:text-orange-200",
                 t: "Filmes incríveis",
                 qtd: "+45.000 Filmes",
@@ -491,12 +491,12 @@ function Index() {
                   img("/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg", "w780") // The Last of Us
                 ],
                 objectPosition: "object-cover",
-                gradient: "from-teal-500 via-cyan-500 to-blue-500",
-                glow: "shadow-[0_0_22px_rgba(6,182,212,0.85)] border-teal-300/80",
-                corBorda: "border border-teal-500/40 hover:border-teal-300",
-                corGlow: "shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:shadow-[0_0_50px_rgba(6,182,212,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#0b0314] via-[#0b0314]/75 to-[#0b0314]/20",
-                titleHover: "group-hover:text-teal-200",
+                gradient: "from-blue-500 via-blue-500 to-blue-500",
+                glow: "shadow-[0_0_22px_rgba(37,99,235,0.85)] border-blue-300/80",
+                corBorda: "border border-blue-500/40 hover:border-blue-300",
+                corGlow: "shadow-[0_0_30px_rgba(37,99,235,0.2)] hover:shadow-[0_0_50px_rgba(37,99,235,0.55)]",
+                bgOverlay: "bg-gradient-to-t from-[#050b18] via-[#050b18]/75 to-[#050b18]/20",
+                titleHover: "group-hover:text-blue-200",
                 t: "Séries imperdíveis",
                 qtd: "+20.000 Séries",
                 d: "+20.000 séries das maiores plataformas mundiais com temporadas completas dubladas e legendadas.",
@@ -509,12 +509,12 @@ function Index() {
                   img("/svnZYhAboLrwHEtkKRm2mIdjocB.jpg", "w780")  // O Amor Pode Ser Traduzido? (2026)
                 ],
                 objectPosition: "object-cover",
-                gradient: "from-pink-500 via-rose-500 to-purple-600",
-                glow: "shadow-[0_0_22px_rgba(244,63,94,0.85)] border-pink-300/80",
-                corBorda: "border border-pink-500/40 hover:border-pink-300",
-                corGlow: "shadow-[0_0_30px_rgba(244,63,94,0.2)] hover:shadow-[0_0_50px_rgba(244,63,94,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#14020a] via-[#14020a]/75 to-[#14020a]/20",
-                titleHover: "group-hover:text-pink-200",
+                gradient: "from-orange-500 via-orange-500 to-blue-600",
+                glow: "shadow-[0_0_22px_rgba(249,115,22,0.85)] border-orange-300/80",
+                corBorda: "border border-orange-500/40 hover:border-orange-300",
+                corGlow: "shadow-[0_0_30px_rgba(249,115,22,0.2)] hover:shadow-[0_0_50px_rgba(249,115,22,0.55)]",
+                bgOverlay: "bg-gradient-to-t from-[#050b18] via-[#050b18]/75 to-[#050b18]/20",
+                titleHover: "group-hover:text-orange-200",
                 t: "Doramas & K-Dramas",
                 qtd: "+1.600 Doramas",
 d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode Ser Traduzido? e os maiores sucessos asiáticos dublados.",
@@ -527,12 +527,12 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
                   img("/gtKglOSEq3d4MgQE4VsrT1sRkd0.jpg", "w780") // Jujutsu Kaisen
                 ],
                 objectPosition: "object-cover",
-                gradient: "from-fuchsia-600 via-purple-600 to-pink-500",
-                glow: "shadow-[0_0_22px_rgba(217,70,239,0.85)] border-fuchsia-300/80",
-                corBorda: "border border-fuchsia-500/40 hover:border-fuchsia-300",
-                corGlow: "shadow-[0_0_30px_rgba(217,70,239,0.2)] hover:shadow-[0_0_50px_rgba(217,70,239,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#0e0214] via-[#0e0214]/75 to-[#0e0214]/20",
-                titleHover: "group-hover:text-fuchsia-200",
+                gradient: "from-orange-600 via-blue-600 to-orange-500",
+                glow: "shadow-[0_0_22px_rgba(249,115,22,0.85)] border-orange-300/80",
+                corBorda: "border border-orange-500/40 hover:border-orange-300",
+                corGlow: "shadow-[0_0_30px_rgba(249,115,22,0.2)] hover:shadow-[0_0_50px_rgba(249,115,22,0.55)]",
+                bgOverlay: "bg-gradient-to-t from-[#050b18] via-[#050b18]/75 to-[#050b18]/20",
+                titleHover: "group-hover:text-orange-200",
                 t: "Animes atualizados",
                 qtd: "Centenas de Animes",
                 d: "Centenas de animes com simulcast semanal, dublagem em português e áudio original.",
@@ -545,12 +545,12 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
                   img("/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg", "w780") // Super Mario
                 ],
                 objectPosition: "object-cover",
-                gradient: "from-cyan-400 via-blue-500 to-indigo-500",
-                glow: "shadow-[0_0_22px_rgba(6,182,212,0.85)] border-cyan-300/80",
-                corBorda: "border border-cyan-500/40 hover:border-cyan-300",
-                corGlow: "shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:shadow-[0_0_50px_rgba(6,182,212,0.55)]",
+                gradient: "from-blue-400 via-blue-500 to-blue-500",
+                glow: "shadow-[0_0_22px_rgba(37,99,235,0.85)] border-blue-300/80",
+                corBorda: "border border-blue-500/40 hover:border-blue-300",
+                corGlow: "shadow-[0_0_30px_rgba(37,99,235,0.2)] hover:shadow-[0_0_50px_rgba(37,99,235,0.55)]",
                 bgOverlay: "bg-gradient-to-t from-[#020814] via-[#020814]/75 to-[#020814]/20",
-                titleHover: "group-hover:text-cyan-200",
+                titleHover: "group-hover:text-blue-200",
                 t: "Canais infantis",
                 qtd: "Dezenas de Canais Infantis",
                 d: "Dezenas de canais infantis 24h ao vivo e milhares de filmes e desenhos para toda a família.",
@@ -563,7 +563,7 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
                   "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg/1280px-Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg" // Harry Kane
                 ],
                 objectPosition: "object-cover object-[center_20%]", // Keep faces in view without stretching
-                gradient: "from-green-500 via-emerald-600 to-teal-500",
+                gradient: "from-green-500 via-emerald-600 to-blue-500",
                 glow: "shadow-[0_0_22px_rgba(34,197,94,0.85)] border-green-300/80",
                 corBorda: "border border-green-500/40 hover:border-green-300",
                 corGlow: "shadow-[0_0_30px_rgba(34,197,94,0.2)] hover:shadow-[0_0_50px_rgba(34,197,94,0.55)]",
@@ -581,12 +581,12 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
                   img("/xqIstzB0ELbYyfzKcYaSwLb4Whs.jpg", "w780") // Emmanuelle
                 ],
                 objectPosition: "object-cover",
-                gradient: "from-rose-600 via-red-600 to-pink-600",
-                glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
-                corBorda: "border border-rose-500/40 hover:border-rose-300",
-                corGlow: "shadow-[0_0_30px_rgba(225,29,72,0.2)] hover:shadow-[0_0_50px_rgba(225,29,72,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#12020a] via-[#12020a]/75 to-[#12020a]/20",
-                titleHover: "group-hover:text-rose-200",
+                gradient: "from-orange-600 via-red-600 to-orange-600",
+                glow: "shadow-[0_0_22px_rgba(249,115,22,0.85)] border-orange-300/80",
+                corBorda: "border border-orange-500/40 hover:border-orange-300",
+                corGlow: "shadow-[0_0_30px_rgba(249,115,22,0.2)] hover:shadow-[0_0_50px_rgba(249,115,22,0.55)]",
+                bgOverlay: "bg-gradient-to-t from-[#050b18] via-[#050b18]/75 to-[#050b18]/20",
+                titleHover: "group-hover:text-orange-200",
                 t: "Canais adultos",
                 qtd: "+80 Canais Privados",
                 d: "+80 canais e conteúdos adultos opcionais protegidos por senha master parental.",
@@ -659,8 +659,8 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
                 badge: "Sem Bloqueio de IP",
                 title: "Até 4 Telas Simultâneas",
                 desc: "Toda a sua família assiste ao mesmo tempo em aparelhos diferentes, sem restrições de IP ou localidade.",
-                color: "text-cyan-400 bg-cyan-400/10 border-cyan-400/30",
-                glow: "shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:border-cyan-400/60",
+                color: "text-blue-400 bg-blue-400/10 border-blue-400/30",
+                glow: "shadow-[0_0_20px_rgba(37,99,235,0.15)] hover:border-blue-400/60",
                 link: null,
               },
               {
@@ -677,8 +677,8 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
                 badge: "Sem Fidelidade",
                 title: "Ativação Imediata & Cancelamento Livre",
                 desc: "Receba seus dados na hora no e-mail. Teste à vontade e cancele com 1 clique a qualquer momento sem pegadinhas.",
-                color: "text-fuchsia-400 bg-fuchsia-400/10 border-fuchsia-400/30",
-                glow: "shadow-[0_0_20px_rgba(217,70,239,0.15)] hover:border-fuchsia-400/60",
+                color: "text-orange-400 bg-orange-400/10 border-orange-400/30",
+                glow: "shadow-[0_0_20px_rgba(249,115,22,0.15)] hover:border-orange-400/60",
                 link: null,
               },
             ].map((item, i) => {
@@ -727,7 +727,7 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
             </span>
             <h2 className="text-3xl font-black sm:text-5xl md:text-6xl tracking-tight text-white flex flex-wrap items-center justify-center gap-x-2">
               <span>Escolha o plano ideal para</span>
-              <span className="bg-gradient-to-r from-rose-500 via-purple-400 via-pink-400 to-amber-300 bg-clip-text text-transparent animate-text-shine drop-shadow-[0_0_30px_rgba(244,63,94,0.6)]">
+              <span className="bg-gradient-to-r from-orange-500 via-amber-400 via-orange-400 to-amber-300 bg-clip-text text-transparent animate-text-shine drop-shadow-[0_0_30px_rgba(249,115,22,0.6)]">
                 você e sua família
               </span>
             </h2>
@@ -787,15 +787,15 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
               id: "start",
               nome: "Plano START",
               icon: Zap,
-              iconColor: "text-purple-400",
-              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 drop-shadow-[0_2px_12px_rgba(168,85,247,0.5)]",
+              iconColor: "text-blue-400",
+              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-300 drop-shadow-[0_2px_12px_rgba(249,115,22,0.5)]",
               preco: "R$ 20",
               periodo: "mensal",
               sub: "Renovação mensal · Cancele a qualquer momento",
               destaque: false,
               selo: null as string | null,
               badge: "Sem Fidelidade",
-              btnStyle: "bg-gradient-to-r from-purple-600 via-primary to-purple-600 hover:from-purple-500 hover:to-primary text-white font-black py-4 px-4 rounded-xl shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:scale-[1.02]",
+              btnStyle: "bg-gradient-to-r from-blue-700 via-blue-600 to-blue-700 hover:from-blue-600 hover:to-blue-500 text-white font-black py-4 px-4 rounded-xl shadow-[0_0_25px_rgba(249,115,22,0.5)] hover:scale-[1.02]",
               btnText: "ASSINAR PLANO START",
               link: "https://pay.braip.co/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
               features: [
@@ -812,14 +812,14 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
               nome: "Plano PRIME",
               icon: Crown,
               iconColor: "text-amber-300 drop-shadow-[0_0_12px_rgba(245,158,11,0.8)]",
-              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-fuchsia-300 drop-shadow-[0_2px_18px_rgba(236,72,153,0.75)]",
+              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-orange-300 drop-shadow-[0_2px_18px_rgba(249,115,22,0.75)]",
               preco: "R$ 97",
               periodo: "1 ano",
               sub: "⚡ Equivale a apenas R$ 8,08/mês · 1 ano sem mensalidades",
               destaque: true,
               selo: "🔥 MAIS POPULAR — ECONOMIZE 60%",
               badge: "⭐ Recomendado",
-              btnStyle: "btn-cta bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_40px_rgba(168,85,247,0.9)] hover:scale-[1.04] font-black py-4 px-6 text-sm sm:text-base",
+              btnStyle: "btn-cta bg-gradient-to-r from-orange-500 via-orange-500 to-orange-400 text-white shadow-[0_0_40px_rgba(249,115,22,0.9)] hover:scale-[1.04] font-black py-4 px-6 text-sm sm:text-base",
               btnText: "QUERO ASSINAR AGORA",
               link: "https://pay.braip.co/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
               features: [
@@ -835,15 +835,15 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
               id: "pro",
               nome: "Plano PRO",
               icon: Sparkles,
-              iconColor: "text-fuchsia-400",
-              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 drop-shadow-[0_2px_12px_rgba(168,85,247,0.5)]",
+              iconColor: "text-orange-400",
+              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-300 drop-shadow-[0_2px_12px_rgba(249,115,22,0.5)]",
               preco: "R$ 69,90",
               periodo: "semestral",
               sub: "Equivale a R$ 11,65/mês · 6 meses de acesso",
               destaque: false,
               selo: null as string | null,
               badge: "Economia 42%",
-              btnStyle: "bg-gradient-to-r from-purple-600 via-primary to-purple-600 hover:from-purple-500 hover:to-primary text-white font-black py-4 px-4 rounded-xl shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:scale-[1.02]",
+              btnStyle: "bg-gradient-to-r from-blue-700 via-blue-600 to-blue-700 hover:from-blue-600 hover:to-blue-500 text-white font-black py-4 px-4 rounded-xl shadow-[0_0_25px_rgba(249,115,22,0.5)] hover:scale-[1.02]",
               btnText: "ASSINAR PLANO PRO",
               link: "https://pay.braip.co/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
               features: [
@@ -860,12 +860,12 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
               <div
                 className={`glass group relative flex flex-col justify-between h-full rounded-3xl transition-all duration-500 ${
                   p.destaque
-                    ? "border-2 border-purple-400 bg-gradient-to-b from-purple-900/70 via-surface/90 to-purple-950/80 p-7 sm:p-9 shadow-[0_0_55px_rgba(168,85,247,0.45)] lg:-translate-y-3 lg:scale-[1.04] z-20 hover:border-accent hover:shadow-[0_0_70px_rgba(168,85,247,0.65)]"
+                    ? "border-2 border-orange-400 bg-gradient-to-b from-blue-900/70 via-surface/90 to-blue-950/80 p-7 sm:p-9 shadow-[0_0_55px_rgba(249,115,22,0.45)] lg:-translate-y-3 lg:scale-[1.04] z-20 hover:border-accent hover:shadow-[0_0_70px_rgba(249,115,22,0.65)]"
                     : "border border-white/20 bg-surface/60 p-6 sm:p-8 hover:border-white/35 hover:bg-surface/80 shadow-xl"
                 }`}
               >
                 {p.selo && (
-                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 via-primary to-accent px-5 py-1.5 text-xs font-black tracking-wider text-white uppercase shadow-[0_0_20px_rgba(168,85,247,0.8)]">
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-blue-600 via-primary to-accent px-5 py-1.5 text-xs font-black tracking-wider text-white uppercase shadow-[0_0_20px_rgba(249,115,22,0.8)]">
                     <Sparkles className="size-3.5 fill-current" />
                     {p.selo}
                   </span>
@@ -882,8 +882,8 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
                     </div>
                     <span className={`shrink-0 rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-wider border ${
                       p.destaque
-                        ? "bg-gradient-to-r from-amber-500/30 to-purple-600/30 text-amber-200 border-amber-400/50 shadow-[0_0_12px_rgba(245,158,11,0.4)]"
-                        : "bg-white/10 text-purple-200 border-white/20"
+                        ? "bg-gradient-to-r from-amber-500/30 to-blue-600/30 text-amber-200 border-amber-400/50 shadow-[0_0_12px_rgba(245,158,11,0.4)]"
+                        : "bg-white/10 text-blue-200 border-white/20"
                     }`}>
                       {p.badge}
                     </span>
@@ -894,13 +894,13 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
                     <span
                       className={`font-display font-black whitespace-nowrap ${
                         p.destaque
-                          ? "text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-white to-fuchsia-300 drop-shadow-[0_4px_25px_rgba(236,72,153,0.85)]"
-                          : "text-4xl sm:text-5xl lg:text-[2.75rem] text-white drop-shadow-[0_2px_15px_rgba(168,85,247,0.6)]"
+                          ? "text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-white to-orange-300 drop-shadow-[0_4px_25px_rgba(249,115,22,0.85)]"
+                          : "text-4xl sm:text-5xl lg:text-[2.75rem] text-white drop-shadow-[0_2px_15px_rgba(249,115,22,0.6)]"
                       }`}
                     >
                       {p.preco}
                     </span>
-                    <span className={`font-extrabold shrink-0 whitespace-nowrap ${p.destaque ? "text-amber-200 text-sm sm:text-base" : "text-xs sm:text-sm text-purple-200"}`}>
+                    <span className={`font-extrabold shrink-0 whitespace-nowrap ${p.destaque ? "text-amber-200 text-sm sm:text-base" : "text-xs sm:text-sm text-blue-200"}`}>
                       /{p.periodo}
                     </span>
                   </div>
@@ -915,11 +915,11 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
                     rel="noopener noreferrer"
                     className={`mt-6 w-full flex items-center justify-center gap-2 rounded-xl text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 ${p.btnStyle}`}
                   >
-                    <Zap className={p.destaque ? "size-5 fill-amber-300 text-amber-300 animate-pulse" : "size-4 text-purple-200"} />
+                    <Zap className={p.destaque ? "size-5 fill-amber-300 text-amber-300 animate-pulse" : "size-4 text-blue-200"} />
                     {p.btnText}
                   </a>
 
-                  <div className={`my-6 h-px w-full ${p.destaque ? "bg-purple-400/30" : "bg-white/15"}`} />
+                  <div className={`my-6 h-px w-full ${p.destaque ? "bg-blue-400/30" : "bg-white/15"}`} />
 
                   <ul className="space-y-3.5 text-xs sm:text-sm">
                     {p.features.map((f) => (
@@ -949,8 +949,8 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-purple-300">Garantia</span>
-                    <span className="rounded-full bg-purple-500/20 px-2 py-0.5 text-[9px] font-extrabold tracking-wider text-purple-200 uppercase">7 Dias Sem Risco</span>
+                    <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-blue-300">Garantia</span>
+                    <span className="rounded-full bg-blue-500/20 px-2 py-0.5 text-[9px] font-extrabold tracking-wider text-blue-200 uppercase">7 Dias Sem Risco</span>
                   </div>
                   <h4 className="font-display text-sm sm:text-lg font-bold text-white drop-shadow-md leading-tight">
                     Experimente sem compromisso
@@ -971,11 +971,11 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
                   Aceitamos Pix (aprovação imediata) e cartão de crédito em até 12x.
                 </p>
                 <div className="mt-1 flex flex-wrap items-center gap-2">
-                  <span className="flex items-center gap-1.5 rounded-full border border-purple-400/30 bg-purple-950/40 px-2.5 py-1 text-[10px] sm:text-xs font-bold text-purple-100 transition-all hover:border-purple-400/60">
+                  <span className="flex items-center gap-1.5 rounded-full border border-blue-400/30 bg-blue-950/40 px-2.5 py-1 text-[10px] sm:text-xs font-bold text-blue-100 transition-all hover:border-blue-400/60">
                     <QrCode className="size-3.5 text-emerald-400" /> Pix Instantâneo
                   </span>
-                  <span className="flex items-center gap-1.5 rounded-full border border-purple-400/30 bg-purple-950/40 px-2.5 py-1 text-[10px] sm:text-xs font-bold text-purple-100 transition-all hover:border-purple-400/60">
-                    <CreditCard className="size-3.5 text-purple-300" /> Cartão até 12x
+                  <span className="flex items-center gap-1.5 rounded-full border border-blue-400/30 bg-blue-950/40 px-2.5 py-1 text-[10px] sm:text-xs font-bold text-blue-100 transition-all hover:border-blue-400/60">
+                    <CreditCard className="size-3.5 text-blue-300" /> Cartão até 12x
                   </span>
                 </div>
               </div>
@@ -1038,7 +1038,7 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
         <footer className="border-t border-border py-12">
           <div className="mx-auto flex w-[94%] max-w-6xl flex-col items-center gap-5 text-center">
           <span className="font-display text-xl font-extrabold">
-            CINE<span className="text-hot">FLIX</span>
+            UniTV <span className="text-hot">PRO</span>
           </span>
           <p className="max-w-xl text-sm text-muted-foreground">
             A televisão do futuro é pela internet — sem antenas, sem
@@ -1052,7 +1052,7 @@ d: "+1.600 doramas como A Coroa Perfeita, Namorado por Assinatura, O Amor Pode S
             Precisa de ajuda? Fale com o suporte
           </Link>
           <p className="mt-4 text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Cineflix. Imagens de divulgação dos
+            © {new Date().getFullYear()} UniTV PRO. Imagens de divulgação dos
             respectivos estúdios (fonte: TMDB).
           </p>
         </div>
