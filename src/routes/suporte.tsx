@@ -63,7 +63,7 @@ const BOTOES = [
   {
     icon: Wrench,
     badge3d: "🛠️",
-    gradient: "from-blue-600 via-primary to-accent",
+    gradient: "from-orange-500 via-orange-500 to-amber-500",
     glow: "shadow-[0_12px_35px_rgba(249,115,22,0.6)]",
     titulo: "Iniciar instalação",
     desc: "Passo a passo completo para ativar na sua Smart TV, TV Box, celular ou PC.",
