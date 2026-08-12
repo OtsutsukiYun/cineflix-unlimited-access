@@ -85,8 +85,8 @@ const BOTOES = [
   {
     icon: MessageCircleQuestion,
     badge3d: "💬",
-    gradient: "from-blue-600 via-primary to-orange-500",
-    glow: "shadow-[0_12px_35px_rgba(37,99,235,0.6)]",
+    gradient: "from-amber-500 via-orange-500 to-orange-600",
+    glow: "shadow-[0_12px_35px_rgba(249,115,22,0.6)]",
     titulo: "Falar com o suporte",
     desc: "Tire dúvidas técnicas, receba auxílio com seu login ou ajuste de conta.",
     phone: "5519981875907",
