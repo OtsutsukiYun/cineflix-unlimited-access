@@ -6,7 +6,7 @@ Crie uma página pora vender um serviço de assinatura... vou te enviar as infor
 
  Conteúdo ilimitado por um valor que cabe no seu bolso!
 
-Tenha acesso a mais de 2 mil canais, incluindo Netflix, Disney+, HBO Max e mais, por um preço acessível! Com a Cineflix, você economiza e assiste com qualidade, estabilidade e suporte dedicado.
+Tenha acesso a mais de 2 mil canais, incluindo Netflix, Disney+, HBO Max e mais, por um preço acessível! Com a UniTV PRO, você economiza e assiste com qualidade, estabilidade e suporte dedicado.
 
 ADQUIRA O SEU AGORA
 
@@ -42,11 +42,11 @@ Tenha acesso ao conteúdo de vários serviços de streaming em uma única plataf
 
 ADQUIRA O SEU AGORA
 
-Para os fãs de esporte, a Cineflix é o lugar certo!
+Para os fãs de esporte, a UniTV PRO é o lugar certo!
 
 Acompanhe os maiores campeonatos de futebol do Brasil e do mundo, além de transmissões de outros esportes que você ama, tudo em um só lugar.
 
-Com a Cineflix você assiste tudo quando e onde quiser!
+Com a UniTV PRO você assiste tudo quando e onde quiser!
 
 Planos a partir de R$ 29/mês Cancele a qualquer momento
 
@@ -80,7 +80,7 @@ R$ 89,90/mês
 
 Ao todo você pagaria R$ 514,85 por mês
 
-Já com a CINEFLIX você paga apenas R$ 20 mês!!
+Já com a UNITV PRO você paga apenas R$ 20 mês!!
 
 ADQUIRA O SEU AGORA
 

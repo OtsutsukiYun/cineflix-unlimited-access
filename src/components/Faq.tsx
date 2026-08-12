@@ -47,7 +47,7 @@ function SmoothCardReveal({
 
 const PERGUNTAS = [
   {
-    q: "Como funciona a Cineflix?",
+    q: "Como funciona a UniTV PRO?",
     a: "É um aplicativo de streaming por internet: você recebe seu acesso e assiste filmes, séries, animes, canais ao vivo e esportes em qualquer aparelho conectado. Sem antena, sem decodificador e sem fidelidade.",
   },
   {
