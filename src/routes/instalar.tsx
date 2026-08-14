@@ -52,7 +52,7 @@ const POSTERS_ROW_2000S = [
   "/mxFPI4KYBk5ri9cPteIS8jiDFgj.jpg", // The Descent / Abismo do Medo (2005)
   "/781px1eOtfVt1RdIsL4Dt1s3x7R.jpg", // Texas Chainsaw Massacre (2003)
   "/g410Y1U1ELbmJG14Zru3UAimm1G.jpg", // Jeepers Creepers / Olhos Famintos (2001)
-  "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg", // The Ring / O Chamado (2002)
+  "/tmclkEpjeo4Zu564gf3KrwIOuKw.jpg", // Paranormal Activity / Atividade Paranormal (2007)
 ];
 
 function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
