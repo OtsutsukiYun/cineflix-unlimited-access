@@ -185,10 +185,10 @@ export const terror: Title[] = [
 
 export const top10Hoje: Title[] = [
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
-  { title: "Silo", poster: "/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg", year: "2024", tag: "🔥 Top 2", rating: "4.9" },
-  { title: "Backrooms", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Top 3", rating: "4.9" },
-  { title: "Round 6", poster: "/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg", year: "2024", tag: "🔥 Top 4", rating: "4.8" },
-  { title: "The Last of Us", poster: "/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg", year: "2023", tag: "🔥 Top 5", rating: "4.9" },
+  { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
+  { title: "Homem-Aranha: Além do Aranhaverso", poster: "/9KAe39xqyZnv9J4W3DRGdQqX82h.jpg", year: "2026", tag: "🔥 Top 3", rating: "4.9" },
+  { title: "Backrooms", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Top 4", rating: "4.9" },
+  { title: "Round 6", poster: "/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg", year: "2024", tag: "🔥 Top 5", rating: "4.8" },
   { title: "Demon Slayer", poster: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", year: "2024", tag: "🔥 Top 6", rating: "4.9" },
   { title: "Premonição 6", poster: "/x3J781PsdMrjenzQKM5eJXqK5Nd.jpg", year: "2025", tag: "🔥 Top 7", rating: "4.8" },
   { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "🔥 Top 8", rating: "4.8" },
@@ -217,7 +217,6 @@ export const series: Title[] = [
   { title: "Servant", poster: "/aMLUWhLtpSo45ibaWvE7ws3iyy7.jpg", year: "Série" },
   { title: "Arquivo 81", poster: "/as0QIRSbRCOE1nr6CZyOJmqQ1z3.jpg", year: "Série" },
   { title: "O Gabinete de Curiosidades", poster: "/sxMMOIuV99LOwcJICx1Wy4O8fgi.jpg", year: "Série" },
-  { title: "The Last of Us", poster: "/el1KQzwdIm17I3A6cYPfsVIWhfX.jpg", year: "Série" },
   { title: "Lovecraft Country", poster: "/fz7bdjxPColvEWCGr5Kiclzc86d.jpg", year: "Série" },
   { title: "Stranger Things", poster: "/twfKp60THrcOIep9sjHODOOfO8d.jpg", year: "Série" },
   { title: "The Walking Dead", poster: "/9lb02gTh4LLB17yAEXFd4C3R4JP.jpg", year: "Série" },
