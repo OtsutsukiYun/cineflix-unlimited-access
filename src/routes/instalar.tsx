@@ -59,30 +59,30 @@ export function InstalarPage() {
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
       {/* PAREDE DE CAPINHAS DE FILMES PASSANDO UM DO LADO DO OUTRO AO FUNDO */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-25 flex flex-col justify-around py-4">
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-55 flex flex-col justify-around py-4">
         <div className="flex w-max animate-marquee-medium gap-4">
           {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].map((p, idx) => (
-            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/15 shadow-xl">
+            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-2xl">
               <img src={img(p, "w342")} alt="" className="size-full object-cover" />
             </div>
           ))}
         </div>
         <div className="flex w-max animate-marquee-reverse-medium gap-4">
           {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].reverse().map((p, idx) => (
-            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/15 shadow-xl">
+            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-2xl">
               <img src={img(p, "w342")} alt="" className="size-full object-cover" />
             </div>
           ))}
         </div>
         <div className="flex w-max animate-marquee-medium gap-4">
           {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].map((p, idx) => (
-            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/15 shadow-xl">
+            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-2xl">
               <img src={img(p, "w342")} alt="" className="size-full object-cover" />
             </div>
           ))}
         </div>
       </div>
-      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#080808]/85 via-[#080808]/92 to-[#080808]" />
+      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#080808]/55 via-[#080808]/70 to-[#080808]/55" />
 
       <div className="relative z-10 mx-auto w-[94%] max-w-3xl py-10 sm:py-16">
         {/* Topo Navegação */}

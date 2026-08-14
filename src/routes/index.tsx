@@ -94,23 +94,23 @@ function InstagramPopup() {
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4" role="dialog" aria-modal="true">
       {/* PAREDE DE CAPINHAS DE FILMES PASSANDO UM DO LADO DO OUTRO */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30 flex flex-col justify-center gap-3">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-65 flex flex-col justify-center gap-3">
         <div className="flex w-max animate-marquee-medium gap-3">
           {[...TESTE_GRATIS_POSTERS, ...TESTE_GRATIS_POSTERS].map((p, idx) => (
-            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-xl border border-white/15 shadow-xl">
+            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-xl border border-white/25 shadow-2xl">
               <img src={img(p, "w342")} alt="" className="size-full object-cover" />
             </div>
           ))}
         </div>
         <div className="flex w-max animate-marquee-reverse-medium gap-3">
           {[...TESTE_GRATIS_POSTERS, ...TESTE_GRATIS_POSTERS].reverse().map((p, idx) => (
-            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-xl border border-white/15 shadow-xl">
+            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-xl border border-white/25 shadow-2xl">
               <img src={img(p, "w342")} alt="" className="size-full object-cover" />
             </div>
           ))}
         </div>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/88 to-black/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/50" />
       <div className="relative z-10 w-full max-w-md rounded-3xl border border-white/10 bg-[#0e0e0e] p-7 sm:p-9 shadow-[0_40px_80px_rgba(0,0,0,0.95)] text-center">
         <button onClick={close} aria-label="Fechar" className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white/60 hover:bg-white/20 hover:text-white transition-all">
           <X className="size-4" />
