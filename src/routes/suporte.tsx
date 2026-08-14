@@ -40,13 +40,13 @@ function SmoothCardReveal({
 export const Route = createFileRoute("/suporte")({
   head: () => ({
     meta: [
-      { title: "Suporte Cineflix — Atendimento por WhatsApp" },
+      { title: "Suporte UniTV PRO — Atendimento por WhatsApp" },
       {
         name: "description",
         content:
-          "Fale com o suporte da Cineflix pelo WhatsApp: ajuda com instalação, problemas no app e dúvidas sobre planos e pagamentos.",
+          "Fale com o suporte da UniTV PRO pelo WhatsApp: ajuda com instalação, problemas no app e dúvidas sobre planos e pagamentos.",
       },
-      { property: "og:title", content: "Suporte Cineflix — Atendimento por WhatsApp" },
+      { property: "og:title", content: "Suporte UniTV PRO — Atendimento por WhatsApp" },
       {
         property: "og:description",
         content:
@@ -63,19 +63,19 @@ const BOTOES = [
   {
     icon: Wrench,
     badge3d: "🛠️",
-    gradient: "from-purple-600 via-primary to-accent",
-    glow: "shadow-[0_12px_35px_rgba(168,85,247,0.6)]",
+    gradient: "from-orange-500 via-orange-500 to-amber-500",
+    glow: "shadow-[0_12px_35px_rgba(249,115,22,0.6)]",
     titulo: "Iniciar instalação",
     desc: "Passo a passo completo para ativar na sua Smart TV, TV Box, celular ou PC.",
     phone: "5519981875907",
-    mensagem: "INICIAR INSTALAÇÃO CINEFLIX",
-    url: "https://wa.me/5519981875907?text=INICIAR%20INSTALA%C3%87%C3%83O%20CINEFLIX",
+    mensagem: "INICIAR INSTALAÇÃO UNITV PRO",
+    url: "https://wa.me/5519981875907?text=INICIAR%20INSTALA%C3%87%C3%83O%20UNITV%20PRO",
   },
   {
     icon: Headset,
     badge3d: "🎧",
-    gradient: "from-fuchsia-600 via-purple-600 to-primary",
-    glow: "shadow-[0_12px_35px_rgba(217,70,239,0.6)]",
+    gradient: "from-orange-600 via-orange-500 to-amber-500",
+    glow: "shadow-[0_12px_35px_rgba(249,115,22,0.6)]",
     titulo: "Desejo renovar",
     desc: "Renove sua assinatura rapidamente sem perder suas configurações.",
     phone: "5519981875907",
@@ -85,8 +85,8 @@ const BOTOES = [
   {
     icon: MessageCircleQuestion,
     badge3d: "💬",
-    gradient: "from-violet-600 via-primary to-fuchsia-500",
-    glow: "shadow-[0_12px_35px_rgba(139,92,246,0.6)]",
+    gradient: "from-amber-500 via-orange-500 to-orange-600",
+    glow: "shadow-[0_12px_35px_rgba(249,115,22,0.6)]",
     titulo: "Falar com o suporte",
     desc: "Tire dúvidas técnicas, receba auxílio com seu login ou ajuste de conta.",
     phone: "5519981875907",
@@ -202,7 +202,7 @@ function Suporte() {
         <SmoothCardReveal delay={0}>
           <Link
             to="/"
-            className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-purple-300/80 transition-colors hover:text-white"
+            className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-blue-300/80 transition-colors hover:text-white"
           >
             <ArrowLeft className="size-4" /> Voltar para o início
           </Link>
@@ -210,7 +210,7 @@ function Suporte() {
 
         <SmoothCardReveal delay={60}>
           <div className="text-center">
-            <span className="glass mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface/90 px-4 py-2 text-xs font-bold tracking-wide uppercase text-accent shadow-[0_0_20px_rgba(168,85,247,0.3)]">
+            <span className="glass mb-6 inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface/90 px-4 py-2 text-xs font-bold tracking-wide uppercase text-accent shadow-[0_0_20px_rgba(249,115,22,0.3)]">
               <Clock className="size-3.5 fill-current" /> Atendimento humano 7 dias por semana
             </span>
             <h1 className="text-4xl font-extrabold md:text-6xl">
@@ -231,7 +231,7 @@ function Suporte() {
                 onClick={(e) => handleWhatsAppClick(e, b.phone, b.mensagem)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex w-full items-center gap-6 rounded-4xl p-6 md:p-7 border border-purple-500/30 bg-gradient-to-b from-[#1c0830]/90 via-[#120522]/90 to-[#0b0316]/90 backdrop-blur-xl shadow-[0_0_35px_rgba(168,85,247,0.2)] transition-all duration-300 hover:border-purple-400 hover:shadow-[0_0_55px_rgba(168,85,247,0.5)] hover:-translate-y-1.5"
+                className="group relative flex w-full items-center gap-6 rounded-4xl p-6 md:p-7 border border-blue-500/30 bg-gradient-to-b from-[#0a1428]/90 via-[#060e1f]/90 to-[#050b18]/90 backdrop-blur-xl shadow-[0_0_35px_rgba(249,115,22,0.2)] transition-all duration-300 hover:border-blue-400 hover:shadow-[0_0_55px_rgba(249,115,22,0.5)] hover:-translate-y-1.5"
               >
                 {/* ÍCONE 3D COM ANIMAÇÃO FLUTUANTE */}
                 <div className="relative shrink-0 transition-transform duration-300 group-hover:scale-110">
@@ -245,7 +245,7 @@ function Suporte() {
 
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2">
-                    <p className="text-lg sm:text-xl font-extrabold text-white group-hover:text-purple-200 transition-colors">
+                    <p className="text-lg sm:text-xl font-extrabold text-white group-hover:text-blue-200 transition-colors">
                       {b.titulo}
                     </p>
                   </div>
@@ -272,11 +272,11 @@ function Suporte() {
             ].map((f) => (
               <div
                 key={f.title}
-                className="flex flex-col items-center gap-1.5 rounded-3xl border border-purple-500/30 bg-purple-950/40 p-4 text-center backdrop-blur-md transition-all duration-300 hover:border-purple-400/60 hover:shadow-[0_0_25px_rgba(168,85,247,0.3)] hover:-translate-y-1"
+                className="flex flex-col items-center gap-1.5 rounded-3xl border border-blue-500/30 bg-blue-950/40 p-4 text-center backdrop-blur-md transition-all duration-300 hover:border-blue-400/60 hover:shadow-[0_0_25px_rgba(249,115,22,0.3)] hover:-translate-y-1"
               >
-                <span className="text-2xl sm:text-3xl drop-shadow-[0_4px_12px_rgba(168,85,247,0.6)] animate-bounce">{f.icon}</span>
+                <span className="text-2xl sm:text-3xl drop-shadow-[0_4px_12px_rgba(249,115,22,0.6)] animate-bounce">{f.icon}</span>
                 <p className="text-xs font-bold text-white">{f.title}</p>
-                <p className="text-[10px] text-purple-200/70">{f.desc}</p>
+                <p className="text-[10px] text-blue-200/70">{f.desc}</p>
               </div>
             ))}
           </div>
