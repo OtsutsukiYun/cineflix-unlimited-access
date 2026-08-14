@@ -17,20 +17,22 @@ export const Route = createFileRoute("/instalar")({
 });
 
 const INSTALAR_POSTERS = [
-  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento (2016)
-  "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", // Pengabdi Setan 2
-  "/6tuNQ16hC4Qp7wjTweKzUnnLBkI.jpg", // O Chamado
-  "/ok4ot3YbfDYZcINXf91JUfq3maB.jpg", // Jogos Mortais
-  "/ecKQlAEG95k62SMGhvX83oEqANK.jpg", // Invocação do Mal
-  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
-  "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", // Salmokji
-  "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", // Channel Zero
-  "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", // O Segredo de Widow's Bay
-  "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg", // FROM (Origem)
-  "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
-  "/cWTbN7Bh7kVGFtbkAW2yCc2thVj.jpg", // Soulm8te
-  "/j7URoxYxWJYBUHqFxIPaWbvWFKn.jpg", // Leviticus
-  "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", // Dia Bukan Ibu
+  "/dgNTS4EQDDVfkzJI5msKuHu2Ei3.jpg", // Ringu (1998 - Japão)
+  "/4l58tFPxE1SdbNguszr6R9y8Sv6.jpg", // Ju-On: O Grito (2002 - Japão)
+  "/b9fF18oLm0gxfZDExQhLoF9OFAk.jpg", // Dark Water (2002 - Japão)
+  "/vNw1gOEDdYTDeNMuuq8OmiEHrfH.jpg", // Audition (1999 - Japão)
+  "/vNVFt6dtcqnI7hqa6LFBUibuFiw.jpg", // Train to Busan (2016 - Coreia)
+  "/fNqlsmu2tiI1bXcpU31yjHPkiJz.jpg", // Gonjiam: Hospital Maldito (2018 - Coreia)
+  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento (2016 - Coreia)
+  "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", // Pengabdi Setan 2 (Ásia)
+  "/rLNSOudrayDBo1uqXjrhxcjODIC.jpg", // Jogos Mortais (2004)
+  "/1mXhlQMnlfvJ2frxTjZSQNnA9Vp.jpg", // Premonição (2000)
+  "/ttquyxStEEctzghtA2f4PUGprDr.jpg", // Madrugada dos Mortos (2004)
+  "/sQckQRt17VaWbo39GIu0TMOiszq.jpg", // Extermínio (2002)
+  "/9wRfzTcMyyzkQxVDqBHv8RwuZOv.jpg", // Terror em Silent Hill (2006)
+  "/dDrtuWUKhgUGp12kgUWuP0NpTdF.jpg", // Albergue (2005)
+  "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", // Arraste-me Para o Inferno (2009)
+  "/xYqAfCDhdNjChTIlrIRg72LwkuB.jpg", // Olhos Famintos (2001)
 ];
 
 function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
@@ -58,26 +60,26 @@ function NtDownAppIcon({ className = "size-14 sm:size-16" }: { className?: strin
 export function InstalarPage() {
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
-      {/* PAREDE 3D DE CAPINHAS DE FILMES E SÉRIES COM PROFUNDIDADE E PERSPECTIVA */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-50 [perspective:1200px]">
-        <div className="size-full flex flex-col justify-center gap-3 [transform-style:preserve-3d] [transform:rotateX(14deg)_rotateY(-10deg)_rotateZ(-2deg)_scale(1.18)] origin-center">
-          <div className="flex w-max animate-marquee-cinematic gap-3">
+      {/* PAREDE 3D DE CAPINHAS MAIORES: CLÁSSICOS DE TERROR JAPONESES, COREANOS E ANOS 2000 */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-55 [perspective:1200px]">
+        <div className="size-full flex flex-col justify-center gap-4 [transform-style:preserve-3d] [transform:rotateX(14deg)_rotateY(-10deg)_rotateZ(-2deg)_scale(1.2)] origin-center">
+          <div className="flex w-max animate-marquee-cinematic gap-4">
             {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].map((p, idx) => (
-              <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+              <div key={idx} className="w-32 sm:w-44 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_12px_35px_rgba(0,0,0,0.85)]">
                 <img src={img(p, "w342")} alt="" className="size-full object-cover" />
               </div>
             ))}
           </div>
-          <div className="flex w-max animate-marquee-reverse-cinematic gap-3">
+          <div className="flex w-max animate-marquee-reverse-cinematic gap-4">
             {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].reverse().map((p, idx) => (
-              <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+              <div key={idx} className="w-32 sm:w-44 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_12px_35px_rgba(0,0,0,0.85)]">
                 <img src={img(p, "w342")} alt="" className="size-full object-cover" />
               </div>
             ))}
           </div>
-          <div className="flex w-max animate-marquee-cinematic gap-3">
+          <div className="flex w-max animate-marquee-cinematic gap-4">
             {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].map((p, idx) => (
-              <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+              <div key={idx} className="w-32 sm:w-44 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_12px_35px_rgba(0,0,0,0.85)]">
                 <img src={img(p, "w342")} alt="" className="size-full object-cover" />
               </div>
             ))}
