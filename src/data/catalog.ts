@@ -1,17 +1,4 @@
-import netflixLogo from "@/assets/logos/netflix.svg";
-import primeLogo from "@/assets/logos/primevideo.svg";
-import disneyLogo from "@/assets/logos/disneyplus.svg";
-import hboLogo from "@/assets/logos/hbomax.svg";
-import globoplayLogo from "@/assets/logos/globoplay.svg";
-import paramountLogo from "@/assets/logos/paramountplus.svg";
-import appletvLogo from "@/assets/logos/appletv.svg";
-import crunchyrollLogo from "@/assets/logos/crunchyroll.svg";
-import daznLogo from "@/assets/logos/dazn.svg";
-import starLogo from "@/assets/logos/starplus.svg";
-import telecineLogo from "@/assets/logos/telecine.svg";
-import premiereLogo from "@/assets/logos/premiere.svg";
-import claroLogo from "@/assets/logos/clarotv.svg";
-import combateLogo from "@/assets/logos/combate.svg";
+// Platform logo imports removed — no longer used in new design
 
 export const img = (path: string, size = "w500") =>
   `https://image.tmdb.org/t/p/${size}${path}`;
@@ -38,6 +25,17 @@ export type Title = {
 
 /** Destaques do carrossel de fundo (lançamentos de terror reais - TMDB) */
 export const heroSlides: HeroSlide[] = [
+  {
+    title: "Evil Dead: A Ascensão",
+    year: "2023",
+    genre: "Terror / Gore",
+    tagline: "O horror voltou para casa — e desta vez veio pela família.",
+    backdrop: "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg",
+    poster: "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+    brightness: "brightness(1.0)",
+  },
   {
     title: "Obsessão",
     year: "2026",
@@ -123,6 +121,10 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
+  { title: "Evil Dead: A Ascensão", poster: "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", year: "2023", tag: "🔥 Exclusivo", rating: "4.9" },
+  { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Terror Asiático", rating: "4.7" },
+  { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Terror Coreano", rating: "4.6" },
+  { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Terror Indonésio", rating: "4.5" },
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Mais assistido", rating: "5.0" },
   { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "Lançamento 2026", rating: "4.9" },
   { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "Novo", rating: "4.8" },
@@ -271,89 +273,5 @@ export const infantil: Title[] = [
   { title: "Gravity Falls", poster: "/21WVSbe9BB3GYnlxr4UF9H4DmO6.jpg", year: "Série" },
 ];
 
-export type Plataforma = {
-  nome: string;
-  logo: string;
-  cor: string;
-  preco: string;
-  glowColor: string;
-  bgGradient: string;
-  logoScale?: string;
-};
-
-export const plataformas: Plataforma[] = [
-  {
-    nome: "Netflix",
-    logo: netflixLogo,
-    cor: "#E50914",
-    preco: "R$ 20,90",
-    glowColor: "rgba(229, 9, 20, 0.6)",
-    bgGradient: "from-[#2b0507] via-[#170204] to-[#080001]",
-    logoScale: "scale-100",
-  },
-  {
-    nome: "Disney+",
-    logo: disneyLogo,
-    cor: "#38BDF8",
-    preco: "R$ 20,90",
-    glowColor: "rgba(56, 189, 248, 0.6)",
-    bgGradient: "from-[#0d3056] via-[#071d38] to-[#030d1c]",
-    logoScale: "scale-[1.2]",
-  },
-  {
-    nome: "Max",
-    logo: hboLogo,
-    cor: "#A855F7",
-    preco: "R$ 22,90",
-    glowColor: "rgba(168, 85, 247, 0.6)",
-    bgGradient: "from-[#2d0b54] via-[#190433] to-[#0a0117]",
-    logoScale: "scale-[1.1]",
-  },
-  {
-    nome: "Prime Video",
-    logo: primeLogo,
-    cor: "#00A8E1",
-    preco: "R$ 19,90",
-    glowColor: "rgba(0, 168, 225, 0.6)",
-    bgGradient: "from-[#004263] via-[#00273d] to-[#00111c]",
-    logoScale: "scale-[1.25]",
-  },
-  {
-    nome: "Apple TV+",
-    logo: appletvLogo,
-    cor: "#FFFFFF",
-    preco: "R$ 29,90",
-    glowColor: "rgba(255, 255, 255, 0.5)",
-    bgGradient: "from-[#333336] via-[#1c1c1e] to-[#0d0d0f]",
-    logoScale: "scale-[1.15]",
-  },
-  {
-    nome: "Paramount+",
-    logo: paramountLogo,
-    cor: "#0064FF",
-    preco: "R$ 34,90",
-    glowColor: "rgba(0, 100, 255, 0.6)",
-    bgGradient: "from-[#0044b3] via-[#00286e] to-[#001133]",
-    logoScale: "scale-[1.25]",
-  },
-  {
-    nome: "Globoplay",
-    logo: globoplayLogo,
-    cor: "#FF5C5C",
-    preco: "R$ 22,90",
-    glowColor: "rgba(255, 92, 92, 0.6)",
-    bgGradient: "from-[#40060d] via-[#240206] to-[#120002]",
-    logoScale: "scale-[1.2]",
-  },
-  {
-    nome: "Crunchyroll",
-    logo: crunchyrollLogo,
-    cor: "#F47521",
-    preco: "R$ 19,90",
-    glowColor: "rgba(244, 117, 33, 0.6)",
-    bgGradient: "from-[#451f08] via-[#291003] to-[#120600]",
-    logoScale: "scale-[1.15]",
-  },
-];
 
 export const icon = (slug: string) => `https://cdn.simpleicons.org/${slug}/white`;

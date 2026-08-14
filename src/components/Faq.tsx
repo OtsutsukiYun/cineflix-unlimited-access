@@ -47,42 +47,35 @@ function SmoothCardReveal({
 
 const PERGUNTAS = [
   {
-    q: "Como funciona a Cineflix?",
-    a: "É um aplicativo de streaming por internet: você recebe seu acesso e assiste filmes, séries, animes, canais ao vivo e esportes em qualquer aparelho conectado. Sem antena, sem decodificador e sem fidelidade.",
+    q: "O que é o UniTV Pro?",
+    a: "O UniTV Pro é uma plataforma digital de streaming que oferece uma ampla variedade de conteúdos, incluindo filmes, séries, documentários, programas de TV ao vivo e muito mais. Com uma interface intuitiva e uma vasta biblioteca de opções, o UniTV Pro se destaca como uma escolha popular entre os consumidores que buscam entretenimento de alta qualidade a qualquer hora e em qualquer lugar.",
   },
   {
-    q: "Em quais aparelhos eu posso assistir?",
-    a: "Smart TV, TV Box, Chromecast, celular Android e iPhone, tablet, notebook e computador. Basta ter internet.",
+    q: "O app é compatível com quais aparelhos?",
+    a: "O UniTV Pro é compatível com Smart TV que tenha sistema Android ou que use adaptadores como TV Box, Mi Stick da Xiaomi e FireTV da Amazon. Também somos compatíveis com celular Android, tablets Android e projetores com sistema Android. Não é compatível com PC/Windows, iPhone ou iPad.",
   },
   {
-    q: "Quanto tempo leva para liberar meu acesso?",
-    a: "A ativação é imediata após a confirmação do pagamento. Você recebe os dados de acesso e o passo a passo de instalação na hora.",
+    q: "Posso assistir em vários aparelhos ao mesmo tempo?",
+    a: "Você pode fazer login em até dois aparelhos com o mesmo acesso, caso escolha o Plano Anual (2 telas). Os planos Mensal e Trimestral permitem 1 tela simultânea.",
   },
   {
-    q: "Posso usar em mais de uma tela ao mesmo tempo?",
-    a: "Sim. Os planos START e PRO permitem 2 telas simultâneas e o plano PRIME permite 4 telas simultâneas.",
+    q: "Onde recebo o meu código de acesso UniTV Pro?",
+    a: "O código de recarga ou conta e senha é enviado de maneira imediata após a confirmação de pagamento. Caso não receba, entre em contato pelo e-mail unitvpro.oficial2026@gmail.com ou pelo nosso WhatsApp.",
   },
   {
-    q: "Qual velocidade de internet eu preciso?",
-    a: "A partir de 10 Mbps você assiste em HD com estabilidade. Para 4K recomendamos 25 Mbps ou mais.",
+    q: "Como utilizar o período de teste grátis?",
+    a: "Para realizar um teste grátis, basta instalar o aplicativo em seu dispositivo Android! Os testes são disponibilizados automaticamente através do dispositivo e da conta, podendo ser realizados uma única vez por aparelho/usuário.",
   },
   {
-    q: "Tem conteúdo adulto? É seguro para crianças?",
-    a: "O pacote adulto é totalmente opcional e fica protegido por senha, então a criançada navega apenas pelos canais infantis com segurança.",
+    q: "Como instalar o UniTV Pro na Smart TV ou TV Stick?",
+    a: "MÉTODO 1 (Downloader): Baixe o app Downloader na loja de aplicativos, abra-o e digite o código 291561. Siga as instruções na tela. — MÉTODO 2 (NtDown): Baixe o app NtDown na Play Store e coloque o código 96919.",
   },
   {
-    q: "Preciso pagar mensalidade nos planos anuais?",
-    a: "Não. Nos planos PRIME e PRO você paga uma única vez e usa durante todo o período contratado, sem mensalidade.",
-  },
-  {
-    q: "Quais são as formas de pagamento?",
-    a: "Cartão de crédito (com parcelamento) e PIX. O checkout é criptografado e processado por plataforma segura.",
-  },
-  {
-    q: "E se eu tiver algum problema?",
-    a: "Nosso suporte atende por WhatsApp todos os dias, ajudando na instalação, na troca de aparelho e em qualquer dúvida técnica.",
+    q: "Como fazer uma recarga UniTV Pro?",
+    a: "Cartão de Crédito: Você pode fazer sua recarga UniTV por cartão de crédito em até 12x através do nosso site. Selecione o plano desejado e conclua a compra. Você receberá seu código de recarga no e-mail e WhatsApp. Também aceitamos PIX com aprovação imediata.",
   },
 ];
+
 
 export function Faq({ children }: { children?: React.ReactNode }) {
   const [aberta, setAberta] = useState<number | null>(0);
@@ -133,7 +126,7 @@ export function Faq({ children }: { children?: React.ReactNode }) {
             Perguntas <span className="text-hot">frequentes</span>
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-xs sm:text-sm text-muted-foreground font-medium leading-relaxed">
-            Tire suas dúvidas sobre instalação, compatibilidade e funcionamento do serviço.
+            Tire todas as suas dúvidas sobre o UniTV Pro.
           </p>
         </div>
       </SmoothCardReveal>

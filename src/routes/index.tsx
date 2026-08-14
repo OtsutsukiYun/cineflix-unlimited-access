@@ -1,20 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, Fragment } from "react";
 
-
-
-
 function SlideshowBanner({ banners, alt, objectPosition = "object-cover" }: { banners: string[]; alt: string; objectPosition?: string }) {
   const [index, setIndex] = useState(0);
-
   useEffect(() => {
     if (banners.length <= 1) return;
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % banners.length);
-    }, 4500);
+    const timer = setInterval(() => setIndex((prev) => (prev + 1) % banners.length), 4500);
     return () => clearInterval(timer);
   }, [banners.length]);
-
   return (
     <>
       {banners.map((banner, i) => (
@@ -22,95 +15,34 @@ function SlideshowBanner({ banners, alt, objectPosition = "object-cover" }: { ba
           key={banner}
           src={banner}
           alt={alt}
-          className={`absolute inset-0 size-full ${objectPosition} transition-opacity duration-[1500ms] ease-in-out group-hover:scale-110 ${
-            i === index ? "opacity-100 z-0" : "opacity-0 -z-10"
-          }`}
+          className={`absolute inset-0 size-full ${objectPosition} transition-opacity duration-[1500ms] ease-in-out group-hover:scale-110 ${i === index ? "opacity-100 z-0" : "opacity-0 -z-10"}`}
         />
       ))}
     </>
   );
 }
 
-function CascadeGrid({
-  children,
-  className = "mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4",
-}: {
-  children: (visible: boolean) => React.ReactNode;
-  className?: string;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(true);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-        }
-      },
-      { threshold: 0.01 }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
-  return (
-    <div ref={ref} className={className}>
-      {children(visible)}
-    </div>
-  );
-}
-
-function SmoothCardReveal({
-  children,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-}) {
+function SmoothCardReveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
-
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setShown(true);
-        }
-      },
-      { threshold: 0.05, rootMargin: "60px" }
-    );
+    const io = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setShown(true); }, { threshold: 0.05, rootMargin: "60px" });
     io.observe(el);
     return () => io.disconnect();
   }, []);
-
   return (
-    <div
-      ref={ref}
-      style={{
-        transitionDuration: "650ms",
-        transitionDelay: `${delay}ms`,
-        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
-      }}
-      className={`transition-all duration-700 ${
-        shown
-          ? "opacity-100 translate-y-0 scale-100"
-          : "opacity-0 translate-y-7 scale-[0.98]"
-      }`}
-    >
+    <div ref={ref} style={{ transitionDuration: "650ms", transitionDelay: `${delay}ms`, transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }} className={`transition-all duration-700 ${shown ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-7 scale-[0.98]"}`}>
       {children}
     </div>
   );
 }
+
 import {
   Check,
   Clapperboard,
   Flame,
-  Ghost,
   Baby,
   Trophy,
   Tv,
@@ -125,58 +57,106 @@ import {
   QrCode,
   Barcode,
   RefreshCcw,
-  DollarSign,
   Film,
   MonitorPlay,
-  Download,
   Cpu,
   Users,
   Headphones,
   Rocket,
   Heart,
+  Smartphone,
+  Gift,
+  X,
+  Calendar,
+  ChevronRight,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { PromoBanner } from "@/components/PromoBanner";
-import { Rail } from "@/components/Rail";
 import { Faq } from "@/components/Faq";
 import { TrustSection } from "@/components/TrustSection";
 import { Torii } from "@/components/icons";
-import { BrandLogo } from "@/components/BrandLogo";
 import { SocialProof } from "@/components/SocialProof";
-import futebol from "@/assets/futebol.jpg";
 import {
   animes,
   heroSlides,
   img,
-  plataformas,
   series,
   terror,
-  top10Hoje,
 } from "@/data/catalog";
 
+// ── INSTAGRAM POPUP ─────────────────────────────────────────────────────────
+function InstagramPopup() {
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (!sessionStorage.getItem("ig_popup_seen")) {
+      const t = setTimeout(() => setOpen(true), 900);
+      return () => clearTimeout(t);
+    }
+  }, []);
+  function close() { sessionStorage.setItem("ig_popup_seen", "1"); setOpen(false); }
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4" role="dialog" aria-modal="true">
+      <div className="absolute inset-0 overflow-hidden">
+        <img src={img("/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", "w1280")} alt="" className="size-full object-cover opacity-20 scale-105 blur-sm" />
+        <div className="absolute inset-0 bg-black/82" />
+      </div>
+      <div className="relative z-10 w-full max-w-md rounded-3xl border border-white/10 bg-[#0e0e0e] p-7 sm:p-9 shadow-[0_40px_80px_rgba(0,0,0,0.95)] text-center">
+        <button onClick={close} aria-label="Fechar" className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white/60 hover:bg-white/20 hover:text-white transition-all">
+          <X className="size-4" />
+        </button>
+        <div className="mx-auto mb-5 flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-red-900 shadow-[0_0_30px_rgba(220,38,38,0.6)]">
+          <Gift className="size-8 text-white" />
+        </div>
+        <p className="mb-1 text-xs font-extrabold tracking-[0.2em] text-red-400 uppercase">Exclusivo Instagram · CinePesadelo</p>
+        <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
+          🎁 Teste Grátis<br /><span className="text-red-400">por 3 dias!</span>
+        </h2>
+        <p className="text-sm text-white/70 leading-relaxed mb-6">
+          Você veio pelo Instagram do <strong className="text-white">CinePesadelo</strong> e por isso está ganhando{" "}
+          <strong className="text-red-300">3 dias de teste grátis</strong> no UniTV Pro — o maior catálogo de filmes de terror do Brasil.
+        </p>
+        <a
+          href="https://wa.me/5561984016006?text=Vim%20pelo%20Instagram%20do%20CinePesadelo%20e%20quero%20meu%20teste%20gr%C3%A1tis%20de%203%20dias!"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={close}
+          className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(220,38,38,0.7)] mb-3"
+        >
+          <Smartphone className="size-4" />
+          QUERO MEU TESTE GRÁTIS
+        </a>
+        <button onClick={close} className="text-xs text-white/40 hover:text-white/70 transition-colors underline underline-offset-2">
+          Agora não, quero só ver o catálogo
+        </button>
+      </div>
+    </div>
+  );
+}
 
-
-export const Route = createFileRoute("/")({
+// ── ROUTE ────────────────────────────────────────────────────────────────────
+export const Route = createFileRoute("/")(({
   head: () => ({
     meta: [
-      { title: "Cineflix — Streaming ilimitado por R$20/mês" },
+      { title: "UniTV Pro — Streaming de Terror e muito mais" },
       {
         name: "description",
         content:
-          "Mais de 60.000 filmes, séries, animes, infantil e futebol ao vivo em um só app. Lançamentos do cinema, Netflix, Disney+, HBO Max e mais por R$20/mês.",
+          "O maior catálogo de filmes de terror dos streamings, tudo em um só lugar. Mais de 80.000 conteúdos por apenas R$34,99/mês. Smart TV, TV Box, celular Android.",
       },
-      { property: "og:title", content: "Cineflix — Streaming ilimitado por R$20/mês" },
+      { property: "og:title", content: "UniTV Pro — Streaming de Terror e muito mais" },
       {
         property: "og:description",
         content:
-          "Todos os streamings em uma única plataforma. Lançamentos do cinema, animes, infantil e esportes ao vivo em até 4K.",
+          "O maior catálogo de filmes de terror — Pemandi Jenazah, Salmokji, Evil Dead e muito mais. Tudo em um só lugar.",
       },
     ],
   }),
   component: Index,
-});
+} as any));
 
 const CTA_HREF = "#planos";
+const WA_LINK = "https://wa.me/5561984016006";
 
 function smoothTo(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
   const el = document.querySelector(href);
@@ -186,27 +166,15 @@ function smoothTo(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
   window.history.replaceState(null, "", href);
 }
 
-function SmoothLink({
-  href,
-  className,
-  children,
-}: {
-  href: string;
-  className?: string;
-  children: React.ReactNode;
-}) {
+function SmoothLink({ href, className, children }: { href: string; className?: string; children: React.ReactNode }) {
   return (
-    <a
-      href={href}
-      className={className ?? ""}
-      onClick={(e) => smoothTo(e, href)}
-    >
+    <a href={href} className={className ?? ""} onClick={(e) => smoothTo(e, href)}>
       {children}
     </a>
   );
 }
 
-function Cta({ children = "ADQUIRA O SEU AGORA" }: { children?: string }) {
+function Cta({ children = "QUERO ASSISTIR" }: { children?: string }) {
   return (
     <SmoothLink href={CTA_HREF} className="btn-cta animate-pulse-ring">
       {children}
@@ -214,646 +182,409 @@ function Cta({ children = "ADQUIRA O SEU AGORA" }: { children?: string }) {
   );
 }
 
-
-
-function HeroHeading() {
+// ── POSTER CARD ─────────────────────────────────────────────────────────────
+function PosterCard({ item }: { item: (typeof terror)[0] }) {
   return (
-    <h1 className="font-display text-3xl font-extrabold sm:text-6xl md:text-7xl leading-[1.08] sm:leading-[1.04] text-white tracking-tight drop-shadow-xl">
-      Todos os{" "}
-      <span className="relative inline text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-indigo-300 via-purple-400 to-amber-300 animate-text-shine font-black drop-shadow-[0_4px_20px_rgba(168,85,247,0.45)]">
-        filmes, séries e esportes
-      </span>{" "}
-      em um só lugar.
-    </h1>
+    <div className="group relative overflow-hidden rounded-xl aspect-[2/3] bg-surface cursor-pointer">
+      <img
+        src={img(item.poster, "w342")}
+        alt={item.title}
+        loading="lazy"
+        className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute bottom-0 inset-x-0 p-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <p className="text-[11px] font-bold text-white leading-tight line-clamp-2">{item.title}</p>
+        <p className="text-[10px] text-white/60 mt-0.5">{item.year}</p>
+      </div>
+      {item.tag && (
+        <span className="absolute top-2 left-2 rounded-full bg-red-600 px-2 py-0.5 text-[9px] font-black text-white uppercase tracking-wide">
+          {item.tag}
+        </span>
+      )}
+    </div>
   );
 }
 
+// ── ASIAN HORROR TITLES ───────────────────────────────────────────────────
+const asianHorror = [
+  { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Indonésia" },
+  { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Coreia" },
+  { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Indonésia" },
+  { title: "Leviticus", poster: "/j7URoxYxWJYBUHqFxIPaWbvWFKn.jpg", year: "2024", tag: "Terror" },
+  { title: "Soulm8te", poster: "/cWTbN7Bh7kVGFtbkAW2yCc2thVj.jpg", year: "2024", tag: "Terror" },
+  { title: "Round 6", poster: "/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg", year: "Série", tag: "Coreia" },
+  { title: "Nokdu Flower", poster: "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", year: "Série", tag: "Coreia" },
+  { title: "[REC]", poster: "/nfbO00NKXSzBIzcN3KbUMdPT1EU.jpg", year: "2007", tag: "Espanha" },
+];
 
-
+// ── MAIN PAGE ────────────────────────────────────────────────────────────────
 function Index() {
   const [slide, setSlide] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 6000);
+    const timer = setInterval(() => setSlide((prev) => (prev + 1) % heroSlides.length), 6000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="relative w-full overflow-x-hidden min-h-screen bg-[#070110] font-sans text-foreground antialiased selection:bg-accent selection:text-white">
-      {/* BACKGROUND CINEMÁTICO ALTO IMPACTO: CYBER GRID + AURORA DRIFT + BEAM SPOTLIGHT */}
+    <div className="relative w-full overflow-x-hidden min-h-screen bg-[#080808] font-sans text-foreground antialiased selection:bg-red-600 selection:text-white">
+      <InstagramPopup />
+
+      {/* FUNDO CINEMÁTICO — vermelho/preto */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden [transform:translateZ(0)]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900/40 via-[#070110] to-[#030006]" />
-        
-        {/* TEXTURA CYBER GRID MODERNA EM 3D */}
-        <div className="bg-cyber-grid absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_90%)]" />
-
-        {/* HAROSH / RAIO DE LUZ DE HOLOFOTE DE CINEMA */}
-        <div className="animate-beam-sweep absolute -top-[30%] left-[10%] w-[80vw] h-[1000px] bg-gradient-to-b from-purple-500/20 via-primary/10 to-transparent blur-[80px] pointer-events-none" />
-
-        {/* BLOBO 1: PURPLE NEON DRIFT */}
-        <div className="animate-aurora-1 absolute -top-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[70vw] sm:h-[70vw] max-w-[800px] max-h-[800px] rounded-full bg-gradient-to-tr from-purple-600/35 via-fuchsia-600/25 to-indigo-600/20 blur-[110px]" />
-        
-        {/* BLOBO 2: MAGENTA / ELECTRIC CYAN DRIFT */}
-        <div className="animate-aurora-2 absolute top-[25%] -right-[15%] w-[90vw] h-[90vw] sm:w-[65vw] sm:h-[65vw] max-w-[750px] max-h-[750px] rounded-full bg-gradient-to-br from-pink-500/30 via-purple-700/25 to-cyan-400/20 blur-[110px]" />
-        
-        {/* BLOBO 3: INDIGO DEEP NEBULA */}
-        <div className="animate-aurora-3 absolute -bottom-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[80vw] sm:h-[80vw] max-w-[900px] max-h-[900px] rounded-full bg-gradient-to-t from-indigo-700/35 to-purple-800/25 blur-[130px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/50 via-[#080808] to-[#030303]" />
+        <div className="animate-aurora-1 absolute -top-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[70vw] sm:h-[70vw] max-w-[800px] max-h-[800px] rounded-full bg-gradient-to-tr from-red-900/30 via-red-800/20 to-blue-950/15 blur-[110px]" />
+        <div className="animate-aurora-2 absolute top-[25%] -right-[15%] w-[90vw] h-[90vw] sm:w-[65vw] sm:h-[65vw] max-w-[750px] max-h-[750px] rounded-full bg-gradient-to-br from-red-900/25 via-red-950/20 to-blue-900/15 blur-[110px]" />
+        <div className="animate-aurora-3 absolute -bottom-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[80vw] sm:h-[80vw] max-w-[900px] max-h-[900px] rounded-full bg-gradient-to-t from-blue-950/30 to-red-950/20 blur-[130px]" />
       </div>
-      {/* BARRA PROMOCIONAL + NAV — empilhados para mobile funcionar */}
+
+      {/* NAVBAR */}
       <div className="fixed inset-x-0 top-0 z-50 flex flex-col [transform:translateZ(0)]">
-        <div className="z-[60]">
-          <PromoBanner />
-        </div>
+        <div className="z-[60]"><PromoBanner /></div>
         <header className="z-50">
-          <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-4 sm:px-6 py-2.5 sm:py-3 border border-white/25 bg-surface/40 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+          <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-4 sm:px-6 py-2.5 sm:py-3 border border-white/15 bg-black/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
             <SmoothLink href="#" className="flex items-center gap-2">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-tr from-primary/80 via-primary to-accent text-white shadow-glow">
+              <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 to-blue-800 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)]">
                 <Play className="size-4 fill-current ml-0.5" />
               </span>
               <span className="font-display text-xl font-extrabold tracking-tight text-white">
-                Cine<span className="text-hot">flix</span>
+                UniTV<span className="text-red-500"> Pro</span>
               </span>
             </SmoothLink>
 
             <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
-              <SmoothLink
-                href="#catalogo"
-                className="text-white/80 transition-colors hover:text-white"
-              >
-                Catálogo
-              </SmoothLink>
-              <SmoothLink
-                href="#planos"
-                className="text-white/80 transition-colors hover:text-white"
-              >
-                Planos
-              </SmoothLink>
-              <SmoothLink
-                href="#faq"
-                className="text-white/80 transition-colors hover:text-white"
-              >
-                FAQ
-              </SmoothLink>
-              <Link
-                to="/suporte"
-                className="text-purple-300 transition-colors hover:text-white font-semibold"
-              >
-                Suporte
-              </Link>
+              <SmoothLink href="#catalogo" className="text-white/80 transition-colors hover:text-white">Catálogo</SmoothLink>
+              <SmoothLink href="#planos" className="text-white/80 transition-colors hover:text-white">Planos</SmoothLink>
+              <SmoothLink href="#faq" className="text-white/80 transition-colors hover:text-white">FAQ</SmoothLink>
+              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</a>
             </nav>
 
-            <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs">
-              Assinar
-            </SmoothLink>
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-cta px-5 py-2.5 text-xs">
+              Teste Grátis
+            </a>
           </div>
         </header>
       </div>
 
-      {/* HERO */}
-      <section className="relative flex items-center overflow-hidden">
+      {/* HERO — centralizado, copy forte, pouquíssimo texto */}
+      <section className="relative flex min-h-[88vh] items-center justify-center overflow-hidden text-center">
         {heroSlides.map((s, i) => (
           <img
             key={s.title}
             src={img(s.backdrop, "w1280")}
-            alt={`Cena do filme ${s.title}`}
+            alt={`Cena de ${s.title}`}
             className="absolute inset-0 size-full object-cover transition-all duration-[2200ms] ease-out"
             style={{
               opacity: i === slide ? 1 : 0,
               transform: i === slide ? "scale(1.02)" : "scale(1)",
-              objectPosition: s.objectPositionMobile ?? s.objectPosition ?? "center 15%",
-              filter: s.brightness ? `${s.brightness} brightness(0.93)` : "brightness(0.93)",
+              objectPosition: s.objectPosition ?? "center 20%",
+              filter: s.brightness ? `${s.brightness} brightness(0.55)` : "brightness(0.55)",
             }}
           />
         ))}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent md:via-background/50 md:to-transparent" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/40" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 sm:h-64 bg-gradient-to-t from-background to-transparent" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(0,0,0,0.7)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/30 to-[#080808]/50" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#080808] to-transparent" />
 
-        <div className="relative z-10 mx-auto w-[94%] max-w-6xl pt-40 pb-10 sm:pt-48 sm:pb-12 md:pt-56 md:pb-14">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-            <div>
+        <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-36 pb-16 sm:pt-44 sm:pb-20">
+          {/* Kicker */}
+          <p className="mb-4 text-xs font-extrabold tracking-[0.25em] text-red-400 uppercase">
+            🔥 O streaming que nenhuma plataforma tem
+          </p>
 
-              <HeroHeading />
+          {/* Headline */}
+          <h1 className="font-display text-3xl font-black sm:text-5xl md:text-6xl leading-[1.06] text-white tracking-tight drop-shadow-xl">
+            O maior catálogo de{" "}
+            <span className="text-red-500">filmes de terror</span>{" "}
+            dos streamings —{" "}
+            <span className="text-white/80">tudo em um só lugar.</span>
+          </h1>
 
-              <p className="mt-3 sm:mt-5 max-w-lg text-sm sm:text-base md:text-lg font-medium text-foreground/90 drop-shadow-md">
-                Todas as plataformas de streaming e mais de <span className="font-extrabold text-white">80.000 conteúdos</span> por apenas <span className="font-extrabold text-white">R$20/mês</span>.
-              </p>
+          <p className="mt-4 text-sm sm:text-base text-white/65 max-w-lg mx-auto leading-relaxed">
+            Mais de <strong className="text-white">80.000 conteúdos</strong>. Terror, séries asiáticas exclusivas, esportes ao vivo e muito mais por apenas <strong className="text-red-400">R$34,99/mês</strong>.
+          </p>
 
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <Cta />
-                <SmoothLink href="#catalogo" className="btn-ghost">
-                  <Clapperboard className="size-4" /> Ver catálogo
-                </SmoothLink>
-              </div>
-
-              <div className="mt-5 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-muted-foreground">
-                <span className="flex items-center gap-2">
-                  <Star className="size-4 fill-accent text-accent" /> 4.9 de
-                  satisfação
-                </span>
-                <span className="flex items-center gap-2">
-                  <ShieldCheck className="size-4 text-accent" /> Cancele quando
-                  quiser
-                </span>
-              </div>
-
-              {/* TAG DO SLIDE ATUAL — ULTRA COMPACTA */}
-              <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/40 backdrop-blur-xs px-3.5 py-1 text-xs">
-                <span className="font-bold text-white">{heroSlides[slide]?.title}</span>
-                <span className="text-white/40">•</span>
-                <span className="text-muted-foreground">{heroSlides[slide]?.genre} ({heroSlides[slide]?.year})</span>
-              </div>
-            </div>
+          {/* CTAs */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <Cta>QUERO ASSISTIR</Cta>
+            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+              <Smartphone className="size-4" /> Teste grátis 3 dias
+            </a>
           </div>
 
-          <div className="mt-10 flex gap-2">
+          {/* Trust badges */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-xs text-white/50">
+            <span className="flex items-center gap-1.5"><Star className="size-3.5 fill-red-500 text-red-500" /> 4.9 de satisfação</span>
+            <span className="flex items-center gap-1.5"><ShieldCheck className="size-3.5 text-red-500" /> Garantia de 7 dias</span>
+            <span className="flex items-center gap-1.5"><Zap className="size-3.5 text-red-500" /> Ativação imediata</span>
+          </div>
+
+          {/* Indicadores do slide */}
+          <div className="mt-8 flex justify-center gap-2">
             {heroSlides.map((s, i) => (
               <button
                 key={s.title}
                 onClick={() => setSlide(i)}
                 aria-label={`Ver ${s.title}`}
-                className={`h-1.5 rounded-full transition-all duration-500 ${
-                  i === slide ? "w-10 bg-primary" : "w-3 bg-muted-foreground/30"
-                }`}
-              ></button>
+                className={`h-1.5 rounded-full transition-all duration-500 ${i === slide ? "w-10 bg-red-500" : "w-3 bg-white/20"}`}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      {/* SEÇÃO INFERIOR — GRADIENTE AMBIENTE ROXO VIBRANTE NO TOPO E ESCURO NOS PLANOS */}
-      <div className="relative bg-gradient-to-b from-transparent via-purple-900/15 to-transparent">
-        {/* TEXT MARQUEE ELEGANTE */}
-        <div className="relative z-20 w-full overflow-hidden border-b border-white/5 py-4 sm:py-5 bg-black/20 backdrop-blur-sm">
-          <div className="flex overflow-hidden">
-            <div className="animate-marquee flex shrink-0 items-center gap-8 sm:gap-16 pr-8 sm:pr-16 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-muted-foreground uppercase">
-              {Array.from({ length: 4 }).fill(0).map((_, i) => (
-                <Fragment key={i}>
-                  <span className="flex items-center gap-2 text-purple-200"><Sparkles className="size-3.5 text-accent" /> Qualidade em até 4K</span>
-                  <span className="flex items-center gap-2"><Film className="size-3.5 text-accent" /> Todos os Streamings</span>
-                  <span className="flex items-center gap-2 text-pink-200"><Tv className="size-3.5 text-accent" /> +80.000 Conteúdos</span>
-                  <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-accent" /> Múltiplas Telas</span>
-                  <span className="flex items-center gap-2 text-emerald-200"><RefreshCcw className="size-3.5 text-accent" /> Lançamentos Semanais</span>
-                  <span className="flex items-center gap-2"><Zap className="size-3.5 text-accent" /> Ativação Imediata</span>
-                  <span className="flex items-center gap-2 text-rose-200"><ShieldCheck className="size-3.5 text-accent" /> Sem Fidelidade</span>
-                </Fragment>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* CATÁLOGO E SELETOR DE RITMO */}
-        <section id="catalogo" className="relative z-10 py-4 sm:py-6 overflow-hidden">
-          <Reveal className="relative z-10 mx-auto mb-0 sm:mb-2 w-[94%] max-w-6xl px-2 sm:px-4 flex flex-col sm:flex-row sm:items-end justify-between gap-1 sm:gap-4">
-            <div>
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface/60 backdrop-blur-md px-3 py-1.5 text-[10px] font-extrabold tracking-[0.2em] text-accent uppercase shadow-sm mb-2 sm:mb-4">
-                <Film className="size-3.5 text-accent" /> Acervo Premium
-              </span>
-              <h2 className="text-2xl font-black sm:text-4xl md:text-5xl tracking-tight text-white drop-shadow-md text-balance">
-                Explore o que está <span className="whitespace-nowrap text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-rose-400">em alta</span>
-              </h2>
-            </div>
-            <p className="max-w-xs text-xs sm:text-sm text-muted-foreground font-semibold leading-relaxed sm:text-right">
-              Mais de 80.000 conteúdos em qualidade até 4K atualizados toda semana.
-            </p>
-          </Reveal>
-
-          <div className="relative space-y-4 mt-6">
-            <Reveal>
-              <Rail
-                icon={Flame}
-                title="Filmes — Lançamentos e Sucessos 2026"
-                subtitle="Títulos recém-saídos do cinema"
-                items={terror}
-              />
-            </Reveal>
-            <SmoothCardReveal delay={100}>
-              <Rail
-                icon={Tv}
-                title="Séries em alta para maratonar"
-                subtitle="Temporadas completas com áudio dublado e legendado"
-                items={series}
-              />
-            </SmoothCardReveal>
-            <SmoothCardReveal delay={200}>
-              <Rail
-                icon={Torii}
-                title="Animes — Simulcasts e Clássicos"
-                subtitle="Episódios atualizados semanalmente"
-                items={animes}
-              />
-            </SmoothCardReveal>
-          </div>
-        </section>
-
-        {/* FEATURES */}
-        <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-4 sm:py-6">
-          <SmoothCardReveal delay={0}>
-            <div className="text-center mb-3">
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-accent uppercase shadow-sm mb-4">
-                <Sparkles className="size-3.5 text-accent" /> Diferenciais da plataforma
-              </span>
-              <h2 className="text-2xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white flex flex-col items-center sm:block text-center">
-                <span>Por que escolher a</span>
-                <span className="text-hot mt-0.5 sm:mt-0 sm:ml-2">Cineflix</span>
-              </h2>
-            </div>
-          </SmoothCardReveal>
-
-          <div className="grid gap-5 md:grid-cols-3">
-            {[
-              {
-                icon: Clapperboard,
-                banners: [
-                  img("/yQIdU11DYQQp0neGtGtGxbGfRer.jpg", "w780"), // He-Man
-                  img("/neeNHeXjMF5fXoCJRsOmkNGC7q.jpg", "w780"), // Oppenheimer
-                  img("/7I6VUdPj6tQECNHdviJkUHD2u89.jpg", "w780") // John Wick 4
-                ],
-                objectPosition: "object-cover",
-                gradient: "from-orange-500 via-amber-500 to-yellow-500",
-                glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-orange-300/80",
-                corBorda: "border border-orange-500/40 hover:border-orange-300",
-                corGlow: "shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:shadow-[0_0_50px_rgba(245,158,11,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#0d0212] via-[#0d0212]/75 to-[#0d0212]/20",
-                titleHover: "group-hover:text-orange-200",
-                t: "Filmes incríveis",
-                qtd: "+45.000 Filmes",
-                d: "+45.000 filmes incluindo lançamentos recém-saídos do cinema e superproduções em até 4K.",
-              },
-              {
-                icon: Tv,
-                banners: [
-                  img("/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg", "w780"), // Silo
-                  img("/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg", "w780"), // Squid Game
-                  img("/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg", "w780") // The Last of Us
-                ],
-                objectPosition: "object-cover",
-                gradient: "from-teal-500 via-cyan-500 to-blue-500",
-                glow: "shadow-[0_0_22px_rgba(6,182,212,0.85)] border-teal-300/80",
-                corBorda: "border border-teal-500/40 hover:border-teal-300",
-                corGlow: "shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:shadow-[0_0_50px_rgba(6,182,212,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#0b0314] via-[#0b0314]/75 to-[#0b0314]/20",
-                titleHover: "group-hover:text-teal-200",
-                t: "Séries imperdíveis",
-                qtd: "+20.000 Séries",
-                d: "+20.000 séries das maiores plataformas mundiais com temporadas completas dubladas e legendadas.",
-              },
-              {
-                icon: Heart,
-                banners: [
-                  img("/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", "w780"), // Queen of Tears
-                  img("/3yEHM2HT2vrUtO93YzTJNgEfiZG.jpg", "w780"), // Crash Landing on You
-                  img("/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg", "w780")  // Round 6
-                ],
-                objectPosition: "object-cover",
-                gradient: "from-pink-500 via-rose-500 to-purple-600",
-                glow: "shadow-[0_0_22px_rgba(244,63,94,0.85)] border-pink-300/80",
-                corBorda: "border border-pink-500/40 hover:border-pink-300",
-                corGlow: "shadow-[0_0_30px_rgba(244,63,94,0.2)] hover:shadow-[0_0_50px_rgba(244,63,94,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#14020a] via-[#14020a]/75 to-[#14020a]/20",
-                titleHover: "group-hover:text-pink-200",
-                t: "Doramas & K-Dramas",
-                qtd: "+1.600 Doramas",
-                d: "+1.600 doramas como Rainha das Lágrimas, Pousando no Amor e os maiores sucessos asiáticos dublados.",
-              },
-              {
-                icon: Torii,
-                banners: [
-                  img("/oUmWLyeko3kYdUr8DBLIsxwcugl.jpg", "w780"), // DAIMA
-                  img("/1RgPyOhN4DRs225BGTlHJqCudII.jpg", "w780"), // Demon Slayer
-                  img("/gtKglOSEq3d4MgQE4VsrT1sRkd0.jpg", "w780") // Jujutsu Kaisen
-                ],
-                objectPosition: "object-cover",
-                gradient: "from-fuchsia-600 via-purple-600 to-pink-500",
-                glow: "shadow-[0_0_22px_rgba(217,70,239,0.85)] border-fuchsia-300/80",
-                corBorda: "border border-fuchsia-500/40 hover:border-fuchsia-300",
-                corGlow: "shadow-[0_0_30px_rgba(217,70,239,0.2)] hover:shadow-[0_0_50px_rgba(217,70,239,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#0e0214] via-[#0e0214]/75 to-[#0e0214]/20",
-                titleHover: "group-hover:text-fuchsia-200",
-                t: "Animes atualizados",
-                qtd: "Centenas de Animes",
-                d: "Centenas de animes com simulcast semanal, dublagem em português e áudio original.",
-              },
-              {
-                icon: Baby,
-                banners: [
-                  img("/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg", "w780"), // Moana 2
-                  img("/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg", "w780"), // Inside Out 2
-                  img("/9n2tJBplPbgR2ca05hS5CKXwP2c.jpg", "w780") // Super Mario
-                ],
-                objectPosition: "object-cover",
-                gradient: "from-cyan-400 via-blue-500 to-indigo-500",
-                glow: "shadow-[0_0_22px_rgba(6,182,212,0.85)] border-cyan-300/80",
-                corBorda: "border border-cyan-500/40 hover:border-cyan-300",
-                corGlow: "shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:shadow-[0_0_50px_rgba(6,182,212,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#020814] via-[#020814]/75 to-[#020814]/20",
-                titleHover: "group-hover:text-cyan-200",
-                t: "Canais infantis",
-                qtd: "Dezenas de Canais Infantis",
-                d: "Dezenas de canais infantis 24h ao vivo e milhares de filmes e desenhos para toda a família.",
-              },
-              {
-                icon: Trophy,
-                banners: [
-                  "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Erling_Haaland_France_v_Norway_26_June_26-008.jpg/1280px-Erling_Haaland_France_v_Norway_26_June_26-008.jpg", // Haaland
-                  "https://upload.wikimedia.org/wikipedia/commons/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg", // Mbappe 2026
-                  "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg/1280px-Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg" // Harry Kane
-                ],
-                objectPosition: "object-cover object-[center_20%]", // Keep faces in view without stretching
-                gradient: "from-green-500 via-emerald-600 to-teal-500",
-                glow: "shadow-[0_0_22px_rgba(34,197,94,0.85)] border-green-300/80",
-                corBorda: "border border-green-500/40 hover:border-green-300",
-                corGlow: "shadow-[0_0_30px_rgba(34,197,94,0.2)] hover:shadow-[0_0_50px_rgba(34,197,94,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#030e17] via-[#030e17]/75 to-[#030e17]/20",
-                titleHover: "group-hover:text-green-200",
-                t: "Esportes ao vivo",
-                qtd: "+500 Canais de Esporte",
-                d: "+500 canais ao vivo (Brasileirão, Champions League, Premier League, UFC e F1 sem travamentos).",
-              },
-              {
-                icon: Lock,
-                banners: [
-                  img("/7FRraud59N3s10bbf9bfYjvwx3v.jpg", "w780"), // Basic Instinct
-                  img("/rpsHpJj7FgnNBXhaO2KFthPwqH6.jpg", "w780"), // Love (2015)
-                  img("/xqIstzB0ELbYyfzKcYaSwLb4Whs.jpg", "w780") // Emmanuelle
-                ],
-                objectPosition: "object-cover",
-                gradient: "from-rose-600 via-red-600 to-pink-600",
-                glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-300/80",
-                corBorda: "border border-rose-500/40 hover:border-rose-300",
-                corGlow: "shadow-[0_0_30px_rgba(225,29,72,0.2)] hover:shadow-[0_0_50px_rgba(225,29,72,0.55)]",
-                bgOverlay: "bg-gradient-to-t from-[#12020a] via-[#12020a]/75 to-[#12020a]/20",
-                titleHover: "group-hover:text-rose-200",
-                t: "Canais adultos",
-                qtd: "+80 Canais Privados",
-                d: "+80 canais e conteúdos adultos opcionais protegidos por senha master parental.",
-              },
-            ].map((f, i) => (
-              <SmoothCardReveal key={f.t} delay={100 + i * 80}>
-                <div
-                  className={`group relative h-full min-h-[200px] sm:min-h-[220px] overflow-hidden rounded-2xl p-5 sm:p-7 ${f.corBorda} ${f.corGlow} transition-all duration-500 hover:-translate-y-2.5 animate-float`}
-                >
-                  {/* IMAGEM BANNER ILUSTRATIVA DE FUNDO (SEM DESFOQUE) COM SLIDESHOW */}
-                  <SlideshowBanner banners={f.banners} alt={`Ilustração ${f.t}`} objectPosition={f.objectPosition} />
-                  {/* SOBREPOSIÇÃO DE GRADIENTE ESCURO LÍMPIDO */}
-                  <div className={`absolute inset-0 ${f.bgOverlay} transition-opacity duration-500 group-hover:opacity-85`} />
-
-                  <div className="relative z-10 flex flex-col justify-between h-full">
-                    {/* ÍCONE 3D RELUZENTE E BADGE DE QUANTIDADE */}
-                    <div className="relative mb-6 shrink-0 flex items-center justify-between">
-                      <div className={`animate-icon-float-3d relative flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${f.gradient} p-0.5 border ${f.glow} transform-gpu transition-all duration-300 group-hover:scale-110`}>
-                        <div className="relative flex size-full items-center justify-center rounded-[14px] bg-black/25 overflow-hidden">
-                          <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-90" />
-                          <f.icon className="size-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] relative z-10" />
-                        </div>
-                      </div>
-
-                      {/* BADGE DE QUANTIDADE EM DESTAQUE */}
-                      <span className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-black/70 backdrop-blur-md px-3 py-1 text-[11px] font-black text-white shadow-[0_4px_15px_rgba(0,0,0,0.6)]">
-                        {f.qtd}
-                      </span>
-                    </div>
-
-                    <div>
-                      <h3 className={`mb-2 text-xl font-black text-white tracking-tight transition-colors duration-300 ${f.titleHover}`}>{f.t}</h3>
-                      <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground/90 font-medium drop-shadow-md">
-                        {f.d}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </SmoothCardReveal>
+      {/* MARQUEE */}
+      <div className="relative z-20 w-full overflow-hidden border-y border-white/5 py-3.5 bg-black/40 backdrop-blur-sm">
+        <div className="flex overflow-hidden">
+          <div className="animate-marquee flex shrink-0 items-center gap-8 sm:gap-16 pr-8 sm:pr-16 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-white/40 uppercase">
+            {Array.from({ length: 4 }).fill(0).map((_, i) => (
+              <Fragment key={i}>
+                <span className="flex items-center gap-2 text-red-400"><Sparkles className="size-3.5" /> Qualidade em até 4K</span>
+                <span className="flex items-center gap-2"><Film className="size-3.5 text-red-500" /> Terror Exclusivo</span>
+                <span className="flex items-center gap-2 text-blue-300"><Tv className="size-3.5 text-blue-400" /> +80.000 Conteúdos</span>
+                <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-red-500" /> Smart TV & TV Box</span>
+                <span className="flex items-center gap-2 text-red-300"><RefreshCcw className="size-3.5 text-red-500" /> Lançamentos Semanais</span>
+                <span className="flex items-center gap-2"><Zap className="size-3.5 text-red-500" /> Ativação Imediata</span>
+                <span className="flex items-center gap-2 text-white/60"><ShieldCheck className="size-3.5 text-red-400" /> Sem Fidelidade</span>
+              </Fragment>
             ))}
           </div>
-        </section>
+        </div>
+      </div>
 
-        {/* QUEBRA DE OBJEÇÕES E COMO FUNCIONA */}
-        <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-8 sm:py-12">
-          <SmoothCardReveal delay={0}>
-            <div className="text-center mb-8 sm:mb-10">
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-accent uppercase shadow-sm mb-3">
-                <ShieldCheck className="size-3.5 text-accent" /> Sem Burocracia &amp; Sem Risco
-              </span>
-              <h2 className="text-2xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white">
-                Tudo o que você precisa saber <span className="text-hot">antes de assinar</span>
-              </h2>
+      {/* CATÁLOGO — grade vertical (a pessoa desce a página) */}
+      <section id="catalogo" className="relative z-10 py-12 sm:py-16">
+        <div className="mx-auto w-[94%] max-w-6xl">
+          {/* Filmes & Terror */}
+          <Reveal>
+            <div className="mb-3 flex items-center gap-3">
+              <Flame className="size-5 text-red-500" />
+              <h2 className="text-lg font-black text-white">Lançamentos & Terror 2026</h2>
+              <span className="ml-auto text-xs text-white/40">+45.000 filmes</span>
+            </div>
+          </Reveal>
+          <SmoothCardReveal>
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+              {terror.slice(0, 20).map((item) => (
+                <PosterCard key={item.title} item={item} />
+              ))}
             </div>
           </SmoothCardReveal>
 
-          <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                icon: Cpu,
-                badge: "Rota Dedicada",
-                title: "Tecnologia Anti-Trava 4K",
-                desc: "Servidores otimizados com rota direta no Brasil. Assista a jogos decisivos e filmes sem congelamentos ou travamentos.",
-                color: "text-amber-400 bg-amber-400/10 border-amber-400/30",
-                glow: "shadow-[0_0_20px_rgba(245,158,11,0.15)] hover:border-amber-400/60",
-                link: null,
-              },
-              {
-                icon: Users,
-                badge: "Sem Bloqueio de IP",
-                title: "Até 4 Telas Simultâneas",
-                desc: "Toda a sua família assiste ao mesmo tempo em aparelhos diferentes, sem restrições de IP ou localidade.",
-                color: "text-cyan-400 bg-cyan-400/10 border-cyan-400/30",
-                glow: "shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:border-cyan-400/60",
-                link: null,
-              },
-              {
-                icon: Headphones,
-                badge: "Atendimento Humano",
-                title: "Suporte VIP no WhatsApp",
-                desc: "Equipe especializada pronta para te guiar passo a passo na instalação em qualquer aparelho, 7 dias por semana.",
-                color: "text-emerald-400 bg-emerald-400/10 border-emerald-400/30",
-                glow: "shadow-[0_0_20px_rgba(16,185,129,0.15)] hover:border-emerald-400/60",
-                link: "/suporte",
-              },
-              {
-                icon: Rocket,
-                badge: "Sem Fidelidade",
-                title: "Ativação Imediata & Cancelamento Livre",
-                desc: "Receba seus dados na hora no e-mail. Teste à vontade e cancele com 1 clique a qualquer momento sem pegadinhas.",
-                color: "text-fuchsia-400 bg-fuchsia-400/10 border-fuchsia-400/30",
-                glow: "shadow-[0_0_20px_rgba(217,70,239,0.15)] hover:border-fuchsia-400/60",
-                link: null,
-              },
-            ].map((item, i) => {
-              const CardInner = (
-                <div className={`glass flex flex-col justify-between rounded-2xl p-6 bg-surface/50 h-full border border-white/15 transition-all duration-300 hover:-translate-y-1.5 ${item.glow} ${item.link ? 'hover:border-emerald-400/90 cursor-pointer' : ''}`}>
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className={`inline-flex size-11 items-center justify-center rounded-xl border ${item.color}`}>
-                        <item.icon className="size-5" />
-                      </div>
-                      <span className="rounded-full bg-white/5 border border-white/10 px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-white/80">
-                        {item.badge}
-                      </span>
-                    </div>
-                    <h3 className="text-base font-extrabold text-white mb-2 tracking-tight flex items-center justify-between">
-                      <span>{item.title}</span>
-                      {item.link && <span className="text-xs text-emerald-400 font-bold underline ml-2">Falar no WhatsApp &rarr;</span>}
-                    </h3>
-                    <p className="text-xs text-muted-foreground leading-relaxed font-medium">{item.desc}</p>
-                  </div>
-                </div>
-              );
+          {/* Copy especial terror asiático */}
+          <SmoothCardReveal delay={100}>
+            <div className="my-10 rounded-2xl border border-red-900/40 bg-red-950/20 p-6 sm:p-8 text-center">
+              <p className="text-xs font-extrabold tracking-[0.2em] text-red-400 uppercase mb-2">🎌 Séries Asiáticas Raras</p>
+              <h3 className="text-xl sm:text-2xl font-black text-white mb-2">Filmes que <span className="text-red-400">nenhuma outra plataforma tem</span></h3>
+              <p className="text-sm text-white/60 max-w-lg mx-auto">
+                Pemandi Jenazah, Salmokji, Dia Bukan Ibu e dezenas de títulos do terror asiático que você não encontra no Netflix, Max ou Prime Video.
+              </p>
+            </div>
+          </SmoothCardReveal>
 
-              return (
-                <SmoothCardReveal key={item.title} delay={50 + i * 80}>
-                  {item.link ? (
-                    <Link to={item.link} className="block h-full">
-                      {CardInner}
-                    </Link>
-                  ) : (
-                    CardInner
-                  )}
-                </SmoothCardReveal>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* PLANOS */}
-        <section id="planos" className="relative z-10 mx-auto w-[94%] max-w-6xl py-8 sm:py-12">
-          {/* GLOW AMBIENTE DOS PLANOS */}
-          <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[650px] rounded-full bg-primary/20 blur-[180px]" />
-
-          <Reveal className="relative z-10 text-center">
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-surface-2/70 backdrop-blur-md px-4 py-2 text-xs font-extrabold tracking-wider text-accent uppercase shadow-glow mb-4">
-              <Sparkles className="size-3.5 text-accent animate-spin" /> Oferta Especial por Tempo Limitado
-            </span>
-            <h2 className="text-3xl font-black sm:text-5xl md:text-6xl tracking-tight text-white flex flex-wrap items-center justify-center gap-x-2">
-              <span>Escolha o plano ideal para</span>
-              <span className="bg-gradient-to-r from-rose-500 via-purple-400 via-pink-400 to-amber-300 bg-clip-text text-transparent animate-text-shine drop-shadow-[0_0_30px_rgba(244,63,94,0.6)]">
-                você e sua família
-              </span>
-            </h2>
-            <p className="mt-2 text-sm sm:text-base text-muted-foreground max-w-xl mx-auto font-medium leading-relaxed">
-              Substitua Netflix, Disney+, Max, Prime Video e Globoplay por um único valor acessível.
-            </p>
-
-            {/* ELEVADO & FLUTUANTE — SEM RETÂNGULO OU GRADIENTE POLUÍDO AO REDOR */}
-            <div className="mx-auto mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center">
-              {/* SELO DE ECONOMIA */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-950/40 px-4 py-2 text-xs sm:text-sm font-extrabold text-emerald-300 shadow-lg backdrop-blur-sm">
-                <Check className="size-4 text-emerald-400 shrink-0" />
-                Economize mais de <strong className="text-white font-black ml-1 text-sm sm:text-base">R$ 360,00/mês</strong>
-              </div>
-
-              {/* LADO DIREITO: ÍCONES REAIS DAS PLATAFORMAS (RECORTADOS POR CLIP-PATH CIRCLE PARA NUNCA MOSTRAR QUADRADOS) */}
-              <div className="flex items-center justify-center gap-2.5 sm:gap-4 overflow-x-auto no-scrollbar py-2">
-                <span className="text-[11px] font-bold text-emerald-200/90 uppercase tracking-wider shrink-0 mr-1 hidden sm:inline">
-                  Substitua:
-                </span>
-                {plataformas.slice(0, 6).map((p) => (
-                  <div
-                    key={p.nome}
-                    className="group relative flex size-12 sm:size-14 shrink-0 items-center justify-center transition-transform duration-300 hover:scale-115"
-                    title={p.nome}
-                  >
-                    {/* BRIHO NÉON 100% RADIAL (CIRCULAR) */}
-                    <div
-                      className="absolute -inset-1 rounded-full opacity-60 blur-sm transition-opacity duration-300 group-hover:opacity-100 -z-10"
-                      style={{
-                        background: `radial-gradient(circle at center, ${p.cor} 0%, transparent 70%)`,
-                      }}
-                    />
-
-                    {/* MEDALHÃO CIRCULAR COM CLIP-PATH SUBPIXEL (ZERO CONTORNO QUADRADO) */}
-                    <div
-                      className={`relative flex size-full items-center justify-center rounded-full border-2 border-white/40 bg-gradient-to-b ${p.bgGradient} p-2 sm:p-2.5 transition-colors duration-300 group-hover:border-white/90`}
-                      style={{
-                        clipPath: "circle(49.5% at 50% 50%)",
-                      }}
-                    >
-                      <img
-                        src={p.logo}
-                        alt={p.nome}
-                        className={`size-7 sm:size-8.5 object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)] transition-transform ${p.logoScale || 'scale-100'}`}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
+          {/* Terror Asiático */}
+          <Reveal>
+            <div className="mb-3 flex items-center gap-3">
+              <span className="text-lg">🎌</span>
+              <h2 className="text-lg font-black text-white">Terror Asiático — Só Aqui</h2>
+              <span className="ml-auto text-xs text-white/40">Exclusivos</span>
             </div>
           </Reveal>
+          <SmoothCardReveal delay={80}>
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+              {asianHorror.map((item) => (
+                <PosterCard key={item.title} item={item} />
+              ))}
+            </div>
+          </SmoothCardReveal>
 
-        <div className="relative z-10 mt-6 sm:mt-8 pt-3 grid items-stretch gap-6 lg:gap-6 lg:grid-cols-3">
+          {/* Séries */}
+          <SmoothCardReveal delay={120}>
+            <div className="mt-10 mb-3 flex items-center gap-3">
+              <Tv className="size-5 text-blue-400" />
+              <h2 className="text-lg font-black text-white">Séries para Maratonar</h2>
+              <span className="ml-auto text-xs text-white/40">+20.000 séries</span>
+            </div>
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+              {series.slice(0, 10).map((item) => (
+                <PosterCard key={item.title} item={item} />
+              ))}
+            </div>
+          </SmoothCardReveal>
+
+          {/* Animes */}
+          <SmoothCardReveal delay={160}>
+            <div className="mt-10 mb-3 flex items-center gap-3">
+              <Torii className="size-5 text-red-400" />
+              <h2 className="text-lg font-black text-white">Animes — Simulcasts e Clássicos</h2>
+              <span className="ml-auto text-xs text-white/40">Centenas de animes</span>
+            </div>
+            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+              {animes.slice(0, 10).map((item) => (
+                <PosterCard key={item.title} item={item} />
+              ))}
+            </div>
+          </SmoothCardReveal>
+        </div>
+      </section>
+
+      {/* DIFERENCIAIS */}
+      <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-10 sm:py-14">
+        <SmoothCardReveal>
+          <div className="text-center mb-8">
+            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/30 px-4 py-2 text-xs font-bold tracking-wider text-red-400 uppercase mb-4">
+              <Sparkles className="size-3.5" /> Por que o UniTV Pro?
+            </span>
+            <h2 className="text-2xl font-extrabold sm:text-4xl tracking-tight text-white">
+              Tudo o que você precisa,<br /><span className="text-red-500">em um só lugar</span>
+            </h2>
+          </div>
+        </SmoothCardReveal>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              id: "start",
-              nome: "Plano START",
-              icon: Zap,
-              iconColor: "text-purple-400",
-              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 drop-shadow-[0_2px_12px_rgba(168,85,247,0.5)]",
-              preco: "R$ 20",
-              periodo: "mensal",
-              sub: "Renovação mensal · Cancele a qualquer momento",
+              icon: "📺",
+              title: "TV ao Vivo em Alta",
+              desc: "Centenas de canais HD e UHD: esportes, notícias, infantis, variedades e filmes — todos num só lugar.",
+            },
+            {
+              icon: "🎬",
+              title: "Cinema e Séries",
+              desc: "Acervo robusto para maratonar quando bater vontade. Tudo incluso na recarga, sem cobrança avulsa.",
+            },
+            {
+              icon: "⏪",
+              title: "Volte 7 Dias na Grade",
+              desc: "Perdeu o jogo, novela ou programa? Use o Playback para retomar a programação dos últimos 7 dias.",
+            },
+            {
+              icon: "📡",
+              title: "Sinal P2P Estável",
+              desc: "A rede peer-to-peer espalha o conteúdo de forma inteligente, mantendo a transmissão fluida sem travar.",
+            },
+            {
+              icon: "🔒",
+              title: "Bloqueio Por Perfil",
+              desc: "Trave canais com senha para garantir que as crianças vejam só o que é apropriado.",
+            },
+            {
+              icon: "📋",
+              title: "Guia EPG Completo",
+              desc: "O guia de programação mostra o que passa em cada canal, com horário, sinopse e ordem por categoria.",
+            },
+          ].map((f, i) => (
+            <SmoothCardReveal key={f.title} delay={60 + i * 70}>
+              <div className="glass flex gap-4 rounded-2xl p-5 border border-white/10 bg-white/4 hover:border-red-500/30 transition-all duration-300">
+                <span className="text-2xl shrink-0 mt-0.5">{f.icon}</span>
+                <div>
+                  <h3 className="font-bold text-white mb-1 text-sm">{f.title}</h3>
+                  <p className="text-xs text-white/55 leading-relaxed">{f.desc}</p>
+                </div>
+              </div>
+            </SmoothCardReveal>
+          ))}
+        </div>
+      </section>
+
+      {/* PLANOS */}
+      <section id="planos" className="relative z-10 mx-auto w-[94%] max-w-6xl py-10 sm:py-14">
+        <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] rounded-full bg-red-800/15 blur-[180px]" />
+
+        <Reveal className="relative z-10 text-center mb-8">
+          <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/30 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-4">
+            <Sparkles className="size-3.5 animate-spin" /> Oferta por Tempo Limitado
+          </span>
+          <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white mb-2">
+            Escolha seu <span className="text-red-500">plano</span>
+          </h2>
+          <p className="text-sm text-white/55 max-w-md mx-auto">
+            Sem fidelidade. Cancele quando quiser. Garantia de reembolso de 7 dias em todos os planos.
+          </p>
+        </Reveal>
+
+        <div className="relative z-10 grid items-stretch gap-5 lg:grid-cols-3">
+          {[
+            {
+              id: "mensal",
+              nome: "Plano Mensal",
+              icon: Calendar,
+              iconColor: "text-red-400",
+              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-red-100 to-red-300",
+              precoAntigo: "R$50",
+              preco: "R$34,99",
+              periodo: "mês",
+              dias: "30 dias",
+              telas: "1 tela",
               destaque: false,
               selo: null as string | null,
               badge: "Sem Fidelidade",
-              btnStyle: "bg-gradient-to-r from-purple-600 via-primary to-purple-600 hover:from-purple-500 hover:to-primary text-white font-black py-4 px-4 rounded-xl shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:scale-[1.02]",
-              btnText: "ASSINAR PLANO START",
-              link: "https://ev.braip.com/ref?pl=plazg9wz&ck=che7qk0o&af=afi07p3351",
+              btnStyle: "bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white font-black py-4 px-4 rounded-xl shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:scale-[1.02]",
+              btnText: "ASSINAR PLANO MENSAL",
+              link: "#planos",
               features: [
-                "2 Telas simultâneas",
-                "Acervo completo (+60.000 títulos)",
-                "Esportes & Canais Ao Vivo em HD/4K",
-                "Smart TV, Celular, TV Box e PC",
-                "Sem fidelidade — cancelamento livre",
+                "1 Tela simultânea",
+                "Acervo completo (+80.000 títulos)",
+                "Esportes & Canais Ao Vivo HD/4K",
+                "Smart TV Android, TV Box, Mi Stick, FireTV",
+                "Celular Android e Tablet Android",
                 "Suporte 7 dias via WhatsApp",
+                "Garantia de reembolso de 7 dias",
               ],
             },
             {
-              id: "prime",
-              nome: "Plano PRIME",
+              id: "anual",
+              nome: "Plano Anual",
               icon: Crown,
               iconColor: "text-amber-300 drop-shadow-[0_0_12px_rgba(245,158,11,0.8)]",
-              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-fuchsia-300 drop-shadow-[0_2px_18px_rgba(236,72,153,0.75)]",
-              preco: "R$ 97",
-              periodo: "1 ano",
-              sub: "⚡ Equivale a apenas R$ 8,08/mês · 1 ano sem mensalidades",
+              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-red-300",
+              precoAntigo: "R$250",
+              preco: "R$179,99",
+              periodo: "ano",
+              dias: "365 dias",
+              telas: "2 telas",
               destaque: true,
-              selo: "🔥 MAIS POPULAR — ECONOMIZE 60%",
+              selo: "🔥 MAIS POPULAR — MELHOR CUSTO-BENEFÍCIO",
               badge: "⭐ Recomendado",
-              btnStyle: "btn-cta bg-gradient-to-r from-purple-500 via-primary to-accent text-white shadow-[0_0_40px_rgba(168,85,247,0.9)] hover:scale-[1.04] font-black py-4 px-6 text-sm sm:text-base",
+              btnStyle: "bg-gradient-to-r from-red-600 via-red-500 to-red-700 text-white shadow-[0_0_35px_rgba(220,38,38,0.8)] hover:scale-[1.04] font-black py-4 px-6 text-sm sm:text-base rounded-xl",
               btnText: "QUERO ASSINAR AGORA",
-              link: "https://ev.braip.com/ref?pl=plaoxjy8&ck=che7qk0o&af=afi07p3351",
+              link: "#planos",
               features: [
-                "4 Telas simultâneas (Para a família toda)",
-                "1 Ano completo de acesso sem mensalidades",
-                "Economize mais de R$ 140/ano",
-                "Acervo completo em alta qualidade até 4K",
-                "Todos os canais VIP & Esportes Ao Vivo",
-                "Suporte VIP prioritário 24/7",
+                "2 Telas simultâneas",
+                "365 dias de acesso sem mensalidades",
+                "Acervo completo em até 4K",
+                "Todos os canais ao vivo HD/4K",
+                "Smart TV Android, TV Box, Mi Stick, FireTV",
+                "Celular Android e Tablet Android",
+                "Suporte VIP prioritário via WhatsApp",
+                "Garantia de reembolso de 7 dias",
               ],
             },
             {
-              id: "pro",
-              nome: "Plano PRO",
+              id: "trimestral",
+              nome: "Plano Trimestral",
               icon: Sparkles,
-              iconColor: "text-fuchsia-400",
-              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-100 to-purple-300 drop-shadow-[0_2px_12px_rgba(168,85,247,0.5)]",
-              preco: "R$ 69,90",
-              periodo: "semestral",
-              sub: "Equivale a R$ 11,65/mês · 6 meses de acesso",
+              iconColor: "text-blue-400",
+              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-300",
+              precoAntigo: "R$149",
+              preco: "R$99,99",
+              periodo: "3 meses",
+              dias: "90 dias",
+              telas: "1 tela",
               destaque: false,
               selo: null as string | null,
-              badge: "Economia 42%",
-              btnStyle: "bg-gradient-to-r from-purple-600 via-primary to-purple-600 hover:from-purple-500 hover:to-primary text-white font-black py-4 px-4 rounded-xl shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:scale-[1.02]",
-              btnText: "ASSINAR PLANO PRO",
-              link: "https://ev.braip.com/ref?pl=pla0zq40&ck=che7qk0o&af=afi07p3351",
+              badge: "Economia 33%",
+              btnStyle: "bg-gradient-to-r from-blue-800 to-blue-700 hover:from-blue-700 hover:to-blue-600 text-white font-black py-4 px-4 rounded-xl shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:scale-[1.02]",
+              btnText: "ASSINAR TRIMESTRAL",
+              link: "#planos",
               features: [
-                "2 Telas simultâneas",
-                "6 Meses de acesso sem mensalidades",
-                "Acervo completo (+60.000 títulos)",
-                "Esportes & Canais Ao Vivo em HD/4K",
-                "Smart TV, Celular, TV Box e PC",
-                "Ativação imediata sem burocracia",
+                "1 Tela simultânea",
+                "90 dias sem mensalidades",
+                "Acervo completo (+80.000 títulos)",
+                "Esportes & Canais Ao Vivo HD/4K",
+                "Smart TV Android, TV Box, Mi Stick, FireTV",
+                "Celular Android e Tablet Android",
+                "Suporte 7 dias via WhatsApp",
               ],
             },
           ].map((p, i) => (
@@ -861,72 +592,71 @@ function Index() {
               <div
                 className={`glass group relative flex flex-col justify-between h-full rounded-3xl transition-all duration-500 ${
                   p.destaque
-                    ? "border-2 border-purple-400 bg-gradient-to-b from-purple-900/70 via-surface/90 to-purple-950/80 p-7 sm:p-9 shadow-[0_0_55px_rgba(168,85,247,0.45)] lg:-translate-y-3 lg:scale-[1.04] z-20 hover:border-accent hover:shadow-[0_0_70px_rgba(168,85,247,0.65)]"
-                    : "border border-white/20 bg-surface/60 p-6 sm:p-8 hover:border-white/35 hover:bg-surface/80 shadow-xl"
+                    ? "border-2 border-red-500 bg-gradient-to-b from-red-950/70 via-black/90 to-red-950/50 p-7 sm:p-9 shadow-[0_0_55px_rgba(220,38,38,0.4)] lg:-translate-y-3 lg:scale-[1.04] z-20 hover:border-red-400 hover:shadow-[0_0_70px_rgba(220,38,38,0.65)]"
+                    : "border border-white/15 bg-black/60 p-6 sm:p-8 hover:border-white/30 hover:bg-white/4 shadow-xl"
                 }`}
               >
                 {p.selo && (
-                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 via-primary to-accent px-5 py-1.5 text-xs font-black tracking-wider text-white uppercase shadow-[0_0_20px_rgba(168,85,247,0.8)]">
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-red-700 via-red-600 to-red-700 px-5 py-1.5 text-xs font-black tracking-wider text-white uppercase shadow-[0_0_20px_rgba(220,38,38,0.8)] whitespace-nowrap">
                     <Sparkles className="size-3.5 fill-current" />
                     {p.selo}
                   </span>
                 )}
 
                 <div>
-                  {/* CABEÇALHO DO PLANO */}
                   <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
                     <div className="flex items-center gap-2.5">
-                      <p.icon className={`size-6 sm:size-7 shrink-0 ${p.iconColor}`} />
+                      <p.icon className={`size-6 shrink-0 ${p.iconColor}`} />
                       <h3 className={`font-display font-black tracking-tight uppercase ${p.titleGradient} ${p.destaque ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}>
                         {p.nome}
                       </h3>
                     </div>
                     <span className={`shrink-0 rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-wider border ${
                       p.destaque
-                        ? "bg-gradient-to-r from-amber-500/30 to-purple-600/30 text-amber-200 border-amber-400/50 shadow-[0_0_12px_rgba(245,158,11,0.4)]"
-                        : "bg-white/10 text-purple-200 border-white/20"
+                        ? "bg-gradient-to-r from-red-700/30 to-red-600/30 text-red-200 border-red-500/50"
+                        : "bg-white/10 text-white/70 border-white/20"
                     }`}>
                       {p.badge}
                     </span>
                   </div>
 
-                  {/* BLOCO DE PREÇO IMPACTANTE E PERFEITAMENTE UNIFORME */}
-                  <div className="mt-5 flex items-baseline gap-1.5 whitespace-nowrap">
-                    <span
-                      className={`font-display font-black whitespace-nowrap ${
-                        p.destaque
-                          ? "text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-white to-fuchsia-300 drop-shadow-[0_4px_25px_rgba(236,72,153,0.85)]"
-                          : "text-4xl sm:text-5xl lg:text-[2.75rem] text-white drop-shadow-[0_2px_15px_rgba(168,85,247,0.6)]"
-                      }`}
-                    >
-                      {p.preco}
-                    </span>
-                    <span className={`font-extrabold shrink-0 whitespace-nowrap ${p.destaque ? "text-amber-200 text-sm sm:text-base" : "text-xs sm:text-sm text-purple-200"}`}>
-                      /{p.periodo}
-                    </span>
+                  {/* Preço */}
+                  <div className="mt-5">
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-sm text-white/40 line-through">{p.precoAntigo}</span>
+                      <span className={`font-display font-black ${p.destaque ? "text-5xl sm:text-6xl text-white" : "text-4xl text-white"}`}>
+                        {p.preco}
+                      </span>
+                      <span className={`text-xs font-bold ${p.destaque ? "text-red-300" : "text-white/50"}`}>/{p.periodo}</span>
+                    </div>
+                    <div className="mt-2 flex gap-2 flex-wrap">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-white/8 border border-white/10 px-2.5 py-0.5 text-[10px] font-bold text-white/60">
+                        <Calendar className="size-3" /> {p.dias}
+                      </span>
+                      <span className="inline-flex items-center gap-1 rounded-full bg-white/8 border border-white/10 px-2.5 py-0.5 text-[10px] font-bold text-white/60">
+                        <MonitorPlay className="size-3" /> {p.telas}
+                      </span>
+                    </div>
                   </div>
-
-                  <p className={`mt-2.5 text-xs font-semibold leading-relaxed ${p.destaque ? "text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-xl border border-emerald-500/20" : "text-muted-foreground"}`}>
-                    {p.sub}
-                  </p>
 
                   <a
                     href={p.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`mt-6 w-full flex items-center justify-center gap-2 rounded-xl text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 ${p.btnStyle}`}
+                    target={p.link.startsWith("http") ? "_blank" : undefined}
+                    rel={p.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                    onClick={p.link === "#planos" ? (e) => { e.preventDefault(); } : undefined}
+                    className={`mt-5 w-full flex items-center justify-center gap-2 text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 ${p.btnStyle}`}
                   >
-                    <Zap className={p.destaque ? "size-5 fill-amber-300 text-amber-300 animate-pulse" : "size-4 text-purple-200"} />
+                    <Zap className={p.destaque ? "size-5 fill-white text-white" : "size-4"} />
                     {p.btnText}
                   </a>
 
-                  <div className={`my-6 h-px w-full ${p.destaque ? "bg-purple-400/30" : "bg-white/15"}`} />
+                  <div className={`my-5 h-px w-full ${p.destaque ? "bg-red-500/30" : "bg-white/10"}`} />
 
-                  <ul className="space-y-3.5 text-xs sm:text-sm">
+                  <ul className="space-y-3 text-xs sm:text-sm">
                     {p.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5">
-                        <Check className={`mt-0.5 size-4 shrink-0 ${p.destaque ? "text-accent font-bold" : "text-primary"}`} />
-                        <span className={p.destaque ? "text-white font-semibold" : "text-foreground/90 font-medium"}>{f}</span>
+                        <Check className={`mt-0.5 size-4 shrink-0 ${p.destaque ? "text-red-400" : "text-red-500/80"}`} />
+                        <span className={p.destaque ? "text-white font-semibold" : "text-white/80 font-medium"}>{f}</span>
                       </li>
                     ))}
                   </ul>
@@ -936,56 +666,36 @@ function Index() {
           ))}
         </div>
 
-        {/* PAINEL COMPACTO DE GARANTIA E PAGAMENTO */}
-        <SmoothCardReveal delay={150}>
-          <div className="glass mx-auto max-w-5xl rounded-[2rem] sm:rounded-[2.5rem] p-5 sm:p-8 border border-white/10 bg-surface/80 shadow-[0_8px_30px_rgb(0,0,0,0.5)] mt-10 sm:mt-16 relative overflow-hidden">
-            {/* Brilho de topo sutil para dar acabamento premium sem parecer um plano */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-            
-            <div className="relative z-10 grid gap-5 sm:gap-8 md:grid-cols-2 md:items-center md:divide-x md:divide-white/10">
-              {/* LADO ESQUERDO: GARANTIA DE 7 DIAS */}
-              <div className="flex flex-row items-center gap-4 sm:gap-6">
-                <div className="flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full bg-primary/10 border border-primary/20 text-accent shadow-sm">
-                  <ShieldCheck className="size-6 sm:size-7" />
-                </div>
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-purple-300">Garantia</span>
-                    <span className="rounded-full bg-purple-500/20 px-2 py-0.5 text-[9px] font-extrabold tracking-wider text-purple-200 uppercase">7 Dias Sem Risco</span>
-                  </div>
-                  <h4 className="font-display text-sm sm:text-lg font-bold text-white drop-shadow-md leading-tight">
-                    Experimente sem compromisso
-                  </h4>
-                  <p className="mt-0.5 text-xs text-muted-foreground font-medium">
-                    Satisfação garantida ou seu dinheiro de volta em até 7 dias.
-                  </p>
-                </div>
+        {/* Garantia e pagamento */}
+        <SmoothCardReveal delay={200}>
+          <div className="glass mx-auto max-w-4xl rounded-2xl p-5 sm:p-7 border border-white/10 bg-black/60 mt-8 grid gap-5 sm:grid-cols-2 items-center">
+            <div className="flex items-center gap-4">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-red-500/10 border border-red-500/20 text-red-400">
+                <ShieldCheck className="size-6" />
               </div>
-
-              {/* LADO DIREITO: FORMAS DE PAGAMENTO */}
-              <div className="flex flex-col justify-center gap-2 md:pl-8">
-                <div className="flex items-center gap-2">
-                  <Lock className="size-3.5 text-emerald-400" />
-                  <span className="text-xs font-bold text-white">Pagamento 100% Seguro &amp; Encriptado</span>
-                </div>
-                <p className="text-[11px] text-muted-foreground font-medium">
-                  Aceitamos Pix (aprovação imediata) e cartão de crédito em até 12x.
-                </p>
-                <div className="mt-1 flex flex-wrap items-center gap-2">
-                  <span className="flex items-center gap-1.5 rounded-full border border-purple-400/30 bg-purple-950/40 px-2.5 py-1 text-[10px] sm:text-xs font-bold text-purple-100 transition-all hover:border-purple-400/60">
-                    <QrCode className="size-3.5 text-emerald-400" /> Pix Instantâneo
-                  </span>
-                  <span className="flex items-center gap-1.5 rounded-full border border-purple-400/30 bg-purple-950/40 px-2.5 py-1 text-[10px] sm:text-xs font-bold text-purple-100 transition-all hover:border-purple-400/60">
-                    <CreditCard className="size-3.5 text-purple-300" /> Cartão até 12x
-                  </span>
-                </div>
+              <div>
+                <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-red-400">Garantia</p>
+                <h4 className="font-bold text-white text-sm">7 Dias sem risco</h4>
+                <p className="text-xs text-white/50">Satisfação garantida ou seu dinheiro de volta.</p>
+              </div>
+            </div>
+            <div className="flex flex-col gap-2 sm:border-l sm:border-white/10 sm:pl-6">
+              <div className="flex items-center gap-1.5">
+                <Lock className="size-3.5 text-green-400" />
+                <span className="text-xs font-bold text-white">Pagamento 100% Seguro</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-white/70">
+                  <QrCode className="size-3" /> Pix Instantâneo
+                </span>
+                <span className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-white/70">
+                  <CreditCard className="size-3" /> Cartão até 12x
+                </span>
               </div>
             </div>
           </div>
         </SmoothCardReveal>
-
       </section>
-
 
       {/* FAQ */}
       <Faq>
@@ -995,75 +705,53 @@ function Index() {
         </SmoothLink>
       </Faq>
 
-      {/* SEGURANÇA E CERTIFICADOS BEM EMBAIXO DA PÁGINA */}
-      <section className="border-t border-white/5 bg-black/20 py-4 sm:py-6 backdrop-blur-xl">
-        <div className="mx-auto w-[94%] max-w-6xl">
-          <p className="mb-8 text-center text-xs font-semibold tracking-[0.25em] text-muted-foreground uppercase">
-            Segurança &amp; Certificados de Garantia
-          </p>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-            {[
-              { icon: Lock, title: "Pagamento Seguro", desc: "SSL 256-bit", link: null },
-              { icon: Zap, title: "Ativação Imediata", desc: "Acesso na hora", link: null },
-              { icon: CreditCard, title: "Parcelamento", desc: "Até 12x no cartão", link: null },
-              { icon: ShieldCheck, title: "Suporte 7 dias", desc: "Via WhatsApp", link: "/suporte" },
-              { icon: RefreshCcw, title: "Sem Fidelidade", desc: "Cancele quando quiser", link: null },
-              { icon: Star, title: "+10 mil clientes", desc: "Satisfação garantida", link: null },
-            ].map((c, i) => {
-              const BadgeInner = (
-                <div className={`glass flex flex-col items-center gap-2 rounded-2xl p-4 text-center transition-all duration-300 hover:border-primary/50 hover:scale-105 ${c.link ? 'hover:border-emerald-400 cursor-pointer' : ''}`}>
-                  <c.icon className={`size-6 mb-1 ${c.link ? 'text-emerald-400' : 'text-accent'}`} />
-                  <p className="text-xs font-bold text-white">{c.title}</p>
-                  <p className="text-[10px] text-muted-foreground">{c.desc}</p>
-                </div>
-              );
-
-              return (
-                <SmoothCardReveal key={c.title} delay={60 + i * 40}>
-                  {c.link ? (
-                    <Link to={c.link} className="block h-full">
-                      {BadgeInner}
-                    </Link>
-                  ) : (
-                    BadgeInner
-                  )}
-                </SmoothCardReveal>
-              );
-            })}
+      {/* SUPORTE / CONTATO */}
+      <section className="relative z-10 border-t border-white/5 bg-black/30 py-8">
+        <div className="mx-auto w-[94%] max-w-2xl text-center">
+          <p className="text-sm text-white/50 mb-4">Precisa de ajuda? Nosso suporte atende 7 dias por semana.</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href="https://wa.me/5561984016006"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-green-700 px-5 py-3 text-sm font-bold text-white hover:bg-green-600 transition-colors"
+            >
+              <Smartphone className="size-4" /> WhatsApp (61) 9 8401-6006
+            </a>
+            <a
+              href="https://wa.me/5561982743140"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl bg-green-800/60 border border-green-700/40 px-5 py-3 text-sm font-bold text-white hover:bg-green-700/60 transition-colors"
+            >
+              <Smartphone className="size-4" /> WhatsApp (61) 9 8274-3140
+            </a>
           </div>
+          <p className="mt-3 text-xs text-white/30">
+            ou por e-mail: <a href="mailto:unitvpro.oficial2026@gmail.com" className="text-white/50 hover:text-white transition-colors underline">unitvpro.oficial2026@gmail.com</a>
+          </p>
         </div>
       </section>
 
       {/* FOOTER */}
       <Reveal>
-        <footer className="border-t border-border py-12">
-          <div className="mx-auto flex w-[94%] max-w-6xl flex-col items-center gap-5 text-center">
-          <span className="font-display text-xl font-extrabold">
-            CINE<span className="text-hot">FLIX</span>
-          </span>
-          <p className="max-w-xl text-sm text-muted-foreground">
-            A televisão do futuro é pela internet — sem antenas, sem
-            decodificadores. Assista quando e onde quiser.
-          </p>
-          <Cta />
-          <Link
-            to="/suporte"
-            className="text-sm text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
-          >
-            Precisa de ajuda? Fale com o suporte
-          </Link>
-          <p className="mt-4 text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Cineflix. Imagens de divulgação dos
-            respectivos estúdios (fonte: TMDB).
-          </p>
-        </div>
+        <footer className="border-t border-white/5 py-10">
+          <div className="mx-auto flex w-[94%] max-w-6xl flex-col items-center gap-4 text-center">
+            <span className="font-display text-xl font-extrabold">
+              UniTV<span className="text-red-500"> Pro</span>
+            </span>
+            <p className="max-w-md text-sm text-white/40">
+              A televisão do futuro é pela internet — sem antenas, sem decodificadores. Assista quando e onde quiser.
+            </p>
+            <Cta />
+            <p className="text-xs text-white/30">
+              © {new Date().getFullYear()} UniTV Pro. Imagens de divulgação dos respectivos estúdios (fonte: TMDB).
+            </p>
+          </div>
         </footer>
       </Reveal>
 
       <SocialProof />
-
-      </div>
     </div>
   );
 }
-
