@@ -61,21 +61,53 @@ import {
   terror,
 } from "@/data/catalog";
 
+const TESTE_GRATIS_BG_SLIDES = [
+  "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", // Evil Dead: A Ascensão (2023)
+  "/6tuNQ16hC4Qp7wjTweKzUnnLBkI.jpg", // O Chamado (2002 - Anos 2000)
+  "/9qxBNfI1QFbiZS62fsgaUd563t2.jpg", // O Lamento (2016 - Terror Asiático Coreano)
+  "/ok4ot3YbfDYZcINXf91JUfq3maB.jpg", // Jogos Mortais (2004 - Anos 2000)
+  "/jZXI5WdFkYDfDNBZsy8PFqp03vP.jpg", // Pengabdi Setan 2 (2022 - Terror Indonésio)
+  "/xLdw1xdHocKYFFvx7w41NchXMfJ.jpg", // FROM / Origem (Série de Terror)
+  "/ecKQlAEG95k62SMGhvX83oEqANK.jpg", // Invocação do Mal
+  "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg", // Obsessão (2026)
+];
+
 // ── INSTAGRAM POPUP ─────────────────────────────────────────────────────────
 function InstagramPopup() {
   const [open, setOpen] = useState(false);
+  const [bgIdx, setBgIdx] = useState(0);
+
   useEffect(() => {
     if (!sessionStorage.getItem("ig_popup_seen")) {
       const t = setTimeout(() => setOpen(true), 900);
       return () => clearTimeout(t);
     }
   }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const interval = setInterval(() => {
+      setBgIdx((prev) => (prev + 1) % TESTE_GRATIS_BG_SLIDES.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [open]);
+
   function close() { sessionStorage.setItem("ig_popup_seen", "1"); setOpen(false); }
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4" role="dialog" aria-modal="true">
+      {/* ANIMAÇÃO DE FILMES E SÉRIES DE TERROR PASSANDO AO FUNDO DO TESTE GRÁTIS */}
       <div className="absolute inset-0 overflow-hidden">
-        <img src={img("/o0jkkpcN81QqSl8DMLScBCXyUH9.jpg", "w1280")} alt="" className="size-full object-cover opacity-20 scale-105 blur-sm" />
+        {TESTE_GRATIS_BG_SLIDES.map((bd, i) => (
+          <img
+            key={bd}
+            src={img(bd, "w1280")}
+            alt=""
+            className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out ${
+              i === bgIdx ? "opacity-35 scale-105" : "opacity-0 scale-100"
+            } blur-[2px]`}
+          />
+        ))}
         <div className="absolute inset-0 bg-black/82" />
       </div>
       <div className="relative z-10 w-full max-w-md rounded-3xl border border-white/10 bg-[#0e0e0e] p-7 sm:p-9 shadow-[0_40px_80px_rgba(0,0,0,0.95)] text-center">

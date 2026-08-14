@@ -16,7 +16,18 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-const BACKDROP = "/o0jkkpcN81QqSl8DMLScBCXyUH9.jpg";
+import { useState, useEffect } from "react";
+
+const INSTALAR_BG_SLIDES = [
+  "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", // Evil Dead: A Ascensão (2023)
+  "/6tuNQ16hC4Qp7wjTweKzUnnLBkI.jpg", // O Chamado (2002 - Anos 2000)
+  "/9qxBNfI1QFbiZS62fsgaUd563t2.jpg", // O Lamento (2016 - Terror Asiático Coreano)
+  "/ok4ot3YbfDYZcINXf91JUfq3maB.jpg", // Jogos Mortais (2004 - Anos 2000)
+  "/jZXI5WdFkYDfDNBZsy8PFqp03vP.jpg", // Pengabdi Setan 2 (2022 - Terror Indonésio)
+  "/xLdw1xdHocKYFFvx7w41NchXMfJ.jpg", // FROM / Origem (Série de Terror)
+  "/ecKQlAEG95k62SMGhvX83oEqANK.jpg", // Invocação do Mal
+  "/lthkKBLe1rX6iThgVFg22O02sJw.jpg", // Demon Slayer
+];
 
 function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
   return (
@@ -41,15 +52,29 @@ function NtDownAppIcon({ className = "size-14 sm:size-16" }: { className?: strin
 }
 
 export function InstalarPage() {
+  const [bgIdx, setBgIdx] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setBgIdx((prev) => (prev + 1) % INSTALAR_BG_SLIDES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
-      {/* FUNDO CINEMATOGRÁFICO COM BRILHO VERDE ESMERALDA */}
+      {/* FUNDO CINEMATOGRÁFICO COM ANIMAÇÃO DE FILMES E SÉRIES DE TERROR PASSANDO */}
       <div className="pointer-events-none fixed inset-0 z-0">
-        <img
-          src={img(BACKDROP, "w1280")}
-          alt=""
-          className="absolute inset-0 size-full object-cover opacity-12 blur-[3px]"
-        />
+        {INSTALAR_BG_SLIDES.map((bd, i) => (
+          <img
+            key={bd}
+            src={img(bd, "w1280")}
+            alt=""
+            className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out ${
+              i === bgIdx ? "opacity-20 scale-105" : "opacity-0 scale-100"
+            } blur-[3px]`}
+          />
+        ))}
         <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/75 via-[#080808]/88 to-[#080808]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.15)_0%,transparent_60%)]" />
       </div>
