@@ -188,7 +188,7 @@ export const top10Hoje: Title[] = [
   { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
   { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "🔥 Top 3", rating: "5.0" },
-  { title: "Homem-Aranha: Um Novo Dia", poster: "/iPOn6DinuVyLY17YM9mKuPofV08.jpg", year: "2026", tag: "🔥 Top 4", rating: "4.9" },
+  { title: "Leviticus", poster: "/gnAsZvBygplNpp8PtjoTEYv3VPB.jpg", year: "2026", tag: "🔥 Top 4", rating: "4.9" },
   { title: "Backrooms", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Top 5", rating: "4.9" },
   { title: "Silo", poster: "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", year: "2024", tag: "🔥 Top 6", rating: "4.9" },
   { title: "Demon Slayer", poster: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", year: "2024", tag: "🔥 Top 7", rating: "4.9" },
