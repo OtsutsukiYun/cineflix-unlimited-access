@@ -31,7 +31,7 @@ export const heroSlides: HeroSlide[] = [
     genre: "Terror / Gore",
     tagline: "O horror voltou — e o mal se espalha como fogo.",
     backdrop: "/o0jkkpcN81QqSl8DMLScBCXyUH9.jpg",
-    poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
+    poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
     brightness: "brightness(1.0)",
@@ -121,7 +121,7 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
-  { title: "A Morte do Demônio: Em Chamas", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
+  { title: "A Morte do Demônio: Em Chamas", poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Mais assistido", rating: "5.0" },
   { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.8" },
   { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Terror Asiático", rating: "4.7" },
@@ -185,7 +185,7 @@ export const terror: Title[] = [
 ];
 
 export const top10Hoje: Title[] = [
-  { title: "A Morte do Demônio: Em Chamas", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
+  { title: "A Morte do Demônio: Em Chamas", poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
   { title: "Todo Mundo em Pânico 6", poster: "/y9yJd2qIIwhZcllHeKHsz5eRvNr.jpg", year: "2026", tag: "🔥 Top 3", rating: "5.0" },
   { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Top 4", rating: "4.9" },
