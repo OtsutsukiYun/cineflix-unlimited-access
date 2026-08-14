@@ -121,8 +121,8 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
+  { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.8" },
-  { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
   { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Terror Asiático", rating: "4.7" },
   { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Terror Coreano", rating: "4.6" },
   { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Terror Indonésio", rating: "4.5" },
@@ -185,16 +185,16 @@ export const terror: Title[] = [
 ];
 
 export const top10Hoje: Title[] = [
-  { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
-  { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
-  { title: "Homem-Aranha: Um Novo Dia", poster: "/iPOn6DinuVyLY17YM9mKuPofV08.jpg", year: "2026", tag: "🔥 Top 3", rating: "4.9" },
-  { title: "Backrooms", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Top 4", rating: "4.9" },
-  { title: "Silo", poster: "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", year: "2024", tag: "🔥 Top 5", rating: "4.9" },
-  { title: "Demon Slayer", poster: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", year: "2024", tag: "🔥 Top 6", rating: "4.9" },
-  { title: "Premonição 6", poster: "/x3J781PsdMrjenzQKM5eJXqK5Nd.jpg", year: "2025", tag: "🔥 Top 7", rating: "4.8" },
-  { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "🔥 Top 8", rating: "4.8" },
-  { title: "Moana 2", poster: "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg", year: "2024", tag: "🔥 Top 9", rating: "4.9" },
-  { title: "Dragon Ball DAIMA", poster: "/oUmWLyeko3kYdUr8DBLIsxwcugl.jpg", year: "2024", tag: "🔥 Top 10", rating: "4.9" },
+  { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
+  { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
+  { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "🔥 Top 3", rating: "5.0" },
+  { title: "Homem-Aranha: Um Novo Dia", poster: "/iPOn6DinuVyLY17YM9mKuPofV08.jpg", year: "2026", tag: "🔥 Top 4", rating: "4.9" },
+  { title: "Backrooms", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Top 5", rating: "4.9" },
+  { title: "Silo", poster: "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", year: "2024", tag: "🔥 Top 6", rating: "4.9" },
+  { title: "Demon Slayer", poster: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", year: "2024", tag: "🔥 Top 7", rating: "4.9" },
+  { title: "Premonição 6", poster: "/x3J781PsdMrjenzQKM5eJXqK5Nd.jpg", year: "2025", tag: "🔥 Top 8", rating: "4.8" },
+  { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "🔥 Top 9", rating: "4.8" },
+  { title: "Moana 2", poster: "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg", year: "2024", tag: "🔥 Top 10", rating: "4.9" },
 ];
 
 export const series: Title[] = [
