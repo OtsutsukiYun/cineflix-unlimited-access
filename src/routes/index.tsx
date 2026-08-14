@@ -203,7 +203,7 @@ const CATALOG_TABS = [
       { title: "He-Man: Mestres do Universo", poster: "/atpb7NKSyM4bJSUY8vQTunzK4Na.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Homem-Aranha: Um Novo Dia", poster: "/x0nvYzQpyJc5pdT9lMnkMuYAg0O.jpg", year: "2026", tag: "Super-herói" },
       { title: "Todo Mundo em Pânico 6", poster: "/y9yJd2qIIwhZcllHeKHsz5eRvNr.jpg", year: "2026", tag: "Comédia 2026" },
-      { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "Terror 2026" },
+      { title: "Toy Story 5", poster: "/sssrBhdvDcczgMQYDc8oCoSuFEJ.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Suspense" },
     ],
   },
