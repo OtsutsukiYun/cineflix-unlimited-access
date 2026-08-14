@@ -16,23 +16,34 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-const INSTALAR_POSTERS = [
-  "/vA7uZSMx8VL6LIuNFPnymwkRPBV.jpg", // Noroi: The Curse (2005 - Japão)
-  "/1YINof6kN5yRdePEbcU5360ejoq.jpg", // Ringu / O Chamado (1998 - Japão)
-  "/6q1hlBC6rudc3mHwXsbMBR2xAT6.jpg", // Ju-On: O Grito (2002 - Japão)
-  "/c3zEimDraIyMSasPMGDaNOrhnzn.jpg", // Kairo / Pulse (2001 - Japão)
-  "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", // Cure (1997 - Japão)
-  "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water / Água Escura (2002 - Japão)
-  "/8ujSEEePCVMyi7Mt1RQMXd6SWmy.jpg", // One Missed Call / Uma Chamada Perdida (2003 - Japão)
-  "/vNVFt6dtcqnI7hqa6LFBUibuFiw.jpg", // Train to Busan / Invasão Zumbi (2016 - Coreia)
-  "/fNqlsmu2tiI1bXcpU31yjHPkiJz.jpg", // Gonjiam: Hospital Maldito (2018 - Coreia)
-  "/lWE9ih9qgjx8HatYboP7fG0nri.jpg", // The Wailing / O Lamento (2016 - Coreia)
+const POSTERS_ROW_JAPAN = [
+  "/vA7uZSMx8VL6LIuNFPnymwkRPBV.jpg", // Noroi: The Curse (2005)
+  "/1YINof6kN5yRdePEbcU5360ejoq.jpg", // Ringu / O Chamado (1998)
+  "/6q1hlBC6rudc3mHwXsbMBR2xAT6.jpg", // Ju-On: O Grito (2002)
+  "/c3zEimDraIyMSasPMGDaNOrhnzn.jpg", // Kairo / Pulse (2001)
+  "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", // Cure (1997)
+  "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water / Água Escura (2002)
+  "/8ujSEEePCVMyi7Mt1RQMXd6SWmy.jpg", // One Missed Call (2003)
+];
+
+const POSTERS_ROW_ASIA = [
+  "/vNVFt6dtcqnI7hqa6LFBUibuFiw.jpg", // Train to Busan (2016)
+  "/fNqlsmu2tiI1bXcpU31yjHPkiJz.jpg", // Gonjiam: Hospital Maldito (2018)
+  "/lWE9ih9qgjx8HatYboP7fG0nri.jpg", // The Wailing / O Lamento (2016)
+  "/cWz28oGV3cSajWdziVQbqrYCmnX.jpg", // Incantation (2022)
+  "/zUyaVtyugDaDHtOC6kCMJhbZsWu.jpg", // Shutter (2004)
+  "/6dasJ58GGFcC62H9KuukAryltUp.jpg", // Exhuma (2024)
+];
+
+const POSTERS_ROW_2000S = [
   "/rLNSOudrayDBo1uqXjrhxcjODIC.jpg", // Saw / Jogos Mortais (2004)
   "/1mXhlQMnlfvJ2frxTjZSQNnA9Vp.jpg", // Final Destination / Premonição (2000)
   "/sQckQRt17VaWbo39GIu0TMOiszq.jpg", // 28 Days Later / Extermínio (2002)
   "/r0bEDWO2w4a43K2xTNSF284qOsc.jpg", // Silent Hill / Terror em Silent Hill (2006)
   "/dDrtuWUKhgUGp12kgUWuP0NpTdF.jpg", // Hostel / O Albergue (2005)
-  "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", // Drag Me to Hell / Arraste-me Para o Inferno (2009)
+  "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", // Drag Me to Hell (2009)
+  "/mxFPI4KYBk5ri9cPteIS8jiDFgj.jpg", // The Descent (2005)
+  "/781px1eOtfVt1RdIsL4Dt1s3x7R.jpg", // Texas Chainsaw Massacre (2003)
 ];
 
 function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
@@ -60,25 +71,28 @@ function NtDownAppIcon({ className = "size-14 sm:size-16" }: { className?: strin
 export function InstalarPage() {
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
-      {/* PAREDE 3D DE CAPINHAS MAIORES: CLÁSSICOS DE TERROR JAPONESES, COREANOS E ANOS 2000 */}
+      {/* PAREDE 3D COM 3 LINHAS 100% EXCLUSIVAS E SEM REPETIÇÃO DE FILMES */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-55 [perspective:1200px]">
         <div className="size-full flex flex-col justify-center gap-4 [transform-style:preserve-3d] [transform:rotateX(14deg)_rotateY(-10deg)_rotateZ(-2deg)_scale(1.2)] origin-center">
+          {/* LINHA 1 (TOP) — CLÁSSICOS JAPONESES */}
           <div className="flex w-max animate-marquee-cinematic gap-4">
-            {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].map((p, idx) => (
+            {[...POSTERS_ROW_JAPAN, ...POSTERS_ROW_JAPAN].map((p, idx) => (
               <div key={idx} className="w-32 sm:w-44 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_12px_35px_rgba(0,0,0,0.85)]">
                 <img src={img(p, "w342")} alt="" className="size-full object-cover" />
               </div>
             ))}
           </div>
+          {/* LINHA 2 (MEIO) — CLÁSSICOS COREANOS & ASIÁTICOS */}
           <div className="flex w-max animate-marquee-reverse-cinematic gap-4">
-            {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].reverse().map((p, idx) => (
+            {[...POSTERS_ROW_ASIA, ...POSTERS_ROW_ASIA].map((p, idx) => (
               <div key={idx} className="w-32 sm:w-44 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_12px_35px_rgba(0,0,0,0.85)]">
                 <img src={img(p, "w342")} alt="" className="size-full object-cover" />
               </div>
             ))}
           </div>
+          {/* LINHA 3 (FIM) — CLÁSSICOS AMERICANOS DOS ANOS 2000 */}
           <div className="flex w-max animate-marquee-cinematic gap-4">
-            {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].map((p, idx) => (
+            {[...POSTERS_ROW_2000S, ...POSTERS_ROW_2000S].map((p, idx) => (
               <div key={idx} className="w-32 sm:w-44 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_12px_35px_rgba(0,0,0,0.85)]">
                 <img src={img(p, "w342")} alt="" className="size-full object-cover" />
               </div>
