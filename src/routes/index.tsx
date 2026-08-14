@@ -186,7 +186,7 @@ const CATALOG_TABS = [
       { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "Terror 2026" },
       { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Terror 2026" },
       { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "Em alta" },
-      { title: "Round 6", poster: "/6gcHdboppvplmBWxvROc96NJnmm.jpg", year: "Série", tag: "Nº 1" },
+      { title: "Silo", poster: "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", year: "Série", tag: "Em alta" },
     ],
   },
   {
@@ -217,7 +217,7 @@ const CATALOG_TABS = [
     id: "series",
     label: "📺 Séries",
     items: [
-      { title: "Round 6", poster: "/6gcHdboppvplmBWxvROc96NJnmm.jpg", year: "Série", tag: "Netflix" },
+      { title: "Silo", poster: "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", year: "Série", tag: "Apple TV+" },
       { title: "Origem (From)", poster: "/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg", year: "Série", tag: "Mistério" },
       { title: "Wandinha", poster: "/7rxiQrZjrer0RB9qNA8rHYFo53R.jpg", year: "Série", tag: "Netflix" },
       { title: "IT: Bem-Vindos a Derry", poster: "/gMTfrLvrDaD0zrhpLZ7zXIIpKfJ.jpg", year: "2025", tag: "Lançamento" },

@@ -189,7 +189,7 @@ export const top10Hoje: Title[] = [
   { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
   { title: "Homem-Aranha: Um Novo Dia", poster: "/iPOn6DinuVyLY17YM9mKuPofV08.jpg", year: "2026", tag: "🔥 Top 3", rating: "4.9" },
   { title: "Backrooms", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Top 4", rating: "4.9" },
-  { title: "Round 6", poster: "/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg", year: "2024", tag: "🔥 Top 5", rating: "4.8" },
+  { title: "Silo", poster: "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", year: "2024", tag: "🔥 Top 5", rating: "4.9" },
   { title: "Demon Slayer", poster: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", year: "2024", tag: "🔥 Top 6", rating: "4.9" },
   { title: "Premonição 6", poster: "/x3J781PsdMrjenzQKM5eJXqK5Nd.jpg", year: "2025", tag: "🔥 Top 7", rating: "4.8" },
   { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "🔥 Top 8", rating: "4.8" },
@@ -223,7 +223,7 @@ export const series: Title[] = [
   { title: "The Walking Dead", poster: "/9lb02gTh4LLB17yAEXFd4C3R4JP.jpg", year: "Série" },
   { title: "Fear the Walking Dead", poster: "/lKIhibYjzmpr8KQTYNEcwtUne5S.jpg", year: "Série" },
   { title: "Wandinha", poster: "/7rxiQrZjrer0RB9qNA8rHYFo53R.jpg", year: "Série" },
-  { title: "Round 6", poster: "/6gcHdboppvplmBWxvROc96NJnmm.jpg", year: "Série" },
+  { title: "Silo", poster: "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", year: "Série", tag: "Em alta" },
   { title: "Motel Bates", poster: "/qlVLk28uGOwVHqxSZlakdRyGMdU.jpg", year: "Série" },
   { title: "Penny Dreadful", poster: "/hQSdrXBYTbLGHYDIseHkBOPXTgL.jpg", year: "Série" },
 ];
