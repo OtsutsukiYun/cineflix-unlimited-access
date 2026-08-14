@@ -284,21 +284,9 @@ const CATALOG_TABS = [
   },
 ];
 
-const BACKGROUND_SLIDES = [
-  "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", // Evil Dead: A Ascensão (2023)
-  "/6tuNQ16hC4Qp7wjTweKzUnnLBkI.jpg", // O Chamado (2002 - Clássico Anos 2000)
-  "/9qxBNfI1QFbiZS62fsgaUd563t2.jpg", // O Lamento (2016 - Terror Asiático Coreano)
-  "/ok4ot3YbfDYZcINXf91JUfq3maB.jpg", // Jogos Mortais (2004 - Clássico Anos 2000)
-  "/jZXI5WdFkYDfDNBZsy8PFqp03vP.jpg", // Pengabdi Setan 2 (2022 - Terror Indonésio)
-  "/xLdw1xdHocKYFFvx7w41NchXMfJ.jpg", // FROM / Origem (Série de Terror)
-  "/ecKQlAEG95k62SMGhvX83oEqANK.jpg", // Invocação do Mal
-  "/lthkKBLe1rX6iThgVFg22O02sJw.jpg", // Demon Slayer
-];
-
 // ── MAIN PAGE ────────────────────────────────────────────────────────────────
 function Index() {
   const [slide, setSlide] = useState(0);
-  const [bgIndex, setBgIndex] = useState(0);
   const [activeTab, setActiveTab] = useState("em-alta");
   const catalogScrollRef = useRef<HTMLDivElement>(null);
 
@@ -317,32 +305,18 @@ function Index() {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    const bgTimer = setInterval(() => setBgIndex((prev) => (prev + 1) % BACKGROUND_SLIDES.length), 7000);
-    return () => clearInterval(bgTimer);
-  }, []);
-
   const currentTabObj = CATALOG_TABS.find((t) => t.id === activeTab) || CATALOG_TABS[0];
 
   return (
     <div className="relative w-full overflow-x-hidden min-h-screen bg-[#080808] font-sans text-foreground antialiased selection:bg-red-600 selection:text-white">
       <InstagramPopup />
 
-      {/* FUNDO CINEMÁTICO — SLIDESHOW SUAVE DE FILMES DE TERROR, ANOS 2000, ASIÁTICOS E SÉRIES */}
+      {/* FUNDO CINEMÁTICO — gradiente vermelho/preto limpo de alta legibilidade */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden [transform:translateZ(0)]">
-        {BACKGROUND_SLIDES.map((bd, i) => (
-          <img
-            key={bd}
-            src={img(bd, "w1280")}
-            alt=""
-            className={`absolute inset-0 size-full object-cover transition-opacity duration-[2500ms] ease-in-out ${
-              i === bgIndex ? "opacity-30 scale-105" : "opacity-0 scale-100"
-            }`}
-            style={{ filter: "blur(5px) brightness(0.5)" }}
-          />
-        ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/75 via-[#080808]/85 to-[#080808]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/40 via-[#080808]/80 to-[#030303]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/50 via-[#080808] to-[#030303]" />
+        <div className="animate-aurora-1 absolute -top-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[70vw] sm:h-[70vw] max-w-[800px] max-h-[800px] rounded-full bg-gradient-to-tr from-red-900/30 via-red-800/20 to-blue-950/15 blur-[110px]" />
+        <div className="animate-aurora-2 absolute top-[25%] -right-[15%] w-[90vw] h-[90vw] sm:w-[65vw] sm:h-[65vw] max-w-[750px] max-h-[750px] rounded-full bg-gradient-to-br from-red-900/25 via-red-950/20 to-blue-900/15 blur-[110px]" />
+        <div className="animate-aurora-3 absolute -bottom-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[80vw] sm:h-[80vw] max-w-[900px] max-h-[900px] rounded-full bg-gradient-to-t from-blue-950/30 to-red-950/20 blur-[130px]" />
       </div>
 
       {/* NAVBAR */}
