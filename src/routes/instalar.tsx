@@ -95,26 +95,6 @@ export function InstalarPage() {
           </p>
         </div>
 
-        {/* AVISO IMPORTANTE DE SEGURANÇA E PERMISSÕES DO ANDROID */}
-        <div className="mb-8 rounded-3xl border-2 border-amber-500/40 bg-gradient-to-r from-amber-950/40 via-black/80 to-amber-950/20 p-6 sm:p-7 backdrop-blur-sm shadow-[0_0_30px_rgba(245,158,11,0.15)]">
-          <div className="flex items-start gap-4">
-            <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-amber-500/20 border border-amber-400/40 text-amber-400 mt-0.5">
-              <ShieldAlert className="size-6 text-amber-400" />
-            </div>
-            <div>
-              <h3 className="text-lg font-black text-amber-300 flex items-center gap-2 mb-1.5">
-                ⚠️ Aviso de Permissões e Segurança do Android
-              </h3>
-              <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-medium">
-                Quando o aplicativo pedir permissões de instalação no seu dispositivo, <strong className="text-amber-300 font-bold">aceite e clique em "Instalar mesmo assim"</strong>.
-              </p>
-              <p className="text-xs sm:text-sm text-white/75 leading-relaxed font-medium mt-2">
-                Se o sistema Android ou o Play Protect acusar como <em>"aplicativo nocivo ou desconhecido"</em>, <strong>pode ficar 100% tranquilo!</strong> Isso ocorre exclusivamente porque o app é instalado diretamente fora da Google Play Store (via APK). O aplicativo é totalmente seguro, oficial e livre de riscos.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* MÉTODOS DE INSTALAÇÃO — PRINCIPAIS (TV, TV BOX, STICK E CELULAR) */}
         <div className="space-y-6">
           {/* MÉTODO 1 — DOWNLOADER (TV, TV BOX, STICK) */}
@@ -188,6 +168,24 @@ export function InstalarPage() {
                 </div>
               </li>
             </ol>
+
+            {/* AVISO DE PERMISSÕES E SEGURANÇA DO ANDROID */}
+            <div className="mt-6 rounded-2xl border border-amber-500/40 bg-amber-950/30 p-4.5 text-left">
+              <div className="flex items-start gap-3">
+                <ShieldAlert className="size-5 shrink-0 text-amber-400 mt-0.5" />
+                <div>
+                  <h4 className="text-xs sm:text-sm font-black text-amber-300 mb-1">
+                    ⚠️ Aviso de Permissões e Segurança do Android
+                  </h4>
+                  <p className="text-xs text-white/90 leading-relaxed">
+                    Quando o aplicativo pedir permissões de instalação no seu dispositivo, <strong className="text-amber-300">aceite e clique em "Instalar mesmo assim"</strong>.
+                  </p>
+                  <p className="text-xs text-white/75 leading-relaxed mt-1.5">
+                    Se o sistema Android ou o Play Protect acusar como <em>"aplicativo nocivo ou desconhecido"</em>, pode ficar 100% tranquilo! Isso ocorre exclusivamente porque o app foi instalado diretamente fora da Google Play Store (via APK). O aplicativo é totalmente seguro, oficial e livre de riscos.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* MÉTODO 2 — CELULAR & TABLET (NTDOWN) */}
@@ -261,6 +259,24 @@ export function InstalarPage() {
                 </div>
               </li>
             </ol>
+
+            {/* AVISO DE PERMISSÕES E SEGURANÇA DO ANDROID */}
+            <div className="mt-6 rounded-2xl border border-amber-500/40 bg-amber-950/30 p-4.5 text-left">
+              <div className="flex items-start gap-3">
+                <ShieldAlert className="size-5 shrink-0 text-amber-400 mt-0.5" />
+                <div>
+                  <h4 className="text-xs sm:text-sm font-black text-amber-300 mb-1">
+                    ⚠️ Aviso de Permissões e Segurança do Android
+                  </h4>
+                  <p className="text-xs text-white/90 leading-relaxed">
+                    Quando o aplicativo pedir permissões de instalação no seu dispositivo, <strong className="text-amber-300">aceite e clique em "Instalar mesmo assim"</strong>.
+                  </p>
+                  <p className="text-xs text-white/75 leading-relaxed mt-1.5">
+                    Se o sistema Android ou o Play Protect acusar como <em>"aplicativo nocivo ou desconhecido"</em>, pode ficar 100% tranquilo! Isso ocorre exclusivamente porque o app foi instalado diretamente fora da Google Play Store (via APK). O aplicativo é totalmente seguro, oficial e livre de riscos.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* DICA COMPACTA PARA PC / NOTEBOOK (OPCIONAL) */}
