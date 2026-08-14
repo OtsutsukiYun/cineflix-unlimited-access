@@ -61,21 +61,26 @@ import {
   terror,
 } from "@/data/catalog";
 
-const TESTE_GRATIS_BG_SLIDES = [
-  "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", // Evil Dead: A Ascensão (2023)
-  "/6tuNQ16hC4Qp7wjTweKzUnnLBkI.jpg", // O Chamado (2002 - Anos 2000)
-  "/9qxBNfI1QFbiZS62fsgaUd563t2.jpg", // O Lamento (2016 - Terror Asiático Coreano)
-  "/ok4ot3YbfDYZcINXf91JUfq3maB.jpg", // Jogos Mortais (2004 - Anos 2000)
-  "/jZXI5WdFkYDfDNBZsy8PFqp03vP.jpg", // Pengabdi Setan 2 (2022 - Terror Indonésio)
-  "/xLdw1xdHocKYFFvx7w41NchXMfJ.jpg", // FROM / Origem (Série de Terror)
-  "/ecKQlAEG95k62SMGhvX83oEqANK.jpg", // Invocação do Mal
-  "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg", // Obsessão (2026)
+const TESTE_GRATIS_POSTERS = [
+  "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
+  "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg", // Obsessão
+  "/atpb7NKSyM4bJSUY8vQTunzK4Na.jpg", // He-Man
+  "/sssrBhdvDcczgMQYDc8oCoSuFEJ.jpg", // Toy Story 5
+  "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", // Omukade
+  "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", // Pengabdi Setan 2
+  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
+  "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", // Frieren
+  "/8vtnPZXxCvX8iIbFoglGxwHjapq.jpg", // Chainsaw Man (Makima)
+  "/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg", // Jujutsu Kaisen
+  "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", // Demon Slayer
+  "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", // O Segredo de Widow's Bay
+  "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg", // FROM (Origem)
+  "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", // Channel Zero
 ];
 
 // ── INSTAGRAM POPUP ─────────────────────────────────────────────────────────
 function InstagramPopup() {
   const [open, setOpen] = useState(false);
-  const [bgIdx, setBgIdx] = useState(0);
 
   useEffect(() => {
     if (!sessionStorage.getItem("ig_popup_seen")) {
@@ -84,32 +89,28 @@ function InstagramPopup() {
     }
   }, []);
 
-  useEffect(() => {
-    if (!open) return;
-    const interval = setInterval(() => {
-      setBgIdx((prev) => (prev + 1) % TESTE_GRATIS_BG_SLIDES.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [open]);
-
   function close() { sessionStorage.setItem("ig_popup_seen", "1"); setOpen(false); }
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4" role="dialog" aria-modal="true">
-      {/* ANIMAÇÃO DE FILMES E SÉRIES DE TERROR PASSANDO AO FUNDO DO TESTE GRÁTIS */}
-      <div className="absolute inset-0 overflow-hidden">
-        {TESTE_GRATIS_BG_SLIDES.map((bd, i) => (
-          <img
-            key={bd}
-            src={img(bd, "w1280")}
-            alt=""
-            className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
-              i === bgIdx ? "opacity-25" : "opacity-0"
-            }`}
-          />
-        ))}
-        <div className="absolute inset-0 bg-black/82" />
+      {/* PAREDE DE CAPINHAS DE FILMES PASSANDO UM DO LADO DO OUTRO */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30 flex flex-col justify-center gap-3">
+        <div className="flex w-max animate-marquee-medium gap-3">
+          {[...TESTE_GRATIS_POSTERS, ...TESTE_GRATIS_POSTERS].map((p, idx) => (
+            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-xl border border-white/15 shadow-xl">
+              <img src={img(p, "w342")} alt="" className="size-full object-cover" />
+            </div>
+          ))}
+        </div>
+        <div className="flex w-max animate-marquee-reverse-medium gap-3">
+          {[...TESTE_GRATIS_POSTERS, ...TESTE_GRATIS_POSTERS].reverse().map((p, idx) => (
+            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-xl border border-white/15 shadow-xl">
+              <img src={img(p, "w342")} alt="" className="size-full object-cover" />
+            </div>
+          ))}
+        </div>
       </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/88 to-black/80" />
       <div className="relative z-10 w-full max-w-md rounded-3xl border border-white/10 bg-[#0e0e0e] p-7 sm:p-9 shadow-[0_40px_80px_rgba(0,0,0,0.95)] text-center">
         <button onClick={close} aria-label="Fechar" className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white/60 hover:bg-white/20 hover:text-white transition-all">
           <X className="size-4" />

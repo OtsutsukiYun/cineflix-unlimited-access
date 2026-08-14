@@ -16,17 +16,21 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-import { useState, useEffect } from "react";
-
-const INSTALAR_BG_SLIDES = [
-  "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", // Evil Dead: A Ascensão (2023)
-  "/6tuNQ16hC4Qp7wjTweKzUnnLBkI.jpg", // O Chamado (2002 - Anos 2000)
-  "/9qxBNfI1QFbiZS62fsgaUd563t2.jpg", // O Lamento (2016 - Terror Asiático Coreano)
-  "/ok4ot3YbfDYZcINXf91JUfq3maB.jpg", // Jogos Mortais (2004 - Anos 2000)
-  "/jZXI5WdFkYDfDNBZsy8PFqp03vP.jpg", // Pengabdi Setan 2 (2022 - Terror Indonésio)
-  "/xLdw1xdHocKYFFvx7w41NchXMfJ.jpg", // FROM / Origem (Série de Terror)
-  "/ecKQlAEG95k62SMGhvX83oEqANK.jpg", // Invocação do Mal
-  "/lthkKBLe1rX6iThgVFg22O02sJw.jpg", // Demon Slayer
+const INSTALAR_POSTERS = [
+  "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
+  "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg", // Obsessão
+  "/atpb7NKSyM4bJSUY8vQTunzK4Na.jpg", // He-Man
+  "/sssrBhdvDcczgMQYDc8oCoSuFEJ.jpg", // Toy Story 5
+  "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", // Omukade
+  "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", // Pengabdi Setan 2
+  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
+  "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", // Frieren
+  "/8vtnPZXxCvX8iIbFoglGxwHjapq.jpg", // Chainsaw Man (Makima)
+  "/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg", // Jujutsu Kaisen
+  "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", // Demon Slayer
+  "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", // O Segredo de Widow's Bay
+  "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg", // FROM (Origem)
+  "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", // Channel Zero
 ];
 
 function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
@@ -52,32 +56,33 @@ function NtDownAppIcon({ className = "size-14 sm:size-16" }: { className?: strin
 }
 
 export function InstalarPage() {
-  const [bgIdx, setBgIdx] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setBgIdx((prev) => (prev + 1) % INSTALAR_BG_SLIDES.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
-      {/* FUNDO CINEMATOGRÁFICO COM ANIMAÇÃO DE FILMES E SÉRIES DE TERROR PASSANDO */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        {INSTALAR_BG_SLIDES.map((bd, i) => (
-          <img
-            key={bd}
-            src={img(bd, "w1280")}
-            alt=""
-            className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
-              i === bgIdx ? "opacity-15" : "opacity-0"
-            }`}
-          />
-        ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/80 via-[#080808]/90 to-[#080808]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.15)_0%,transparent_60%)]" />
+      {/* PAREDE DE CAPINHAS DE FILMES PASSANDO UM DO LADO DO OUTRO AO FUNDO */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-25 flex flex-col justify-around py-4">
+        <div className="flex w-max animate-marquee-medium gap-4">
+          {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].map((p, idx) => (
+            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/15 shadow-xl">
+              <img src={img(p, "w342")} alt="" className="size-full object-cover" />
+            </div>
+          ))}
+        </div>
+        <div className="flex w-max animate-marquee-reverse-medium gap-4">
+          {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].reverse().map((p, idx) => (
+            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/15 shadow-xl">
+              <img src={img(p, "w342")} alt="" className="size-full object-cover" />
+            </div>
+          ))}
+        </div>
+        <div className="flex w-max animate-marquee-medium gap-4">
+          {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].map((p, idx) => (
+            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/15 shadow-xl">
+              <img src={img(p, "w342")} alt="" className="size-full object-cover" />
+            </div>
+          ))}
+        </div>
       </div>
+      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#080808]/85 via-[#080808]/92 to-[#080808]" />
 
       <div className="relative z-10 mx-auto w-[94%] max-w-3xl py-10 sm:py-16">
         {/* Topo Navegação */}

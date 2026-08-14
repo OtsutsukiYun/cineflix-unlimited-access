@@ -350,8 +350,16 @@
   animation: marquee 240s linear infinite;
 }
 
+@utility animate-marquee-medium {
+  animation: marquee 45s linear infinite;
+}
+
 @utility animate-marquee-reverse-slow {
   animation: marquee-reverse 260s linear infinite;
+}
+
+@utility animate-marquee-reverse-medium {
+  animation: marquee-reverse 50s linear infinite;
 }
 
 @utility animate-pulse-ring {
