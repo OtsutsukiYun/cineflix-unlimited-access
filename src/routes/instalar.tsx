@@ -129,17 +129,26 @@ export function InstalarPage() {
           </a>
         </div>
 
-        {/* Header — FOCO EM TV, TV BOX, STICK E CELULAR */}
-        <div className="text-center mb-10">
-          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/50 px-4 py-2 text-xs font-extrabold tracking-wider text-emerald-300 uppercase mb-4 shadow-sm">
-            <Tv className="size-3.5 text-emerald-400" /> Guia de Instalação no Aparelho
+        {/* Header — EXCLUSIVIDADE SISTEMA ANDROID */}
+        <div className="text-center mb-8">
+          <span className="inline-flex items-center gap-2 rounded-full border border-amber-500/50 bg-amber-950/70 px-4 py-2 text-xs font-black tracking-wider text-amber-300 uppercase mb-4 shadow-[0_0_20px_rgba(245,158,11,0.25)]">
+            <Smartphone className="size-4 text-amber-400" /> VÁLIDO EXCLUSIVAMENTE PARA SISTEMA ANDROID 🤖
           </span>
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight mb-3">
             Como instalar o <span className="text-emerald-400">UniTV Pro</span>
           </h1>
-          <p className="text-sm sm:text-base text-white/80 max-w-lg mx-auto leading-relaxed font-medium">
-            Siga o passo a passo para sua <strong className="text-white">Smart TV, TV Box, TV Stick ou Celular Android</strong> e libere <strong className="text-emerald-300">3 dias de teste grátis</strong> sem cartão!
+          <p className="text-sm sm:text-base text-white/85 max-w-xl mx-auto leading-relaxed font-medium">
+            O aplicativo funciona <strong className="text-amber-300 font-black">100% exclusivamente em aparelhos com sistema Android</strong> (Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Amazon, Smartphone Android e Tablet Android).
           </p>
+        </div>
+
+        {/* AVISO DE COMPATIBILIDADE DE SISTEMA */}
+        <div className="mb-6 rounded-2xl border border-amber-500/40 bg-amber-950/40 p-4.5 text-xs text-amber-200/90 leading-relaxed font-medium flex items-center gap-3.5 shadow-[0_0_25px_rgba(245,158,11,0.15)]">
+          <span className="text-2xl shrink-0">🤖</span>
+          <div>
+            <strong className="text-white font-black text-xs sm:text-sm block mb-0.5">⚠️ Atenção antes de instalar:</strong>
+            O app roda <strong className="text-amber-300">apenas em aparelhos Android</strong>. Se a sua Smart TV for Samsung (Tizen) ou LG (webOS), utilize um dispositivo Android externo conectado à TV (como TV Box, Mi Stick Xiaomi, FireTV Stick ou Chromecast com Google TV).
+          </div>
         </div>
 
         {/* CARD INFORMATIVO ESMERALDA DO TESTE GRÁTIS */}
@@ -149,7 +158,7 @@ export function InstalarPage() {
           </div>
           <h2 className="text-xl font-black text-white mb-2">🎁 Como funciona o Teste Grátis de 3 Dias?</h2>
           <p className="text-xs sm:text-sm text-white/80 leading-relaxed max-w-xl mx-auto font-medium">
-            Assim que você instalar e abrir o app pela primeira vez no seu dispositivo, os <strong className="text-emerald-300 font-bold">3 dias de teste grátis são liberados automaticamente</strong> na tela. Não precisa informar cartão nem dados bancários!
+            Assim que você instalar e abrir o app pela primeira vez no seu aparelho Android, os <strong className="text-emerald-300 font-bold">3 dias de teste grátis são liberados automaticamente</strong> na tela. Não precisa informar cartão nem dados bancários!
           </p>
         </div>
 
