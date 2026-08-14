@@ -81,7 +81,7 @@ export function InstalarPage() {
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
       {/* PAREDE 3D COM 3 LINHAS 100% EXCLUSIVAS E SEM REPETIÇÃO DE FILMES */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-20 sm:opacity-25 [perspective:1200px]">
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-45 sm:opacity-50 [perspective:1200px]">
         <div className="size-full flex flex-col justify-center gap-4 [transform-style:preserve-3d] [transform:rotateX(14deg)_rotateY(-10deg)_rotateZ(-2deg)_scale(1.2)] origin-center">
           {/* LINHA 1 (TOP) — CLÁSSICOS JAPONESES */}
           <div className="flex w-max animate-marquee-cinematic gap-4">
@@ -109,8 +109,7 @@ export function InstalarPage() {
           </div>
         </div>
       </div>
-      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#080808]/85 via-[#080808]/92 to-[#080808]/85" />
-      <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(8,8,8,0.5)_0%,#080808_90%)]" />
+      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#080808]/50 via-[#080808]/65 to-[#080808]/50" />
 
       <div className="relative z-10 mx-auto w-[94%] max-w-3xl py-10 sm:py-16">
         {/* Topo Navegação */}
