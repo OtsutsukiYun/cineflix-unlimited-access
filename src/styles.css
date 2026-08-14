@@ -71,8 +71,8 @@
   --secondary-foreground: oklch(0.97 0 0);
   --muted: oklch(0.13 0.008 20);
   --muted-foreground: oklch(0.68 0.01 20);
-  /* Accent: azul escuro */
-  --accent: oklch(0.45 0.16 255);
+  /* Accent: vermelho vibrante */
+  --accent: oklch(0.55 0.24 27);
   --accent-foreground: oklch(0.99 0 0);
   --neon: oklch(0.55 0.24 27);
   --neon-foreground: oklch(0.99 0 0);

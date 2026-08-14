@@ -353,11 +353,11 @@ export function InstalarPage() {
           {/* DICA COMPACTA PARA PC / NOTEBOOK (OPCIONAL) */}
           <div className="rounded-2xl border border-white/10 bg-white/3 p-5 backdrop-blur-sm">
             <div className="flex items-center gap-3 mb-2">
-              <Monitor className="size-5 text-purple-400" />
+              <Monitor className="size-5 text-red-400" />
               <h3 className="font-bold text-white text-sm sm:text-base">Quer assistir no Computador ou Notebook?</h3>
             </div>
             <p className="text-xs text-white/70 leading-relaxed">
-              Basta baixar um emulador Android no PC. Recomendamos o <strong className="text-purple-300">LDPlayer</strong> (mais leve e rápido). <span className="text-amber-300 font-medium">Evite o BlueStacks</span> pois costuma travar a transmissão. No LDPlayer, baixe o ntDown ou Downloader e use os códigos acima.
+              Basta baixar um emulador Android no PC. Recomendamos o <strong className="text-red-300">LDPlayer</strong> (mais leve e rápido). <span className="text-amber-300 font-medium">Evite o BlueStacks</span> pois costuma travar a transmissão. No LDPlayer, baixe o ntDown ou Downloader e use os códigos acima.
             </p>
           </div>
         </div>
