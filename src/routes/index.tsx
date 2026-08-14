@@ -183,7 +183,7 @@ const CATALOG_TABS = [
     items: [
       { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Top 1" },
       { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 2" },
-      { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "Lançamento 2026" },
+      { title: "Todo Mundo em Pânico 6", poster: "/znHT8peERZRWG1ME3r0Db0EV8k8.jpg", year: "2026", tag: "Comédia 2026" },
       { title: "Leviticus", poster: "/gnAsZvBygplNpp8PtjoTEYv3VPB.jpg", year: "2026", tag: "🔥 Terror 2026" },
       { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Terror 2026" },
       { title: "Silo", poster: "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", year: "Série", tag: "Em alta" },
@@ -196,7 +196,7 @@ const CATALOG_TABS = [
       { title: "A Última Casa", poster: "/6JU7E8Vv2M11egkctWVOScxWR75.jpg", year: "2026", tag: "🔥 Exclusivo 2026" },
       { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Lançamento" },
       { title: "Homem-Aranha: Um Novo Dia", poster: "/iPOn6DinuVyLY17YM9mKuPofV08.jpg", year: "2026", tag: "Super-herói" },
-      { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "Cinema 2026" },
+      { title: "Todo Mundo em Pânico 6", poster: "/znHT8peERZRWG1ME3r0Db0EV8k8.jpg", year: "2026", tag: "Comédia 2026" },
       { title: "Leviticus", poster: "/gnAsZvBygplNpp8PtjoTEYv3VPB.jpg", year: "2026", tag: "Terror 2026" },
       { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Suspense" },
     ],

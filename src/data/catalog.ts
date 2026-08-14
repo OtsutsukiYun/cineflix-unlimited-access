@@ -187,7 +187,7 @@ export const terror: Title[] = [
 export const top10Hoje: Title[] = [
   { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
-  { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "🔥 Top 3", rating: "5.0" },
+  { title: "Todo Mundo em Pânico 6", poster: "/znHT8peERZRWG1ME3r0Db0EV8k8.jpg", year: "2026", tag: "🔥 Top 3", rating: "5.0" },
   { title: "Leviticus", poster: "/gnAsZvBygplNpp8PtjoTEYv3VPB.jpg", year: "2026", tag: "🔥 Top 4", rating: "4.9" },
   { title: "Backrooms", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Top 5", rating: "4.9" },
   { title: "Silo", poster: "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", year: "2024", tag: "🔥 Top 6", rating: "4.9" },
