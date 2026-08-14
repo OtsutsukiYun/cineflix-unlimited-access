@@ -87,16 +87,14 @@ function InstagramPopup() {
           Você veio pelo Instagram do <strong className="text-white">CinePesadelo</strong> e por isso está ganhando{" "}
           <strong className="text-red-300">3 dias de teste grátis</strong> no UniTV Pro — todos os filmes, séries e o maior catálogo de terror.
         </p>
-        <a
-          href="https://wa.me/5561984016006?text=Vim%20pelo%20Instagram%20do%20CinePesadelo%20e%20quero%20meu%20teste%20gr%C3%A1tis%20de%203%20dias!"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          to="/instalar"
           onClick={close}
           className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(220,38,38,0.7)] mb-3"
         >
           <Smartphone className="size-4" />
           QUERO MEU TESTE GRÁTIS
-        </a>
+        </Link>
         <button onClick={close} className="text-xs text-white/40 hover:text-white/70 transition-colors underline underline-offset-2">
           Agora não, quero só ver o catálogo
         </button>
@@ -286,9 +284,9 @@ function Index() {
               <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</a>
             </nav>
 
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-cta px-5 py-2.5 text-xs">
+            <Link to="/instalar" className="btn-cta px-5 py-2.5 text-xs">
               Teste Grátis
-            </a>
+            </Link>
           </div>
         </header>
       </div>
@@ -328,9 +326,9 @@ function Index() {
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
             <Cta>QUERO ASSISTIR</Cta>
-            <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+            <Link to="/instalar" className="btn-ghost">
               <Smartphone className="size-4" /> Teste grátis 3 dias
-            </a>
+            </Link>
           </div>
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-5 text-xs text-white/50">
