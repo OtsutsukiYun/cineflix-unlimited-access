@@ -1,27 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, Fragment } from "react";
 
-function SlideshowBanner({ banners, alt, objectPosition = "object-cover" }: { banners: string[]; alt: string; objectPosition?: string }) {
-  const [index, setIndex] = useState(0);
-  useEffect(() => {
-    if (banners.length <= 1) return;
-    const timer = setInterval(() => setIndex((prev) => (prev + 1) % banners.length), 4500);
-    return () => clearInterval(timer);
-  }, [banners.length]);
-  return (
-    <>
-      {banners.map((banner, i) => (
-        <img
-          key={banner}
-          src={banner}
-          alt={alt}
-          className={`absolute inset-0 size-full ${objectPosition} transition-opacity duration-[1500ms] ease-in-out group-hover:scale-110 ${i === index ? "opacity-100 z-0" : "opacity-0 -z-10"}`}
-        />
-      ))}
-    </>
-  );
-}
-
 function SmoothCardReveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
@@ -55,25 +34,17 @@ import {
   CreditCard,
   Lock,
   QrCode,
-  Barcode,
   RefreshCcw,
   Film,
   MonitorPlay,
-  Cpu,
-  Users,
-  Headphones,
-  Rocket,
-  Heart,
   Smartphone,
   Gift,
   X,
   Calendar,
-  ChevronRight,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { PromoBanner } from "@/components/PromoBanner";
 import { Faq } from "@/components/Faq";
-import { TrustSection } from "@/components/TrustSection";
 import { Torii } from "@/components/icons";
 import { SocialProof } from "@/components/SocialProof";
 import {
@@ -98,7 +69,7 @@ function InstagramPopup() {
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4" role="dialog" aria-modal="true">
       <div className="absolute inset-0 overflow-hidden">
-        <img src={img("/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", "w1280")} alt="" className="size-full object-cover opacity-20 scale-105 blur-sm" />
+        <img src={img("/o0jkkpcN81QqSl8DMLScBCXyUH9.jpg", "w1280")} alt="" className="size-full object-cover opacity-20 scale-105 blur-sm" />
         <div className="absolute inset-0 bg-black/82" />
       </div>
       <div className="relative z-10 w-full max-w-md rounded-3xl border border-white/10 bg-[#0e0e0e] p-7 sm:p-9 shadow-[0_40px_80px_rgba(0,0,0,0.95)] text-center">
@@ -114,7 +85,7 @@ function InstagramPopup() {
         </h2>
         <p className="text-sm text-white/70 leading-relaxed mb-6">
           Você veio pelo Instagram do <strong className="text-white">CinePesadelo</strong> e por isso está ganhando{" "}
-          <strong className="text-red-300">3 dias de teste grátis</strong> no UniTV Pro — o maior catálogo de filmes de terror do Brasil.
+          <strong className="text-red-300">3 dias de teste grátis</strong> no UniTV Pro — todos os filmes, séries e o maior catálogo de terror.
         </p>
         <a
           href="https://wa.me/5561984016006?text=Vim%20pelo%20Instagram%20do%20CinePesadelo%20e%20quero%20meu%20teste%20gr%C3%A1tis%20de%203%20dias!"
@@ -138,17 +109,17 @@ function InstagramPopup() {
 export const Route = createFileRoute("/")(({
   head: () => ({
     meta: [
-      { title: "UniTV Pro — Streaming de Terror e muito mais" },
+      { title: "UniTV Pro — Filmes, Séries, Esportes e Terror em 4K" },
       {
         name: "description",
         content:
-          "O maior catálogo de filmes de terror dos streamings, tudo em um só lugar. Mais de 80.000 conteúdos por apenas R$34,99/mês. Smart TV, TV Box, celular Android.",
+          "Todos os streamings em um só lugar: filmes recém-saídos do cinema, séries completas, esportes ao vivo e o maior acervo de terror por R$34,99/mês.",
       },
-      { property: "og:title", content: "UniTV Pro — Streaming de Terror e muito mais" },
+      { property: "og:title", content: "UniTV Pro — Filmes, Séries, Esportes e Terror em 4K" },
       {
         property: "og:description",
         content:
-          "O maior catálogo de filmes de terror — Pemandi Jenazah, Salmokji, Evil Dead e muito mais. Tudo em um só lugar.",
+          "Filmes, séries de sucesso, esportes ao vivo e o maior catálogo de terror em até 4K.",
       },
     ],
   }),
@@ -183,7 +154,7 @@ function Cta({ children = "QUERO ASSISTIR" }: { children?: string }) {
 }
 
 // ── POSTER CARD ─────────────────────────────────────────────────────────────
-function PosterCard({ item }: { item: (typeof terror)[0] }) {
+function PosterCard({ item }: { item: { title: string; poster: string; year: string; tag?: string } }) {
   return (
     <div className="group relative overflow-hidden rounded-xl aspect-[2/3] bg-surface cursor-pointer">
       <img
@@ -206,26 +177,81 @@ function PosterCard({ item }: { item: (typeof terror)[0] }) {
   );
 }
 
-// ── ASIAN HORROR TITLES ───────────────────────────────────────────────────
-const asianHorror = [
-  { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Indonésia" },
-  { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Coreia" },
-  { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Indonésia" },
-  { title: "Leviticus", poster: "/j7URoxYxWJYBUHqFxIPaWbvWFKn.jpg", year: "2024", tag: "Terror" },
-  { title: "Soulm8te", poster: "/cWTbN7Bh7kVGFtbkAW2yCc2thVj.jpg", year: "2024", tag: "Terror" },
-  { title: "Round 6", poster: "/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg", year: "Série", tag: "Coreia" },
-  { title: "Nokdu Flower", poster: "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", year: "Série", tag: "Coreia" },
-  { title: "[REC]", poster: "/nfbO00NKXSzBIzcN3KbUMdPT1EU.jpg", year: "2007", tag: "Espanha" },
+// ── COMPACT TABBED CATALOG DATA ─────────────────────────────────────────────
+const CATALOG_TABS = [
+  {
+    id: "em-alta",
+    label: "🔥 Em Alta",
+    items: [
+      { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "Novo 2026" },
+      { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "Em alta" },
+      { title: "Round 6", poster: "/6gcHdboppvplmBWxvROc96NJnmm.jpg", year: "Série", tag: "Nº 1" },
+      { title: "The Last of Us", poster: "/el1KQzwdIm17I3A6cYPfsVIWhfX.jpg", year: "Série", tag: "4K" },
+      { title: "Demon Slayer: Castelo Infinito", poster: "/41XdjOXGQoH0HTDNqEfwKGvGgwm.jpg", year: "2025", tag: "Sucesso" },
+      { title: "Divertida Mente 2", poster: "/lHKNS35r4RTa9GO72vdadMLxoiV.jpg", year: "2024", tag: "Família" },
+    ],
+  },
+  {
+    id: "filmes",
+    label: "🎬 Filmes & Lançamentos",
+    items: [
+      { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "2026" },
+      { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "Suspense" },
+      { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "Mistério" },
+      { title: "Herege", poster: "/j5e2YS1PRUVC1YgSool0JJyNLxJ.jpg", year: "2024", tag: "Cinema" },
+      { title: "A Substância", poster: "/vWeOgzlhnP1sS23H3rzctGHB9Nb.jpg", year: "2024", tag: "Premiado" },
+      { title: "Alien: Romulus", poster: "/jB0W9tn4w07MFn7sTfqRTBLVytF.jpg", year: "2024", tag: "Ficção" },
+    ],
+  },
+  {
+    id: "terror-raro",
+    label: "👻 Terror & Asiáticos Raros",
+    items: [
+      { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "2026" },
+      { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Indonésia" },
+      { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Coreia" },
+      { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Exclusivo" },
+      { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "Novo" },
+      { title: "Hokum", poster: "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg", year: "2026", tag: "Sobrenatural" },
+    ],
+  },
+  {
+    id: "series",
+    label: "📺 Séries",
+    items: [
+      { title: "Origem (From)", poster: "/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg", year: "Série", tag: "Mistério" },
+      { title: "The Last of Us", poster: "/el1KQzwdIm17I3A6cYPfsVIWhfX.jpg", year: "Série", tag: "HBO" },
+      { title: "Wandinha", poster: "/7rxiQrZjrer0RB9qNA8rHYFo53R.jpg", year: "Série", tag: "Netflix" },
+      { title: "IT: Bem-Vindos a Derry", poster: "/gMTfrLvrDaD0zrhpLZ7zXIIpKfJ.jpg", year: "2025", tag: "Lançamento" },
+      { title: "Stranger Things", poster: "/twfKp60THrcOIep9sjHODOOfO8d.jpg", year: "Série", tag: "Popular" },
+      { title: "Yellowjackets", poster: "/xRnGrn7Z7SC0KIBodocoU1QgDZF.jpg", year: "Série", tag: "Drama" },
+    ],
+  },
+  {
+    id: "animes-kids",
+    label: "🎌 Animes & Infantil",
+    items: [
+      { title: "Demon Slayer", poster: "/41XdjOXGQoH0HTDNqEfwKGvGgwm.jpg", year: "2025", tag: "Animes" },
+      { title: "Solo Leveling", poster: "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", year: "Série", tag: "Em alta" },
+      { title: "One Piece", poster: "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", year: "Série", tag: "Clássico" },
+      { title: "Moana 2", poster: "/dnqgkKoIGf6hErzRm6VtaK1OJrD.jpg", year: "2024", tag: "Infantil" },
+      { title: "Bluey", poster: "/9p4pNoGcuyCfHcGWKNrTopqMWtq.jpg", year: "Série", tag: "Kids" },
+      { title: "Sonic 3: O Filme", poster: "/tfM1T6tAivjvy0sLwt6Y9WvlmzB.jpg", year: "2024", tag: "Cinema" },
+    ],
+  },
 ];
 
 // ── MAIN PAGE ────────────────────────────────────────────────────────────────
 function Index() {
   const [slide, setSlide] = useState(0);
+  const [activeTab, setActiveTab] = useState("em-alta");
 
   useEffect(() => {
     const timer = setInterval(() => setSlide((prev) => (prev + 1) % heroSlides.length), 6000);
     return () => clearInterval(timer);
   }, []);
+
+  const currentTabObj = CATALOG_TABS.find((t) => t.id === activeTab) || CATALOG_TABS[0];
 
   return (
     <div className="relative w-full overflow-x-hidden min-h-screen bg-[#080808] font-sans text-foreground antialiased selection:bg-red-600 selection:text-white">
@@ -267,8 +293,8 @@ function Index() {
         </header>
       </div>
 
-      {/* HERO — centralizado, copy forte, pouquíssimo texto */}
-      <section className="relative flex min-h-[88vh] items-center justify-center overflow-hidden text-center">
+      {/* HERO — centralizado, texto super enxuto e equilibrado */}
+      <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden text-center">
         {heroSlides.map((s, i) => (
           <img
             key={s.title}
@@ -279,48 +305,41 @@ function Index() {
               opacity: i === slide ? 1 : 0,
               transform: i === slide ? "scale(1.02)" : "scale(1)",
               objectPosition: s.objectPosition ?? "center 20%",
-              filter: s.brightness ? `${s.brightness} brightness(0.55)` : "brightness(0.55)",
+              filter: s.brightness ? `${s.brightness} brightness(0.52)` : "brightness(0.52)",
             }}
           />
         ))}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/30 to-[#080808]/50" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#080808] to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#080808] to-transparent" />
 
-        <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-36 pb-16 sm:pt-44 sm:pb-20">
-          {/* Kicker */}
-          <p className="mb-4 text-xs font-extrabold tracking-[0.25em] text-red-400 uppercase">
-            🔥 O streaming que nenhuma plataforma tem
+        <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-36 pb-14 sm:pt-40 sm:pb-16">
+          <p className="mb-3 text-xs font-extrabold tracking-[0.25em] text-red-400 uppercase">
+            🔥 Todos os Streamings em Um Só Lugar
           </p>
 
-          {/* Headline */}
-          <h1 className="font-display text-3xl font-black sm:text-5xl md:text-6xl leading-[1.06] text-white tracking-tight drop-shadow-xl">
-            O maior catálogo de{" "}
-            <span className="text-red-500">filmes de terror</span>{" "}
-            dos streamings —{" "}
-            <span className="text-white/80">tudo em um só lugar.</span>
+          <h1 className="font-display text-3xl font-black sm:text-5xl md:text-6xl leading-[1.08] text-white tracking-tight drop-shadow-xl">
+            Filmes, séries, esportes e o{" "}
+            <span className="text-red-500">maior acervo de terror.</span>
           </h1>
 
-          <p className="mt-4 text-sm sm:text-base text-white/65 max-w-lg mx-auto leading-relaxed">
-            Mais de <strong className="text-white">80.000 conteúdos</strong>. Terror, séries asiáticas exclusivas, esportes ao vivo e muito mais por apenas <strong className="text-red-400">R$34,99/mês</strong>.
+          <p className="mt-3 text-sm sm:text-base text-white/70 max-w-lg mx-auto leading-relaxed">
+            Mais de <strong className="text-white">80.000 conteúdos</strong> em até 4K por apenas <strong className="text-red-400">R$34,99/mês</strong>.
           </p>
 
-          {/* CTAs */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
             <Cta>QUERO ASSISTIR</Cta>
             <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="btn-ghost">
               <Smartphone className="size-4" /> Teste grátis 3 dias
             </a>
           </div>
 
-          {/* Trust badges */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-5 text-xs text-white/50">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-5 text-xs text-white/50">
             <span className="flex items-center gap-1.5"><Star className="size-3.5 fill-red-500 text-red-500" /> 4.9 de satisfação</span>
             <span className="flex items-center gap-1.5"><ShieldCheck className="size-3.5 text-red-500" /> Garantia de 7 dias</span>
             <span className="flex items-center gap-1.5"><Zap className="size-3.5 text-red-500" /> Ativação imediata</span>
           </div>
 
-          {/* Indicadores do slide */}
-          <div className="mt-8 flex justify-center gap-2">
+          <div className="mt-7 flex justify-center gap-2">
             {heroSlides.map((s, i) => (
               <button
                 key={s.title}
@@ -334,93 +353,58 @@ function Index() {
       </section>
 
       {/* MARQUEE */}
-      <div className="relative z-20 w-full overflow-hidden border-y border-white/5 py-3.5 bg-black/40 backdrop-blur-sm">
+      <div className="relative z-20 w-full overflow-hidden border-y border-white/5 py-3 bg-black/40 backdrop-blur-sm">
         <div className="flex overflow-hidden">
           <div className="animate-marquee flex shrink-0 items-center gap-8 sm:gap-16 pr-8 sm:pr-16 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-white/40 uppercase">
             {Array.from({ length: 4 }).fill(0).map((_, i) => (
               <Fragment key={i}>
                 <span className="flex items-center gap-2 text-red-400"><Sparkles className="size-3.5" /> Qualidade em até 4K</span>
-                <span className="flex items-center gap-2"><Film className="size-3.5 text-red-500" /> Terror Exclusivo</span>
+                <span className="flex items-center gap-2"><Film className="size-3.5 text-red-500" /> Cinema & Lançamentos</span>
                 <span className="flex items-center gap-2 text-blue-300"><Tv className="size-3.5 text-blue-400" /> +80.000 Conteúdos</span>
                 <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-red-500" /> Smart TV & TV Box</span>
-                <span className="flex items-center gap-2 text-red-300"><RefreshCcw className="size-3.5 text-red-500" /> Lançamentos Semanais</span>
+                <span className="flex items-center gap-2 text-red-300"><RefreshCcw className="size-3.5 text-red-500" /> Atualizações Semanais</span>
                 <span className="flex items-center gap-2"><Zap className="size-3.5 text-red-500" /> Ativação Imediata</span>
-                <span className="flex items-center gap-2 text-white/60"><ShieldCheck className="size-3.5 text-red-400" /> Sem Fidelidade</span>
               </Fragment>
             ))}
           </div>
         </div>
       </div>
 
-      {/* CATÁLOGO — grade vertical (a pessoa desce a página) */}
-      <section id="catalogo" className="relative z-10 py-12 sm:py-16">
-        <div className="mx-auto w-[94%] max-w-6xl">
-          {/* Filmes & Terror */}
+      {/* CATÁLOGO COMPACTO E DINÂMICO COM ABAS (NÃO CANSATIVO) */}
+      <section id="catalogo" className="relative z-10 py-10 sm:py-14">
+        <div className="mx-auto w-[94%] max-w-5xl">
           <Reveal>
-            <div className="mb-3 flex items-center gap-3">
-              <Flame className="size-5 text-red-500" />
-              <h2 className="text-lg font-black text-white">Lançamentos & Terror 2026</h2>
-              <span className="ml-auto text-xs text-white/40">+45.000 filmes</span>
+            <div className="text-center mb-6">
+              <span className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/30 px-3.5 py-1.5 text-xs font-bold tracking-wider text-red-400 uppercase mb-3">
+                <Film className="size-3.5" /> Destaques do Acervo
+              </span>
+              <h2 className="text-2xl font-extrabold sm:text-4xl text-white">
+                O que você quer assistir <span className="text-red-500">hoje?</span>
+              </h2>
             </div>
           </Reveal>
-          <SmoothCardReveal>
-            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-              {terror.slice(0, 20).map((item) => (
-                <PosterCard key={item.title} item={item} />
-              ))}
-            </div>
-          </SmoothCardReveal>
 
-          {/* Copy especial terror asiático */}
-          <SmoothCardReveal delay={100}>
-            <div className="my-10 rounded-2xl border border-red-900/40 bg-red-950/20 p-6 sm:p-8 text-center">
-              <p className="text-xs font-extrabold tracking-[0.2em] text-red-400 uppercase mb-2">🎌 Séries Asiáticas Raras</p>
-              <h3 className="text-xl sm:text-2xl font-black text-white mb-2">Filmes que <span className="text-red-400">nenhuma outra plataforma tem</span></h3>
-              <p className="text-sm text-white/60 max-w-lg mx-auto">
-                Pemandi Jenazah, Salmokji, Dia Bukan Ibu e dezenas de títulos do terror asiático que você não encontra no Netflix, Max ou Prime Video.
-              </p>
-            </div>
-          </SmoothCardReveal>
+          {/* Abas para alternar sem rolar a página infinitamente */}
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap mb-7">
+            {CATALOG_TABS.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`rounded-full px-3.5 py-1.5 text-xs font-bold transition-all ${
+                  activeTab === tab.id
+                    ? "bg-red-600 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)] scale-105"
+                    : "bg-white/5 border border-white/10 text-white/60 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
 
-          {/* Terror Asiático */}
-          <Reveal>
-            <div className="mb-3 flex items-center gap-3">
-              <span className="text-lg">🎌</span>
-              <h2 className="text-lg font-black text-white">Terror Asiático — Só Aqui</h2>
-              <span className="ml-auto text-xs text-white/40">Exclusivos</span>
-            </div>
-          </Reveal>
-          <SmoothCardReveal delay={80}>
-            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-              {asianHorror.map((item) => (
-                <PosterCard key={item.title} item={item} />
-              ))}
-            </div>
-          </SmoothCardReveal>
-
-          {/* Séries */}
-          <SmoothCardReveal delay={120}>
-            <div className="mt-10 mb-3 flex items-center gap-3">
-              <Tv className="size-5 text-blue-400" />
-              <h2 className="text-lg font-black text-white">Séries para Maratonar</h2>
-              <span className="ml-auto text-xs text-white/40">+20.000 séries</span>
-            </div>
-            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-              {series.slice(0, 10).map((item) => (
-                <PosterCard key={item.title} item={item} />
-              ))}
-            </div>
-          </SmoothCardReveal>
-
-          {/* Animes */}
-          <SmoothCardReveal delay={160}>
-            <div className="mt-10 mb-3 flex items-center gap-3">
-              <Torii className="size-5 text-red-400" />
-              <h2 className="text-lg font-black text-white">Animes — Simulcasts e Clássicos</h2>
-              <span className="ml-auto text-xs text-white/40">Centenas de animes</span>
-            </div>
-            <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-              {animes.slice(0, 10).map((item) => (
+          {/* Grade enxuta de 6 pôsteres (rápida de ler e visualmente limpa) */}
+          <SmoothCardReveal key={activeTab}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+              {currentTabObj.items.map((item) => (
                 <PosterCard key={item.title} item={item} />
               ))}
             </div>
@@ -433,7 +417,7 @@ function Index() {
         <SmoothCardReveal>
           <div className="text-center mb-8">
             <span className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/30 px-4 py-2 text-xs font-bold tracking-wider text-red-400 uppercase mb-4">
-              <Sparkles className="size-3.5" /> Por que o UniTV Pro?
+              <Sparkles className="size-3.5" /> Por que escolher o UniTV Pro?
             </span>
             <h2 className="text-2xl font-extrabold sm:text-4xl tracking-tight text-white">
               Tudo o que você precisa,<br /><span className="text-red-500">em um só lugar</span>
@@ -620,7 +604,6 @@ function Index() {
                     </span>
                   </div>
 
-                  {/* Preço */}
                   <div className="mt-5">
                     <div className="flex items-baseline gap-2">
                       <span className="text-sm text-white/40 line-through">{p.precoAntigo}</span>

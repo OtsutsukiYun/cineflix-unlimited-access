@@ -26,12 +26,12 @@ export type Title = {
 /** Destaques do carrossel de fundo (lançamentos de terror reais - TMDB) */
 export const heroSlides: HeroSlide[] = [
   {
-    title: "Evil Dead: A Ascensão",
-    year: "2023",
+    title: "Evil Dead Burn",
+    year: "2026",
     genre: "Terror / Gore",
-    tagline: "O horror voltou para casa — e desta vez veio pela família.",
-    backdrop: "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg",
-    poster: "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg",
+    tagline: "O horror voltou — e o mal se espalha como fogo.",
+    backdrop: "/o0jkkpcN81QqSl8DMLScBCXyUH9.jpg",
+    poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
     brightness: "brightness(1.0)",
@@ -121,7 +121,7 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
-  { title: "Evil Dead: A Ascensão", poster: "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", year: "2023", tag: "🔥 Exclusivo", rating: "4.9" },
+  { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
   { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Terror Asiático", rating: "4.7" },
   { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Terror Coreano", rating: "4.6" },
   { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Terror Indonésio", rating: "4.5" },
