@@ -31,7 +31,7 @@ export const heroSlides: HeroSlide[] = [
     genre: "Terror / Gore",
     tagline: "O horror voltou — e o mal se espalha como fogo.",
     backdrop: "/o0jkkpcN81QqSl8DMLScBCXyUH9.jpg",
-    poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
+    poster: "/7YYUlCEY97nv5g5EfH7WoxZeXAF.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
     brightness: "brightness(1.0)",
@@ -121,7 +121,7 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
-  { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
+  { title: "Evil Dead Burn", poster: "/7YYUlCEY97nv5g5EfH7WoxZeXAF.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Mais assistido", rating: "5.0" },
   { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.8" },
   { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Terror Asiático", rating: "4.7" },
@@ -138,7 +138,7 @@ export const terror: Title[] = [
   { title: "Invocação do Mal 4: O Último Ritual", poster: "/40nHGUfypLhlr7gJx8At1IbYkaK.jpg", year: "2025" },
   { title: "O Telefone Preto 2", poster: "/p3epSUdF9qSWWHTBlA3mJ0w2i2Y.jpg", year: "2025" },
   { title: "Faça Ela Voltar", poster: "/xfmnUz6C5WRboIMQZD0j3SNDT7v.jpg", year: "2025" },
-  { title: "Premonição 6: Laços de Sangue", poster: "/x3J781PsdMrjenzQKM5eJXqK5Nd.jpg", year: "2025" },
+  { title: "Premonição 6: Laços de Sangue", poster: "/temIXpcua7j5v4FipOxmzTfrB06.jpg", year: "2025" },
   { title: "Five Nights at Freddy's 2", poster: "/12H82Xrr2ijDF0lJWUarqGFV7bC.jpg", year: "2025" },
   { title: "Rua do Medo: Rainha do Baile", poster: "/skwydfnpaQdRQZfXMroh59FMJyY.jpg", year: "2025" },
   { title: "O Macaco", poster: "/2jME1L29XGE3T4f0zUHgpiKsPrV.jpg", year: "2025" },
@@ -171,10 +171,10 @@ export const terror: Title[] = [
   { title: "Corra!", poster: "/A0RoSZh8PEYJgDMgM2EV7Ycz3dR.jpg", year: "2017" },
   { title: "Atividade Paranormal", poster: "/jV5eAsOTf7zsL4glY51gTW6Vb05.jpg", year: "2007" },
   { title: "[REC]", poster: "/nfbO00NKXSzBIzcN3KbUMdPT1EU.jpg", year: "2007" },
-  { title: "O Chamado", poster: "/AeRpUynJKDpJveklBJipOYrVxCS.jpg", year: "2002", tag: "Clássico Anos 2000" },
-  { title: "Jogos Mortais", poster: "/rLNSOudrayDBo1uqXjrhxcjODIC.jpg", year: "2004", tag: "Clássico Anos 2000" },
-  { title: "O Grito", poster: "/7vPAVPKYexQVmvC578wPLn2CGCL.jpg", year: "2004", tag: "Clássico Anos 2000" },
-  { title: "Premonição", poster: "/1mXhlQMnlfvJ2frxTjZSQNnA9Vp.jpg", year: "2000", tag: "Clássico Anos 2000" },
+  { title: "O Chamado", poster: "/4skN151KEKtJQSLJ7zkWSDGE0DJ.jpg", year: "2002", tag: "Clássico Anos 2000" },
+  { title: "Jogos Mortais", poster: "/jByGeGsJtoghNFHF5TgVvcSJ4Oc.jpg", year: "2004", tag: "Clássico Anos 2000" },
+  { title: "O Grito", poster: "/A0VKYaw1rs6VTn48ijhTWN8P1pi.jpg", year: "2004", tag: "Clássico Anos 2000" },
+  { title: "Premonição", poster: "/b5ERChzoI1aLzeYdmwWUtutwm8c.jpg", year: "2000", tag: "Clássico Anos 2000" },
   { title: "Madrugada dos Mortos", poster: "/ttquyxStEEctzghtA2f4PUGprDr.jpg", year: "2004", tag: "Clássico Anos 2000" },
   { title: "Extermínio", poster: "/sQckQRt17VaWbo39GIu0TMOiszq.jpg", year: "2002", tag: "Clássico Anos 2000" },
   { title: "Silent Hill", poster: "/r0bEDWO2w4a43K2xTNSF284qOsc.jpg", year: "2006", tag: "Clássico Anos 2000" },
@@ -185,16 +185,16 @@ export const terror: Title[] = [
 ];
 
 export const top10Hoje: Title[] = [
-  { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
+  { title: "Evil Dead Burn", poster: "/7YYUlCEY97nv5g5EfH7WoxZeXAF.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
-  { title: "Todo Mundo em Pânico 6", poster: "/znHT8peERZRWG1ME3r0Db0EV8k8.jpg", year: "2026", tag: "🔥 Top 3", rating: "5.0" },
-  { title: "Leviticus", poster: "/gnAsZvBygplNpp8PtjoTEYv3VPB.jpg", year: "2026", tag: "🔥 Top 4", rating: "4.9" },
+  { title: "Todo Mundo em Pânico 6", poster: "/y9yJd2qIIwhZcllHeKHsz5eRvNr.jpg", year: "2026", tag: "🔥 Top 3", rating: "5.0" },
+  { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Top 4", rating: "4.9" },
   { title: "Backrooms", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Top 5", rating: "4.9" },
-  { title: "Silo", poster: "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", year: "2024", tag: "🔥 Top 6", rating: "4.9" },
-  { title: "Demon Slayer", poster: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", year: "2024", tag: "🔥 Top 7", rating: "4.9" },
-  { title: "Premonição 6", poster: "/x3J781PsdMrjenzQKM5eJXqK5Nd.jpg", year: "2025", tag: "🔥 Top 8", rating: "4.8" },
+  { title: "Silo", poster: "/cxB16Cc7xZuqWgNDo7QlqLMlinu.jpg", year: "2024", tag: "🔥 Top 6", rating: "4.9" },
+  { title: "Demon Slayer", poster: "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", year: "2024", tag: "🔥 Top 7", rating: "4.9" },
+  { title: "Premonição 6", poster: "/temIXpcua7j5v4FipOxmzTfrB06.jpg", year: "2025", tag: "🔥 Top 8", rating: "4.8" },
   { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "🔥 Top 9", rating: "4.8" },
-  { title: "Moana 2", poster: "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg", year: "2024", tag: "🔥 Top 10", rating: "4.9" },
+  { title: "Moana 2", poster: "/xGvz7nlGQeePcVOpAzOcHsC7kRt.jpg", year: "2024", tag: "🔥 Top 10", rating: "4.9" },
 ];
 
 export const series: Title[] = [
