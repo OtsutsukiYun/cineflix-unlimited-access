@@ -31,7 +31,7 @@ function DownloaderAppIcon({ className = "size-16 sm:size-20" }: { className?: s
 
 function NtDownAppIcon({ className = "size-16 sm:size-20" }: { className?: string }) {
   return (
-    <div className={`relative flex shrink-0 items-center justify-center rounded-2xl bg-gradient-to-b from-[#0284c7] via-[#0369a1] to-[#075985] p-3 shadow-[0_10px_30px_rgba(2,132,199,0.5)] border-2 border-sky-400/60 ${className}`}>
+    <div className={`relative flex shrink-0 items-center justify-center rounded-2xl bg-gradient-to-b from-[#10b981] via-[#16a34a] to-[#15803d] p-3 shadow-[0_10px_30px_rgba(22,163,74,0.5)] border-2 border-emerald-300/60 ${className}`}>
       <div className="flex flex-col items-center justify-center text-white text-center">
         <Download className="size-8 sm:size-10 stroke-[2.8] text-white drop-shadow-md" />
         <span className="text-[9px] sm:text-[10px] font-black tracking-tighter uppercase mt-1 text-white leading-none">NTDOWN</span>
@@ -185,8 +185,8 @@ export function InstalarPage() {
                   <p className="text-xs text-white/50 mt-0.5">Via Play Store (celular e tablet Android)</p>
                 </div>
               </div>
-              <span className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-sky-500/15 border border-sky-500/30 px-3 py-1.5 text-[11px] font-extrabold text-sky-300 shrink-0">
-                🔹 App ntDown
+              <span className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 px-3 py-1.5 text-[11px] font-extrabold text-emerald-300 shrink-0">
+                🟢 App Verde (ntDown)
               </span>
             </div>
 
@@ -196,16 +196,24 @@ export function InstalarPage() {
                   1
                 </div>
                 <div className="text-sm text-white/80 leading-relaxed pt-0.5 w-full">
-                  Abra a <strong className="text-white">Play Store</strong> no seu celular ou tablet Android e procure por <strong className="text-sky-300 font-bold">"ntDown"</strong>.
+                  Abra a <strong className="text-white">Play Store</strong> no seu celular ou tablet Android e procure pelo aplicativo{" "}
+                  <a
+                    href="https://play.google.com/store/apps/details?id=link.ntdev.ntdw&hl=pt_BR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-emerald-400 font-black underline underline-offset-2 hover:text-emerald-300 transition-colors"
+                  >
+                    ntDown <ExternalLink className="size-3" />
+                  </a>.
                   
                   {/* CARD GRANDE DO ÍCONE DO APLICATIVO PARA NÃO CONFUNDIR */}
-                  <div className="mt-3 flex items-center gap-4 sm:gap-5 rounded-2xl border-2 border-sky-500/40 bg-sky-950/30 p-4 sm:p-5 shadow-[0_0_25px_rgba(2,132,199,0.2)]">
+                  <div className="mt-3 flex items-center gap-4 sm:gap-5 rounded-2xl border-2 border-emerald-500/40 bg-emerald-950/30 p-4 sm:p-5 shadow-[0_0_25px_rgba(16,185,129,0.2)]">
                     <NtDownAppIcon className="size-16 sm:size-20" />
                     <div>
-                      <span className="inline-block text-[10px] font-black uppercase tracking-wider text-sky-300 bg-sky-500/20 border border-sky-500/40 px-2 py-0.5 rounded-md mb-1">
+                      <span className="inline-block text-[10px] font-black uppercase tracking-wider text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2 py-0.5 rounded-md mb-1">
                         🎯 ATENÇÃO AO ÍCONE
                       </span>
-                      <h4 className="font-black text-white text-sm sm:text-base">Procure exatamente por este ícone azul</h4>
+                      <h4 className="font-black text-white text-sm sm:text-base">Procure exatamente por este ícone verde</h4>
                       <p className="text-xs text-white/60 mt-0.5">Nome na loja: <strong>ntDown</strong></p>
                     </div>
                   </div>
