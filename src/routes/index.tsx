@@ -209,12 +209,14 @@ const CATALOG_TABS = [
     id: "terror-raro",
     label: "👻 Terror & Asiáticos Raros",
     items: [
-      { title: "Zona Zero", poster: "/hWT5fHzVcxq06SuLfAWYVCrue7P.jpg", year: "2026", tag: "🔥 Terror Coreano" },
-      { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Lançamento 2026" },
+      { title: "Pengabdi Setan 2: Communion", poster: "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", year: "2022", tag: "🔥 Indonésia" },
+      { title: "O Lamento", poster: "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", year: "2016", tag: "🔥 Coreia" },
+      { title: "Zona Zero", poster: "/hWT5fHzVcxq06SuLfAWYVCrue7P.jpg", year: "2026", tag: "Terror Coreano" },
+      { title: "Omukade", poster: "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", year: "2026", tag: "Terror Asiático 2026" },
       { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Indonésia" },
       { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Coreia" },
       { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Exclusivo" },
-      { title: "Omukade", poster: "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", year: "2026", tag: "Terror Asiático 2026" },
+      { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Suspense" },
     ],
   },
   {
