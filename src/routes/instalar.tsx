@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Download, Smartphone, Hash, Sparkles, ArrowLeft, ShieldCheck, Zap, ExternalLink, CheckCircle2 } from "lucide-react";
+import { Download, Smartphone, Hash, Sparkles, ArrowLeft, ShieldCheck, Zap, ExternalLink } from "lucide-react";
 import { img } from "@/data/catalog";
 
 export const Route = createFileRoute("/instalar")({
@@ -18,10 +18,32 @@ export const Route = createFileRoute("/instalar")({
 
 const BACKDROP = "/o0jkkpcN81QqSl8DMLScBCXyUH9.jpg";
 
+function DownloaderAppIcon({ className = "size-12 sm:size-14" }: { className?: string }) {
+  return (
+    <div className={`relative flex shrink-0 items-center justify-center rounded-2xl bg-gradient-to-b from-[#f97316] via-[#ea580c] to-[#c2410c] p-2 shadow-[0_8px_25px_rgba(249,115,22,0.45)] border border-orange-400/50 ${className}`}>
+      <div className="flex flex-col items-center justify-center text-white text-center">
+        <Download className="size-6 stroke-[2.5] text-white drop-shadow" />
+        <span className="text-[7.5px] font-black tracking-tighter uppercase mt-0.5 text-white/95 leading-none">DOWNLOADER</span>
+      </div>
+    </div>
+  );
+}
+
+function NtDownAppIcon({ className = "size-12 sm:size-14" }: { className?: string }) {
+  return (
+    <div className={`relative flex shrink-0 items-center justify-center rounded-2xl bg-gradient-to-b from-[#0284c7] via-[#0369a1] to-[#075985] p-2 shadow-[0_8px_25px_rgba(2,132,199,0.45)] border border-sky-400/50 ${className}`}>
+      <div className="flex flex-col items-center justify-center text-white text-center">
+        <Download className="size-6 stroke-[2.5] text-white drop-shadow" />
+        <span className="text-[7.5px] font-black tracking-tighter uppercase mt-0.5 text-white/95 leading-none">NTDOWN</span>
+      </div>
+    </div>
+  );
+}
+
 export function InstalarPage() {
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
-      {/* FUNDO CINEMATOGRÁFICO COM BRILHO VERDE/ESMERALDA ACOLHEDOR */}
+      {/* FUNDO CINEMATOGRÁFICO COM BRILHO VERDE ESMERALDA */}
       <div className="pointer-events-none fixed inset-0 z-0">
         <img
           src={img(BACKDROP, "w1280")}
@@ -65,7 +87,7 @@ export function InstalarPage() {
           </p>
         </div>
 
-        {/* CARD INFORMATIVO ACOLHEDOR DO TESTE GRÁTIS (VERDE ESMERALDA) */}
+        {/* CARD INFORMATIVO ESMERALDA DO TESTE GRÁTIS */}
         <div className="mb-8 rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950/50 via-black/80 to-emerald-950/30 p-6 sm:p-7 backdrop-blur-sm text-center shadow-[0_0_30px_rgba(16,185,129,0.15)]">
           <div className="inline-flex size-12 items-center justify-center rounded-2xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 mb-3">
             <Sparkles className="size-6 text-emerald-400" />
@@ -81,11 +103,8 @@ export function InstalarPage() {
           {/* MÉTODO 1 — DOWNLOADER */}
           <div className="rounded-3xl border border-white/12 bg-white/4 p-6 sm:p-8 backdrop-blur-sm shadow-xl">
             <div className="flex items-center justify-between gap-4 mb-7 pb-4 border-b border-white/10">
-              <div className="flex items-center gap-4">
-                {/* Ícone Laranja do Downloader */}
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-amber-600 font-black text-xl text-white shadow-[0_0_20px_rgba(249,115,22,0.5)]">
-                  <Download className="size-6 text-white" />
-                </div>
+              <div className="flex items-center gap-3.5">
+                <DownloaderAppIcon />
                 <div>
                   <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
                     Método 1: App Downloader
@@ -93,28 +112,33 @@ export function InstalarPage() {
                   <p className="text-xs text-white/50 mt-0.5">Para Smart TV Android, TV Box, Mi Stick e FireTV</p>
                 </div>
               </div>
-              {/* Badge visual de identificação do app */}
-              <span className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-orange-500/15 border border-orange-500/30 px-3 py-1 text-[11px] font-extrabold text-orange-300 shrink-0">
+              <span className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-orange-500/15 border border-orange-500/30 px-3 py-1.5 text-[11px] font-extrabold text-orange-300 shrink-0">
                 🍊 App Laranja
               </span>
             </div>
 
-            <ol className="space-y-5">
+            <ol className="space-y-6">
               <li className="flex items-start gap-4">
                 <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
                   1
                 </div>
                 <div className="text-sm text-white/80 leading-relaxed pt-0.5">
-                  Vá na loja de aplicativos da sua TV ou TV Box e busque pelo app{" "}
+                  Vá na loja de aplicativos da sua TV ou TV Box e procure pelo aplicativo{" "}
                   <a
                     href="https://play.google.com/store/apps/details?id=com.esaba.downloader&hl=pt_BR"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-orange-400 font-extrabold underline underline-offset-2 hover:text-orange-300 transition-colors"
+                    className="inline-flex items-center gap-1 text-orange-400 font-black underline underline-offset-2 hover:text-orange-300 transition-colors"
                   >
                     Downloader <ExternalLink className="size-3" />
-                  </a>{" "}
-                  (reconhecido pelo ícone laranja).
+                  </a>.
+                  <div className="mt-2.5 flex items-center gap-3 rounded-2xl border border-orange-500/30 bg-orange-950/20 p-3 max-w-md">
+                    <DownloaderAppIcon className="size-10" />
+                    <div className="text-xs">
+                      <p className="font-bold text-orange-300">Procure por este ícone laranja na loja da TV</p>
+                      <p className="text-[11px] text-white/50">Desenvolvido por AFTVnews</p>
+                    </div>
+                  </div>
                 </div>
               </li>
 
@@ -123,7 +147,7 @@ export function InstalarPage() {
                   2
                 </div>
                 <div className="text-sm text-white/80 leading-relaxed pt-0.5">
-                  Abra o <strong className="text-white">Downloader</strong> e na caixa de texto inicial digite exatamente este código:
+                  Abra o <strong className="text-white">Downloader</strong> e na barra de endereço inicial digite este código:
                   <div className="mt-3 flex items-center gap-3">
                     <div className="inline-flex items-center gap-2 rounded-2xl bg-emerald-950/80 border-2 border-emerald-400/60 px-5 py-2.5 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
                       <Hash className="size-5 text-emerald-400" />
@@ -138,7 +162,7 @@ export function InstalarPage() {
                   3
                 </div>
                 <div className="text-sm text-white/80 leading-relaxed pt-0.5">
-                  Aguarde o download terminar e clique em <strong className="text-white">"Instalar"</strong>. Pronto! Abra o UniTV Pro e aproveite seus 3 dias grátis.
+                  Clique em <strong className="text-white">"Go"</strong>, aguarde o download e depois selecione <strong className="text-white">"Instalar"</strong>. Pronto! Abra o UniTV Pro e aproveite seus 3 dias grátis.
                 </div>
               </li>
             </ol>
@@ -147,11 +171,8 @@ export function InstalarPage() {
           {/* MÉTODO 2 — NTDOWN */}
           <div className="rounded-3xl border border-white/12 bg-white/4 p-6 sm:p-8 backdrop-blur-sm shadow-xl">
             <div className="flex items-center justify-between gap-4 mb-7 pb-4 border-b border-white/10">
-              <div className="flex items-center gap-4">
-                {/* Ícone Azul do NtDown */}
-                <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 font-black text-xl text-white shadow-[0_0_20px_rgba(6,182,212,0.5)]">
-                  <Download className="size-6 text-white" />
-                </div>
+              <div className="flex items-center gap-3.5">
+                <NtDownAppIcon />
                 <div>
                   <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
                     Método 2: App ntDown
@@ -159,19 +180,25 @@ export function InstalarPage() {
                   <p className="text-xs text-white/50 mt-0.5">Via Play Store (celular e tablet Android)</p>
                 </div>
               </div>
-              {/* Badge visual de identificação do app */}
-              <span className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-cyan-500/15 border border-cyan-500/30 px-3 py-1 text-[11px] font-extrabold text-cyan-300 shrink-0">
+              <span className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-sky-500/15 border border-sky-500/30 px-3 py-1.5 text-[11px] font-extrabold text-sky-300 shrink-0">
                 🔹 App ntDown
               </span>
             </div>
 
-            <ol className="space-y-5">
+            <ol className="space-y-6">
               <li className="flex items-start gap-4">
                 <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
                   1
                 </div>
                 <div className="text-sm text-white/80 leading-relaxed pt-0.5">
-                  Abra a <strong className="text-white">Play Store</strong> no seu celular ou tablet Android e procure por <strong className="text-cyan-300 font-bold">"ntDown"</strong>.
+                  Abra a <strong className="text-white">Play Store</strong> no seu celular ou tablet Android e procure por <strong className="text-sky-300 font-bold">"ntDown"</strong>.
+                  <div className="mt-2.5 flex items-center gap-3 rounded-2xl border border-sky-500/30 bg-sky-950/20 p-3 max-w-md">
+                    <NtDownAppIcon className="size-10" />
+                    <div className="text-xs">
+                      <p className="font-bold text-sky-300">Procure por este ícone azul na Play Store</p>
+                      <p className="text-[11px] text-white/50">Nome do app: ntDown</p>
+                    </div>
+                  </div>
                 </div>
               </li>
 
