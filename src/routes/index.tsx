@@ -182,7 +182,7 @@ const CATALOG_TABS = [
     label: "🔥 Em Alta",
     items: [
       { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "Lançamento 2026" },
-      { title: "Homem-Aranha: Um Novo Dia", poster: "/9KAe39xqyZnv9J4W3DRGdQqX82h.jpg", year: "2026", tag: "🔥 Em alta" },
+      { title: "Homem-Aranha: Um Novo Dia", poster: "/iPOn6DinuVyLY17YM9mKuPofV08.jpg", year: "2026", tag: "🔥 Em alta" },
       { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "Terror 2026" },
       { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Terror 2026" },
       { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "Em alta" },
@@ -194,7 +194,7 @@ const CATALOG_TABS = [
     label: "🎬 Filmes & Lançamentos",
     items: [
       { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "Cinema 2026" },
-      { title: "Homem-Aranha: Um Novo Dia", poster: "/9KAe39xqyZnv9J4W3DRGdQqX82h.jpg", year: "2026", tag: "Super-herói" },
+      { title: "Homem-Aranha: Um Novo Dia", poster: "/iPOn6DinuVyLY17YM9mKuPofV08.jpg", year: "2026", tag: "Super-herói" },
       { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "2026" },
       { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Suspense" },
       { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "Suspense" },
