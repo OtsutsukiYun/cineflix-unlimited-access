@@ -109,14 +109,15 @@ export const heroSlides: HeroSlide[] = [
     objectPositionMobile: "50% 15%",
   },
   {
-    title: "O Segredo de Widow's Bay",
-    year: "2026",
-    genre: "Série de Terror / Mistério",
-    tagline: "Uma cidade amaldiçoada onde os segredos do passado voltam à tona.",
-    backdrop: "/u6XtMg9Ai9siEbEs0UudPS3EaZY.jpg",
-    poster: "/vKq8XEJKxQTHd2Bm5zZMFPUrke7.jpg",
+    title: "Herege",
+    year: "2024",
+    genre: "Terror / Suspense A24",
+    tagline: "Duas jovens missionárias entram na casa errada — e a fé se torna um pesadelo.",
+    backdrop: "/ag66gJCiZ06q1GSJuQlhGLi3Udx.jpg",
+    poster: "/fr96XzlzsONrQrGfdLMiwtQjott.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
+    brightness: "brightness(1.0)",
   },
 ];
 
