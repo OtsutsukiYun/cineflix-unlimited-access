@@ -17,22 +17,22 @@ export const Route = createFileRoute("/instalar")({
 });
 
 const INSTALAR_POSTERS = [
-  "/dgNTS4EQDDVfkzJI5msKuHu2Ei3.jpg", // Ringu (1998 - Japão)
-  "/4l58tFPxE1SdbNguszr6R9y8Sv6.jpg", // Ju-On: O Grito (2002 - Japão)
-  "/b9fF18oLm0gxfZDExQhLoF9OFAk.jpg", // Dark Water (2002 - Japão)
-  "/vNw1gOEDdYTDeNMuuq8OmiEHrfH.jpg", // Audition (1999 - Japão)
-  "/vNVFt6dtcqnI7hqa6LFBUibuFiw.jpg", // Train to Busan (2016 - Coreia)
+  "/vA7uZSMx8VL6LIuNFPnymwkRPBV.jpg", // Noroi: The Curse (2005 - Japão)
+  "/1YINof6kN5yRdePEbcU5360ejoq.jpg", // Ringu / O Chamado (1998 - Japão)
+  "/6q1hlBC6rudc3mHwXsbMBR2xAT6.jpg", // Ju-On: O Grito (2002 - Japão)
+  "/c3zEimDraIyMSasPMGDaNOrhnzn.jpg", // Kairo / Pulse (2001 - Japão)
+  "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", // Cure (1997 - Japão)
+  "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water / Água Escura (2002 - Japão)
+  "/8ujSEEePCVMyi7Mt1RQMXd6SWmy.jpg", // One Missed Call / Uma Chamada Perdida (2003 - Japão)
+  "/vNVFt6dtcqnI7hqa6LFBUibuFiw.jpg", // Train to Busan / Invasão Zumbi (2016 - Coreia)
   "/fNqlsmu2tiI1bXcpU31yjHPkiJz.jpg", // Gonjiam: Hospital Maldito (2018 - Coreia)
-  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento (2016 - Coreia)
-  "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", // Pengabdi Setan 2 (Ásia)
-  "/rLNSOudrayDBo1uqXjrhxcjODIC.jpg", // Jogos Mortais (2004)
-  "/1mXhlQMnlfvJ2frxTjZSQNnA9Vp.jpg", // Premonição (2000)
-  "/ttquyxStEEctzghtA2f4PUGprDr.jpg", // Madrugada dos Mortos (2004)
-  "/sQckQRt17VaWbo39GIu0TMOiszq.jpg", // Extermínio (2002)
-  "/9wRfzTcMyyzkQxVDqBHv8RwuZOv.jpg", // Terror em Silent Hill (2006)
-  "/dDrtuWUKhgUGp12kgUWuP0NpTdF.jpg", // Albergue (2005)
-  "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", // Arraste-me Para o Inferno (2009)
-  "/xYqAfCDhdNjChTIlrIRg72LwkuB.jpg", // Olhos Famintos (2001)
+  "/lWE9ih9qgjx8HatYboP7fG0nri.jpg", // The Wailing / O Lamento (2016 - Coreia)
+  "/rLNSOudrayDBo1uqXjrhxcjODIC.jpg", // Saw / Jogos Mortais (2004)
+  "/1mXhlQMnlfvJ2frxTjZSQNnA9Vp.jpg", // Final Destination / Premonição (2000)
+  "/sQckQRt17VaWbo39GIu0TMOiszq.jpg", // 28 Days Later / Extermínio (2002)
+  "/r0bEDWO2w4a43K2xTNSF284qOsc.jpg", // Silent Hill / Terror em Silent Hill (2006)
+  "/dDrtuWUKhgUGp12kgUWuP0NpTdF.jpg", // Hostel / O Albergue (2005)
+  "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", // Drag Me to Hell / Arraste-me Para o Inferno (2009)
 ];
 
 function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
