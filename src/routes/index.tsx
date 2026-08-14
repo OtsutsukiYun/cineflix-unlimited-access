@@ -288,6 +288,7 @@ const CATALOG_TABS = [
 function Index() {
   const [slide, setSlide] = useState(0);
   const [activeTab, setActiveTab] = useState("em-alta");
+  const [isMobile, setIsMobile] = useState(false);
   const catalogScrollRef = useRef<HTMLDivElement>(null);
 
   const scrollCatalog = (dir: "left" | "right") => {
@@ -299,6 +300,13 @@ function Index() {
       });
     }
   };
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => setSlide((prev) => (prev + 1) % heroSlides.length), 6000);
@@ -358,7 +366,7 @@ function Index() {
             style={{
               opacity: i === slide ? 1 : 0,
               transform: i === slide ? "scale(1.02)" : "scale(1)",
-              objectPosition: s.objectPosition ?? "center 20%",
+              objectPosition: isMobile && s.objectPositionMobile ? s.objectPositionMobile : (s.objectPosition ?? "center 20%"),
               filter: s.brightness ? `${s.brightness} brightness(0.52)` : "brightness(0.52)",
             }}
           />

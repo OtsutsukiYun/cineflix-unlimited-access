@@ -41,10 +41,10 @@ export const heroSlides: HeroSlide[] = [
     year: "2026",
     genre: "Terror / Gore",
     tagline: "O horror voltou — e o mal se espalha como fogo.",
-    backdrop: "/o0jkkpcN81QqSl8DMLScBCXyUH9.jpg",
+    backdrop: "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg",
     poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg",
     objectPosition: "center 20%",
-    objectPositionMobile: "50% 15%",
+    objectPositionMobile: "25% 15%",
     brightness: "brightness(1.0)",
   },
   {
