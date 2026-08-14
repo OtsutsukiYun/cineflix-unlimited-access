@@ -233,7 +233,7 @@ export const series: Title[] = [
 export const animes: Title[] = [
   { title: "Demon Slayer: Castelo Infinito", poster: "/41XdjOXGQoH0HTDNqEfwKGvGgwm.jpg", year: "2025", tag: "#1 mais assistido" },
   { title: "Frieren e a Jornada para o Além", poster: "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", year: "Série", tag: "Em alta" },
-  { title: "Jujutsu Kaisen", poster: "/8R1mMSC1gX1cg5ed7ns49JOEqw3.jpg", year: "Série" },
+  { title: "Jujutsu Kaisen", poster: "/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg", year: "Série" },
   { title: "Solo Leveling", poster: "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", year: "Série" },
   { title: "One Piece", poster: "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", year: "Série", rating: "5.0" },
   { title: "One-Punch Man", poster: "/dT10AxJIXVvRwFAew4tt2RhzJrD.jpg", year: "Série" },

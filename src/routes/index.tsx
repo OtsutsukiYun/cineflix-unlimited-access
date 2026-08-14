@@ -241,7 +241,7 @@ const CATALOG_TABS = [
       { title: "Monster", poster: "/n5XNKXnoXpoXyfiCtXHOf8q8PFM.jpg", year: "2004", tag: "⭐ Clássico" },
       { title: "Demon Slayer", poster: "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", year: "Série", tag: "🔥 Sucesso" },
       { title: "Solo Leveling", poster: "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", year: "Série", tag: "Lançamento" },
-      { title: "Jujutsu Kaisen", poster: "/hE1PlaceUQofB6QxR1w0Btz2y5e.jpg", year: "Série", tag: "Em alta" },
+      { title: "Jujutsu Kaisen", poster: "/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg", year: "Série", tag: "Em alta" },
       { title: "Attack on Titan", poster: "/hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg", year: "Série", tag: "Ação" },
       { title: "Chainsaw Man", poster: "/npdB6eFzLw7dCeMxoGftflivNyo.jpg", year: "Série", tag: "Sobrenatural" },
       { title: "One Piece", poster: "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", year: "Série", tag: "Clássico" },
