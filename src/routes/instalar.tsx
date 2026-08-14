@@ -153,18 +153,20 @@ export function InstalarPage() {
           </p>
         </div>
 
-        {/* MÉTODOS DE INSTALAÇÃO — PRINCIPAIS (TV, TV BOX, STICK E CELULAR) */}
+        {/* MÉTODOS DE INSTALAÇÃO — PRINCIPAIS (SMART TV, TV BOX, SMARTPHONE E TABLET) */}
         <div className="space-y-6">
-          {/* MÉTODO 1 — DOWNLOADER (TV, TV BOX, STICK) */}
+          {/* MÉTODO 1 — DOWNLOADER */}
           <div className="rounded-3xl border-2 border-orange-500/30 bg-gradient-to-b from-orange-950/20 via-black/60 to-black/80 p-6 sm:p-8 backdrop-blur-sm shadow-xl">
             <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
               <div className="flex items-center gap-3.5">
                 <DownloaderAppIcon className="size-14 sm:size-16" />
                 <div>
                   <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
-                    Método 1: Smart TV & TV Box
+                    Método 1: Downloader
                   </h2>
-                  <p className="text-xs text-orange-300/90 font-semibold mt-0.5">Para Smart TV Android, TV Box, Mi Stick Xiaomi e FireTV</p>
+                  <p className="text-xs text-orange-300/90 font-semibold mt-0.5">
+                    Compatível com Smart TV, TV Box, Smartphone e Tablet Android
+                  </p>
                 </div>
               </div>
               <span className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-orange-500/15 border border-orange-500/30 px-3 py-1.5 text-[11px] font-extrabold text-orange-300 shrink-0">
@@ -246,16 +248,18 @@ export function InstalarPage() {
             </div>
           </div>
 
-          {/* MÉTODO 2 — CELULAR & TABLET (NTDOWN) */}
+          {/* MÉTODO 2 — NTDOWN */}
           <div className="rounded-3xl border-2 border-emerald-500/30 bg-gradient-to-b from-emerald-950/20 via-black/60 to-black/80 p-6 sm:p-8 backdrop-blur-sm shadow-xl">
             <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
               <div className="flex items-center gap-3.5">
                 <NtDownAppIcon className="size-14 sm:size-16" />
                 <div>
                   <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
-                    Método 2: Celular & Tablet Android
+                    Método 2: NTDown
                   </h2>
-                  <p className="text-xs text-emerald-300/90 font-semibold mt-0.5">Para Celulares e Tablets com sistema Android</p>
+                  <p className="text-xs text-emerald-300/90 font-semibold mt-0.5">
+                    Compatível com Smart TV, TV Box, Smartphone e Tablet Android
+                  </p>
                 </div>
               </div>
               <span className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 px-3 py-1.5 text-[11px] font-extrabold text-emerald-300 shrink-0">
