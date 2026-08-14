@@ -231,7 +231,7 @@ export const series: Title[] = [
 ];
 
 export const animes: Title[] = [
-  { title: "Chainsaw Man", poster: "/8vtnPZXxCvX8iIbFoglGxwHjapq.jpg", year: "Série", tag: "🔥 Sucesso" },
+  { title: "Chainsaw Man", poster: "/npdB6eFzizki0WaZ1OvKcJrWe97.jpg", year: "Série", tag: "🔥 Sucesso" },
   { title: "Frieren e a Jornada para o Além", poster: "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", year: "Série", tag: "Em alta" },
   { title: "Demon Slayer: Castelo Infinito", poster: "/41XdjOXGQoH0HTDNqEfwKGvGgwm.jpg", year: "2025", tag: "#1 mais assistido" },
   { title: "Jujutsu Kaisen", poster: "/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg", year: "Série" },
