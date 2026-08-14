@@ -147,7 +147,7 @@ function SmoothLink({ href, className, children }: { href: string; className?: s
   );
 }
 
-function Cta({ children = "QUERO ASSISTIR" }: { children?: string }) {
+function Cta({ children = "QUERO ASSINAR" }: { children?: string }) {
   return (
     <SmoothLink href={CTA_HREF} className="btn-cta animate-pulse-ring">
       {children}
@@ -329,7 +329,7 @@ function Index() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
-            <Cta>QUERO ASSISTIR</Cta>
+            <Cta>QUERO ASSINAR</Cta>
             <Link to="/instalar" className="btn-ghost">
               <Smartphone className="size-4" /> Teste grátis 3 dias
             </Link>
