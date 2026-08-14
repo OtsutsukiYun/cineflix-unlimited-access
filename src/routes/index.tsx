@@ -182,11 +182,11 @@ const CATALOG_TABS = [
     label: "🔥 Em Alta",
     items: [
       { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "Lançamento 2026" },
-      { title: "Homem-Aranha: Além do Aranhaverso", poster: "/9KAe39xqyZnv9J4W3DRGdQqX82h.jpg", year: "2026", tag: "🔥 Em alta" },
+      { title: "Homem-Aranha: Um Novo Dia", poster: "/9KAe39xqyZnv9J4W3DRGdQqX82h.jpg", year: "2026", tag: "🔥 Em alta" },
       { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "Terror 2026" },
+      { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Terror 2026" },
       { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "Em alta" },
       { title: "Round 6", poster: "/6gcHdboppvplmBWxvROc96NJnmm.jpg", year: "Série", tag: "Nº 1" },
-      { title: "Demon Slayer: Castelo Infinito", poster: "/41XdjOXGQoH0HTDNqEfwKGvGgwm.jpg", year: "2025", tag: "Sucesso" },
     ],
   },
   {
@@ -194,23 +194,23 @@ const CATALOG_TABS = [
     label: "🎬 Filmes & Lançamentos",
     items: [
       { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "Cinema 2026" },
-      { title: "Homem-Aranha: Além do Aranhaverso", poster: "/9KAe39xqyZnv9J4W3DRGdQqX82h.jpg", year: "2026", tag: "Super-herói" },
+      { title: "Homem-Aranha: Um Novo Dia", poster: "/9KAe39xqyZnv9J4W3DRGdQqX82h.jpg", year: "2026", tag: "Super-herói" },
       { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "2026" },
+      { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Suspense" },
       { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "Suspense" },
       { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "Mistério" },
-      { title: "Herege", poster: "/j5e2YS1PRUVC1YgSool0JJyNLxJ.jpg", year: "2024", tag: "Cinema" },
     ],
   },
   {
     id: "terror-raro",
     label: "👻 Terror & Asiáticos Raros",
     items: [
+      { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Lançamento 2026" },
       { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "2026" },
       { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Indonésia" },
       { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Coreia" },
       { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Exclusivo" },
       { title: "Undertone", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", year: "2026", tag: "Novo" },
-      { title: "Hokum", poster: "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg", year: "2026", tag: "Sobrenatural" },
     ],
   },
   {

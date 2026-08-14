@@ -121,6 +121,7 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
+  { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.8" },
   { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
   { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Terror Asiático", rating: "4.7" },
   { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Terror Coreano", rating: "4.6" },
@@ -186,7 +187,7 @@ export const terror: Title[] = [
 export const top10Hoje: Title[] = [
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
   { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
-  { title: "Homem-Aranha: Além do Aranhaverso", poster: "/9KAe39xqyZnv9J4W3DRGdQqX82h.jpg", year: "2026", tag: "🔥 Top 3", rating: "4.9" },
+  { title: "Homem-Aranha: Um Novo Dia", poster: "/9KAe39xqyZnv9J4W3DRGdQqX82h.jpg", year: "2026", tag: "🔥 Top 3", rating: "4.9" },
   { title: "Backrooms", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Top 4", rating: "4.9" },
   { title: "Round 6", poster: "/5aE1kxWg6RhgQxJTXTxifv4uq7P.jpg", year: "2024", tag: "🔥 Top 5", rating: "4.8" },
   { title: "Demon Slayer", poster: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", year: "2024", tag: "🔥 Top 6", rating: "4.9" },
