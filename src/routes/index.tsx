@@ -225,12 +225,12 @@ const CATALOG_TABS = [
     id: "series",
     label: "📺 Séries",
     items: [
+      { title: "O Segredo de Widow's Bay", poster: "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
+      { title: "FROM (Origem)", poster: "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg", year: "Série", tag: "🔥 Terror & Mistério" },
+      { title: "IT: Bem-Vindos a Derry", poster: "/gMTfrLvrDaD0zrhpLZ7zXIIpKfJ.jpg", year: "2025", tag: "HBO Max" },
       { title: "Silo", poster: "/cxB16Cc7xZuqWgNDo7QlqLMlinu.jpg", year: "Série", tag: "Apple TV+" },
-      { title: "Origem (From)", poster: "/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg", year: "Série", tag: "Mistério" },
-      { title: "Wandinha", poster: "/7rxiQrZjrer0RB9qNA8rHYFo53R.jpg", year: "Série", tag: "Netflix" },
-      { title: "IT: Bem-Vindos a Derry", poster: "/gMTfrLvrDaD0zrhpLZ7zXIIpKfJ.jpg", year: "2025", tag: "Lançamento" },
-      { title: "Stranger Things", poster: "/twfKp60THrcOIep9sjHODOOfO8d.jpg", year: "Série", tag: "Popular" },
-      { title: "Yellowjackets", poster: "/xRnGrn7Z7SC0KIBodocoU1QgDZF.jpg", year: "Série", tag: "Drama" },
+      { title: "Yellowjackets", poster: "/xRnGrn7Z7SC0KIBodocoU1QgDZF.jpg", year: "Série", tag: "Terror & Drama" },
+      { title: "The Last of Us", poster: "/uKvVjHNqB8osbdWCUu2fgVvxMV3.jpg", year: "Série", tag: "Em alta" },
     ],
   },
   {
