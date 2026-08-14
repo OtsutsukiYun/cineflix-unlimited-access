@@ -509,58 +509,94 @@ function Index() {
         </div>
       </section>
 
-      {/* DIFERENCIAIS */}
-      <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-10 sm:py-14">
+      {/* RECURSOS E DIFERENCIAIS — COM BANNERS VISUAIS DE CONTEÚDO (ESPORTES, FILMES, SÉRIES, INFANTIL) */}
+      <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-12 sm:py-16">
         <SmoothCardReveal>
-          <div className="text-center mb-8">
-            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/30 px-4 py-2 text-xs font-bold tracking-wider text-red-400 uppercase mb-4">
-              <Sparkles className="size-3.5" /> Por que escolher o UniTV Pro?
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/40 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3">
+              <Sparkles className="size-3.5" /> Recursos Exclusivos
             </span>
-            <h2 className="text-2xl font-extrabold sm:text-4xl tracking-tight text-white">
+            <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white">
               Tudo o que você precisa,<br /><span className="text-red-500">em um só lugar</span>
             </h2>
           </div>
         </SmoothCardReveal>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
               icon: "📺",
               title: "TV ao Vivo em Alta",
               desc: "Centenas de canais HD e UHD: esportes, notícias, infantis, variedades e filmes — todos num só lugar.",
+              banner: "/f8snY0RVua2uFd7RtytcdpFCTMX.jpg", // Futebol / Esportes / Messi
+              badge: "Ao Vivo & Esportes",
             },
             {
               icon: "🎬",
               title: "Cinema e Séries",
               desc: "Acervo robusto para maratonar quando bater vontade. Tudo incluso na recarga, sem cobrança avulsa.",
+              banner: "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg", // Deadpool & Wolverine / Cinema
+              badge: "Filmes & Séries",
             },
             {
               icon: "⏪",
               title: "Volte 7 Dias na Grade",
               desc: "Perdeu o jogo, novela ou programa? Use o Playback para retomar a programação dos últimos 7 dias.",
+              banner: "/577eXC8wFQT0eUrJcgznSiFPRmk.jpg", // House of the Dragon / Séries
+              badge: "Playback 7 Dias",
             },
             {
               icon: "📡",
               title: "Sinal P2P Estável",
               desc: "A rede peer-to-peer espalha o conteúdo de forma inteligente, mantendo a transmissão fluida sem travar.",
+              banner: "/eZ239CUp1d6OryZEBPnO2n87gMG.jpg", // Dune Part Two / P2P High Tech
+              badge: "Tecnologia P2P",
             },
             {
               icon: "🔒",
               title: "Bloqueio Por Perfil",
               desc: "Trave canais com senha para garantir que as crianças vejam só o que é apropriado.",
+              banner: "/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg", // Divertida Mente 2 / Infantis
+              badge: "Controle Parental",
             },
             {
               icon: "📋",
               title: "Guia EPG Completo",
               desc: "O guia de programação mostra o que passa em cada canal, com horário, sinopse e ordem por categoria.",
+              banner: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", // Demon Slayer / EPG Guia
+              badge: "Guia de Programação",
             },
           ].map((f, i) => (
             <SmoothCardReveal key={f.title} delay={60 + i * 70}>
-              <div className="glass flex gap-4 rounded-2xl p-5 border border-white/10 bg-white/4 hover:border-red-500/30 transition-all duration-300">
-                <span className="text-2xl shrink-0 mt-0.5">{f.icon}</span>
-                <div>
-                  <h3 className="font-bold text-white mb-1 text-sm">{f.title}</h3>
-                  <p className="text-xs text-white/55 leading-relaxed">{f.desc}</p>
+              <div className="group relative overflow-hidden rounded-3xl border border-white/12 bg-black/65 p-6 sm:p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-red-500/50 hover:shadow-[0_15px_40px_rgba(220,38,38,0.25)] flex flex-col justify-between min-h-[220px]">
+                {/* BANNER DE FUNDO COM OVERLAY RED/DARK ADAPTADO À NOVA PALETA */}
+                <div className="absolute inset-0 z-0 overflow-hidden">
+                  <img
+                    src={img(f.banner, "w780")}
+                    alt=""
+                    className="size-full object-cover opacity-30 group-hover:opacity-45 transition-all duration-700 ease-out group-hover:scale-110"
+                    style={{ filter: "brightness(0.65)" }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/85 to-black/60" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-950/35 via-transparent to-black/75" />
+                </div>
+
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="flex size-12 items-center justify-center rounded-2xl bg-red-600/20 border border-red-500/35 text-2xl shadow-[0_0_15px_rgba(220,38,38,0.35)] backdrop-blur-md">
+                      {f.icon}
+                    </span>
+                    <span className="rounded-full bg-white/10 border border-white/15 px-3 py-1 text-[10px] font-extrabold tracking-wider text-white/85 uppercase backdrop-blur-md">
+                      {f.badge}
+                    </span>
+                  </div>
+
+                  <h3 className="font-extrabold text-white text-lg mb-2 group-hover:text-red-400 transition-colors">
+                    {f.title}
+                  </h3>
+                  <p className="text-xs text-white/75 leading-relaxed font-medium">
+                    {f.desc}
+                  </p>
                 </div>
               </div>
             </SmoothCardReveal>
