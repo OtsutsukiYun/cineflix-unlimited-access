@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, Fragment } from "react";
 
-function SmoothCardReveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+function SmoothCardReveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [shown, setShown] = useState(false);
   useEffect(() => {
@@ -12,7 +12,11 @@ function SmoothCardReveal({ children, delay = 0 }: { children: React.ReactNode; 
     return () => io.disconnect();
   }, []);
   return (
-    <div ref={ref} style={{ transitionDuration: "650ms", transitionDelay: `${delay}ms`, transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }} className={`transition-all duration-700 ${shown ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-7 scale-[0.98]"}`}>
+    <div
+      ref={ref}
+      style={{ transitionDuration: "650ms", transitionDelay: `${delay}ms`, transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
+      className={`transition-all duration-700 ${shown ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-7 scale-[0.98]"} ${className}`}
+    >
       {children}
     </div>
   );
@@ -485,7 +489,7 @@ function Index() {
           </p>
         </Reveal>
 
-        <div className="relative z-10 grid items-stretch gap-5 lg:grid-cols-3">
+        <div className="relative z-10 grid items-stretch gap-6 lg:grid-cols-3">
           {[
             {
               id: "mensal",
@@ -501,7 +505,7 @@ function Index() {
               destaque: false,
               selo: null as string | null,
               badge: "Sem Fidelidade",
-              btnStyle: "bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white font-black py-4 px-4 rounded-xl shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:scale-[1.02]",
+              btnStyle: "bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:scale-[1.02]",
               btnText: "ASSINAR PLANO MENSAL",
               link: "#planos",
               features: [
@@ -526,9 +530,9 @@ function Index() {
               dias: "365 dias",
               telas: "2 telas",
               destaque: true,
-              selo: "🔥 MAIS POPULAR — MELHOR CUSTO-BENEFÍCIO",
+              selo: "🔥 MAIS POPULAR • MELHOR CUSTO-BENEFÍCIO",
               badge: "⭐ Recomendado",
-              btnStyle: "bg-gradient-to-r from-red-600 via-red-500 to-red-700 text-white shadow-[0_0_35px_rgba(220,38,38,0.8)] hover:scale-[1.04] font-black py-4 px-6 text-sm sm:text-base rounded-xl",
+              btnStyle: "bg-gradient-to-r from-red-600 via-red-500 to-red-700 hover:from-red-500 hover:to-red-600 text-white shadow-[0_0_35px_rgba(220,38,38,0.8)] hover:scale-[1.02] font-black py-3.5 px-4 rounded-xl",
               btnText: "QUERO ASSINAR AGORA",
               link: "#planos",
               features: [
@@ -556,7 +560,7 @@ function Index() {
               destaque: false,
               selo: null as string | null,
               badge: "Economia 33%",
-              btnStyle: "bg-gradient-to-r from-blue-800 to-blue-700 hover:from-blue-700 hover:to-blue-600 text-white font-black py-4 px-4 rounded-xl shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:scale-[1.02]",
+              btnStyle: "bg-gradient-to-r from-blue-700 to-blue-600 hover:from-blue-600 hover:to-blue-500 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:scale-[1.02]",
               btnText: "ASSINAR TRIMESTRAL",
               link: "#planos",
               features: [
@@ -567,20 +571,21 @@ function Index() {
                 "Smart TV Android, TV Box, Mi Stick, FireTV",
                 "Celular Android e Tablet Android",
                 "Suporte 7 dias via WhatsApp",
+                "Garantia de reembolso de 7 dias",
               ],
             },
           ].map((p, i) => (
-            <SmoothCardReveal key={p.nome} delay={100 + i * 120}>
+            <SmoothCardReveal key={p.nome} delay={100 + i * 120} className="h-full">
               <div
-                className={`glass group relative flex flex-col justify-between h-full rounded-3xl transition-all duration-500 ${
+                className={`glass group relative flex flex-col justify-between h-full rounded-3xl p-6 sm:p-7 transition-all duration-300 ${
                   p.destaque
-                    ? "border-2 border-red-500 bg-gradient-to-b from-red-950/70 via-black/90 to-red-950/50 p-7 sm:p-9 shadow-[0_0_55px_rgba(220,38,38,0.4)] lg:-translate-y-3 lg:scale-[1.04] z-20 hover:border-red-400 hover:shadow-[0_0_70px_rgba(220,38,38,0.65)]"
-                    : "border border-white/15 bg-black/60 p-6 sm:p-8 hover:border-white/30 hover:bg-white/4 shadow-xl"
+                    ? "border-2 border-red-500 bg-gradient-to-b from-red-950/80 via-[#0f0a0a] to-black/95 shadow-[0_0_40px_rgba(220,38,38,0.4)] hover:border-red-400 hover:shadow-[0_0_55px_rgba(220,38,38,0.6)] z-20"
+                    : "border border-white/15 bg-black/70 hover:border-white/30 hover:bg-white/5 shadow-xl"
                 }`}
               >
                 {p.selo && (
-                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-red-700 via-red-600 to-red-700 px-5 py-1.5 text-xs font-black tracking-wider text-white uppercase shadow-[0_0_20px_rgba(220,38,38,0.8)] whitespace-nowrap">
-                    <Sparkles className="size-3.5 fill-current" />
+                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-red-600 via-red-500 to-red-600 px-4 py-1 text-[10px] sm:text-[11px] font-black tracking-wider text-white uppercase shadow-[0_0_20px_rgba(220,38,38,0.8)] whitespace-nowrap">
+                    <Sparkles className="size-3 fill-current" />
                     {p.selo}
                   </span>
                 )}
@@ -589,7 +594,7 @@ function Index() {
                   <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
                     <div className="flex items-center gap-2.5">
                       <p.icon className={`size-6 shrink-0 ${p.iconColor}`} />
-                      <h3 className={`font-display font-black tracking-tight uppercase ${p.titleGradient} ${p.destaque ? "text-2xl sm:text-3xl" : "text-xl sm:text-2xl"}`}>
+                      <h3 className={`font-display font-black tracking-tight uppercase text-xl sm:text-2xl ${p.titleGradient}`}>
                         {p.nome}
                       </h3>
                     </div>
@@ -605,17 +610,17 @@ function Index() {
                   <div className="mt-5">
                     <div className="flex items-baseline gap-2">
                       <span className="text-sm text-white/40 line-through">{p.precoAntigo}</span>
-                      <span className={`font-display font-black ${p.destaque ? "text-5xl sm:text-6xl text-white" : "text-4xl text-white"}`}>
+                      <span className="font-display font-black text-4xl sm:text-5xl text-white">
                         {p.preco}
                       </span>
                       <span className={`text-xs font-bold ${p.destaque ? "text-red-300" : "text-white/50"}`}>/{p.periodo}</span>
                     </div>
-                    <div className="mt-2 flex gap-2 flex-wrap">
-                      <span className="inline-flex items-center gap-1 rounded-full bg-white/8 border border-white/10 px-2.5 py-0.5 text-[10px] font-bold text-white/60">
-                        <Calendar className="size-3" /> {p.dias}
+                    <div className="mt-2.5 flex gap-2 flex-wrap">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/8 border border-white/10 px-3 py-1 text-xs font-bold text-white/70">
+                        <Calendar className="size-3.5 text-red-400" /> {p.dias}
                       </span>
-                      <span className="inline-flex items-center gap-1 rounded-full bg-white/8 border border-white/10 px-2.5 py-0.5 text-[10px] font-bold text-white/60">
-                        <MonitorPlay className="size-3" /> {p.telas}
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/8 border border-white/10 px-3 py-1 text-xs font-bold text-white/70">
+                        <MonitorPlay className="size-3.5 text-red-400" /> {p.telas}
                       </span>
                     </div>
                   </div>
@@ -625,7 +630,7 @@ function Index() {
                     target={p.link.startsWith("http") ? "_blank" : undefined}
                     rel={p.link.startsWith("http") ? "noopener noreferrer" : undefined}
                     onClick={p.link === "#planos" ? (e) => { e.preventDefault(); } : undefined}
-                    className={`mt-5 w-full flex items-center justify-center gap-2 text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 ${p.btnStyle}`}
+                    className={`mt-6 w-full flex items-center justify-center gap-2 text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 ${p.btnStyle}`}
                   >
                     <Zap className={p.destaque ? "size-5 fill-white text-white" : "size-4"} />
                     {p.btnText}
@@ -637,7 +642,7 @@ function Index() {
                     {p.features.map((f) => (
                       <li key={f} className="flex items-start gap-2.5">
                         <Check className={`mt-0.5 size-4 shrink-0 ${p.destaque ? "text-red-400" : "text-red-500/80"}`} />
-                        <span className={p.destaque ? "text-white font-semibold" : "text-white/80 font-medium"}>{f}</span>
+                        <span className={p.destaque ? "text-white font-semibold" : "text-white/85 font-medium"}>{f}</span>
                       </li>
                     ))}
                   </ul>
