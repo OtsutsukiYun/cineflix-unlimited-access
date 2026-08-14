@@ -193,7 +193,7 @@ const CATALOG_TABS = [
     id: "filmes",
     label: "🎬 Filmes & Lançamentos",
     items: [
-      { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Exclusivo 2026" },
+      { title: "A Última Casa", poster: "/6JU7E8Vv2M11egkctWVOScxWR75.jpg", year: "2026", tag: "🔥 Exclusivo 2026" },
       { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Lançamento" },
       { title: "Homem-Aranha: Um Novo Dia", poster: "/iPOn6DinuVyLY17YM9mKuPofV08.jpg", year: "2026", tag: "Super-herói" },
       { title: "A Odisseia", poster: "/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg", year: "2026", tag: "Cinema 2026" },
