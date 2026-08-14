@@ -325,7 +325,7 @@ function Index() {
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-white/70 max-w-lg mx-auto leading-relaxed">
-            Mais de <strong className="text-white">80.000 conteúdos</strong> (filmes, séries, doramas, canais e esportes) em até 4K por apenas <strong className="text-red-400">R$34,99/mês</strong>.
+            Mais de <strong className="text-white">100.000 conteúdos</strong> (filmes, séries, doramas, canais e esportes) em até 4K por apenas <strong className="text-red-400">R$34,99/mês</strong>.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
@@ -362,7 +362,7 @@ function Index() {
               <Fragment key={i}>
                 <span className="flex items-center gap-2 text-red-400"><Sparkles className="size-3.5" /> Qualidade em até 4K</span>
                 <span className="flex items-center gap-2"><Film className="size-3.5 text-red-500" /> Cinema & Lançamentos</span>
-                <span className="flex items-center gap-2 text-blue-300"><Tv className="size-3.5 text-blue-400" /> +80.000 Conteúdos</span>
+                <span className="flex items-center gap-2 text-blue-300"><Tv className="size-3.5 text-blue-400" /> +100.000 Conteúdos</span>
                 <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-red-500" /> Smart TV & TV Box</span>
                 <span className="flex items-center gap-2 text-red-300"><RefreshCcw className="size-3.5 text-red-500" /> Atualizações Semanais</span>
                 <span className="flex items-center gap-2"><Zap className="size-3.5 text-red-500" /> Ativação Imediata</span>
@@ -510,7 +510,7 @@ function Index() {
               link: "#planos",
               features: [
                 "1 Tela simultânea",
-                "Acervo completo (+80.000 títulos)",
+                "Acervo completo (+100.000 títulos)",
                 "Esportes & Canais Ao Vivo HD/4K",
                 "Smart TV Android, TV Box, Mi Stick, FireTV",
                 "Celular Android e Tablet Android",
@@ -538,7 +538,7 @@ function Index() {
               features: [
                 "2 Telas simultâneas",
                 "365 dias de acesso sem mensalidades",
-                "Acervo completo em até 4K",
+                "Acervo completo (+100.000 títulos em 4K)",
                 "Todos os canais ao vivo HD/4K",
                 "Smart TV Android, TV Box, Mi Stick, FireTV",
                 "Celular Android e Tablet Android",
@@ -566,7 +566,7 @@ function Index() {
               features: [
                 "1 Tela simultânea",
                 "90 dias sem mensalidades",
-                "Acervo completo (+80.000 títulos)",
+                "Acervo completo (+100.000 títulos)",
                 "Esportes & Canais Ao Vivo HD/4K",
                 "Smart TV Android, TV Box, Mi Stick, FireTV",
                 "Celular Android e Tablet Android",
