@@ -24,15 +24,22 @@ const POSTERS_ROW_JAPAN = [
   "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", // Cure (1997)
   "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water / Água Escura (2002)
   "/8ujSEEePCVMyi7Mt1RQMXd6SWmy.jpg", // One Missed Call (2003)
+  "/c1KyQx8mHwxQHTQgJDra84RfTYx.jpg", // Marebito (2004)
+  "/okrZ7VAfgLGMNK8XdIapSlXQhLY.jpg", // Carved: Kuchisake-onna (2007)
+  "/lFAnm6625uMUZ1Xkg1XxwlXBEE.jpg", // Reincarnation / Rinne (2005)
 ];
 
 const POSTERS_ROW_ASIA = [
-  "/vNVFt6dtcqnI7hqa6LFBUibuFiw.jpg", // Train to Busan (2016)
+  "/vNVFt6dtcqnI7hqa6LFBUibuFiw.jpg", // Train to Busan / Invasão Zumbi (2016)
   "/fNqlsmu2tiI1bXcpU31yjHPkiJz.jpg", // Gonjiam: Hospital Maldito (2018)
   "/lWE9ih9qgjx8HatYboP7fG0nri.jpg", // The Wailing / O Lamento (2016)
   "/cWz28oGV3cSajWdziVQbqrYCmnX.jpg", // Incantation (2022)
-  "/zUyaVtyugDaDHtOC6kCMJhbZsWu.jpg", // Shutter (2004)
-  "/6dasJ58GGFcC62H9KuukAryltUp.jpg", // Exhuma (2024)
+  "/zUyaVtyugDaDHtOC6kCMJhbZsWu.jpg", // Shutter / Espíritos (2004)
+  "/6dasJ58GGFcC62H9KuukAryltUp.jpg", // Exhuma / A Decomposição (2024)
+  "/l3exwhwyGE0NnHJ3lFQ7eXoBSkH.jpg", // A Tale of Two Sisters / Medo (2003)
+  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // I Saw the Devil (2010)
+  "/wOJbWVMqdKIerkvOegeHfORxWqV.jpg", // The Medium (2021)
+  "/sBnFQwOcmL3dAIYfiQ9nLvLSW7B.jpg", // Thirst (2009)
 ];
 
 const POSTERS_ROW_2000S = [
@@ -42,8 +49,10 @@ const POSTERS_ROW_2000S = [
   "/r0bEDWO2w4a43K2xTNSF284qOsc.jpg", // Silent Hill / Terror em Silent Hill (2006)
   "/dDrtuWUKhgUGp12kgUWuP0NpTdF.jpg", // Hostel / O Albergue (2005)
   "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", // Drag Me to Hell (2009)
-  "/mxFPI4KYBk5ri9cPteIS8jiDFgj.jpg", // The Descent (2005)
+  "/mxFPI4KYBk5ri9cPteIS8jiDFgj.jpg", // The Descent / Abismo do Medo (2005)
   "/781px1eOtfVt1RdIsL4Dt1s3x7R.jpg", // Texas Chainsaw Massacre (2003)
+  "/g410Y1U1ELbmJG14Zru3UAimm1G.jpg", // Jeepers Creepers / Olhos Famintos (2001)
+  "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg", // The Ring / O Chamado (2002)
 ];
 
 function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
