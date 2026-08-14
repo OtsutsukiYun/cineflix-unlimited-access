@@ -420,34 +420,43 @@ function Index() {
             ))}
           </div>
 
-          {/* Carrossel interativo estilo Netflix com navegação por setas no PC */}
+          {/* CATÁLOGO NO MOBILE: Grade limpa de 2 colunas */}
+          {/* CATÁLOGO NO PC: Carrossel interativo estilo Netflix com setas */}
           <SmoothCardReveal key={activeTab}>
-            <div className="relative group/carousel">
-              {/* Botão Anterior (Esquerda) - PC */}
+            {/* VERSÃO MOBILE: Grade limpa em colunas */}
+            <div className="grid grid-cols-2 gap-3 sm:hidden">
+              {currentTabObj.items.map((item) => (
+                <PosterCard key={item.title} item={item} />
+              ))}
+            </div>
+
+            {/* VERSÃO PC: Carrossel horizontal com navegação por setas */}
+            <div className="relative group/carousel hidden sm:block">
+              {/* Botão Anterior (Esquerda) */}
               <button
                 onClick={() => scrollCatalog("left")}
                 aria-label="Voltar filmes"
-                className="absolute -left-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/20 bg-black/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 hidden sm:flex cursor-pointer"
+                className="absolute -left-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/20 bg-black/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 cursor-pointer"
               >
                 <ChevronLeft className="size-6" />
               </button>
 
-              {/* Botão Próximo (Direita) - PC */}
+              {/* Botão Próximo (Direita) */}
               <button
                 onClick={() => scrollCatalog("right")}
                 aria-label="Avançar filmes"
-                className="absolute -right-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/20 bg-black/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 hidden sm:flex cursor-pointer"
+                className="absolute -right-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/20 bg-black/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 cursor-pointer"
               >
                 <ChevronRight className="size-6" />
               </button>
 
-              {/* Trilho de filmes com scroll horizontal suave */}
+              {/* Trilho de filmes com scroll horizontal no PC */}
               <div
                 ref={catalogScrollRef}
                 className="flex gap-3.5 overflow-x-auto scrollbar-none snap-x snap-mandatory py-2 px-1 scroll-smooth"
               >
                 {currentTabObj.items.map((item) => (
-                  <div key={item.title} className="w-[145px] sm:w-[165px] md:w-[185px] shrink-0 snap-start">
+                  <div key={item.title} className="w-[165px] md:w-[185px] shrink-0 snap-start">
                     <PosterCard item={item} />
                   </div>
                 ))}
