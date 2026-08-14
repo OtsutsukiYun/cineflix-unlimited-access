@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Download, Smartphone, Hash, Sparkles, ArrowLeft, ShieldCheck, Zap } from "lucide-react";
+import { Download, Smartphone, Hash, Sparkles, ArrowLeft, ShieldCheck, Zap, ExternalLink, CheckCircle2 } from "lucide-react";
 import { img } from "@/data/catalog";
 
 export const Route = createFileRoute("/instalar")({
@@ -16,182 +16,204 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-const BACKDROP = "/o0jkkpcN81QqSl8DMLScBCXyUH9.jpg"; // Evil Dead Burn
+const BACKDROP = "/o0jkkpcN81QqSl8DMLScBCXyUH9.jpg";
 
-function InstalarPage() {
+export function InstalarPage() {
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
-      {/* FUNDO CINEMATOGRÁFICO */}
+      {/* FUNDO CINEMATOGRÁFICO COM BRILHO VERDE/ESMERALDA ACOLHEDOR */}
       <div className="pointer-events-none fixed inset-0 z-0">
         <img
           src={img(BACKDROP, "w1280")}
           alt=""
-          className="absolute inset-0 size-full object-cover opacity-15 blur-[2px]"
+          className="absolute inset-0 size-full object-cover opacity-12 blur-[3px]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/70 via-[#080808]/85 to-[#080808]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(220,38,38,0.18)_0%,transparent_60%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/75 via-[#080808]/88 to-[#080808]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.15)_0%,transparent_60%)]" />
       </div>
 
-      <div className="relative z-10 mx-auto w-[94%] max-w-3xl py-12 sm:py-20">
-        {/* Voltar ao site */}
+      <div className="relative z-10 mx-auto w-[94%] max-w-3xl py-10 sm:py-16">
+        {/* Topo Navegação */}
         <div className="mb-8 flex items-center justify-between">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-xs font-bold text-white/60 hover:text-white transition-colors bg-white/5 border border-white/10 px-3.5 py-2 rounded-full"
+            className="inline-flex items-center gap-2 text-xs font-bold text-white/70 hover:text-white transition-colors bg-white/5 border border-white/10 px-4 py-2 rounded-full"
           >
             <ArrowLeft className="size-3.5" /> Voltar ao site
           </Link>
           <a
             href="/#planos"
-            className="inline-flex items-center gap-1.5 text-xs font-black text-red-400 hover:text-red-300 transition-colors bg-red-950/40 border border-red-500/30 px-3.5 py-2 rounded-full"
+            className="inline-flex items-center gap-1.5 text-xs font-extrabold text-emerald-300 hover:text-emerald-200 transition-colors bg-emerald-950/50 border border-emerald-500/40 px-4 py-2 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.2)]"
           >
             <Zap className="size-3.5" /> Ver Planos & Assinar
           </a>
         </div>
 
         {/* Header */}
-        <div className="text-center mb-12">
-          <span className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/40 px-4 py-2 text-xs font-bold tracking-wider text-red-400 uppercase mb-4">
-            <Download className="size-3.5" /> Guia de Instalação & Teste Grátis
+        <div className="text-center mb-10">
+          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/50 px-4 py-2 text-xs font-extrabold tracking-wider text-emerald-300 uppercase mb-4 shadow-sm">
+            <Download className="size-3.5 text-emerald-400" /> Guia Simples de Instalação
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight mb-4">
-            Como instalar o{" "}
-            <span className="text-red-500">UniTV Pro</span>
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight mb-3">
+            Como instalar o <span className="text-emerald-400">UniTV Pro</span>
           </h1>
-          <p className="text-sm sm:text-base text-white/65 max-w-lg mx-auto leading-relaxed">
-            Siga os passos abaixo no seu dispositivo Android para liberar <strong className="text-red-400">3 dias de teste grátis</strong> sem cartão de crédito!
+          <p className="text-sm sm:text-base text-white/75 max-w-lg mx-auto leading-relaxed font-medium">
+            Siga os passos abaixo no seu aparelho Android e libere <strong className="text-emerald-300">3 dias de teste grátis</strong> sem precisar cadastrar cartão!
           </p>
-          <p className="mt-2 text-xs text-white/35">
-            ⚠️ Compatível com Smart TV Android, TV Box, Mi Stick, FireTV, Celular Android e Tablet Android.
+          <p className="mt-2 text-xs text-white/40">
+            ✅ Compatível com Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Amazon, Celular Android e Tablet Android.
           </p>
         </div>
 
-        {/* CARD INFORMATIVO DO TESTE GRÁTIS */}
-        <div className="mb-8 rounded-3xl border border-red-500/30 bg-gradient-to-r from-red-950/50 via-black/80 to-red-950/30 p-6 sm:p-7 backdrop-blur-sm text-center">
-          <div className="inline-flex size-12 items-center justify-center rounded-2xl bg-red-600/20 border border-red-500/40 text-red-400 mb-3">
-            <Sparkles className="size-6" />
+        {/* CARD INFORMATIVO ACOLHEDOR DO TESTE GRÁTIS (VERDE ESMERALDA) */}
+        <div className="mb-8 rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950/50 via-black/80 to-emerald-950/30 p-6 sm:p-7 backdrop-blur-sm text-center shadow-[0_0_30px_rgba(16,185,129,0.15)]">
+          <div className="inline-flex size-12 items-center justify-center rounded-2xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 mb-3">
+            <Sparkles className="size-6 text-emerald-400" />
           </div>
           <h2 className="text-xl font-black text-white mb-2">🎁 Como funciona o Teste Grátis de 3 Dias?</h2>
-          <p className="text-xs sm:text-sm text-white/70 leading-relaxed max-w-xl mx-auto">
-            Ao instalar o aplicativo no seu aparelho Android e abri-lo pela primeira vez, os <strong className="text-white">3 dias de teste grátis são liberados automaticamente</strong> na tela inicial. Não precisa cadastrar cartão de crédito!
+          <p className="text-xs sm:text-sm text-white/80 leading-relaxed max-w-xl mx-auto font-medium">
+            Assim que você instalar e abrir o app pela primeira vez no seu dispositivo Android, os <strong className="text-emerald-300 font-bold">3 dias de teste grátis são liberados automaticamente</strong> na tela. Não precisa informar cartão nem dados bancários!
           </p>
         </div>
 
         {/* MÉTODOS DE INSTALAÇÃO */}
         <div className="space-y-6">
-          {/* MÉTODO 1 */}
-          <div className="rounded-3xl border border-white/10 bg-white/4 p-6 sm:p-8 backdrop-blur-sm">
-            <div className="flex items-center gap-4 mb-7">
-              <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-red-800 font-black text-xl text-white shadow-[0_0_20px_rgba(220,38,38,0.5)]">
-                1
+          {/* MÉTODO 1 — DOWNLOADER */}
+          <div className="rounded-3xl border border-white/12 bg-white/4 p-6 sm:p-8 backdrop-blur-sm shadow-xl">
+            <div className="flex items-center justify-between gap-4 mb-7 pb-4 border-b border-white/10">
+              <div className="flex items-center gap-4">
+                {/* Ícone Laranja do Downloader */}
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500 to-amber-600 font-black text-xl text-white shadow-[0_0_20px_rgba(249,115,22,0.5)]">
+                  <Download className="size-6 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
+                    Método 1: App Downloader
+                  </h2>
+                  <p className="text-xs text-white/50 mt-0.5">Para Smart TV Android, TV Box, Mi Stick e FireTV</p>
+                </div>
               </div>
-              <div>
-                <h2 className="text-xl sm:text-2xl font-black">Método 1: App Downloader</h2>
-                <p className="text-xs text-white/45 mt-0.5">Para Smart TV Android, TV Box, FireTV e TV Stick</p>
-              </div>
+              {/* Badge visual de identificação do app */}
+              <span className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-orange-500/15 border border-orange-500/30 px-3 py-1 text-[11px] font-extrabold text-orange-300 shrink-0">
+                🍊 App Laranja
+              </span>
             </div>
 
             <ol className="space-y-5">
-              {[
-                {
-                  n: "1",
-                  content: (
-                    <>
-                      Vá na loja de aplicativos da sua TV ou TV Box e baixe o aplicativo <strong className="text-white">"Downloader"</strong> (ícone laranja).
-                    </>
-                  ),
-                },
-                {
-                  n: "2",
-                  content: (
-                    <>
-                      Abra o <strong className="text-white">Downloader</strong> e na barra de pesquisa inicial digite o código:
-                      <span className="mt-2 flex items-center gap-2">
-                        <span className="inline-flex items-center gap-2 rounded-xl bg-red-600/20 border border-red-500/40 px-4 py-2 font-black text-red-300 text-xl tracking-widest">
-                          <Hash className="size-5" /> 291561
-                        </span>
-                      </span>
-                    </>
-                  ),
-                },
-                {
-                  n: "3",
-                  content: "Aguarde o download e clique em 'Instalar'. Abra o UniTV Pro e aproveite seus 3 dias de teste grátis!",
-                },
-              ].map((step) => (
-                <li key={step.n} className="flex items-start gap-4">
-                  <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600/15 border border-red-500/25 text-red-400 text-xs font-black">
-                    {step.n}
+              <li className="flex items-start gap-4">
+                <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
+                  1
+                </div>
+                <div className="text-sm text-white/80 leading-relaxed pt-0.5">
+                  Vá na loja de aplicativos da sua TV ou TV Box e busque pelo app{" "}
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.esaba.downloader&hl=pt_BR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-orange-400 font-extrabold underline underline-offset-2 hover:text-orange-300 transition-colors"
+                  >
+                    Downloader <ExternalLink className="size-3" />
+                  </a>{" "}
+                  (reconhecido pelo ícone laranja).
+                </div>
+              </li>
+
+              <li className="flex items-start gap-4">
+                <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
+                  2
+                </div>
+                <div className="text-sm text-white/80 leading-relaxed pt-0.5">
+                  Abra o <strong className="text-white">Downloader</strong> e na caixa de texto inicial digite exatamente este código:
+                  <div className="mt-3 flex items-center gap-3">
+                    <div className="inline-flex items-center gap-2 rounded-2xl bg-emerald-950/80 border-2 border-emerald-400/60 px-5 py-2.5 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                      <Hash className="size-5 text-emerald-400" />
+                      <span className="font-mono font-black text-emerald-300 text-2xl tracking-widest">291561</span>
+                    </div>
                   </div>
-                  <p className="text-sm text-white/70 leading-relaxed pt-0.5">{step.content}</p>
-                </li>
-              ))}
+                </div>
+              </li>
+
+              <li className="flex items-start gap-4">
+                <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
+                  3
+                </div>
+                <div className="text-sm text-white/80 leading-relaxed pt-0.5">
+                  Aguarde o download terminar e clique em <strong className="text-white">"Instalar"</strong>. Pronto! Abra o UniTV Pro e aproveite seus 3 dias grátis.
+                </div>
+              </li>
             </ol>
           </div>
 
-          {/* MÉTODO 2 */}
-          <div className="rounded-3xl border border-white/10 bg-white/4 p-6 sm:p-8 backdrop-blur-sm">
-            <div className="flex items-center gap-4 mb-7">
-              <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-700 to-blue-900 font-black text-xl text-white shadow-[0_0_20px_rgba(37,99,235,0.5)]">
-                2
+          {/* MÉTODO 2 — NTDOWN */}
+          <div className="rounded-3xl border border-white/12 bg-white/4 p-6 sm:p-8 backdrop-blur-sm shadow-xl">
+            <div className="flex items-center justify-between gap-4 mb-7 pb-4 border-b border-white/10">
+              <div className="flex items-center gap-4">
+                {/* Ícone Azul do NtDown */}
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 font-black text-xl text-white shadow-[0_0_20px_rgba(6,182,212,0.5)]">
+                  <Download className="size-6 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
+                    Método 2: App ntDown
+                  </h2>
+                  <p className="text-xs text-white/50 mt-0.5">Via Play Store (celular e tablet Android)</p>
+                </div>
               </div>
-              <div>
-                <h2 className="text-xl sm:text-2xl font-black">Método 2: App NtDown</h2>
-                <p className="text-xs text-white/45 mt-0.5">Via Play Store (celular e tablet Android)</p>
-              </div>
+              {/* Badge visual de identificação do app */}
+              <span className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-cyan-500/15 border border-cyan-500/30 px-3 py-1 text-[11px] font-extrabold text-cyan-300 shrink-0">
+                🔹 App ntDown
+              </span>
             </div>
 
             <ol className="space-y-5">
-              {[
-                {
-                  n: "1",
-                  content: (
-                    <>
-                      Abra a <strong className="text-white">Play Store</strong> no seu celular ou tablet e baixe o aplicativo <strong className="text-white">NtDown</strong>.
-                    </>
-                  ),
-                },
-                {
-                  n: "2",
-                  content: (
-                    <>
-                      Abra o NtDown e insira o código:
-                      <span className="mt-2 flex items-center gap-2">
-                        <span className="inline-flex items-center gap-2 rounded-xl bg-blue-700/20 border border-blue-600/40 px-4 py-2 font-black text-blue-300 text-xl tracking-widest">
-                          <Hash className="size-5" /> 96919
-                        </span>
-                      </span>
-                    </>
-                  ),
-                },
-                {
-                  n: "3",
-                  content: "Conclua a instalação e abra o app para começar a assistir imediatamente.",
-                },
-              ].map((step) => (
-                <li key={step.n} className="flex items-start gap-4">
-                  <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-blue-700/15 border border-blue-600/25 text-blue-400 text-xs font-black">
-                    {step.n}
+              <li className="flex items-start gap-4">
+                <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
+                  1
+                </div>
+                <div className="text-sm text-white/80 leading-relaxed pt-0.5">
+                  Abra a <strong className="text-white">Play Store</strong> no seu celular ou tablet Android e procure por <strong className="text-cyan-300 font-bold">"ntDown"</strong>.
+                </div>
+              </li>
+
+              <li className="flex items-start gap-4">
+                <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
+                  2
+                </div>
+                <div className="text-sm text-white/80 leading-relaxed pt-0.5">
+                  Abra o aplicativo <strong className="text-white">ntDown</strong> e insira o código:
+                  <div className="mt-3 flex items-center gap-3">
+                    <div className="inline-flex items-center gap-2 rounded-2xl bg-emerald-950/80 border-2 border-emerald-400/60 px-5 py-2.5 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+                      <Hash className="size-5 text-emerald-400" />
+                      <span className="font-mono font-black text-emerald-300 text-2xl tracking-widest">96919</span>
+                    </div>
                   </div>
-                  <p className="text-sm text-white/70 leading-relaxed pt-0.5">{step.content}</p>
-                </li>
-              ))}
+                </div>
+              </li>
+
+              <li className="flex items-start gap-4">
+                <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
+                  3
+                </div>
+                <div className="text-sm text-white/80 leading-relaxed pt-0.5">
+                  Conclua a instalação e comece a assistir imediatamente.
+                </div>
+              </li>
             </ol>
           </div>
         </div>
 
         {/* BLOCO DE ASSINATURA DE PLANOS */}
-        <div className="mt-10 rounded-3xl border border-red-500/40 bg-gradient-to-br from-red-950/60 via-black to-red-950/40 p-8 text-center shadow-[0_0_40px_rgba(220,38,38,0.2)]">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-red-600/20 border border-red-500/40 px-3.5 py-1 text-xs font-black text-red-400 uppercase tracking-wider mb-3">
-            <Zap className="size-3.5" /> Recarga Definitiva
+        <div className="mt-10 rounded-3xl border border-emerald-500/40 bg-gradient-to-br from-emerald-950/40 via-black to-emerald-950/30 p-8 text-center shadow-[0_0_40px_rgba(16,185,129,0.15)]">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 px-3.5 py-1 text-xs font-black text-emerald-300 uppercase tracking-wider mb-3">
+            <Zap className="size-3.5 text-emerald-400" /> Recarga Definitiva
           </span>
           <h3 className="text-2xl sm:text-3xl font-black text-white mb-2">Já testou ou quer contratar direto?</h3>
-          <p className="text-sm text-white/65 max-w-md mx-auto mb-6">
+          <p className="text-sm text-white/70 max-w-md mx-auto mb-6 font-medium">
             Confira nossos planos de recarga Mensal, Trimestral e Anual com garantia de 7 dias e ativação imediata.
           </p>
           <a
             href="/#planos"
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-red-600 to-red-700 px-8 py-4 text-sm font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.6)] hover:scale-[1.03] transition-all"
+            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 px-8 py-4 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.4)] hover:scale-[1.03] transition-all"
           >
             <ShieldCheck className="size-5" />
             VER PLANOS DE RECARGA
@@ -200,8 +222,8 @@ function InstalarPage() {
 
         {/* CTA SUPORTE */}
         <div className="mt-8 rounded-2xl border border-green-800/40 bg-green-950/20 p-6 text-center">
-          <p className="text-sm text-white/60 mb-4">
-            Precisa de ajuda para instalar? Fale com nosso suporte no WhatsApp:
+          <p className="text-sm text-white/70 mb-4 font-medium">
+            Precisa de ajuda para instalar? Nosso suporte te orienta no WhatsApp:
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
