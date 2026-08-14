@@ -37,14 +37,14 @@ export const heroSlides: HeroSlide[] = [
     brightness: "brightness(1.15)",
   },
   {
-    title: "A Morte do Demônio: Em Chamas",
+    title: "Evil Dead Burn: A Morte do Demônio",
     year: "2026",
     genre: "Terror / Gore",
     tagline: "O horror voltou — e o mal se espalha como fogo.",
-    backdrop: "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg",
-    poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg",
+    backdrop: "/o0jkkpcN81QqSl8DMLScBCXyUH9.jpg",
+    poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
     objectPosition: "center 20%",
-    objectPositionMobile: "25% 15%",
+    objectPositionMobile: "50% 15%",
     brightness: "brightness(1.0)",
   },
   {
@@ -122,7 +122,7 @@ export const heroSlides: HeroSlide[] = [
 
 export const terror: Title[] = [
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
-  { title: "A Morte do Demônio: Em Chamas", poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
+  { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.8" },
   { title: "Pengabdi Setan 2: Communion", poster: "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", year: "2022", tag: "Terror Indonésio", rating: "4.8" },
   { title: "O Lamento", poster: "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", year: "2016", tag: "Terror Coreano", rating: "4.9" },
