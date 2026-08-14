@@ -103,9 +103,9 @@ function InstagramPopup() {
             key={bd}
             src={img(bd, "w1280")}
             alt=""
-            className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out ${
-              i === bgIdx ? "opacity-35 scale-105" : "opacity-0 scale-100"
-            } blur-[2px]`}
+            className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
+              i === bgIdx ? "opacity-25" : "opacity-0"
+            }`}
           />
         ))}
         <div className="absolute inset-0 bg-black/82" />

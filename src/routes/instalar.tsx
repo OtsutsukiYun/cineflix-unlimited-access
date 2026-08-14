@@ -70,12 +70,12 @@ export function InstalarPage() {
             key={bd}
             src={img(bd, "w1280")}
             alt=""
-            className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out ${
-              i === bgIdx ? "opacity-20 scale-105" : "opacity-0 scale-100"
-            } blur-[3px]`}
+            className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
+              i === bgIdx ? "opacity-15" : "opacity-0"
+            }`}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/75 via-[#080808]/88 to-[#080808]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/80 via-[#080808]/90 to-[#080808]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(16,185,129,0.15)_0%,transparent_60%)]" />
       </div>
 
