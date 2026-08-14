@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Download, Smartphone, Hash, Sparkles, ArrowLeft, ShieldCheck, Zap, ExternalLink, Tv, Monitor } from "lucide-react";
+import { Download, Smartphone, Hash, Sparkles, ArrowLeft, ShieldCheck, Zap, ExternalLink, Tv, Monitor, ShieldAlert } from "lucide-react";
 import { img } from "@/data/catalog";
 
 export const Route = createFileRoute("/instalar")({
@@ -93,6 +93,26 @@ export function InstalarPage() {
           <p className="text-xs sm:text-sm text-white/80 leading-relaxed max-w-xl mx-auto font-medium">
             Assim que você instalar e abrir o app pela primeira vez no seu dispositivo, os <strong className="text-emerald-300 font-bold">3 dias de teste grátis são liberados automaticamente</strong> na tela. Não precisa informar cartão nem dados bancários!
           </p>
+        </div>
+
+        {/* AVISO IMPORTANTE DE SEGURANÇA E PERMISSÕES DO ANDROID */}
+        <div className="mb-8 rounded-3xl border-2 border-amber-500/40 bg-gradient-to-r from-amber-950/40 via-black/80 to-amber-950/20 p-6 sm:p-7 backdrop-blur-sm shadow-[0_0_30px_rgba(245,158,11,0.15)]">
+          <div className="flex items-start gap-4">
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-amber-500/20 border border-amber-400/40 text-amber-400 mt-0.5">
+              <ShieldAlert className="size-6 text-amber-400" />
+            </div>
+            <div>
+              <h3 className="text-lg font-black text-amber-300 flex items-center gap-2 mb-1.5">
+                ⚠️ Aviso de Permissões e Segurança do Android
+              </h3>
+              <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-medium">
+                Quando o aplicativo pedir permissões de instalação no seu dispositivo, <strong className="text-amber-300 font-bold">aceite e clique em "Instalar mesmo assim"</strong>.
+              </p>
+              <p className="text-xs sm:text-sm text-white/75 leading-relaxed font-medium mt-2">
+                Se o sistema Android ou o Play Protect acusar como <em>"aplicativo nocivo ou desconhecido"</em>, <strong>pode ficar 100% tranquilo!</strong> Isso ocorre exclusivamente porque o app é instalado diretamente fora da Google Play Store (via APK). O aplicativo é totalmente seguro, oficial e livre de riscos.
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* MÉTODOS DE INSTALAÇÃO — PRINCIPAIS (TV, TV BOX, STICK E CELULAR) */}

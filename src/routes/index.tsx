@@ -243,7 +243,7 @@ const CATALOG_TABS = [
       { title: "Solo Leveling", poster: "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", year: "Série", tag: "Lançamento" },
       { title: "Jujutsu Kaisen", poster: "/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg", year: "Série", tag: "Em alta" },
       { title: "Attack on Titan", poster: "/hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg", year: "Série", tag: "Ação" },
-      { title: "Chainsaw Man", poster: "/npdB6eFzLw7dCeMxoGftflivNyo.jpg", year: "Série", tag: "Sobrenatural" },
+      { title: "Chainsaw Man", poster: "/iFM1dyFi0rByvEomEkmm7NpQeeb.jpg", year: "Série", tag: "Sobrenatural" },
       { title: "One Piece", poster: "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", year: "Série", tag: "Clássico" },
     ],
   },
