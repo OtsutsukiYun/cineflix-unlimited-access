@@ -17,20 +17,20 @@ export const Route = createFileRoute("/instalar")({
 });
 
 const INSTALAR_POSTERS = [
-  "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
-  "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg", // Obsessão
-  "/atpb7NKSyM4bJSUY8vQTunzK4Na.jpg", // He-Man
-  "/sssrBhdvDcczgMQYDc8oCoSuFEJ.jpg", // Toy Story 5
-  "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", // Omukade
+  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento (2016)
   "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", // Pengabdi Setan 2
-  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
-  "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", // Frieren
-  "/8vtnPZXxCvX8iIbFoglGxwHjapq.jpg", // Chainsaw Man (Makima)
-  "/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg", // Jujutsu Kaisen
-  "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", // Demon Slayer
+  "/6tuNQ16hC4Qp7wjTweKzUnnLBkI.jpg", // O Chamado
+  "/ok4ot3YbfDYZcINXf91JUfq3maB.jpg", // Jogos Mortais
+  "/ecKQlAEG95k62SMGhvX83oEqANK.jpg", // Invocação do Mal
+  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
+  "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", // Salmokji
+  "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", // Channel Zero
   "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", // O Segredo de Widow's Bay
   "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg", // FROM (Origem)
-  "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", // Channel Zero
+  "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
+  "/cWTbN7Bh7kVGFtbkAW2yCc2thVj.jpg", // Soulm8te
+  "/j7URoxYxWJYBUHqFxIPaWbvWFKn.jpg", // Leviticus
+  "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", // Dia Bukan Ibu
 ];
 
 function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
@@ -58,31 +58,33 @@ function NtDownAppIcon({ className = "size-14 sm:size-16" }: { className?: strin
 export function InstalarPage() {
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
-      {/* PAREDE DE CAPINHAS DE FILMES PASSANDO UM DO LADO DO OUTRO AO FUNDO */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-55 flex flex-col justify-around py-4">
-        <div className="flex w-max animate-marquee-medium gap-4">
-          {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].map((p, idx) => (
-            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-2xl">
-              <img src={img(p, "w342")} alt="" className="size-full object-cover" />
-            </div>
-          ))}
-        </div>
-        <div className="flex w-max animate-marquee-reverse-medium gap-4">
-          {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].reverse().map((p, idx) => (
-            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-2xl">
-              <img src={img(p, "w342")} alt="" className="size-full object-cover" />
-            </div>
-          ))}
-        </div>
-        <div className="flex w-max animate-marquee-medium gap-4">
-          {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].map((p, idx) => (
-            <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-2xl">
-              <img src={img(p, "w342")} alt="" className="size-full object-cover" />
-            </div>
-          ))}
+      {/* PAREDE 3D DE CAPINHAS DE FILMES E SÉRIES COM PROFUNDIDADE E PERSPECTIVA */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-50 [perspective:1200px]">
+        <div className="size-full flex flex-col justify-center gap-3 [transform-style:preserve-3d] [transform:rotateX(14deg)_rotateY(-10deg)_rotateZ(-2deg)_scale(1.18)] origin-center">
+          <div className="flex w-max animate-marquee-cinematic gap-3">
+            {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].map((p, idx) => (
+              <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                <img src={img(p, "w342")} alt="" className="size-full object-cover" />
+              </div>
+            ))}
+          </div>
+          <div className="flex w-max animate-marquee-reverse-cinematic gap-3">
+            {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].reverse().map((p, idx) => (
+              <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                <img src={img(p, "w342")} alt="" className="size-full object-cover" />
+              </div>
+            ))}
+          </div>
+          <div className="flex w-max animate-marquee-cinematic gap-3">
+            {[...INSTALAR_POSTERS, ...INSTALAR_POSTERS].map((p, idx) => (
+              <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                <img src={img(p, "w342")} alt="" className="size-full object-cover" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#080808]/55 via-[#080808]/70 to-[#080808]/55" />
+      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#080808]/60 via-[#080808]/75 to-[#080808]/60" />
 
       <div className="relative z-10 mx-auto w-[94%] max-w-3xl py-10 sm:py-16">
         {/* Topo Navegação */}

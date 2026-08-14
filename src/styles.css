@@ -346,8 +346,12 @@
   animation: marquee-reverse 105s linear infinite;
 }
 
-@utility animate-marquee-slow {
-  animation: marquee 240s linear infinite;
+@utility animate-marquee-cinematic {
+  animation: marquee 160s linear infinite;
+}
+
+@utility animate-marquee-reverse-cinematic {
+  animation: marquee-reverse 175s linear infinite;
 }
 
 @utility animate-marquee-medium {
