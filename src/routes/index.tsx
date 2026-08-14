@@ -45,6 +45,8 @@ import {
   Gift,
   X,
   Calendar,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -251,6 +253,17 @@ const CATALOG_TABS = [
 function Index() {
   const [slide, setSlide] = useState(0);
   const [activeTab, setActiveTab] = useState("em-alta");
+  const catalogScrollRef = useRef<HTMLDivElement>(null);
+
+  const scrollCatalog = (dir: "left" | "right") => {
+    if (catalogScrollRef.current) {
+      const scrollAmount = catalogScrollRef.current.clientWidth * 0.7;
+      catalogScrollRef.current.scrollBy({
+        left: dir === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
 
   useEffect(() => {
     const timer = setInterval(() => setSlide((prev) => (prev + 1) % heroSlides.length), 6000);
@@ -407,12 +420,38 @@ function Index() {
             ))}
           </div>
 
-          {/* Grade enxuta de 6 pôsteres (rápida de ler e visualmente limpa) */}
+          {/* Carrossel interativo estilo Netflix com navegação por setas no PC */}
           <SmoothCardReveal key={activeTab}>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
-              {currentTabObj.items.map((item) => (
-                <PosterCard key={item.title} item={item} />
-              ))}
+            <div className="relative group/carousel">
+              {/* Botão Anterior (Esquerda) - PC */}
+              <button
+                onClick={() => scrollCatalog("left")}
+                aria-label="Voltar filmes"
+                className="absolute -left-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/20 bg-black/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 hidden sm:flex cursor-pointer"
+              >
+                <ChevronLeft className="size-6" />
+              </button>
+
+              {/* Botão Próximo (Direita) - PC */}
+              <button
+                onClick={() => scrollCatalog("right")}
+                aria-label="Avançar filmes"
+                className="absolute -right-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/20 bg-black/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 hidden sm:flex cursor-pointer"
+              >
+                <ChevronRight className="size-6" />
+              </button>
+
+              {/* Trilho de filmes com scroll horizontal suave */}
+              <div
+                ref={catalogScrollRef}
+                className="flex gap-3.5 overflow-x-auto scrollbar-none snap-x snap-mandatory py-2 px-1 scroll-smooth"
+              >
+                {currentTabObj.items.map((item) => (
+                  <div key={item.title} className="w-[145px] sm:w-[165px] md:w-[185px] shrink-0 snap-start">
+                    <PosterCard item={item} />
+                  </div>
+                ))}
+              </div>
             </div>
           </SmoothCardReveal>
         </div>
