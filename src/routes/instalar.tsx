@@ -1,15 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Download, Smartphone, Hash, Sparkles, ArrowLeft, ShieldCheck, Zap, ExternalLink } from "lucide-react";
+import { Download, Smartphone, Hash, Sparkles, ArrowLeft, ShieldCheck, Zap, ExternalLink, Monitor } from "lucide-react";
 import { img } from "@/data/catalog";
 
 export const Route = createFileRoute("/instalar")({
   head: () => ({
     meta: [
-      { title: "Como Instalar UniTV Pro & Ativar Teste Grátis de 3 Dias" },
+      { title: "Como Instalar UniTV Pro — Smart TV, Celular & PC (LDPlayer)" },
       {
         name: "description",
         content:
-          "Passo a passo para instalar o UniTV Pro na sua Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Amazon, projetor Android, celular ou tablet e ativar 3 dias grátis.",
+          "Passo a passo para instalar o UniTV Pro na sua Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Amazon, celular, tablet ou PC via emulador LDPlayer.",
       },
     ],
   }),
@@ -80,10 +80,10 @@ export function InstalarPage() {
             Como instalar o <span className="text-emerald-400">UniTV Pro</span>
           </h1>
           <p className="text-sm sm:text-base text-white/75 max-w-lg mx-auto leading-relaxed font-medium">
-            Siga os passos abaixo no seu aparelho Android e libere <strong className="text-emerald-300">3 dias de teste grátis</strong> sem precisar cadastrar cartão!
+            Siga os passos abaixo no seu aparelho Android ou PC e libere <strong className="text-emerald-300">3 dias de teste grátis</strong> sem precisar cadastrar cartão!
           </p>
           <p className="mt-2 text-xs text-white/40">
-            ✅ Compatível com Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Amazon, Celular Android e Tablet Android.
+            ✅ Compatível com Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Amazon, Celular Android, Tablet e PC (via LDPlayer).
           </p>
         </div>
 
@@ -94,7 +94,7 @@ export function InstalarPage() {
           </div>
           <h2 className="text-xl font-black text-white mb-2">🎁 Como funciona o Teste Grátis de 3 Dias?</h2>
           <p className="text-xs sm:text-sm text-white/80 leading-relaxed max-w-xl mx-auto font-medium">
-            Assim que você instalar e abrir o app pela primeira vez no seu dispositivo Android, os <strong className="text-emerald-300 font-bold">3 dias de teste grátis são liberados automaticamente</strong> na tela. Não precisa informar cartão nem dados bancários!
+            Assim que você instalar e abrir o app pela primeira vez no seu dispositivo Android (ou emulador no PC), os <strong className="text-emerald-300 font-bold">3 dias de teste grátis são liberados automaticamente</strong> na tela. Não precisa informar cartão nem dados bancários!
           </p>
         </div>
 
@@ -133,7 +133,7 @@ export function InstalarPage() {
                     Downloader <ExternalLink className="size-3" />
                   </a>.
                   
-                  {/* CARD GRANDE DO ÍCONE DO APLICATIVO PARA NÃO CONFUNDIR */}
+                  {/* CARD GRANDE DO ÍCONE DO APLICATIVO */}
                   <div className="mt-3 flex items-center gap-4 sm:gap-5 rounded-2xl border-2 border-orange-500/40 bg-orange-950/30 p-4 sm:p-5 shadow-[0_0_25px_rgba(249,115,22,0.2)]">
                     <DownloaderAppIcon className="size-16 sm:size-20" />
                     <div>
@@ -206,7 +206,7 @@ export function InstalarPage() {
                     ntDown <ExternalLink className="size-3" />
                   </a>.
                   
-                  {/* CARD GRANDE DO ÍCONE DO APLICATIVO PARA NÃO CONFUNDIR */}
+                  {/* CARD GRANDE DO ÍCONE DO APLICATIVO */}
                   <div className="mt-3 flex items-center gap-4 sm:gap-5 rounded-2xl border-2 border-emerald-500/40 bg-emerald-950/30 p-4 sm:p-5 shadow-[0_0_25px_rgba(16,185,129,0.2)]">
                     <NtDownAppIcon className="size-16 sm:size-20" />
                     <div>
@@ -244,6 +244,67 @@ export function InstalarPage() {
                 </div>
               </li>
             </ol>
+          </div>
+
+          {/* MÉTODO 3 — COMPUTADOR / EMULADOR ANDROID (LDPLAYER) */}
+          <div className="rounded-3xl border border-white/12 bg-white/4 p-6 sm:p-8 backdrop-blur-sm shadow-xl">
+            <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+              <div className="flex items-center gap-3.5">
+                <div className="flex size-14 sm:size-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-800 font-black text-2xl text-white shadow-[0_8px_25px_rgba(147,51,234,0.45)] border-2 border-purple-400/50">
+                  <Monitor className="size-7 sm:size-8 stroke-[2.5]" />
+                </div>
+                <div>
+                  <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
+                    Método 3: PC ou Notebook (Emulador Android)
+                  </h2>
+                  <p className="text-xs text-white/50 mt-0.5">Assista no Windows via emulador Android</p>
+                </div>
+              </div>
+              <span className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-purple-500/15 border border-purple-500/30 px-3 py-1.5 text-[11px] font-extrabold text-purple-300 shrink-0">
+                ⚡ LDPlayer Recomendado
+              </span>
+            </div>
+
+            <div className="space-y-5 text-sm text-white/80 leading-relaxed">
+              {/* ALERTA / DICA SOBRE LDPLAYER VS BLUESTACKS */}
+              <div className="rounded-2xl border-2 border-purple-500/40 bg-purple-950/30 p-4 sm:p-5 shadow-[0_0_25px_rgba(147,51,234,0.15)]">
+                <p className="font-extrabold text-purple-300 mb-1.5 text-xs sm:text-sm uppercase tracking-wider flex items-center gap-2">
+                  ⚡ DICA IMPORTANTE PARA PC: USE O LDPLAYER
+                </p>
+                <p className="text-xs sm:text-sm text-white/85 leading-relaxed font-medium">
+                  Recomendamos instalar o emulador <strong className="text-purple-200 font-bold">LDPlayer</strong> por ser extremamente leve, rápido e rodar a transmissão sem travamentos. <span className="text-amber-300 font-semibold underline underline-offset-2">Evite usar o BlueStacks</span>, pois é muito pesado para streamings de vídeo e causa lentidão.
+                </p>
+              </div>
+
+              <ol className="space-y-4 pt-1">
+                <li className="flex items-start gap-4">
+                  <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-purple-600/20 border border-purple-500/40 text-purple-300 text-xs font-black">
+                    1
+                  </div>
+                  <div className="text-sm text-white/80 leading-relaxed pt-0.5">
+                    Baixe e instale o emulador <strong className="text-purple-300 font-bold">LDPlayer</strong> no seu computador Windows.
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-purple-600/20 border border-purple-500/40 text-purple-300 text-xs font-black">
+                    2
+                  </div>
+                  <div className="text-sm text-white/80 leading-relaxed pt-0.5">
+                    Abra o LDPlayer, abra a Play Store ou o navegador interno e instale o <strong className="text-emerald-300 font-bold">ntDown</strong> ou o <strong className="text-orange-400 font-bold">Downloader</strong>.
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-purple-600/20 border border-purple-500/40 text-purple-300 text-xs font-black">
+                    3
+                  </div>
+                  <div className="text-sm text-white/80 leading-relaxed pt-0.5">
+                    Insira o código <strong className="text-emerald-300 font-bold">96919</strong> (no ntDown) ou <strong className="text-orange-400 font-bold">291561</strong> (no Downloader) para instalar o UniTV Pro.
+                  </div>
+                </li>
+              </ol>
+            </div>
           </div>
         </div>
 

@@ -52,7 +52,7 @@ const PERGUNTAS = [
   },
   {
     q: "O app é compatível com quais aparelhos?",
-    a: "O UniTV Pro é compatível com Smart TV que tenha sistema Android ou que use adaptadores como TV Box, Mi Stick da Xiaomi e FireTV da Amazon. Também somos compatíveis com celular Android, tablets Android e projetores com sistema Android. Não é compatível com PC/Windows, iPhone ou iPad.",
+    a: "O UniTV Pro é compatível com Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Amazon, celular Android, tablets e projetores Android. Para assistir no computador ou notebook Windows, é necessário utilizar um emulador Android — recomendamos o LDPlayer por ser leve e rápido (evite o BlueStacks).",
   },
   {
     q: "Posso assistir em vários aparelhos ao mesmo tempo?",
