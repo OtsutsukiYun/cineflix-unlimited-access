@@ -231,14 +231,14 @@ export const series: Title[] = [
 ];
 
 export const animes: Title[] = [
-  { title: "Demon Slayer: Castelo Infinito", poster: "/41XdjOXGQoH0HTDNqEfwKGvGgwm.jpg", year: "2025", tag: "#1 mais assistido" },
+  { title: "Chainsaw Man", poster: "/8vtnPZXxCvX8iIbFoglGxwHjapq.jpg", year: "Série", tag: "🔥 Sucesso" },
   { title: "Frieren e a Jornada para o Além", poster: "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", year: "Série", tag: "Em alta" },
+  { title: "Demon Slayer: Castelo Infinito", poster: "/41XdjOXGQoH0HTDNqEfwKGvGgwm.jpg", year: "2025", tag: "#1 mais assistido" },
   { title: "Jujutsu Kaisen", poster: "/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg", year: "Série" },
   { title: "Solo Leveling", poster: "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", year: "Série" },
   { title: "One Piece", poster: "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", year: "Série", rating: "5.0" },
   { title: "One-Punch Man", poster: "/dT10AxJIXVvRwFAew4tt2RhzJrD.jpg", year: "Série" },
   { title: "Attack on Titan", poster: "/8aMqmB5xSblsZc7bLMEhE28yHa2.jpg", year: "Série" },
-  { title: "Chainsaw Man", poster: "/iFM1dyFi0rByvEomEkmm7NpQeeb.jpg", year: "Série" },
   { title: "Dan Da Dan", poster: "/vtQug1eOyeU2VXIpNoDF1lTlcH4.jpg", year: "Série" },
   { title: "Sakamoto Days", poster: "/wRpCqsJFyKNuh5FMegNPrhzp2NF.jpg", year: "Série" },
   { title: "Kaiju No. 8", poster: "/bJxGs0w5RAhaX4fIUQu511rvm0S.jpg", year: "Série" },

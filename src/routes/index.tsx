@@ -272,8 +272,8 @@ const CATALOG_TABS = [
     id: "animes",
     label: "⚔️ Animes em Alta",
     items: [
-      { title: "Frieren e a Jornada Para o Fim", poster: "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", year: "2023", tag: "🔥 #1 Em Alta" },
       { title: "Chainsaw Man", poster: "/8vtnPZXxCvX8iIbFoglGxwHjapq.jpg", year: "Série", tag: "🔥 Sucesso" },
+      { title: "Frieren e a Jornada Para o Fim", poster: "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", year: "2023", tag: "🔥 #1 Em Alta" },
       { title: "Demon Slayer", poster: "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", year: "Série", tag: "Em alta" },
       { title: "Solo Leveling", poster: "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", year: "Série", tag: "Lançamento" },
       { title: "Jujutsu Kaisen", poster: "/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg", year: "Série", tag: "Em alta" },
