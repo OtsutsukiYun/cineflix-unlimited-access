@@ -431,7 +431,7 @@ function Index() {
         {heroSlides.map((s, i) => (
           <img
             key={s.title}
-            src={img(s.backdrop, "w1280")}
+            src={img(s.backdrop, "original")}
             alt={`Cena de ${s.title}`}
             className="absolute inset-0 size-full object-cover transition-all duration-[2200ms] ease-out"
             style={{
