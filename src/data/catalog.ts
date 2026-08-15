@@ -296,6 +296,7 @@ export const proximosLancamentos: Title[] = [
   { title: "Acampamento Miasma", poster: "/5Cz1EJOKpZ8hqvBNZYF9C2zTB2T.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
   { title: "Cuidado com Boiúna", poster: "/tENVMxKvOkslv8kagVNdIEQ13RT.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
   { title: "Clayface: Rituais das Sombras", poster: "/5jCpQnWPikggmQZoDp1eAi6BI6w.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
+  { title: "HOPE (Terror Coreano)", poster: "/bcK5naYzzfY0JBCgrPrsrbV6NO1.jpg", year: "2026", tag: "🔥 Estreia 2026" },
   { title: "O Fim da Rua", poster: "/fYXqpgPmHMphSF2W30GbTeJVIa5.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
 ];
 
