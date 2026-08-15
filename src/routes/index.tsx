@@ -48,6 +48,8 @@ import {
   Calendar,
   ChevronLeft,
   ChevronRight,
+  ChevronDown,
+  ChevronUp,
   RotateCcw,
   Activity,
   ListOrdered,
@@ -245,6 +247,7 @@ const CATALOG_TABS = [
       { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Indonésia" },
       { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Coreia" },
       { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Exclusivo" },
+      { title: "Another", poster: "/c8VVGuc3lnPXCBStcKQWrOlBCSA.jpg", year: "2012", tag: "Terror Japonês" },
       { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Suspense" },
     ],
   },
@@ -340,6 +343,7 @@ function Index() {
   const [activeTab, setActiveTab] = useState("em-alta");
   const [isMobile, setIsMobile] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [expandedTabs, setExpandedTabs] = useState<Record<string, boolean>>({});
   const catalogScrollRef = useRef<HTMLDivElement>(null);
 
   const scrollCatalog = (dir: "left" | "right") => {
@@ -518,11 +522,42 @@ function Index() {
           {/* CATÁLOGO NO MOBILE: Grade limpa de 2 colunas */}
           {/* CATÁLOGO NO PC: Carrossel interativo estilo Netflix com setas */}
           <SmoothCardReveal key={activeTab}>
-            {/* VERSÃO MOBILE: Grade limpa em colunas */}
-            <div className="grid grid-cols-2 gap-3 sm:hidden">
-              {currentTabObj.items.map((item) => (
-                <PosterCard key={item.title} item={item} />
-              ))}
+            {/* VERSÃO MOBILE: Grade limpa em colunas com limite inicial (6 itens) e botão Exibir mais */}
+            <div className="sm:hidden space-y-4">
+              <div className="grid grid-cols-2 gap-3">
+                {(expandedTabs[activeTab]
+                  ? currentTabObj.items
+                  : currentTabObj.items.slice(0, 6)
+                ).map((item) => (
+                  <PosterCard key={item.title} item={item} />
+                ))}
+              </div>
+
+              {currentTabObj.items.length > 6 && (
+                <div className="text-center pt-2">
+                  <button
+                    onClick={() =>
+                      setExpandedTabs((prev) => ({
+                        ...prev,
+                        [activeTab]: !prev[activeTab],
+                      }))
+                    }
+                    className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-zinc-900/80 backdrop-blur-md px-5 py-2.5 text-xs font-bold text-white shadow-md hover:bg-zinc-800 transition-all active:scale-95 cursor-pointer"
+                  >
+                    {expandedTabs[activeTab] ? (
+                      <>
+                        <ChevronUp className="size-4 text-red-400" />
+                        Exibir menos
+                      </>
+                    ) : (
+                      <>
+                        <ChevronDown className="size-4 text-red-400" />
+                        Exibir mais ({currentTabObj.items.length - 6} conteúdos)
+                      </>
+                    )}
+                  </button>
+                </div>
+              )}
             </div>
 
             {/* VERSÃO PC: Carrossel horizontal com navegação por setas */}

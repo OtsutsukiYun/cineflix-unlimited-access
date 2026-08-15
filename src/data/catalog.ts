@@ -127,6 +127,7 @@ export const terror: Title[] = [
   { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.8" },
   { title: "Killer Toon", poster: "/9ojbUahh8McTbR92Qf69ocWnggE.jpg", year: "2013", tag: "Terror Coreano", rating: "4.8" },
   { title: "Cure (A Cura)", poster: "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", year: "1997", tag: "Clássico Japonês", rating: "4.9" },
+  { title: "Another", poster: "/c8VVGuc3lnPXCBStcKQWrOlBCSA.jpg", year: "2012", tag: "Terror Japonês", rating: "4.8" },
   { title: "O Lamento", poster: "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", year: "2016", tag: "Terror Coreano", rating: "4.9" },
   { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Terror Asiático", rating: "4.7" },
   { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Terror Coreano", rating: "4.6" },
