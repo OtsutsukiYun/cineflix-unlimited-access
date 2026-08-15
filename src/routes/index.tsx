@@ -653,24 +653,6 @@ function Index() {
               qtd: "+500 Canais de Esporte",
               d: "+500 canais ao vivo (Brasileirão, Champions League, Premier League, UFC e F1 sem travamentos).",
             },
-            {
-              icon: Lock,
-              banners: [
-                "/7FRraud59N3s10bbf9bfYjvwx3v.jpg", // Basic Instinct
-                "/rpsHpJj7FgnNBXhaO2KFthPwqH6.jpg", // Love
-                "/xqIstzB0ELbYyfzKcYaSwLb4Whs.jpg", // Emmanuelle
-              ],
-              objectPosition: "object-cover",
-              gradient: "from-red-600 via-rose-700 to-red-900",
-              glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-red-300/80",
-              corBorda: "border border-red-500/40 hover:border-red-300",
-              corGlow: "shadow-[0_0_30px_rgba(225,29,72,0.2)] hover:shadow-[0_0_50px_rgba(225,29,72,0.55)]",
-              bgOverlay: "bg-gradient-to-t from-[#12020a] via-[#12020a]/75 to-[#12020a]/20",
-              titleHover: "group-hover:text-red-200",
-              t: "Canais adultos",
-              qtd: "+80 Canais Privados",
-              d: "+80 canais e conteúdos adultos opcionais protegidos por senha master parental.",
-            },
           ].map((f, i) => (
             <SmoothCardReveal key={f.t} delay={100 + i * 80}>
               <div
