@@ -809,7 +809,7 @@ function Index() {
               destaque: false,
               selo: null as string | null,
               badge: "Economia 33%",
-              btnStyle: "bg-stone-900/80 border border-white/20 hover:bg-red-600 hover:border-red-500 text-white font-black py-3.5 px-4 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]",
+              btnStyle: "bg-gradient-to-r from-amber-600 via-amber-500 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_25px_rgba(245,158,11,0.5)] hover:scale-[1.02] border border-amber-400/50",
               btnText: "ASSINAR TRIMESTRAL",
               link: "#planos",
               features: [
