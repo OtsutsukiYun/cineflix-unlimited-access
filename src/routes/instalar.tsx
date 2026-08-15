@@ -476,7 +476,7 @@ function TrialBannerSlideshow() {
         </h2>
 
         <p className="text-sm sm:text-base text-white leading-relaxed max-w-xl mx-auto font-bold drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] mb-5">
-          Assim que você instalar e abrir o aplicativo, seu teste de <strong className="text-emerald-300 font-black">3 dias grátis é ativado na hora</strong> na sua Smart TV ou celular! Não precisa informar cartão de crédito nem dados bancários.
+          Assim que você instalar e abrir o aplicativo, seu teste de <strong className="text-emerald-300 font-black">3 dias grátis é ativado na hora</strong> na sua Smart TV, TV Box, TV Stick, PC ou Celular! Não precisa informar cartão de crédito nem dados bancários.
         </p>
 
         {/* INDICADOR CINEMATOGRÁFICO DO FILME EM EXIBIÇÃO NO FUNDO (RESPONSIVO E SEM BUGS) */}
