@@ -885,7 +885,7 @@ function Index() {
       <section id="planos" className="relative z-10 mx-auto w-[94%] max-w-6xl py-6 sm:py-8">
         <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] rounded-full bg-red-800/15 blur-[180px]" />
 
-        <Reveal className="relative z-10 text-center mb-8 sm:mb-12">
+        <Reveal className="relative z-10 text-center mb-4 sm:mb-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/30 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3">
             <Sparkles className="size-3.5 animate-spin" /> Oferta por Tempo Limitado
           </span>
@@ -897,7 +897,7 @@ function Index() {
           </p>
         </Reveal>
 
-        <div className="relative z-10 grid items-stretch gap-6 lg:grid-cols-3 pt-4 sm:pt-6">
+        <div className="relative z-10 grid items-stretch gap-6 lg:grid-cols-3 pt-2 sm:pt-3">
           {[
             {
               id: "mensal",
