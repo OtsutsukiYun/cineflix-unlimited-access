@@ -646,8 +646,8 @@ function Index() {
             <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/40 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3">
               <Sparkles className="size-3.5" /> Variedade Imbatível
             </span>
-            <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white max-w-3xl mx-auto">
-              Todas as suas produções favoritas e <span className="text-red-500">conteúdos que você não encontra em nenhuma outra plataforma</span>
+            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white max-w-2xl mx-auto">
+              Conteúdos que você <span className="text-red-500">não encontra em outros streamings</span>
             </h2>
           </div>
         </SmoothCardReveal>
