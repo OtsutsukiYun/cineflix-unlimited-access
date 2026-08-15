@@ -231,7 +231,7 @@ const CATALOG_TABS = [
       { title: "Michael", poster: "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", year: "2026", tag: "🔥 Biografia 2026" },
       { title: "Socorro! (Send Help)", poster: "/zbJWVHOtj3ljBzWgL1P8pxP03Up.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "A Boca do Diabo", poster: "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg", year: "2026", tag: "🔥 Terror 2026" },
-      { title: "Dia D", poster: "/jZxYOP4BbF0Wi6BlPX9NrzdqLsc.jpg", year: "2026", tag: "🔥 Ação 2026" },
+      { title: "Dia D (Disclosure Day)", poster: "/AnJ8IQJI23hNpYXVNaythu061Ru.jpg", year: "2026", tag: "🔥 Sci-Fi 2026" },
       { title: "A Última Casa", poster: "/AqOwuZ4X0Ssi3LIsYqXNw52IIvW.jpg", year: "2026", tag: "🔥 Exclusivo 2026" },
       { title: "He-Man: Mestres do Universo", poster: "/atpb7NKSyM4bJSUY8vQTunzK4Na.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Homem-Aranha: Um Novo Dia", poster: "/x0nvYzQpyJc5pdT9lMnkMuYAg0O.jpg", year: "2026", tag: "Super-herói" },
