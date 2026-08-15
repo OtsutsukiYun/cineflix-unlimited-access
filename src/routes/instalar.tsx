@@ -489,7 +489,7 @@ function TrialBannerSlideshow() {
 }
 
 export function InstalarPage() {
-  const [activeTab, setActiveTab] = useState<"tv" | "mobile" | "pc">("tv");
+  const [activeTab, setActiveTab] = useState<"android" | "pc">("android");
 
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
@@ -558,71 +558,58 @@ export function InstalarPage() {
         {/* BANNER CINEMATOGRÁFICO DE TESTE GRÁTIS COM IMAGENS GRANDES DE FILMES DE TERROR NO FUNDO */}
         <TrialBannerSlideshow />
 
-        {/* NAVEGAÇÃO POR ABAS SELETORAS DE DISPOSITIVO (EFEITO VIDRO PREMIO ESCURO) */}
+        {/* NAVEGAÇÃO POR 2 CATEGORIAS PRINCIPAIS DE DISPOSITIVOS */}
         <div className="mb-8">
           <div className="mb-3 text-center">
             <span className="text-xs font-extrabold uppercase tracking-widest text-white/70">
-              Selecione onde deseja instalar:
+              Selecione o seu aparelho:
             </span>
           </div>
-          <div className="grid grid-cols-3 gap-2 sm:gap-3 rounded-2xl bg-stone-900/60 p-1.5 border border-white/15 backdrop-blur-md shadow-lg">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-4 rounded-2xl bg-stone-900/60 p-2 border border-white/15 backdrop-blur-md shadow-lg">
             <button
-              onClick={() => setActiveTab("tv")}
-              className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 text-xs sm:text-sm font-black transition-all cursor-pointer ${
-                activeTab === "tv"
-                  ? "bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-[0_0_20px_rgba(249,115,22,0.4)] border border-orange-400/50 scale-[1.02]"
+              onClick={() => setActiveTab("android")}
+              className={`flex flex-col sm:flex-row items-center justify-center gap-2 rounded-xl py-3.5 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer ${
+                activeTab === "android"
+                  ? "bg-gradient-to-r from-orange-600 via-amber-600 to-emerald-600 text-white shadow-[0_0_25px_rgba(249,115,22,0.4)] border border-orange-400/60 scale-[1.01]"
                   : "bg-stone-900/50 border border-white/10 text-white/80 backdrop-blur-md hover:bg-stone-800/80 hover:border-white/25 hover:text-white"
               }`}
             >
-              <Tv className="size-4 sm:size-5" />
-              <span className="text-center sm:text-left">Smart TV &amp; TV Box</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab("mobile")}
-              className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 text-xs sm:text-sm font-black transition-all cursor-pointer ${
-                activeTab === "mobile"
-                  ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)] border border-emerald-400/50 scale-[1.02]"
-                  : "bg-stone-900/50 border border-white/10 text-white/80 backdrop-blur-md hover:bg-stone-800/80 hover:border-white/25 hover:text-white"
-              }`}
-            >
-              <Smartphone className="size-4 sm:size-5" />
-              <span className="text-center sm:text-left">Celular &amp; Tablet</span>
+              <div className="flex items-center gap-1">
+                <Tv className="size-4 sm:size-5" />
+                <Smartphone className="size-4 sm:size-5" />
+              </div>
+              <div className="text-center sm:text-left leading-tight">
+                <span className="block font-black">Smart TV, TV Box, Stick, Celular &amp; Tablet</span>
+              </div>
             </button>
 
             <button
               onClick={() => setActiveTab("pc")}
-              className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 text-xs sm:text-sm font-black transition-all cursor-pointer ${
+              className={`flex flex-col sm:flex-row items-center justify-center gap-2 rounded-xl py-3.5 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer ${
                 activeTab === "pc"
-                  ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.4)] border border-red-400/50 scale-[1.02]"
+                  ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-[0_0_25px_rgba(220,38,38,0.4)] border border-red-400/60 scale-[1.01]"
                   : "bg-stone-900/50 border border-white/10 text-white/80 backdrop-blur-md hover:bg-stone-800/80 hover:border-white/25 hover:text-white"
               }`}
             >
               <Monitor className="size-4 sm:size-5" />
-              <span className="text-center sm:text-left">Computador PC</span>
+              <div className="text-center sm:text-left leading-tight">
+                <span className="block font-black">Computador PC &amp; Notebook</span>
+              </div>
             </button>
           </div>
         </div>
 
-        {/* CONTEÚDO DAS ABAS */}
+        {/* CONTEÚDO DAS 2 CATEGORIAS */}
         <div className="space-y-6">
-          {/* ABA 1: SMART TV & TV BOX */}
-          {activeTab === "tv" && (
+          {/* CATEGORIA 1: SMART TV, TV BOX, STICK, CELULAR & TABLET */}
+          {activeTab === "android" && (
             <>
-              <DownloaderMethodCard methodNumber={1} subtitle="Recomendado para Smart TV Android, TV Box, Mi Stick Xiaomi e FireTV Stick" />
-              <NtDownMethodCard methodNumber={2} subtitle="Opção alternativa para Smart TV Android e TV Box" />
+              <DownloaderMethodCard methodNumber={1} subtitle="Recomendado para Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Stick, Celular e Tablet" />
+              <NtDownMethodCard methodNumber={2} subtitle="Opção via Play Store para Smartphone Android, Tablet, Smart TV e TV Box" />
             </>
           )}
 
-          {/* ABA 2: CELULAR & TABLET */}
-          {activeTab === "mobile" && (
-            <>
-              <NtDownMethodCard methodNumber={1} subtitle="Recomendado para Smartphone Android e Tablet Android (Google Play Store)" />
-              <DownloaderMethodCard methodNumber={2} subtitle="Opção alternativa via Downloader para Celular e Tablet" />
-            </>
-          )}
-
-          {/* ABA 3: COMPUTADOR PC */}
+          {/* CATEGORIA 2: COMPUTADOR PC & NOTEBOOK */}
           {activeTab === "pc" && (
             <div className="rounded-3xl border-2 border-red-500/40 bg-gradient-to-b from-red-950/40 via-stone-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(220,38,38,0.15)]">
               <div className="flex items-center gap-3.5 mb-4 pb-4 border-b border-white/10">
