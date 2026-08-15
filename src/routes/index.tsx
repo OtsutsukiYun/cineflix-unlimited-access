@@ -725,76 +725,74 @@ function Index() {
         </div>
       </section>
 
-      {/* RECURSOS EXCLUSIVOS DA PLATAFORMA */}
-      <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-12 sm:py-16 border-t border-white/10">
+      {/* RECURSOS EXCLUSIVOS DA PLATAFORMA (PAINEL COMPACTO UNIFICADO - SEM REPETIR CARDS) */}
+      <section className="relative z-10 mx-auto w-[94%] max-w-5xl py-8 sm:py-12">
         <SmoothCardReveal>
-          <div className="text-center mb-10">
-            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/40 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3 shadow-[0_0_20px_rgba(220,38,38,0.2)]">
-              <Zap className="size-3.5 text-red-400" /> Recursos da Plataforma
-            </span>
-            <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white">
-              Tecnologia &amp; Recursos <span className="text-red-500">Exclusivos</span>
-            </h2>
-            <p className="text-xs sm:text-sm text-white/70 max-w-lg mx-auto mt-2.5 font-medium">
-              Ferramentas avançadas pensadas para o seu conforto, segurança e entretenimento sem travamentos.
-            </p>
-          </div>
-        </SmoothCardReveal>
-
-        <div className="grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            {
-              icon: RotateCcw,
-              title: "Volte 7 Dias na Grade",
-              desc: "Perdeu o jogo, novela ou programa? Use o Playback para retomar a programação dos últimos 7 dias.",
-              gradient: "from-red-600 via-rose-600 to-red-700",
-              glow: "shadow-[0_0_25px_rgba(220,38,38,0.3)]",
-              border: "border border-red-500/30 hover:border-red-400",
-            },
-            {
-              icon: Activity,
-              title: "Sinal P2P Estável",
-              desc: "A rede peer-to-peer espalha o conteúdo de forma inteligente, mantendo a transmissão fluida sem travar.",
-              gradient: "from-amber-500 via-orange-600 to-red-600",
-              glow: "shadow-[0_0_25px_rgba(245,158,11,0.3)]",
-              border: "border border-amber-500/30 hover:border-amber-400",
-            },
-            {
-              icon: Lock,
-              title: "Bloqueio Por Perfil",
-              desc: "Trave conteúdos adultos com senha para garantir que as crianças vejam só o que é apropriado.",
-              gradient: "from-emerald-600 via-teal-600 to-green-700",
-              glow: "shadow-[0_0_25px_rgba(16,185,129,0.3)]",
-              border: "border border-emerald-500/30 hover:border-emerald-400",
-            },
-            {
-              icon: ListOrdered,
-              title: "Programação Completa",
-              desc: "O guia EPG mostra o que passa em cada canal, com horário, sinopse e ordem por categoria.",
-              gradient: "from-blue-600 via-indigo-600 to-violet-700",
-              glow: "shadow-[0_0_25px_rgba(59,130,246,0.3)]",
-              border: "border border-blue-500/30 hover:border-blue-400",
-            },
-          ].map((item, idx) => (
-            <SmoothCardReveal key={item.title} delay={100 + idx * 80}>
-              <div className={`glass group relative h-full rounded-3xl p-6 sm:p-7 bg-stone-900/60 backdrop-blur-xl ${item.border} ${item.glow} transition-all duration-300 hover:-translate-y-2 hover:bg-stone-900/90 shadow-xl flex flex-col justify-between`}>
-                <div className={`mb-5 flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${item.gradient} p-0.5 shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                  <div className="flex size-full items-center justify-center rounded-[14px] bg-black/40">
-                    <item.icon className="size-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
-                  </div>
-                </div>
+          <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-stone-900/80 via-[#0d0707]/90 to-black/95 p-6 sm:p-9 backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.8)]">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
+              <div className="flex items-center gap-3">
+                <span className="flex size-10 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-rose-700 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+                  <Zap className="size-5 fill-current" />
+                </span>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-black text-white mb-2 group-hover:text-red-300 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium">
-                    {item.desc}
+                  <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                    Recursos Exclusivos da Plataforma
+                  </h2>
+                  <p className="text-xs text-white/60 font-medium">
+                    Tecnologia e ferramentas para a melhor experiência
                   </p>
                 </div>
               </div>
-            </SmoothCardReveal>
-          ))}
-        </div>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-red-500/15 border border-red-500/30 px-3.5 py-1 text-[11px] font-black text-red-300 uppercase tracking-wider shrink-0">
+                ⭐ 100% Incluído no Acesso
+              </span>
+            </div>
+
+            {/* GRADE LIMPA EM 2 COLUNAS DE RECURSOS - SEM CAIXAS OU CARD INFESTATION */}
+            <div className="grid gap-6 sm:gap-8 sm:grid-cols-2">
+              {[
+                {
+                  icon: RotateCcw,
+                  badgeColor: "text-red-400 bg-red-500/15 border-red-500/30",
+                  title: "Volte 7 Dias na Grade",
+                  desc: "Perdeu o jogo, novela ou programa? Use o Playback para retomar a programação dos últimos 7 dias.",
+                },
+                {
+                  icon: Activity,
+                  badgeColor: "text-amber-400 bg-amber-500/15 border-amber-500/30",
+                  title: "Sinal P2P Estável",
+                  desc: "A rede peer-to-peer espalha o conteúdo de forma inteligente, mantendo a transmissão fluida sem travar.",
+                },
+                {
+                  icon: Lock,
+                  badgeColor: "text-emerald-400 bg-emerald-500/15 border-emerald-500/30",
+                  title: "Bloqueio Por Perfil",
+                  desc: "Trave conteúdos adultos com senha para garantir que as crianças vejam só o que é apropriado.",
+                },
+                {
+                  icon: ListOrdered,
+                  badgeColor: "text-blue-400 bg-blue-500/15 border-blue-500/30",
+                  title: "Programação Completa",
+                  desc: "O guia EPG mostra o que passa em cada canal, com horário, sinopse e ordem por categoria.",
+                },
+              ].map((item) => (
+                <div key={item.title} className="flex items-start gap-4 group/item">
+                  <div className={`mt-0.5 flex size-11 shrink-0 items-center justify-center rounded-2xl border ${item.badgeColor} backdrop-blur-md transition-transform duration-300 group-hover/item:scale-110 shadow-md`}>
+                    <item.icon className="size-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-base sm:text-lg font-black text-white mb-1 group-hover/item:text-red-400 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-white/75 leading-relaxed font-medium">
+                      {item.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </SmoothCardReveal>
       </section>
 
       {/* PLANOS */}
