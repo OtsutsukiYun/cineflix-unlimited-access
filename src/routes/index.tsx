@@ -724,8 +724,8 @@ function Index() {
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-amber-200",
               t: "Animes atualizados",
-              qtd: "Centenas de Animes",
-              d: "Centenas de animes com simulcast semanal, dublagem em português e áudio original.",
+              qtd: "Milhares de Animes",
+              d: "Milhares de animes com simulcast semanal, dublagem em português e áudio original.",
               tabId: "animes",
             },
             {
