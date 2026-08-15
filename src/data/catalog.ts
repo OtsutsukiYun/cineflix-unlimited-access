@@ -63,7 +63,7 @@ export const heroSlides: HeroSlide[] = [
     year: "2024",
     genre: "Terror Hospitalar Indonésio",
     tagline: "O terror assombra os corredores de um hospital amaldiçoado.",
-    backdrop: "/1LSMstNHwJnJD7tpnb8gZcgGNQR.jpg",
+    backdrop: "/6Demzar4h6vQNXfE4lWNC4SMuHY.jpg",
     poster: "/5x9LrW0yvtt6S3XovIQHgXfYvLL.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
