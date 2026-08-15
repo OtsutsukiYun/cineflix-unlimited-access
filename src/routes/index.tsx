@@ -296,11 +296,11 @@ const CATALOG_TABS = [
       { title: "Other Mommy (A Outra Mãe)", poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
       { title: "Resident Evil: O Retorno", poster: "/zP83bIkBViw5b1s9bDemYJ3AAgX.jpg", year: "2026", tag: "🔥 Estreia Set/2026" },
       { title: "O Sorveteiro", poster: "/c987gxFjXqYOxZEZKcTkS1ONTWH.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
+      { title: "Werwulf (O Lobisomem)", poster: "/imnkSt4PSQpxIuyiRpJCiLk3SZz.jpg", year: "2026", tag: "🔥 Estreia Dez/2026" },
       { title: "The Rope Curse 4: Kuntilanak", poster: "/6u8F23BammMeCWLvWITbFM2Nwbe.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
       { title: "Cuidado com Boiúna", poster: "/tENVMxKvOkslv8kagVNdIEQ13RT.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
       { title: "Clayface: Rituais das Sombras", poster: "/5jCpQnWPikggmQZoDp1eAi6BI6w.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
       { title: "Bokshi: O Ritual da Bruxa", poster: "/9Loc2q3gO1HWolw0o6kLaMXrocS.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
-      { title: "Werwulf (O Lobisomem)", poster: "/imnkSt4PSQpxIuyiRpJCiLk3SZz.jpg", year: "2026", tag: "🔥 Estreia Dez/2026" },
     ],
   },
 ];
