@@ -233,7 +233,7 @@ const CATALOG_TABS = [
       { title: "A Boca do Diabo", poster: "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg", year: "2026", tag: "🔥 Terror 2026" },
       { title: "Dia D (Disclosure Day)", poster: "/pmff1wjKrgJi92PPr346lAifzlg.jpg", year: "2026", tag: "🔥 Sci-Fi 2026" },
       { title: "A Última Casa", poster: "/AqOwuZ4X0Ssi3LIsYqXNw52IIvW.jpg", year: "2026", tag: "🔥 Exclusivo 2026" },
-      { title: "He-Man: Mestres do Universo", poster: "/2hBGNRmYek4SR437ZdembHIPchw.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
+      { title: "He-Man: Mestres do Universo", poster: "/atpb7NKSyM4bJSUY8vQTunzK4Na.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Homem-Aranha: Um Novo Dia", poster: "/x0nvYzQpyJc5pdT9lMnkMuYAg0O.jpg", year: "2026", tag: "Super-herói" },
       { title: "Todo Mundo em Pânico 6", poster: "/y9yJd2qIIwhZcllHeKHsz5eRvNr.jpg", year: "2026", tag: "Comédia 2026" },
       { title: "Toy Story 5", poster: "/sssrBhdvDcczgMQYDc8oCoSuFEJ.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
