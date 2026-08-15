@@ -645,24 +645,6 @@ export function InstalarPage() {
           )}
         </div>
 
-        {/* AVISO DE PERMISSÕES E SEGURANÇA DO ANDROID (SEMPRE VISÍVEL) */}
-        <div className="mt-8 rounded-2xl border-2 border-amber-500/40 bg-gradient-to-b from-amber-950/40 via-stone-900/60 to-black/80 p-5 text-left backdrop-blur-xl shadow-lg">
-          <div className="flex items-start gap-3.5">
-            <ShieldAlert className="size-6 shrink-0 text-amber-400 mt-0.5" />
-            <div>
-              <h4 className="text-sm font-black text-amber-300 mb-1">
-                ⚠️ Aviso de Permissões e Segurança do Android
-              </h4>
-              <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-medium">
-                Quando o aparelho pedir permissões de instalação de fontes desconhecidas, <strong className="text-amber-300 font-black">aceite e clique em "Instalar mesmo assim"</strong>.
-              </p>
-              <p className="text-xs text-white/75 leading-relaxed mt-1.5 font-medium">
-                Se o Android ou Play Protect avisar sobre <em>"aplicativo desconhecido"</em>, fique 100% tranquilo. Isso acontece exclusivamente porque o app é baixado fora da Play Store (via código APK direto). O aplicativo é totalmente seguro, oficial e livre de vírus.
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* BLOCO DE CONVERSÃO / ASSINATURA DE PLANOS (QUEM QUER COMPRAR DIRETO) */}
         <div className="mt-10 rounded-3xl border-2 border-red-500/50 bg-gradient-to-br from-red-950/60 via-stone-900/70 to-black/85 p-8 sm:p-10 text-center shadow-[0_0_50px_rgba(220,38,38,0.25)] relative overflow-hidden backdrop-blur-xl">
           <div className="absolute top-0 right-0 size-40 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
