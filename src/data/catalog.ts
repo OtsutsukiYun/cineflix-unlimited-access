@@ -296,7 +296,7 @@ export const proximosLancamentos: Title[] = [
   { title: "The Rope Curse 4: Kuntilanak", poster: "/6u8F23BammMeCWLvWITbFM2Nwbe.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
   { title: "Cuidado com Boiúna", poster: "/tENVMxKvOkslv8kagVNdIEQ13RT.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
   { title: "Clayface: Rituais das Sombras", poster: "/5jCpQnWPikggmQZoDp1eAi6BI6w.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
-  { title: "Bokshi: O Ritual da Bruxa", poster: "/9Loc2q3gO1HWolw0o6kLaMXrocS.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
+  { title: "O Fim da Rua", poster: "/6JU7E8Vv2M11egkctWVOScxWR75.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
 ];
 
 export const icon = (slug: string) => `https://cdn.simpleicons.org/${slug}/white`;
