@@ -242,6 +242,7 @@ export const series: Title[] = [
 export const animes: Title[] = [
   { title: "Frieren e a Jornada para o Além", poster: "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", year: "Série", tag: "🔥 #1 Em Alta" },
   { title: "Chainsaw Man", poster: "/npdB6eFzizki0WaZ1OvKcJrWe97.jpg", year: "Série", tag: "🔥 Sucesso" },
+  { title: "Mushoku Tensei (3ª Temporada)", poster: "/kZNFYvX1brcjubHXNa1naMwRoov.jpg", year: "2026", tag: "🔥 3ª Temporada" },
   { title: "Shiki", poster: "/zsWbTnNwNjqWvgZ9gqTcK9WLoWy.jpg", year: "2010", tag: "🔥 Anime de Terror" },
   { title: "Mirai Nikki (The Future Diary)", poster: "/rQScQD92q6CYAGL0DWQQNxjuVVh.jpg", year: "2011", tag: "🔥 Anime & Thriller" },
   { title: "Demon Slayer: Castelo Infinito", poster: "/41XdjOXGQoH0HTDNqEfwKGvGgwm.jpg", year: "2025", tag: "#1 mais assistido" },
