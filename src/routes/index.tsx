@@ -273,31 +273,43 @@ const CATALOG_TABS = [
   },
 ];
 
-// ── BANNER DE SLIDESHOW ROTATIVO DE ALTA QUALIDADE ─────────────────────────
+// ── BANNER DE SLIDESHOW ROTATIVO DE ALTA QUALIDADE (SEM FLASH PRETO) ───────
 function SlideshowBanner({ banners, alt, objectPosition = "object-cover" }: { banners: string[]; alt: string; objectPosition?: string }) {
   const [index, setIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState(0);
 
   useEffect(() => {
     if (!banners || banners.length <= 1) return;
     const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % banners.length);
+      setIndex((prev) => {
+        setPrevIndex(prev);
+        return (prev + 1) % banners.length;
+      });
     }, 4000);
     return () => clearInterval(timer);
   }, [banners]);
 
   return (
-    <>
-      {banners.map((banner, i) => (
-        <img
-          key={banner}
-          src={banner.startsWith("http") ? banner : img(banner, "w780")}
-          alt={alt}
-          className={`absolute inset-0 size-full ${objectPosition} transition-all duration-1000 ease-in-out group-hover:scale-110 ${
-            i === index ? "opacity-55 z-0 scale-100" : "opacity-0 -z-10 scale-105 pointer-events-none"
-          }`}
-        />
-      ))}
-    </>
+    <div className="absolute inset-0 overflow-hidden bg-[#0c0505]">
+      {banners.map((banner, i) => {
+        const isActive = i === index;
+        const isPrev = i === prevIndex;
+        return (
+          <img
+            key={banner}
+            src={banner.startsWith("http") ? banner : img(banner, "w780")}
+            alt={alt}
+            className={`absolute inset-0 size-full ${objectPosition} transition-all duration-1000 ease-in-out group-hover:scale-110 ${
+              isActive
+                ? "opacity-60 z-10"
+                : isPrev
+                ? "opacity-60 z-0"
+                : "opacity-0 -z-10 pointer-events-none"
+            }`}
+          />
+        );
+      })}
+    </div>
   );
 }
 
@@ -567,7 +579,7 @@ function Index() {
               icon: Tv,
               banners: [
                 "/bwSmgmd90hCWwqOKQYTEraeOZhJ.jpg", // Shōgun
-                "/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg", // Silo
+                "/577eXC8wFQT0eUrJcgznSiFPRmk.jpg", // House of the Dragon
                 "/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg", // The Last of Us
               ],
               objectPosition: "object-cover",
@@ -584,9 +596,9 @@ function Index() {
             {
               icon: Heart,
               banners: [
-                "/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", // Queen of Tears
-                "/2meX1nMdScFOoV4370rqHWKmXhY.jpg", // Round 6 / Squid Game
-                "/8hp2CuGnw1iP5dLBVMAPUv23swx.jpg", // All of Us Are Dead
+                "/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", // Rainha das Lágrimas (Queen of Tears)
+                "/3yEHM2HT2vrUtO93YzTJNgEfiZG.jpg", // Pousando no Amor (Crash Landing on You)
+                "/AjwoDj77HLlqcpwEGqsnvMXm5my.jpg", // A Lição (The Glory)
               ],
               objectPosition: "object-cover",
               gradient: "from-pink-600 via-rose-600 to-red-700",
