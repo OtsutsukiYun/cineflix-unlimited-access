@@ -841,7 +841,7 @@ function Index() {
               cardStyle: "border border-red-500/35 bg-gradient-to-b from-red-950/25 via-zinc-950/90 to-black hover:border-red-500/60 shadow-[0_0_30px_rgba(220,38,38,0.2)] hover:shadow-[0_0_40px_rgba(220,38,38,0.35)]",
               btnStyle: "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-500 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_25px_rgba(220,38,38,0.6)] hover:scale-[1.02] border border-red-400/50 transition-all",
               btnText: "ASSINAR PLANO MENSAL",
-              link: "#planos",
+              link: "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "1 Tela simultânea",
                 "Acervo completo (+100.000 títulos)",
