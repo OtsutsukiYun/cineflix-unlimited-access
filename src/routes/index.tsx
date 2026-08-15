@@ -288,6 +288,21 @@ const CATALOG_TABS = [
       { title: "One Piece", poster: "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", year: "Série", tag: "Clássico" },
     ],
   },
+  {
+    id: "proximos",
+    label: "🚀 Próximos Lançamentos (2026)",
+    items: [
+      { title: "Sobrenatural: Além do Mais Além", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
+      { title: "A Última Casa no Fim da Rua", poster: "/6JU7E8Vv2M11egkctWVOScxWR75.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
+      { title: "The Rope Curse 4: Kuntilanak", poster: "/6u8F23BammMeCWLvWITbFM2Nwbe.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
+      { title: "Resident Evil: O Retorno", poster: "/zP83bIkBViw5b1s9bDemYJ3AAgX.jpg", year: "2026", tag: "🔥 Estreia Set/2026" },
+      { title: "Cuidado com Boiúna", poster: "/tENVMxKvOkslv8kagVNdIEQ13RT.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
+      { title: "Other Mommy (A Outra Mãe)", poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
+      { title: "Clayface: Rituais das Sombras", poster: "/5jCpQnWPikggmQZoDp1eAi6BI6w.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
+      { title: "Bokshi: O Ritual da Bruxa", poster: "/9Loc2q3gO1HWolw0o6kLaMXrocS.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
+      { title: "Werwulf (O Lobisomem)", poster: "/imnkSt4PSQpxIuyiRpJCiLk3SZz.jpg", year: "2026", tag: "🔥 Estreia Dez/2026" },
+    ],
+  },
 ];
 
 // ── BANNER DE SLIDESHOW ROTATIVO DE ALTA PERFORMANCE 60FPS (SEM TRAVAMENTOS) ────────
@@ -516,6 +531,7 @@ function Index() {
                     "terror-raro": "Descubra produções incríveis da Coreia, Japão, Tailândia e muito mais.",
                     "series": "Descubra séries incríveis, sucessos imperdíveis e títulos que você não encontra nos streamings tradicionais.",
                     "animes": "Animes populares com episódios semanais e dublagem em português.",
+                    "proximos": "Confira os novos filmes e produções de terror confirmados para estrear a partir de agosto de 2026.",
                   }[activeTab] || "Filmes, séries, doramas, animes e esportes ao vivo em um só aplicativo."
                 }
               </p>
