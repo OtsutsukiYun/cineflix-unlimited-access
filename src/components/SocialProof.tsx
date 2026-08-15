@@ -41,20 +41,56 @@ const pick = <T,>(arr: T[]) => arr[Math.floor(Math.random() * arr.length)]!;
 
 type Notif = { id: number; nome: string; estado: string; plano: string };
 
+function getDailySales() {
+  const now = new Date();
+  const dateKey = `sales_count_${now.getFullYear()}_${now.getMonth() + 1}_${now.getDate()}`;
+  
+  // Minutos decorridos no dia (0 a 1439)
+  const minutesToday = now.getHours() * 60 + now.getMinutes();
+  
+  // Base inicial da manhã (variando entre 18 e 32)
+  const morningBase = 18 + ((now.getDate() * 7 + now.getMonth() * 13) % 15);
+  
+  // Crescimento contínuo ao longo das horas do dia (~1 venda a cada 12 min)
+  const salesThroughoutDay = Math.floor(minutesToday / 12);
+  const calculatedBase = morningBase + salesThroughoutDay;
+  
+  try {
+    const stored = localStorage.getItem(dateKey);
+    if (stored) {
+      const parsed = parseInt(stored, 10);
+      if (!isNaN(parsed) && parsed >= calculatedBase) {
+        return parsed;
+      }
+    }
+  } catch (e) {
+    // Fallback silencioso se localStorage estiver desativado
+  }
+
+  return calculatedBase;
+}
+
 export function SocialProof() {
   const [notif, setNotif] = useState<Notif | null>(null);
   const [vendas, setVendas] = useState(0);
 
   useEffect(() => {
-    const hoje = new Date();
-    const base =
-      28 + ((hoje.getDate() * 7 + hoje.getMonth() * 13) % 22);
-    setVendas(base);
+    const initialSales = getDailySales();
+    setVendas(initialSales);
 
-    const inc = setInterval(
-      () => setVendas((v) => v + 1),
-      45000,
-    );
+    const now = new Date();
+    const dateKey = `sales_count_${now.getFullYear()}_${now.getMonth() + 1}_${now.getDate()}`;
+
+    const inc = setInterval(() => {
+      setVendas((prev) => {
+        const next = prev + 1;
+        try {
+          localStorage.setItem(dateKey, String(next));
+        } catch (e) {}
+        return next;
+      });
+    }, 45000); // Incrementa +1 a cada 45 segundos e salva no localStorage
+
     return () => clearInterval(inc);
   }, []);
 
