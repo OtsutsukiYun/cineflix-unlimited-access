@@ -273,24 +273,41 @@ const CATALOG_TABS = [
   },
 ];
 
-// ── BANNER DE SLIDESHOW ROTATIVO DE ALTA QUALIDADE (SEM FLASH PRETO) ───────
-function SlideshowBanner({ banners, alt, objectPosition = "object-cover" }: { banners: string[]; alt: string; objectPosition?: string }) {
+// ── BANNER DE SLIDESHOW ROTATIVO DE ALTA PERFORMANCE 60FPS (SEM TRAVAMENTOS) ────────
+function SlideshowBanner({
+  banners,
+  alt,
+  objectPosition = "object-cover",
+  delayMs = 0,
+}: {
+  banners: string[];
+  alt: string;
+  objectPosition?: string;
+  delayMs?: number;
+}) {
   const [index, setIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState(0);
 
   useEffect(() => {
     if (!banners || banners.length <= 1) return;
-    const timer = setInterval(() => {
-      setIndex((prev) => {
-        setPrevIndex(prev);
-        return (prev + 1) % banners.length;
-      });
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [banners]);
+    let timer: ReturnType<typeof setInterval>;
+    const startDelay = setTimeout(() => {
+      timer = setInterval(() => {
+        setIndex((prev) => {
+          setPrevIndex(prev);
+          return (prev + 1) % banners.length;
+        });
+      }, 4500);
+    }, delayMs);
+
+    return () => {
+      clearTimeout(startDelay);
+      if (timer) clearInterval(timer);
+    };
+  }, [banners, delayMs]);
 
   return (
-    <div className="absolute inset-0 overflow-hidden bg-[#0a0404]">
+    <div className="absolute inset-0 overflow-hidden bg-[#0a0404] pointer-events-none transform-gpu">
       {banners.map((banner, i) => {
         const isActive = i === index;
         const isPrev = i === prevIndex;
@@ -299,11 +316,11 @@ function SlideshowBanner({ banners, alt, objectPosition = "object-cover" }: { ba
             key={banner}
             src={banner.startsWith("http") ? banner : img(banner, "w780")}
             alt={alt}
-            className={`absolute inset-0 size-full ${objectPosition} transition-all duration-1000 ease-in-out group-hover:scale-110 ${
+            className={`absolute inset-0 size-full ${objectPosition} transform-gpu transition-opacity duration-1000 ease-in-out will-change-[opacity] ${
               isActive
-                ? "opacity-40 z-10 group-hover:opacity-50"
+                ? "opacity-45 z-10"
                 : isPrev
-                ? "opacity-40 z-0 group-hover:opacity-50"
+                ? "opacity-45 z-0"
                 : "opacity-0 -z-10 pointer-events-none"
             }`}
           />
@@ -671,7 +688,7 @@ function Index() {
                 className={`group relative h-full min-h-[220px] sm:min-h-[240px] overflow-hidden rounded-3xl p-6 sm:p-7 ${f.corBorda} ${f.corGlow} transition-all duration-500 hover:-translate-y-2 bg-[#0c0505]`}
               >
                 {/* IMAGEM BANNER ILUSTRATIVA DE FUNDO COM SLIDESHOW */}
-                <SlideshowBanner banners={f.banners} alt={`Ilustração ${f.t}`} objectPosition={f.objectPosition} />
+                <SlideshowBanner banners={f.banners} alt={`Ilustração ${f.t}`} objectPosition={f.objectPosition} delayMs={i * 600} />
                 {/* SOBREPOSIÇÃO DE GRADIENTE ESCURO PROFUNDO PARA CONTRASTE PERFEITO */}
                 <div className={`absolute inset-0 ${f.bgOverlay} opacity-90 transition-opacity duration-500 group-hover:opacity-95`} />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#080303] via-[#080303]/75 to-transparent pointer-events-none" />
