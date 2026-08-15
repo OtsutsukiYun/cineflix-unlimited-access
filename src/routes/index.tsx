@@ -727,7 +727,7 @@ function Index() {
               titleHover: "group-hover:text-amber-200",
               t: "Animes atualizados",
               qtd: "Milhares de Animes",
-              d: "Milhares de animes com simulcast semanal, dublagem em português e áudio original.",
+              d: "Animes em alta, grandes clássicos, lançamentos da temporada, simulcast semanal e opções dubladas em português.",
               tabId: "animes",
             },
             {
