@@ -256,6 +256,7 @@ const CATALOG_TABS = [
       { title: "Todo Mundo em Pânico 6", poster: "/y9yJd2qIIwhZcllHeKHsz5eRvNr.jpg", year: "2026", tag: "Comédia 2026" },
       { title: "Toy Story 5", poster: "/sssrBhdvDcczgMQYDc8oCoSuFEJ.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Devoradores de Estrelas", poster: "/yihdXomYb5kTeSivtFndMy5iDmf.jpg", year: "2026", tag: "🔥 Sci-Fi 2026" },
+      { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Suspense" },
     ],
   },
   {
@@ -297,6 +298,7 @@ const CATALOG_TABS = [
       { title: "Frieren e a Jornada Para o Fim", poster: "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", year: "2023", tag: "🔥 #1 Em Alta" },
       { title: "Chainsaw Man", poster: "/npdB6eFzizki0WaZ1OvKcJrWe97.jpg", year: "Série", tag: "🔥 Sucesso" },
       { title: "Mushoku Tensei (3ª Temporada)", poster: "/kZNFYvX1brcjubHXNa1naMwRoov.jpg", year: "2026", tag: "🔥 3ª Temporada" },
+      { title: "Clevatess (2ª Temporada)", poster: "/1Pcp1QJS83KY25nTnL2UvJHWUVQ.jpg", year: "2026", tag: "🔥 2ª Temporada" },
       { title: "Shiki", poster: "/zsWbTnNwNjqWvgZ9gqTcK9WLoWy.jpg", year: "2010", tag: "🔥 Terror & Vampiros" },
       { title: "Mirai Nikki", poster: "/rQScQD92q6CYAGL0DWQQNxjuVVh.jpg", year: "2011", tag: "🔥 Thriller Psicológico" },
       { title: "Demon Slayer", poster: "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", year: "Série", tag: "Em alta" },
