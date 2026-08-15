@@ -501,13 +501,13 @@ function Index() {
           <Reveal>
             <div className="text-center mb-6">
               <span className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/30 px-3.5 py-1.5 text-xs font-bold tracking-wider text-red-400 uppercase mb-3">
-                <Film className="size-3.5" /> Maior Catálogo dos Streamings
+                <Film className="size-3.5" /> Destaques do Acervo
               </span>
               <h2 className="text-2xl font-extrabold sm:text-4xl text-white">
                 O que você quer assistir <span className="text-red-500">hoje?</span>
               </h2>
               <p className="mt-2 text-xs sm:text-sm text-white/60 font-medium max-w-lg mx-auto">
-                Maior catálogo de filmes, séries e animes dos streamings
+                Filmes, séries, doramas, animes e esportes ao vivo em um só aplicativo.
               </p>
             </div>
           </Reveal>
@@ -613,10 +613,10 @@ function Index() {
         <SmoothCardReveal>
           <div className="text-center mb-4 sm:mb-5">
             <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/40 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3">
-              <Sparkles className="size-3.5" /> Maior catálogo de filmes, séries e animes dos streamings
+              <Sparkles className="size-3.5" /> Variedade Imbatível
             </span>
             <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white">
-              Tudo o que você precisa,<br /><span className="text-red-500">em um só lugar</span>
+              Maior catálogo de filmes, séries e animes<br /><span className="text-red-500">em um só lugar</span>
             </h2>
           </div>
         </SmoothCardReveal>
