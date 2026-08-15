@@ -485,7 +485,7 @@ export function InstalarPage() {
               <a href="/#catalogo" className="text-white/80 transition-colors hover:text-white">Catálogo</a>
               <a href="/#planos" className="text-white/80 transition-colors hover:text-white">Planos</a>
               <a href="/#faq" className="text-white/80 transition-colors hover:text-white">FAQ</a>
-              <a href="https://wa.me/5561984016006" target="_blank" rel="noopener noreferrer" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</a>
+              <a href="/#suporte" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</a>
             </nav>
 
             <a href="/#planos" className="btn-cta px-5 py-2.5 text-xs font-black">

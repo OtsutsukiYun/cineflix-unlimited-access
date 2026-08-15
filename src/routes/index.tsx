@@ -416,7 +416,7 @@ function Index() {
               <SmoothLink href="#catalogo" className="text-white/80 transition-colors hover:text-white">Catálogo</SmoothLink>
               <SmoothLink href="#planos" className="text-white/80 transition-colors hover:text-white">Planos</SmoothLink>
               <SmoothLink href="#faq" className="text-white/80 transition-colors hover:text-white">FAQ</SmoothLink>
-              <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</a>
+              <SmoothLink href="#suporte" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</SmoothLink>
             </nav>
 
             <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs font-black">
@@ -1102,7 +1102,7 @@ function Index() {
       </Faq>
 
       {/* SUPORTE / CONTATO */}
-      <section className="relative z-10 border-t border-white/5 bg-black/30 py-5">
+      <section id="suporte" className="relative z-10 border-t border-white/5 bg-black/30 py-10 scroll-mt-24">
         <div className="mx-auto w-[94%] max-w-2xl text-center">
           <p className="text-sm text-white/50 mb-4">Precisa de ajuda? Fale com o nosso WhatsApp abaixo no site — atendimento 7 dias por semana.</p>
           <div className="flex flex-wrap justify-center gap-3">
