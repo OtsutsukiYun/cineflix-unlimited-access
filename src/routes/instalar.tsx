@@ -303,7 +303,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
             4
           </div>
           <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Caso o seu aparelho solicite autorização de <strong className="text-amber-300">"Fontes Desconhecidas"</strong> ou aviso do <strong className="text-amber-300">"Play Protect"</strong>, confirme clicando em <strong className="text-white bg-amber-500/30 border border-amber-400/50 px-2 py-0.5 rounded-md font-black">"Permitir"</strong> ou <strong className="text-white bg-amber-500/30 border border-amber-400/50 px-2 py-0.5 rounded-md font-black">"Instalar mesmo assim"</strong>.
+            Caso o seu aparelho não permita a instalação e solicite a autorização de <strong className="text-amber-300">"Fontes Desconhecidas"</strong> ou aviso do <strong className="text-amber-300">"Play Protect"</strong>, confirme clicando em <strong className="text-white bg-amber-500/30 border border-amber-400/50 px-2 py-0.5 rounded-md font-black">"Permitir"</strong> ou <strong className="text-white bg-amber-500/30 border border-amber-400/50 px-2 py-0.5 rounded-md font-black">"Instalar mesmo assim"</strong>.
             
             <p className="mt-2.5 text-xs text-amber-200/90 bg-amber-950/40 border border-amber-500/30 rounded-xl p-3 leading-relaxed">
               💡 <strong>Por que isso acontece?</strong> O Android exibe esse aviso de segurança padrão sempre que um aplicativo é baixado diretamente via gerenciador (APK) fora da loja tradicional. O UniTV Pro é 100% oficial, verificado e seguro para o seu aparelho.
@@ -423,7 +423,7 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
             4
           </div>
           <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Caso apareça autorização de <strong className="text-amber-300">"Fontes Desconhecidas"</strong> ou aviso do <strong className="text-amber-300">"Play Protect"</strong>, confirme clicando em <strong className="text-white bg-amber-500/30 border border-amber-400/50 px-2 py-0.5 rounded-md font-black">"Permitir"</strong> ou <strong className="text-white bg-amber-500/30 border border-amber-400/50 px-2 py-0.5 rounded-md font-black">"Instalar mesmo assim"</strong>.
+            Caso o seu aparelho não permita a instalação e solicite a autorização de <strong className="text-amber-300">"Fontes Desconhecidas"</strong> ou aviso do <strong className="text-amber-300">"Play Protect"</strong>, confirme clicando em <strong className="text-white bg-amber-500/30 border border-amber-400/50 px-2 py-0.5 rounded-md font-black">"Permitir"</strong> ou <strong className="text-white bg-amber-500/30 border border-amber-400/50 px-2 py-0.5 rounded-md font-black">"Instalar mesmo assim"</strong>.
             
             <p className="mt-2.5 text-xs text-amber-200/90 bg-amber-950/40 border border-amber-500/30 rounded-xl p-3 leading-relaxed">
               💡 <strong>Por que isso acontece?</strong> O Android exibe esse aviso de segurança padrão sempre que um aplicativo é baixado diretamente via gerenciador (APK) fora da loja tradicional. O UniTV Pro é 100% oficial, verificado e seguro para o seu aparelho.
