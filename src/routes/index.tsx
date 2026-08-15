@@ -442,34 +442,48 @@ function Index() {
             }}
           />
         ))}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/30 to-[#080808]/50" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#080808] to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/60 to-[#080808]/70" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-[#080808] via-[#080808]/90 to-transparent" />
 
-        <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-32 sm:pb-12">
-          <p className="mb-3 text-xs sm:text-sm md:text-base font-extrabold tracking-normal sm:tracking-wider text-red-400 uppercase leading-snug">
-            🔥 Cansado de procurar um filme ou série e nenhum streaming ter?
-          </p>
+        <div className="relative z-10 mx-auto w-[94%] max-w-4xl pt-28 pb-10 sm:pt-32 sm:pb-12 text-center">
+          {/* BADGE DE PERGUNTA EM PILL CONTAINER COM CONTRASTE ALTO */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-gradient-to-r from-red-950/80 via-black/80 to-red-950/80 px-4 py-2 text-xs sm:text-sm font-extrabold text-red-400 uppercase tracking-wide shadow-[0_0_20px_rgba(220,38,38,0.25)] backdrop-blur-md mb-4">
+            <Sparkles className="size-3.5 text-red-400 animate-pulse shrink-0" />
+            <span>🔥 Cansado de procurar um filme ou série e nenhum streaming ter?</span>
+          </div>
 
-          <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.12] text-white tracking-tight drop-shadow-xl">
+          {/* TÍTULO PRINCIPAL DE IMPACTO COM GRADIENTE E SOMBRA DE ALTO CONTRASTE */}
+          <h1 className="font-display text-3xl font-black sm:text-5xl md:text-6xl leading-[1.12] text-white tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.95)]">
             Aqui você encontra o maior acervo de{" "}
-            <span className="text-red-500">filmes, séries e grandes lançamentos.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-400 to-red-500 drop-shadow-[0_0_25px_rgba(220,38,38,0.5)]">
+              filmes, séries e grandes lançamentos.
+            </span>
           </h1>
 
-          <p className="mt-3 text-sm sm:text-base text-white/70 max-w-lg mx-auto leading-relaxed">
-            Mais de <strong className="text-white">100.000 conteúdos</strong>, lançamentos, produções asiáticas, terror, animes, doramas, séries e muito mais, <span className="whitespace-nowrap">com qualidade de até 4K.</span>
+          {/* TEXTINHO ABAIXO COM ALTO CONTRASTE, LEITURA AGRADÁVEL E DIAGRAMAÇÃO PREMIUM */}
+          <p className="mt-4 text-base sm:text-lg text-zinc-100 max-w-2xl mx-auto leading-relaxed font-medium drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            Mais de <strong className="text-white font-extrabold underline decoration-red-500/60 decoration-2 underline-offset-4">100.000 conteúdos</strong>, lançamentos, produções asiáticas, terror, animes, doramas, séries e muito mais, <span className="whitespace-nowrap font-semibold text-white">com qualidade de até 4K.</span>
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
+          {/* BOTÕES DE AÇÃO */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Cta>QUERO ASSINAR</Cta>
             <Link to="/instalar" className="btn-ghost">
               <Gift className="size-4 text-red-400" /> Teste grátis 3 dias
             </Link>
           </div>
 
-          <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-5 text-xs sm:text-sm text-white/60">
-            <span className="flex items-center gap-1.5"><Star className="size-3.5 fill-red-500 text-red-500" /> 4.9 de satisfação</span>
-            <span className="flex items-center gap-1.5"><ShieldCheck className="size-3.5 text-red-500" /> Garantia de 7 dias</span>
-            <span className="flex items-center gap-1.5"><Zap className="size-3.5 text-red-500" /> Ativação imediata</span>
+          {/* SELOS DE GARANTIA EM GLASS PILLS DE ALTA VISIBILIDADE */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs sm:text-sm font-bold text-white/90">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/60 px-4 py-2 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.5)] transition-transform hover:scale-105">
+              <Star className="size-4 fill-amber-400 text-amber-400 shrink-0" /> 4.9 de satisfação
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/60 px-4 py-2 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.5)] transition-transform hover:scale-105">
+              <ShieldCheck className="size-4 text-emerald-400 shrink-0" /> Garantia de 7 dias
+            </span>
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-black/60 px-4 py-2 backdrop-blur-md shadow-[0_4px_15px_rgba(0,0,0,0.5)] transition-transform hover:scale-105">
+              <Zap className="size-4 text-red-400 shrink-0" /> Ativação imediata
+            </span>
           </div>
 
           <div className="mt-7 flex justify-center gap-2">
