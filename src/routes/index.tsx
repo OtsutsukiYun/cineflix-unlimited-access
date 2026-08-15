@@ -370,9 +370,9 @@ function Index() {
       {/* FUNDO CINEMÁTICO — gradiente vermelho/preto limpo de alta legibilidade */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden [transform:translateZ(0)]">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-950/50 via-[#080808] to-[#030303]" />
-        <div className="animate-aurora-1 absolute -top-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[70vw] sm:h-[70vw] max-w-[800px] max-h-[800px] rounded-full bg-gradient-to-tr from-red-900/30 via-red-800/20 to-blue-950/15 blur-[110px]" />
-        <div className="animate-aurora-2 absolute top-[25%] -right-[15%] w-[90vw] h-[90vw] sm:w-[65vw] sm:h-[65vw] max-w-[750px] max-h-[750px] rounded-full bg-gradient-to-br from-red-900/25 via-red-950/20 to-blue-900/15 blur-[110px]" />
-        <div className="animate-aurora-3 absolute -bottom-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[80vw] sm:h-[80vw] max-w-[900px] max-h-[900px] rounded-full bg-gradient-to-t from-blue-950/30 to-red-950/20 blur-[130px]" />
+        <div className="animate-aurora-1 absolute -top-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[70vw] sm:h-[70vw] max-w-[800px] max-h-[800px] rounded-full bg-gradient-to-tr from-red-900/30 via-red-800/20 to-red-950/15 blur-[110px]" />
+        <div className="animate-aurora-2 absolute top-[25%] -right-[15%] w-[90vw] h-[90vw] sm:w-[65vw] sm:h-[65vw] max-w-[750px] max-h-[750px] rounded-full bg-gradient-to-br from-red-900/25 via-red-950/20 to-red-950/15 blur-[110px]" />
+        <div className="animate-aurora-3 absolute -bottom-[15%] -left-[10%] w-[100vw] h-[100vw] sm:w-[80vw] sm:h-[80vw] max-w-[900px] max-h-[900px] rounded-full bg-gradient-to-t from-red-950/30 to-red-950/20 blur-[130px]" />
       </div>
 
       {/* NAVBAR */}
@@ -381,7 +381,7 @@ function Index() {
         <header className="z-50">
           <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-4 sm:px-6 py-2.5 sm:py-3 border border-white/15 bg-black/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
             <SmoothLink href="#" className="flex items-center gap-2">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 to-blue-800 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+              <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-600 to-red-800 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)]">
                 <Play className="size-4 fill-current ml-0.5" />
               </span>
               <span className="font-display text-xl font-extrabold tracking-tight text-white">
@@ -799,8 +799,8 @@ function Index() {
               id: "trimestral",
               nome: "Plano Trimestral",
               icon: Sparkles,
-              iconColor: "text-blue-400",
-              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-blue-300",
+              iconColor: "text-amber-400",
+              titleGradient: "text-white font-black",
               precoAntigo: "R$149",
               preco: "R$99,99",
               periodo: "3 meses",
@@ -809,7 +809,7 @@ function Index() {
               destaque: false,
               selo: null as string | null,
               badge: "Economia 33%",
-              btnStyle: "bg-gradient-to-r from-blue-700 to-blue-600 hover:from-blue-600 hover:to-blue-500 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:scale-[1.02]",
+              btnStyle: "bg-stone-900/80 border border-white/20 hover:bg-red-600 hover:border-red-500 text-white font-black py-3.5 px-4 rounded-xl shadow-lg transition-all duration-300 hover:scale-[1.02]",
               btnText: "ASSINAR TRIMESTRAL",
               link: "#planos",
               features: [
