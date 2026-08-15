@@ -146,7 +146,7 @@ export const Route = createFileRoute("/")(({
       {
         name: "description",
         content:
-          "Todos os streamings reunidos: filmes recém-saídos do cinema, séries completas, esportes ao vivo e o maior acervo de terror por R$34,99/mês.",
+          "Todos os streamings reunidos: filmes recém-saídos do cinema, séries completas, animes, doramas, esportes ao vivo e o maior acervo de terror em 4K.",
       },
       { property: "og:title", content: "UniTV Pro — Filmes, Séries, Esportes e Terror em 4K" },
       {
@@ -449,7 +449,7 @@ function Index() {
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-white/70 max-w-lg mx-auto leading-relaxed">
-            Mais de <strong className="text-white">100.000 conteúdos</strong> (filmes, séries, animes, doramas, filmes e séries de terror, e esportes ao vivo) em 4K por apenas <strong className="text-red-400">R$34,99/mês</strong>.
+            Mais de <strong className="text-white">100.000 conteúdos</strong> em 4K — filmes, séries, animes, doramas, filmes e séries de terror, e esportes ao vivo.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
