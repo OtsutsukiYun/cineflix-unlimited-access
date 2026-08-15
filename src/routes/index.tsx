@@ -444,12 +444,12 @@ function Index() {
           </p>
 
           <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.12] text-white tracking-tight drop-shadow-xl">
-            O maior catálogo dos streamings{" "}
-            <span className="text-red-500">ao seu alcance.</span>
+            O maior acervo dos streamings e{" "}
+            <span className="text-red-500">filmes de terror.</span>
           </h1>
 
-          <p className="mt-3 text-sm sm:text-base text-white/70 max-w-md mx-auto leading-relaxed">
-            Mais de <strong className="text-white">100.000 conteúdos</strong> (filmes, séries, animes, doramas e esportes ao vivo) em 4K por apenas <strong className="text-red-400">R$34,99/mês</strong>.
+          <p className="mt-3 text-sm sm:text-base text-white/70 max-w-lg mx-auto leading-relaxed">
+            Mais de <strong className="text-white">100.000 conteúdos</strong> (filmes, séries, animes, doramas, filmes de terror e esportes ao vivo) em 4K por apenas <strong className="text-red-400">R$34,99/mês</strong>.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
