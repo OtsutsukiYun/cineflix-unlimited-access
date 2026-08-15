@@ -415,7 +415,7 @@ function Index() {
             <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
               <SmoothLink href="#catalogo" className="text-white/80 transition-colors hover:text-white">Catálogo</SmoothLink>
               <SmoothLink href="#planos" className="text-white/80 transition-colors hover:text-white">Planos</SmoothLink>
-              <SmoothLink href="#faq" className="text-white/80 transition-colors hover:text-white">FAQ</SmoothLink>
+              <SmoothLink href="#faq" className="text-white/80 transition-colors hover:text-white">Dúvidas</SmoothLink>
               <SmoothLink href="#suporte" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</SmoothLink>
             </nav>
 

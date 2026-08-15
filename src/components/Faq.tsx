@@ -80,13 +80,13 @@ export function Faq({ children }: { children?: React.ReactNode }) {
       <SmoothCardReveal delay={50}>
         <div className="text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-surface/60 backdrop-blur-md px-4 py-2 text-xs font-bold tracking-wider text-accent uppercase shadow-sm mb-4">
-            <HelpCircle className="size-3.5 text-accent" /> Central de Ajuda
+            <HelpCircle className="size-3.5 text-accent" /> Tire Suas Dúvidas
           </span>
           <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl tracking-tight text-white">
-            Perguntas <span className="text-hot">frequentes</span>
+            Dúvidas <span className="text-hot">frequentes</span>
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-xs sm:text-sm text-muted-foreground font-medium leading-relaxed">
-            Tire todas as suas dúvidas sobre o UniTV Pro.
+            Respostas diretas para as dúvidas mais comuns sobre o UniTV Pro.
           </p>
         </div>
       </SmoothCardReveal>

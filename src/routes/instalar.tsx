@@ -484,7 +484,7 @@ export function InstalarPage() {
               <Link to="/" className="text-white/80 transition-colors hover:text-white">Início</Link>
               <a href="/#catalogo" className="text-white/80 transition-colors hover:text-white">Catálogo</a>
               <a href="/#planos" className="text-white/80 transition-colors hover:text-white">Planos</a>
-              <a href="/#faq" className="text-white/80 transition-colors hover:text-white">FAQ</a>
+              <a href="/#faq" className="text-white/80 transition-colors hover:text-white">Dúvidas</a>
               <a href="/#suporte" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</a>
             </nav>
 
