@@ -387,7 +387,7 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
           </div>
           <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
             Abra o <strong className="text-white">ntDown</strong> e insira o código de download:
-            <CodeCopyBox code="96919" color="emerald" />
+            <CodeCopyBox code="94596" color="emerald" />
           </div>
         </li>
 
@@ -618,7 +618,7 @@ export function InstalarPage() {
 
               {/* MÉTODOS 1 E 2 NO PC TAMBÉM */}
               <DownloaderMethodCard methodNumber={1} subtitle="Método 1 via Downloader no emulador PC (Código 1089401)" />
-              <NtDownMethodCard methodNumber={2} subtitle="Método 2 via ntDown no emulador PC (Código 96919)" />
+              <NtDownMethodCard methodNumber={2} subtitle="Método 2 via ntDown no emulador PC (Código 94596)" />
             </div>
           )}
         </div>
