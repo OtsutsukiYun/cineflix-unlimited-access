@@ -522,7 +522,7 @@ function Index() {
           <Reveal>
             <div className="text-center mb-6">
               <span className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/30 px-3.5 py-1.5 text-xs font-bold tracking-wider text-red-400 uppercase mb-3">
-                <Film className="size-3.5" /> Destaques do Acervo
+                <Film className="size-3.5" /> Destaques do Catálogo
               </span>
               <h2 className="text-2xl font-extrabold sm:text-4xl text-white">
                 O que você quer assistir <span className="text-red-500">hoje?</span>
