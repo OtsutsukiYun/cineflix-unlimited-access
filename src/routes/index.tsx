@@ -524,17 +524,19 @@ function Index() {
               <h2 className="text-2xl font-extrabold sm:text-4xl text-white">
                 O que você quer assistir <span className="text-red-500">hoje?</span>
               </h2>
-              <p className="mt-2 text-xs sm:text-sm text-white/60 font-medium max-w-lg mx-auto transition-all">
-                {
+              <div className="mt-2 min-h-[2.5rem] sm:min-h-[2rem] flex items-center justify-center px-2">
+                <p className="text-xs sm:text-sm text-white/60 font-medium max-w-xl mx-auto text-center transition-opacity duration-200">
                   {
-                    "filmes": "Filmes, séries, doramas, animes e esportes ao vivo em um só aplicativo.",
-                    "terror-raro": "Descubra produções incríveis da Coreia, Japão, Tailândia e muito mais.",
-                    "series": "Descubra séries incríveis, sucessos imperdíveis e títulos que você não encontra nos streamings tradicionais.",
-                    "animes": "Animes populares com episódios semanais e dublagem em português.",
-                    "proximos": "Confira os novos filmes e produções de terror confirmados para estrear a partir de agosto de 2026.",
-                  }[activeTab] || "Filmes, séries, doramas, animes e esportes ao vivo em um só aplicativo."
-                }
-              </p>
+                    {
+                      "filmes": "Filmes recém-saídos do cinema, produções exclusivas e os maiores sucessos em até 4K.",
+                      "terror-raro": "Produções incríveis e exclusivas da Coreia, Japão, Tailândia e muito mais.",
+                      "series": "Séries imperdíveis e títulos que você não encontra nos streamings tradicionais.",
+                      "animes": "Animes em alta com simulcast semanal e dublagem em português.",
+                      "proximos": "Lançamentos inéditos de terror confirmados para estrear a partir de agosto de 2026.",
+                    }[activeTab] || "Filmes, séries, doramas, animes e esportes ao vivo em um só aplicativo."
+                  }
+                </p>
+              </div>
             </div>
           </Reveal>
 
