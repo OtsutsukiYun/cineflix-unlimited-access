@@ -456,7 +456,7 @@ function Index() {
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-white max-w-md mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
-            Mais de <strong className="text-white font-bold">100.000 conteúdos em até 4K</strong> para assistir na sua TV ou celular.
+            Mais de <strong className="text-white font-bold">100.000 conteúdos em até 4K</strong> para assistir na sua TV, celular ou tablet.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
