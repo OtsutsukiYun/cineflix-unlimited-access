@@ -461,7 +461,7 @@ function Index() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#080808] to-transparent" />
 
         <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-32 sm:pb-12">
-          <p className="mb-3 text-xs sm:text-sm font-extrabold tracking-wider text-red-400 uppercase">
+          <p className="mb-3 text-[10px] min-[380px]:text-[11px] sm:text-xs md:text-sm font-extrabold tracking-tight sm:tracking-wider text-red-400 uppercase whitespace-nowrap overflow-hidden text-ellipsis max-w-full px-1">
             🔥 Cansado de procurar um filme e nenhum streaming ter?
           </p>
 
