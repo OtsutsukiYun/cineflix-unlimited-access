@@ -509,11 +509,11 @@ function Index() {
         </div>
       </section>
 
-      {/* RECURSOS E DIFERENCIAIS — COM BANNERS VISUAIS DE CONTEÚDO (ESPORTES, FILMES, SÉRIES, INFANTIL) */}
+      {/* RECURSOS E DIFERENCIAIS — BANNERS ULTRA VISÍVEIS (HAALAND, SILO, DORAMAS, MBAPPÉ, INFANTIS, CINEMA) */}
       <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-12 sm:py-16">
         <SmoothCardReveal>
           <div className="text-center mb-10">
-            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/40 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3">
+            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/40 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3">
               <Sparkles className="size-3.5" /> Recursos Exclusivos
             </span>
             <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white">
@@ -522,35 +522,35 @@ function Index() {
           </div>
         </SmoothCardReveal>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
               icon: "📺",
               title: "TV ao Vivo em Alta",
               desc: "Centenas de canais HD e UHD: esportes, notícias, infantis, variedades e filmes — todos num só lugar.",
-              banner: "/f8snY0RVua2uFd7RtytcdpFCTMX.jpg", // Futebol / Esportes / Messi
-              badge: "Ao Vivo & Esportes",
+              banner: "/e5ayUiIzyQBKUpFenm8KuXdH4q8.jpg", // Haaland / Champions League / Esportes
+              badge: "Esportes & Ao Vivo",
             },
             {
               icon: "🎬",
               title: "Cinema e Séries",
               desc: "Acervo robusto para maratonar quando bater vontade. Tudo incluso na recarga, sem cobrança avulsa.",
-              banner: "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg", // Deadpool & Wolverine / Cinema
-              badge: "Filmes & Séries",
+              banner: "/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg", // Silo Apple TV+ / Séries Hit
+              badge: "Séries & Cinema",
             },
             {
               icon: "⏪",
               title: "Volte 7 Dias na Grade",
               desc: "Perdeu o jogo, novela ou programa? Use o Playback para retomar a programação dos últimos 7 dias.",
-              banner: "/577eXC8wFQT0eUrJcgznSiFPRmk.jpg", // House of the Dragon / Séries
-              badge: "Playback 7 Dias",
+              banner: "/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", // Queen of Tears / Doramas K-Drama
+              badge: "Playback & Doramas",
             },
             {
               icon: "📡",
               title: "Sinal P2P Estável",
               desc: "A rede peer-to-peer espalha o conteúdo de forma inteligente, mantendo a transmissão fluida sem travar.",
-              banner: "/eZ239CUp1d6OryZEBPnO2n87gMG.jpg", // Dune Part Two / P2P High Tech
-              badge: "Tecnologia P2P",
+              banner: "/s4tTSYDGauYbax0NbQOSN8o78WY.jpg", // Mbappé / Esportes P2P
+              badge: "Rede P2P Estável",
             },
             {
               icon: "🔒",
@@ -563,38 +563,43 @@ function Index() {
               icon: "📋",
               title: "Guia EPG Completo",
               desc: "O guia de programação mostra o que passa em cada canal, com horário, sinopse e ordem por categoria.",
-              banner: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", // Demon Slayer / EPG Guia
-              badge: "Guia de Programação",
+              banner: "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg", // Deadpool & Wolverine / Guia EPG
+              badge: "Guia EPG Completo",
             },
           ].map((f, i) => (
             <SmoothCardReveal key={f.title} delay={60 + i * 70}>
-              <div className="group relative overflow-hidden rounded-3xl border border-white/12 bg-black/65 p-6 sm:p-7 transition-all duration-500 hover:-translate-y-1.5 hover:border-red-500/50 hover:shadow-[0_15px_40px_rgba(220,38,38,0.25)] flex flex-col justify-between min-h-[220px]">
-                {/* BANNER DE FUNDO COM OVERLAY RED/DARK ADAPTADO À NOVA PALETA */}
-                <div className="absolute inset-0 z-0 overflow-hidden">
+              <div className="group relative overflow-hidden rounded-3xl border border-white/15 bg-[#0f0909] transition-all duration-500 hover:-translate-y-2 hover:border-red-500/50 hover:shadow-[0_20px_45px_rgba(220,38,38,0.3)] flex flex-col justify-between">
+                {/* CABEÇALHO DA IMAGEM ALTA DEF E 100% VISÍVEL */}
+                <div className="relative h-48 sm:h-52 w-full overflow-hidden">
                   <img
                     src={img(f.banner, "w780")}
-                    alt=""
-                    className="size-full object-cover opacity-30 group-hover:opacity-45 transition-all duration-700 ease-out group-hover:scale-110"
-                    style={{ filter: "brightness(0.65)" }}
+                    alt={f.title}
+                    className="size-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/85 to-black/60" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-red-950/35 via-transparent to-black/75" />
-                </div>
+                  {/* Gradiente suave na parte inferior da imagem para transição suave com o card */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f0909] via-transparent to-black/40" />
 
-                <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="flex size-12 items-center justify-center rounded-2xl bg-red-600/20 border border-red-500/35 text-2xl shadow-[0_0_15px_rgba(220,38,38,0.35)] backdrop-blur-md">
-                      {f.icon}
-                    </span>
-                    <span className="rounded-full bg-white/10 border border-white/15 px-3 py-1 text-[10px] font-extrabold tracking-wider text-white/85 uppercase backdrop-blur-md">
+                  {/* Badge no topo da imagem */}
+                  <div className="absolute top-3.5 right-3.5 z-10">
+                    <span className="rounded-full bg-black/80 border border-white/20 px-3 py-1 text-[10px] font-extrabold tracking-wider text-white uppercase backdrop-blur-md shadow-md">
                       {f.badge}
                     </span>
                   </div>
 
-                  <h3 className="font-extrabold text-white text-lg mb-2 group-hover:text-red-400 transition-colors">
+                  {/* Ícone no canto inferior da imagem */}
+                  <div className="absolute bottom-3 left-4 z-10">
+                    <span className="flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-red-700 border border-red-400/50 text-xl shadow-[0_0_20px_rgba(220,38,38,0.5)] text-white">
+                      {f.icon}
+                    </span>
+                  </div>
+                </div>
+
+                {/* CORPO DO TEXTO DO CARD */}
+                <div className="p-5 sm:p-6 bg-gradient-to-b from-[#0f0909] to-[#140b0b]">
+                  <h3 className="font-black text-white text-lg sm:text-xl mb-2 group-hover:text-red-400 transition-colors">
                     {f.title}
                   </h3>
-                  <p className="text-xs text-white/75 leading-relaxed font-medium">
+                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium">
                     {f.desc}
                   </p>
                 </div>
