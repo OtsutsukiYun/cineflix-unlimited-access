@@ -564,8 +564,8 @@ export function InstalarPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 px-6 py-3.5 text-xs sm:text-sm font-black text-white shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-[1.02] transition-all"
             >
-              <Smartphone className="size-4" />
-              Falar com Suporte (61) 98401-6006
+              <MessageCircle className="size-4" />
+              Falar com o Suporte Técnico
             </a>
             <a
               href="https://wa.me/5561982743140?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20instalar%20o%20UniTV%20Pro"
@@ -573,7 +573,7 @@ export function InstalarPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 rounded-xl bg-white/10 border border-white/20 px-6 py-3.5 text-xs sm:text-sm font-bold text-white hover:bg-white/20 transition-all"
             >
-              <Smartphone className="size-4 text-green-400" />
+              <MessageCircle className="size-4 text-green-400" />
               Atendimento Secundário
             </a>
           </div>
