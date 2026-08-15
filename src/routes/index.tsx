@@ -469,7 +469,7 @@ function Index() {
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-white/70 max-w-lg mx-auto leading-relaxed">
-            Mais de <strong className="text-white">100.000 conteúdos</strong> em até 4K — lançamentos do cinema, produções exclusivas, animes, doramas e esportes ao vivo.
+            Mais de <strong className="text-white">100.000 conteúdos</strong> em até 4K — lançamentos do cinema, títulos que você não encontra em nenhuma outra plataforma, animes, doramas e esportes ao vivo.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
@@ -646,8 +646,8 @@ function Index() {
             <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/40 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3">
               <Sparkles className="size-3.5" /> Variedade Imbatível
             </span>
-            <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white">
-              Todas as suas produções favoritas<br /><span className="text-red-500">em um só aplicativo</span>
+            <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white max-w-3xl mx-auto">
+              Todas as suas produções favoritas e <span className="text-red-500">conteúdos que você não encontra em nenhuma outra plataforma</span>
             </h2>
           </div>
         </SmoothCardReveal>
