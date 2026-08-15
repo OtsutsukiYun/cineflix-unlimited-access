@@ -432,21 +432,52 @@ export function InstalarPage() {
           </p>
         </div>
 
-        {/* CARD DE TESTE GRÁTIS 3 DIAS (SELO DE GARANTIA E INFORMAÇÃO LIMPA) */}
-        <div className="mb-8 rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950/60 via-black/90 to-emerald-950/40 p-6 sm:p-7 backdrop-blur-md text-center shadow-[0_0_35px_rgba(16,185,129,0.2)]">
-          <div className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 mb-3 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
-            <GiftIcon className="size-6 text-emerald-400" />
+        {/* CARD DE TESTE GRÁTIS 3 DIAS COM DESTAQUE VISUAL E BANNER DE CONTEÚDO */}
+        <div className="mb-8 overflow-hidden rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950/70 via-black/95 to-emerald-950/50 backdrop-blur-md shadow-[0_0_40px_rgba(16,185,129,0.25)] relative">
+          <div className="p-6 sm:p-8 text-center relative z-10">
+            <div className="mx-auto flex size-14 items-center justify-center rounded-2xl bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 mb-4 shadow-[0_0_20px_rgba(16,185,129,0.35)]">
+              <GiftIcon className="size-7 text-emerald-400" />
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">
+              🎁 3 Dias de Acesso Total Liberado
+            </h2>
+            <p className="text-xs sm:text-sm text-white/90 leading-relaxed max-w-lg mx-auto font-medium mb-6">
+              Assim que você instalar e abrir o aplicativo, seu teste de <strong className="text-emerald-300 font-black">3 dias grátis é ativado na hora</strong> na tela da TV ou celular! Não precisa informar cartão de crédito nem dados bancários.
+            </p>
+
+            {/* DESTAQUE VISUAL DE CONTEÚDO LIBERADO (POSTERS MINIATURAS) */}
+            <div className="rounded-2xl border border-white/10 bg-black/60 p-4 backdrop-blur-sm">
+              <p className="text-[11px] font-black uppercase tracking-widest text-emerald-400 mb-3">
+                🍿 O QUE VOCÊ VAI ASSISTIR ASSIM QUE INSTALAR:
+              </p>
+              <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
+                {[
+                  { t: "Deadpool 3", p: "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg", b: "Filme" },
+                  { t: "Duna 2", p: "/eZ239CUp1d6OryZEBPnO2n87gMG.jpg", b: "Filme" },
+                  { t: "Fallout", p: "/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg", b: "Série" },
+                  { t: "Shōgun", p: "/bwSmgmd90hCWwqOKQYTEraeOZhJ.jpg", b: "Série" },
+                  { t: "The Last of Us", p: "/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg", b: "Série" },
+                  { t: "Rainha das Lágrimas", p: "/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", b: "Dorama" },
+                  { t: "Demon Slayer", p: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", b: "Anime" },
+                  { t: "Esportes 4K", p: "/s4tTSYDGauYbax0NbQOSN8o78WY.jpg", b: "Futebol" },
+                ].map((item) => (
+                  <div key={item.t} className="group/poster relative aspect-[2/3] overflow-hidden rounded-xl border border-white/20 shadow-md">
+                    <img src={img(item.p, "w185")} alt={item.t} className="size-full object-cover transition-transform duration-300 group-hover/poster:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
+                    <span className="absolute bottom-1 inset-x-0 text-[8px] font-black text-center text-white truncate px-0.5">
+                      {item.t}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          <h2 className="text-xl sm:text-2xl font-black text-white mb-2">🎁 Sem cartão, sem dados bancários</h2>
-          <p className="text-xs sm:text-sm text-white/85 leading-relaxed max-w-lg mx-auto font-medium">
-            Basta baixar o aplicativo no seu aparelho Android e os <strong className="text-emerald-300 font-bold">3 dias de teste grátis iniciam na hora</strong>. Simples, rápido e 100% livre de riscos!
-          </p>
         </div>
 
         {/* NAVEGAÇÃO POR ABAS SELETORAS DE DISPOSITIVO (AMIGÁVEL E ORGANIZADO) */}
         <div className="mb-8">
           <div className="mb-3 text-center">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-white/60">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-white/70">
               Selecione onde deseja instalar:
             </span>
           </div>
@@ -543,6 +574,57 @@ export function InstalarPage() {
               <p className="text-xs text-white/75 leading-relaxed mt-1.5 font-medium">
                 Se o Android ou Play Protect avisar sobre <em>"aplicativo desconhecido"</em>, fique 100% tranquilo. Isso acontece exclusivamente porque o app é baixado fora da Play Store (via código APK direto). O aplicativo é totalmente seguro, oficial e livre de vírus.
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* MOSTRUÁRIO VISUAL DO CATÁLOGO COMPLETO LIBERADO */}
+        <div className="mt-10 rounded-3xl border border-white/15 bg-gradient-to-b from-white/5 via-black/80 to-black/95 p-6 sm:p-8 backdrop-blur-md text-center shadow-2xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/60 px-4 py-1.5 text-xs font-black tracking-wider text-red-300 uppercase mb-3">
+            <Sparkles className="size-3.5 text-red-400" /> TUDO INCLUSO NO TESTE E NA ASSINATURA
+          </span>
+          <h3 className="text-2xl sm:text-3xl font-black text-white mb-2">
+            +50.000 Conteúdos Prontos para Assistir
+          </h3>
+          <p className="text-xs sm:text-sm text-white/70 max-w-lg mx-auto mb-6 font-medium">
+            Assista a todos os filmes do cinema, séries completas, animes atualizados e canais de esportes sem travamentos.
+          </p>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
+            <div className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/20 p-4 flex flex-col justify-end shadow-lg">
+              <img src={img("/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg", "w500")} alt="Filmes" className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+              <div className="relative z-10">
+                <span className="text-[9px] font-black uppercase text-red-400 tracking-wider">🎬 +50.000 Filmes</span>
+                <h4 className="text-sm font-black text-white">Lançamentos 4K</h4>
+              </div>
+            </div>
+
+            <div className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/20 p-4 flex flex-col justify-end shadow-lg">
+              <img src={img("/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg", "w500")} alt="Séries" className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+              <div className="relative z-10">
+                <span className="text-[9px] font-black uppercase text-rose-400 tracking-wider">📺 +20.000 Séries</span>
+                <h4 className="text-sm font-black text-white">Séries Completas</h4>
+              </div>
+            </div>
+
+            <div className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/20 p-4 flex flex-col justify-end shadow-lg">
+              <img src={img("/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", "w500")} alt="Doramas" className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+              <div className="relative z-10">
+                <span className="text-[9px] font-black uppercase text-purple-400 tracking-wider">💖 +1.600 Doramas</span>
+                <h4 className="text-sm font-black text-white">Doramas &amp; K-Dramas</h4>
+              </div>
+            </div>
+
+            <div className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/20 p-4 flex flex-col justify-end shadow-lg">
+              <img src={img("/s4tTSYDGauYbax0NbQOSN8o78WY.jpg", "w500")} alt="Esportes" className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
+              <div className="relative z-10">
+                <span className="text-[9px] font-black uppercase text-emerald-400 tracking-wider">⚽ +500 Canais</span>
+                <h4 className="text-sm font-black text-white">Futebol &amp; UFC Ao Vivo</h4>
+              </div>
             </div>
           </div>
         </div>
