@@ -183,7 +183,7 @@ function CodeCopyBox({ code, color = "emerald" }: { code: string; color?: "orang
 
 function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart TV Android, TV Box, Mi Stick Xiaomi e FireTV Stick" }: { methodNumber?: number; subtitle?: string }) {
   return (
-    <div className="rounded-3xl border-2 border-orange-500/40 bg-gradient-to-b from-orange-950/30 via-black/80 to-black/90 p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+    <div className="rounded-3xl border-2 border-orange-500/50 bg-gradient-to-b from-orange-950/40 via-stone-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(249,115,22,0.15)]">
       <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
         <div className="flex items-center gap-3.5">
           <DownloaderAppIcon className="size-14 sm:size-16" />
@@ -234,7 +234,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
               href={DOWNLOADER_PLAYSTORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 flex items-center gap-4 rounded-2xl border border-orange-500/40 bg-orange-950/40 p-4 shadow-[0_0_20px_rgba(249,115,22,0.2)] transition-all duration-300 hover:border-orange-400/80 hover:bg-orange-950/60 hover:scale-[1.01] group/preview cursor-pointer"
+              className="mt-3 flex items-center gap-4 rounded-2xl border border-orange-500/40 bg-orange-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(249,115,22,0.2)] transition-all duration-300 hover:border-orange-400/80 hover:bg-orange-950/50 hover:scale-[1.01] group/preview cursor-pointer"
             >
               <DownloaderAppIcon className="size-14 sm:size-16" />
               <div>
@@ -268,7 +268,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
             Clique em <strong className="text-white font-black text-orange-300">"Go"</strong>, aguarde o download finalizar e selecione <strong className="text-white font-black">"Instalar"</strong>.
             
             {/* AVISO DE SEGURANÇA E PERMISSÕES DO ANDROID DIRETO NO PASSO DE INSTALAÇÃO */}
-            <div className="mt-3 rounded-2xl border border-amber-500/40 bg-amber-950/40 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-sm shadow-md">
+            <div className="mt-3 rounded-2xl border border-amber-500/40 bg-gradient-to-r from-amber-950/40 via-stone-900/60 to-black/70 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md shadow-md">
               <div className="flex items-start gap-2.5">
                 <ShieldAlert className="size-4 shrink-0 text-amber-400 mt-0.5" />
                 <div>
@@ -292,7 +292,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
 
 function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone Android e Tablet Android" }: { methodNumber?: number; subtitle?: string }) {
   return (
-    <div className="rounded-3xl border-2 border-emerald-500/40 bg-gradient-to-b from-emerald-950/30 via-black/80 to-black/90 p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+    <div className="rounded-3xl border-2 border-emerald-500/50 bg-gradient-to-b from-emerald-950/40 via-stone-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(16,185,129,0.15)]">
       <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
         <div className="flex items-center gap-3.5">
           <NtDownAppIcon className="size-14 sm:size-16" />
@@ -343,7 +343,7 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
               href={NTDOWN_PLAYSTORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 flex items-center gap-4 rounded-2xl border border-emerald-500/40 bg-emerald-950/40 p-4 shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-300 hover:border-emerald-400/80 hover:bg-emerald-950/60 hover:scale-[1.01] group/preview cursor-pointer"
+              className="mt-3 flex items-center gap-4 rounded-2xl border border-emerald-500/40 bg-emerald-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-300 hover:border-emerald-400/80 hover:bg-emerald-950/50 hover:scale-[1.01] group/preview cursor-pointer"
             >
               <NtDownAppIcon className="size-14 sm:size-16" />
               <div>
@@ -377,7 +377,7 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
             Selecione <strong className="text-white font-black text-emerald-300">"Instalar"</strong> para concluir a instalação no seu aparelho.
             
             {/* AVISO DE SEGURANÇA E PERMISSÕES DO ANDROID DIRETO NO PASSO DE INSTALAÇÃO */}
-            <div className="mt-3 rounded-2xl border border-amber-500/40 bg-amber-950/40 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-sm shadow-md">
+            <div className="mt-3 rounded-2xl border border-amber-500/40 bg-gradient-to-r from-amber-950/40 via-stone-900/60 to-black/70 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md shadow-md">
               <div className="flex items-start gap-2.5">
                 <ShieldAlert className="size-4 shrink-0 text-amber-400 mt-0.5" />
                 <div>
@@ -495,7 +495,7 @@ export function InstalarPage() {
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
       {/* PAREDE 3D SUAVE DE POSTERS DE TERROR NO FUNDO */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-25 [perspective:1200px]">
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-30 [perspective:1200px]">
         <div className="size-full flex flex-col justify-center gap-4 [transform-style:preserve-3d] [transform:rotateX(14deg)_rotateY(-10deg)_rotateZ(-2deg)_scale(1.2)] origin-center">
           {/* LINHA 1 (TOP) */}
           <div className="flex w-max animate-marquee-cinematic gap-4">
@@ -523,8 +523,8 @@ export function InstalarPage() {
           </div>
         </div>
       </div>
-      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#080808]/75 via-[#080808]/85 to-[#080808]/90" />
-      <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_10%,#080808_90%)]" />
+      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#080808]/50 via-[#080808]/70 to-[#080808]/85" />
+      <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,#080808_95%)]" />
 
       <div className="relative z-10 mx-auto w-[94%] max-w-3xl py-8 sm:py-14">
         {/* TOPO NAVEGAÇÃO E BARRAS CTA */}
@@ -625,7 +625,7 @@ export function InstalarPage() {
 
           {/* ABA 3: COMPUTADOR PC */}
           {activeTab === "pc" && (
-            <div className="rounded-3xl border-2 border-red-500/30 bg-gradient-to-b from-red-950/20 via-black/80 to-black/90 p-6 sm:p-8 backdrop-blur-md shadow-xl">
+            <div className="rounded-3xl border-2 border-red-500/40 bg-gradient-to-b from-red-950/40 via-stone-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(220,38,38,0.15)]">
               <div className="flex items-center gap-3.5 mb-4 pb-4 border-b border-white/10">
                 <div className="flex size-12 items-center justify-center rounded-2xl bg-red-500/20 border border-red-400/40 text-red-400">
                   <Monitor className="size-6" />
@@ -638,7 +638,7 @@ export function InstalarPage() {
               <p className="text-sm text-white/85 leading-relaxed mb-4">
                 Para assistir no Windows ou Mac, baixe um emulador de Android. Recomendamos o <strong className="text-red-300 font-bold">LDPlayer</strong> por ser extremamente leve, rápido e otimizado para transmissões ao vivo.
               </p>
-              <div className="rounded-2xl border border-amber-500/40 bg-amber-950/30 p-4 text-xs text-amber-200 leading-relaxed">
+              <div className="rounded-2xl border border-amber-500/40 bg-gradient-to-r from-amber-950/40 via-stone-900/60 to-black/70 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md">
                 💡 <strong>Dica de Desempenho:</strong> Evite o BlueStacks pois costuma congelar a transmissão de canais. No LDPlayer, basta abrir o app de download e utilizar os códigos de acesso acima!
               </div>
             </div>
@@ -646,7 +646,7 @@ export function InstalarPage() {
         </div>
 
         {/* AVISO DE PERMISSÕES E SEGURANÇA DO ANDROID (SEMPRE VISÍVEL) */}
-        <div className="mt-8 rounded-2xl border border-amber-500/40 bg-amber-950/30 p-5 text-left backdrop-blur-md shadow-lg">
+        <div className="mt-8 rounded-2xl border-2 border-amber-500/40 bg-gradient-to-b from-amber-950/40 via-stone-900/60 to-black/80 p-5 text-left backdrop-blur-xl shadow-lg">
           <div className="flex items-start gap-3.5">
             <ShieldAlert className="size-6 shrink-0 text-amber-400 mt-0.5" />
             <div>
@@ -664,7 +664,7 @@ export function InstalarPage() {
         </div>
 
         {/* BLOCO DE CONVERSÃO / ASSINATURA DE PLANOS (QUEM QUER COMPRAR DIRETO) */}
-        <div className="mt-10 rounded-3xl border border-red-500/50 bg-gradient-to-br from-red-950/50 via-black to-red-950/30 p-8 sm:p-10 text-center shadow-[0_0_50px_rgba(220,38,38,0.2)] relative overflow-hidden">
+        <div className="mt-10 rounded-3xl border-2 border-red-500/50 bg-gradient-to-br from-red-950/60 via-stone-900/70 to-black/85 p-8 sm:p-10 text-center shadow-[0_0_50px_rgba(220,38,38,0.25)] relative overflow-hidden backdrop-blur-xl">
           <div className="absolute top-0 right-0 size-40 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
           <span className="inline-flex items-center gap-1.5 rounded-full bg-red-500/20 border border-red-400/40 px-3.5 py-1 text-xs font-black text-red-300 uppercase tracking-wider mb-3">
             <Zap className="size-3.5 text-red-400" /> Recargas e Assinaturas
@@ -683,7 +683,7 @@ export function InstalarPage() {
         </div>
 
         {/* CTA ATENDIMENTO E AJUDA VIA WHATSAPP (SUPORTE TÉCNICO DIRETO) */}
-        <div className="mt-8 rounded-3xl border border-green-700/40 bg-gradient-to-b from-green-950/40 to-black/90 p-7 text-center backdrop-blur-md shadow-xl">
+        <div className="mt-8 rounded-3xl border-2 border-green-700/50 bg-gradient-to-b from-green-950/50 via-stone-900/70 to-black/85 p-7 text-center backdrop-blur-xl shadow-xl">
           <div className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-green-500/20 border border-green-400/40 text-green-400 mb-3 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
             <MessageCircle className="size-6 text-green-400" />
           </div>
