@@ -287,7 +287,7 @@ const CATALOG_TABS = [
       { title: "Cabo do Medo", poster: "/3ZLy3cfQa9prahoRq1teMmr5pvW.jpg", year: "2026", tag: "🔥 Estreia 2026" },
       { title: "Yellowjackets", poster: "/xRnGrn7Z7SC0KIBodocoU1QgDZF.jpg", year: "Série", tag: "Terror & Drama" },
       { title: "Channel Zero", poster: "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", year: "Série", tag: "Terror & Antologia" },
-      { title: "The Terror", poster: "/fUVn5mScv83FfwrRUUR694yA7bd.jpg", year: "Série", tag: "🔥 Terror & Mistério" },
+      { title: "The Terror: Devil in Silver", poster: "/bdblQNZ4rP8AVJPqvGi82woxZkg.jpg", year: "2026", tag: "🔥 3ª Temporada" },
     ],
   },
   {

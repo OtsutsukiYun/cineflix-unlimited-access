@@ -213,7 +213,7 @@ export const series: Title[] = [
   { title: "Origem (From)", poster: "/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg", year: "Série" },
   { title: "IT: Bem-Vindos a Derry", poster: "/gMTfrLvrDaD0zrhpLZ7zXIIpKfJ.jpg", year: "2025", tag: "Em alta" },
   { title: "Channel Zero", poster: "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", year: "Série" },
-  { title: "The Terror", poster: "/fUVn5mScv83FfwrRUUR694yA7bd.jpg", year: "Série" },
+  { title: "The Terror: Devil in Silver", poster: "/bdblQNZ4rP8AVJPqvGi82woxZkg.jpg", year: "2026", tag: "3ª Temporada" },
   { title: "A Maldição da Residência Hill", poster: "/mQQGdDgn4WpUL9PXssHecWkjfi1.jpg", year: "Série" },
   { title: "A Maldição da Mansão Bly", poster: "/V6Zy46oHLDSvL3ITh94NbL4OEo.jpg", year: "Série" },
   { title: "A Queda da Casa de Usher", poster: "/b5MzNAgs1baKi32ln3yQoaKIsgZ.jpg", year: "Série" },
