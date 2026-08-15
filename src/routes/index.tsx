@@ -611,7 +611,7 @@ function Index() {
       {/* CATEGORIAS DO CATÁLOGO DE CONTEÚDO */}
       <section id="categorias" className="relative z-10 mx-auto w-[94%] max-w-6xl py-12 sm:py-16">
         <SmoothCardReveal>
-          <div className="text-center mb-10">
+          <div className="text-center mb-4 sm:mb-5">
             <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/40 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3">
               <Sparkles className="size-3.5" /> Maior catálogo de filmes, séries e animes dos streamings
             </span>
