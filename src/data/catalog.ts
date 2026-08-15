@@ -122,9 +122,9 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
-  { title: "Michael", poster: "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", year: "2026", tag: "🔥 Biografia 2026", rating: "5.0" },
-  { title: "Socorro! (Send Help)", poster: "/zbJWVHOtj3ljBzWgL1P8pxP03Up.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
-  { title: "Dia D (Disclosure Day)", poster: "/AnJ8IQJI23hNpYXVNaythu061Ru.jpg", year: "2026", tag: "🔥 Sci-Fi 2026", rating: "4.9" },
+  { title: "Michael", poster: "/gXh43JopeO8BlA661BvlkR6yeqs.jpg", year: "2026", tag: "🔥 Biografia 2026", rating: "5.0" },
+  { title: "Socorro! (Send Help)", poster: "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
+  { title: "Dia D (Disclosure Day)", poster: "/pmff1wjKrgJi92PPr346lAifzlg.jpg", year: "2026", tag: "🔥 Sci-Fi 2026", rating: "4.9" },
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
   { title: "Evil Dead Burn", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.8" },
