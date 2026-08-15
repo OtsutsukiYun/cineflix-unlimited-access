@@ -258,7 +258,7 @@ const CATALOG_TABS = [
   },
   {
     id: "terror-raro",
-    label: "👻 Terror & Asiáticos Raros",
+    label: "👻 Terror Asiáticos Raros",
     items: [
       { title: "Pengabdi Setan 2: Communion", poster: "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", year: "2022", tag: "🔥 Indonésia" },
       { title: "O Lamento", poster: "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", year: "2016", tag: "🔥 Coreia" },
