@@ -132,6 +132,7 @@ export const terror: Title[] = [
   { title: "Cure (A Cura)", poster: "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", year: "1997", tag: "Clássico Japonês", rating: "4.9" },
   { title: "Another", poster: "/c8VVGuc3lnPXCBStcKQWrOlBCSA.jpg", year: "2012", tag: "Terror Japonês", rating: "4.8" },
   { title: "Whispering Corridors: Wishing Stairs", poster: "/hX1CdiS8hJJxY8TuAmMoExYXKfn.jpg", year: "2003", tag: "Terror Coreano", rating: "4.7" },
+  { title: "Eu Vi o Diabo", poster: "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", year: "2010", tag: "Terror Coreano", rating: "4.9" },
   { title: "O Lamento", poster: "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", year: "2016", tag: "Terror Coreano", rating: "4.9" },
   { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Terror Asiático", rating: "4.7" },
   { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Terror Coreano", rating: "4.6" },

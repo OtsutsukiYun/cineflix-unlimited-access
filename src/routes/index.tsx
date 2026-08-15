@@ -253,7 +253,7 @@ const CATALOG_TABS = [
       { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Exclusivo" },
       { title: "Another", poster: "/c8VVGuc3lnPXCBStcKQWrOlBCSA.jpg", year: "2012", tag: "Terror Japonês" },
       { title: "Whispering Corridors: Wishing Stairs", poster: "/hX1CdiS8hJJxY8TuAmMoExYXKfn.jpg", year: "2003", tag: "Terror Coreano" },
-      { title: "Gannibal", poster: "/AvjCytHUq6AN6rYOFQFATrWbGSR.jpg", year: "2022", tag: "Terror Japonês" },
+      { title: "Eu Vi o Diabo", poster: "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", year: "2010", tag: "Terror Coreano" },
     ],
   },
   {
@@ -263,6 +263,7 @@ const CATALOG_TABS = [
       { title: "O Segredo de Widow's Bay", poster: "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Revenant (O Diabo)", poster: "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", year: "2023", tag: "🔥 Dorama de Terror" },
       { title: "FROM (Origem)", poster: "/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg", year: "Série", tag: "🔥 Terror & Mistério" },
+      { title: "Gannibal", poster: "/AvjCytHUq6AN6rYOFQFATrWbGSR.jpg", year: "Série", tag: "🔥 Terror Japonês" },
       { title: "IT: Bem-Vindos a Derry", poster: "/gMTfrLvrDaD0zrhpLZ7zXIIpKfJ.jpg", year: "2025", tag: "HBO Max" },
       { title: "Silo", poster: "/cxB16Cc7xZuqWgNDo7QlqLMlinu.jpg", year: "Série", tag: "Apple TV+" },
       { title: "Cabo do Medo", poster: "/3ZLy3cfQa9prahoRq1teMmr5pvW.jpg", year: "2026", tag: "🔥 Estreia 2026" },
