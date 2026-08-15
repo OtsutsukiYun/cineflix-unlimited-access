@@ -131,7 +131,7 @@ export function Faq({ children }: { children?: React.ReactNode }) {
         </div>
       </SmoothCardReveal>
 
-      <div className="mt-8 grid items-start gap-3 md:grid-cols-2">
+      <div className="mt-3 sm:mt-4 grid items-start gap-3 md:grid-cols-2">
         <div className="space-y-3">
           {col1.map((p, i) => renderQuestion(p, i * 2))}
         </div>
