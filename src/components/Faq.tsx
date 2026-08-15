@@ -60,7 +60,7 @@ const PERGUNTAS = [
   },
   {
     q: "Onde recebo o meu código de acesso UniTV Pro?",
-    a: "O código de recarga ou conta e senha é enviado de maneira imediata após a confirmação de pagamento. Caso não receba, entre em contato pelo e-mail unitvpro.oficial2026@gmail.com ou pelo nosso WhatsApp.",
+    a: "O código de recarga ou conta e senha é enviado de maneira imediata após a confirmação de pagamento. Caso não receba, entre em contato com o nosso WhatsApp logo abaixo no site ou pelo e-mail unitvpro.oficial2026@gmail.com.",
   },
   {
     q: "Como utilizar o período de teste grátis?",

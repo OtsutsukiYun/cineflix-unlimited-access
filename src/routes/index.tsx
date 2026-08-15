@@ -1096,7 +1096,7 @@ function Index() {
       {/* SUPORTE / CONTATO */}
       <section className="relative z-10 border-t border-white/5 bg-black/30 py-5">
         <div className="mx-auto w-[94%] max-w-2xl text-center">
-          <p className="text-sm text-white/50 mb-4">Precisa de ajuda? Nosso suporte atende 7 dias por semana.</p>
+          <p className="text-sm text-white/50 mb-4">Precisa de ajuda? Fale com o nosso WhatsApp abaixo no site — atendimento 7 dias por semana.</p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
               href="https://wa.me/5561984016006"
