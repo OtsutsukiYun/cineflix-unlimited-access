@@ -74,6 +74,7 @@ const POSTERS_ROW_2000S = [
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link.ntdev.ntdw";
+const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
 
 const DOWNLOADER_ICON_URL = "https://play-lh.googleusercontent.com/_zuxP30plNbEBOOre6Q4rVwGQslOX6NCsefA8tPxJFsFt2XLO35yK2YVaPqmFl0oGVnO9FZCJ6b2lhrSk3a0KA=s180-rw";
 const NTDOWN_ICON_URL = "https://play-lh.googleusercontent.com/5Es3nwDA4eX2O2k1Y7y2cfYZETSVnVGNopu4X5U8_FpRzTdmaJS04-72QdVd88m7vo8hxYFyfpKUrhT373-H0Q=s180-rw";
@@ -110,6 +111,27 @@ function NtDownAppIcon({ className = "size-14 sm:size-16" }: { className?: strin
         alt="ntDown App Icon"
         className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
       />
+    </a>
+  );
+}
+
+function LdPlayerAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
+  return (
+    <a
+      href={LDPLAYER_WEBSITE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Baixar LDPlayer no site oficial"
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-yellow-400/70 bg-gradient-to-br from-stone-900 via-amber-950 to-stone-950 p-2 shadow-[0_8px_25px_rgba(234,179,8,0.45)] transition-all duration-300 hover:scale-105 hover:border-yellow-300 hover:shadow-[0_12px_35px_rgba(234,179,8,0.65)] ${className}`}
+    >
+      <div className="flex flex-col items-center justify-center text-center">
+        <span className="font-black tracking-tighter text-yellow-400 text-xl sm:text-2xl drop-shadow-[0_0_8px_rgba(234,179,8,0.8)] leading-none">
+          LD
+        </span>
+        <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-widest text-amber-200 mt-0.5">
+          PLAYER
+        </span>
+      </div>
     </a>
   );
 }
