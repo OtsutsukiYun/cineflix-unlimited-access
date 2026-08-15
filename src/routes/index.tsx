@@ -900,7 +900,7 @@ function Index() {
               cardStyle: "border border-emerald-500/35 bg-gradient-to-b from-emerald-950/25 via-zinc-950/90 to-black hover:border-emerald-500/60 shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_40px_rgba(16,185,129,0.35)]",
               btnStyle: "bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_25px_rgba(16,185,129,0.5)] hover:scale-[1.02] border border-emerald-400/50 transition-all",
               btnText: "ASSINAR TRIMESTRAL",
-              link: "#planos",
+              link: "https://pay.braip.co/ref?pl=pla1qqq6&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "1 Tela simultânea",
                 "90 dias sem mensalidades",
