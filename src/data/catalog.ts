@@ -63,7 +63,7 @@ export const heroSlides: HeroSlide[] = [
     year: "2006",
     genre: "Terror Coreano",
     tagline: "Cirurgias plásticas perfeitas que escondem uma maldição mortal.",
-    backdrop: "/vX51ZEwLuVrKpeX1o7Eo4KTroX6.jpg",
+    backdrop: "/u0LLp9McFSGdGP5LThy5KC4jujp.jpg",
     poster: "/meRMLuM4Hd29TPA3J0t15xVqRzY.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
