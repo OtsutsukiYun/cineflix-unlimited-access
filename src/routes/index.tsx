@@ -942,7 +942,7 @@ function Index() {
               telas: "1 tela",
               destaque: false,
               selo: null as string | null,
-              badge: "🔥 Economia 33%",
+              badge: "⚡ 90 Dias de Acesso",
               badgeStyle: "bg-emerald-500/20 text-emerald-300 border-emerald-500/40 shadow-[0_0_12px_rgba(16,185,129,0.3)]",
               cardStyle: "border border-emerald-500/35 bg-gradient-to-b from-emerald-950/25 via-zinc-950/90 to-black hover:border-emerald-500/60 shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_40px_rgba(16,185,129,0.35)]",
               btnStyle: "bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_25px_rgba(16,185,129,0.5)] hover:scale-[1.02] border border-emerald-400/50 transition-all",
