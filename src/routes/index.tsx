@@ -432,9 +432,9 @@ function Index() {
               <a href={WA_LINK} target="_blank" rel="noopener noreferrer" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</a>
             </nav>
 
-            <Link to="/instalar" className="btn-cta px-5 py-2.5 text-xs">
-              Teste Grátis
-            </Link>
+            <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs font-black">
+              QUERO ASSINAR
+            </SmoothLink>
           </div>
         </header>
       </div>
