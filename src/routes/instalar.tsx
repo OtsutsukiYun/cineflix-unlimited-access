@@ -15,6 +15,7 @@ import {
   Copy,
   Check,
   MessageCircle,
+  Gift,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 
@@ -447,7 +448,7 @@ function TrialBannerSlideshow() {
       {/* CONTEÚDO PRINCIPAL DO CARD */}
       <div className="relative z-30 p-6 sm:p-10 text-center flex flex-col items-center justify-center flex-1">
         <div className="inline-flex items-center gap-2 rounded-full bg-emerald-950/80 border border-emerald-400/60 px-4 py-1.5 text-xs font-black tracking-wider text-emerald-300 uppercase mb-3 shadow-[0_0_20px_rgba(16,185,129,0.5)] backdrop-blur-md">
-          <GiftIcon className="size-4 text-emerald-400" /> TESTE DE 3 DIAS LIBERADO 🎁
+          <Gift className="size-4 text-emerald-400" /> TESTE DE 3 DIAS LIBERADO 🎁
         </div>
 
         <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-3 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
