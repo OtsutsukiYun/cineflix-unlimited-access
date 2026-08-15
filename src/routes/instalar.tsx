@@ -402,8 +402,8 @@ function TrialBannerSlideshow() {
             }`}
           />
         ))}
-        {/* OVERLAY MAIS CLARO PARA AS IMAGENS DE FUNDO APARECEREM COM CLAREZA */}
-        <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/85 via-black/40 to-black/25" />
+        {/* OVERLAY COM CONTRASTE IDEAL - LIGEIRAMENTE MAIS ESCURO */}
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/90 via-black/55 to-black/40" />
       </div>
 
       {/* CONTEÚDO PRINCIPAL DO CARD */}
