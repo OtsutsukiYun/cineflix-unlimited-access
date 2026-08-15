@@ -79,17 +79,25 @@ const TESTE_GRATIS_POSTERS = [
 ];
 
 // ── INSTAGRAM POPUP ─────────────────────────────────────────────────────────
-function InstagramPopup() {
+function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => void }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (!sessionStorage.getItem("ig_popup_seen")) {
-      const t = setTimeout(() => setOpen(true), 900);
+      const t = setTimeout(() => {
+        setOpen(true);
+        onOpenChange?.(true);
+      }, 900);
       return () => clearTimeout(t);
     }
-  }, []);
+  }, [onOpenChange]);
 
-  function close() { sessionStorage.setItem("ig_popup_seen", "1"); setOpen(false); }
+  function close() {
+    sessionStorage.setItem("ig_popup_seen", "1");
+    setOpen(false);
+    onOpenChange?.(false);
+  }
+
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4" role="dialog" aria-modal="true">
@@ -289,6 +297,7 @@ function Index() {
   const [slide, setSlide] = useState(0);
   const [activeTab, setActiveTab] = useState("em-alta");
   const [isMobile, setIsMobile] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const catalogScrollRef = useRef<HTMLDivElement>(null);
 
   const scrollCatalog = (dir: "left" | "right") => {
@@ -309,15 +318,16 @@ function Index() {
   }, []);
 
   useEffect(() => {
+    if (isPopupOpen) return;
     const timer = setInterval(() => setSlide((prev) => (prev + 1) % heroSlides.length), 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [isPopupOpen]);
 
   const currentTabObj = CATALOG_TABS.find((t) => t.id === activeTab) || CATALOG_TABS[0];
 
   return (
     <div className="relative w-full overflow-x-hidden min-h-screen bg-[#080808] font-sans text-foreground antialiased selection:bg-red-600 selection:text-white">
-      <InstagramPopup />
+      <InstagramPopup onOpenChange={setIsPopupOpen} />
 
       {/* FUNDO CINEMÁTICO — gradiente vermelho/preto limpo de alta legibilidade */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden [transform:translateZ(0)]">
