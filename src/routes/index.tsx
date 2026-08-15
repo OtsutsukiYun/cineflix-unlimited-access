@@ -449,7 +449,7 @@ function Index() {
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-white/70 max-w-lg mx-auto leading-relaxed">
-            Mais de <strong className="text-white">100.000 conteúdos</strong> em 4K — lançamentos do cinema, produções exclusivas, animes, doramas e esportes ao vivo.
+            Mais de <strong className="text-white">100.000 conteúdos</strong> em até 4K — lançamentos do cinema, produções exclusivas, animes, doramas e esportes ao vivo.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
@@ -891,7 +891,7 @@ function Index() {
               link: "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "1 Tela simultânea",
-                "Acervo completo (+100.000 títulos em 4K)",
+                "Acervo completo (+100.000 títulos em até 4K)",
                 "Assista a milhares de filmes e séries que não estão em nenhum outro serviço de streaming no Brasil",
                 "Esportes & Canais Ao Vivo HD/4K",
                 "Smart TV Android, TV Box, Mi Stick, FireTV",
@@ -923,7 +923,7 @@ function Index() {
               features: [
                 "2 Telas simultâneas em 4K",
                 "365 dias de acesso sem mensalidades",
-                "Acervo completo (+100.000 títulos em 4K)",
+                "Acervo completo (+100.000 títulos em até 4K)",
                 "Assista a milhares de filmes e séries que não estão em nenhum outro serviço de streaming no Brasil",
                 "Todos os canais ao vivo HD/4K",
                 "Smart TV Android, TV Box, Mi Stick, FireTV",
@@ -954,7 +954,7 @@ function Index() {
               features: [
                 "1 Tela simultânea",
                 "90 dias sem mensalidades",
-                "Acervo completo (+100.000 títulos)",
+                "Acervo completo (+100.000 títulos em até 4K)",
                 "Assista a milhares de filmes e séries que não estão em nenhum outro serviço de streaming no Brasil",
                 "Esportes & Canais Ao Vivo HD/4K",
                 "Smart TV Android, TV Box, Mi Stick, FireTV",
