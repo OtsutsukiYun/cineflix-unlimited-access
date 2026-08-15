@@ -725,66 +725,73 @@ function Index() {
         </div>
       </section>
 
-      {/* RECURSOS EXCLUSIVOS DA PLATAFORMA (PAINEL COMPACTO UNIFICADO - SEM REPETIR CARDS) */}
+      {/* RECURSOS EXCLUSIVOS DA PLATAFORMA (EFEITO VIDRO LIQUIDO PREMIUM) */}
       <section className="relative z-10 mx-auto w-[94%] max-w-5xl py-8 sm:py-12">
         <SmoothCardReveal>
-          <div className="rounded-3xl border border-white/15 bg-gradient-to-b from-stone-900/80 via-[#0d0707]/90 to-black/95 p-6 sm:p-9 backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.8)]">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 pb-6 border-b border-white/10">
-              <div className="flex items-center gap-3">
-                <span className="flex size-10 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-rose-700 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+          <div className="glass rounded-3xl border border-white/20 bg-stone-900/40 p-6 sm:p-9 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.7)] relative overflow-hidden">
+            {/* LUZ DE FUNDO EM DEGRADÊ DE VIDRO */}
+            <div className="pointer-events-none absolute -top-24 -left-24 size-72 rounded-full bg-red-600/15 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-24 -right-24 size-72 rounded-full bg-amber-600/10 blur-3xl" />
+
+            <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 pb-6 border-b border-white/15">
+              <div className="flex items-center gap-3.5">
+                <span className="flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 via-rose-600 to-red-800 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)]">
                   <Zap className="size-5 fill-current" />
                 </span>
                 <div>
                   <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
                     Recursos Exclusivos da Plataforma
                   </h2>
-                  <p className="text-xs text-white/60 font-medium">
-                    Tecnologia e ferramentas para a melhor experiência
+                  <p className="text-xs text-white/70 font-medium">
+                    Tecnologia e ferramentas avançadas para sua melhor transmissão
                   </p>
                 </div>
               </div>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-red-500/15 border border-red-500/30 px-3.5 py-1 text-[11px] font-black text-red-300 uppercase tracking-wider shrink-0">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-stone-900/80 border border-white/20 px-4 py-1.5 text-[11px] font-extrabold text-red-300 uppercase tracking-wider shrink-0 backdrop-blur-md shadow-md">
                 ⭐ 100% Incluído no Acesso
               </span>
             </div>
 
-            {/* GRADE LIMPA EM 2 COLUNAS DE RECURSOS - SEM CAIXAS OU CARD INFESTATION */}
-            <div className="grid gap-6 sm:gap-8 sm:grid-cols-2">
+            {/* GRADE EM 2 COLUNAS COM EFEITO VIDRO TRANSLÚCIDO NO HOVER */}
+            <div className="relative z-10 grid gap-4 sm:gap-6 sm:grid-cols-2">
               {[
                 {
                   icon: RotateCcw,
-                  badgeColor: "text-red-400 bg-red-500/15 border-red-500/30",
+                  badgeColor: "text-red-400 bg-red-500/20 border-red-500/40 shadow-[0_0_15px_rgba(239,68,68,0.3)]",
                   title: "Volte 7 Dias na Grade",
                   desc: "Perdeu o jogo, novela ou programa? Use o Playback para retomar a programação dos últimos 7 dias.",
                 },
                 {
                   icon: Activity,
-                  badgeColor: "text-amber-400 bg-amber-500/15 border-amber-500/30",
+                  badgeColor: "text-amber-400 bg-amber-500/20 border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.3)]",
                   title: "Sinal P2P Estável",
                   desc: "A rede peer-to-peer espalha o conteúdo de forma inteligente, mantendo a transmissão fluida sem travar.",
                 },
                 {
                   icon: Lock,
-                  badgeColor: "text-emerald-400 bg-emerald-500/15 border-emerald-500/30",
+                  badgeColor: "text-emerald-400 bg-emerald-500/20 border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.3)]",
                   title: "Bloqueio Por Perfil",
                   desc: "Trave conteúdos adultos com senha para garantir que as crianças vejam só o que é apropriado.",
                 },
                 {
                   icon: ListOrdered,
-                  badgeColor: "text-blue-400 bg-blue-500/15 border-blue-500/30",
+                  badgeColor: "text-blue-400 bg-blue-500/20 border-blue-500/40 shadow-[0_0_15px_rgba(59,130,246,0.3)]",
                   title: "Programação Completa",
                   desc: "O guia EPG mostra o que passa em cada canal, com horário, sinopse e ordem por categoria.",
                 },
               ].map((item) => (
-                <div key={item.title} className="flex items-start gap-4 group/item">
-                  <div className={`mt-0.5 flex size-11 shrink-0 items-center justify-center rounded-2xl border ${item.badgeColor} backdrop-blur-md transition-transform duration-300 group-hover/item:scale-110 shadow-md`}>
+                <div
+                  key={item.title}
+                  className="group/item flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4.5 backdrop-blur-md transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08] hover:shadow-lg"
+                >
+                  <div className={`mt-0.5 flex size-11 shrink-0 items-center justify-center rounded-2xl border ${item.badgeColor} backdrop-blur-md transition-transform duration-300 group-hover/item:scale-110`}>
                     <item.icon className="size-5" />
                   </div>
                   <div>
                     <h3 className="text-base sm:text-lg font-black text-white mb-1 group-hover/item:text-red-400 transition-colors">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-white/75 leading-relaxed font-medium">
+                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium">
                       {item.desc}
                     </p>
                   </div>
