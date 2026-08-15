@@ -288,23 +288,26 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
           </div>
           <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
             Clique em <strong className="text-white font-black text-orange-300">"Go"</strong>, aguarde o download finalizar e selecione <strong className="text-white font-black">"Instalar"</strong>.
-            
-            {/* AVISO DE SEGURANÇA E PERMISSÕES DO ANDROID DIRETO NO PASSO DE INSTALAÇÃO */}
-            <div className="mt-3 rounded-2xl border border-amber-500/30 bg-black/60 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md shadow-md">
-              <div className="flex items-start gap-2.5">
-                <ShieldAlert className="size-4 shrink-0 text-amber-400 mt-0.5" />
-                <div>
-                  <strong className="text-amber-300 font-bold block mb-1">
-                    🔒 Permissões de Segurança do Android:
-                  </strong>
-                  Ao clicar em instalar, caso o seu aparelho solicite permissão para <em>"Fontes Desconhecidas"</em> ou <em>"Play Protect"</em>, confirme clicando em <strong className="text-white bg-amber-500/30 px-1.5 py-0.5 rounded font-black">"Permitir"</strong> ou <strong className="text-white bg-amber-500/30 px-1.5 py-0.5 rounded font-black">"Instalar mesmo assim"</strong>. O UniTV Pro é 100% seguro, oficial e sem riscos.
-                </div>
-              </div>
-            </div>
+          </div>
+        </li>
 
-            <p className="mt-3 text-xs text-white/80 font-medium">
-              Abra o UniTV Pro e seu teste grátis de 3 dias já estará ativado para uso!
-            </p>
+        {/* PASSO 4: PERMISSÃO DO ANDROID COMO ETAPA OFICIAL DO PASSO A PASSO */}
+        <li className="flex items-start gap-4">
+          <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-amber-500/20 border border-amber-400/50 text-amber-300 text-xs font-black shadow-[0_0_12px_rgba(245,158,11,0.3)]">
+            4
+          </div>
+          <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Caso o seu aparelho solicite autorização de <strong className="text-amber-300">"Fontes Desconhecidas"</strong> ou aviso do <strong className="text-amber-300">"Play Protect"</strong>, confirme clicando em <strong className="text-white bg-amber-500/30 border border-amber-400/50 px-2 py-0.5 rounded-md font-black">"Permitir"</strong> ou <strong className="text-white bg-amber-500/30 border border-amber-400/50 px-2 py-0.5 rounded-md font-black">"Instalar mesmo assim"</strong>.
+          </div>
+        </li>
+
+        {/* PASSO 5: ABRIR O APP */}
+        <li className="flex items-start gap-4">
+          <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-black">
+            5
+          </div>
+          <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Abra o <strong className="text-emerald-300 font-black">UniTV Pro</strong> e seu teste grátis de 3 dias já estará ativado para uso!
           </div>
         </li>
       </ol>
@@ -396,24 +399,27 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
             3
           </div>
           <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Selecione <strong className="text-white font-black text-emerald-300">"Instalar"</strong> para concluir a instalação no seu aparelho.
-            
-            {/* AVISO DE SEGURANÇA E PERMISSÕES DO ANDROID DIRETO NO PASSO DE INSTALAÇÃO */}
-            <div className="mt-3 rounded-2xl border border-amber-500/30 bg-black/60 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md shadow-md">
-              <div className="flex items-start gap-2.5">
-                <ShieldAlert className="size-4 shrink-0 text-amber-400 mt-0.5" />
-                <div>
-                  <strong className="text-amber-300 font-bold block mb-1">
-                    🔒 Permissões de Segurança do Android:
-                  </strong>
-                  Ao clicar em instalar, caso o aparelho solicite autorização de <em>"Fontes Desconhecidas"</em> ou aviso do <em>"Play Protect"</em>, confirme clicando em <strong className="text-white bg-amber-500/30 px-1.5 py-0.5 rounded font-black">"Permitir"</strong> ou <strong className="text-white bg-amber-500/30 px-1.5 py-0.5 rounded font-black">"Instalar mesmo assim"</strong>. O aplicativo é totalmente limpo e seguro!
-                </div>
-              </div>
-            </div>
+            Selecione <strong className="text-white font-black text-emerald-300">"Instalar"</strong> para iniciar a instalação no seu aparelho.
+          </div>
+        </li>
 
-            <p className="mt-3 text-xs text-white/80 font-medium">
-              Abra o UniTV Pro e aproveite a programação completa com 3 dias grátis!
-            </p>
+        {/* PASSO 4: PERMISSÃO DO ANDROID COMO ETAPA OFICIAL DO PASSO A PASSO */}
+        <li className="flex items-start gap-4">
+          <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-amber-500/20 border border-amber-400/50 text-amber-300 text-xs font-black shadow-[0_0_12px_rgba(245,158,11,0.3)]">
+            4
+          </div>
+          <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Caso apareça autorização de <strong className="text-amber-300">"Fontes Desconhecidas"</strong> ou aviso do <strong className="text-amber-300">"Play Protect"</strong>, confirme clicando em <strong className="text-white bg-amber-500/30 border border-amber-400/50 px-2 py-0.5 rounded-md font-black">"Permitir"</strong> ou <strong className="text-white bg-amber-500/30 border border-amber-400/50 px-2 py-0.5 rounded-md font-black">"Instalar mesmo assim"</strong>.
+          </div>
+        </li>
+
+        {/* PASSO 5: ABRIR O APP */}
+        <li className="flex items-start gap-4">
+          <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-black">
+            5
+          </div>
+          <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Abra o <strong className="text-emerald-300 font-black">UniTV Pro</strong> e aproveite a programação completa com 3 dias grátis!
           </div>
         </li>
       </ol>
