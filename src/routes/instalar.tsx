@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Download,
   Smartphone,
@@ -365,6 +365,90 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
   );
 }
 
+const TRIAL_HORROR_SLIDES = [
+  { title: "Alien: Romulus", year: "2024", genre: "Terror / Sci-Fi", backdrop: "/iYqSQaWDttQIQzsxg9xHyg0bttG.jpg" },
+  { title: "Terrifier 3", year: "2024", genre: "Terror Slashing", backdrop: "/bHfGHipZ32Oec94FDJO4mWs3aZ5.jpg" },
+  { title: "Longlegs", year: "2024", genre: "Terror Psicológico", backdrop: "/6ToGkmqn0KG0UGGGUAC1Ww0e5CM.jpg" },
+  { title: "Sorria 2 (Smile 2)", year: "2024", genre: "Terror / Suspense", backdrop: "/iR79ciqhtaZ9BE7YFA1HpCHQgX4.jpg" },
+  { title: "Um Lugar Silencioso: Dia Um", year: "2024", genre: "Terror / Sobrevivência", backdrop: "/6XjMwQTvnICBz6TguiDKkDVHvgS.jpg" },
+  { title: "Entrevista com o Demônio", year: "2024", genre: "Terror Sobrenatural", backdrop: "/umyOinNa6vqqnqoVc9QqzyaapUz.jpg" },
+  { title: "Abigail", year: "2024", genre: "Terror Vampiros", backdrop: "/2TPoqmatGDfBOiRxqNoL11ncCJe.jpg" },
+  { title: "Fale Comigo (Talk to Me)", year: "2023", genre: "Terror A24", backdrop: "/46Os8U0DEPmI0OnvKDxucl6SLVZ.jpg" },
+];
+
+function TrialBannerSlideshow() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % TRIAL_HORROR_SLIDES.length);
+    }, 3200);
+    return () => clearInterval(timer);
+  }, []);
+
+  const current = TRIAL_HORROR_SLIDES[index];
+
+  return (
+    <div className="mb-10 relative overflow-hidden rounded-3xl border-2 border-emerald-500/50 shadow-[0_0_50px_rgba(16,185,129,0.3)] bg-black min-h-[360px] sm:min-h-[380px] flex flex-col justify-between">
+      {/* IMAGENS GRANDES PASSANDO NO FUNDO */}
+      <div className="absolute inset-0 z-0">
+        {TRIAL_HORROR_SLIDES.map((slide, i) => (
+          <img
+            key={slide.backdrop}
+            src={img(slide.backdrop, "w1280")}
+            alt={slide.title}
+            className={`absolute inset-0 size-full object-cover transition-all duration-1000 ease-in-out ${
+              i === index ? "opacity-100 scale-100 z-10" : "opacity-0 scale-105 z-0"
+            }`}
+          />
+        ))}
+        {/* OVERLAYS DE CONTRASTE CINEMATOGRÁFICO PARA TEXTO SUPER NÍTIDO */}
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-black via-black/80 to-black/60" />
+        <div className="absolute inset-0 z-20 bg-emerald-950/20 mix-blend-overlay" />
+      </div>
+
+      {/* CONTEÚDO PRINCIPAL DO CARD */}
+      <div className="relative z-30 p-6 sm:p-10 text-center flex flex-col items-center justify-center flex-1">
+        <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/20 border border-emerald-400/60 px-4 py-1.5 text-xs font-black tracking-wider text-emerald-300 uppercase mb-4 shadow-[0_0_20px_rgba(16,185,129,0.4)] backdrop-blur-md">
+          <GiftIcon className="size-4 text-emerald-400" /> TESTE DE 3 DIAS LIBERADO 🎁
+        </div>
+
+        <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-3 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+          🎁 3 Dias de Acesso Total Liberado
+        </h2>
+
+        <p className="text-sm sm:text-base text-white/95 leading-relaxed max-w-xl mx-auto font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] mb-6">
+          Assim que você instalar e abrir o aplicativo, seu teste de <strong className="text-emerald-300 font-black">3 dias grátis é ativado na hora</strong> na sua Smart TV ou celular! Não precisa informar cartão de crédito nem dados bancários.
+        </p>
+
+        {/* INDICADOR CINEMATOGRÁFICO DO FILME EM EXIBIÇÃO NO FUNDO */}
+        <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl bg-black/80 border border-white/20 px-4 py-2 text-xs font-bold text-white shadow-xl backdrop-blur-md">
+          <span className="flex size-2 rounded-full bg-red-500 animate-pulse" />
+          <span className="text-white/60">Passando no fundo:</span>
+          <span className="text-emerald-300 font-black">{current.title}</span>
+          <span className="text-[10px] bg-white/15 px-2 py-0.5 rounded-md text-white/80 font-bold uppercase">
+            {current.genre} ({current.year})
+          </span>
+        </div>
+      </div>
+
+      {/* BARRA DE SLIDES (PONTOS DE NAVEGAÇÃO) */}
+      <div className="relative z-30 pb-4 flex justify-center items-center gap-2">
+        {TRIAL_HORROR_SLIDES.map((slide, i) => (
+          <button
+            key={slide.backdrop}
+            onClick={() => setIndex(i)}
+            title={slide.title}
+            className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
+              i === index ? "w-8 bg-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.8)]" : "w-2 bg-white/30 hover:bg-white/60"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function InstalarPage() {
   const [activeTab, setActiveTab] = useState<"tv" | "mobile" | "pc">("tv");
 
@@ -432,47 +516,8 @@ export function InstalarPage() {
           </p>
         </div>
 
-        {/* CARD DE TESTE GRÁTIS 3 DIAS COM DESTAQUE VISUAL E BANNER DE CONTEÚDO */}
-        <div className="mb-8 overflow-hidden rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950/70 via-black/95 to-emerald-950/50 backdrop-blur-md shadow-[0_0_40px_rgba(16,185,129,0.25)] relative">
-          <div className="p-6 sm:p-8 text-center relative z-10">
-            <div className="mx-auto flex size-14 items-center justify-center rounded-2xl bg-emerald-500/20 border border-emerald-400/50 text-emerald-300 mb-4 shadow-[0_0_20px_rgba(16,185,129,0.35)]">
-              <GiftIcon className="size-7 text-emerald-400" />
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">
-              🎁 3 Dias de Acesso Total Liberado
-            </h2>
-            <p className="text-xs sm:text-sm text-white/90 leading-relaxed max-w-lg mx-auto font-medium mb-6">
-              Assim que você instalar e abrir o aplicativo, seu teste de <strong className="text-emerald-300 font-black">3 dias grátis é ativado na hora</strong> na tela da TV ou celular! Não precisa informar cartão de crédito nem dados bancários.
-            </p>
-
-            {/* DESTAQUE VISUAL DE CONTEÚDO LIBERADO (POSTERS MINIATURAS) */}
-            <div className="rounded-2xl border border-white/10 bg-black/60 p-4 backdrop-blur-sm">
-              <p className="text-[11px] font-black uppercase tracking-widest text-emerald-400 mb-3">
-                🍿 O QUE VOCÊ VAI ASSISTIR ASSIM QUE INSTALAR:
-              </p>
-              <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
-                {[
-                  { t: "Deadpool 3", p: "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg", b: "Filme" },
-                  { t: "Duna 2", p: "/eZ239CUp1d6OryZEBPnO2n87gMG.jpg", b: "Filme" },
-                  { t: "Fallout", p: "/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg", b: "Série" },
-                  { t: "Shōgun", p: "/bwSmgmd90hCWwqOKQYTEraeOZhJ.jpg", b: "Série" },
-                  { t: "The Last of Us", p: "/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg", b: "Série" },
-                  { t: "Rainha das Lágrimas", p: "/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", b: "Dorama" },
-                  { t: "Demon Slayer", p: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", b: "Anime" },
-                  { t: "Esportes 4K", p: "/s4tTSYDGauYbax0NbQOSN8o78WY.jpg", b: "Futebol" },
-                ].map((item) => (
-                  <div key={item.t} className="group/poster relative aspect-[2/3] overflow-hidden rounded-xl border border-white/20 shadow-md">
-                    <img src={img(item.p, "w185")} alt={item.t} className="size-full object-cover transition-transform duration-300 group-hover/poster:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
-                    <span className="absolute bottom-1 inset-x-0 text-[8px] font-black text-center text-white truncate px-0.5">
-                      {item.t}
-                    </span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
+        {/* BANNER CINEMATOGRÁFICO DE TESTE GRÁTIS COM IMAGENS GRANDES DE FILMES DE TERROR NO FUNDO */}
+        <TrialBannerSlideshow />
 
         {/* NAVEGAÇÃO POR ABAS SELETORAS DE DISPOSITIVO (AMIGÁVEL E ORGANIZADO) */}
         <div className="mb-8">
