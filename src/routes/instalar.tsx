@@ -520,21 +520,7 @@ export function InstalarPage() {
       <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,#080808_95%)]" />
 
       <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 sm:pt-36 pb-12">
-        {/* TOPO NAVEGAÇÃO E BARRAS CTA */}
-        <div className="mb-6 flex items-center justify-between">
-          <Link
-            to="/"
-            className="inline-flex items-center gap-2 text-xs font-bold text-white transition-all bg-stone-900/70 border border-white/20 px-4 py-2 rounded-full backdrop-blur-md hover:bg-stone-800/90 hover:border-white/35 shadow-md"
-          >
-            <ArrowLeft className="size-3.5" /> Voltar ao Início
-          </Link>
-          <a
-            href="/#planos"
-            className="inline-flex items-center gap-1.5 text-xs font-extrabold text-white hover:text-white transition-colors bg-gradient-to-r from-red-600 to-red-700 border border-red-400/50 px-4 py-2 rounded-full shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:scale-105"
-          >
-            <Zap className="size-3.5" /> Ver Planos &amp; Assinar
-          </a>
-        </div>
+
 
         {/* HEADER DA PÁGINA LIMPO E DIRETO AO PONTO */}
         <div className="text-center mb-6">
