@@ -289,7 +289,11 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
             3
           </div>
           <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Clique em <strong className="text-white font-black text-orange-300">"Go"</strong>, aguarde o download finalizar e selecione <strong className="text-white font-black">"Instalar"</strong>.
+            Clique em <strong className="text-white font-black text-orange-300">"Go"</strong> e na página que carregar, toque no botão azul grande escrito{" "}
+            <span className="inline-flex items-center gap-1.5 rounded-lg bg-blue-600 border border-blue-400/60 px-2.5 py-0.5 text-xs sm:text-sm font-black text-white shadow-[0_0_15px_rgba(37,99,235,0.4)] my-1">
+              unitv_RS-NPWN
+            </span>{" "}
+            para iniciar o download do aplicativo. Quando finalizar, selecione <strong className="text-white font-black text-orange-300">"Instalar"</strong>.
           </div>
         </li>
 
