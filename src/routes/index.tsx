@@ -220,7 +220,7 @@ const CATALOG_TABS = [
       { title: "A Morte do Demônio: Em Chamas", poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg", year: "2026", tag: "🔥 Top 2" },
       { title: "Todo Mundo em Pânico 6", poster: "/y9yJd2qIIwhZcllHeKHsz5eRvNr.jpg", year: "2026", tag: "Comédia 2026" },
       { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Terror 2026" },
-      { title: "Devoradores de Estrelas", poster: "/yihdXomYb5kTeSivtFndMy5iDmf.jpg", year: "2026", tag: "🔥 Sci-Fi 2026" },
+      { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Terror 2026" },
       { title: "Silo", poster: "/cxB16Cc7xZuqWgNDo7QlqLMlinu.jpg", year: "Série", tag: "Em alta" },
     ],
   },
@@ -256,7 +256,6 @@ const CATALOG_TABS = [
       { title: "Todo Mundo em Pânico 6", poster: "/y9yJd2qIIwhZcllHeKHsz5eRvNr.jpg", year: "2026", tag: "Comédia 2026" },
       { title: "Toy Story 5", poster: "/sssrBhdvDcczgMQYDc8oCoSuFEJ.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Devoradores de Estrelas", poster: "/yihdXomYb5kTeSivtFndMy5iDmf.jpg", year: "2026", tag: "🔥 Sci-Fi 2026" },
-      { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Suspense" },
     ],
   },
   {
