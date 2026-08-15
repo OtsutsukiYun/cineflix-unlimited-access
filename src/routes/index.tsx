@@ -442,31 +442,31 @@ function Index() {
             }}
           />
         ))}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/30 to-[#080808]/45" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(8,8,8,0.75)_0%,rgba(8,8,8,0.45)_50%,rgba(8,8,8,0.85)_100%)]" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#080808] to-transparent" />
 
         <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-32 sm:pb-12 text-center">
-          <p className="mb-3 text-xs sm:text-sm font-extrabold text-red-400 uppercase tracking-wide">
+          <p className="mb-3 text-xs sm:text-sm font-extrabold text-red-400 uppercase tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
             🔥 Cansado de procurar um filme ou série e nenhum streaming ter?
           </p>
 
-          <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.14] text-white tracking-tight drop-shadow-lg max-w-2xl mx-auto">
+          <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.14] text-white tracking-tight drop-shadow-[0_4px_16px_rgba(0,0,0,1)] max-w-2xl mx-auto">
             Aqui você encontra o maior acervo de{" "}
             <span className="text-red-500">filmes, séries e grandes lançamentos.</span>
           </h1>
 
-          <p className="mt-3 text-sm sm:text-base text-white/80 max-w-md mx-auto leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-white max-w-md mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
             Mais de <strong className="text-white font-bold">100.000 conteúdos em até 4K</strong> para assistir na sua TV ou celular.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
             <Cta>QUERO ASSINAR</Cta>
-            <Link to="/instalar" className="btn-ghost">
+            <Link to="/instalar" className="btn-ghost shadow-lg">
               <Gift className="size-4 text-red-400" /> Teste grátis 3 dias
             </Link>
           </div>
 
-          <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-5 text-xs sm:text-sm text-white/70 font-medium">
+          <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-5 text-xs sm:text-sm text-white font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,1)]">
             <span className="flex items-center gap-1.5"><Star className="size-3.5 fill-red-500 text-red-500" /> 4.9 de satisfação</span>
             <span className="flex items-center gap-1.5"><ShieldCheck className="size-3.5 text-red-500" /> Garantia de 7 dias</span>
             <span className="flex items-center gap-1.5"><Zap className="size-3.5 text-red-500" /> Ativação imediata</span>
