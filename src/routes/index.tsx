@@ -641,6 +641,7 @@ function Index() {
               t: "Filmes incríveis",
               qtd: "+50.000 Filmes",
               d: "+50.000 filmes incluindo lançamentos recém-saídos do cinema e superproduções em até 4K.",
+              tabId: "filmes",
             },
             {
               icon: Tv,
@@ -659,6 +660,7 @@ function Index() {
               t: "Séries imperdíveis",
               qtd: "+30.000 Séries",
               d: "+30.000 séries das maiores plataformas mundiais com temporadas completas dubladas e legendadas.",
+              tabId: "series",
             },
             {
               icon: Heart,
@@ -674,9 +676,10 @@ function Index() {
               corGlow: "shadow-[0_0_30px_rgba(244,63,94,0.2)] hover:shadow-[0_0_50px_rgba(244,63,94,0.55)]",
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-pink-200",
-              t: "Doramas & K-Dramas",
+              t: "Doramas & Produções Asiáticas",
               qtd: "+2.500 Doramas & K-Dramas",
-              d: "+2.500 doramas como Rainha das Lágrimas, Pousando no Amor, A Lição e os maiores sucessos asiáticos dublados.",
+              d: "Descubra produções incríveis da Coreia, Japão, Tailândia e muito mais.",
+              tabId: "terror-raro",
             },
             {
               icon: Flame,
@@ -695,6 +698,7 @@ function Index() {
               t: "Animes atualizados",
               qtd: "Centenas de Animes",
               d: "Centenas de animes com simulcast semanal, dublagem em português e áudio original.",
+              tabId: "animes",
             },
             {
               icon: Baby,
@@ -713,6 +717,7 @@ function Index() {
               t: "Conteúdos infantis",
               qtd: "Milhares de Conteúdos Infantis",
               d: "Milhares de conteúdos infantis, filmes, desenhos e canais 24h para a diversão de toda a família.",
+              tabId: "filmes",
             },
             {
               icon: Trophy,
@@ -731,11 +736,18 @@ function Index() {
               t: "Esportes ao vivo",
               qtd: "Centenas de Canais de Esporte",
               d: "Centenas de canais de esportes ao vivo (Brasileirão, Champions League, Premier League, UFC e F1 sem travamentos).",
+              tabId: "series",
             },
           ].map((f, i) => (
             <SmoothCardReveal key={f.t} delay={100 + i * 80}>
               <div
-                className={`glass group relative h-full min-h-[220px] sm:min-h-[240px] overflow-hidden rounded-3xl p-6 sm:p-7 ${f.corBorda} ${f.corGlow} transition-all duration-500 hover:-translate-y-2 bg-zinc-950/60 backdrop-blur-2xl`}
+                onClick={() => {
+                  if (f.tabId) {
+                    setActiveTab(f.tabId);
+                    document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" });
+                  }
+                }}
+                className={`glass group relative h-full min-h-[220px] sm:min-h-[240px] overflow-hidden rounded-3xl p-6 sm:p-7 ${f.corBorda} ${f.corGlow} transition-all duration-500 hover:-translate-y-2 bg-zinc-950/60 backdrop-blur-2xl cursor-pointer`}
               >
                 {/* IMAGEM BANNER ILUSTRATIVA DE FUNDO COM SLIDESHOW */}
                 <SlideshowBanner banners={f.banners} alt={`Ilustração ${f.t}`} objectPosition={f.objectPosition} delayMs={i * 600} />
