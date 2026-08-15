@@ -234,7 +234,7 @@ export const series: Title[] = [
   { title: "The Walking Dead", poster: "/9lb02gTh4LLB17yAEXFd4C3R4JP.jpg", year: "Série" },
   { title: "Fear the Walking Dead", poster: "/lKIhibYjzmpr8KQTYNEcwtUne5S.jpg", year: "Série" },
   { title: "Wandinha", poster: "/7rxiQrZjrer0RB9qNA8rHYFo53R.jpg", year: "Série" },
-  { title: "Lucky (Com Anya Taylor-Joy)", poster: "/xsrkiXg8EuNNtbPtbmvCxg95gK7.jpg", year: "2026", tag: "🔥 Apple TV+ 2026" },
+  { title: "Lucky (Com Anya Taylor-Joy)", poster: "/xsrkiXg8EuNNtbPtbmvCxg95gK7.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "Motel Bates", poster: "/qlVLk28uGOwVHqxSZlakdRyGMdU.jpg", year: "Série" },
   { title: "Penny Dreadful", poster: "/hQSdrXBYTbLGHYDIseHkBOPXTgL.jpg", year: "Série" },
 ];
