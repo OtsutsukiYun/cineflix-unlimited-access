@@ -59,6 +59,17 @@ export const heroSlides: HeroSlide[] = [
     brightness: "brightness(1.0)",
   },
   {
+    title: "The Eyes",
+    year: "2026",
+    genre: "Terror / Suspense Coreano",
+    tagline: "Uma presença invisível se aproxima enquanto a visão desvanece.",
+    backdrop: "/75S750SAsppSiQc0S3EuSH0K77O.jpg",
+    poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+    brightness: "brightness(1.0)",
+  },
+  {
     title: "Undertone",
     year: "2026",
     genre: "Terror Psicológico",
