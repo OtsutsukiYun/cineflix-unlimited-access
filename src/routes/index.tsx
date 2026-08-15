@@ -446,13 +446,13 @@ function Index() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#080808] to-transparent" />
 
         <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-32 sm:pb-12 text-center">
-          <p className="mb-3 text-xs sm:text-sm font-extrabold text-red-400 uppercase tracking-wider">
-            🔥 MAIOR ACERVO DO BRASIL
+          <p className="mb-3 text-xs sm:text-sm font-extrabold text-red-400 uppercase tracking-wide">
+            🔥 Cansado de procurar um filme ou série e nenhum streaming ter?
           </p>
 
           <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.14] text-white tracking-tight drop-shadow-lg max-w-2xl mx-auto">
-            Filmes, séries e grandes lançamentos{" "}
-            <span className="text-red-500">em um só lugar.</span>
+            Aqui você encontra o maior acervo de{" "}
+            <span className="text-red-500">filmes, séries e grandes lançamentos.</span>
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-white/80 max-w-md mx-auto leading-relaxed">
