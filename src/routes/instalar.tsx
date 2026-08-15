@@ -55,25 +55,45 @@ const POSTERS_ROW_2000S = [
   "/tmclkEpjeo4Zu564gf3KrwIOuKw.jpg", // Paranormal Activity / Atividade Paranormal (2007)
 ];
 
+const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
+const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link.ntdev.ntdw";
+
+const DOWNLOADER_ICON_URL = "https://play-lh.googleusercontent.com/_zuxP30plNbEBOOre6Q4rVwGQslOX6NCsefA8tPxJFsFt2XLO35yK2YVaPqmFl0oGVnO9FZCJ6b2lhrSk3a0KA=s180-rw";
+const NTDOWN_ICON_URL = "https://play-lh.googleusercontent.com/5Es3nwDA4eX2O2k1Y7y2cfYZETSVnVGNopu4X5U8_FpRzTdmaJS04-72QdVd88m7vo8hxYFyfpKUrhT373-H0Q=s180-rw";
+
 function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
   return (
-    <div className={`relative flex shrink-0 items-center justify-center rounded-2xl bg-gradient-to-b from-[#f97316] via-[#ea580c] to-[#c2410c] p-2.5 shadow-[0_8px_25px_rgba(249,115,22,0.45)] border-2 border-orange-400/60 ${className}`}>
-      <div className="flex flex-col items-center justify-center text-white text-center">
-        <Download className="size-7 sm:size-8 stroke-[2.8] text-white drop-shadow-md" />
-        <span className="text-[8.5px] sm:text-[9.5px] font-black tracking-tighter uppercase mt-0.5 text-white leading-none">DOWNLOADER</span>
-      </div>
-    </div>
+    <a
+      href={DOWNLOADER_PLAYSTORE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Abrir Downloader na Google Play Store"
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-orange-400/60 shadow-[0_8px_25px_rgba(249,115,22,0.45)] transition-all duration-300 hover:scale-105 hover:border-orange-300 hover:shadow-[0_12px_35px_rgba(249,115,22,0.65)] ${className}`}
+    >
+      <img
+        src={DOWNLOADER_ICON_URL}
+        alt="Downloader App Icon"
+        className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
+      />
+    </a>
   );
 }
 
 function NtDownAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
   return (
-    <div className={`relative flex shrink-0 items-center justify-center rounded-2xl bg-gradient-to-b from-[#10b981] via-[#16a34a] to-[#15803d] p-2.5 shadow-[0_8px_25px_rgba(22,163,74,0.45)] border-2 border-emerald-300/60 ${className}`}>
-      <div className="flex flex-col items-center justify-center text-white text-center">
-        <Download className="size-7 sm:size-8 stroke-[2.8] text-white drop-shadow-md" />
-        <span className="text-[8.5px] sm:text-[9.5px] font-black tracking-tighter uppercase mt-0.5 text-white leading-none">NTDOWN</span>
-      </div>
-    </div>
+    <a
+      href={NTDOWN_PLAYSTORE_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Abrir ntDown na Google Play Store"
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-emerald-400/60 shadow-[0_8px_25px_rgba(16,185,129,0.45)] transition-all duration-300 hover:scale-105 hover:border-emerald-300 hover:shadow-[0_12px_35px_rgba(16,185,129,0.65)] ${className}`}
+    >
+      <img
+        src={NTDOWN_ICON_URL}
+        alt="ntDown App Icon"
+        className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
+      />
+    </a>
   );
 }
 
@@ -163,17 +183,29 @@ export function InstalarPage() {
               <div className="flex items-center gap-3.5">
                 <DownloaderAppIcon className="size-14 sm:size-16" />
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
-                    Método 1: Downloader
-                  </h2>
+                  <a
+                    href={DOWNLOADER_PLAYSTORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/title inline-flex items-center gap-2 hover:text-orange-300 transition-colors"
+                  >
+                    <h2 className="text-xl sm:text-2xl font-black text-white group-hover/title:text-orange-300 flex items-center gap-2">
+                      Método 1: Downloader <ExternalLink className="size-4 text-orange-400 opacity-80 group-hover/title:opacity-100" />
+                    </h2>
+                  </a>
                   <p className="text-xs text-orange-300/90 font-semibold mt-0.5">
                     Compatível com Smart TV, TV Box, Smartphone e Tablet Android
                   </p>
                 </div>
               </div>
-              <span className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-orange-500/15 border border-orange-500/30 px-3 py-1.5 text-[11px] font-extrabold text-orange-300 shrink-0">
-                🍊 App Downloader
-              </span>
+              <a
+                href={DOWNLOADER_PLAYSTORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-orange-500/15 border border-orange-500/30 px-3 py-1.5 text-[11px] font-extrabold text-orange-300 shrink-0 hover:bg-orange-500/25 transition-all"
+              >
+                🍊 App Downloader <ExternalLink className="size-3" />
+              </a>
             </div>
 
             <ol className="space-y-6">
@@ -184,7 +216,7 @@ export function InstalarPage() {
                 <div className="text-sm text-white/80 leading-relaxed pt-0.5 w-full">
                   Na sua TV ou TV Box, abra a loja de aplicativos e procure pelo aplicativo{" "}
                   <a
-                    href="https://play.google.com/store/apps/details?id=com.esaba.downloader&hl=pt_BR"
+                    href={DOWNLOADER_PLAYSTORE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-orange-400 font-black underline underline-offset-2 hover:text-orange-300 transition-colors"
@@ -192,17 +224,24 @@ export function InstalarPage() {
                     Downloader <ExternalLink className="size-3" />
                   </a>.
                   
-                  {/* PREVIEW DO ÍCONE */}
-                  <div className="mt-3 flex items-center gap-4 rounded-2xl border border-orange-500/40 bg-orange-950/40 p-4 shadow-[0_0_20px_rgba(249,115,22,0.2)]">
+                  {/* PREVIEW DO ÍCONE COM LINK PARA PLAY STORE */}
+                  <a
+                    href={DOWNLOADER_PLAYSTORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 flex items-center gap-4 rounded-2xl border border-orange-500/40 bg-orange-950/40 p-4 shadow-[0_0_20px_rgba(249,115,22,0.2)] transition-all duration-300 hover:border-orange-400/80 hover:bg-orange-950/60 hover:scale-[1.01] group/preview cursor-pointer"
+                  >
                     <DownloaderAppIcon className="size-14 sm:size-16" />
                     <div>
                       <span className="inline-block text-[10px] font-black uppercase tracking-wider text-orange-400 bg-orange-500/20 border border-orange-500/40 px-2 py-0.5 rounded-md mb-1">
-                        🎯 PROCURE POR ESTE ÍCONE
+                        🎯 TOQUE PARA ABRIR NA PLAY STORE
                       </span>
-                      <h4 className="font-black text-white text-sm sm:text-base">Downloader by AFTVnews</h4>
-                      <p className="text-xs text-white/60">Ícone Laranja oficial na loja da TV</p>
+                      <h4 className="font-black text-white text-sm sm:text-base group-hover/preview:text-orange-300 transition-colors flex items-center gap-1.5">
+                        Downloader by AFTVnews <ExternalLink className="size-3.5 text-orange-400" />
+                      </h4>
+                      <p className="text-xs text-white/70">Ícone oficial Laranja na Play Store / Loja da TV</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </li>
 
@@ -256,17 +295,29 @@ export function InstalarPage() {
               <div className="flex items-center gap-3.5">
                 <NtDownAppIcon className="size-14 sm:size-16" />
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-black text-white flex items-center gap-2">
-                    Método 2: NTDown
-                  </h2>
+                  <a
+                    href={NTDOWN_PLAYSTORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group/title inline-flex items-center gap-2 hover:text-emerald-300 transition-colors"
+                  >
+                    <h2 className="text-xl sm:text-2xl font-black text-white group-hover/title:text-emerald-300 flex items-center gap-2">
+                      Método 2: NTDown <ExternalLink className="size-4 text-emerald-400 opacity-80 group-hover/title:opacity-100" />
+                    </h2>
+                  </a>
                   <p className="text-xs text-emerald-300/90 font-semibold mt-0.5">
                     Compatível com Smart TV, TV Box, Smartphone e Tablet Android
                   </p>
                 </div>
               </div>
-              <span className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 px-3 py-1.5 text-[11px] font-extrabold text-emerald-300 shrink-0">
-                🟢 App ntDown
-              </span>
+              <a
+                href={NTDOWN_PLAYSTORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 px-3 py-1.5 text-[11px] font-extrabold text-emerald-300 shrink-0 hover:bg-emerald-500/25 transition-all"
+              >
+                🟢 App ntDown <ExternalLink className="size-3" />
+              </a>
             </div>
 
             <ol className="space-y-6">
@@ -277,7 +328,7 @@ export function InstalarPage() {
                 <div className="text-sm text-white/80 leading-relaxed pt-0.5 w-full">
                   Abra a <strong className="text-white">Play Store</strong> no seu celular ou tablet e procure pelo aplicativo{" "}
                   <a
-                    href="https://play.google.com/store/apps/details?id=link.ntdev.ntdw&hl=pt_BR"
+                    href={NTDOWN_PLAYSTORE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-emerald-400 font-black underline underline-offset-2 hover:text-emerald-300 transition-colors"
@@ -285,17 +336,24 @@ export function InstalarPage() {
                     ntDown <ExternalLink className="size-3" />
                   </a>.
                   
-                  {/* PREVIEW DO ÍCONE */}
-                  <div className="mt-3 flex items-center gap-4 rounded-2xl border border-emerald-500/40 bg-emerald-950/40 p-4 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                  {/* PREVIEW DO ÍCONE COM LINK PARA PLAY STORE */}
+                  <a
+                    href={NTDOWN_PLAYSTORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-3 flex items-center gap-4 rounded-2xl border border-emerald-500/40 bg-emerald-950/40 p-4 shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-300 hover:border-emerald-400/80 hover:bg-emerald-950/60 hover:scale-[1.01] group/preview cursor-pointer"
+                  >
                     <NtDownAppIcon className="size-14 sm:size-16" />
                     <div>
                       <span className="inline-block text-[10px] font-black uppercase tracking-wider text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2 py-0.5 rounded-md mb-1">
-                        🎯 PROCURE POR ESTE ÍCONE
+                        🎯 TOQUE PARA ABRIR NA PLAY STORE
                       </span>
-                      <h4 className="font-black text-white text-sm sm:text-base">ntDown</h4>
-                      <p className="text-xs text-white/60">Ícone Verde oficial na Play Store</p>
+                      <h4 className="font-black text-white text-sm sm:text-base group-hover/preview:text-emerald-300 transition-colors flex items-center gap-1.5">
+                        ntDown <ExternalLink className="size-3.5 text-emerald-400" />
+                      </h4>
+                      <p className="text-xs text-white/70">Ícone oficial Verde na Play Store</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </li>
 
