@@ -16,8 +16,10 @@ import {
   Check,
   MessageCircle,
   Gift,
+  Play,
 } from "lucide-react";
 import { img } from "@/data/catalog";
+import { PromoBanner } from "@/components/PromoBanner";
 import { WhatsAppIcon } from "@/components/icons";
 
 export const Route = createFileRoute("/instalar")({
@@ -456,6 +458,35 @@ export function InstalarPage() {
 
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
+      {/* NAVBAR FLUTUANTE ESTILO PÁGINA INICIAL */}
+      <div className="fixed inset-x-0 top-0 z-50 flex flex-col [transform:translateZ(0)]">
+        <div className="z-[60]"><PromoBanner /></div>
+        <header className="z-50">
+          <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-4 sm:px-6 py-2.5 sm:py-3 border border-white/15 bg-black/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+            <Link to="/" className="flex items-center gap-2">
+              <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-600 to-red-800 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+                <Play className="size-4 fill-current ml-0.5" />
+              </span>
+              <span className="font-display text-xl font-extrabold tracking-tight text-white">
+                UniTV<span className="text-red-500"> Pro</span>
+              </span>
+            </Link>
+
+            <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
+              <Link to="/" className="text-white/80 transition-colors hover:text-white">Início</Link>
+              <a href="/#catalogo" className="text-white/80 transition-colors hover:text-white">Catálogo</a>
+              <a href="/#planos" className="text-white/80 transition-colors hover:text-white">Planos</a>
+              <a href="/#faq" className="text-white/80 transition-colors hover:text-white">FAQ</a>
+              <a href="https://wa.me/5561984016006" target="_blank" rel="noopener noreferrer" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</a>
+            </nav>
+
+            <a href="/#planos" className="btn-cta px-5 py-2.5 text-xs font-black">
+              QUERO ASSINAR
+            </a>
+          </div>
+        </header>
+      </div>
+
       {/* PAREDE 3D SUAVE DE POSTERS DE TERROR NO FUNDO */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-30 [perspective:1200px]">
         <div className="size-full flex flex-col justify-center gap-4 [transform-style:preserve-3d] [transform:rotateX(14deg)_rotateY(-10deg)_rotateZ(-2deg)_scale(1.2)] origin-center">
@@ -488,7 +519,7 @@ export function InstalarPage() {
       <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#080808]/50 via-[#080808]/70 to-[#080808]/85" />
       <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,#080808_95%)]" />
 
-      <div className="relative z-10 mx-auto w-[94%] max-w-3xl py-8 sm:py-14">
+      <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 sm:pt-36 pb-12">
         {/* TOPO NAVEGAÇÃO E BARRAS CTA */}
         <div className="mb-6 flex items-center justify-between">
           <Link
