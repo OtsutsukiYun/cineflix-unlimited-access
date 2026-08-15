@@ -728,8 +728,8 @@ function Index() {
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-emerald-200",
               t: "Esportes ao vivo",
-              qtd: "+500 Canais de Esporte",
-              d: "+500 canais ao vivo (Brasileirão, Champions League, Premier League, UFC e F1 sem travamentos).",
+              qtd: "Centenas de Canais de Esporte",
+              d: "Centenas de canais de esportes ao vivo (Brasileirão, Champions League, Premier League, UFC e F1 sem travamentos).",
             },
           ].map((f, i) => (
             <SmoothCardReveal key={f.t} delay={100 + i * 80}>
