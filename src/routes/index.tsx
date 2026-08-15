@@ -467,7 +467,7 @@ function Index() {
 
           <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.12] text-white tracking-tight drop-shadow-xl">
             Aqui você encontra o maior acervo de{" "}
-            <span className="text-red-500">filmes, séries, lançamentos e esportes em 4K.</span>
+            <span className="text-red-500">filmes, séries e lançamentos em 4K.</span>
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-white/70 max-w-lg mx-auto leading-relaxed">
