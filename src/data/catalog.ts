@@ -63,11 +63,11 @@ export const heroSlides: HeroSlide[] = [
     year: "2024",
     genre: "Terror Hospitalar Indonésio",
     tagline: "O terror assombra os corredores de um hospital amaldiçoado.",
-    backdrop: "/6Demzar4h6vQNXfE4lWNC4SMuHY.jpg",
+    backdrop: "/1LSMstNHwJnJD7tpnb8gZcgGNQR.jpg",
     poster: "/5x9LrW0yvtt6S3XovIQHgXfYvLL.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
-    brightness: "brightness(1.1)",
+    brightness: "brightness(1.15)",
   },
   {
     title: "Undertone",
