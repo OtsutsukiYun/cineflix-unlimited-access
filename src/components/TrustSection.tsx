@@ -25,7 +25,7 @@ export function TrustSection() {
               ))}
             </div>
             <p className="mt-5 text-sm text-muted-foreground">
-              Parcelamento disponível no cartão e liberação imediata no PIX.
+              Pagamento 100% seguro no cartão de crédito e liberação imediata no PIX.
             </p>
           </div>
         </Reveal>

@@ -1003,7 +1003,7 @@ function Index() {
                   <QrCode className="size-3" /> Pix Instantâneo
                 </span>
                 <span className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-white/70">
-                  <CreditCard className="size-3" /> Cartão até 12x
+                  <CreditCard className="size-3" /> Cartão de Crédito
                 </span>
               </div>
             </div>

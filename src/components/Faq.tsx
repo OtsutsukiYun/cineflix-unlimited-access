@@ -72,7 +72,7 @@ const PERGUNTAS = [
   },
   {
     q: "Como fazer uma recarga UniTV Pro?",
-    a: "Cartão de Crédito: Você pode fazer sua recarga UniTV por cartão de crédito em até 12x através do nosso site. Selecione o plano desejado e conclua a compra. Você receberá seu código de recarga no e-mail e WhatsApp. Também aceitamos PIX com aprovação imediata.",
+    a: "Você pode fazer sua recarga UniTV Pro via Cartão de Crédito ou PIX diretamente em nosso site. Selecione o plano desejado e conclua a compra de forma rápida e segura. Seu código ou acesso será liberado com aprovação imediata.",
   },
 ];
 
