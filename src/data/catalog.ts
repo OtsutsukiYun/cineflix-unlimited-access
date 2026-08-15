@@ -48,6 +48,17 @@ export const heroSlides: HeroSlide[] = [
     brightness: "brightness(1.0)",
   },
   {
+    title: "Other Mommy (A Outra Mãe)",
+    year: "2026",
+    genre: "Terror / Sobrenatural",
+    tagline: "Uma entidade sinistra que se parece exatamente com a própria mãe.",
+    backdrop: "/wpx3J1ZuIZgWc9rzdfcj7fDru58.jpg",
+    poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+    brightness: "brightness(1.0)",
+  },
+  {
     title: "Undertone",
     year: "2026",
     genre: "Terror Psicológico",
