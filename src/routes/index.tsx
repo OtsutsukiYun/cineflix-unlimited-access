@@ -560,8 +560,8 @@ function Index() {
               bgOverlay: "bg-gradient-to-t from-[#0d0202] via-[#0d0202]/75 to-[#0d0202]/20",
               titleHover: "group-hover:text-red-300",
               t: "Filmes incríveis",
-              qtd: "+45.000 Filmes",
-              d: "+45.000 filmes incluindo lançamentos recém-saídos do cinema e superproduções em até 4K.",
+              qtd: "+50.000 Filmes",
+              d: "+50.000 filmes incluindo lançamentos recém-saídos do cinema e superproduções em até 4K.",
             },
             {
               icon: Tv,
