@@ -146,7 +146,7 @@ export const Route = createFileRoute("/")(({
       {
         name: "description",
         content:
-          "Todos os streamings em um só lugar: filmes recém-saídos do cinema, séries completas, esportes ao vivo e o maior acervo de terror por R$34,99/mês.",
+          "Todos os streamings reunidos: filmes recém-saídos do cinema, séries completas, esportes ao vivo e o maior acervo de terror por R$34,99/mês.",
       },
       { property: "og:title", content: "UniTV Pro — Filmes, Séries, Esportes e Terror em 4K" },
       {
@@ -440,12 +440,12 @@ function Index() {
 
         <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-32 sm:pb-12">
           <p className="mb-3 text-xs font-extrabold tracking-[0.25em] text-red-400 uppercase">
-            🔥 Todos os Streamings em Um Só Lugar
+            🔥 Todos os Streamings Reunidos
           </p>
 
           <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.12] text-white tracking-tight drop-shadow-xl">
             O maior catálogo dos streamings{" "}
-            <span className="text-red-500">em um só lugar.</span>
+            <span className="text-red-500">ao seu alcance.</span>
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-white/70 max-w-md mx-auto leading-relaxed">
@@ -617,7 +617,7 @@ function Index() {
               <Sparkles className="size-3.5" /> Variedade Imbatível
             </span>
             <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white">
-              Maior catálogo de filmes, séries e animes<br /><span className="text-red-500">em um só lugar</span>
+              Todas as suas produções favoritas<br /><span className="text-red-500">em um só aplicativo</span>
             </h2>
           </div>
         </SmoothCardReveal>
