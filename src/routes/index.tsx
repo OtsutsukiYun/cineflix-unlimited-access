@@ -290,7 +290,7 @@ function SlideshowBanner({ banners, alt, objectPosition = "object-cover" }: { ba
   }, [banners]);
 
   return (
-    <div className="absolute inset-0 overflow-hidden bg-[#0c0505]">
+    <div className="absolute inset-0 overflow-hidden bg-[#0a0404]">
       {banners.map((banner, i) => {
         const isActive = i === index;
         const isPrev = i === prevIndex;
@@ -301,9 +301,9 @@ function SlideshowBanner({ banners, alt, objectPosition = "object-cover" }: { ba
             alt={alt}
             className={`absolute inset-0 size-full ${objectPosition} transition-all duration-1000 ease-in-out group-hover:scale-110 ${
               isActive
-                ? "opacity-60 z-10"
+                ? "opacity-40 z-10 group-hover:opacity-50"
                 : isPrev
-                ? "opacity-60 z-0"
+                ? "opacity-40 z-0 group-hover:opacity-50"
                 : "opacity-0 -z-10 pointer-events-none"
             }`}
           />
@@ -672,8 +672,9 @@ function Index() {
               >
                 {/* IMAGEM BANNER ILUSTRATIVA DE FUNDO COM SLIDESHOW */}
                 <SlideshowBanner banners={f.banners} alt={`Ilustração ${f.t}`} objectPosition={f.objectPosition} />
-                {/* SOBREPOSIÇÃO DE GRADIENTE ESCURO LÍMPIDO */}
-                <div className={`absolute inset-0 ${f.bgOverlay} transition-opacity duration-500 group-hover:opacity-85`} />
+                {/* SOBREPOSIÇÃO DE GRADIENTE ESCURO PROFUNDO PARA CONTRASTE PERFEITO */}
+                <div className={`absolute inset-0 ${f.bgOverlay} opacity-90 transition-opacity duration-500 group-hover:opacity-95`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#080303] via-[#080303]/75 to-transparent pointer-events-none" />
 
                 <div className="relative z-10 flex flex-col justify-between h-full">
                   {/* ÍCONE RELUZENTE E BADGE DE QUANTIDADE */}
@@ -686,14 +687,14 @@ function Index() {
                     </div>
 
                     {/* BADGE DE QUANTIDADE EM DESTAQUE */}
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-black/80 backdrop-blur-md px-3.5 py-1 text-xs font-black text-white shadow-[0_4px_15px_rgba(0,0,0,0.7)]">
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-black/90 backdrop-blur-md px-3.5 py-1 text-xs font-black text-white shadow-[0_4px_15px_rgba(0,0,0,0.8)]">
                       {f.qtd}
                     </span>
                   </div>
 
                   <div>
-                    <h3 className={`mb-2 text-xl font-black text-white tracking-tight transition-colors duration-300 ${f.titleHover}`}>{f.t}</h3>
-                    <p className="text-xs sm:text-sm leading-relaxed text-white/80 font-medium drop-shadow-md">
+                    <h3 className={`mb-2 text-xl font-black text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] transition-colors duration-300 ${f.titleHover}`}>{f.t}</h3>
+                    <p className="text-xs sm:text-sm leading-relaxed text-white/95 font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]">
                       {f.d}
                     </p>
                   </div>
