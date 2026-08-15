@@ -589,7 +589,7 @@ function Index() {
               glow: "shadow-[0_0_22px_rgba(239,68,68,0.85)] border-red-400/80",
               corBorda: "border border-red-500/40 hover:border-red-400",
               corGlow: "shadow-[0_0_30px_rgba(239,68,68,0.2)] hover:shadow-[0_0_50px_rgba(239,68,68,0.55)]",
-              bgOverlay: "bg-gradient-to-t from-[#0d0202] via-[#0d0202]/75 to-[#0d0202]/20",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-red-300",
               t: "Filmes incríveis",
               qtd: "+50.000 Filmes",
@@ -607,7 +607,7 @@ function Index() {
               glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-400/80",
               corBorda: "border border-rose-500/40 hover:border-rose-300",
               corGlow: "shadow-[0_0_30px_rgba(225,29,72,0.2)] hover:shadow-[0_0_50px_rgba(225,29,72,0.55)]",
-              bgOverlay: "bg-gradient-to-t from-[#0e0204] via-[#0e0204]/75 to-[#0e0204]/20",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-rose-200",
               t: "Séries imperdíveis",
               qtd: "+20.000 Séries",
@@ -625,7 +625,7 @@ function Index() {
               glow: "shadow-[0_0_22px_rgba(244,63,94,0.85)] border-pink-300/80",
               corBorda: "border border-pink-500/40 hover:border-pink-300",
               corGlow: "shadow-[0_0_30px_rgba(244,63,94,0.2)] hover:shadow-[0_0_50px_rgba(244,63,94,0.55)]",
-              bgOverlay: "bg-gradient-to-t from-[#14020a] via-[#14020a]/75 to-[#14020a]/20",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-pink-200",
               t: "Doramas & K-Dramas",
               qtd: "+1.600 Doramas",
@@ -643,7 +643,7 @@ function Index() {
               glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-amber-300/80",
               corBorda: "border border-amber-500/40 hover:border-amber-300",
               corGlow: "shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:shadow-[0_0_50px_rgba(245,158,11,0.55)]",
-              bgOverlay: "bg-gradient-to-t from-[#0e0502] via-[#0e0502]/75 to-[#0e0502]/20",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-amber-200",
               t: "Animes atualizados",
               qtd: "Centenas de Animes",
@@ -661,7 +661,7 @@ function Index() {
               glow: "shadow-[0_0_22px_rgba(14,165,233,0.85)] border-sky-300/80",
               corBorda: "border border-sky-500/40 hover:border-sky-300",
               corGlow: "shadow-[0_0_30px_rgba(14,165,233,0.2)] hover:shadow-[0_0_50px_rgba(14,165,233,0.55)]",
-              bgOverlay: "bg-gradient-to-t from-[#020814] via-[#020814]/75 to-[#020814]/20",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-sky-200",
               t: "Canais infantis",
               qtd: "Dezenas de Canais Infantis",
@@ -679,7 +679,7 @@ function Index() {
               glow: "shadow-[0_0_22px_rgba(16,185,129,0.85)] border-emerald-300/80",
               corBorda: "border border-emerald-500/40 hover:border-emerald-300",
               corGlow: "shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_50px_rgba(16,185,129,0.55)]",
-              bgOverlay: "bg-gradient-to-t from-[#02140a] via-[#02140a]/75 to-[#02140a]/20",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-emerald-200",
               t: "Esportes ao vivo",
               qtd: "+500 Canais de Esporte",
@@ -688,13 +688,13 @@ function Index() {
           ].map((f, i) => (
             <SmoothCardReveal key={f.t} delay={100 + i * 80}>
               <div
-                className={`group relative h-full min-h-[220px] sm:min-h-[240px] overflow-hidden rounded-3xl p-6 sm:p-7 ${f.corBorda} ${f.corGlow} transition-all duration-500 hover:-translate-y-2 bg-[#0c0505]`}
+                className={`glass group relative h-full min-h-[220px] sm:min-h-[240px] overflow-hidden rounded-3xl p-6 sm:p-7 ${f.corBorda} ${f.corGlow} transition-all duration-500 hover:-translate-y-2 bg-zinc-950/60 backdrop-blur-2xl`}
               >
                 {/* IMAGEM BANNER ILUSTRATIVA DE FUNDO COM SLIDESHOW */}
                 <SlideshowBanner banners={f.banners} alt={`Ilustração ${f.t}`} objectPosition={f.objectPosition} delayMs={i * 600} />
                 {/* SOBREPOSIÇÃO DE GRADIENTE ESCURO PROFUNDO EM Z-20 PARA CONTRASTE PERFEITO SEM VAZAR IMAGEM DO FUNDO */}
                 <div className={`absolute inset-0 z-20 ${f.bgOverlay} opacity-85 transition-opacity duration-500 group-hover:opacity-90 pointer-events-none`} />
-                <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#090404] via-[#090404]/80 to-black/30 pointer-events-none" />
+                <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/85 via-black/45 to-transparent pointer-events-none" />
 
                 <div className="relative z-30 flex flex-col justify-between h-full">
                   {/* ÍCONE RELUZENTE E BADGE DE QUANTIDADE */}
@@ -709,8 +709,8 @@ function Index() {
                       </div>
                     </div>
 
-                    {/* BADGE DE QUANTIDADE EM DESTAQUE */}
-                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-black/90 backdrop-blur-md px-3.5 py-1 text-xs font-black text-white shadow-[0_4px_15px_rgba(0,0,0,0.8)]">
+                    {/* BADGE DE QUANTIDADE EM ESTILO VIDRO LIQUIDO (GLASSMORPHISM) */}
+                    <span className="glass inline-flex items-center gap-1.5 rounded-full border border-white/35 bg-white/10 backdrop-blur-xl px-3.5 py-1 text-xs font-black text-white shadow-[0_4px_20px_rgba(0,0,0,0.6)] hover:bg-white/20 transition-all">
                       {f.qtd}
                     </span>
                   </div>
