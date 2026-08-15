@@ -400,8 +400,8 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
 }
 
 const TRIAL_HORROR_SLIDES = [
-  { title: "Noroi: A Maldição", year: "2005", genre: "Terror J-Horror / Found Footage", backdrop: "/9gF8o7nNCWtzYiiAkvPNGw4yxsg.jpg" },
-  { title: "Exit 8 (Saída 8)", year: "2025", genre: "Terror / Mistério Japonês", backdrop: "/f5csnjqQj5qdqc0EZchon94hXZ6.jpg" },
+  { title: "Exit 8 (Saída 8)", year: "2025", genre: "Terror / Mistério Japonês", backdrop: "/3cVrg7tzSf5AgEecYWDOSAzXAeX.jpg" },
+  { title: "Evil Dead: A Ascensão", year: "2023", genre: "Terror / Gore", backdrop: "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg" },
   { title: "Invocação do Mal", year: "2013", genre: "Terror Sobrenatural", backdrop: "/ecKQlAEG95k62SMGhvX83oEqANK.jpg" },
   { title: "Hereditário", year: "2018", genre: "Terror Psicológico", backdrop: "/gJbTXKNTL6O7r7PzF6ZRkJGBlPp.jpg" },
   { title: "Ringu: O Chamado", year: "1998", genre: "Terror J-Horror Clássico", backdrop: "/sGhbO6muh1Fnpa7nkxYCfvmgWCo.jpg" },
