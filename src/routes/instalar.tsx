@@ -422,13 +422,14 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
 
 const TRIAL_HORROR_SLIDES = [
   { title: "Exit 8 (Saída 8)", year: "2025", genre: "Terror / Mistério Japonês", backdrop: "/3cVrg7tzSf5AgEecYWDOSAzXAeX.jpg" },
+  { title: "Killer Toon (Webtoon da Morte)", year: "2013", genre: "Terror Coreano", backdrop: "/2KVVziH6rYGp6HPFtbnztl1nnYh.jpg" },
+  { title: "A Cura (A Cure for Wellness)", year: "2016", genre: "Terror / Thriller Psicológico", backdrop: "/uXx9wjfJEzLlfqB8GW67SYBrhVT.jpg" },
   { title: "Evil Dead: A Ascensão", year: "2023", genre: "Terror / Gore", backdrop: "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg" },
   { title: "Hereditário", year: "2018", genre: "Terror Psicológico", backdrop: "/jQv5SAPEQwV1vtPseuWsRN6cT5q.jpg" },
   { title: "Ringu: O Chamado", year: "1998", genre: "Terror J-Horror Clássico", backdrop: "/sGhbO6muh1Fnpa7nkxYCfvmgWCo.jpg" },
   { title: "Ju-On: O Grito", year: "2002", genre: "Terror Clássico Japonês", backdrop: "/jNGVlbH2tnZmVqEIvuoxvV78vBY.jpg" },
   { title: "Corra! (Get Out)", year: "2017", genre: "Suspense / Thriller", backdrop: "/bBQHALHRAaaORlPNXv7fNcRXYdx.jpg" },
   { title: "Ilha do Medo (Shutter Island)", year: "2010", genre: "Thriller Psicológico", backdrop: "/rbZvGN1A1QyZuoKzhCw8QPmf2q0.jpg" },
-  { title: "Cure (A Cura)", year: "1997", genre: "Thriller / Crime Japonês", backdrop: "/xxIRKSd9LmHojUD5grvMuGypwVC.jpg" },
   { title: "O Exorcista", year: "1973", genre: "Terror Clássico", backdrop: "/xcjJ5khg2yzOa282mza39Lbrm7j.jpg" },
   { title: "O Silêncio dos Inocentes", year: "1991", genre: "Suspense / Crime", backdrop: "/aYcnDyLMnpKce1FOYUpZrXtgUye.jpg" },
   { title: "Garota Exemplar (Gone Girl)", year: "2014", genre: "Suspense / Thriller", backdrop: "/iWak7wT0j6ycCc8lKr4NBz9c7n5.jpg" },
