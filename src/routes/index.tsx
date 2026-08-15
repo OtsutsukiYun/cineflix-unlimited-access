@@ -1139,7 +1139,6 @@ function Index() {
             <p className="max-w-md text-sm text-white/40">
               A televisão do futuro é pela internet — sem antenas, sem decodificadores. Assista quando e onde quiser.
             </p>
-            <Cta />
             <p className="text-xs text-white/30">
               © {new Date().getFullYear()} UniTV Pro. Imagens de divulgação dos respectivos estúdios (fonte: TMDB).
             </p>
