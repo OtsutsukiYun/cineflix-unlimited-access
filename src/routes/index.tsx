@@ -28,6 +28,7 @@ import {
   Flame,
   Baby,
   Trophy,
+  Heart,
   Tv,
   Play,
   ShieldCheck,
@@ -272,86 +273,31 @@ const CATALOG_TABS = [
   },
 ];
 
-// ── COMPONENTE DE CARD DE RECURSO COM CARROSSEL INTERNO DE IMAGENS ─────────
-function FeatureCard({
-  f,
-  delay,
-}: {
-  f: {
-    icon: string;
-    title: string;
-    desc: string;
-    banners: string[];
-    badge: string;
-  };
-  delay: number;
-}) {
-  const [slideIdx, setSlideIdx] = useState(0);
+// ── BANNER DE SLIDESHOW ROTATIVO DE ALTA QUALIDADE ─────────────────────────
+function SlideshowBanner({ banners, alt, objectPosition = "object-cover" }: { banners: string[]; alt: string; objectPosition?: string }) {
+  const [index, setIndex] = useState(0);
 
   useEffect(() => {
-    if (!f.banners || f.banners.length <= 1) return;
-    const interval = setInterval(() => {
-      setSlideIdx((prev) => (prev + 1) % f.banners.length);
-    }, 3500);
-    return () => clearInterval(interval);
-  }, [f.banners]);
+    if (!banners || banners.length <= 1) return;
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % banners.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [banners]);
 
   return (
-    <SmoothCardReveal delay={delay}>
-      <div className="group relative overflow-hidden rounded-3xl border border-white/15 bg-[#0f0909] transition-all duration-500 hover:-translate-y-2 hover:border-red-500/50 hover:shadow-[0_20px_45px_rgba(220,38,38,0.3)] flex flex-col justify-between h-full">
-        {/* SLIDESHOW DE IMAGENS DE ALTA QUALIDADE */}
-        <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-black shrink-0">
-          {f.banners.map((b, idx) => (
-            <img
-              key={b}
-              src={img(b, "w780")}
-              alt={f.title}
-              className={`absolute inset-0 size-full object-cover transition-all duration-1000 ease-out group-hover:scale-105 ${
-                idx === slideIdx ? "opacity-100 scale-100" : "opacity-0 scale-105 pointer-events-none"
-              }`}
-            />
-          ))}
-          {/* Sombra e gradiente inferior */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0f0909] via-transparent to-black/40 pointer-events-none" />
-
-          {/* Badge dinâmica de conteúdo */}
-          <div className="absolute top-3.5 right-3.5 z-10">
-            <span className="rounded-full bg-black/80 border border-white/20 px-3 py-1 text-[10px] font-extrabold tracking-wider text-white uppercase backdrop-blur-md shadow-md">
-              {f.badge}
-            </span>
-          </div>
-
-          {/* Indicadores de slide (pontinhos discretos) */}
-          <div className="absolute top-4 left-4 z-10 flex gap-1.5">
-            {f.banners.map((_, idx) => (
-              <span
-                key={idx}
-                className={`h-1 rounded-full transition-all duration-500 ${
-                  idx === slideIdx ? "w-5 bg-red-500" : "w-1.5 bg-white/40"
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* Ícone flutuante */}
-          <div className="absolute bottom-3 left-4 z-10">
-            <span className="flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-red-700 border border-red-400/50 text-xl shadow-[0_0_20px_rgba(220,38,38,0.5)] text-white">
-              {f.icon}
-            </span>
-          </div>
-        </div>
-
-        {/* CORPO DO CARD */}
-        <div className="p-5 sm:p-6 bg-gradient-to-b from-[#0f0909] to-[#140b0b] flex-1 flex flex-col justify-center">
-          <h3 className="font-black text-white text-lg sm:text-xl mb-1.5 group-hover:text-red-400 transition-colors">
-            {f.title}
-          </h3>
-          <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium">
-            {f.desc}
-          </p>
-        </div>
-      </div>
-    </SmoothCardReveal>
+    <>
+      {banners.map((banner, i) => (
+        <img
+          key={banner}
+          src={banner.startsWith("http") ? banner : img(banner, "w780")}
+          alt={alt}
+          className={`absolute inset-0 size-full ${objectPosition} transition-all duration-1000 ease-in-out group-hover:scale-110 ${
+            i === index ? "opacity-55 z-0 scale-100" : "opacity-0 -z-10 scale-105 pointer-events-none"
+          }`}
+        />
+      ))}
+    </>
   );
 }
 
@@ -584,12 +530,12 @@ function Index() {
 
 
 
-      {/* RECURSOS E DIFERENCIAIS — BANNERS MULTI-IMAGEM ULTRA VISÍVEIS (HAALAND, MBAPPÉ, SHŌGUN, DORAMAS, INFANTIS, ANIMES) */}
-      <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-12 sm:py-16">
+      {/* CATEGORIAS DO CATÁLOGO DE CONTEÚDO */}
+      <section id="categorias" className="relative z-10 mx-auto w-[94%] max-w-6xl py-12 sm:py-16">
         <SmoothCardReveal>
           <div className="text-center mb-10">
             <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/40 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3">
-              <Sparkles className="size-3.5" /> Recursos Exclusivos
+              <Sparkles className="size-3.5" /> Catálogo Completo
             </span>
             <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white">
               Tudo o que você precisa,<br /><span className="text-red-500">em um só lugar</span>
@@ -597,76 +543,169 @@ function Index() {
           </div>
         </SmoothCardReveal>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              icon: "📺",
-              title: "TV ao Vivo em Alta",
-              desc: "Centenas de canais HD e UHD: esportes, notícias, infantis, variedades e filmes — todos num só lugar.",
+              icon: Film,
               banners: [
-                "/e5ayUiIzyQBKUpFenm8KuXdH4q8.jpg", // Haaland / Champions League
-                "/s4tTSYDGauYbax0NbQOSN8o78WY.jpg", // Mbappé
-                "/gbaWmk8SxZZcaWIgymSdR37b5mk.jpg", // Manchester City
+                "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg", // Deadpool & Wolverine
+                "/eZ239CUp1d6OryZEBPnO2n87gMG.jpg", // Dune Part Two
+                "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg", // Backrooms
               ],
-              badge: "Haaland · Mbappé · Champions",
+              objectPosition: "object-cover",
+              gradient: "from-red-600 via-orange-600 to-amber-600",
+              glow: "shadow-[0_0_22px_rgba(239,68,68,0.85)] border-red-400/80",
+              corBorda: "border border-red-500/40 hover:border-red-400",
+              corGlow: "shadow-[0_0_30px_rgba(239,68,68,0.2)] hover:shadow-[0_0_50px_rgba(239,68,68,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-[#0d0202] via-[#0d0202]/75 to-[#0d0202]/20",
+              titleHover: "group-hover:text-red-300",
+              t: "Filmes incríveis",
+              qtd: "+45.000 Filmes",
+              d: "+45.000 filmes incluindo lançamentos recém-saídos do cinema e superproduções em até 4K.",
             },
             {
-              icon: "🎬",
-              title: "Cinema e Séries",
-              desc: "Acervo robusto para maratonar quando bater vontade. Tudo incluso na recarga, sem cobrança avulsa.",
+              icon: Tv,
               banners: [
                 "/bwSmgmd90hCWwqOKQYTEraeOZhJ.jpg", // Shōgun
+                "/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg", // Silo
                 "/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg", // The Last of Us
-                "/577eXC8wFQT0eUrJcgznSiFPRmk.jpg", // House of the Dragon
               ],
-              badge: "Shōgun · The Last of Us",
+              objectPosition: "object-cover",
+              gradient: "from-red-600 via-rose-600 to-red-800",
+              glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-400/80",
+              corBorda: "border border-rose-500/40 hover:border-rose-300",
+              corGlow: "shadow-[0_0_30px_rgba(225,29,72,0.2)] hover:shadow-[0_0_50px_rgba(225,29,72,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-[#0e0204] via-[#0e0204]/75 to-[#0e0204]/20",
+              titleHover: "group-hover:text-rose-200",
+              t: "Séries imperdíveis",
+              qtd: "+20.000 Séries",
+              d: "+20.000 séries das maiores plataformas mundiais com temporadas completas dubladas e legendadas.",
             },
             {
-              icon: "⏪",
-              title: "Volte 7 Dias na Grade",
-              desc: "Perdeu o jogo, novela ou programa? Use o Playback para retomar a programação dos últimos 7 dias.",
+              icon: Heart,
               banners: [
-                "/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", // Queen of Tears / Doramas
-                "/2meX1nMdScFOoV4370rqHWKmXhY.jpg", // Squid Game / Round 6
+                "/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", // Queen of Tears
+                "/2meX1nMdScFOoV4370rqHWKmXhY.jpg", // Round 6 / Squid Game
                 "/8hp2CuGnw1iP5dLBVMAPUv23swx.jpg", // All of Us Are Dead
               ],
-              badge: "Doramas · Round 6",
+              objectPosition: "object-cover",
+              gradient: "from-pink-600 via-rose-600 to-red-700",
+              glow: "shadow-[0_0_22px_rgba(244,63,94,0.85)] border-pink-300/80",
+              corBorda: "border border-pink-500/40 hover:border-pink-300",
+              corGlow: "shadow-[0_0_30px_rgba(244,63,94,0.2)] hover:shadow-[0_0_50px_rgba(244,63,94,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-[#14020a] via-[#14020a]/75 to-[#14020a]/20",
+              titleHover: "group-hover:text-pink-200",
+              t: "Doramas & K-Dramas",
+              qtd: "+1.600 Doramas",
+              d: "+1.600 doramas como Rainha das Lágrimas, Pousando no Amor e os maiores sucessos asiáticos dublados.",
             },
             {
-              icon: "📡",
-              title: "Sinal P2P Estável",
-              desc: "A rede peer-to-peer espalha o conteúdo de forma inteligente, mantendo a transmissão fluida sem travar.",
-              banners: [
-                "/s4tTSYDGauYbax0NbQOSN8o78WY.jpg", // Mbappé
-                "/2WJcWF0Qs1PQjDfpTv7XhdGWkjv.jpg", // Bayern Munich
-                "/e5ayUiIzyQBKUpFenm8KuXdH4q8.jpg", // Haaland
-              ],
-              badge: "Jogos Ao Vivo Sem Travar",
-            },
-            {
-              icon: "🔒",
-              title: "Bloqueio Por Perfil",
-              desc: "Trave canais com senha para garantir que as crianças vejam só o que é apropriado.",
-              banners: [
-                "/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg", // Divertida Mente 2
-                "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg", // Moana 2
-                "/twsxsfao6ZOVvT8LfudH603MMi6.jpg", // Meu Malvado Favorito 4
-              ],
-              badge: "Divertida Mente 2 · Moana 2",
-            },
-            {
-              icon: "📋",
-              title: "Guia EPG Completo",
-              desc: "O guia de programação mostra o que passa em cada canal, com horário, sinopse e ordem por categoria.",
+              icon: Flame,
               banners: [
                 "/xMNH87maNLt9n2bMDYeI6db5VFm.jpg", // Solo Leveling
-                "/lthkKBLe1rX6iThgVFg22O02sJw.jpg", // Jujutsu Kaisen
                 "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", // Demon Slayer
+                "/lthkKBLe1rX6iThgVFg22O02sJw.jpg", // Jujutsu Kaisen
               ],
-              badge: "Solo Leveling · Jujutsu",
+              objectPosition: "object-cover",
+              gradient: "from-amber-500 via-orange-600 to-red-600",
+              glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-amber-300/80",
+              corBorda: "border border-amber-500/40 hover:border-amber-300",
+              corGlow: "shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:shadow-[0_0_50px_rgba(245,158,11,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-[#0e0502] via-[#0e0502]/75 to-[#0e0502]/20",
+              titleHover: "group-hover:text-amber-200",
+              t: "Animes atualizados",
+              qtd: "Centenas de Animes",
+              d: "Centenas de animes com simulcast semanal, dublagem em português e áudio original.",
+            },
+            {
+              icon: Baby,
+              banners: [
+                "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg", // Moana 2
+                "/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg", // Divertida Mente 2
+                "/twsxsfao6ZOVvT8LfudH603MMi6.jpg", // Meu Malvado Favorito 4
+              ],
+              objectPosition: "object-cover",
+              gradient: "from-blue-500 via-sky-500 to-indigo-600",
+              glow: "shadow-[0_0_22px_rgba(14,165,233,0.85)] border-sky-300/80",
+              corBorda: "border border-sky-500/40 hover:border-sky-300",
+              corGlow: "shadow-[0_0_30px_rgba(14,165,233,0.2)] hover:shadow-[0_0_50px_rgba(14,165,233,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-[#020814] via-[#020814]/75 to-[#020814]/20",
+              titleHover: "group-hover:text-sky-200",
+              t: "Canais infantis",
+              qtd: "Dezenas de Canais Infantis",
+              d: "Dezenas de canais infantis 24h ao vivo e milhares de filmes e desenhos para toda a família.",
+            },
+            {
+              icon: Trophy,
+              banners: [
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Erling_Haaland_France_v_Norway_26_June_26-008.jpg/1280px-Erling_Haaland_France_v_Norway_26_June_26-008.jpg", // Haaland
+                "https://upload.wikimedia.org/wikipedia/commons/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg", // Mbappe 2026
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg/1280px-Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg", // Harry Kane
+              ],
+              objectPosition: "object-cover object-[center_20%]",
+              gradient: "from-emerald-500 via-green-600 to-teal-600",
+              glow: "shadow-[0_0_22px_rgba(16,185,129,0.85)] border-emerald-300/80",
+              corBorda: "border border-emerald-500/40 hover:border-emerald-300",
+              corGlow: "shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_50px_rgba(16,185,129,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-[#02140a] via-[#02140a]/75 to-[#02140a]/20",
+              titleHover: "group-hover:text-emerald-200",
+              t: "Esportes ao vivo",
+              qtd: "+500 Canais de Esporte",
+              d: "+500 canais ao vivo (Brasileirão, Champions League, Premier League, UFC e F1 sem travamentos).",
+            },
+            {
+              icon: Lock,
+              banners: [
+                "/7FRraud59N3s10bbf9bfYjvwx3v.jpg", // Basic Instinct
+                "/rpsHpJj7FgnNBXhaO2KFthPwqH6.jpg", // Love
+                "/xqIstzB0ELbYyfzKcYaSwLb4Whs.jpg", // Emmanuelle
+              ],
+              objectPosition: "object-cover",
+              gradient: "from-red-600 via-rose-700 to-red-900",
+              glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-red-300/80",
+              corBorda: "border border-red-500/40 hover:border-red-300",
+              corGlow: "shadow-[0_0_30px_rgba(225,29,72,0.2)] hover:shadow-[0_0_50px_rgba(225,29,72,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-[#12020a] via-[#12020a]/75 to-[#12020a]/20",
+              titleHover: "group-hover:text-red-200",
+              t: "Canais adultos",
+              qtd: "+80 Canais Privados",
+              d: "+80 canais e conteúdos adultos opcionais protegidos por senha master parental.",
             },
           ].map((f, i) => (
-            <FeatureCard key={f.title} f={f} delay={60 + i * 70} />
+            <SmoothCardReveal key={f.t} delay={100 + i * 80}>
+              <div
+                className={`group relative h-full min-h-[220px] sm:min-h-[240px] overflow-hidden rounded-3xl p-6 sm:p-7 ${f.corBorda} ${f.corGlow} transition-all duration-500 hover:-translate-y-2 bg-[#0c0505]`}
+              >
+                {/* IMAGEM BANNER ILUSTRATIVA DE FUNDO COM SLIDESHOW */}
+                <SlideshowBanner banners={f.banners} alt={`Ilustração ${f.t}`} objectPosition={f.objectPosition} />
+                {/* SOBREPOSIÇÃO DE GRADIENTE ESCURO LÍMPIDO */}
+                <div className={`absolute inset-0 ${f.bgOverlay} transition-opacity duration-500 group-hover:opacity-85`} />
+
+                <div className="relative z-10 flex flex-col justify-between h-full">
+                  {/* ÍCONE RELUZENTE E BADGE DE QUANTIDADE */}
+                  <div className="relative mb-6 shrink-0 flex items-center justify-between">
+                    <div className={`relative flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${f.gradient} p-0.5 border ${f.glow} transform-gpu transition-all duration-300 group-hover:scale-110 shadow-lg`}>
+                      <div className="relative flex size-full items-center justify-center rounded-[14px] bg-black/30 overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-90" />
+                        <f.icon className="size-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] relative z-10" />
+                      </div>
+                    </div>
+
+                    {/* BADGE DE QUANTIDADE EM DESTAQUE */}
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-black/80 backdrop-blur-md px-3.5 py-1 text-xs font-black text-white shadow-[0_4px_15px_rgba(0,0,0,0.7)]">
+                      {f.qtd}
+                    </span>
+                  </div>
+
+                  <div>
+                    <h3 className={`mb-2 text-xl font-black text-white tracking-tight transition-colors duration-300 ${f.titleHover}`}>{f.t}</h3>
+                    <p className="text-xs sm:text-sm leading-relaxed text-white/80 font-medium drop-shadow-md">
+                      {f.d}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SmoothCardReveal>
           ))}
         </div>
       </section>
