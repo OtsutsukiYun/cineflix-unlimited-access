@@ -205,7 +205,7 @@ export const top10Hoje: Title[] = [
   { title: "Demon Slayer", poster: "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", year: "2024", tag: "🔥 Top 7", rating: "4.9" },
   { title: "Premonição 6", poster: "/temIXpcua7j5v4FipOxmzTfrB06.jpg", year: "2025", tag: "🔥 Top 8", rating: "4.8" },
   { title: "Martyrs", poster: "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", year: "2008", tag: "🔥 Clássico do Terror", rating: "5.0" },
-  { title: "Strange Harvest", poster: "/fYe0FNJNy0EIb8q4JUMLbbSmCth.jpg", year: "2025", tag: "🔥 Terror 2025", rating: "4.9" },
+  { title: "Strange Harvest", poster: "/fYe0FNJNy0EIb8q4JUMLbbSmCth.jpg", year: "2025", tag: "🔥 Terror & Ocultismo", rating: "4.9" },
   { title: "Omukade", poster: "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", year: "2026", tag: "🔥 Top 9", rating: "4.8" },
   { title: "Moana 2", poster: "/xGvz7nlGQeePcVOpAzOcHsC7kRt.jpg", year: "2024", tag: "🔥 Top 10", rating: "4.9" },
 ];
