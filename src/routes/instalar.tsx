@@ -264,8 +264,25 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
           <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-orange-500/20 border border-orange-400/40 text-orange-300 text-xs font-black">
             3
           </div>
-          <div className="text-sm text-white/90 leading-relaxed pt-0.5">
-            Clique em <strong className="text-white font-black text-orange-300">"Go"</strong>, aguarde o download finalizar e selecione <strong className="text-white font-black">"Instalar"</strong>. Abra o UniTV Pro e seu teste grátis já estará pronto para uso!
+          <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Clique em <strong className="text-white font-black text-orange-300">"Go"</strong>, aguarde o download finalizar e selecione <strong className="text-white font-black">"Instalar"</strong>.
+            
+            {/* AVISO DE SEGURANÇA E PERMISSÕES DO ANDROID DIRETO NO PASSO DE INSTALAÇÃO */}
+            <div className="mt-3 rounded-2xl border border-amber-500/40 bg-amber-950/40 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-sm shadow-md">
+              <div className="flex items-start gap-2.5">
+                <ShieldAlert className="size-4 shrink-0 text-amber-400 mt-0.5" />
+                <div>
+                  <strong className="text-amber-300 font-bold block mb-1">
+                    🔒 Permissões de Segurança do Android:
+                  </strong>
+                  Ao clicar em instalar, caso o seu aparelho solicite permissão para <em>"Fontes Desconhecidas"</em> ou <em>"Play Protect"</em>, confirme clicando em <strong className="text-white bg-amber-500/30 px-1.5 py-0.5 rounded font-black">"Permitir"</strong> ou <strong className="text-white bg-amber-500/30 px-1.5 py-0.5 rounded font-black">"Instalar mesmo assim"</strong>. O UniTV Pro é 100% seguro, oficial e sem riscos.
+                </div>
+              </div>
+            </div>
+
+            <p className="mt-3 text-xs text-white/80 font-medium">
+              Abra o UniTV Pro e seu teste grátis de 3 dias já estará ativado para uso!
+            </p>
           </div>
         </li>
       </ol>
@@ -356,8 +373,25 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
           <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-black">
             3
           </div>
-          <div className="text-sm text-white/90 leading-relaxed pt-0.5">
-            Conclua a instalação no aparelho e abra o UniTV Pro para curtir a programação!
+          <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Selecione <strong className="text-white font-black text-emerald-300">"Instalar"</strong> para concluir a instalação no seu aparelho.
+            
+            {/* AVISO DE SEGURANÇA E PERMISSÕES DO ANDROID DIRETO NO PASSO DE INSTALAÇÃO */}
+            <div className="mt-3 rounded-2xl border border-amber-500/40 bg-amber-950/40 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-sm shadow-md">
+              <div className="flex items-start gap-2.5">
+                <ShieldAlert className="size-4 shrink-0 text-amber-400 mt-0.5" />
+                <div>
+                  <strong className="text-amber-300 font-bold block mb-1">
+                    🔒 Permissões de Segurança do Android:
+                  </strong>
+                  Ao clicar em instalar, caso o aparelho solicite autorização de <em>"Fontes Desconhecidas"</em> ou aviso do <em>"Play Protect"</em>, confirme clicando em <strong className="text-white bg-amber-500/30 px-1.5 py-0.5 rounded font-black">"Permitir"</strong> ou <strong className="text-white bg-amber-500/30 px-1.5 py-0.5 rounded font-black">"Instalar mesmo assim"</strong>. O aplicativo é totalmente limpo e seguro!
+                </div>
+              </div>
+            </div>
+
+            <p className="mt-3 text-xs text-white/80 font-medium">
+              Abra o UniTV Pro e aproveite a programação completa com 3 dias grátis!
+            </p>
           </div>
         </li>
       </ol>
