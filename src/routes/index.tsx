@@ -829,14 +829,14 @@ function Index() {
           </p>
         </Reveal>
 
-        <div className="relative z-10 grid items-stretch gap-6 lg:grid-cols-3">
+        <div className="relative z-10 grid items-stretch gap-6 lg:grid-cols-3 pt-4">
           {[
             {
               id: "mensal",
               nome: "Plano Mensal",
               icon: Calendar,
-              iconColor: "text-red-400",
-              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-red-100 to-red-300",
+              iconColor: "text-zinc-400",
+              titleGradient: "text-white font-black",
               precoAntigo: "R$50",
               preco: "R$34,99",
               periodo: "mês",
@@ -845,7 +845,9 @@ function Index() {
               destaque: false,
               selo: null as string | null,
               badge: "Sem Fidelidade",
-              btnStyle: "bg-gradient-to-r from-red-700 to-red-600 hover:from-red-600 hover:to-red-500 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:scale-[1.02]",
+              badgeStyle: "bg-white/10 text-white/70 border-white/20",
+              cardStyle: "border border-white/15 bg-zinc-950/70 hover:border-white/30 hover:bg-zinc-900/40 shadow-xl",
+              btnStyle: "bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-3.5 px-4 rounded-xl border border-white/20 hover:border-white/35 transition-all shadow-md",
               btnText: "ASSINAR PLANO MENSAL",
               link: "#planos",
               features: [
@@ -859,39 +861,11 @@ function Index() {
               ],
             },
             {
-              id: "anual",
-              nome: "Plano Anual",
-              icon: Crown,
-              iconColor: "text-amber-300 drop-shadow-[0_0_12px_rgba(245,158,11,0.8)]",
-              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-white to-red-300",
-              precoAntigo: "R$250",
-              preco: "R$179,99",
-              periodo: "ano",
-              dias: "365 dias",
-              telas: "2 telas",
-              destaque: true,
-              selo: "🔥 MAIS POPULAR • MELHOR CUSTO-BENEFÍCIO",
-              badge: "⭐ Recomendado",
-              btnStyle: "bg-gradient-to-r from-red-600 via-red-500 to-red-700 hover:from-red-500 hover:to-red-600 text-white shadow-[0_0_35px_rgba(220,38,38,0.8)] hover:scale-[1.02] font-black py-3.5 px-4 rounded-xl",
-              btnText: "QUERO ASSINAR AGORA",
-              link: "#planos",
-              features: [
-                "2 Telas simultâneas",
-                "365 dias de acesso sem mensalidades",
-                "Acervo completo (+100.000 títulos em 4K)",
-                "Todos os canais ao vivo HD/4K",
-                "Smart TV Android, TV Box, Mi Stick, FireTV",
-                "Celular Android e Tablet Android",
-                "Suporte VIP prioritário via WhatsApp",
-                "Garantia de reembolso de 7 dias",
-              ],
-            },
-            {
               id: "trimestral",
               nome: "Plano Trimestral",
               icon: Sparkles,
-              iconColor: "text-amber-400",
-              titleGradient: "text-white font-black",
+              iconColor: "text-red-400 drop-shadow-[0_0_10px_rgba(239,68,68,0.7)]",
+              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-white via-red-200 to-red-400 font-black",
               precoAntigo: "R$149",
               preco: "R$99,99",
               periodo: "3 meses",
@@ -900,7 +874,9 @@ function Index() {
               destaque: false,
               selo: null as string | null,
               badge: "Economia 33%",
-              btnStyle: "bg-gradient-to-r from-red-600 via-rose-600 to-amber-600 hover:from-red-500 hover:to-amber-500 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_25px_rgba(220,38,38,0.5)] hover:scale-[1.02] border border-red-400/50",
+              badgeStyle: "bg-red-500/20 text-red-300 border-red-500/40",
+              cardStyle: "border border-red-500/30 bg-gradient-to-b from-red-950/20 via-zinc-950/80 to-black hover:border-red-500/50 shadow-xl",
+              btnStyle: "bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-500 hover:to-rose-600 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_20px_rgba(220,38,38,0.5)] hover:scale-[1.02] border border-red-500/50 transition-all",
               btnText: "ASSINAR TRIMESTRAL",
               link: "#planos",
               features: [
@@ -914,18 +890,42 @@ function Index() {
                 "Garantia de reembolso de 7 dias",
               ],
             },
+            {
+              id: "anual",
+              nome: "Plano Anual VIP",
+              icon: Crown,
+              iconColor: "text-yellow-400 drop-shadow-[0_0_15px_rgba(245,158,11,0.9)]",
+              titleGradient: "text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-400 font-black",
+              precoAntigo: "R$250",
+              preco: "R$179,99",
+              periodo: "ano",
+              dias: "365 dias",
+              telas: "2 telas",
+              destaque: true,
+              selo: "👑 MAIS COMPLETO • MELHOR CUSTO-BENEFÍCIO (2 TELAS)",
+              badge: "⭐ RECOMENDADO VIP",
+              badgeStyle: "bg-gradient-to-r from-amber-500/30 to-yellow-500/30 text-amber-200 border-amber-400/60 shadow-[0_0_15px_rgba(245,158,11,0.4)]",
+              cardStyle: "border-2 border-amber-400 bg-gradient-to-b from-amber-950/70 via-zinc-950 to-black shadow-[0_0_60px_rgba(245,158,11,0.45)] lg:scale-105 z-20 hover:border-yellow-300 hover:shadow-[0_0_75px_rgba(245,158,11,0.65)]",
+              btnStyle: "bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 hover:from-amber-400 hover:to-yellow-300 text-black font-black py-4 px-4 rounded-xl shadow-[0_0_30px_rgba(245,158,11,0.8)] hover:scale-[1.03] border border-amber-300 transition-all",
+              btnText: "QUERO O PLANO ANUAL VIP",
+              link: "#planos",
+              features: [
+                "2 Telas simultâneas em 4K",
+                "365 dias de acesso sem mensalidades",
+                "Acervo completo (+100.000 títulos em 4K)",
+                "Todos os canais ao vivo HD/4K",
+                "Smart TV Android, TV Box, Mi Stick, FireTV",
+                "Celular Android e Tablet Android",
+                "Suporte VIP prioritário via WhatsApp",
+                "Garantia de reembolso de 7 dias",
+              ],
+            },
           ].map((p, i) => (
             <SmoothCardReveal key={p.nome} delay={100 + i * 120} className="h-full">
-              <div
-                className={`glass group relative flex flex-col justify-between h-full rounded-3xl p-6 sm:p-7 transition-all duration-300 ${
-                  p.destaque
-                    ? "border-2 border-red-500 bg-gradient-to-b from-red-950/80 via-[#0f0a0a] to-black/95 shadow-[0_0_40px_rgba(220,38,38,0.4)] hover:border-red-400 hover:shadow-[0_0_55px_rgba(220,38,38,0.6)] z-20"
-                    : "border border-white/15 bg-black/70 hover:border-white/30 hover:bg-white/5 shadow-xl"
-                }`}
-              >
+              <div className={`glass group relative flex flex-col justify-between h-full rounded-3xl p-6 sm:p-7 transition-all duration-300 ${p.cardStyle}`}>
                 {p.selo && (
-                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-red-600 via-red-500 to-red-600 px-4 py-1 text-[10px] sm:text-[11px] font-black tracking-wider text-white uppercase shadow-[0_0_20px_rgba(220,38,38,0.8)] whitespace-nowrap">
-                    <Sparkles className="size-3 fill-current" />
+                  <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-30 inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 px-4 py-1 text-[10px] sm:text-[11px] font-black tracking-wider text-black uppercase shadow-[0_0_25px_rgba(245,158,11,0.9)] whitespace-nowrap">
+                    <Crown className="size-3.5 fill-black text-black" />
                     {p.selo}
                   </span>
                 )}
@@ -938,11 +938,7 @@ function Index() {
                         {p.nome}
                       </h3>
                     </div>
-                    <span className={`shrink-0 rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-wider border ${
-                      p.destaque
-                        ? "bg-gradient-to-r from-red-700/30 to-red-600/30 text-red-200 border-red-500/50"
-                        : "bg-white/10 text-white/70 border-white/20"
-                    }`}>
+                    <span className={`shrink-0 rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-wider border ${p.badgeStyle}`}>
                       {p.badge}
                     </span>
                   </div>
@@ -953,13 +949,13 @@ function Index() {
                       <span className="font-display font-black text-4xl sm:text-5xl text-white">
                         {p.preco}
                       </span>
-                      <span className={`text-xs font-bold ${p.destaque ? "text-red-300" : "text-white/50"}`}>/{p.periodo}</span>
+                      <span className={`text-xs font-bold ${p.destaque ? "text-amber-300 font-extrabold" : "text-white/50"}`}>/{p.periodo}</span>
                     </div>
                     <div className="mt-2.5 flex gap-2 flex-wrap">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/8 border border-white/10 px-3 py-1 text-xs font-bold text-white/70">
+                      <span className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-bold ${p.destaque ? "bg-amber-500/20 border-amber-400/40 text-amber-200" : "bg-white/8 border-white/10 text-white/70"}`}>
                         <Calendar className="size-3.5 text-red-400" /> {p.dias}
                       </span>
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-white/8 border border-white/10 px-3 py-1 text-xs font-bold text-white/70">
+                      <span className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-bold ${p.destaque ? "bg-amber-500/20 border-amber-400/40 text-amber-200" : "bg-white/8 border-white/10 text-white/70"}`}>
                         <MonitorPlay className="size-3.5 text-red-400" /> {p.telas}
                       </span>
                     </div>
@@ -972,11 +968,11 @@ function Index() {
                     onClick={p.link === "#planos" ? (e) => { e.preventDefault(); } : undefined}
                     className={`mt-6 w-full flex items-center justify-center gap-2 text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 ${p.btnStyle}`}
                   >
-                    <Zap className={p.destaque ? "size-5 fill-white text-white" : "size-4"} />
+                    <Zap className={p.destaque ? "size-5 fill-black text-black" : "size-4"} />
                     {p.btnText}
                   </a>
 
-                  <div className={`my-5 h-px w-full ${p.destaque ? "bg-red-500/30" : "bg-white/10"}`} />
+                  <div className={`my-5 h-px w-full ${p.destaque ? "bg-amber-400/40" : "bg-white/10"}`} />
 
                   <ul className="space-y-3 text-xs sm:text-sm">
                     {p.features.map((f) => (
