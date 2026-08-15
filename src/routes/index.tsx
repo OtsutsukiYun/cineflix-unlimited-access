@@ -272,6 +272,89 @@ const CATALOG_TABS = [
   },
 ];
 
+// ── COMPONENTE DE CARD DE RECURSO COM CARROSSEL INTERNO DE IMAGENS ─────────
+function FeatureCard({
+  f,
+  delay,
+}: {
+  f: {
+    icon: string;
+    title: string;
+    desc: string;
+    banners: string[];
+    badge: string;
+  };
+  delay: number;
+}) {
+  const [slideIdx, setSlideIdx] = useState(0);
+
+  useEffect(() => {
+    if (!f.banners || f.banners.length <= 1) return;
+    const interval = setInterval(() => {
+      setSlideIdx((prev) => (prev + 1) % f.banners.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [f.banners]);
+
+  return (
+    <SmoothCardReveal delay={delay}>
+      <div className="group relative overflow-hidden rounded-3xl border border-white/15 bg-[#0f0909] transition-all duration-500 hover:-translate-y-2 hover:border-red-500/50 hover:shadow-[0_20px_45px_rgba(220,38,38,0.3)] flex flex-col justify-between h-full">
+        {/* SLIDESHOW DE IMAGENS DE ALTA QUALIDADE */}
+        <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-black shrink-0">
+          {f.banners.map((b, idx) => (
+            <img
+              key={b}
+              src={img(b, "w780")}
+              alt={f.title}
+              className={`absolute inset-0 size-full object-cover transition-all duration-1000 ease-out group-hover:scale-105 ${
+                idx === slideIdx ? "opacity-100 scale-100" : "opacity-0 scale-105 pointer-events-none"
+              }`}
+            />
+          ))}
+          {/* Sombra e gradiente inferior */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0f0909] via-transparent to-black/40 pointer-events-none" />
+
+          {/* Badge dinâmica de conteúdo */}
+          <div className="absolute top-3.5 right-3.5 z-10">
+            <span className="rounded-full bg-black/80 border border-white/20 px-3 py-1 text-[10px] font-extrabold tracking-wider text-white uppercase backdrop-blur-md shadow-md">
+              {f.badge}
+            </span>
+          </div>
+
+          {/* Indicadores de slide (pontinhos discretos) */}
+          <div className="absolute top-4 left-4 z-10 flex gap-1.5">
+            {f.banners.map((_, idx) => (
+              <span
+                key={idx}
+                className={`h-1 rounded-full transition-all duration-500 ${
+                  idx === slideIdx ? "w-5 bg-red-500" : "w-1.5 bg-white/40"
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Ícone flutuante */}
+          <div className="absolute bottom-3 left-4 z-10">
+            <span className="flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-red-700 border border-red-400/50 text-xl shadow-[0_0_20px_rgba(220,38,38,0.5)] text-white">
+              {f.icon}
+            </span>
+          </div>
+        </div>
+
+        {/* CORPO DO CARD */}
+        <div className="p-5 sm:p-6 bg-gradient-to-b from-[#0f0909] to-[#140b0b] flex-1 flex flex-col justify-center">
+          <h3 className="font-black text-white text-lg sm:text-xl mb-1.5 group-hover:text-red-400 transition-colors">
+            {f.title}
+          </h3>
+          <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium">
+            {f.desc}
+          </p>
+        </div>
+      </div>
+    </SmoothCardReveal>
+  );
+}
+
 // ── MAIN PAGE ────────────────────────────────────────────────────────────────
 function Index() {
   const [slide, setSlide] = useState(0);
@@ -499,7 +582,9 @@ function Index() {
         </div>
       </section>
 
-      {/* RECURSOS E DIFERENCIAIS — BANNERS ULTRA VISÍVEIS (HAALAND, SILO, DORAMAS, MBAPPÉ, INFANTIS, CINEMA) */}
+
+
+      {/* RECURSOS E DIFERENCIAIS — BANNERS MULTI-IMAGEM ULTRA VISÍVEIS (HAALAND, MBAPPÉ, SHŌGUN, DORAMAS, INFANTIS, ANIMES) */}
       <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-12 sm:py-16">
         <SmoothCardReveal>
           <div className="text-center mb-10">
@@ -518,83 +603,70 @@ function Index() {
               icon: "📺",
               title: "TV ao Vivo em Alta",
               desc: "Centenas de canais HD e UHD: esportes, notícias, infantis, variedades e filmes — todos num só lugar.",
-              banner: "/e5ayUiIzyQBKUpFenm8KuXdH4q8.jpg", // Haaland / Champions League / Esportes
-              badge: "Esportes & Ao Vivo",
+              banners: [
+                "/e5ayUiIzyQBKUpFenm8KuXdH4q8.jpg", // Haaland / Champions League
+                "/s4tTSYDGauYbax0NbQOSN8o78WY.jpg", // Mbappé
+                "/gbaWmk8SxZZcaWIgymSdR37b5mk.jpg", // Manchester City
+              ],
+              badge: "Haaland · Mbappé · Champions",
             },
             {
               icon: "🎬",
               title: "Cinema e Séries",
               desc: "Acervo robusto para maratonar quando bater vontade. Tudo incluso na recarga, sem cobrança avulsa.",
-              banner: "/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg", // Silo Apple TV+ / Séries Hit
-              badge: "Séries & Cinema",
+              banners: [
+                "/bwSmgmd90hCWwqOKQYTEraeOZhJ.jpg", // Shōgun
+                "/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg", // The Last of Us
+                "/577eXC8wFQT0eUrJcgznSiFPRmk.jpg", // House of the Dragon
+              ],
+              badge: "Shōgun · The Last of Us",
             },
             {
               icon: "⏪",
               title: "Volte 7 Dias na Grade",
               desc: "Perdeu o jogo, novela ou programa? Use o Playback para retomar a programação dos últimos 7 dias.",
-              banner: "/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", // Queen of Tears / Doramas K-Drama
-              badge: "Playback & Doramas",
+              banners: [
+                "/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", // Queen of Tears / Doramas
+                "/2meX1nMdScFOoV4370rqHWKmXhY.jpg", // Squid Game / Round 6
+                "/8hp2CuGnw1iP5dLBVMAPUv23swx.jpg", // All of Us Are Dead
+              ],
+              badge: "Doramas · Round 6",
             },
             {
               icon: "📡",
               title: "Sinal P2P Estável",
               desc: "A rede peer-to-peer espalha o conteúdo de forma inteligente, mantendo a transmissão fluida sem travar.",
-              banner: "/s4tTSYDGauYbax0NbQOSN8o78WY.jpg", // Mbappé / Esportes P2P
-              badge: "Rede P2P Estável",
+              banners: [
+                "/s4tTSYDGauYbax0NbQOSN8o78WY.jpg", // Mbappé
+                "/2WJcWF0Qs1PQjDfpTv7XhdGWkjv.jpg", // Bayern Munich
+                "/e5ayUiIzyQBKUpFenm8KuXdH4q8.jpg", // Haaland
+              ],
+              badge: "Jogos Ao Vivo Sem Travar",
             },
             {
               icon: "🔒",
               title: "Bloqueio Por Perfil",
               desc: "Trave canais com senha para garantir que as crianças vejam só o que é apropriado.",
-              banner: "/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg", // Divertida Mente 2 / Infantis
-              badge: "Controle Parental",
+              banners: [
+                "/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg", // Divertida Mente 2
+                "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg", // Moana 2
+                "/twsxsfao6ZOVvT8LfudH603MMi6.jpg", // Meu Malvado Favorito 4
+              ],
+              badge: "Divertida Mente 2 · Moana 2",
             },
             {
               icon: "📋",
               title: "Guia EPG Completo",
               desc: "O guia de programação mostra o que passa em cada canal, com horário, sinopse e ordem por categoria.",
-              banner: "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg", // Deadpool & Wolverine / Guia EPG
-              badge: "Guia EPG Completo",
+              banners: [
+                "/xMNH87maNLt9n2bMDYeI6db5VFm.jpg", // Solo Leveling
+                "/lthkKBLe1rX6iThgVFg22O02sJw.jpg", // Jujutsu Kaisen
+                "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", // Demon Slayer
+              ],
+              badge: "Solo Leveling · Jujutsu",
             },
           ].map((f, i) => (
-            <SmoothCardReveal key={f.title} delay={60 + i * 70}>
-              <div className="group relative overflow-hidden rounded-3xl border border-white/15 bg-[#0f0909] transition-all duration-500 hover:-translate-y-2 hover:border-red-500/50 hover:shadow-[0_20px_45px_rgba(220,38,38,0.3)] flex flex-col justify-between">
-                {/* CABEÇALHO DA IMAGEM ALTA DEF E 100% VISÍVEL */}
-                <div className="relative h-48 sm:h-52 w-full overflow-hidden">
-                  <img
-                    src={img(f.banner, "w780")}
-                    alt={f.title}
-                    className="size-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 ease-out"
-                  />
-                  {/* Gradiente suave na parte inferior da imagem para transição suave com o card */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0f0909] via-transparent to-black/40" />
-
-                  {/* Badge no topo da imagem */}
-                  <div className="absolute top-3.5 right-3.5 z-10">
-                    <span className="rounded-full bg-black/80 border border-white/20 px-3 py-1 text-[10px] font-extrabold tracking-wider text-white uppercase backdrop-blur-md shadow-md">
-                      {f.badge}
-                    </span>
-                  </div>
-
-                  {/* Ícone no canto inferior da imagem */}
-                  <div className="absolute bottom-3 left-4 z-10">
-                    <span className="flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-red-700 border border-red-400/50 text-xl shadow-[0_0_20px_rgba(220,38,38,0.5)] text-white">
-                      {f.icon}
-                    </span>
-                  </div>
-                </div>
-
-                {/* CORPO DO TEXTO DO CARD */}
-                <div className="p-5 sm:p-6 bg-gradient-to-b from-[#0f0909] to-[#140b0b]">
-                  <h3 className="font-black text-white text-lg sm:text-xl mb-2 group-hover:text-red-400 transition-colors">
-                    {f.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium">
-                    {f.desc}
-                  </p>
-                </div>
-              </div>
-            </SmoothCardReveal>
+            <FeatureCard key={f.title} f={f} delay={60 + i * 70} />
           ))}
         </div>
       </section>
