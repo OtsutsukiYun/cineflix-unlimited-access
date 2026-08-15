@@ -512,7 +512,7 @@ function Index() {
                   {
                     "filmes": "Filmes, séries, doramas, animes e esportes ao vivo em um só aplicativo.",
                     "terror-raro": "Descubra produções incríveis da Coreia, Japão, Tailândia e muito mais.",
-                    "series": "Temporadas completas das maiores séries mundiais dubladas e legendadas.",
+                    "series": "Um catálogo de séries que vai muito além dos streamings tradicionais.",
                     "animes": "Animes populares com episódios semanais e dublagem em português.",
                   }[activeTab] || "Filmes, séries, doramas, animes e esportes ao vivo em um só aplicativo."
                 }
