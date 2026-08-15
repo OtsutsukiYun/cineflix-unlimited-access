@@ -389,7 +389,7 @@ function TrialBannerSlideshow() {
   const current = TRIAL_HORROR_SLIDES[index];
 
   return (
-    <div className="mb-10 relative overflow-hidden rounded-3xl border-2 border-emerald-500/50 shadow-[0_0_50px_rgba(16,185,129,0.3)] bg-black min-h-[360px] sm:min-h-[400px] flex flex-col justify-between">
+    <div className="mb-10 relative overflow-hidden rounded-3xl border-2 border-emerald-500/50 shadow-[0_0_50px_rgba(16,185,129,0.3)] bg-black h-[420px] sm:h-[450px] flex flex-col justify-between shrink-0">
       {/* IMAGENS GRANDES PASSANDO NO FUNDO - MAIS NÍTIDAS E VIBRANTES */}
       <div className="absolute inset-0 z-0">
         {TRIAL_HORROR_SLIDES.map((slide, i) => (
@@ -408,7 +408,7 @@ function TrialBannerSlideshow() {
 
       {/* CONTEÚDO PRINCIPAL DO CARD */}
       <div className="relative z-30 p-6 sm:p-10 text-center flex flex-col items-center justify-center flex-1">
-        <div className="inline-flex items-center gap-2 rounded-full bg-emerald-950/80 border border-emerald-400/60 px-4 py-1.5 text-xs font-black tracking-wider text-emerald-300 uppercase mb-4 shadow-[0_0_20px_rgba(16,185,129,0.5)] backdrop-blur-md">
+        <div className="inline-flex items-center gap-2 rounded-full bg-emerald-950/80 border border-emerald-400/60 px-4 py-1.5 text-xs font-black tracking-wider text-emerald-300 uppercase mb-3 shadow-[0_0_20px_rgba(16,185,129,0.5)] backdrop-blur-md">
           <GiftIcon className="size-4 text-emerald-400" /> TESTE DE 3 DIAS LIBERADO 🎁
         </div>
 
@@ -416,16 +416,16 @@ function TrialBannerSlideshow() {
           🎁 3 Dias de Acesso Total Liberado
         </h2>
 
-        <p className="text-sm sm:text-base text-white leading-relaxed max-w-xl mx-auto font-bold drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] mb-6">
+        <p className="text-sm sm:text-base text-white leading-relaxed max-w-xl mx-auto font-bold drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] mb-5">
           Assim que você instalar e abrir o aplicativo, seu teste de <strong className="text-emerald-300 font-black">3 dias grátis é ativado na hora</strong> na sua Smart TV ou celular! Não precisa informar cartão de crédito nem dados bancários.
         </p>
 
-        {/* INDICADOR CINEMATOGRÁFICO DO FILME EM EXIBIÇÃO NO FUNDO */}
-        <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl bg-black/85 border border-white/30 px-4 py-2 text-xs font-bold text-white shadow-2xl backdrop-blur-md">
-          <span className="flex size-2 rounded-full bg-red-500 animate-pulse" />
-          <span className="text-white/70">Filme em exibição no fundo:</span>
-          <span className="text-emerald-300 font-black">{current.title}</span>
-          <span className="text-[10px] bg-red-600/40 border border-red-500/50 px-2 py-0.5 rounded-md text-red-200 font-bold uppercase">
+        {/* INDICADOR CINEMATOGRÁFICO DO FILME EM EXIBIÇÃO NO FUNDO (ALTURA FIXA COMPATÍVEL) */}
+        <div className="h-11 min-h-[44px] flex flex-wrap items-center justify-center gap-2 rounded-2xl bg-black/85 border border-white/30 px-4 py-2 text-xs font-bold text-white shadow-2xl backdrop-blur-md">
+          <span className="flex size-2 rounded-full bg-red-500 animate-pulse shrink-0" />
+          <span className="text-white/70 shrink-0">Filme em exibição no fundo:</span>
+          <span className="text-emerald-300 font-black truncate max-w-[200px] sm:max-w-none">{current.title}</span>
+          <span className="text-[10px] bg-red-600/40 border border-red-500/50 px-2 py-0.5 rounded-md text-red-200 font-bold uppercase shrink-0">
             {current.genre} ({current.year})
           </span>
         </div>
