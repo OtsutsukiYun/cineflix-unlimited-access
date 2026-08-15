@@ -122,7 +122,7 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
-  { title: "Michael", poster: "/gXh43JopeO8BlA661BvlkR6yeqs.jpg", year: "2026", tag: "🔥 Biografia 2026", rating: "5.0" },
+  { title: "Michael", poster: "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", year: "2026", tag: "🔥 Biografia 2026", rating: "5.0" },
   { title: "Socorro! (Send Help)", poster: "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
   { title: "Dia D (Disclosure Day)", poster: "/pmff1wjKrgJi92PPr346lAifzlg.jpg", year: "2026", tag: "🔥 Sci-Fi 2026", rating: "4.9" },
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },

@@ -228,7 +228,7 @@ const CATALOG_TABS = [
     id: "filmes",
     label: "🎬 Filmes & Lançamentos",
     items: [
-      { title: "Michael", poster: "/gXh43JopeO8BlA661BvlkR6yeqs.jpg", year: "2026", tag: "🔥 Biografia 2026" },
+      { title: "Michael", poster: "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", year: "2026", tag: "🔥 Biografia 2026" },
       { title: "Socorro! (Send Help)", poster: "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "A Boca do Diabo", poster: "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg", year: "2026", tag: "🔥 Terror 2026" },
       { title: "Dia D (Disclosure Day)", poster: "/pmff1wjKrgJi92PPr346lAifzlg.jpg", year: "2026", tag: "🔥 Sci-Fi 2026" },
