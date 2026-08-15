@@ -443,8 +443,8 @@ function Index() {
           </p>
 
           <h1 className="font-display text-3xl font-black sm:text-5xl md:text-6xl leading-[1.08] text-white tracking-tight drop-shadow-xl">
-            Filmes, séries, doramas, esportes e o{" "}
-            <span className="text-red-500">maior acervo de terror.</span>
+            O maior catálogo de filmes, séries, doramas e{" "}
+            <span className="text-red-500">terror dos streamings.</span>
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-white/70 max-w-lg mx-auto leading-relaxed">
