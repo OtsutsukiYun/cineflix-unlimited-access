@@ -68,7 +68,7 @@ const PERGUNTAS = [
   },
   {
     q: "Como instalar o UniTV Pro na Smart TV ou TV Stick?",
-    a: "MÉTODO 1 (Downloader): Baixe o app Downloader na loja de aplicativos, abra-o e digite o código 291561. Siga as instruções na tela. — MÉTODO 2 (NtDown): Baixe o app NtDown na Play Store e coloque o código 96919.",
+    a: "MÉTODO 1 (Downloader): Baixe o app Downloader na loja de aplicativos, abra-o e digite o código 1089401. Siga as instruções na tela. — MÉTODO 2 (NtDown): Baixe o app NtDown na Play Store e coloque o código 96919.",
   },
   {
     q: "Como fazer uma recarga UniTV Pro?",

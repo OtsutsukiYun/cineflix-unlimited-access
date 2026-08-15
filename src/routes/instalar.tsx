@@ -278,7 +278,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
           </div>
           <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
             Abra o aplicativo <strong className="text-white">Downloader</strong> e na barra de busca/endereço digite o código:
-            <CodeCopyBox code="291561" color="orange" />
+            <CodeCopyBox code="1089401" color="orange" />
           </div>
         </li>
 
@@ -617,7 +617,7 @@ export function InstalarPage() {
               </div>
 
               {/* MÉTODOS 1 E 2 NO PC TAMBÉM */}
-              <DownloaderMethodCard methodNumber={1} subtitle="Método 1 via Downloader no emulador PC (Código 291561)" />
+              <DownloaderMethodCard methodNumber={1} subtitle="Método 1 via Downloader no emulador PC (Código 1089401)" />
               <NtDownMethodCard methodNumber={2} subtitle="Método 2 via ntDown no emulador PC (Código 96919)" />
             </div>
           )}
