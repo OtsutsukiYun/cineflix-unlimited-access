@@ -238,7 +238,7 @@ const CATALOG_TABS = [
       { title: "Clayface: Rituais das Sombras", poster: "/5jCpQnWPikggmQZoDp1eAi6BI6w.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
       { title: "Vingadores: Doutor Destino", poster: "/bh2OuKvq19jBHsloUVCfPSZZw81.jpg", year: "2026", tag: "🔥 Estreia Dez/2026" },
       { title: "Duna: Parte 3", poster: "/d43fvHQsIMa4kpyhKXw0haEJIvI.jpg", year: "2026", tag: "🔥 Estreia Dez/2026" },
-      { title: "HOPE", poster: "/bcK5naYzzfY0JBCgrPrsrbV6NO1.jpg", year: "2026", tag: "🔥 Estreia Jul/2026" },
+      { title: "HOPE", poster: "/bcK5naYzzfY0JBCgrPrsrbV6NO1.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
       { title: "O Fim da Rua", poster: "/fYXqpgPmHMphSF2W30GbTeJVIa5.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
     ],
   },
