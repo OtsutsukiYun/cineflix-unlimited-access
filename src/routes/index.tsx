@@ -466,7 +466,7 @@ function Index() {
           </p>
 
           <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.12] text-white tracking-tight drop-shadow-xl">
-            Aqui você encontra o maior acervo dos streamings e{" "}
+            Aqui você encontra o maior acervo de{" "}
             <span className="text-red-500">filmes e séries de terror.</span>
           </h1>
 
