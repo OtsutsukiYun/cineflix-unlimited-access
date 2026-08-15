@@ -611,22 +611,28 @@ export function InstalarPage() {
 
           {/* CATEGORIA 2: COMPUTADOR PC & NOTEBOOK */}
           {activeTab === "pc" && (
-            <div className="rounded-3xl border-2 border-red-500/40 bg-gradient-to-b from-red-950/40 via-stone-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(220,38,38,0.15)]">
-              <div className="flex items-center gap-3.5 mb-4 pb-4 border-b border-white/10">
-                <div className="flex size-12 items-center justify-center rounded-2xl bg-red-500/20 border border-red-400/40 text-red-400">
-                  <Monitor className="size-6" />
+            <div className="space-y-6">
+              <div className="rounded-3xl border-2 border-red-500/40 bg-gradient-to-b from-red-950/40 via-stone-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(220,38,38,0.15)]">
+                <div className="flex items-center gap-3.5 mb-4 pb-4 border-b border-white/10">
+                  <div className="flex size-12 items-center justify-center rounded-2xl bg-red-500/20 border border-red-400/40 text-red-400">
+                    <Monitor className="size-6" />
+                  </div>
+                  <div>
+                    <h3 className="font-black text-white text-xl sm:text-2xl">Instalação no Computador ou Notebook (PC)</h3>
+                    <p className="text-xs text-white/70">Roda via emulador de Android leve (LDPlayer)</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-black text-white text-xl sm:text-2xl">Instalação no Computador ou Notebook (PC)</h3>
-                  <p className="text-xs text-white/70">Roda via emulador de Android leve</p>
+                <p className="text-sm text-white/85 leading-relaxed mb-4">
+                  Para assistir no Windows ou Mac, baixe um emulador de Android. Recomendamos o <strong className="text-red-300 font-bold">LDPlayer</strong> por ser extremamente leve, rápido e otimizado para transmissões ao vivo.
+                </p>
+                <div className="rounded-2xl border border-amber-500/40 bg-gradient-to-r from-amber-950/40 via-stone-900/60 to-black/70 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md">
+                  💡 <strong>Dentro do emulador no PC:</strong> Basta abrir o aplicativo de download e utilizar um dos 2 códigos de acesso abaixo!
                 </div>
               </div>
-              <p className="text-sm text-white/85 leading-relaxed mb-4">
-                Para assistir no Windows ou Mac, baixe um emulador de Android. Recomendamos o <strong className="text-red-300 font-bold">LDPlayer</strong> por ser extremamente leve, rápido e otimizado para transmissões ao vivo.
-              </p>
-              <div className="rounded-2xl border border-amber-500/40 bg-gradient-to-r from-amber-950/40 via-stone-900/60 to-black/70 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md">
-                💡 <strong>Dica de Desempenho:</strong> Evite o BlueStacks pois costuma congelar a transmissão de canais. No LDPlayer, basta abrir o app de download e utilizar os códigos de acesso acima!
-              </div>
+
+              {/* MÉTODOS 1 E 2 NO PC TAMBÉM */}
+              <DownloaderMethodCard methodNumber={1} subtitle="Método 1 via Downloader no emulador PC (Código 291561)" />
+              <NtDownMethodCard methodNumber={2} subtitle="Método 2 via ntDown no emulador PC (Código 96919)" />
             </div>
           )}
         </div>
