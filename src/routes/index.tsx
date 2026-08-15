@@ -879,7 +879,7 @@ function Index() {
                 "Todos os canais ao vivo HD/4K",
                 "Smart TV Android, TV Box, Mi Stick, FireTV",
                 "Celular Android e Tablet Android",
-                "Suporte VIP prioritário via WhatsApp",
+                "Suporte 7 dias via WhatsApp",
                 "Garantia de reembolso de 7 dias",
               ],
             },
