@@ -507,8 +507,15 @@ function Index() {
               <h2 className="text-2xl font-extrabold sm:text-4xl text-white">
                 O que você quer assistir <span className="text-red-500">hoje?</span>
               </h2>
-              <p className="mt-2 text-xs sm:text-sm text-white/60 font-medium max-w-lg mx-auto">
-                Filmes, séries, doramas, animes e esportes ao vivo em um só aplicativo.
+              <p className="mt-2 text-xs sm:text-sm text-white/60 font-medium max-w-lg mx-auto transition-all">
+                {
+                  {
+                    "filmes": "Filmes, séries, doramas, animes e esportes ao vivo em um só aplicativo.",
+                    "terror-raro": "Descubra produções incríveis da Coreia, Japão, Tailândia e muito mais.",
+                    "series": "Temporadas completas das maiores séries mundiais dubladas e legendadas.",
+                    "animes": "Animes populares com episódios semanais e dublagem em português.",
+                  }[activeTab] || "Filmes, séries, doramas, animes e esportes ao vivo em um só aplicativo."
+                }
               </p>
             </div>
           </Reveal>
@@ -678,7 +685,7 @@ function Index() {
               titleHover: "group-hover:text-pink-200",
               t: "Doramas & Produções Asiáticas",
               qtd: "+2.500 Doramas & K-Dramas",
-              d: "Descubra produções incríveis da Coreia, Japão, Tailândia e muito mais.",
+              d: "+2.500 doramas como Rainha das Lágrimas, Pousando no Amor, A Lição e os maiores sucessos asiáticos dublados.",
               tabId: "terror-raro",
             },
             {
