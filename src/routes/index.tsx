@@ -595,8 +595,8 @@ function Index() {
             {
               icon: Tv,
               banners: [
-                "/bwSmgmd90hCWwqOKQYTEraeOZhJ.jpg", // Shōgun
-                "/56v2KjBlU4XaOv9rVYEQypROD7P.jpg", // Stranger Things
+                "/dzq83RHwQcnP6WGJ6YkenIqeaa5.jpg", // Peaky Blinders
+                "/n6vVs6z8obNbExdD3QHTr4Utu1Z.jpg", // The Boys
                 "/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg", // The Last of Us
               ],
               objectPosition: "object-cover",
