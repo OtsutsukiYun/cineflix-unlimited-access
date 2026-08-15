@@ -210,8 +210,6 @@ export const top10Hoje: Title[] = [
 export const series: Title[] = [
   { title: "O Segredo de Widow's Bay", poster: "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", year: "2026", tag: "Novo" },
   { title: "Revenant (O Diabo)", poster: "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", year: "2023", tag: "Dorama de Terror" },
-  { title: "Shiki", poster: "/zsWbTnNwNjqWvgZ9gqTcK9WLoWy.jpg", year: "2010", tag: "🔥 Anime de Terror" },
-  { title: "Mirai Nikki (The Future Diary)", poster: "/rQScQD92q6CYAGL0DWQQNxjuVVh.jpg", year: "2011", tag: "🔥 Anime & Thriller" },
   { title: "Origem (From)", poster: "/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg", year: "Série" },
   { title: "IT: Bem-Vindos a Derry", poster: "/gMTfrLvrDaD0zrhpLZ7zXIIpKfJ.jpg", year: "2025", tag: "Em alta" },
   { title: "Channel Zero", poster: "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", year: "Série" },
@@ -242,6 +240,8 @@ export const series: Title[] = [
 ];
 
 export const animes: Title[] = [
+  { title: "Shiki", poster: "/zsWbTnNwNjqWvgZ9gqTcK9WLoWy.jpg", year: "2010", tag: "🔥 Anime de Terror" },
+  { title: "Mirai Nikki (The Future Diary)", poster: "/rQScQD92q6CYAGL0DWQQNxjuVVh.jpg", year: "2011", tag: "🔥 Anime & Thriller" },
   { title: "Chainsaw Man", poster: "/npdB6eFzizki0WaZ1OvKcJrWe97.jpg", year: "Série", tag: "🔥 Sucesso" },
   { title: "Frieren e a Jornada para o Além", poster: "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", year: "Série", tag: "Em alta" },
   { title: "Demon Slayer: Castelo Infinito", poster: "/41XdjOXGQoH0HTDNqEfwKGvGgwm.jpg", year: "2025", tag: "#1 mais assistido" },
