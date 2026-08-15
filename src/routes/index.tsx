@@ -674,8 +674,8 @@ function Index() {
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-pink-200",
               t: "Doramas & K-Dramas",
-              qtd: "+1.600 Doramas",
-              d: "+1.600 doramas como Rainha das Lágrimas, Pousando no Amor e os maiores sucessos asiáticos dublados.",
+              qtd: "+2.500 Doramas & K-Dramas",
+              d: "+2.500 doramas como Rainha das Lágrimas, Pousando no Amor, A Lição e os maiores sucessos asiáticos dublados.",
             },
             {
               icon: Flame,
