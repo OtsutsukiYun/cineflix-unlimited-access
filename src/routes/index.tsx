@@ -100,27 +100,7 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
 
   if (!open) return null;
   return (
-    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4" role="dialog" aria-modal="true">
-      {/* PAREDE 3D DE CAPINHAS DE FILMES PASSANDO COM PROFUNDIDADE E PERSPECTIVA */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-55 [perspective:1000px]">
-        <div className="size-full flex flex-col justify-center gap-2.5 [transform-style:preserve-3d] [transform:rotateX(12deg)_rotateY(-8deg)_rotateZ(-2deg)_scale(1.15)] origin-center">
-          <div className="flex w-max animate-marquee-cinematic gap-2.5">
-            {[...TESTE_GRATIS_POSTERS, ...TESTE_GRATIS_POSTERS].map((p, idx) => (
-              <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-xl border border-white/25 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-                <img src={img(p, "w342")} alt="" className="size-full object-cover" />
-              </div>
-            ))}
-          </div>
-          <div className="flex w-max animate-marquee-reverse-cinematic gap-2.5">
-            {[...TESTE_GRATIS_POSTERS, ...TESTE_GRATIS_POSTERS].reverse().map((p, idx) => (
-              <div key={idx} className="w-24 sm:w-32 shrink-0 aspect-[2/3] overflow-hidden rounded-xl border border-white/25 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-                <img src={img(p, "w342")} alt="" className="size-full object-cover" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/65 to-black/55" />
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 backdrop-blur-md bg-black/80" role="dialog" aria-modal="true">
       <div className="relative z-10 w-full max-w-md rounded-3xl border border-white/10 bg-[#0e0e0e] p-7 sm:p-9 shadow-[0_40px_80px_rgba(0,0,0,0.95)] text-center">
         <button onClick={close} aria-label="Fechar" className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white/60 hover:bg-white/20 hover:text-white transition-all">
           <X className="size-4" />
