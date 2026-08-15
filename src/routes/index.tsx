@@ -447,7 +447,7 @@ function Index() {
 
         <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-32 sm:pb-12">
           <p className="mb-3 text-[10px] min-[380px]:text-[11px] sm:text-xs md:text-sm font-extrabold tracking-tight sm:tracking-wider text-red-400 uppercase whitespace-nowrap overflow-hidden text-ellipsis max-w-full px-1">
-            🔥 Cansado de procurar um filme e nenhum streaming ter?
+            🔥 Cansado de procurar um filme ou série e nenhum streaming ter?
           </p>
 
           <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.12] text-white tracking-tight drop-shadow-xl">
