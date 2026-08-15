@@ -709,9 +709,9 @@ function Index() {
               corGlow: "shadow-[0_0_30px_rgba(14,165,233,0.2)] hover:shadow-[0_0_50px_rgba(14,165,233,0.55)]",
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-sky-200",
-              t: "Canais infantis",
-              qtd: "Dezenas de Canais Infantis",
-              d: "Dezenas de canais infantis 24h ao vivo e milhares de filmes e desenhos para toda a família.",
+              t: "Conteúdos infantis",
+              qtd: "Milhares de Conteúdos Infantis",
+              d: "Milhares de conteúdos infantis, filmes, desenhos e canais 24h para a diversão de toda a família.",
             },
             {
               icon: Trophy,
