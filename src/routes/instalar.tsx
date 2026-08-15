@@ -425,13 +425,15 @@ function TrialBannerSlideshow() {
           Assim que você instalar e abrir o aplicativo, seu teste de <strong className="text-emerald-300 font-black">3 dias grátis é ativado na hora</strong> na sua Smart TV ou celular! Não precisa informar cartão de crédito nem dados bancários.
         </p>
 
-        {/* INDICADOR CINEMATOGRÁFICO DO FILME EM EXIBIÇÃO NO FUNDO (ALTURA FIXA COMPATÍVEL) */}
-        <div className="h-11 min-h-[44px] flex flex-wrap items-center justify-center gap-2 rounded-2xl bg-black/85 border border-white/30 px-4 py-2 text-xs font-bold text-white shadow-2xl backdrop-blur-md">
-          <span className="flex size-2 rounded-full bg-red-500 animate-pulse shrink-0" />
-          <span className="text-white/70 shrink-0">Filme em exibição no fundo:</span>
-          <span className="text-emerald-300 font-black truncate max-w-[200px] sm:max-w-none">{current.title}</span>
-          <span className="text-[10px] bg-red-600/40 border border-red-500/50 px-2 py-0.5 rounded-md text-red-200 font-bold uppercase shrink-0">
-            {current.genre} ({current.year})
+        {/* INDICADOR CINEMATOGRÁFICO DO FILME EM EXIBIÇÃO NO FUNDO (RESPONSIVO E SEM BUGS) */}
+        <div className="inline-flex max-w-full items-center justify-center gap-2 rounded-2xl bg-black/85 border border-white/30 px-3.5 py-2 text-xs font-bold text-white shadow-2xl backdrop-blur-md">
+          <span className="flex size-2 shrink-0 rounded-full bg-red-500 animate-pulse" />
+          <span className="text-white/70 shrink-0 hidden sm:inline">Passando no fundo:</span>
+          <span className="text-emerald-300 font-black truncate max-w-[150px] sm:max-w-[260px]">
+            {current.title}
+          </span>
+          <span className="shrink-0 text-[10px] bg-red-600/40 border border-red-500/50 px-2 py-0.5 rounded-md text-red-200 font-bold uppercase">
+            {current.genre} • {current.year}
           </span>
         </div>
       </div>
