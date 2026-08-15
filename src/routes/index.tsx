@@ -437,7 +437,7 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/30 to-[#080808]/50" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#080808] to-transparent" />
 
-        <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-36 pb-14 sm:pt-40 sm:pb-16">
+        <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-32 sm:pb-12">
           <p className="mb-3 text-xs font-extrabold tracking-[0.25em] text-red-400 uppercase">
             🔥 Todos os Streamings em Um Só Lugar
           </p>
@@ -496,7 +496,7 @@ function Index() {
       </div>
 
       {/* CATÁLOGO COMPACTO E DINÂMICO COM ABAS (NÃO CANSATIVO) */}
-      <section id="catalogo" className="relative z-10 py-10 sm:py-14">
+      <section id="catalogo" className="relative z-10 py-6 sm:py-8">
         <div className="mx-auto w-[94%] max-w-5xl">
           <Reveal>
             <div className="text-center mb-6">
@@ -609,7 +609,7 @@ function Index() {
 
 
       {/* CATEGORIAS DO CATÁLOGO DE CONTEÚDO */}
-      <section id="categorias" className="relative z-10 mx-auto w-[94%] max-w-6xl py-12 sm:py-16">
+      <section id="categorias" className="relative z-10 mx-auto w-[94%] max-w-6xl py-6 sm:py-8">
         <SmoothCardReveal>
           <div className="text-center mb-4 sm:mb-5">
             <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/40 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3">
@@ -775,7 +775,7 @@ function Index() {
       </section>
 
       {/* RECURSOS EXCLUSIVOS DA PLATAFORMA (EFEITO VIDRO LIQUIDO PREMIUM) */}
-      <section className="relative z-10 mx-auto w-[94%] max-w-5xl py-8 sm:py-12">
+      <section className="relative z-10 mx-auto w-[94%] max-w-5xl py-5 sm:py-7">
         <SmoothCardReveal>
           <div className="glass rounded-3xl border border-white/20 bg-zinc-900/40 p-6 sm:p-9 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.7)] relative overflow-hidden">
             {/* LUZ DE FUNDO EM DEGRADÊ DE VIDRO */}
@@ -852,7 +852,7 @@ function Index() {
       </section>
 
       {/* PLANOS */}
-      <section id="planos" className="relative z-10 mx-auto w-[94%] max-w-6xl py-10 sm:py-14">
+      <section id="planos" className="relative z-10 mx-auto w-[94%] max-w-6xl py-6 sm:py-8">
         <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] rounded-full bg-red-800/15 blur-[180px]" />
 
         <Reveal className="relative z-10 text-center mb-8">
@@ -1069,7 +1069,7 @@ function Index() {
       </Faq>
 
       {/* SUPORTE / CONTATO */}
-      <section className="relative z-10 border-t border-white/5 bg-black/30 py-8">
+      <section className="relative z-10 border-t border-white/5 bg-black/30 py-5">
         <div className="mx-auto w-[94%] max-w-2xl text-center">
           <p className="text-sm text-white/50 mb-4">Precisa de ajuda? Nosso suporte atende 7 dias por semana.</p>
           <div className="flex flex-wrap justify-center gap-3">
