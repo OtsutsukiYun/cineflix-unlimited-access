@@ -622,57 +622,6 @@ export function InstalarPage() {
           </div>
         </div>
 
-        {/* MOSTRUÁRIO VISUAL DO CATÁLOGO COMPLETO LIBERADO */}
-        <div className="mt-10 rounded-3xl border border-white/15 bg-gradient-to-b from-white/5 via-black/80 to-black/95 p-6 sm:p-8 backdrop-blur-md text-center shadow-2xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/60 px-4 py-1.5 text-xs font-black tracking-wider text-red-300 uppercase mb-3">
-            <Sparkles className="size-3.5 text-red-400" /> TUDO INCLUSO NO TESTE E NA ASSINATURA
-          </span>
-          <h3 className="text-2xl sm:text-3xl font-black text-white mb-2">
-            +50.000 Conteúdos Prontos para Assistir
-          </h3>
-          <p className="text-xs sm:text-sm text-white/70 max-w-lg mx-auto mb-6 font-medium">
-            Assista a todos os filmes do cinema, séries completas, animes atualizados e canais de esportes sem travamentos.
-          </p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
-            <div className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/20 p-4 flex flex-col justify-end shadow-lg">
-              <img src={img("/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg", "w500")} alt="Filmes" className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-              <div className="relative z-10">
-                <span className="text-[9px] font-black uppercase text-red-400 tracking-wider">🎬 +50.000 Filmes</span>
-                <h4 className="text-sm font-black text-white">Lançamentos 4K</h4>
-              </div>
-            </div>
-
-            <div className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/20 p-4 flex flex-col justify-end shadow-lg">
-              <img src={img("/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg", "w500")} alt="Séries" className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-              <div className="relative z-10">
-                <span className="text-[9px] font-black uppercase text-rose-400 tracking-wider">📺 +20.000 Séries</span>
-                <h4 className="text-sm font-black text-white">Séries Completas</h4>
-              </div>
-            </div>
-
-            <div className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/20 p-4 flex flex-col justify-end shadow-lg">
-              <img src={img("/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", "w500")} alt="Doramas" className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-              <div className="relative z-10">
-                <span className="text-[9px] font-black uppercase text-purple-400 tracking-wider">💖 +1.600 Doramas</span>
-                <h4 className="text-sm font-black text-white">Doramas &amp; K-Dramas</h4>
-              </div>
-            </div>
-
-            <div className="group relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/20 p-4 flex flex-col justify-end shadow-lg">
-              <img src={img("/s4tTSYDGauYbax0NbQOSN8o78WY.jpg", "w500")} alt="Esportes" className="absolute inset-0 size-full object-cover transition-transform duration-500 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
-              <div className="relative z-10">
-                <span className="text-[9px] font-black uppercase text-emerald-400 tracking-wider">⚽ +500 Canais</span>
-                <h4 className="text-sm font-black text-white">Futebol &amp; UFC Ao Vivo</h4>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* BLOCO DE CONVERSÃO / ASSINATURA DE PLANOS (QUEM QUER COMPRAR DIRETO) */}
         <div className="mt-10 rounded-3xl border border-red-500/50 bg-gradient-to-br from-red-950/50 via-black to-red-950/30 p-8 sm:p-10 text-center shadow-[0_0_50px_rgba(220,38,38,0.2)] relative overflow-hidden">
           <div className="absolute top-0 right-0 size-40 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
