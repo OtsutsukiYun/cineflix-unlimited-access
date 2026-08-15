@@ -318,9 +318,9 @@ function SlideshowBanner({
             alt={alt}
             className={`absolute inset-0 size-full ${objectPosition} transform-gpu transition-opacity duration-1000 ease-in-out will-change-[opacity] ${
               isActive
-                ? "opacity-45 z-10"
+                ? "opacity-100 z-10"
                 : isPrev
-                ? "opacity-45 z-0"
+                ? "opacity-100 z-0"
                 : "opacity-0 -z-10 pointer-events-none"
             }`}
           />
@@ -689,11 +689,11 @@ function Index() {
               >
                 {/* IMAGEM BANNER ILUSTRATIVA DE FUNDO COM SLIDESHOW */}
                 <SlideshowBanner banners={f.banners} alt={`Ilustração ${f.t}`} objectPosition={f.objectPosition} delayMs={i * 600} />
-                {/* SOBREPOSIÇÃO DE GRADIENTE ESCURO PROFUNDO PARA CONTRASTE PERFEITO */}
-                <div className={`absolute inset-0 ${f.bgOverlay} opacity-90 transition-opacity duration-500 group-hover:opacity-95`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#080303] via-[#080303]/75 to-transparent pointer-events-none" />
+                {/* SOBREPOSIÇÃO DE GRADIENTE ESCURO PROFUNDO EM Z-20 PARA CONTRASTE PERFEITO SEM VAZAR IMAGEM DO FUNDO */}
+                <div className={`absolute inset-0 z-20 ${f.bgOverlay} opacity-85 transition-opacity duration-500 group-hover:opacity-90 pointer-events-none`} />
+                <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#090404] via-[#090404]/80 to-black/30 pointer-events-none" />
 
-                <div className="relative z-10 flex flex-col justify-between h-full">
+                <div className="relative z-30 flex flex-col justify-between h-full">
                   {/* ÍCONE RELUZENTE E BADGE DE QUANTIDADE */}
                   <div className="relative mb-6 shrink-0 flex items-center justify-between">
                     <div className={`relative flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${f.gradient} p-0.5 border ${f.glow} transform-gpu transition-all duration-300 group-hover:scale-110 shadow-lg`}>
