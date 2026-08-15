@@ -612,21 +612,61 @@ export function InstalarPage() {
           {/* CATEGORIA 2: COMPUTADOR PC & NOTEBOOK */}
           {activeTab === "pc" && (
             <div className="space-y-6">
-              <div className="rounded-3xl border-2 border-red-500/40 bg-gradient-to-b from-red-950/40 via-stone-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(220,38,38,0.15)]">
-                <div className="flex items-center gap-3.5 mb-4 pb-4 border-b border-white/10">
-                  <div className="flex size-12 items-center justify-center rounded-2xl bg-red-500/20 border border-red-400/40 text-red-400">
-                    <Monitor className="size-6" />
+              <div className="rounded-3xl border-2 border-yellow-500/50 bg-gradient-to-b from-amber-950/40 via-stone-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(245,158,11,0.15)]">
+                <div className="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-white/10">
+                  <div className="flex items-center gap-3.5">
+                    <LdPlayerAppIcon className="size-14 sm:size-16" />
+                    <div>
+                      <a
+                        href={LDPLAYER_WEBSITE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/title inline-flex items-center gap-2 hover:text-yellow-300 transition-colors"
+                      >
+                        <h3 className="font-black text-white text-xl sm:text-2xl group-hover/title:text-yellow-300 flex items-center gap-2">
+                          LDPlayer (Emulador PC) <ExternalLink className="size-4 text-yellow-400 opacity-80 group-hover/title:opacity-100" />
+                        </h3>
+                      </a>
+                      <p className="text-xs text-yellow-300/90 font-semibold mt-0.5">
+                        Emulador de Android super leve para Windows &amp; Mac
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-black text-white text-xl sm:text-2xl">Instalação no Computador ou Notebook (PC)</h3>
-                    <p className="text-xs text-white/70">Roda via emulador de Android leve (LDPlayer)</p>
-                  </div>
+                  <a
+                    href={LDPLAYER_WEBSITE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-yellow-500/15 border border-yellow-500/30 px-3 py-1.5 text-[11px] font-extrabold text-yellow-300 shrink-0 hover:bg-yellow-500/25 transition-all"
+                  >
+                    ⚡ Baixar LDPlayer <ExternalLink className="size-3" />
+                  </a>
                 </div>
-                <p className="text-sm text-white/85 leading-relaxed mb-4">
-                  Para assistir no Windows ou Mac, baixe um emulador de Android. Recomendamos o <strong className="text-red-300 font-bold">LDPlayer</strong> por ser extremamente leve, rápido e otimizado para transmissões ao vivo.
+
+                <p className="text-sm text-white/90 leading-relaxed mb-4 font-medium">
+                  Para assistir no Windows ou Mac, baixe o emulador oficial <strong className="text-yellow-300 font-black">LDPlayer</strong>. Ele é o emulador mais leve do mercado, ultra-rápido e otimizado para transmissões ao vivo.
                 </p>
+
+                {/* PREVIEW DO ÍCONE COM LINK PARA O SITE OFICIAL DO LDPLAYER */}
+                <a
+                  href={LDPLAYER_WEBSITE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mb-4 flex items-center gap-4 rounded-2xl border border-yellow-500/40 bg-yellow-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(234,179,8,0.2)] transition-all duration-300 hover:border-yellow-400/80 hover:bg-yellow-950/50 hover:scale-[1.01] group/preview cursor-pointer"
+                >
+                  <LdPlayerAppIcon className="size-14 sm:size-16" />
+                  <div>
+                    <span className="inline-block text-[10px] font-black uppercase tracking-wider text-yellow-400 bg-yellow-500/20 border border-yellow-500/40 px-2 py-0.5 rounded-md mb-1">
+                      🎯 TOQUE PARA ABRIR O SITE DO LDPLAYER
+                    </span>
+                    <h4 className="font-black text-white text-sm sm:text-base group-hover/preview:text-yellow-300 transition-colors flex items-center gap-1.5">
+                      LDPlayer Oficial (pt.ldplayer.net) <ExternalLink className="size-3.5 text-yellow-400" />
+                    </h4>
+                    <p className="text-xs text-white/70">Download 100% Grátis, seguro e oficial para Computador &amp; Notebook</p>
+                  </div>
+                </a>
+
                 <div className="rounded-2xl border border-amber-500/40 bg-gradient-to-r from-amber-950/40 via-stone-900/60 to-black/70 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md">
-                  💡 <strong>Dentro do emulador no PC:</strong> Basta abrir o aplicativo de download e utilizar um dos 2 códigos de acesso abaixo!
+                  💡 <strong>Como usar no PC:</strong> Após instalar o LDPlayer, abra o aplicativo de download (Downloader ou Play Store) dentro dele e digite um dos 2 códigos de acesso abaixo!
                 </div>
               </div>
 
@@ -688,27 +728,5 @@ export function InstalarPage() {
         </div>
       </div>
     </div>
-  );
-}
-
-function GiftIcon({ className = "size-6" }: { className?: string }) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={className}
-    >
-      <rect x="3" y="8" width="18" height="4" rx="1" />
-      <path d="M12 8v13" />
-      <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
-      <path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5" />
-    </svg>
   );
 }
