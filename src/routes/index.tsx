@@ -1,25 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState, Fragment } from "react";
 
-function SmoothCardReveal({ children, delay = 0, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [shown, setShown] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setShown(true); }, { threshold: 0.05, rootMargin: "60px" });
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-  return (
-    <div
-      ref={ref}
-      style={{ transitionDuration: "650ms", transitionDelay: `${delay}ms`, transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)" }}
-      className={`transition-all duration-700 ${shown ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-7 scale-[0.98]"} ${className}`}
-    >
-      {children}
-    </div>
-  );
+function SmoothCardReveal({ children, className = "" }: { children: React.ReactNode; delay?: number; className?: string }) {
+  return <div className={className}>{children}</div>;
 }
 
 import {

@@ -5,36 +5,8 @@ import { WhatsAppIcon } from "@/components/icons";
 import { img, series, terror } from "@/data/catalog";
 import { handleWhatsAppClick } from "@/utils/whatsapp";
 
-function SmoothCardReveal({
-  children,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-}) {
-  const [shown, setShown] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShown(true), 50);
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <div
-      style={{
-        transitionDuration: "750ms",
-        transitionDelay: `${delay}ms`,
-        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
-      }}
-      className={`transition-all ${
-        shown
-          ? "opacity-100 translate-y-0 scale-100"
-          : "opacity-0 translate-y-8 scale-[0.97]"
-      }`}
-    >
-      {children}
-    </div>
-  );
+function SmoothCardReveal({ children }: { children: React.ReactNode; delay?: number }) {
+  return <div>{children}</div>;
 }
 
 export const Route = createFileRoute("/suporte")({

@@ -1,48 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown, HelpCircle } from "lucide-react";
 
-function SmoothCardReveal({
-  children,
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  delay?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [shown, setShown] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry?.isIntersecting) {
-          setShown(true);
-        }
-      },
-      { threshold: 0.05, rootMargin: "60px" }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      style={{
-        transitionDuration: "650ms",
-        transitionDelay: `${delay}ms`,
-        transitionTimingFunction: "cubic-bezier(0.16, 1, 0.3, 1)",
-      }}
-      className={`transition-all duration-700 ${
-        shown
-          ? "opacity-100 translate-y-0 scale-100"
-          : "opacity-0 translate-y-7 scale-[0.98]"
-      }`}
-    >
-      {children}
-    </div>
-  );
+function SmoothCardReveal({ children }: { children: React.ReactNode; delay?: number }) {
+  return <div>{children}</div>;
 }
 
 const PERGUNTAS = [
