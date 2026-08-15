@@ -71,7 +71,7 @@ const TESTE_GRATIS_POSTERS = [
   "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
   "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg", // Obsessão
   "/atpb7NKSyM4bJSUY8vQTunzK4Na.jpg", // He-Man
-  "/sssrBhdvDcczgMQYDc8oCoSuFEJ.jpg", // Toy Story 5
+  "/1QCWdqzTfh2x9UylVpspIU6QTuM.jpg", // Supergirl 2026
   "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", // Omukade
   "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", // Pengabdi Setan 2
   "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
@@ -256,7 +256,7 @@ const CATALOG_TABS = [
       { title: "He-Man: Mestres do Universo", poster: "/atpb7NKSyM4bJSUY8vQTunzK4Na.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Homem-Aranha: Um Novo Dia", poster: "/x0nvYzQpyJc5pdT9lMnkMuYAg0O.jpg", year: "2026", tag: "Super-herói" },
       { title: "Todo Mundo em Pânico 6", poster: "/y9yJd2qIIwhZcllHeKHsz5eRvNr.jpg", year: "2026", tag: "Comédia 2026" },
-      { title: "Toy Story 5", poster: "/sssrBhdvDcczgMQYDc8oCoSuFEJ.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
+      { title: "Supergirl", poster: "/1QCWdqzTfh2x9UylVpspIU6QTuM.jpg", year: "2026", tag: "🔥 DC 2026" },
       { title: "Devoradores de Estrelas", poster: "/yihdXomYb5kTeSivtFndMy5iDmf.jpg", year: "2026", tag: "🔥 Sci-Fi 2026" },
     ],
   },
