@@ -248,6 +248,7 @@ const CATALOG_TABS = [
       { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Coreia" },
       { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Exclusivo" },
       { title: "Another", poster: "/c8VVGuc3lnPXCBStcKQWrOlBCSA.jpg", year: "2012", tag: "Terror Japonês" },
+      { title: "Whispering Corridors: Wishing Stairs", poster: "/hX1CdiS8hJJxY8TuAmMoExYXKfn.jpg", year: "2003", tag: "Terror Coreano" },
       { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Suspense" },
     ],
   },
@@ -552,7 +553,7 @@ function Index() {
                     ) : (
                       <>
                         <ChevronDown className="size-4 text-red-400" />
-                        Exibir mais ({currentTabObj.items.length - 6} conteúdos)
+                        Exibir mais
                       </>
                     )}
                   </button>
