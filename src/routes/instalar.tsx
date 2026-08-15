@@ -142,14 +142,7 @@ export function InstalarPage() {
           </p>
         </div>
 
-        {/* AVISO DE COMPATIBILIDADE DE SISTEMA */}
-        <div className="mb-6 rounded-2xl border border-amber-500/40 bg-amber-950/40 p-4.5 text-xs text-amber-200/90 leading-relaxed font-medium flex items-center gap-3.5 shadow-[0_0_25px_rgba(245,158,11,0.15)]">
-          <span className="text-2xl shrink-0">🤖</span>
-          <div>
-            <strong className="text-white font-black text-xs sm:text-sm block mb-0.5">⚠️ Atenção antes de instalar:</strong>
-            O app roda <strong className="text-amber-300">apenas em aparelhos Android</strong>. Se a sua Smart TV for Samsung (Tizen) ou LG (webOS), utilize um dispositivo Android externo conectado à TV (como TV Box, Mi Stick Xiaomi, FireTV Stick ou Chromecast com Google TV).
-          </div>
-        </div>
+
 
         {/* CARD INFORMATIVO ESMERALDA DO TESTE GRÁTIS */}
         <div className="mb-8 rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950/50 via-black/80 to-emerald-950/30 p-6 sm:p-7 backdrop-blur-sm text-center shadow-[0_0_30px_rgba(16,185,129,0.15)]">
