@@ -403,7 +403,7 @@ const TRIAL_HORROR_SLIDES = [
   { title: "Exit 8 (Saída 8)", year: "2025", genre: "Terror / Mistério Japonês", backdrop: "/3cVrg7tzSf5AgEecYWDOSAzXAeX.jpg" },
   { title: "Evil Dead: A Ascensão", year: "2023", genre: "Terror / Gore", backdrop: "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg" },
   { title: "Invocação do Mal", year: "2013", genre: "Terror Sobrenatural", backdrop: "/ecKQlAEG95k62SMGhvX83oEqANK.jpg" },
-  { title: "Hereditário", year: "2018", genre: "Terror Psicológico", backdrop: "/gJbTXKNTL6O7r7PzF6ZRkJGBlPp.jpg" },
+  { title: "Hereditário", year: "2018", genre: "Terror Psicológico", backdrop: "/jQv5SAPEQwV1vtPseuWsRN6cT5q.jpg" },
   { title: "Ringu: O Chamado", year: "1998", genre: "Terror J-Horror Clássico", backdrop: "/sGhbO6muh1Fnpa7nkxYCfvmgWCo.jpg" },
   { title: "Ju-On: O Grito", year: "2002", genre: "Terror Clássico Japonês", backdrop: "/jNGVlbH2tnZmVqEIvuoxvV78vBY.jpg" },
   { title: "Corra! (Get Out)", year: "2017", genre: "Suspense / Thriller", backdrop: "/bBQHALHRAaaORlPNXv7fNcRXYdx.jpg" },
