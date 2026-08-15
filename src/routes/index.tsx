@@ -471,7 +471,7 @@ function Index() {
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-white/70 max-w-lg mx-auto leading-relaxed">
-            Mais de <strong className="text-white">100.000 conteúdos</strong> em até 4K — lançamentos do cinema, títulos que você não encontra em nenhuma outra plataforma, animes, doramas e esportes ao vivo.
+            Mais de <strong className="text-white">100.000 conteúdos</strong>, lançamentos, produções asiáticas, terror, animes, doramas, séries e muito mais, com qualidade de até 4K.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
