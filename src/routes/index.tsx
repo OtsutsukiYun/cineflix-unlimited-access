@@ -924,16 +924,18 @@ function Index() {
                 )}
 
                 <div>
-                  <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-4 min-h-[52px]">
-                    <div className="flex items-center gap-2.5">
-                      <p.icon className={`size-6 shrink-0 ${p.iconColor}`} />
+                  <div className="border-b border-white/10 pb-4 h-[72px] flex flex-col justify-between">
+                    <div className="flex items-center gap-2">
+                      <p.icon className={`size-5.5 shrink-0 ${p.iconColor}`} />
                       <h3 className={`font-display font-black tracking-tight uppercase text-xl sm:text-2xl ${p.titleGradient}`}>
                         {p.nome}
                       </h3>
                     </div>
-                    <span className={`shrink-0 rounded-full px-3 py-1 text-[11px] font-black uppercase tracking-wider border ${p.badgeStyle}`}>
-                      {p.badge}
-                    </span>
+                    <div>
+                      <span className={`inline-block rounded-full px-3 py-0.5 text-[11px] font-black uppercase tracking-wider border ${p.badgeStyle}`}>
+                        {p.badge}
+                      </span>
+                    </div>
                   </div>
 
                   <div className="mt-5 min-h-[92px] flex flex-col justify-between">
