@@ -444,80 +444,6 @@ const TRIAL_HORROR_SLIDES = [
   { title: "O Iluminado (The Shining)", year: "1980", genre: "Terror / Suspense", backdrop: "/mmd1HnuvAzFc4iuVJcnBrhDNEKr.jpg" },
 ];
 
-function TrialBannerSlideshow() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) => (prev + 1) % TRIAL_HORROR_SLIDES.length);
-    }, 12000); // 12 segundos por imagem - transição bem calma e confortável
-    return () => clearInterval(timer);
-  }, []);
-
-  const current = TRIAL_HORROR_SLIDES[index];
-
-  return (
-    <div className="mb-10 relative overflow-hidden rounded-3xl border-2 border-emerald-500/50 shadow-[0_0_50px_rgba(16,185,129,0.3)] bg-black h-[420px] sm:h-[450px] flex flex-col justify-between shrink-0">
-      {/* IMAGENS GRANDES PASSANDO NO FUNDO - MAIS NÍTIDAS E VIBRANTES */}
-      <div className="absolute inset-0 z-0">
-        {TRIAL_HORROR_SLIDES.map((slide, i) => (
-          <img
-            key={slide.backdrop}
-            src={img(slide.backdrop, "w1280")}
-            alt={slide.title}
-            className={`absolute inset-0 size-full object-cover transition-all duration-1000 ease-in-out ${
-              i === index ? "opacity-100 scale-100 z-10" : "opacity-0 scale-105 z-0"
-            }`}
-          />
-        ))}
-        {/* OVERLAY COM CONTRASTE IDEAL - LIGEIRAMENTE MAIS ESCURO */}
-        <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/90 via-black/55 to-black/40" />
-      </div>
-
-      {/* CONTEÚDO PRINCIPAL DO CARD */}
-      <div className="relative z-30 p-6 sm:p-10 text-center flex flex-col items-center justify-center flex-1">
-        <div className="inline-flex items-center gap-2 rounded-full bg-emerald-950/80 border border-emerald-400/60 px-4 py-1.5 text-xs font-black tracking-wider text-emerald-300 uppercase mb-3 shadow-[0_0_20px_rgba(16,185,129,0.5)] backdrop-blur-md">
-          <Gift className="size-4 text-emerald-400" /> TESTE DE 3 DIAS LIBERADO 🎁
-        </div>
-
-        <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-3 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
-          🎁 3 Dias de Acesso Total Liberado
-        </h2>
-
-        <p className="text-sm sm:text-base text-white leading-relaxed max-w-xl mx-auto font-bold drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] mb-5">
-          Assim que você instalar e abrir o aplicativo, seu teste de <strong className="text-emerald-300 font-black">3 dias grátis é ativado na hora</strong> na sua Smart TV, TV Box, TV Stick, PC ou Celular! Não precisa informar cartão de crédito nem dados bancários.
-        </p>
-
-        {/* INDICADOR CINEMATOGRÁFICO DO FILME EM EXIBIÇÃO NO FUNDO (RESPONSIVO E SEM BUGS) */}
-        <div className="inline-flex max-w-full items-center justify-center gap-2 rounded-2xl bg-black/85 border border-white/30 px-3.5 py-2 text-xs font-bold text-white shadow-2xl backdrop-blur-md">
-          <span className="flex size-2 shrink-0 rounded-full bg-red-500 animate-pulse" />
-          <span className="text-white/70 shrink-0 hidden sm:inline">Passando no fundo:</span>
-          <span className="text-emerald-300 font-black truncate max-w-[150px] sm:max-w-[260px]">
-            {current.title}
-          </span>
-          <span className="shrink-0 text-[10px] bg-red-600/40 border border-red-500/50 px-2 py-0.5 rounded-md text-red-200 font-bold uppercase">
-            {current.genre} • {current.year}
-          </span>
-        </div>
-      </div>
-
-      {/* BARRA DE SLIDES (PONTOS DE NAVEGAÇÃO) */}
-      <div className="relative z-30 pb-4 flex justify-center items-center gap-2">
-        {TRIAL_HORROR_SLIDES.map((slide, i) => (
-          <button
-            key={slide.backdrop}
-            onClick={() => setIndex(i)}
-            title={slide.title}
-            className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${
-              i === index ? "w-9 bg-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.9)]" : "w-2.5 bg-white/40 hover:bg-white/70"
-            }`}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export function InstalarPage() {
   const [activeTab, setActiveTab] = useState<"android" | "pc">("android");
 
@@ -572,30 +498,27 @@ export function InstalarPage() {
           </a>
         </div>
 
-        {/* HEADER DA PÁGINA COM DESTAQUE CLARO E AMIGÁVEL */}
-        <div className="text-center mb-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/60 px-4 py-2 text-xs font-extrabold tracking-wider text-emerald-300 uppercase mb-4 shadow-[0_0_20px_rgba(16,185,129,0.2)] backdrop-blur-md">
-            <Sparkles className="size-4 text-emerald-400" /> TESTE GRÁTIS DE 3 DIAS LIBERADO 🎁
+        {/* HEADER DA PÁGINA LIMPO E DIRETO AO PONTO */}
+        <div className="text-center mb-6">
+          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/60 px-4 py-1.5 text-xs font-extrabold tracking-wider text-emerald-300 uppercase mb-3 shadow-[0_0_20px_rgba(16,185,129,0.2)] backdrop-blur-md">
+            <Gift className="size-4 text-emerald-400" /> TESTE GRÁTIS DE 3 DIAS LIBERADO 🎁
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight mb-3 text-white">
+          <h1 className="text-3xl sm:text-4xl font-black tracking-tight mb-2 text-white">
             Como instalar o <span className="text-red-500 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">UniTV Pro</span>
           </h1>
-          <p className="text-sm sm:text-base text-white/85 max-w-xl mx-auto leading-relaxed font-medium">
-            Escolha seu dispositivo abaixo para ver o passo a passo completo. O teste de <strong className="text-emerald-300 font-black">3 dias grátis é ativado automaticamente</strong> na primeira vez que abrir o app!
+          <p className="text-xs sm:text-sm text-white/80 max-w-lg mx-auto font-medium">
+            Selecione seu aparelho abaixo. O teste de <strong className="text-emerald-300 font-bold">3 dias é ativado automaticamente</strong> na primeira vez que abrir o app!
           </p>
         </div>
 
-        {/* BANNER CINEMATOGRÁFICO DE TESTE GRÁTIS COM IMAGENS GRANDES DE FILMES DE TERROR NO FUNDO */}
-        <TrialBannerSlideshow />
-
-        {/* NAVEGAÇÃO POR 2 CATEGORIAS PRINCIPAIS DE DISPOSITIVOS */}
+        {/* NAVEGAÇÃO POR CATEGORIAS DE DISPOSITIVOS (DIRETO AO PONTO) */}
         <div className="mb-8">
           <div className="mb-3 text-center">
             <span className="text-xs font-extrabold uppercase tracking-widest text-white/70">
               Selecione o seu aparelho:
             </span>
           </div>
-          <div className="grid grid-cols-2 gap-2.5 sm:gap-4 rounded-2xl bg-stone-900/60 p-2 border border-white/15 backdrop-blur-md shadow-lg">
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-4 rounded-2xl bg-zinc-900/80 p-2 border border-white/15 backdrop-blur-md shadow-lg">
             <button
               onClick={() => setActiveTab("android")}
               className={`flex flex-col sm:flex-row items-center justify-center gap-2 rounded-xl py-3.5 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer ${
