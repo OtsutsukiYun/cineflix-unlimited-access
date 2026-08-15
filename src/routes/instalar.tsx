@@ -122,16 +122,24 @@ function LdPlayerAppIcon({ className = "size-14 sm:size-16" }: { className?: str
       target="_blank"
       rel="noopener noreferrer"
       title="Baixar LDPlayer no site oficial"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-yellow-400/70 bg-gradient-to-br from-stone-900 via-amber-950 to-stone-950 p-2 shadow-[0_8px_25px_rgba(234,179,8,0.45)] transition-all duration-300 hover:scale-105 hover:border-yellow-300 hover:shadow-[0_12px_35px_rgba(234,179,8,0.65)] ${className}`}
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-yellow-400/80 bg-[#121212] p-2 shadow-[0_8px_25px_rgba(245,158,11,0.5)] transition-all duration-300 hover:scale-105 hover:border-yellow-300 hover:shadow-[0_12px_35px_rgba(245,158,11,0.75)] ${className}`}
     >
-      <div className="flex flex-col items-center justify-center text-center">
-        <span className="font-black tracking-tighter text-yellow-400 text-xl sm:text-2xl drop-shadow-[0_0_8px_rgba(234,179,8,0.8)] leading-none">
-          LD
-        </span>
-        <span className="text-[8px] sm:text-[9px] font-black uppercase tracking-widest text-amber-200 mt-0.5">
-          PLAYER
-        </span>
-      </div>
+      <svg
+        viewBox="0 0 100 100"
+        className="size-full transition-transform duration-300 group-hover/icon:scale-105"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect width="100" height="100" rx="22" fill="#18181b" />
+        <path
+          d="M 22 22 L 36 22 L 36 64 L 56 64 L 56 76 L 22 76 Z"
+          fill="#ffc800"
+        />
+        <path
+          d="M 44 22 L 64 22 C 78 22 86 32 86 49 C 86 66 78 76 64 76 L 44 76 Z M 58 35 L 58 63 L 64 63 C 71 63 73 57 73 49 C 73 41 71 35 64 35 Z"
+          fill="#ffc800"
+        />
+        <polygon points="61,42 61,56 71,49" fill="#18181b" />
+      </svg>
     </a>
   );
 }
