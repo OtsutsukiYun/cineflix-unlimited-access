@@ -204,7 +204,7 @@ function CodeCopyBox({ code, color = "emerald" }: { code: string; color?: "orang
 
 function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart TV Android, TV Box, Mi Stick Xiaomi e FireTV Stick" }: { methodNumber?: number; subtitle?: string }) {
   return (
-    <div className="rounded-3xl border-2 border-orange-500/50 bg-gradient-to-b from-orange-950/40 via-stone-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(249,115,22,0.15)]">
+    <div className="rounded-3xl border-2 border-orange-500/50 bg-gradient-to-b from-orange-950/40 via-zinc-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(249,115,22,0.15)]">
       <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
         <div className="flex items-center gap-3.5">
           <DownloaderAppIcon className="size-14 sm:size-16" />
@@ -289,7 +289,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
             Clique em <strong className="text-white font-black text-orange-300">"Go"</strong>, aguarde o download finalizar e selecione <strong className="text-white font-black">"Instalar"</strong>.
             
             {/* AVISO DE SEGURANÇA E PERMISSÕES DO ANDROID DIRETO NO PASSO DE INSTALAÇÃO */}
-            <div className="mt-3 rounded-2xl border border-amber-500/40 bg-gradient-to-r from-amber-950/40 via-stone-900/60 to-black/70 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md shadow-md">
+            <div className="mt-3 rounded-2xl border border-amber-500/30 bg-black/60 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md shadow-md">
               <div className="flex items-start gap-2.5">
                 <ShieldAlert className="size-4 shrink-0 text-amber-400 mt-0.5" />
                 <div>
@@ -313,7 +313,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
 
 function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone Android e Tablet Android" }: { methodNumber?: number; subtitle?: string }) {
   return (
-    <div className="rounded-3xl border-2 border-emerald-500/50 bg-gradient-to-b from-emerald-950/40 via-stone-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(16,185,129,0.15)]">
+    <div className="rounded-3xl border-2 border-emerald-500/50 bg-gradient-to-b from-emerald-950/40 via-zinc-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(16,185,129,0.15)]">
       <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
         <div className="flex items-center gap-3.5">
           <NtDownAppIcon className="size-14 sm:size-16" />
@@ -398,7 +398,7 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
             Selecione <strong className="text-white font-black text-emerald-300">"Instalar"</strong> para concluir a instalação no seu aparelho.
             
             {/* AVISO DE SEGURANÇA E PERMISSÕES DO ANDROID DIRETO NO PASSO DE INSTALAÇÃO */}
-            <div className="mt-3 rounded-2xl border border-amber-500/40 bg-gradient-to-r from-amber-950/40 via-stone-900/60 to-black/70 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md shadow-md">
+            <div className="mt-3 rounded-2xl border border-amber-500/30 bg-black/60 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md shadow-md">
               <div className="flex items-start gap-2.5">
                 <ShieldAlert className="size-4 shrink-0 text-amber-400 mt-0.5" />
                 <div>
@@ -634,7 +634,7 @@ export function InstalarPage() {
           {/* CATEGORIA 2: COMPUTADOR PC & NOTEBOOK */}
           {activeTab === "pc" && (
             <div className="space-y-6">
-              <div className="rounded-3xl border-2 border-yellow-500/50 bg-gradient-to-b from-amber-950/40 via-stone-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(245,158,11,0.15)]">
+              <div className="rounded-3xl border-2 border-yellow-500/50 bg-gradient-to-b from-amber-950/20 via-zinc-900/70 to-black/90 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(245,158,11,0.15)]">
                 <div className="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-white/10">
                   <div className="flex items-center gap-3.5">
                     <LdPlayerAppIcon className="size-14 sm:size-16" />
@@ -687,7 +687,7 @@ export function InstalarPage() {
                   </div>
                 </a>
 
-                <div className="rounded-2xl border border-amber-500/40 bg-gradient-to-r from-amber-950/40 via-stone-900/60 to-black/70 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md">
+                <div className="rounded-2xl border border-amber-500/30 bg-black/60 p-4 text-xs text-amber-200 leading-relaxed backdrop-blur-md">
                   💡 <strong>Como usar no PC:</strong> Após instalar o LDPlayer, abra o aplicativo de download (Downloader ou Play Store) dentro dele e digite um dos 2 códigos de acesso abaixo!
                 </div>
               </div>
@@ -700,7 +700,7 @@ export function InstalarPage() {
         </div>
 
         {/* BLOCO DE CONVERSÃO / ASSINATURA DE PLANOS (QUEM QUER COMPRAR DIRETO) */}
-        <div className="mt-10 rounded-3xl border-2 border-red-500/50 bg-gradient-to-br from-red-950/60 via-stone-900/70 to-black/85 p-8 sm:p-10 text-center shadow-[0_0_50px_rgba(220,38,38,0.25)] relative overflow-hidden backdrop-blur-xl">
+        <div className="mt-10 rounded-3xl border-2 border-red-500/50 bg-gradient-to-br from-red-950/60 via-zinc-900/70 to-black/85 p-8 sm:p-10 text-center shadow-[0_0_50px_rgba(220,38,38,0.25)] relative overflow-hidden backdrop-blur-xl">
           <div className="absolute top-0 right-0 size-40 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
           <span className="inline-flex items-center gap-1.5 rounded-full bg-red-500/20 border border-red-400/40 px-3.5 py-1 text-xs font-black text-red-300 uppercase tracking-wider mb-3">
             <Zap className="size-3.5 text-red-400" /> Recargas e Assinaturas
@@ -719,7 +719,7 @@ export function InstalarPage() {
         </div>
 
         {/* CTA ATENDIMENTO E AJUDA VIA WHATSAPP (SUPORTE TÉCNICO DIRETO) */}
-        <div className="mt-8 rounded-3xl border-2 border-green-700/50 bg-gradient-to-b from-green-950/50 via-stone-900/70 to-black/85 p-7 text-center backdrop-blur-xl shadow-xl">
+        <div className="mt-8 rounded-3xl border-2 border-green-700/50 bg-gradient-to-b from-green-950/50 via-zinc-900/70 to-black/85 p-7 text-center backdrop-blur-xl shadow-xl">
           <div className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-green-500/20 border border-green-400/40 text-green-400 mb-3 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
             <MessageCircle className="size-6 text-green-400" />
           </div>

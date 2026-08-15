@@ -506,7 +506,7 @@ function Index() {
                 className={`rounded-full px-4 py-2 text-xs font-bold transition-all backdrop-blur-md ${
                   activeTab === tab.id
                     ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] scale-105"
-                    : "bg-stone-900/70 border border-white/20 text-white/80 hover:bg-stone-800/90 hover:border-white/35 hover:text-white shadow-sm"
+                    : "bg-zinc-900/70 border border-white/20 text-white/80 hover:bg-zinc-800/90 hover:border-white/35 hover:text-white shadow-sm"
                 }`}
               >
                 {tab.label}
@@ -530,7 +530,7 @@ function Index() {
               <button
                 onClick={() => scrollCatalog("left")}
                 aria-label="Voltar filmes"
-                className="absolute -left-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/25 bg-stone-900/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 cursor-pointer"
+                className="absolute -left-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/25 bg-zinc-900/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 cursor-pointer"
               >
                 <ChevronLeft className="size-6" />
               </button>
@@ -539,7 +539,7 @@ function Index() {
               <button
                 onClick={() => scrollCatalog("right")}
                 aria-label="Avançar filmes"
-                className="absolute -right-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/25 bg-stone-900/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 cursor-pointer"
+                className="absolute -right-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/25 bg-zinc-900/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 cursor-pointer"
               >
                 <ChevronRight className="size-6" />
               </button>
@@ -728,10 +728,10 @@ function Index() {
       {/* RECURSOS EXCLUSIVOS DA PLATAFORMA (EFEITO VIDRO LIQUIDO PREMIUM) */}
       <section className="relative z-10 mx-auto w-[94%] max-w-5xl py-8 sm:py-12">
         <SmoothCardReveal>
-          <div className="glass rounded-3xl border border-white/20 bg-stone-900/40 p-6 sm:p-9 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.7)] relative overflow-hidden">
+          <div className="glass rounded-3xl border border-white/20 bg-zinc-900/40 p-6 sm:p-9 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.7)] relative overflow-hidden">
             {/* LUZ DE FUNDO EM DEGRADÊ DE VIDRO */}
             <div className="pointer-events-none absolute -top-24 -left-24 size-72 rounded-full bg-red-600/15 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-24 -right-24 size-72 rounded-full bg-amber-600/10 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-24 -right-24 size-72 rounded-full bg-rose-600/15 blur-3xl" />
 
             <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 pb-6 border-b border-white/15">
               <div className="flex items-center gap-3.5">
@@ -747,7 +747,7 @@ function Index() {
                   </p>
                 </div>
               </div>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-stone-900/80 border border-white/20 px-4 py-1.5 text-[11px] font-extrabold text-red-300 uppercase tracking-wider shrink-0 backdrop-blur-md shadow-md">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-black/70 border border-white/20 px-4 py-1.5 text-[11px] font-extrabold text-red-300 uppercase tracking-wider shrink-0 backdrop-blur-md shadow-md">
                 ⭐ 100% Incluído no Acesso
               </span>
             </div>
