@@ -125,7 +125,7 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
           onClick={close}
           className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(220,38,38,0.7)] mb-3"
         >
-          <Smartphone className="size-4" />
+          <Gift className="size-4 text-amber-300" />
           QUERO MEU TESTE GRÁTIS
         </Link>
         <button onClick={close} className="text-xs text-white/40 hover:text-white/70 transition-colors underline underline-offset-2">
@@ -442,7 +442,7 @@ function Index() {
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
             <Cta>QUERO ASSINAR</Cta>
             <Link to="/instalar" className="btn-ghost">
-              <Smartphone className="size-4" /> Teste grátis 3 dias
+              <Gift className="size-4 text-red-400" /> Teste grátis 3 dias
             </Link>
           </div>
 
