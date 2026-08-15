@@ -214,6 +214,7 @@ export const series: Title[] = [
   { title: "Missa da Meia-Noite", poster: "/rka8ibtD6HayiEJmb6rns47lyAL.jpg", year: "Série" },
   { title: "Marianne", poster: "/hpeaMzflHMEepUGiCjXld7lrnC2.jpg", year: "Série" },
   { title: "Evil: Contatos Sobrenaturais", poster: "/2gyQRudrRU276fvkXMq4JNq3hzB.jpg", year: "Série" },
+  { title: "Cabo do Medo", poster: "/3ZLy3cfQa9prahoRq1teMmr5pvW.jpg", year: "2026" },
   { title: "Yellowjackets", poster: "/xRnGrn7Z7SC0KIBodocoU1QgDZF.jpg", year: "Série" },
   { title: "American Horror Story", poster: "/x2c3AvZeTyNehRZXabTojAxfDuR.jpg", year: "Série" },
   { title: "Chucky", poster: "/sdCJbGkvnIsIKLxaFQrviriODVq.jpg", year: "Série" },
