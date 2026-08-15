@@ -366,14 +366,14 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
 }
 
 const TRIAL_HORROR_SLIDES = [
-  { title: "Alien: Romulus", year: "2024", genre: "Terror / Sci-Fi", backdrop: "/iYqSQaWDttQIQzsxg9xHyg0bttG.jpg" },
-  { title: "Terrifier 3", year: "2024", genre: "Terror Slashing", backdrop: "/bHfGHipZ32Oec94FDJO4mWs3aZ5.jpg" },
-  { title: "Longlegs", year: "2024", genre: "Terror Psicológico", backdrop: "/6ToGkmqn0KG0UGGGUAC1Ww0e5CM.jpg" },
-  { title: "Sorria 2 (Smile 2)", year: "2024", genre: "Terror / Suspense", backdrop: "/iR79ciqhtaZ9BE7YFA1HpCHQgX4.jpg" },
-  { title: "Um Lugar Silencioso: Dia Um", year: "2024", genre: "Terror / Sobrevivência", backdrop: "/6XjMwQTvnICBz6TguiDKkDVHvgS.jpg" },
-  { title: "Entrevista com o Demônio", year: "2024", genre: "Terror Sobrenatural", backdrop: "/umyOinNa6vqqnqoVc9QqzyaapUz.jpg" },
-  { title: "Abigail", year: "2024", genre: "Terror Vampiros", backdrop: "/2TPoqmatGDfBOiRxqNoL11ncCJe.jpg" },
-  { title: "Fale Comigo (Talk to Me)", year: "2023", genre: "Terror A24", backdrop: "/46Os8U0DEPmI0OnvKDxucl6SLVZ.jpg" },
+  { title: "Invocação do Mal", year: "2013", genre: "Terror Sobrenatural", backdrop: "/ecKQlAEG95k62SMGhvX83oEqANK.jpg" },
+  { title: "Hereditário", year: "2018", genre: "Terror Psicológico", backdrop: "/gJbTXKNTL6O7r7PzF6ZRkJGBlPp.jpg" },
+  { title: "Corra! (Get Out)", year: "2017", genre: "Suspense / Thriller", backdrop: "/bBQHALHRAaaORlPNXv7fNcRXYdx.jpg" },
+  { title: "Ilha do Medo (Shutter Island)", year: "2010", genre: "Thriller Psicológico", backdrop: "/rbZvGN1A1QyZuoKzhCw8QPmf2q0.jpg" },
+  { title: "O Exorcista", year: "1973", genre: "Terror Clássico", backdrop: "/xcjJ5khg2yzOa282mza39Lbrm7j.jpg" },
+  { title: "O Silêncio dos Inocentes", year: "1991", genre: "Suspense / Crime", backdrop: "/aYcnDyLMnpKce1FOYUpZrXtgUye.jpg" },
+  { title: "Garota Exemplar (Gone Girl)", year: "2014", genre: "Suspense / Thriller", backdrop: "/iWak7wT0j6ycCc8lKr4NBz9c7n5.jpg" },
+  { title: "O Iluminado (The Shining)", year: "1980", genre: "Terror / Suspense", backdrop: "/mmd1HnuvAzFc4iuVJcnBrhDNEKr.jpg" },
 ];
 
 function TrialBannerSlideshow() {
@@ -382,15 +382,15 @@ function TrialBannerSlideshow() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % TRIAL_HORROR_SLIDES.length);
-    }, 3200);
+    }, 6000); // 6 segundos por imagem - transição agradável
     return () => clearInterval(timer);
   }, []);
 
   const current = TRIAL_HORROR_SLIDES[index];
 
   return (
-    <div className="mb-10 relative overflow-hidden rounded-3xl border-2 border-emerald-500/50 shadow-[0_0_50px_rgba(16,185,129,0.3)] bg-black min-h-[360px] sm:min-h-[380px] flex flex-col justify-between">
-      {/* IMAGENS GRANDES PASSANDO NO FUNDO */}
+    <div className="mb-10 relative overflow-hidden rounded-3xl border-2 border-emerald-500/50 shadow-[0_0_50px_rgba(16,185,129,0.3)] bg-black min-h-[360px] sm:min-h-[400px] flex flex-col justify-between">
+      {/* IMAGENS GRANDES PASSANDO NO FUNDO - MAIS NÍTIDAS E VIBRANTES */}
       <div className="absolute inset-0 z-0">
         {TRIAL_HORROR_SLIDES.map((slide, i) => (
           <img
@@ -402,31 +402,30 @@ function TrialBannerSlideshow() {
             }`}
           />
         ))}
-        {/* OVERLAYS DE CONTRASTE CINEMATOGRÁFICO PARA TEXTO SUPER NÍTIDO */}
-        <div className="absolute inset-0 z-20 bg-gradient-to-t from-black via-black/80 to-black/60" />
-        <div className="absolute inset-0 z-20 bg-emerald-950/20 mix-blend-overlay" />
+        {/* OVERLAY MAIS CLARO PARA AS IMAGENS DE FUNDO APARECEREM COM CLAREZA */}
+        <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/85 via-black/40 to-black/25" />
       </div>
 
       {/* CONTEÚDO PRINCIPAL DO CARD */}
       <div className="relative z-30 p-6 sm:p-10 text-center flex flex-col items-center justify-center flex-1">
-        <div className="inline-flex items-center gap-2 rounded-full bg-emerald-500/20 border border-emerald-400/60 px-4 py-1.5 text-xs font-black tracking-wider text-emerald-300 uppercase mb-4 shadow-[0_0_20px_rgba(16,185,129,0.4)] backdrop-blur-md">
+        <div className="inline-flex items-center gap-2 rounded-full bg-emerald-950/80 border border-emerald-400/60 px-4 py-1.5 text-xs font-black tracking-wider text-emerald-300 uppercase mb-4 shadow-[0_0_20px_rgba(16,185,129,0.5)] backdrop-blur-md">
           <GiftIcon className="size-4 text-emerald-400" /> TESTE DE 3 DIAS LIBERADO 🎁
         </div>
 
-        <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-3 drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)]">
+        <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-3 drop-shadow-[0_4px_16px_rgba(0,0,0,0.95)]">
           🎁 3 Dias de Acesso Total Liberado
         </h2>
 
-        <p className="text-sm sm:text-base text-white/95 leading-relaxed max-w-xl mx-auto font-medium drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] mb-6">
+        <p className="text-sm sm:text-base text-white leading-relaxed max-w-xl mx-auto font-bold drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] mb-6">
           Assim que você instalar e abrir o aplicativo, seu teste de <strong className="text-emerald-300 font-black">3 dias grátis é ativado na hora</strong> na sua Smart TV ou celular! Não precisa informar cartão de crédito nem dados bancários.
         </p>
 
         {/* INDICADOR CINEMATOGRÁFICO DO FILME EM EXIBIÇÃO NO FUNDO */}
-        <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl bg-black/80 border border-white/20 px-4 py-2 text-xs font-bold text-white shadow-xl backdrop-blur-md">
+        <div className="inline-flex flex-wrap items-center justify-center gap-2 rounded-2xl bg-black/85 border border-white/30 px-4 py-2 text-xs font-bold text-white shadow-2xl backdrop-blur-md">
           <span className="flex size-2 rounded-full bg-red-500 animate-pulse" />
-          <span className="text-white/60">Passando no fundo:</span>
+          <span className="text-white/70">Filme em exibição no fundo:</span>
           <span className="text-emerald-300 font-black">{current.title}</span>
-          <span className="text-[10px] bg-white/15 px-2 py-0.5 rounded-md text-white/80 font-bold uppercase">
+          <span className="text-[10px] bg-red-600/40 border border-red-500/50 px-2 py-0.5 rounded-md text-red-200 font-bold uppercase">
             {current.genre} ({current.year})
           </span>
         </div>
@@ -439,8 +438,8 @@ function TrialBannerSlideshow() {
             key={slide.backdrop}
             onClick={() => setIndex(i)}
             title={slide.title}
-            className={`h-1.5 rounded-full transition-all duration-500 cursor-pointer ${
-              i === index ? "w-8 bg-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.8)]" : "w-2 bg-white/30 hover:bg-white/60"
+            className={`h-2 rounded-full transition-all duration-500 cursor-pointer ${
+              i === index ? "w-9 bg-emerald-400 shadow-[0_0_12px_rgba(16,185,129,0.9)]" : "w-2.5 bg-white/40 hover:bg-white/70"
             }`}
           />
         ))}
