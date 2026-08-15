@@ -657,8 +657,8 @@ function Index() {
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-rose-200",
               t: "Séries imperdíveis",
-              qtd: "+20.000 Séries",
-              d: "+20.000 séries das maiores plataformas mundiais com temporadas completas dubladas e legendadas.",
+              qtd: "+30.000 Séries",
+              d: "+30.000 séries das maiores plataformas mundiais com temporadas completas dubladas e legendadas.",
             },
             {
               icon: Heart,
