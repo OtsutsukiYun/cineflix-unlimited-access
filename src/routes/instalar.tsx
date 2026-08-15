@@ -382,7 +382,7 @@ function TrialBannerSlideshow() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % TRIAL_HORROR_SLIDES.length);
-    }, 6000); // 6 segundos por imagem - transição agradável
+    }, 12000); // 12 segundos por imagem - transição bem calma e confortável
     return () => clearInterval(timer);
   }, []);
 
