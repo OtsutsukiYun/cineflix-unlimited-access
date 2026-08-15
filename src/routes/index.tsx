@@ -595,9 +595,9 @@ function Index() {
             {
               icon: Tv,
               banners: [
-                "/dzq83RHwQcnP6WGJ6YkenIqeaa5.jpg", // Peaky Blinders
+                "/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg", // Fallout
                 "/n6vVs6z8obNbExdD3QHTr4Utu1Z.jpg", // The Boys
-                "/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg", // The Last of Us
+                "/iHSwvRVsRyxpX7FE7GbviaDvgGZ.jpg", // Wandinha (Wednesday)
               ],
               objectPosition: "object-cover",
               gradient: "from-red-600 via-rose-600 to-red-800",
