@@ -536,7 +536,7 @@ function Index() {
                       "filmes": "Filmes recém-saídos do cinema, produções exclusivas e os maiores sucessos em até 4K.",
                       "terror-raro": "Produções incríveis e exclusivas da Coreia, Japão, Tailândia e muito mais.",
                       "series": "Séries imperdíveis e títulos que você não encontra nos streamings tradicionais.",
-                      "animes": "Animes em alta com simulcast semanal e dublagem em português.",
+                      "animes": "Milhares de animes em alta, lançamentos da temporada, grandes clássicos, simulcast semanal e opções dubladas em português.",
                       "proximos": "Lançamentos inéditos de terror confirmados para estrear a partir de agosto de 2026.",
                     }[activeTab] || "Filmes, séries, doramas, animes e esportes ao vivo em um só aplicativo."
                   }
