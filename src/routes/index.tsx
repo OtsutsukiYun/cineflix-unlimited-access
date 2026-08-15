@@ -870,7 +870,7 @@ function Index() {
               cardStyle: "border-2 border-amber-400 bg-gradient-to-b from-amber-950/70 via-zinc-950 to-black shadow-[0_0_60px_rgba(245,158,11,0.45)] lg:scale-105 z-20 hover:border-yellow-300 hover:shadow-[0_0_75px_rgba(245,158,11,0.65)]",
               btnStyle: "bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 hover:from-amber-400 hover:to-yellow-300 text-black font-black py-4 px-4 rounded-xl shadow-[0_0_30px_rgba(245,158,11,0.8)] hover:scale-[1.03] border border-amber-300 transition-all",
               btnText: "QUERO O PLANO ANUAL VIP",
-              link: "#planos",
+              link: "https://pay.braip.co/ref?pl=pla6lllo&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "2 Telas simultâneas em 4K",
                 "365 dias de acesso sem mensalidades",
