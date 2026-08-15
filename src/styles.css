@@ -552,3 +552,16 @@
 .animate-beam-sweep {
   animation: light-beam-sweep 14s ease-in-out infinite;
 }
+
+@keyframes levitate-float {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.03);
+  }
+}
+
+.animate-levitate {
+  animation: levitate-float 3.6s ease-in-out infinite;
+}
