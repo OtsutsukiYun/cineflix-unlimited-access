@@ -366,10 +366,15 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
 }
 
 const TRIAL_HORROR_SLIDES = [
+  { title: "Noroi: A Maldição", year: "2005", genre: "Terror J-Horror / Found Footage", backdrop: "/9gF8o7nNCWtzYiiAkvPNGw4yxsg.jpg" },
+  { title: "Exit 8 (Saída 8)", year: "2025", genre: "Terror / Mistério Japonês", backdrop: "/f5csnjqQj5qdqc0EZchon94hXZ6.jpg" },
   { title: "Invocação do Mal", year: "2013", genre: "Terror Sobrenatural", backdrop: "/ecKQlAEG95k62SMGhvX83oEqANK.jpg" },
   { title: "Hereditário", year: "2018", genre: "Terror Psicológico", backdrop: "/gJbTXKNTL6O7r7PzF6ZRkJGBlPp.jpg" },
+  { title: "Kairo (Pulse)", year: "2001", genre: "Terror Psicológico Japonês", backdrop: "/ylQUBfAfcrQUxjWYUIjmPXvlcD1.jpg" },
+  { title: "Ju-On: O Grito", year: "2002", genre: "Terror Clássico Japonês", backdrop: "/jNGVlbH2tnZmVqEIvuoxvV78vBY.jpg" },
   { title: "Corra! (Get Out)", year: "2017", genre: "Suspense / Thriller", backdrop: "/bBQHALHRAaaORlPNXv7fNcRXYdx.jpg" },
   { title: "Ilha do Medo (Shutter Island)", year: "2010", genre: "Thriller Psicológico", backdrop: "/rbZvGN1A1QyZuoKzhCw8QPmf2q0.jpg" },
+  { title: "Cure (A Cura)", year: "1997", genre: "Thriller / Crime Japonês", backdrop: "/xxIRKSd9LmHojUD5grvMuGypwVC.jpg" },
   { title: "O Exorcista", year: "1973", genre: "Terror Clássico", backdrop: "/xcjJ5khg2yzOa282mza39Lbrm7j.jpg" },
   { title: "O Silêncio dos Inocentes", year: "1991", genre: "Suspense / Crime", backdrop: "/aYcnDyLMnpKce1FOYUpZrXtgUye.jpg" },
   { title: "Garota Exemplar (Gone Girl)", year: "2014", genre: "Suspense / Thriller", backdrop: "/iWak7wT0j6ycCc8lKr4NBz9c7n5.jpg" },
