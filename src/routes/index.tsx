@@ -596,7 +596,7 @@ function Index() {
               icon: Tv,
               banners: [
                 "/bwSmgmd90hCWwqOKQYTEraeOZhJ.jpg", // Shōgun
-                "/577eXC8wFQT0eUrJcgznSiFPRmk.jpg", // House of the Dragon
+                "/56v2KjBlU4XaOv9rVYEQypROD7P.jpg", // Stranger Things
                 "/lY2DhbA7Hy44fAKddr06UrXWWaQ.jpg", // The Last of Us
               ],
               objectPosition: "object-cover",
