@@ -262,6 +262,8 @@ const CATALOG_TABS = [
     items: [
       { title: "O Segredo de Widow's Bay", poster: "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Revenant (O Diabo)", poster: "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", year: "2023", tag: "🔥 Dorama de Terror" },
+      { title: "Shiki", poster: "/zsWbTnNwNjqWvgZ9gqTcK9WLoWy.jpg", year: "2010", tag: "🔥 Anime de Terror" },
+      { title: "Mirai Nikki", poster: "/rQScQD92q6CYAGL0DWQQNxjuVVh.jpg", year: "2011", tag: "🔥 Anime & Thriller" },
       { title: "FROM (Origem)", poster: "/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg", year: "Série", tag: "🔥 Terror & Mistério" },
       { title: "Gannibal", poster: "/AvjCytHUq6AN6rYOFQFATrWbGSR.jpg", year: "Série", tag: "🔥 Terror Japonês" },
       { title: "IT: Bem-Vindos a Derry", poster: "/gMTfrLvrDaD0zrhpLZ7zXIIpKfJ.jpg", year: "2025", tag: "HBO Max" },
