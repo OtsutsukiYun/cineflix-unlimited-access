@@ -207,10 +207,8 @@ export const top10Hoje: Title[] = [
 ];
 
 export const series: Title[] = [
-  { title: "Revenant (O Diabo)", poster: "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", year: "2023", tag: "Dorama de Terror" },
-  { title: "Gannibal", poster: "/AvjCytHUq6AN6rYOFQFATrWbGSR.jpg", year: "2022", tag: "Terror Japonês" },
-  { title: "Cabo do Medo", poster: "/2gi4vszQOpVsB33FDgt000VIQMo.jpg", year: "2026", tag: "Lançamento" },
   { title: "O Segredo de Widow's Bay", poster: "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", year: "2026", tag: "Novo" },
+  { title: "Revenant (O Diabo)", poster: "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", year: "2023", tag: "Dorama de Terror" },
   { title: "Origem (From)", poster: "/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg", year: "Série" },
   { title: "IT: Bem-Vindos a Derry", poster: "/gMTfrLvrDaD0zrhpLZ7zXIIpKfJ.jpg", year: "2025", tag: "Em alta" },
   { title: "Channel Zero", poster: "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", year: "Série" },
