@@ -54,8 +54,8 @@ export const heroSlides: HeroSlide[] = [
     tagline: "Uma entidade sinistra que se parece exatamente com a própria mãe.",
     backdrop: "/wpx3J1ZuIZgWc9rzdfcj7fDru58.jpg",
     poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg",
-    objectPosition: "center 20%",
-    objectPositionMobile: "50% 15%",
+    objectPosition: "75% 20%",
+    objectPositionMobile: "85% 15%",
     brightness: "brightness(1.0)",
   },
   {
