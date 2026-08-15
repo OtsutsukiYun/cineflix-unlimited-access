@@ -1,5 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Download, Smartphone, Hash, Sparkles, ArrowLeft, ShieldCheck, Zap, ExternalLink, Tv, Monitor, ShieldAlert } from "lucide-react";
+import { useState } from "react";
+import {
+  Download,
+  Smartphone,
+  Hash,
+  Sparkles,
+  ArrowLeft,
+  ShieldCheck,
+  Zap,
+  ExternalLink,
+  Tv,
+  Monitor,
+  ShieldAlert,
+  Copy,
+  Check,
+  MessageCircle,
+} from "lucide-react";
 import { img } from "@/data/catalog";
 
 export const Route = createFileRoute("/instalar")({
@@ -97,367 +113,494 @@ function NtDownAppIcon({ className = "size-14 sm:size-16" }: { className?: strin
   );
 }
 
+function CodeCopyBox({ code, color = "emerald" }: { code: string; color?: "orange" | "emerald" }) {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+
+  const isOrange = color === "orange";
+
+  return (
+    <div
+      className={`mt-3 flex flex-wrap items-center justify-between gap-3 rounded-2xl p-4 border-2 shadow-lg transition-all ${
+        isOrange
+          ? "bg-orange-950/60 border-orange-400/60 shadow-[0_0_20px_rgba(249,115,22,0.2)]"
+          : "bg-emerald-950/60 border-emerald-400/60 shadow-[0_0_20px_rgba(16,185,129,0.2)]"
+      }`}
+    >
+      <div className="flex items-center gap-3">
+        <div
+          className={`flex size-11 items-center justify-center rounded-xl font-black ${
+            isOrange ? "bg-orange-500/20 text-orange-400 border border-orange-500/40" : "bg-emerald-500/20 text-emerald-400 border border-emerald-500/40"
+          }`}
+        >
+          <Hash className="size-6" />
+        </div>
+        <div>
+          <span
+            className={`text-[10px] font-black uppercase tracking-wider block ${
+              isOrange ? "text-orange-300" : "text-emerald-300"
+            }`}
+          >
+            Código de Instalação
+          </span>
+          <div
+            className={`font-mono font-black text-2xl sm:text-3xl tracking-widest leading-none mt-0.5 ${
+              isOrange ? "text-orange-200" : "text-emerald-200"
+            }`}
+          >
+            {code}
+          </div>
+        </div>
+      </div>
+
+      <button
+        onClick={handleCopy}
+        className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+          copied
+            ? "bg-emerald-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.5)]"
+            : isOrange
+            ? "bg-orange-500/25 text-orange-100 hover:bg-orange-500/40 border border-orange-400/50 shadow-sm hover:scale-[1.02]"
+            : "bg-emerald-500/25 text-emerald-100 hover:bg-emerald-500/40 border border-emerald-400/50 shadow-sm hover:scale-[1.02]"
+        }`}
+      >
+        {copied ? (
+          <>
+            <Check className="size-4 text-white" /> COPIADO!
+          </>
+        ) : (
+          <>
+            <Copy className="size-4" /> COPIAR CÓDIGO
+          </>
+        )}
+      </button>
+    </div>
+  );
+}
+
 export function InstalarPage() {
+  const [activeTab, setActiveTab] = useState<"tv" | "mobile" | "pc">("tv");
+
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
-      {/* PAREDE 3D COM 3 LINHAS 100% EXCLUSIVAS E SEM REPETIÇÃO DE FILMES */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-30 sm:opacity-35 [perspective:1200px]">
+      {/* PAREDE 3D SUAVE DE POSTERS DE TERROR NO FUNDO */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-25 [perspective:1200px]">
         <div className="size-full flex flex-col justify-center gap-4 [transform-style:preserve-3d] [transform:rotateX(14deg)_rotateY(-10deg)_rotateZ(-2deg)_scale(1.2)] origin-center">
-          {/* LINHA 1 (TOP) — CLÁSSICOS JAPONESES */}
+          {/* LINHA 1 (TOP) */}
           <div className="flex w-max animate-marquee-cinematic gap-4">
             {[...POSTERS_ROW_JAPAN, ...POSTERS_ROW_JAPAN].map((p, idx) => (
-              <div key={idx} className="w-32 sm:w-44 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_12px_35px_rgba(0,0,0,0.85)]">
+              <div key={idx} className="w-32 sm:w-44 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-lg">
                 <img src={img(p, "w342")} alt="" className="size-full object-cover" />
               </div>
             ))}
           </div>
-          {/* LINHA 2 (MEIO) — CLÁSSICOS COREANOS & ASIÁTICOS */}
+          {/* LINHA 2 (MEIO) */}
           <div className="flex w-max animate-marquee-reverse-cinematic gap-4">
             {[...POSTERS_ROW_ASIA, ...POSTERS_ROW_ASIA].map((p, idx) => (
-              <div key={idx} className="w-32 sm:w-44 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_12px_35px_rgba(0,0,0,0.85)]">
+              <div key={idx} className="w-32 sm:w-44 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-lg">
                 <img src={img(p, "w342")} alt="" className="size-full object-cover" />
               </div>
             ))}
           </div>
-          {/* LINHA 3 (FIM) — CLÁSSICOS AMERICANOS DOS ANOS 2000 */}
+          {/* LINHA 3 (FIM) */}
           <div className="flex w-max animate-marquee-cinematic gap-4">
             {[...POSTERS_ROW_2000S, ...POSTERS_ROW_2000S].map((p, idx) => (
-              <div key={idx} className="w-32 sm:w-44 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-[0_12px_35px_rgba(0,0,0,0.85)]">
+              <div key={idx} className="w-32 sm:w-44 shrink-0 aspect-[2/3] overflow-hidden rounded-2xl border border-white/20 shadow-lg">
                 <img src={img(p, "w342")} alt="" className="size-full object-cover" />
               </div>
             ))}
           </div>
         </div>
       </div>
-      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#080808]/65 via-[#080808]/78 to-[#080808]/65" />
-      <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_20%,#080808_95%)]" />
+      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-b from-[#080808]/75 via-[#080808]/85 to-[#080808]/90" />
+      <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_at_center,transparent_10%,#080808_90%)]" />
 
-      <div className="relative z-10 mx-auto w-[94%] max-w-3xl py-10 sm:py-16">
-        {/* Topo Navegação */}
-        <div className="mb-8 flex items-center justify-between">
+      <div className="relative z-10 mx-auto w-[94%] max-w-3xl py-8 sm:py-14">
+        {/* TOPO NAVEGAÇÃO E BARRAS CTA */}
+        <div className="mb-6 flex items-center justify-between">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-xs font-bold text-white/70 hover:text-white transition-colors bg-white/5 border border-white/10 px-4 py-2 rounded-full"
+            className="inline-flex items-center gap-2 text-xs font-bold text-white/80 hover:text-white transition-colors bg-white/10 border border-white/15 px-4 py-2 rounded-full backdrop-blur-md"
           >
-            <ArrowLeft className="size-3.5" /> Voltar ao site
+            <ArrowLeft className="size-3.5" /> Voltar ao Início
           </Link>
           <a
             href="/#planos"
-            className="inline-flex items-center gap-1.5 text-xs font-extrabold text-emerald-300 hover:text-emerald-200 transition-colors bg-emerald-950/50 border border-emerald-500/40 px-4 py-2 rounded-full shadow-[0_0_15px_rgba(16,185,129,0.2)]"
+            className="inline-flex items-center gap-1.5 text-xs font-extrabold text-white hover:text-white transition-colors bg-gradient-to-r from-red-600 to-red-700 border border-red-400/50 px-4 py-2 rounded-full shadow-[0_0_20px_rgba(220,38,38,0.4)] hover:scale-105"
           >
-            <Zap className="size-3.5" /> Ver Planos & Assinar
+            <Zap className="size-3.5" /> Ver Planos &amp; Assinar
           </a>
         </div>
 
-        {/* Header — EXCLUSIVIDADE SISTEMA ANDROID */}
+        {/* HEADER DA PÁGINA COM DESTAQUE CLARO E AMIGÁVEL */}
         <div className="text-center mb-8">
-          <span className="inline-flex items-center gap-2 rounded-full border border-amber-500/50 bg-amber-950/70 px-4 py-2 text-xs font-black tracking-wider text-amber-300 uppercase mb-4 shadow-[0_0_20px_rgba(245,158,11,0.25)]">
-            <Smartphone className="size-4 text-amber-400" /> VÁLIDO EXCLUSIVAMENTE PARA SISTEMA ANDROID 🤖
+          <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/60 px-4 py-2 text-xs font-extrabold tracking-wider text-emerald-300 uppercase mb-4 shadow-[0_0_20px_rgba(16,185,129,0.2)] backdrop-blur-md">
+            <Sparkles className="size-4 text-emerald-400" /> TESTE GRÁTIS DE 3 DIAS LIBERADO 🎁
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight mb-3">
-            Como instalar o <span className="text-emerald-400">UniTV Pro</span>
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight mb-3 text-white">
+            Como instalar o <span className="text-red-500 drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">UniTV Pro</span>
           </h1>
           <p className="text-sm sm:text-base text-white/85 max-w-xl mx-auto leading-relaxed font-medium">
-            O aplicativo funciona <strong className="text-amber-300 font-black">100% exclusivamente em aparelhos com sistema Android</strong> (Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Amazon, Smartphone Android e Tablet Android).
+            Escolha seu dispositivo abaixo para ver o passo a passo completo. O teste de <strong className="text-emerald-300 font-black">3 dias grátis é ativado automaticamente</strong> na primeira vez que abrir o app!
           </p>
         </div>
 
-
-
-        {/* CARD INFORMATIVO ESMERALDA DO TESTE GRÁTIS */}
-        <div className="mb-8 rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950/50 via-black/80 to-emerald-950/30 p-6 sm:p-7 backdrop-blur-sm text-center shadow-[0_0_30px_rgba(16,185,129,0.15)]">
-          <div className="inline-flex size-12 items-center justify-center rounded-2xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 mb-3">
-            <Sparkles className="size-6 text-emerald-400" />
+        {/* CARD DE TESTE GRÁTIS 3 DIAS (SELO DE GARANTIA E INFORMAÇÃO LIMPA) */}
+        <div className="mb-8 rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-950/60 via-black/90 to-emerald-950/40 p-6 sm:p-7 backdrop-blur-md text-center shadow-[0_0_35px_rgba(16,185,129,0.2)]">
+          <div className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 mb-3 shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+            <GiftIcon className="size-6 text-emerald-400" />
           </div>
-          <h2 className="text-xl font-black text-white mb-2">🎁 Como funciona o Teste Grátis de 3 Dias?</h2>
-          <p className="text-xs sm:text-sm text-white/80 leading-relaxed max-w-xl mx-auto font-medium">
-            Assim que você instalar e abrir o app pela primeira vez no seu aparelho Android, os <strong className="text-emerald-300 font-bold">3 dias de teste grátis são liberados automaticamente</strong> na tela. Não precisa informar cartão nem dados bancários!
+          <h2 className="text-xl sm:text-2xl font-black text-white mb-2">🎁 Sem cartão, sem dados bancários</h2>
+          <p className="text-xs sm:text-sm text-white/85 leading-relaxed max-w-lg mx-auto font-medium">
+            Basta baixar o aplicativo no seu aparelho Android e os <strong className="text-emerald-300 font-bold">3 dias de teste grátis iniciam na hora</strong>. Simples, rápido e 100% livre de riscos!
           </p>
         </div>
 
-        {/* MÉTODOS DE INSTALAÇÃO — PRINCIPAIS (SMART TV, TV BOX, SMARTPHONE E TABLET) */}
+        {/* NAVEGAÇÃO POR ABAS SELETORAS DE DISPOSITIVO (AMIGÁVEL E ORGANIZADO) */}
+        <div className="mb-8">
+          <div className="mb-3 text-center">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-white/60">
+              Selecione onde deseja instalar:
+            </span>
+          </div>
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 rounded-2xl bg-white/5 p-1.5 border border-white/10 backdrop-blur-md">
+            <button
+              onClick={() => setActiveTab("tv")}
+              className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 text-xs sm:text-sm font-black transition-all cursor-pointer ${
+                activeTab === "tv"
+                  ? "bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-[0_0_20px_rgba(249,115,22,0.4)] border border-orange-400/50 scale-[1.02]"
+                  : "text-white/70 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              <Tv className="size-4 sm:size-5" />
+              <span className="text-center sm:text-left">Smart TV &amp; TV Box</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab("mobile")}
+              className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 text-xs sm:text-sm font-black transition-all cursor-pointer ${
+                activeTab === "mobile"
+                  ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)] border border-emerald-400/50 scale-[1.02]"
+                  : "text-white/70 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              <Smartphone className="size-4 sm:size-5" />
+              <span className="text-center sm:text-left">Celular &amp; Tablet</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab("pc")}
+              className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 text-xs sm:text-sm font-black transition-all cursor-pointer ${
+                activeTab === "pc"
+                  ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.4)] border border-red-400/50 scale-[1.02]"
+                  : "text-white/70 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              <Monitor className="size-4 sm:size-5" />
+              <span className="text-center sm:text-left">Computador PC</span>
+            </button>
+          </div>
+        </div>
+
+        {/* CONTEÚDO DAS ABAS */}
         <div className="space-y-6">
-          {/* MÉTODO 1 — DOWNLOADER */}
-          <div className="rounded-3xl border-2 border-orange-500/30 bg-gradient-to-b from-orange-950/20 via-black/60 to-black/80 p-6 sm:p-8 backdrop-blur-sm shadow-xl">
-            <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
-              <div className="flex items-center gap-3.5">
-                <DownloaderAppIcon className="size-14 sm:size-16" />
-                <div>
-                  <a
-                    href={DOWNLOADER_PLAYSTORE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group/title inline-flex items-center gap-2 hover:text-orange-300 transition-colors"
-                  >
-                    <h2 className="text-xl sm:text-2xl font-black text-white group-hover/title:text-orange-300 flex items-center gap-2">
-                      Método 1: Downloader <ExternalLink className="size-4 text-orange-400 opacity-80 group-hover/title:opacity-100" />
-                    </h2>
-                  </a>
-                  <p className="text-xs text-orange-300/90 font-semibold mt-0.5">
-                    Compatível com Smart TV, TV Box, Smartphone e Tablet Android
-                  </p>
-                </div>
-              </div>
-              <a
-                href={DOWNLOADER_PLAYSTORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-orange-500/15 border border-orange-500/30 px-3 py-1.5 text-[11px] font-extrabold text-orange-300 shrink-0 hover:bg-orange-500/25 transition-all"
-              >
-                🍊 App Downloader <ExternalLink className="size-3" />
-              </a>
-            </div>
-
-            <ol className="space-y-6">
-              <li className="flex items-start gap-4">
-                <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
-                  1
-                </div>
-                <div className="text-sm text-white/80 leading-relaxed pt-0.5 w-full">
-                  Na sua TV ou TV Box, abra a loja de aplicativos e procure pelo aplicativo{" "}
-                  <a
-                    href={DOWNLOADER_PLAYSTORE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-orange-400 font-black underline underline-offset-2 hover:text-orange-300 transition-colors"
-                  >
-                    Downloader <ExternalLink className="size-3" />
-                  </a>.
-                  
-                  {/* PREVIEW DO ÍCONE COM LINK PARA PLAY STORE */}
-                  <a
-                    href={DOWNLOADER_PLAYSTORE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 flex items-center gap-4 rounded-2xl border border-orange-500/40 bg-orange-950/40 p-4 shadow-[0_0_20px_rgba(249,115,22,0.2)] transition-all duration-300 hover:border-orange-400/80 hover:bg-orange-950/60 hover:scale-[1.01] group/preview cursor-pointer"
-                  >
-                    <DownloaderAppIcon className="size-14 sm:size-16" />
-                    <div>
-                      <span className="inline-block text-[10px] font-black uppercase tracking-wider text-orange-400 bg-orange-500/20 border border-orange-500/40 px-2 py-0.5 rounded-md mb-1">
-                        🎯 TOQUE PARA ABRIR NA PLAY STORE
-                      </span>
-                      <h4 className="font-black text-white text-sm sm:text-base group-hover/preview:text-orange-300 transition-colors flex items-center gap-1.5">
-                        Downloader by AFTVnews <ExternalLink className="size-3.5 text-orange-400" />
-                      </h4>
-                      <p className="text-xs text-white/70">Ícone oficial Laranja na Play Store / Loja da TV</p>
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-              <li className="flex items-start gap-4">
-                <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
-                  2
-                </div>
-                <div className="text-sm text-white/80 leading-relaxed pt-0.5">
-                  Abra o <strong className="text-white">Downloader</strong> e na barra de endereço digite este código:
-                  <div className="mt-3 flex items-center gap-3">
-                    <div className="inline-flex items-center gap-2 rounded-2xl bg-emerald-950/80 border-2 border-emerald-400/60 px-5 py-2.5 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-                      <Hash className="size-5 text-emerald-400" />
-                      <span className="font-mono font-black text-emerald-300 text-2xl tracking-widest">291561</span>
-                    </div>
+          {/* ABA 1: SMART TV & TV BOX (DOWNLOADER) */}
+          {(activeTab === "tv" || activeTab === "pc") && (
+            <div className="rounded-3xl border-2 border-orange-500/40 bg-gradient-to-b from-orange-950/30 via-black/80 to-black/90 p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+              <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+                <div className="flex items-center gap-3.5">
+                  <DownloaderAppIcon className="size-14 sm:size-16" />
+                  <div>
+                    <a
+                      href={DOWNLOADER_PLAYSTORE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/title inline-flex items-center gap-2 hover:text-orange-300 transition-colors"
+                    >
+                      <h2 className="text-xl sm:text-2xl font-black text-white group-hover/title:text-orange-300 flex items-center gap-2">
+                        Método 1: Downloader <ExternalLink className="size-4 text-orange-400 opacity-80 group-hover/title:opacity-100" />
+                      </h2>
+                    </a>
+                    <p className="text-xs text-orange-300/90 font-semibold mt-0.5">
+                      Ideal para Smart TV Android, TV Box, Mi Stick Xiaomi e FireTV Stick
+                    </p>
                   </div>
                 </div>
-              </li>
-
-              <li className="flex items-start gap-4">
-                <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
-                  3
-                </div>
-                <div className="text-sm text-white/80 leading-relaxed pt-0.5">
-                  Clique em <strong className="text-white">"Go"</strong>, aguarde o download e selecione <strong className="text-white">"Instalar"</strong>. Abra o UniTV Pro e seu teste grátis estará pronto!
-                </div>
-              </li>
-            </ol>
-
-            {/* AVISO DE PERMISSÕES E SEGURANÇA DO ANDROID */}
-            <div className="mt-6 rounded-2xl border border-amber-500/40 bg-amber-950/30 p-4.5 text-left">
-              <div className="flex items-start gap-3">
-                <ShieldAlert className="size-5 shrink-0 text-amber-400 mt-0.5" />
-                <div>
-                  <h4 className="text-xs sm:text-sm font-black text-amber-300 mb-1">
-                    ⚠️ Aviso de Permissões e Segurança do Android
-                  </h4>
-                  <p className="text-xs text-white/90 leading-relaxed">
-                    Quando o aplicativo pedir permissões de instalação no seu dispositivo, <strong className="text-amber-300">aceite e clique em "Instalar mesmo assim"</strong>.
-                  </p>
-                  <p className="text-xs text-white/75 leading-relaxed mt-1.5">
-                    Se o sistema Android ou o Play Protect acusar como <em>"aplicativo nocivo ou desconhecido"</em>, pode ficar 100% tranquilo! Isso ocorre exclusivamente porque o app foi instalado diretamente fora da Google Play Store (via APK). O aplicativo é totalmente seguro, oficial e livre de riscos.
-                  </p>
-                </div>
+                <a
+                  href={DOWNLOADER_PLAYSTORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-orange-500/15 border border-orange-500/30 px-3 py-1.5 text-[11px] font-extrabold text-orange-300 shrink-0 hover:bg-orange-500/25 transition-all"
+                >
+                  🍊 App Downloader <ExternalLink className="size-3" />
+                </a>
               </div>
+
+              <ol className="space-y-6">
+                <li className="flex items-start gap-4">
+                  <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-orange-500/20 border border-orange-400/40 text-orange-300 text-xs font-black">
+                    1
+                  </div>
+                  <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+                    Na sua TV ou TV Box, abra a loja de aplicativos e procure pelo aplicativo{" "}
+                    <a
+                      href={DOWNLOADER_PLAYSTORE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-orange-400 font-black underline underline-offset-2 hover:text-orange-300 transition-colors"
+                    >
+                      Downloader <ExternalLink className="size-3" />
+                    </a>.
+                    
+                    {/* PREVIEW DO ÍCONE COM LINK PARA PLAY STORE */}
+                    <a
+                      href={DOWNLOADER_PLAYSTORE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 flex items-center gap-4 rounded-2xl border border-orange-500/40 bg-orange-950/40 p-4 shadow-[0_0_20px_rgba(249,115,22,0.2)] transition-all duration-300 hover:border-orange-400/80 hover:bg-orange-950/60 hover:scale-[1.01] group/preview cursor-pointer"
+                    >
+                      <DownloaderAppIcon className="size-14 sm:size-16" />
+                      <div>
+                        <span className="inline-block text-[10px] font-black uppercase tracking-wider text-orange-400 bg-orange-500/20 border border-orange-500/40 px-2 py-0.5 rounded-md mb-1">
+                          🎯 TOQUE PARA ABRIR NA PLAY STORE
+                        </span>
+                        <h4 className="font-black text-white text-sm sm:text-base group-hover/preview:text-orange-300 transition-colors flex items-center gap-1.5">
+                          Downloader by AFTVnews <ExternalLink className="size-3.5 text-orange-400" />
+                        </h4>
+                        <p className="text-xs text-white/70">Ícone oficial Laranja na loja da TV ou Play Store</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-orange-500/20 border border-orange-400/40 text-orange-300 text-xs font-black">
+                    2
+                  </div>
+                  <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+                    Abra o aplicativo <strong className="text-white">Downloader</strong> e na barra de busca/endereço digite o código:
+                    <CodeCopyBox code="291561" color="orange" />
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-orange-500/20 border border-orange-400/40 text-orange-300 text-xs font-black">
+                    3
+                  </div>
+                  <div className="text-sm text-white/90 leading-relaxed pt-0.5">
+                    Clique em <strong className="text-white font-black text-orange-300">"Go"</strong>, aguarde o download finalizar e selecione <strong className="text-white font-black">"Instalar"</strong>. Abra o UniTV Pro e seu teste grátis já estará pronto para uso!
+                  </div>
+                </li>
+              </ol>
             </div>
-          </div>
+          )}
 
-          {/* MÉTODO 2 — NTDOWN */}
-          <div className="rounded-3xl border-2 border-emerald-500/30 bg-gradient-to-b from-emerald-950/20 via-black/60 to-black/80 p-6 sm:p-8 backdrop-blur-sm shadow-xl">
-            <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
-              <div className="flex items-center gap-3.5">
-                <NtDownAppIcon className="size-14 sm:size-16" />
-                <div>
-                  <a
-                    href={NTDOWN_PLAYSTORE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group/title inline-flex items-center gap-2 hover:text-emerald-300 transition-colors"
-                  >
-                    <h2 className="text-xl sm:text-2xl font-black text-white group-hover/title:text-emerald-300 flex items-center gap-2">
-                      Método 2: NTDown <ExternalLink className="size-4 text-emerald-400 opacity-80 group-hover/title:opacity-100" />
-                    </h2>
-                  </a>
-                  <p className="text-xs text-emerald-300/90 font-semibold mt-0.5">
-                    Compatível com Smart TV, TV Box, Smartphone e Tablet Android
-                  </p>
-                </div>
-              </div>
-              <a
-                href={NTDOWN_PLAYSTORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 px-3 py-1.5 text-[11px] font-extrabold text-emerald-300 shrink-0 hover:bg-emerald-500/25 transition-all"
-              >
-                🟢 App ntDown <ExternalLink className="size-3" />
-              </a>
-            </div>
-
-            <ol className="space-y-6">
-              <li className="flex items-start gap-4">
-                <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
-                  1
-                </div>
-                <div className="text-sm text-white/80 leading-relaxed pt-0.5 w-full">
-                  Abra a <strong className="text-white">Play Store</strong> no seu celular ou tablet e procure pelo aplicativo{" "}
-                  <a
-                    href={NTDOWN_PLAYSTORE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-emerald-400 font-black underline underline-offset-2 hover:text-emerald-300 transition-colors"
-                  >
-                    ntDown <ExternalLink className="size-3" />
-                  </a>.
-                  
-                  {/* PREVIEW DO ÍCONE COM LINK PARA PLAY STORE */}
-                  <a
-                    href={NTDOWN_PLAYSTORE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-3 flex items-center gap-4 rounded-2xl border border-emerald-500/40 bg-emerald-950/40 p-4 shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-300 hover:border-emerald-400/80 hover:bg-emerald-950/60 hover:scale-[1.01] group/preview cursor-pointer"
-                  >
-                    <NtDownAppIcon className="size-14 sm:size-16" />
-                    <div>
-                      <span className="inline-block text-[10px] font-black uppercase tracking-wider text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2 py-0.5 rounded-md mb-1">
-                        🎯 TOQUE PARA ABRIR NA PLAY STORE
-                      </span>
-                      <h4 className="font-black text-white text-sm sm:text-base group-hover/preview:text-emerald-300 transition-colors flex items-center gap-1.5">
-                        ntDown <ExternalLink className="size-3.5 text-emerald-400" />
-                      </h4>
-                      <p className="text-xs text-white/70">Ícone oficial Verde na Play Store</p>
-                    </div>
-                  </a>
-                </div>
-              </li>
-
-              <li className="flex items-start gap-4">
-                <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
-                  2
-                </div>
-                <div className="text-sm text-white/80 leading-relaxed pt-0.5">
-                  Abra o aplicativo <strong className="text-white">ntDown</strong> e insira o código:
-                  <div className="mt-3 flex items-center gap-3">
-                    <div className="inline-flex items-center gap-2 rounded-2xl bg-emerald-950/80 border-2 border-emerald-400/60 px-5 py-2.5 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-                      <Hash className="size-5 text-emerald-400" />
-                      <span className="font-mono font-black text-emerald-300 text-2xl tracking-widest">96919</span>
-                    </div>
+          {/* ABA 2: CELULAR & TABLET (NTDOWN) */}
+          {(activeTab === "mobile" || activeTab === "pc") && (
+            <div className="rounded-3xl border-2 border-emerald-500/40 bg-gradient-to-b from-emerald-950/30 via-black/80 to-black/90 p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+              <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+                <div className="flex items-center gap-3.5">
+                  <NtDownAppIcon className="size-14 sm:size-16" />
+                  <div>
+                    <a
+                      href={NTDOWN_PLAYSTORE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group/title inline-flex items-center gap-2 hover:text-emerald-300 transition-colors"
+                    >
+                      <h2 className="text-xl sm:text-2xl font-black text-white group-hover/title:text-emerald-300 flex items-center gap-2">
+                        Método 2: NTDown <ExternalLink className="size-4 text-emerald-400 opacity-80 group-hover/title:opacity-100" />
+                      </h2>
+                    </a>
+                    <p className="text-xs text-emerald-300/90 font-semibold mt-0.5">
+                      Ideal para Smartphone Android e Tablet Android
+                    </p>
                   </div>
                 </div>
-              </li>
+                <a
+                  href={NTDOWN_PLAYSTORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 px-3 py-1.5 text-[11px] font-extrabold text-emerald-300 shrink-0 hover:bg-emerald-500/25 transition-all"
+                >
+                  🟢 App ntDown <ExternalLink className="size-3" />
+                </a>
+              </div>
 
-              <li className="flex items-start gap-4">
-                <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-black">
-                  3
-                </div>
-                <div className="text-sm text-white/80 leading-relaxed pt-0.5">
-                  Conclua a instalação e comece a assistir imediatamente.
-                </div>
-              </li>
-            </ol>
+              <ol className="space-y-6">
+                <li className="flex items-start gap-4">
+                  <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-black">
+                    1
+                  </div>
+                  <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+                    Abra a <strong className="text-white">Google Play Store</strong> no seu celular ou tablet e instale o aplicativo{" "}
+                    <a
+                      href={NTDOWN_PLAYSTORE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-emerald-400 font-black underline underline-offset-2 hover:text-emerald-300 transition-colors"
+                    >
+                      ntDown <ExternalLink className="size-3" />
+                    </a>.
+                    
+                    {/* PREVIEW DO ÍCONE COM LINK PARA PLAY STORE */}
+                    <a
+                      href={NTDOWN_PLAYSTORE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 flex items-center gap-4 rounded-2xl border border-emerald-500/40 bg-emerald-950/40 p-4 shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-300 hover:border-emerald-400/80 hover:bg-emerald-950/60 hover:scale-[1.01] group/preview cursor-pointer"
+                    >
+                      <NtDownAppIcon className="size-14 sm:size-16" />
+                      <div>
+                        <span className="inline-block text-[10px] font-black uppercase tracking-wider text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2 py-0.5 rounded-md mb-1">
+                          🎯 TOQUE PARA ABRIR NA PLAY STORE
+                        </span>
+                        <h4 className="font-black text-white text-sm sm:text-base group-hover/preview:text-emerald-300 transition-colors flex items-center gap-1.5">
+                          ntDown <ExternalLink className="size-3.5 text-emerald-400" />
+                        </h4>
+                        <p className="text-xs text-white/70">Ícone oficial Verde na Play Store</p>
+                      </div>
+                    </a>
+                  </div>
+                </li>
 
-            {/* AVISO DE PERMISSÕES E SEGURANÇA DO ANDROID */}
-            <div className="mt-6 rounded-2xl border border-amber-500/40 bg-amber-950/30 p-4.5 text-left">
-              <div className="flex items-start gap-3">
-                <ShieldAlert className="size-5 shrink-0 text-amber-400 mt-0.5" />
+                <li className="flex items-start gap-4">
+                  <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-black">
+                    2
+                  </div>
+                  <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+                    Abra o <strong className="text-white">ntDown</strong> e insira o código de download:
+                    <CodeCopyBox code="96919" color="emerald" />
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-black">
+                    3
+                  </div>
+                  <div className="text-sm text-white/90 leading-relaxed pt-0.5">
+                    Conclua a instalação no aparelho e abra o UniTV Pro para curtir a programação!
+                  </div>
+                </li>
+              </ol>
+            </div>
+          )}
+
+          {/* ABA 3: COMPUTADOR PC */}
+          {activeTab === "pc" && (
+            <div className="rounded-3xl border-2 border-red-500/30 bg-gradient-to-b from-red-950/20 via-black/80 to-black/90 p-6 sm:p-8 backdrop-blur-md shadow-xl">
+              <div className="flex items-center gap-3.5 mb-4 pb-4 border-b border-white/10">
+                <div className="flex size-12 items-center justify-center rounded-2xl bg-red-500/20 border border-red-400/40 text-red-400">
+                  <Monitor className="size-6" />
+                </div>
                 <div>
-                  <h4 className="text-xs sm:text-sm font-black text-amber-300 mb-1">
-                    ⚠️ Aviso de Permissões e Segurança do Android
-                  </h4>
-                  <p className="text-xs text-white/90 leading-relaxed">
-                    Quando o aplicativo pedir permissões de instalação no seu dispositivo, <strong className="text-amber-300">aceite e clique em "Instalar mesmo assim"</strong>.
-                  </p>
-                  <p className="text-xs text-white/75 leading-relaxed mt-1.5">
-                    Se o sistema Android ou o Play Protect acusar como <em>"aplicativo nocivo ou desconhecido"</em>, pode ficar 100% tranquilo! Isso ocorre exclusivamente porque o app foi instalado diretamente fora da Google Play Store (via APK). O aplicativo é totalmente seguro, oficial e livre de riscos.
-                  </p>
+                  <h3 className="font-black text-white text-xl sm:text-2xl">Instalação no Computador ou Notebook (PC)</h3>
+                  <p className="text-xs text-white/70">Roda via emulador de Android leve</p>
                 </div>
               </div>
+              <p className="text-sm text-white/85 leading-relaxed mb-4">
+                Para assistir no Windows ou Mac, baixe um emulador de Android. Recomendamos o <strong className="text-red-300 font-bold">LDPlayer</strong> por ser extremamente leve, rápido e otimizado para transmissões ao vivo.
+              </p>
+              <div className="rounded-2xl border border-amber-500/40 bg-amber-950/30 p-4 text-xs text-amber-200 leading-relaxed">
+                💡 <strong>Dica de Desempenho:</strong> Evite o BlueStacks pois costuma congelar a transmissão de canais. No LDPlayer, basta abrir o app de download e utilizar os códigos de acesso acima!
+              </div>
             </div>
-          </div>
+          )}
+        </div>
 
-          {/* DICA COMPACTA PARA PC / NOTEBOOK (OPCIONAL) */}
-          <div className="rounded-2xl border border-white/10 bg-white/3 p-5 backdrop-blur-sm">
-            <div className="flex items-center gap-3 mb-2">
-              <Monitor className="size-5 text-red-400" />
-              <h3 className="font-bold text-white text-sm sm:text-base">Quer assistir no Computador ou Notebook?</h3>
+        {/* AVISO DE PERMISSÕES E SEGURANÇA DO ANDROID (SEMPRE VISÍVEL) */}
+        <div className="mt-8 rounded-2xl border border-amber-500/40 bg-amber-950/30 p-5 text-left backdrop-blur-md shadow-lg">
+          <div className="flex items-start gap-3.5">
+            <ShieldAlert className="size-6 shrink-0 text-amber-400 mt-0.5" />
+            <div>
+              <h4 className="text-sm font-black text-amber-300 mb-1">
+                ⚠️ Aviso de Permissões e Segurança do Android
+              </h4>
+              <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-medium">
+                Quando o aparelho pedir permissões de instalação de fontes desconhecidas, <strong className="text-amber-300 font-black">aceite e clique em "Instalar mesmo assim"</strong>.
+              </p>
+              <p className="text-xs text-white/75 leading-relaxed mt-1.5 font-medium">
+                Se o Android ou Play Protect avisar sobre <em>"aplicativo desconhecido"</em>, fique 100% tranquilo. Isso acontece exclusivamente porque o app é baixado fora da Play Store (via código APK direto). O aplicativo é totalmente seguro, oficial e livre de vírus.
+              </p>
             </div>
-            <p className="text-xs text-white/70 leading-relaxed">
-              Basta baixar um emulador Android no PC. Recomendamos o <strong className="text-red-300">LDPlayer</strong> (mais leve e rápido). <span className="text-amber-300 font-medium">Evite o BlueStacks</span> pois costuma travar a transmissão. No LDPlayer, baixe o ntDown ou Downloader e use os códigos acima.
-            </p>
           </div>
         </div>
 
-        {/* BLOCO DE ASSINATURA DE PLANOS */}
-        <div className="mt-10 rounded-3xl border border-emerald-500/40 bg-gradient-to-br from-emerald-950/40 via-black to-emerald-950/30 p-8 text-center shadow-[0_0_40px_rgba(16,185,129,0.15)]">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 px-3.5 py-1 text-xs font-black text-emerald-300 uppercase tracking-wider mb-3">
-            <Zap className="size-3.5 text-emerald-400" /> Recarga Definitiva
+        {/* BLOCO DE CONVERSÃO / ASSINATURA DE PLANOS (QUEM QUER COMPRAR DIRETO) */}
+        <div className="mt-10 rounded-3xl border border-red-500/50 bg-gradient-to-br from-red-950/50 via-black to-red-950/30 p-8 sm:p-10 text-center shadow-[0_0_50px_rgba(220,38,38,0.2)] relative overflow-hidden">
+          <div className="absolute top-0 right-0 size-40 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-red-500/20 border border-red-400/40 px-3.5 py-1 text-xs font-black text-red-300 uppercase tracking-wider mb-3">
+            <Zap className="size-3.5 text-red-400" /> Recargas e Assinaturas
           </span>
-          <h3 className="text-2xl sm:text-3xl font-black text-white mb-2">Já testou ou quer contratar direto?</h3>
-          <p className="text-sm text-white/70 max-w-md mx-auto mb-6 font-medium">
-            Confira nossos planos de recarga Mensal, Trimestral e Anual com garantia de 7 dias e ativação imediata.
+          <h3 className="text-2xl sm:text-4xl font-black text-white mb-2">Pronto para garantir sua recarga?</h3>
+          <p className="text-sm sm:text-base text-white/80 max-w-md mx-auto mb-7 font-medium leading-relaxed">
+            Confira nossos planos Mensal, Trimestral e Anual com ativação imediata e 7 dias de garantia de reembolso!
           </p>
           <a
             href="/#planos"
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 px-8 py-4 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.4)] hover:scale-[1.03] transition-all"
+            className="inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-red-600 via-red-500 to-red-700 px-8 py-4 text-sm sm:text-base font-black text-white shadow-[0_0_35px_rgba(220,38,38,0.6)] hover:scale-[1.03] transition-all"
           >
             <ShieldCheck className="size-5" />
-            VER PLANOS DE RECARGA
+            VER PLANOS DE ASSINATURA
           </a>
         </div>
 
-        {/* CTA SUPORTE */}
-        <div className="mt-8 rounded-2xl border border-green-800/40 bg-green-950/20 p-6 text-center">
-          <p className="text-sm text-white/70 mb-4 font-medium">
-            Precisa de ajuda para instalar? Nosso suporte te orienta no WhatsApp:
+        {/* CTA ATENDIMENTO E AJUDA VIA WHATSAPP (SUPORTE TÉCNICO DIRETO) */}
+        <div className="mt-8 rounded-3xl border border-green-700/40 bg-gradient-to-b from-green-950/40 to-black/90 p-7 text-center backdrop-blur-md shadow-xl">
+          <div className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-green-500/20 border border-green-400/40 text-green-400 mb-3 shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+            <MessageCircle className="size-6 text-green-400" />
+          </div>
+          <h3 className="text-xl font-black text-white mb-1">Precisa de ajuda para instalar?</h3>
+          <p className="text-xs sm:text-sm text-white/80 mb-6 font-medium max-w-md mx-auto">
+            Nossa equipe de suporte técnico está de plantão no WhatsApp para tirar suas dúvidas e te ajudar passo a passo!
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
-              href="https://wa.me/5561984016006"
+              href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20instalar%20o%20UniTV%20Pro"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-green-700 px-6 py-3 text-sm font-bold text-white hover:bg-green-600 transition-colors"
+              className="inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 px-6 py-3.5 text-xs sm:text-sm font-black text-white shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:scale-[1.02] transition-all"
             >
               <Smartphone className="size-4" />
-              (61) 9 8401-6006
+              Falar com Suporte (61) 98401-6006
             </a>
             <a
-              href="https://wa.me/5561982743140"
+              href="https://wa.me/5561982743140?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20instalar%20o%20UniTV%20Pro"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-green-800/50 border border-green-700/40 px-6 py-3 text-sm font-bold text-white hover:bg-green-700/50 transition-colors"
+              className="inline-flex items-center gap-2.5 rounded-xl bg-white/10 border border-white/20 px-6 py-3.5 text-xs sm:text-sm font-bold text-white hover:bg-white/20 transition-all"
             >
-              <Smartphone className="size-4" />
-              (61) 9 8274-3140
+              <Smartphone className="size-4 text-green-400" />
+              Atendimento Secundário
             </a>
           </div>
         </div>
       </div>
     </div>
+  );
+}
+
+function GiftIcon({ className = "size-6" }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <rect x="3" y="8" width="18" height="4" rx="1" />
+      <path d="M12 8v13" />
+      <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" />
+      <path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5" />
+    </svg>
   );
 }
