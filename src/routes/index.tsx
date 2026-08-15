@@ -500,10 +500,10 @@ function Index() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`rounded-full px-3.5 py-1.5 text-xs font-bold transition-all ${
+                className={`rounded-full px-4 py-2 text-xs font-bold transition-all backdrop-blur-md ${
                   activeTab === tab.id
-                    ? "bg-red-600 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)] scale-105"
-                    : "bg-white/5 border border-white/10 text-white/60 hover:bg-white/10 hover:text-white"
+                    ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] scale-105"
+                    : "bg-stone-900/70 border border-white/20 text-white/80 hover:bg-stone-800/90 hover:border-white/35 hover:text-white shadow-sm"
                 }`}
               >
                 {tab.label}
@@ -527,7 +527,7 @@ function Index() {
               <button
                 onClick={() => scrollCatalog("left")}
                 aria-label="Voltar filmes"
-                className="absolute -left-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/20 bg-black/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 cursor-pointer"
+                className="absolute -left-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/25 bg-stone-900/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 cursor-pointer"
               >
                 <ChevronLeft className="size-6" />
               </button>
@@ -536,7 +536,7 @@ function Index() {
               <button
                 onClick={() => scrollCatalog("right")}
                 aria-label="Avançar filmes"
-                className="absolute -right-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/20 bg-black/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 cursor-pointer"
+                className="absolute -right-5 top-1/2 z-30 -translate-y-1/2 flex size-11 items-center justify-center rounded-full border border-white/25 bg-stone-900/85 text-white shadow-[0_0_25px_rgba(0,0,0,0.9)] backdrop-blur-md opacity-0 group-hover/carousel:opacity-100 transition-all duration-300 hover:bg-red-600 hover:border-red-500 hover:scale-110 cursor-pointer"
               >
                 <ChevronRight className="size-6" />
               </button>

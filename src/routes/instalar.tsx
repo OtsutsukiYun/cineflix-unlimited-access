@@ -497,7 +497,7 @@ export function InstalarPage() {
         <div className="mb-6 flex items-center justify-between">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-xs font-bold text-white/80 hover:text-white transition-colors bg-white/10 border border-white/15 px-4 py-2 rounded-full backdrop-blur-md"
+            className="inline-flex items-center gap-2 text-xs font-bold text-white transition-all bg-stone-900/70 border border-white/20 px-4 py-2 rounded-full backdrop-blur-md hover:bg-stone-800/90 hover:border-white/35 shadow-md"
           >
             <ArrowLeft className="size-3.5" /> Voltar ao Início
           </Link>
@@ -525,20 +525,20 @@ export function InstalarPage() {
         {/* BANNER CINEMATOGRÁFICO DE TESTE GRÁTIS COM IMAGENS GRANDES DE FILMES DE TERROR NO FUNDO */}
         <TrialBannerSlideshow />
 
-        {/* NAVEGAÇÃO POR ABAS SELETORAS DE DISPOSITIVO (AMIGÁVEL E ORGANIZADO) */}
+        {/* NAVEGAÇÃO POR ABAS SELETORAS DE DISPOSITIVO (EFEITO VIDRO PREMIO ESCURO) */}
         <div className="mb-8">
           <div className="mb-3 text-center">
             <span className="text-xs font-extrabold uppercase tracking-widest text-white/70">
               Selecione onde deseja instalar:
             </span>
           </div>
-          <div className="grid grid-cols-3 gap-2 sm:gap-3 rounded-2xl bg-white/5 p-1.5 border border-white/10 backdrop-blur-md">
+          <div className="grid grid-cols-3 gap-2 sm:gap-3 rounded-2xl bg-stone-900/60 p-1.5 border border-white/15 backdrop-blur-md shadow-lg">
             <button
               onClick={() => setActiveTab("tv")}
               className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 text-xs sm:text-sm font-black transition-all cursor-pointer ${
                 activeTab === "tv"
                   ? "bg-gradient-to-r from-orange-600 to-amber-600 text-white shadow-[0_0_20px_rgba(249,115,22,0.4)] border border-orange-400/50 scale-[1.02]"
-                  : "text-white/70 hover:text-white hover:bg-white/5"
+                  : "bg-stone-900/50 border border-white/10 text-white/80 backdrop-blur-md hover:bg-stone-800/80 hover:border-white/25 hover:text-white"
               }`}
             >
               <Tv className="size-4 sm:size-5" />
@@ -550,7 +550,7 @@ export function InstalarPage() {
               className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 text-xs sm:text-sm font-black transition-all cursor-pointer ${
                 activeTab === "mobile"
                   ? "bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-[0_0_20px_rgba(16,185,129,0.4)] border border-emerald-400/50 scale-[1.02]"
-                  : "text-white/70 hover:text-white hover:bg-white/5"
+                  : "bg-stone-900/50 border border-white/10 text-white/80 backdrop-blur-md hover:bg-stone-800/80 hover:border-white/25 hover:text-white"
               }`}
             >
               <Smartphone className="size-4 sm:size-5" />
@@ -562,7 +562,7 @@ export function InstalarPage() {
               className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 text-xs sm:text-sm font-black transition-all cursor-pointer ${
                 activeTab === "pc"
                   ? "bg-gradient-to-r from-red-600 to-rose-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.4)] border border-red-400/50 scale-[1.02]"
-                  : "text-white/70 hover:text-white hover:bg-white/5"
+                  : "bg-stone-900/50 border border-white/10 text-white/80 backdrop-blur-md hover:bg-stone-800/80 hover:border-white/25 hover:text-white"
               }`}
             >
               <Monitor className="size-4 sm:size-5" />
@@ -671,7 +671,7 @@ export function InstalarPage() {
               href="https://wa.me/5561982743140?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20instalar%20o%20UniTV%20Pro"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-xl bg-white/10 border border-white/20 px-6 py-3.5 text-xs sm:text-sm font-bold text-white hover:bg-white/20 transition-all"
+              className="inline-flex items-center gap-2.5 rounded-xl bg-stone-900/70 border border-white/20 px-6 py-3.5 text-xs sm:text-sm font-bold text-white backdrop-blur-md hover:bg-stone-800/90 hover:border-white/35 shadow-md transition-all"
             >
               <MessageCircle className="size-4 text-green-400" />
               Atendimento Secundário
