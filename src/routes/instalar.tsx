@@ -422,8 +422,8 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
 
 const TRIAL_HORROR_SLIDES = [
   { title: "Exit 8 (Saída 8)", year: "2025", genre: "Terror / Mistério Japonês", backdrop: "/3cVrg7tzSf5AgEecYWDOSAzXAeX.jpg" },
-  { title: "Killer Toon (Webtoon da Morte)", year: "2013", genre: "Terror Coreano", backdrop: "/2KVVziH6rYGp6HPFtbnztl1nnYh.jpg" },
-  { title: "A Cura (A Cure for Wellness)", year: "2016", genre: "Terror / Thriller Psicológico", backdrop: "/uXx9wjfJEzLlfqB8GW67SYBrhVT.jpg" },
+  { title: "Killer Toon (Webtoon da Morte)", year: "2013", genre: "Terror Coreano", backdrop: "/wDPiwtmO0O0btc2gT3qtLKuei6s.jpg" },
+  { title: "Cure (A Cura)", year: "1997", genre: "Terror / Crime Japonês", backdrop: "/1son1inSL9AHKYhYfOtOdENi0CH.jpg" },
   { title: "Evil Dead: A Ascensão", year: "2023", genre: "Terror / Gore", backdrop: "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg" },
   { title: "Hereditário", year: "2018", genre: "Terror Psicológico", backdrop: "/jQv5SAPEQwV1vtPseuWsRN6cT5q.jpg" },
   { title: "Ringu: O Chamado", year: "1998", genre: "Terror J-Horror Clássico", backdrop: "/sGhbO6muh1Fnpa7nkxYCfvmgWCo.jpg" },
