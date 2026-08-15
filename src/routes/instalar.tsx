@@ -78,7 +78,7 @@ const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
 
 const DOWNLOADER_ICON_URL = "https://play-lh.googleusercontent.com/_zuxP30plNbEBOOre6Q4rVwGQslOX6NCsefA8tPxJFsFt2XLO35yK2YVaPqmFl0oGVnO9FZCJ6b2lhrSk3a0KA=s180-rw";
 const NTDOWN_ICON_URL = "https://play-lh.googleusercontent.com/5Es3nwDA4eX2O2k1Y7y2cfYZETSVnVGNopu4X5U8_FpRzTdmaJS04-72QdVd88m7vo8hxYFyfpKUrhT373-H0Q=s180-rw";
-const LDPLAYER_ICON_URL = "https://play-lh.googleusercontent.com/CQFvxQrukeMbcXl5z--LEzURmlBF6tRVTdk3iNrTsFVhcst7N5Kj7x4ZMBJ-24uNlghVkfWEBqvJVz-CmW76DA=s180-rw";
+const LDPLAYER_ICON_URL = "https://img.utdstc.com/icon/4f8/c1b/4f8c1be9afee0fee6e05b2deeaa68bde5d990c5ca903d753e4b765a427c32478:100";
 
 function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
   return (
