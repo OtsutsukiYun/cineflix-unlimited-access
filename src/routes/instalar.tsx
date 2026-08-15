@@ -78,6 +78,7 @@ const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
 
 const DOWNLOADER_ICON_URL = "https://play-lh.googleusercontent.com/_zuxP30plNbEBOOre6Q4rVwGQslOX6NCsefA8tPxJFsFt2XLO35yK2YVaPqmFl0oGVnO9FZCJ6b2lhrSk3a0KA=s180-rw";
 const NTDOWN_ICON_URL = "https://play-lh.googleusercontent.com/5Es3nwDA4eX2O2k1Y7y2cfYZETSVnVGNopu4X5U8_FpRzTdmaJS04-72QdVd88m7vo8hxYFyfpKUrhT373-H0Q=s180-rw";
+const LDPLAYER_ICON_URL = "https://play-lh.googleusercontent.com/CQFvxQrukeMbcXl5z--LEzURmlBF6tRVTdk3iNrTsFVhcst7N5Kj7x4ZMBJ-24uNlghVkfWEBqvJVz-CmW76DA=s180-rw";
 
 function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
   return (
@@ -122,24 +123,13 @@ function LdPlayerAppIcon({ className = "size-14 sm:size-16" }: { className?: str
       target="_blank"
       rel="noopener noreferrer"
       title="Baixar LDPlayer no site oficial"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-yellow-400/80 bg-[#121212] p-2 shadow-[0_8px_25px_rgba(245,158,11,0.5)] transition-all duration-300 hover:scale-105 hover:border-yellow-300 hover:shadow-[0_12px_35px_rgba(245,158,11,0.75)] ${className}`}
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-yellow-400/80 shadow-[0_8px_25px_rgba(245,158,11,0.5)] transition-all duration-300 hover:scale-105 hover:border-yellow-300 hover:shadow-[0_12px_35px_rgba(245,158,11,0.75)] ${className}`}
     >
-      <svg
-        viewBox="0 0 100 100"
-        className="size-full transition-transform duration-300 group-hover/icon:scale-105"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect width="100" height="100" rx="22" fill="#18181b" />
-        <path
-          d="M 22 22 L 36 22 L 36 64 L 56 64 L 56 76 L 22 76 Z"
-          fill="#ffc800"
-        />
-        <path
-          d="M 44 22 L 64 22 C 78 22 86 32 86 49 C 86 66 78 76 64 76 L 44 76 Z M 58 35 L 58 63 L 64 63 C 71 63 73 57 73 49 C 73 41 71 35 64 35 Z"
-          fill="#ffc800"
-        />
-        <polygon points="61,42 61,56 71,49" fill="#18181b" />
-      </svg>
+      <img
+        src={LDPLAYER_ICON_URL}
+        alt="LDPlayer Official Icon"
+        className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
+      />
     </a>
   );
 }
