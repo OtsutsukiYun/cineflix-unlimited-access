@@ -181,6 +181,190 @@ function CodeCopyBox({ code, color = "emerald" }: { code: string; color?: "orang
   );
 }
 
+function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart TV Android, TV Box, Mi Stick Xiaomi e FireTV Stick" }: { methodNumber?: number; subtitle?: string }) {
+  return (
+    <div className="rounded-3xl border-2 border-orange-500/40 bg-gradient-to-b from-orange-950/30 via-black/80 to-black/90 p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+      <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+        <div className="flex items-center gap-3.5">
+          <DownloaderAppIcon className="size-14 sm:size-16" />
+          <div>
+            <a
+              href={DOWNLOADER_PLAYSTORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/title inline-flex items-center gap-2 hover:text-orange-300 transition-colors"
+            >
+              <h2 className="text-xl sm:text-2xl font-black text-white group-hover/title:text-orange-300 flex items-center gap-2">
+                Método {methodNumber}: Downloader <ExternalLink className="size-4 text-orange-400 opacity-80 group-hover/title:opacity-100" />
+              </h2>
+            </a>
+            <p className="text-xs text-orange-300/90 font-semibold mt-0.5">
+              {subtitle}
+            </p>
+          </div>
+        </div>
+        <a
+          href={DOWNLOADER_PLAYSTORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-orange-500/15 border border-orange-500/30 px-3 py-1.5 text-[11px] font-extrabold text-orange-300 shrink-0 hover:bg-orange-500/25 transition-all"
+        >
+          🍊 App Downloader <ExternalLink className="size-3" />
+        </a>
+      </div>
+
+      <ol className="space-y-6">
+        <li className="flex items-start gap-4">
+          <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-orange-500/20 border border-orange-400/40 text-orange-300 text-xs font-black">
+            1
+          </div>
+          <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            No seu aparelho Android, abra a loja de aplicativos (Play Store ou TV Store) e instale o aplicativo{" "}
+            <a
+              href={DOWNLOADER_PLAYSTORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-orange-400 font-black underline underline-offset-2 hover:text-orange-300 transition-colors"
+            >
+              Downloader <ExternalLink className="size-3" />
+            </a>.
+            
+            {/* PREVIEW DO ÍCONE COM LINK PARA PLAY STORE */}
+            <a
+              href={DOWNLOADER_PLAYSTORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 flex items-center gap-4 rounded-2xl border border-orange-500/40 bg-orange-950/40 p-4 shadow-[0_0_20px_rgba(249,115,22,0.2)] transition-all duration-300 hover:border-orange-400/80 hover:bg-orange-950/60 hover:scale-[1.01] group/preview cursor-pointer"
+            >
+              <DownloaderAppIcon className="size-14 sm:size-16" />
+              <div>
+                <span className="inline-block text-[10px] font-black uppercase tracking-wider text-orange-400 bg-orange-500/20 border border-orange-500/40 px-2 py-0.5 rounded-md mb-1">
+                  🎯 TOQUE PARA ABRIR NA PLAY STORE
+                </span>
+                <h4 className="font-black text-white text-sm sm:text-base group-hover/preview:text-orange-300 transition-colors flex items-center gap-1.5">
+                  Downloader by AFTVnews <ExternalLink className="size-3.5 text-orange-400" />
+                </h4>
+                <p className="text-xs text-white/70">Ícone oficial Laranja na loja da TV ou Play Store</p>
+              </div>
+            </a>
+          </div>
+        </li>
+
+        <li className="flex items-start gap-4">
+          <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-orange-500/20 border border-orange-400/40 text-orange-300 text-xs font-black">
+            2
+          </div>
+          <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Abra o aplicativo <strong className="text-white">Downloader</strong> e na barra de busca/endereço digite o código:
+            <CodeCopyBox code="291561" color="orange" />
+          </div>
+        </li>
+
+        <li className="flex items-start gap-4">
+          <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-orange-500/20 border border-orange-400/40 text-orange-300 text-xs font-black">
+            3
+          </div>
+          <div className="text-sm text-white/90 leading-relaxed pt-0.5">
+            Clique em <strong className="text-white font-black text-orange-300">"Go"</strong>, aguarde o download finalizar e selecione <strong className="text-white font-black">"Instalar"</strong>. Abra o UniTV Pro e seu teste grátis já estará pronto para uso!
+          </div>
+        </li>
+      </ol>
+    </div>
+  );
+}
+
+function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone Android e Tablet Android" }: { methodNumber?: number; subtitle?: string }) {
+  return (
+    <div className="rounded-3xl border-2 border-emerald-500/40 bg-gradient-to-b from-emerald-950/30 via-black/80 to-black/90 p-6 sm:p-8 backdrop-blur-md shadow-2xl">
+      <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+        <div className="flex items-center gap-3.5">
+          <NtDownAppIcon className="size-14 sm:size-16" />
+          <div>
+            <a
+              href={NTDOWN_PLAYSTORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/title inline-flex items-center gap-2 hover:text-emerald-300 transition-colors"
+            >
+              <h2 className="text-xl sm:text-2xl font-black text-white group-hover/title:text-emerald-300 flex items-center gap-2">
+                Método {methodNumber}: NTDown <ExternalLink className="size-4 text-emerald-400 opacity-80 group-hover/title:opacity-100" />
+              </h2>
+            </a>
+            <p className="text-xs text-emerald-300/90 font-semibold mt-0.5">
+              {subtitle}
+            </p>
+          </div>
+        </div>
+        <a
+          href={NTDOWN_PLAYSTORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden sm:inline-flex items-center gap-1.5 rounded-xl bg-emerald-500/15 border border-emerald-500/30 px-3 py-1.5 text-[11px] font-extrabold text-emerald-300 shrink-0 hover:bg-emerald-500/25 transition-all"
+        >
+          🟢 App ntDown <ExternalLink className="size-3" />
+        </a>
+      </div>
+
+      <ol className="space-y-6">
+        <li className="flex items-start gap-4">
+          <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-black">
+            1
+          </div>
+          <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Abra a <strong className="text-white">Google Play Store</strong> no seu dispositivo e instale o aplicativo{" "}
+            <a
+              href={NTDOWN_PLAYSTORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-emerald-400 font-black underline underline-offset-2 hover:text-emerald-300 transition-colors"
+            >
+              ntDown <ExternalLink className="size-3" />
+            </a>.
+            
+            {/* PREVIEW DO ÍCONE COM LINK PARA PLAY STORE */}
+            <a
+              href={NTDOWN_PLAYSTORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 flex items-center gap-4 rounded-2xl border border-emerald-500/40 bg-emerald-950/40 p-4 shadow-[0_0_20px_rgba(16,185,129,0.2)] transition-all duration-300 hover:border-emerald-400/80 hover:bg-emerald-950/60 hover:scale-[1.01] group/preview cursor-pointer"
+            >
+              <NtDownAppIcon className="size-14 sm:size-16" />
+              <div>
+                <span className="inline-block text-[10px] font-black uppercase tracking-wider text-emerald-300 bg-emerald-500/20 border border-emerald-500/40 px-2 py-0.5 rounded-md mb-1">
+                  🎯 TOQUE PARA ABRIR NA PLAY STORE
+                </span>
+                <h4 className="font-black text-white text-sm sm:text-base group-hover/preview:text-emerald-300 transition-colors flex items-center gap-1.5">
+                  ntDown <ExternalLink className="size-3.5 text-emerald-400" />
+                </h4>
+                <p className="text-xs text-white/70">Ícone oficial Verde na Play Store</p>
+              </div>
+            </a>
+          </div>
+        </li>
+
+        <li className="flex items-start gap-4">
+          <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-black">
+            2
+          </div>
+          <div className="text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Abra o <strong className="text-white">ntDown</strong> e insira o código de download:
+            <CodeCopyBox code="96919" color="emerald" />
+          </div>
+        </li>
+
+        <li className="flex items-start gap-4">
+          <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-300 text-xs font-black">
+            3
+          </div>
+          <div className="text-sm text-white/90 leading-relaxed pt-0.5">
+            Conclua a instalação no aparelho e abra o UniTV Pro para curtir a programação!
+          </div>
+        </li>
+      </ol>
+    </div>
+  );
+}
+
 export function InstalarPage() {
   const [activeTab, setActiveTab] = useState<"tv" | "mobile" | "pc">("tv");
 
