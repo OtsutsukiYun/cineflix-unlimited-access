@@ -48,6 +48,9 @@ import {
   Calendar,
   ChevronLeft,
   ChevronRight,
+  RotateCcw,
+  Activity,
+  ListOrdered,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -715,6 +718,78 @@ function Index() {
                       {f.d}
                     </p>
                   </div>
+                </div>
+              </div>
+            </SmoothCardReveal>
+          ))}
+        </div>
+      </section>
+
+      {/* RECURSOS EXCLUSIVOS DA PLATAFORMA */}
+      <section className="relative z-10 mx-auto w-[94%] max-w-6xl py-12 sm:py-16 border-t border-white/10">
+        <SmoothCardReveal>
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/40 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3 shadow-[0_0_20px_rgba(220,38,38,0.2)]">
+              <Zap className="size-3.5 text-red-400" /> Recursos da Plataforma
+            </span>
+            <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white">
+              Tecnologia &amp; Recursos <span className="text-red-500">Exclusivos</span>
+            </h2>
+            <p className="text-xs sm:text-sm text-white/70 max-w-lg mx-auto mt-2.5 font-medium">
+              Ferramentas avançadas pensadas para o seu conforto, segurança e entretenimento sem travamentos.
+            </p>
+          </div>
+        </SmoothCardReveal>
+
+        <div className="grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              icon: RotateCcw,
+              title: "Volte 7 Dias na Grade",
+              desc: "Perdeu o jogo, novela ou programa? Use o Playback para retomar a programação dos últimos 7 dias.",
+              gradient: "from-red-600 via-rose-600 to-red-700",
+              glow: "shadow-[0_0_25px_rgba(220,38,38,0.3)]",
+              border: "border border-red-500/30 hover:border-red-400",
+            },
+            {
+              icon: Activity,
+              title: "Sinal P2P Estável",
+              desc: "A rede peer-to-peer espalha o conteúdo de forma inteligente, mantendo a transmissão fluida sem travar.",
+              gradient: "from-amber-500 via-orange-600 to-red-600",
+              glow: "shadow-[0_0_25px_rgba(245,158,11,0.3)]",
+              border: "border border-amber-500/30 hover:border-amber-400",
+            },
+            {
+              icon: Lock,
+              title: "Bloqueio Por Perfil",
+              desc: "Trave conteúdos adultos com senha para garantir que as crianças vejam só o que é apropriado.",
+              gradient: "from-emerald-600 via-teal-600 to-green-700",
+              glow: "shadow-[0_0_25px_rgba(16,185,129,0.3)]",
+              border: "border border-emerald-500/30 hover:border-emerald-400",
+            },
+            {
+              icon: ListOrdered,
+              title: "Programação Completa",
+              desc: "O guia EPG mostra o que passa em cada canal, com horário, sinopse e ordem por categoria.",
+              gradient: "from-blue-600 via-indigo-600 to-violet-700",
+              glow: "shadow-[0_0_25px_rgba(59,130,246,0.3)]",
+              border: "border border-blue-500/30 hover:border-blue-400",
+            },
+          ].map((item, idx) => (
+            <SmoothCardReveal key={item.title} delay={100 + idx * 80}>
+              <div className={`glass group relative h-full rounded-3xl p-6 sm:p-7 bg-stone-900/60 backdrop-blur-xl ${item.border} ${item.glow} transition-all duration-300 hover:-translate-y-2 hover:bg-stone-900/90 shadow-xl flex flex-col justify-between`}>
+                <div className={`mb-5 flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${item.gradient} p-0.5 shadow-md group-hover:scale-110 transition-transform duration-300`}>
+                  <div className="flex size-full items-center justify-center rounded-[14px] bg-black/40">
+                    <item.icon className="size-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-lg sm:text-xl font-black text-white mb-2 group-hover:text-red-300 transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium">
+                    {item.desc}
+                  </p>
                 </div>
               </div>
             </SmoothCardReveal>
