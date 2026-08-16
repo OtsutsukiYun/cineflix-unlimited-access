@@ -63,7 +63,7 @@ export const heroSlides: HeroSlide[] = [
     year: "2026",
     genre: "Terror / Slasher 2026",
     tagline: "Uma cidade idílica mergulha na loucura quando o sorveteiro serve prazeres macabros.",
-    backdrop: "/75pK9Dj1CheZFItgld9TVvb2P4x.jpg",
+    backdrop: "/giekwhdwa8SFtfPi0mOn5uvkXJ0.jpg",
     poster: "/c987gxFjXqYOxZEZKcTkS1ONTWH.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
