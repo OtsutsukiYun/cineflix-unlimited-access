@@ -70,6 +70,7 @@ const TESTE_GRATIS_POSTERS = [
 // ── INSTAGRAM POPUP ─────────────────────────────────────────────────────────
 function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => void }) {
   const [open, setOpen] = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
 
   useEffect(() => {
     if (!sessionStorage.getItem("ig_popup_seen")) {
@@ -87,35 +88,67 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
     onOpenChange?.(false);
   }
 
+  function handleClaim(e: React.MouseEvent) {
+    e.preventDefault();
+    sessionStorage.setItem("ig_popup_seen", "1");
+    sessionStorage.setItem("ig_trial_activated", "1");
+    setConfirmed(true);
+  }
+
   if (!open) return null;
   return (
-    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 backdrop-blur-md bg-black/80" role="dialog" aria-modal="true">
-      <div className="relative z-10 w-full max-w-md rounded-3xl border border-white/10 bg-[#0e0e0e] p-7 sm:p-9 shadow-[0_40px_80px_rgba(0,0,0,0.95)] text-center">
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 backdrop-blur-md bg-black/80 transition-all duration-300" role="dialog" aria-modal="true">
+      <div className={`relative z-10 w-full max-w-md rounded-3xl border ${confirmed ? "border-emerald-500/40 bg-[#07140b] shadow-[0_0_60px_rgba(16,185,129,0.35)]" : "border-white/10 bg-[#0e0e0e] shadow-[0_40px_80px_rgba(0,0,0,0.95)]"} p-7 sm:p-9 text-center transition-all duration-500`}>
         <button onClick={close} aria-label="Fechar" className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white/60 hover:bg-white/20 hover:text-white transition-all">
           <X className="size-4" />
         </button>
-        <div className="mx-auto mb-5 flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-red-900 shadow-[0_0_30px_rgba(220,38,38,0.6)]">
-          <Gift className="size-8 text-white" />
-        </div>
-        <p className="mb-1 text-xs font-extrabold tracking-[0.2em] text-red-400 uppercase">Exclusivo Instagram · CinePesadelo</p>
-        <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
-          🎁 Teste Grátis<br /><span className="text-red-400">por 3 dias!</span>
-        </h2>
-        <p className="text-sm text-white/70 leading-relaxed mb-6">
-          Você veio pelo Instagram do <strong className="text-white">CinePesadelo</strong> e por isso está ganhando{" "}
-          <strong className="text-red-300">3 dias de teste grátis</strong> no UniTV Pro — todos os filmes, séries e o maior catálogo de terror.
-        </p>
-        <Link
-          to="/instalar"
-          onClick={close}
-          className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(220,38,38,0.7)] mb-3"
-        >
-          <Gift className="size-4 text-amber-300" />
-          QUERO MEU TESTE GRÁTIS
-        </Link>
-        <button onClick={close} className="text-xs text-white/40 hover:text-white/70 transition-colors underline underline-offset-2">
-          Agora não, quero só ver o catálogo
-        </button>
+
+        {!confirmed ? (
+          <>
+            <div className="mx-auto mb-5 flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-red-900 shadow-[0_0_30px_rgba(220,38,38,0.6)]">
+              <Gift className="size-8 text-white" />
+            </div>
+            <p className="mb-1 text-xs font-extrabold tracking-[0.2em] text-red-400 uppercase">Exclusivo Instagram · CinePesadelo</p>
+            <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
+              🎁 Teste Grátis<br /><span className="text-red-400">por 3 dias!</span>
+            </h2>
+            <p className="text-sm text-white/70 leading-relaxed mb-6">
+              Você veio pelo Instagram do <strong className="text-white">CinePesadelo</strong> e por isso está ganhando{" "}
+              <strong className="text-red-300">3 dias de teste grátis</strong> no UniTV Pro — todos os filmes, séries e o maior catálogo de terror.
+            </p>
+            <button
+              onClick={handleClaim}
+              className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(220,38,38,0.7)] active:scale-95 mb-3 cursor-pointer"
+            >
+              <Gift className="size-4 text-amber-300" />
+              QUERO MEU TESTE GRÁTIS
+            </button>
+            <button onClick={close} className="text-xs text-white/40 hover:text-white/70 transition-colors underline underline-offset-2">
+              Agora não, quero só ver o catálogo
+            </button>
+          </>
+        ) : (
+          <div className="animate-in fade-in zoom-in-95 duration-500 py-2">
+            <div className="mx-auto mb-5 flex size-20 items-center justify-center rounded-full bg-emerald-500/20 border-2 border-emerald-400 text-emerald-400 shadow-[0_0_40px_rgba(16,185,129,0.5)] animate-bounce">
+              <Check className="size-10 stroke-[3]" />
+            </div>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1 text-[11px] font-bold text-emerald-400 tracking-wider uppercase mb-3">
+              <Sparkles className="size-3.5" /> Teste Grátis Ativado
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
+              🎉 Benefício Confirmado!
+            </h2>
+            <p className="text-sm text-emerald-200/80 leading-relaxed mb-7 max-w-xs mx-auto">
+              Seus <strong className="text-white">3 dias de acesso grátis</strong> foram liberados com sucesso. Aproveite todo o nosso acervo!
+            </p>
+            <button
+              onClick={close}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.4)] transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
+            >
+              APROVEITAR CATÁLOGO
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
