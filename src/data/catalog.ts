@@ -26,6 +26,17 @@ export type Title = {
 /** Destaques do carrossel de fundo (lançamentos de terror reais - TMDB) */
 export const heroSlides: HeroSlide[] = [
   {
+    title: "Lembayung",
+    year: "2024",
+    genre: "Terror Hospitalar Indonésio",
+    tagline: "O terror assombra os corredores de um hospital amaldiçoado.",
+    backdrop: "/lembayung_hero.jpg",
+    poster: "/5x9LrW0yvtt6S3XovIQHgXfYvLL.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+    brightness: "brightness(1.15)",
+  },
+  {
     title: "Obsessão",
     year: "2026",
     genre: "Terror / Suspense",
@@ -57,17 +68,6 @@ export const heroSlides: HeroSlide[] = [
     objectPosition: "75% 20%",
     objectPositionMobile: "85% 15%",
     brightness: "brightness(1.0)",
-  },
-  {
-    title: "Lembayung",
-    year: "2024",
-    genre: "Terror Hospitalar Indonésio",
-    tagline: "O terror assombra os corredores de um hospital amaldiçoado.",
-    backdrop: "/lembayung_hero.jpg",
-    poster: "/5x9LrW0yvtt6S3XovIQHgXfYvLL.jpg",
-    objectPosition: "center 20%",
-    objectPositionMobile: "50% 15%",
-    brightness: "brightness(1.15)",
   },
   {
     title: "Undertone",
