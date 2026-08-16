@@ -61,17 +61,6 @@ export const heroSlides: HeroSlide[] = [
     brightness: "brightness(1.0)",
   },
   {
-    title: "The Wig (Cabelo Mortal)",
-    year: "2005",
-    genre: "Terror Coreano",
-    tagline: "Uma peruca amaldiçoada que guarda os desejos macabros de uma alma vingativa.",
-    backdrop: "/i9zP3Ie65He6WaeYSZ1RRaUiwob.jpg",
-    poster: "/bkonX3gOXQ1KC7kr6ufITli4h3o.jpg",
-    objectPosition: "center 20%",
-    objectPositionMobile: "50% 15%",
-    brightness: "brightness(1.0)",
-  },
-  {
     title: "Undertone",
     year: "2026",
     genre: "Terror Psicológico",
