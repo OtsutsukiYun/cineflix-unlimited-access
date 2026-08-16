@@ -195,7 +195,7 @@ function SmoothLink({ href, className, children }: { href: string; className?: s
   );
 }
 
-function Cta({ children = "INICIAR TESTE GRÁTIS" }: { children?: string }) {
+function Cta({ children = "QUERO ASSINAR" }: { children?: string }) {
   return (
     <SmoothLink href={CTA_HREF} className="btn-cta animate-pulse-ring">
       {children}
@@ -454,7 +454,7 @@ function Index() {
             </nav>
 
             <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs font-black">
-              INICIAR TESTE
+              QUERO ASSINAR
             </SmoothLink>
           </div>
         </header>
@@ -494,9 +494,9 @@ function Index() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
-            <Cta>INICIAR TESTE GRÁTIS</Cta>
+            <Cta>QUERO ASSINAR</Cta>
             <Link to="/instalar" className="btn-ghost shadow-lg">
-              <Gift className="size-4 text-red-400" /> Guia de Instalação
+              <Gift className="size-4 text-red-400" /> Iniciar Teste Grátis
             </Link>
           </div>
 
