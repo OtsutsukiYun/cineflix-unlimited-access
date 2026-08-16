@@ -134,24 +134,19 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               <Check className="size-10 stroke-[3]" />
             </div>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1 text-[11px] font-bold text-emerald-400 tracking-wider uppercase mb-3">
-              <Sparkles className="size-3.5" /> Teste Grátis de 3 Dias Liberado
+              <Sparkles className="size-3.5" /> Teste Grátis Ativado
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
-              📲 Instale o Aplicativo!
+              🎉 3 Dias Liberados!
             </h2>
             <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto">
-              Seu <strong className="text-white">teste grátis de 3 dias</strong> do CinePesadelo está ativo! Clique no botão abaixo para baixar e instalar o UniTV Pro na sua TV ou celular.
+              Seu benefício exclusivo do <strong className="text-white">CinePesadelo</strong> foi liberado com sucesso. Clique em <strong className="text-white">"Iniciar Teste"</strong> no site para aproveitar todo o nosso acervo!
             </p>
-            <Link
-              to="/instalar"
+            <button
               onClick={close}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all hover:scale-[1.02] active:scale-95 cursor-pointer mb-3"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
             >
-              <Download className="size-4" />
-              INSTALAR APLICATIVO AGORA
-            </Link>
-            <button onClick={close} className="text-xs text-emerald-300/50 hover:text-emerald-200 transition-colors underline underline-offset-2">
-              Continuar navegando no site
+              ENTENDI! VER CATÁLOGO
             </button>
           </div>
         )}
@@ -200,7 +195,7 @@ function SmoothLink({ href, className, children }: { href: string; className?: s
   );
 }
 
-function Cta({ children = "QUERO ASSINAR" }: { children?: string }) {
+function Cta({ children = "INICIAR TESTE GRÁTIS" }: { children?: string }) {
   return (
     <SmoothLink href={CTA_HREF} className="btn-cta animate-pulse-ring">
       {children}
@@ -459,7 +454,7 @@ function Index() {
             </nav>
 
             <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs font-black">
-              QUERO ASSINAR
+              INICIAR TESTE
             </SmoothLink>
           </div>
         </header>
@@ -499,9 +494,9 @@ function Index() {
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
-            <Cta>QUERO ASSINAR</Cta>
+            <Cta>INICIAR TESTE GRÁTIS</Cta>
             <Link to="/instalar" className="btn-ghost shadow-lg">
-              <Gift className="size-4 text-red-400" /> Teste grátis 3 dias
+              <Gift className="size-4 text-red-400" /> Guia de Instalação
             </Link>
           </div>
 
