@@ -67,8 +67,8 @@ export const heroSlides: HeroSlide[] = [
     tagline: "A estalagem amaldiçoada onde os mortos reivindicam as almas dos vivos.",
     backdrop: "/losmen_melati_hero.jpg",
     poster: "/9dyXheU12Dv2GrhnjPQ3iIZG3ne.jpg",
-    objectPosition: "68% 20%",
-    objectPositionMobile: "68% 15%",
+    objectPosition: "28% 20%",
+    objectPositionMobile: "28% 15%",
     brightness: "brightness(1.0)",
   },
   {
