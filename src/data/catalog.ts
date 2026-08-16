@@ -1,7 +1,9 @@
 // Platform logo imports removed — no longer used in new design
 
 export const img = (path: string, size = "w500") =>
-  path.startsWith("/lembayung_hero") ? path : `https://image.tmdb.org/t/p/${size}${path}`;
+  path.startsWith("http") || path.includes("_hero") || path.includes("losmen_melati") || path.includes("lembayung")
+    ? path
+    : `https://image.tmdb.org/t/p/${size}${path}`;
 
 export type HeroSlide = {
   title: string;
@@ -65,8 +67,8 @@ export const heroSlides: HeroSlide[] = [
     tagline: "A estalagem amaldiçoada onde os mortos reivindicam as almas dos vivos.",
     backdrop: "/losmen_melati_hero.jpg",
     poster: "/9dyXheU12Dv2GrhnjPQ3iIZG3ne.jpg",
-    objectPosition: "center 20%",
-    objectPositionMobile: "50% 15%",
+    objectPosition: "68% 20%",
+    objectPositionMobile: "68% 15%",
     brightness: "brightness(1.0)",
   },
   {
