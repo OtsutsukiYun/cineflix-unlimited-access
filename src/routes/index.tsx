@@ -28,6 +28,7 @@ import {
   Smartphone,
   Gift,
   X,
+  Download,
   Calendar,
   ChevronLeft,
   ChevronRight,
@@ -133,19 +134,24 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               <Check className="size-10 stroke-[3]" />
             </div>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1 text-[11px] font-bold text-emerald-400 tracking-wider uppercase mb-3">
-              <Sparkles className="size-3.5" /> Teste Grátis Ativado
+              <Sparkles className="size-3.5" /> Teste Grátis de 3 Dias Liberado
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
-              🎉 Benefício Confirmado!
+              📲 Instale o Aplicativo!
             </h2>
-            <p className="text-sm text-emerald-200/80 leading-relaxed mb-7 max-w-xs mx-auto">
-              Seus <strong className="text-white">3 dias de acesso grátis</strong> foram liberados com sucesso. Aproveite todo o nosso acervo!
+            <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto">
+              Seu <strong className="text-white">teste grátis de 3 dias</strong> do CinePesadelo está ativo! Clique no botão abaixo para baixar e instalar o UniTV Pro na sua TV ou celular.
             </p>
-            <button
+            <Link
+              to="/instalar"
               onClick={close}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.4)] transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all hover:scale-[1.02] active:scale-95 cursor-pointer mb-3"
             >
-              APROVEITAR CATÁLOGO
+              <Download className="size-4" />
+              INSTALAR APLICATIVO AGORA
+            </Link>
+            <button onClick={close} className="text-xs text-emerald-300/50 hover:text-emerald-200 transition-colors underline underline-offset-2">
+              Continuar navegando no site
             </button>
           </div>
         )}
