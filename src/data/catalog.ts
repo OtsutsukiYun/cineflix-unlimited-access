@@ -79,7 +79,7 @@ export const heroSlides: HeroSlide[] = [
     poster: "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "63% 15%",
-    brightness: "brightness(1.25)",
+    brightness: "brightness(0.92)",
   },
   {
     title: "Hokum",
