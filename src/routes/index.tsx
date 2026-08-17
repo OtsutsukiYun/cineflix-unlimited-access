@@ -125,8 +125,8 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               🎁 Teste Grátis<br /><span className="text-red-400">por 3 dias!</span>
             </h2>
             <p className="text-sm text-white/70 leading-relaxed mb-6">
-              Você veio pelo Instagram do <strong className="text-white">CinePesadelo</strong> e por isso ganhou{" "}
-              <strong className="text-red-300">3 dias de teste grátis</strong> no UniTV Pro! Basta instalar o aplicativo no seu dispositivo que o teste é liberado automaticamente.
+              Você veio pelo Instagram do <strong className="text-white">CinePesadelo</strong> e por isso está ganhando{" "}
+              <strong className="text-red-300">3 dias de teste grátis</strong> no UniTV Pro — todos os filmes, séries e o maior catálogo de terror.
             </p>
             <button
               onClick={handleClaim}
