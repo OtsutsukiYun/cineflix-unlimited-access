@@ -450,6 +450,17 @@ function MobileApkMethodCard() {
             allowFullScreen
           />
         </div>
+        <div className="flex items-center justify-between border-t border-white/10 bg-white/[0.02] px-4 py-2 text-[11px] text-muted-foreground">
+          <span>Problemas para reproduzir?</span>
+          <a
+            href="https://youtu.be/Ge1WVaiOQxQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 font-bold text-red-400 hover:text-red-300 underline"
+          >
+            Abrir direto no YouTube <ExternalLink className="size-3" />
+          </a>
+        </div>
       </div>
 
       {/* BOTÃO DE DOWNLOAD DIRETO DO APK */}
