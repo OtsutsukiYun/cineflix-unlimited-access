@@ -479,16 +479,16 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#080808]" />
 
         <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-32 sm:pb-12 text-center">
-          <p className="mb-3 text-xs sm:text-sm font-extrabold text-red-500 uppercase tracking-widest">
+          <p className="mb-3 text-xs sm:text-sm font-extrabold text-red-500 uppercase tracking-widest drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
             🔥 Cansado de procurar um filme ou série e nenhum streaming ter?
           </p>
 
-          <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.14] text-white tracking-tight max-w-2xl mx-auto">
+          <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.14] text-white tracking-tight max-w-2xl mx-auto drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
             Aqui você encontra o maior acervo de{" "}
             <span className="text-red-500">filmes, séries e grandes lançamentos.</span>
           </h1>
 
-          <p className="mt-3.5 text-sm sm:text-base text-white/90 max-w-md mx-auto leading-relaxed">
+          <p className="mt-3.5 text-sm sm:text-base text-white/95 max-w-md mx-auto leading-relaxed drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
             <strong className="text-white font-bold">Todos os lançamentos do cinema, séries completas e acervo em até 4K</strong> para assistir na sua TV, celular ou tablet.
           </p>
 
