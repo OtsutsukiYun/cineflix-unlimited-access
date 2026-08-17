@@ -963,7 +963,7 @@ function Index() {
               telas: "1 tela",
               destaque: false,
               selo: null as string | null,
-              badge: "⚡ Teste Sem Fidelidade",
+              badge: "⚡ 30 Dias de Acesso",
               badgeStyle: "bg-red-500/25 text-red-200 border-red-500/50 shadow-[0_0_15px_rgba(239,68,68,0.4)]",
               cardStyle: "border border-red-500/40 bg-gradient-to-b from-red-950/50 via-zinc-900/95 to-zinc-950 shadow-[0_0_40px_rgba(239,68,68,0.25)] hover:border-red-500/70 hover:shadow-[0_0_50px_rgba(239,68,68,0.4)]",
               btnStyle: "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-500 text-white font-black py-4 px-4 rounded-2xl shadow-[0_0_30px_rgba(220,38,38,0.6)] hover:scale-[1.03] border border-red-400/60 text-sm sm:text-base transition-all",
