@@ -90,6 +90,8 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
       }, 900);
       return () => clearTimeout(t);
     }
+
+    return undefined;
   }, [onOpenChange]);
 
   function close() {
@@ -427,7 +429,7 @@ function Index() {
     return () => clearInterval(timer);
   }, [isPopupOpen]);
 
-  const currentTabObj = CATALOG_TABS.find((t) => t.id === activeTab) || CATALOG_TABS[0];
+  const currentTabObj = CATALOG_TABS.find((t) => t.id === activeTab) || CATALOG_TABS[0]!;
 
   return (
     <div className="relative w-full overflow-x-hidden min-h-screen bg-[#080808] font-sans text-foreground antialiased selection:bg-red-600 selection:text-white">
