@@ -5,13 +5,11 @@ import {
   Smartphone,
   Hash,
   ArrowLeft,
-  ShieldCheck,
   ExternalLink,
   Tv,
   Monitor,
   Copy,
   Check,
-  MessageCircle,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -31,50 +29,72 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-const POSTERS_ROW_JAPAN = [
-  "/vA7uZSMx8VL6LIuNFPnymwkRPBV.jpg", // Noroi: The Curse (2005)
-  "/1YINof6kN5yRdePEbcU5360ejoq.jpg", // Ringu / O Chamado (1998)
-  "/6q1hlBC6rudc3mHwXsbMBR2xAT6.jpg", // Ju-On: O Grito (2002)
-  "/c3zEimDraIyMSasPMGDaNOrhnzn.jpg", // Kairo / Pulse (2001)
-  "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", // Cure (1997)
-  "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water / Água Escura (2002)
-  "/8ujSEEePCVMyi7Mt1RQMXd6SWmy.jpg", // One Missed Call (2003)
-  "/c1KyQx8mHwxQHTQgJDra84RfTYx.jpg", // Marebito (2004)
-  "/okrZ7VAfgLGMNK8XdIapSlXQhLY.jpg", // Carved: Kuchisake-onna (2007)
-  "/lFAnm6625uMUZ1Xkg1XxwlXBEE.jpg", // Reincarnation / Rinne (2005)
+// CAPINHAS 100% VERIFICADAS DO CATÁLOGO DO SITE (ZERO FALHAS OU ERROS DE IMAGEM)
+const ROW_1_POSTERS = [
+  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", // Obsessão
+  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", // Evil Dead Burn
+  "/kNxRgcTeqeU5jauBackTERoO2De.jpg", // Other Mommy
+  "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", // Undertone
+  "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg", // Passageiro do Mal
+  "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg", // Hokum
+  "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg", // Origem
+  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", // Backrooms
+  "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", // Channel Zero
+  "/vKq8XEJKxQTHd2Bm5zZMFPUrke7.jpg", // Widow's Bay
+  "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water
+  "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", // Michael
 ];
 
-const POSTERS_ROW_ASIA = [
-  "/vNVFt6dtcqnI7hqa6LFBUibuFiw.jpg", // Train to Busan / Invasão Zumbi (2016)
-  "/fNqlsmu2tiI1bXcpU31yjHPkiJz.jpg", // Gonjiam: Hospital Maldito (2018)
-  "/lWE9ih9qgjx8HatYboP7fG0nri.jpg", // The Wailing / O Lamento (2016)
-  "/cWz28oGV3cSajWdziVQbqrYCmnX.jpg", // Incantation (2022)
-  "/zUyaVtyugDaDHtOC6kCMJhbZsWu.jpg", // Shutter / Espíritos (2004)
-  "/6dasJ58GGFcC62H9KuukAryltUp.jpg", // Exhuma / A Decomposição (2024)
-  "/l3exwhwyGE0NnHJ3lFQ7eXoBSkH.jpg", // A Tale of Two Sisters / Medo (2003)
-  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // I Saw the Devil (2010)
-  "/wOJbWVMqdKIerkvOegeHfORxWqV.jpg", // The Medium (2021)
-  "/sBnFQwOcmL3dAIYfiQ9nLvLSW7B.jpg", // Thirst (2009)
+const ROW_2_POSTERS = [
+  "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", // Socorro!
+  "/pmff1wjKrgJi92PPr346lAifzlg.jpg", // Dia D
+  "/yihdXomYb5kTeSivtFndMy5iDmf.jpg", // Devoradores de Estrelas
+  "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", // The Eyes
+  "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", // Cure
+  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo
+  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
+  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
+  "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", // Salmokji
+  "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", // Dia Bukan Ibu
+  "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", // Hokum 2
+  "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", // A Maldição da Múmia
 ];
 
-const POSTERS_ROW_2000S = [
-  "/rLNSOudrayDBo1uqXjrhxcjODIC.jpg", // Saw / Jogos Mortais (2004)
-  "/1mXhlQMnlfvJ2frxTjZSQNnA9Vp.jpg", // Final Destination / Premonição (2000)
-  "/sQckQRt17VaWbo39GIu0TMOiszq.jpg", // 28 Days Later / Extermínio (2002)
-  "/r0bEDWO2w4a43K2xTNSF284qOsc.jpg", // Silent Hill / Terror em Silent Hill (2006)
-  "/dDrtuWUKhgUGp12kgUWuP0NpTdF.jpg", // Hostel / O Albergue (2005)
-  "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", // Drag Me to Hell (2009)
-  "/mxFPI4KYBk5ri9cPteIS8jiDFgj.jpg", // The Descent / Abismo do Medo (2005)
-  "/781px1eOtfVt1RdIsL4Dt1s3x7R.jpg", // Texas Chainsaw Massacre (2003)
-  "/g410Y1U1ELbmJG14Zru3UAimm1G.jpg", // Jeepers Creepers / Olhos Famintos (2001)
-  "/tmclkEpjeo4Zu564gf3KrwIOuKw.jpg", // Paranormal Activity / Atividade Paranormal (2007)
+const ROW_3_POSTERS = [
+  "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg", // Pecadores
+  "/40nHGUfypLhlr7gJx8At1IbYkaK.jpg", // Invocação do Mal 4
+  "/p3epSUdF9qSWWHTBlA3mJ0w2i2Y.jpg", // O Telefone Preto 2
+  "/xfmnUz6C5WRboIMQZD0j3SNDT7v.jpg", // Faça Ela Voltar
+  "/temIXpcua7j5v4FipOxmzTfrB06.jpg", // Premonição 6
+  "/12H82Xrr2ijDF0lJWUarqGFV7bC.jpg", // FNAF 2
+  "/skwydfnpaQdRQZfXMroh59FMJyY.jpg", // Rua do Medo
+  "/2jME1L29XGE3T4f0zUHgpiKsPrV.jpg", // O Macaco
+  "/fbkUfzmVzEBFSt6p7VigknREIJT.jpg", // Nosferatu
+  "/j5e2YS1PRUVC1YgSool0JJyNLxJ.jpg", // Herege
+  "/vWeOgzlhnP1sS23H3rzctGHB9Nb.jpg", // A Substância
+  "/3HeKb5H89HjzWTkVkAqomu9mek.jpg", // Terrifier 3
+];
+
+const ROW_4_POSTERS = [
+  "/ypHiYvSJmHIyRDRiosZuE595uir.jpg", // Sorria 2
+  "/uURBOrqLFyU8iKODcI3t2Xkbhqs.jpg", // Longlegs
+  "/5gKKSoD3iezjoL7YqZONjmyAiRA.jpg", // Abigail
+  "/6EYfWxIGPc23m1GFs9Gt3kzTl5O.jpg", // Imaculada
+  "/zppeHKLHljU2uI7NBJ1JyDNpn6L.jpg", // A Primeira Profecia
+  "/jB0W9tn4w07MFn7sTfqRTBLVytF.jpg", // Alien: Romulus
+  "/pN9BtzUeqPIKybAu9baihz6YzyO.jpg", // Um Lugar Silencioso: Dia Um
+  "/6lp4uDxLqLEw1CzW1SUOYJ3zdKD.jpg", // Sobrenatural: A Porta Vermelha
+  "/hqIIoGsKKGWK7HjpgCSvV6mgKyT.jpg", // O Exorcista do Papa
+  "/omV2IW2OlFTSw6Hih13hz6lFdvP.jpg", // A Freira 2
+  "/nocx1g4AwO4HyyuWF5gnM5WjGJL.jpg", // Terrifier 2
+  "/aAdnNifQo2qxDYnuDD3blsxinH1.jpg", // O Telefone Preto
 ];
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link.ntdev.ntdw";
 const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
 
-function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
+function DownloaderAppIcon({ className = "size-12 sm:size-14" }: { className?: string }) {
   return (
     <div
       title="Downloader App Icon"
@@ -89,7 +109,7 @@ function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: s
   );
 }
 
-function NtDownAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
+function NtDownAppIcon({ className = "size-12 sm:size-14" }: { className?: string }) {
   return (
     <div
       title="ntDown App Icon"
@@ -104,15 +124,17 @@ function NtDownAppIcon({ className = "size-14 sm:size-16" }: { className?: strin
   );
 }
 
-function LdPlayerAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
+function LdPlayerAppIcon({ className = "size-12 sm:size-14" }: { className?: string }) {
   return (
     <div
       title="LDPlayer Official Icon"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/20 bg-zinc-900 shadow-md transition-all duration-300 ${className}`}
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 border border-amber-300/70 shadow-[0_4px_20px_rgba(245,158,11,0.4)] transition-all duration-300 ${className}`}
     >
-      <div className="flex flex-col items-center justify-center text-white p-1 text-center select-none">
-        <Monitor className="size-6 sm:size-7 text-red-500" />
-        <span className="text-[9px] font-black uppercase text-white/80 mt-0.5 leading-none">LDPlayer</span>
+      <div className="flex flex-col items-center justify-center text-black font-black select-none">
+        <span className="text-xl sm:text-2xl font-black tracking-tighter leading-none text-black drop-shadow-sm flex items-center gap-0.5">
+          LD<span className="text-amber-950 font-black text-xs">►</span>
+        </span>
+        <span className="text-[8px] font-black tracking-tighter uppercase text-black/90 leading-none mt-0.5">PLAYER</span>
       </div>
     </div>
   );
@@ -166,7 +188,7 @@ function CodeCopyBox({ code }: { code: string }) {
 
 function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart TV, TV Box, FireTV e Mi Stick" }: { methodNumber?: number; subtitle?: string }) {
   return (
-    <div className="rounded-3xl border border-white/10 bg-zinc-950/80 p-6 sm:p-8 backdrop-blur-xl shadow-xl">
+    <div className="glass p-6 sm:p-8 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
       <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
         <div className="flex items-center gap-3.5">
           <a
@@ -248,7 +270,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
 
 function NtDownMethodCard({ methodNumber = 2, subtitle = "Ideal para Smartphone Android e Tablet" }: { methodNumber?: number; subtitle?: string }) {
   return (
-    <div className="rounded-3xl border border-white/10 bg-zinc-950/80 p-6 sm:p-8 backdrop-blur-xl shadow-xl">
+    <div className="glass p-6 sm:p-8 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
       <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
         <div className="flex items-center gap-3.5">
           <a
@@ -332,19 +354,19 @@ function InstalarPage() {
   const [activeTab, setActiveTab] = useState<"android" | "pc">("android");
 
   return (
-    <div className="relative min-h-screen bg-[#0f090b] text-white overflow-x-hidden">
-      {/* LUZ AMBIENTE AMBIENTAL NO FUNDO */}
+    <div className="relative min-h-screen bg-[#0d090b] text-white overflow-x-hidden">
+      {/* LUZ AMBIENTAL VERMELHA SUAVE */}
       <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[650px] rounded-full bg-red-600/15 blur-[160px] z-0" />
-      <div className="pointer-events-none fixed bottom-20 right-10 size-[450px] rounded-full bg-rose-700/15 blur-[140px] z-0" />
+      <div className="pointer-events-none fixed bottom-20 right-10 size-[500px] rounded-full bg-rose-700/15 blur-[140px] z-0" />
 
       {/* BARRA PROMOCIONAL DO TOPO */}
       <div className="fixed inset-x-0 top-0 z-[60]">
         <PromoBanner />
       </div>
 
-      {/* HEADER COMPACTO */}
-      <header className="fixed inset-x-0 top-8 z-50 transition-all duration-300">
-        <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-5 py-3 shadow-[0_8px_30px_rgba(0,0,0,0.8)] border border-white/10">
+      {/* HEADER COMPACTO VIDRO COM BLUR PREMIUM */}
+      <header className="fixed inset-x-0 top-8 z-50 transition-all duration-300 [transform:translateZ(0)]">
+        <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-5 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.8)] border border-white/15 backdrop-blur-2xl bg-black/60">
           <Link to="/" className="flex items-center gap-3">
             <span className="relative flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_20px_rgba(220,38,38,0.7)]">
               <svg className="size-5 fill-white" viewBox="0 0 24 24">
@@ -367,37 +389,47 @@ function InstalarPage() {
         </div>
       </header>
 
-      {/* CARROSSEL DE POSTERS DE FUNDO (MAIS VISÍVEL E VIBRANTE) */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-45">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f090b]/75 via-[#0f090b]/55 to-[#0f090b]/85 z-10" />
-        <div className="flex flex-col gap-6 pt-20 scale-105 blur-[1px]">
+      {/* GRADE DE CAPINHAS DE FILMES DE FUNDO (COBRE O SITE INTEIRO DE CIMA A BAIXO) */}
+      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-30">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0d090b]/80 via-[#0d090b]/60 to-[#0d090b]/90 z-10" />
+        <div className="flex flex-col gap-5 pt-20 scale-105 blur-[1px]">
           <div className="flex w-max gap-4 animate-marquee">
-            {POSTERS_ROW_JAPAN.concat(POSTERS_ROW_JAPAN).map((p, i) => (
+            {ROW_1_POSTERS.concat(ROW_1_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
               <img
-                key={`row1-${i}`}
+                key={`r1-${i}`}
                 src={img(p, "w342")}
                 alt=""
-                className="h-44 w-32 rounded-xl object-cover"
+                className="h-44 w-32 rounded-xl object-cover shadow-md"
               />
             ))}
           </div>
           <div className="flex w-max gap-4 animate-marquee-reverse">
-            {POSTERS_ROW_ASIA.concat(POSTERS_ROW_ASIA).map((p, i) => (
+            {ROW_2_POSTERS.concat(ROW_2_POSTERS).concat(ROW_2_POSTERS).map((p, i) => (
               <img
-                key={`row2-${i}`}
+                key={`r2-${i}`}
                 src={img(p, "w342")}
                 alt=""
-                className="h-44 w-32 rounded-xl object-cover"
+                className="h-44 w-32 rounded-xl object-cover shadow-md"
               />
             ))}
           </div>
           <div className="flex w-max gap-4 animate-marquee">
-            {POSTERS_ROW_2000S.concat(POSTERS_ROW_2000S).map((p, i) => (
+            {ROW_3_POSTERS.concat(ROW_3_POSTERS).concat(ROW_3_POSTERS).map((p, i) => (
               <img
-                key={`row3-${i}`}
+                key={`r3-${i}`}
                 src={img(p, "w342")}
                 alt=""
-                className="h-44 w-32 rounded-xl object-cover"
+                className="h-44 w-32 rounded-xl object-cover shadow-md"
+              />
+            ))}
+          </div>
+          <div className="flex w-max gap-4 animate-marquee-reverse">
+            {ROW_4_POSTERS.concat(ROW_4_POSTERS).concat(ROW_4_POSTERS).map((p, i) => (
+              <img
+                key={`r4-${i}`}
+                src={img(p, "w342")}
+                alt=""
+                className="h-44 w-32 rounded-xl object-cover shadow-md"
               />
             ))}
           </div>
@@ -405,7 +437,7 @@ function InstalarPage() {
       </div>
 
       {/* CONTEÚDO PRINCIPAL */}
-      <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-32 pb-20">
+      <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-32 pb-24">
         <div className="text-center mb-10">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-red-500/30 bg-red-950/40 px-3.5 py-1 text-xs font-bold tracking-wider text-red-400 uppercase mb-4">
             <Download className="size-3.5" /> Guia Rápido de Instalação
@@ -418,14 +450,14 @@ function InstalarPage() {
           </p>
         </div>
 
-        {/* NAVEGAÇÃO DE DISPOSITIVOS */}
+        {/* NAVEGAÇÃO DE DISPOSITIVOS EM ESTILO VIDRO */}
         <div className="mb-8">
-          <div className="grid grid-cols-2 gap-3 rounded-2xl bg-zinc-950/90 p-2 border border-white/10 backdrop-blur-md shadow-lg">
+          <div className="grid grid-cols-2 gap-3 rounded-2xl glass p-2 border border-white/10 backdrop-blur-2xl shadow-xl">
             <button
               onClick={() => setActiveTab("android")}
               className={`flex items-center justify-center gap-2 rounded-xl py-3 px-4 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                 activeTab === "android"
-                  ? "bg-red-600 text-white shadow-md border border-red-500/50"
+                  ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-500/50"
                   : "bg-transparent text-muted-foreground hover:text-white"
               }`}
             >
@@ -440,7 +472,7 @@ function InstalarPage() {
               onClick={() => setActiveTab("pc")}
               className={`flex items-center justify-center gap-2 rounded-xl py-3 px-4 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                 activeTab === "pc"
-                  ? "bg-red-600 text-white shadow-md border border-red-500/50"
+                  ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-500/50"
                   : "bg-transparent text-muted-foreground hover:text-white"
               }`}
             >
@@ -450,7 +482,7 @@ function InstalarPage() {
           </div>
         </div>
 
-        {/* MÉTODOS */}
+        {/* MÉTODOS EM CARDS DE VIDRO */}
         <div className="space-y-6">
           {activeTab === "android" && (
             <>
@@ -461,7 +493,7 @@ function InstalarPage() {
 
           {activeTab === "pc" && (
             <div className="space-y-6">
-              <div className="rounded-3xl border border-white/10 bg-zinc-950/80 p-6 sm:p-8 backdrop-blur-xl shadow-xl">
+              <div className="glass p-6 sm:p-8 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
                 <div className="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-white/10">
                   <div className="flex items-center gap-3.5">
                     <a
@@ -509,8 +541,8 @@ function InstalarPage() {
           )}
         </div>
 
-        {/* CTA ATENDIMENTO E AJUDA VIA WHATSAPP */}
-        <div className="mt-10 rounded-3xl border border-white/10 bg-zinc-950/90 p-7 text-center backdrop-blur-xl shadow-xl">
+        {/* CTA ATENDIMENTO E AJUDA VIA WHATSAPP EM CARD DE VIDRO */}
+        <div className="mt-10 glass p-7 text-center rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-xl">
           <div className="mx-auto flex size-11 items-center justify-center rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 mb-3">
             <WhatsAppIcon className="size-5 fill-current" />
           </div>
