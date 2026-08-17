@@ -43,23 +43,23 @@ type Notif = { id: number; nome: string; estado: string; plano: string };
 
 function getDailySales() {
   const now = new Date();
-  const dateKey = `sales_count_${now.getFullYear()}_${now.getMonth() + 1}_${now.getDate()}`;
+  const dateKey = `unitv_daily_sales_v3_${now.getFullYear()}_${now.getMonth() + 1}_${now.getDate()}`;
   
   // Minutos decorridos no dia (0 a 1439)
   const minutesToday = now.getHours() * 60 + now.getMinutes();
   
-  // Base inicial da manhã (variando entre 18 e 32)
-  const morningBase = 18 + ((now.getDate() * 7 + now.getMonth() * 13) % 15);
+  // Base inicial da manhã (variando entre 4 e 8)
+  const morningBase = 4 + (now.getDate() % 5);
   
-  // Crescimento contínuo ao longo das horas do dia (~1 venda a cada 12 min)
-  const salesThroughoutDay = Math.floor(minutesToday / 12);
+  // Crescimento realista ao longo do dia (~1 assinatura a cada 45-50 min)
+  const salesThroughoutDay = Math.floor(minutesToday / 48);
   const calculatedBase = morningBase + salesThroughoutDay;
   
   try {
     const stored = localStorage.getItem(dateKey);
     if (stored) {
       const parsed = parseInt(stored, 10);
-      if (!isNaN(parsed) && parsed >= calculatedBase) {
+      if (!isNaN(parsed) && parsed >= calculatedBase && parsed < calculatedBase + 10) {
         return parsed;
       }
     }
@@ -97,7 +97,7 @@ export function SocialProof() {
         const next = prev + 1;
         try {
           const now = new Date();
-          const dateKey = `sales_count_${now.getFullYear()}_${now.getMonth() + 1}_${now.getDate()}`;
+          const dateKey = `unitv_daily_sales_v3_${now.getFullYear()}_${now.getMonth() + 1}_${now.getDate()}`;
           localStorage.setItem(dateKey, String(next));
         } catch (e) {}
         return next;
