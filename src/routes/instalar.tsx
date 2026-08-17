@@ -380,12 +380,12 @@ function InstalarPage() {
             </div>
           </Link>
 
-          <Link
-            to="/"
-            className="inline-flex items-center gap-1.5 rounded-full bg-white/10 border border-white/15 px-3.5 py-1.5 text-xs font-bold text-white hover:bg-white/20 transition-all"
+          <a
+            href="/#planos"
+            className="btn-cta px-4 py-1.5 text-[11px] font-extrabold tracking-wide uppercase shadow-md"
           >
-            <ArrowLeft className="size-3.5" /> Voltar ao Início
-          </Link>
+            QUERO ASSINAR
+          </a>
         </div>
       </header>
 
