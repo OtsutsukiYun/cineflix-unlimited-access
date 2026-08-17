@@ -289,7 +289,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
   );
 }
 
-function NtDownMethodCard({ methodNumber = 2, subtitle = "Ideal para Smartphone Android e Tablet" }: { methodNumber?: number; subtitle?: string }) {
+function NtDownMethodCard({ methodNumber = 2, subtitle = "Compatível com Smart TV, TV Box, FireTV, Projetor, Celular & Tablet" }: { methodNumber?: number; subtitle?: string }) {
   return (
     <div className="glass p-6 sm:p-8 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
       <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
@@ -327,7 +327,7 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Ideal para Smartphone 
             1
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Abra a <strong>Play Store</strong> no celular ou tablet e instale o app{" "}
+            Abra a <strong>Play Store</strong> no seu aparelho Android (celular, tablet, TV ou TV Box) e instale o app{" "}
             <a
               href={NTDOWN_PLAYSTORE_URL}
               target="_blank"
@@ -529,7 +529,7 @@ function InstalarPage() {
           {activeTab === "android" && (
             <>
               <DownloaderMethodCard methodNumber={1} subtitle="Recomendado para Smart TV, TV Box, FireTV Stick, Mi Stick e Tablet" />
-              <NtDownMethodCard methodNumber={2} subtitle="Opção via Play Store para Celular Android e Tablet" />
+              <NtDownMethodCard methodNumber={2} subtitle="Opção via Play Store (Smart TV, TV Box, Stick, Projetor, Celular & Tablet)" />
             </>
           )}
 
