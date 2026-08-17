@@ -265,7 +265,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
             4
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Se o Android <strong>pedir permissão ou bloquear a instalação</strong>, escolha <strong>"Permitir desta fonte"</strong> (ou <strong>"Fontes Desconhecidas / Instalar mesmo assim"</strong>) e abra o UniTV Pro!
+            Se o Android <strong>pedir permissão ou bloquear a instalação</strong>, escolha <strong>"Permitir desta fonte"</strong> (ou <strong>"Instalar mesmo assim"</strong>). Isso é <strong>100% normal</strong> por ser uma instalação fora da Play Store!
           </div>
         </li>
       </ol>
@@ -375,7 +375,7 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Compatível com Smart 
             4
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Se o Android <strong>pedir permissão ou bloquear a instalação</strong>, escolha <strong>"Permitir desta fonte"</strong> (ou <strong>"Fontes Desconhecidas / Instalar mesmo assim"</strong>) e abra o UniTV Pro!
+            Se o Android <strong>pedir permissão ou bloquear a instalação</strong>, escolha <strong>"Permitir desta fonte"</strong> (ou <strong>"Instalar mesmo assim"</strong>). Isso é <strong>100% normal</strong> por ser uma instalação fora da Play Store!
           </div>
         </li>
       </ol>
@@ -470,7 +470,7 @@ function MobileApkMethodCard() {
             3
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Se o seu celular <strong>solicitar permissão</strong>, selecione <strong>"Permitir desta fonte"</strong> ou <strong>"Instalar mesmo assim"</strong>.
+            Se o celular <strong>pedir permissão ou bloquear a instalação</strong>, selecione <strong>"Permitir desta fonte"</strong> (ou <strong>"Instalar mesmo assim"</strong>). Isso é <strong>100% normal</strong> por ser um app instalado fora da Play Store!
           </div>
         </li>
 
