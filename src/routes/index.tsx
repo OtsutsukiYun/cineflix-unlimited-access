@@ -488,8 +488,8 @@ function Index() {
             <span className="text-red-500">filmes, séries e grandes lançamentos.</span>
           </h1>
 
-          <p className="mt-3.5 text-sm sm:text-base text-white/90 max-w-md mx-auto leading-relaxed">
-            Assista a produções do cinema, temporadas completas e conteúdos em até 4K na sua TV, celular ou tablet.
+          <p className="mt-3.5 text-sm sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed">
+            Filmes recém-saídos do cinema, séries completas e lançamentos de terror exclusivos em até 4K na sua TV, celular ou tablet.
           </p>
 
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full max-w-sm sm:max-w-md mx-auto">
