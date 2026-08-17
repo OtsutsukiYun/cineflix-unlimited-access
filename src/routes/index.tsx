@@ -927,7 +927,7 @@ function Index() {
 
         <Reveal className="relative z-10 text-center mb-4 sm:mb-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/30 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3">
-            <Sparkles className="size-3.5 animate-spin" /> Oferta por Tempo Limitado
+            <Sparkles className="size-3.5 animate-spin" /> Ative Seu Acesso VIP
           </span>
           <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white mb-2">
             Escolha seu <span className="text-red-500">plano</span>

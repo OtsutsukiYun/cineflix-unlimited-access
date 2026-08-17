@@ -68,9 +68,9 @@ export function PromoBanner() {
       <Gift className="size-3.5 shrink-0 text-red-500 animate-bounce drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
 
       <span className="text-[10px] sm:text-xs font-bold tracking-tight sm:tracking-wide text-white/90 whitespace-nowrap">
-        <span className="sm:hidden">🔥 Oferta somente hoje:</span>
+        <span className="sm:hidden">🎁 Ative seu teste grátis:</span>
         <span className="hidden sm:inline">
-          🔥 Oferta especial válida somente hoje
+          🎁 Ative seu teste grátis hoje
           {date ? (
             <>
               ,{" "}

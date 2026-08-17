@@ -71,12 +71,12 @@ export const heroSlides: HeroSlide[] = [
     objectPositionMobile: "50% 20%",
   },
   {
-    title: "Sobrenatural: Agora Entre Nós",
-    year: "2026",
-    genre: "Terror / Sobrenatural",
-    tagline: "O mal do Além não pode mais ser contido no nosso mundo.",
-    backdrop: "/yoBvGHXCSsgI93ozbcvYAg1LPiy.jpg",
-    poster: "/dhGTfE0YEopNG4qryJ5eEPnPlAH.jpg",
+    title: "Dark Water: Água Negra",
+    year: "2002",
+    genre: "Terror Japonês / Clássico",
+    tagline: "Do mesmo diretor de Ringu (O Chamado), o clássico do terror psicológico japonês.",
+    backdrop: "/cEmyjg17WwSJaRZhZ9T8TRTh7mc.jpg",
+    poster: "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
     brightness: "brightness(1.1)",
@@ -148,7 +148,7 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
-  { title: "Sobrenatural: Agora Entre Nós", poster: "/dhGTfE0YEopNG4qryJ5eEPnPlAH.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
+  { title: "Dark Water: Água Negra", poster: "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", year: "2002", tag: "Clássico Japonês", rating: "4.9" },
   { title: "Michael", poster: "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", year: "2026", tag: "🔥 Biografia 2026", rating: "5.0" },
   { title: "Socorro! (Send Help)", poster: "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
   { title: "Dia D (Disclosure Day)", poster: "/pmff1wjKrgJi92PPr346lAifzlg.jpg", year: "2026", tag: "🔥 Sci-Fi 2026", rating: "4.9" },
