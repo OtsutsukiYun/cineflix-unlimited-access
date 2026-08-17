@@ -71,12 +71,12 @@ export const heroSlides: HeroSlide[] = [
     objectPositionMobile: "50% 20%",
   },
   {
-    title: "Sobrenatural: Fora do Distante",
+    title: "Sobrenatural: Agora Entre Nós",
     year: "2026",
     genre: "Terror / Sobrenatural",
-    tagline: "O mal do Distante não pode mais ser contido no nosso mundo.",
-    backdrop: "/juday8QWmjKAfIx7jbOEHzhAt4T.jpg",
-    poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg",
+    tagline: "O mal do Além não pode mais ser contido no nosso mundo.",
+    backdrop: "/w2xDGa1252imRPgCbiY48AbkRBn.jpg",
+    poster: "/dhGTfE0YEopNG4qryJ5eEPnPlAH.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
     brightness: "brightness(1.1)",
@@ -148,7 +148,7 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
-  { title: "Sobrenatural: Fora do Distante", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
+  { title: "Sobrenatural: Agora Entre Nós", poster: "/dhGTfE0YEopNG4qryJ5eEPnPlAH.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "Michael", poster: "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", year: "2026", tag: "🔥 Biografia 2026", rating: "5.0" },
   { title: "Socorro! (Send Help)", poster: "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
   { title: "Dia D (Disclosure Day)", poster: "/pmff1wjKrgJi92PPr346lAifzlg.jpg", year: "2026", tag: "🔥 Sci-Fi 2026", rating: "4.9" },
