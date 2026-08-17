@@ -75,26 +75,10 @@ export function SocialProof() {
   const [vendas, setVendas] = useState(0);
 
   useEffect(() => {
+    // Inicializa contador diário de vendas
     const initialSales = getDailySales();
     setVendas(initialSales);
 
-    const now = new Date();
-    const dateKey = `sales_count_${now.getFullYear()}_${now.getMonth() + 1}_${now.getDate()}`;
-
-    const inc = setInterval(() => {
-      setVendas((prev) => {
-        const next = prev + 1;
-        try {
-          localStorage.setItem(dateKey, String(next));
-        } catch (e) {}
-        return next;
-      });
-    }, 45000); // Incrementa +1 a cada 45 segundos e salva no localStorage
-
-    return () => clearInterval(inc);
-  }, []);
-
-  useEffect(() => {
     let hideTimer: ReturnType<typeof setTimeout>;
     let nextTimer: ReturnType<typeof setTimeout>;
     let id = 0;
@@ -107,6 +91,18 @@ export function SocialProof() {
         estado: pick(ESTADOS),
         plano: pick(PLANOS),
       });
+
+      // Incrementa o número de vendas diárias simultaneamente com o aviso de compra
+      setVendas((prev) => {
+        const next = prev + 1;
+        try {
+          const now = new Date();
+          const dateKey = `sales_count_${now.getFullYear()}_${now.getMonth() + 1}_${now.getDate()}`;
+          localStorage.setItem(dateKey, String(next));
+        } catch (e) {}
+        return next;
+      });
+
       // Permanece visível por 4 segundos
       hideTimer = setTimeout(() => setNotif(null), 4000);
     };
