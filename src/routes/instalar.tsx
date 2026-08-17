@@ -447,15 +447,15 @@ function MobileApkMethodCard() {
       </div>
 
       {/* BOTÃO DE DOWNLOAD DIRETO DO APK */}
-      <div className="mb-6 rounded-2xl border border-red-500/35 bg-red-950/30 p-4 sm:p-5 text-center">
+      <div className="mb-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-4 sm:p-5 text-center">
         <p className="text-xs sm:text-sm text-white/90 mb-3.5 font-bold">
-          Clique no botão abaixo para baixar o instalador oficial do UniTV Pro:
+          Clique no botão verde abaixo para abrir o servidor de download oficial:
         </p>
         <a
           href={APK_MEDIAFIRE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 px-6 py-3.5 text-xs sm:text-sm font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(220,38,38,0.8)] active:scale-95 cursor-pointer w-full sm:w-auto"
+          className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 px-6 py-3.5 text-xs sm:text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(16,185,129,0.7)] active:scale-95 cursor-pointer w-full sm:w-auto"
         >
           <Download className="size-5" />
           BAIXAR APK UNITV PRO (DOWNLOAD DIRETO)
@@ -465,11 +465,14 @@ function MobileApkMethodCard() {
 
       <ol className="space-y-5">
         <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/20 border border-emerald-500/40 text-emerald-400 text-xs font-black">
             1
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Toque no botão vermelho acima para baixar o arquivo <strong>unitv_RS-NPWN.apk</strong> no seu celular ou tablet.
+            Toque no <strong>botão verde acima</strong>. Na página que se abrir, clique no <strong>botão azul de download</strong> com o nome do arquivo:
+            <span className="ml-2 inline-block whitespace-nowrap rounded-md bg-blue-600 border border-blue-400/60 px-2.5 py-1 text-xs font-black text-white shadow-sm align-baseline mt-1 sm:mt-0">
+              unitv_RS-NPWN.apk
+            </span>
           </div>
         </li>
 
