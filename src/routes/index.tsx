@@ -971,7 +971,7 @@ function Index() {
               link: "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "1 Tela simultânea",
-                "Filmes, Séries, Doramas, Animes & Novelas Turcas",
+                "Milhares de Filmes, Séries, Doramas, Animes & Novelas Turcas",
                 "Exclusividades e produções asiáticas premiadas",
                 "O maior catálogo de filmes e séries de terror dos streamings",
                 "Atualizações constantes com lançamentos de cinema, séries e animes",
@@ -1003,7 +1003,7 @@ function Index() {
               link: "https://pay.braip.co/ref?pl=pla6lllo&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "2 Telas simultâneas",
-                "Filmes, Séries, Doramas, Animes & Novelas Turcas",
+                "Milhares de Filmes, Séries, Doramas, Animes & Novelas Turcas",
                 "Exclusividades e produções asiáticas premiadas",
                 "O maior catálogo de filmes e séries de terror dos streamings",
                 "Atualizações constantes com lançamentos de cinema, séries e animes",
@@ -1035,7 +1035,7 @@ function Index() {
               link: "https://pay.braip.co/ref?pl=pla1qqq6&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "1 Tela simultânea",
-                "Filmes, Séries, Doramas, Animes & Novelas Turcas",
+                "Milhares de Filmes, Séries, Doramas, Animes & Novelas Turcas",
                 "Exclusividades e produções asiáticas premiadas",
                 "O maior catálogo de filmes e séries de terror dos streamings",
                 "Atualizações constantes com lançamentos de cinema, séries e animes",
