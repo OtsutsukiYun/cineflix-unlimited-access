@@ -472,11 +472,11 @@ function Index() {
               opacity: i === slide ? 1 : 0,
               transform: i === slide ? "scale(1.02)" : "scale(1)",
               objectPosition: isMobile && s.objectPositionMobile ? s.objectPositionMobile : (s.objectPosition ?? "center 20%"),
-              filter: s.brightness ? `${s.brightness} brightness(0.65)` : "brightness(0.65)",
+              filter: s.brightness ? `${s.brightness} brightness(0.92)` : "brightness(0.92)",
             }}
           />
         ))}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(8,8,8,0.75)_0%,rgba(8,8,8,0.45)_50%,rgba(8,8,8,0.85)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(8,8,8,0.35)_0%,rgba(8,8,8,0.15)_50%,rgba(8,8,8,0.75)_100%)]" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#080808] to-transparent" />
 
         <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-32 sm:pb-12 text-center">
