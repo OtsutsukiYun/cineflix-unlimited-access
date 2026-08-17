@@ -492,10 +492,18 @@ function Index() {
             <strong className="text-white font-bold">Todos os lançamentos do cinema, séries completas e acervo em até 4K</strong> para assistir na sua TV, celular ou tablet.
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
-            <Cta>QUERO ASSINAR</Cta>
-            <Link to="/instalar" className="btn-ghost shadow-lg">
-              <Gift className="size-4 text-red-400" /> Iniciar Teste Grátis
+          <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-lg mx-auto">
+            <SmoothLink
+              href={CTA_HREF}
+              className="btn-cta w-full sm:w-1/2 h-13 px-6 py-3.5 text-sm font-bold tracking-wide shadow-lg"
+            >
+              QUERO ASSINAR
+            </SmoothLink>
+            <Link
+              to="/instalar"
+              className="btn-ghost w-full sm:w-1/2 h-13 px-6 py-3.5 text-sm font-bold tracking-wide shadow-lg border border-white/20 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2"
+            >
+              <Gift className="size-4 text-red-400 shrink-0" /> Iniciar Teste Grátis
             </Link>
           </div>
 
