@@ -36,7 +36,7 @@ export const heroSlides: HeroSlide[] = [
     poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
     objectPosition: "center 18%",
     objectPositionMobile: "50% 12%",
-    brightness: "brightness(1.15)",
+    brightness: "brightness(1.3)",
   },
   {
     title: "Evil Dead Burn: A Morte do Demônio",
@@ -58,7 +58,7 @@ export const heroSlides: HeroSlide[] = [
     poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg",
     objectPosition: "75% 20%",
     objectPositionMobile: "85% 15%",
-    brightness: "brightness(1.0)",
+    brightness: "brightness(1.25)",
   },
   {
     title: "Undertone",
@@ -79,6 +79,7 @@ export const heroSlides: HeroSlide[] = [
     poster: "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "63% 15%",
+    brightness: "brightness(1.25)",
   },
   {
     title: "Hokum",
