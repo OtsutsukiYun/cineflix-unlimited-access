@@ -558,12 +558,12 @@ function Index() {
                 <p className="text-xs sm:text-sm text-white/60 font-medium max-w-xl mx-auto text-center transition-opacity duration-200">
                   {
                     {
-                      "filmes": "Filmes recém-saídos do cinema, produções exclusivas e os maiores sucessos em até 4K.",
-                      "terror-raro": "Produções incríveis e exclusivas da Coreia, Japão, Tailândia e muito mais.",
-                      "series": "Séries imperdíveis e títulos que você não encontra nos streamings tradicionais.",
-                      "animes": "Milhares de animes em alta, lançamentos da temporada, grandes clássicos, simulcast semanal e opções dubladas em português.",
-                      "proximos": "Lançamentos inéditos de terror confirmados para estrear a partir de agosto de 2026.",
-                    }[activeTab] || "Filmes, séries, doramas, animes e esportes ao vivo em um só aplicativo."
+                      "filmes": "Grandes sucessos do cinema mundial, produções originais e estreias com qualidade em até 4K.",
+                      "terror-raro": "Obras consagradas e produções exclusivas da Coreia, Japão, Tailândia e Indonésia.",
+                      "series": "Temporadas completas com áudio dublado e legendado que não estão em outros serviços.",
+                      "animes": "Solo Leveling, Demon Slayer, Jujutsu Kaisen, simulcasts semanais e episódios dublados.",
+                      "proximos": "Estreias inéditas confirmadas para a temporada de 2026.",
+                    }[activeTab] || "Navegue pelas categorias e escolha o seu próximo entretenimento."
                   }
                 </p>
               </div>
