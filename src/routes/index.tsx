@@ -151,7 +151,7 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               🎉 3 Dias Liberados!
             </h2>
             <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto">
-              Seu benefício exclusivo do <strong className="text-white">CinePesadelo</strong> foi ativado! Basta clicar em <strong className="text-white">"Resgatar Teste Grátis"</strong> para aproveitar todo o nosso acervo.
+              Seu benefício exclusivo do <strong className="text-white">CinePesadelo</strong> foi ativado! Basta <strong className="text-white">instalar o aplicativo</strong> no seu dispositivo para aproveitar seus 3 dias grátis.
             </p>
             <a
               href="/instalar"
