@@ -85,55 +85,46 @@ const LDPLAYER_ICON_URL = "https://img.utdstc.com/icon/4f8/c1b/4f8c1be9afee0fee6
 
 function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
   return (
-    <a
-      href={DOWNLOADER_PLAYSTORE_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      title="Abrir Downloader na Google Play Store"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-orange-400/60 shadow-[0_8px_25px_rgba(249,115,22,0.45)] transition-all duration-300 hover:scale-105 hover:border-orange-300 hover:shadow-[0_12px_35px_rgba(249,115,22,0.65)] ${className}`}
+    <div
+      title="Downloader App Icon"
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-orange-400/60 shadow-[0_8px_25px_rgba(249,115,22,0.45)] transition-all duration-300 group-hover/preview:scale-105 group-hover/preview:border-orange-300 group-hover/preview:shadow-[0_12px_35px_rgba(249,115,22,0.65)] ${className}`}
     >
       <img
         src={DOWNLOADER_ICON_URL}
         alt="Downloader App Icon"
         className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
       />
-    </a>
+    </div>
   );
 }
 
 function NtDownAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
   return (
-    <a
-      href={NTDOWN_PLAYSTORE_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      title="Abrir ntDown na Google Play Store"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-emerald-400/60 shadow-[0_8px_25px_rgba(16,185,129,0.45)] transition-all duration-300 hover:scale-105 hover:border-emerald-300 hover:shadow-[0_12px_35px_rgba(16,185,129,0.65)] ${className}`}
+    <div
+      title="ntDown App Icon"
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-emerald-400/60 shadow-[0_8px_25px_rgba(16,185,129,0.45)] transition-all duration-300 group-hover/preview:scale-105 group-hover/preview:border-emerald-300 group-hover/preview:shadow-[0_12px_35px_rgba(16,185,129,0.65)] ${className}`}
     >
       <img
         src={NTDOWN_ICON_URL}
         alt="ntDown App Icon"
         className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
       />
-    </a>
+    </div>
   );
 }
 
 function LdPlayerAppIcon({ className = "size-14 sm:size-16" }: { className?: string }) {
   return (
-    <a
-      href={LDPLAYER_WEBSITE_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      title="Baixar LDPlayer no site oficial"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-yellow-400/80 shadow-[0_8px_25px_rgba(245,158,11,0.5)] transition-all duration-300 hover:scale-105 hover:border-yellow-300 hover:shadow-[0_12px_35px_rgba(245,158,11,0.75)] ${className}`}
+    <div
+      title="LDPlayer Official Icon"
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-yellow-400/80 shadow-[0_8px_25px_rgba(245,158,11,0.5)] transition-all duration-300 group-hover/preview:scale-105 group-hover/preview:border-yellow-300 group-hover/preview:shadow-[0_12px_35px_rgba(245,158,11,0.75)] ${className}`}
     >
       <img
         src={LDPLAYER_ICON_URL}
         alt="LDPlayer Official Icon"
         className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
       />
-    </a>
+    </div>
   );
 }
 
