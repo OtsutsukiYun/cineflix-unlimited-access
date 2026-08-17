@@ -490,7 +490,7 @@ function Index() {
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-white max-w-md mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
-            Mais de <strong className="text-white font-bold">100.000 conteúdos em até 4K</strong> para assistir na sua TV, celular ou tablet.
+            Mais de <strong className="text-white font-bold">40.000 conteúdos em até 4K</strong> para assistir na sua TV, celular ou tablet.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
@@ -527,7 +527,7 @@ function Index() {
               <Fragment key={i}>
                 <span className="flex items-center gap-2 text-red-400"><Sparkles className="size-3.5" /> Qualidade em até 4K</span>
                 <span className="flex items-center gap-2"><Film className="size-3.5 text-red-500" /> Cinema & Lançamentos</span>
-                <span className="flex items-center gap-2 text-blue-300"><Tv className="size-3.5 text-blue-400" /> +100.000 Conteúdos</span>
+                <span className="flex items-center gap-2 text-blue-300"><Tv className="size-3.5 text-blue-400" /> +40.000 Conteúdos</span>
                 <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-red-500" /> Smart TV & TV Box</span>
                 <span className="flex items-center gap-2 text-red-300"><RefreshCcw className="size-3.5 text-red-500" /> Atualizações Semanais</span>
                 <span className="flex items-center gap-2"><Zap className="size-3.5 text-red-500" /> Ativação Imediata</span>
@@ -690,8 +690,8 @@ function Index() {
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-red-300",
               t: "Filmes incríveis",
-              qtd: "+50.000 Filmes",
-              d: "+50.000 filmes incluindo lançamentos recém-saídos do cinema e superproduções em até 4K.",
+              qtd: "+25.000 Filmes",
+              d: "+25.000 filmes incluindo lançamentos recém-saídos do cinema e superproduções em até 4K.",
               tabId: "filmes",
             },
             {
@@ -709,8 +709,8 @@ function Index() {
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-rose-200",
               t: "Séries imperdíveis",
-              qtd: "+30.000 Séries",
-              d: "+30.000 séries das maiores plataformas mundiais com temporadas completas dubladas e legendadas.",
+              qtd: "+10.000 Séries",
+              d: "+10.000 séries das maiores plataformas mundiais com temporadas completas dubladas e legendadas.",
               tabId: "series",
             },
             {
@@ -728,8 +728,8 @@ function Index() {
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-pink-200",
               t: "Doramas & Produções Asiáticas",
-              qtd: "+2.500 Doramas & K-Dramas",
-              d: "+2.500 doramas como Rainha das Lágrimas, Pousando no Amor, A Lição e os maiores sucessos asiáticos dublados.",
+              qtd: "+2.000 Doramas & K-Dramas",
+              d: "+2.000 doramas como Rainha das Lágrimas, Pousando no Amor, A Lição e os maiores sucessos asiáticos dublados.",
               tabId: "terror-raro",
             },
             {
@@ -954,7 +954,7 @@ function Index() {
               link: "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "1 Tela simultânea",
-                "Acervo completo (+100.000 títulos em até 4K)",
+                "Acervo completo (+40.000 títulos em até 4K)",
                 "Assista a milhares de filmes e séries que não estão em nenhum outro serviço de streaming no Brasil",
                 "Esportes & Canais Ao Vivo HD/4K",
                 "Smart TV Android, TV Box, Mi Stick, FireTV",
@@ -986,7 +986,7 @@ function Index() {
               features: [
                 "2 Telas simultâneas em 4K",
                 "365 dias de acesso sem mensalidades",
-                "Acervo completo (+100.000 títulos em até 4K)",
+                "Acervo completo (+40.000 títulos em até 4K)",
                 "Assista a milhares de filmes e séries que não estão em nenhum outro serviço de streaming no Brasil",
                 "Todos os canais ao vivo HD/4K",
                 "Smart TV Android, TV Box, Mi Stick, FireTV",
@@ -1017,7 +1017,7 @@ function Index() {
               features: [
                 "1 Tela simultânea",
                 "90 dias sem mensalidades",
-                "Acervo completo (+100.000 títulos em até 4K)",
+                "Acervo completo (+40.000 títulos em até 4K)",
                 "Assista a milhares de filmes e séries que não estão em nenhum outro serviço de streaming no Brasil",
                 "Esportes & Canais Ao Vivo HD/4K",
                 "Smart TV Android, TV Box, Mi Stick, FireTV",
