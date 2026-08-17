@@ -25,11 +25,11 @@ import { WhatsAppIcon } from "@/components/icons";
 export const Route = createFileRoute("/instalar")({
   head: () => ({
     meta: [
-      { title: "Como Instalar UniTV Pro — Smart TV, TV Box, TV Stick e Celular Android" },
+      { title: "Como Instalar UniTV Pro — Smart TV, TV Box, TV Stick, Projetor Android e Celular" },
       {
         name: "description",
         content:
-          "Passo a passo simples para instalar o UniTV Pro na sua Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Amazon, celular Android ou tablet.",
+          "Passo a passo simples para instalar o UniTV Pro na sua Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Amazon, projetor Android, celular Android ou tablet.",
       },
     ],
   }),
@@ -564,7 +564,7 @@ export function InstalarPage() {
                 <Smartphone className="size-4 sm:size-5" />
               </div>
               <div className="text-center sm:text-left leading-tight">
-                <span className="block font-black">Smart TV, TV Box, Stick, Celular &amp; Tablet</span>
+                <span className="block font-black">Smart TV, TV Box, Stick, Projetor, Celular &amp; Tablet</span>
               </div>
             </button>
 
@@ -589,8 +589,8 @@ export function InstalarPage() {
           {/* CATEGORIA 1: SMART TV, TV BOX, STICK, CELULAR & TABLET */}
           {activeTab === "android" && (
             <>
-              <DownloaderMethodCard methodNumber={1} subtitle="Recomendado para Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Stick, Celular e Tablet" />
-              <NtDownMethodCard methodNumber={2} subtitle="Opção via Play Store para Smartphone Android, Tablet, Smart TV e TV Box" />
+              <DownloaderMethodCard methodNumber={1} subtitle="Recomendado para Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Stick, Projetor Android, Celular e Tablet" />
+              <NtDownMethodCard methodNumber={2} subtitle="Opção via Play Store para Smartphone Android, Tablet, Projetor Android, Smart TV e TV Box" />
             </>
           )}
 
