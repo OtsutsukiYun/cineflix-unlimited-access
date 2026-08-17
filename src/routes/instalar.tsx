@@ -436,26 +436,26 @@ function InstalarPage() {
         </div>
       </div>
 
-      {/* CONTEÚDO PRINCIPAL */}
-      <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-32 pb-24">
-        <div className="text-center mb-10">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-red-500/30 bg-red-950/40 px-3.5 py-1 text-xs font-bold tracking-wider text-red-400 uppercase mb-4">
+      {/* CONTEÚDO PRINCIPAL (ESPAÇAMENTO TOP ADEQUADO PARA NÃO CONFLITAR COM O HEADER FLUTUANTE) */}
+      <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-36 sm:pt-40 pb-16">
+        <div className="text-center mb-5">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-red-500/30 bg-red-950/40 px-3.5 py-1 text-xs font-bold tracking-wider text-red-400 uppercase mb-2">
             <Download className="size-3.5" /> Guia Rápido de Instalação
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight mb-3">
+          <h1 className="text-2xl sm:text-4xl font-black tracking-tight mb-1.5">
             Como instalar o <span className="text-red-500">UniTV Pro</span>
           </h1>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-lg mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-muted-foreground max-w-lg mx-auto leading-normal">
             Passo a passo simples para Smart TV Android, TV Box, FireTV, Celular, Tablet ou PC.
           </p>
         </div>
 
         {/* NAVEGAÇÃO DE DISPOSITIVOS EM ESTILO VIDRO */}
-        <div className="mb-8">
-          <div className="grid grid-cols-2 gap-3 rounded-2xl glass p-2 border border-white/10 backdrop-blur-2xl shadow-xl">
+        <div className="mb-4">
+          <div className="grid grid-cols-2 gap-2.5 rounded-2xl glass p-1.5 border border-white/10 backdrop-blur-2xl shadow-xl">
             <button
               onClick={() => setActiveTab("android")}
-              className={`flex items-center justify-center gap-2 rounded-xl py-3 px-4 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
+              className={`flex items-center justify-center gap-2 rounded-xl py-2.5 px-3 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                 activeTab === "android"
                   ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-500/50"
                   : "bg-transparent text-muted-foreground hover:text-white"
@@ -470,7 +470,7 @@ function InstalarPage() {
 
             <button
               onClick={() => setActiveTab("pc")}
-              className={`flex items-center justify-center gap-2 rounded-xl py-3 px-4 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
+              className={`flex items-center justify-center gap-2 rounded-xl py-2.5 px-3 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                 activeTab === "pc"
                   ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-500/50"
                   : "bg-transparent text-muted-foreground hover:text-white"
@@ -483,7 +483,7 @@ function InstalarPage() {
         </div>
 
         {/* MÉTODOS EM CARDS DE VIDRO */}
-        <div className="space-y-6">
+        <div className="space-y-4">
           {activeTab === "android" && (
             <>
               <DownloaderMethodCard methodNumber={1} subtitle="Recomendado para Smart TV, TV Box, FireTV Stick, Mi Stick e Tablet" />
