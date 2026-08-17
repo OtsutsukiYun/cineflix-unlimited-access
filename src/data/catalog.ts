@@ -75,7 +75,7 @@ export const heroSlides: HeroSlide[] = [
     year: "2026",
     genre: "Terror / Sobrenatural",
     tagline: "O mal do Além não pode mais ser contido no nosso mundo.",
-    backdrop: "/w2xDGa1252imRPgCbiY48AbkRBn.jpg",
+    backdrop: "/yoBvGHXCSsgI93ozbcvYAg1LPiy.jpg",
     poster: "/dhGTfE0YEopNG4qryJ5eEPnPlAH.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
