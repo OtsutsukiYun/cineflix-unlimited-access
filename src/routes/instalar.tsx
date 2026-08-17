@@ -264,7 +264,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
             4
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Se o Android pedir permissão para instalação de APKs, selecione <strong>"Permitir Fontes Desconhecidas"</strong> (ou <strong>"Instalar mesmo assim"</strong>) e abra o UniTV Pro!
+            Se o Android <strong>pedir permissão ou bloquear a instalação</strong>, escolha <strong>"Permitir desta fonte"</strong> (ou <strong>"Fontes Desconhecidas / Instalar mesmo assim"</strong>) e abra o UniTV Pro!
           </div>
         </li>
       </ol>
@@ -350,7 +350,7 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Ideal para Smartphone 
             4
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Se o Android solicitar autorização para instalar o APK, confirme clicando em <strong>"Permitir Fontes Desconhecidas"</strong> (ou <strong>"Instalar mesmo assim"</strong>).
+            Se o Android <strong>pedir permissão ou bloquear a instalação</strong>, escolha <strong>"Permitir desta fonte"</strong> (ou <strong>"Fontes Desconhecidas / Instalar mesmo assim"</strong>) e abra o UniTV Pro!
           </div>
         </li>
       </ol>
