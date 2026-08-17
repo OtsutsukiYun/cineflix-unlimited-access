@@ -90,6 +90,8 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
       }, 900);
       return () => clearTimeout(t);
     }
+
+    return undefined;
   }, [onOpenChange]);
 
   function close() {
