@@ -87,12 +87,13 @@ function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: s
   return (
     <div
       title="Downloader App Icon"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500 via-amber-600 to-orange-700 border-2 border-orange-300/80 shadow-[0_8px_25px_rgba(249,115,22,0.45)] transition-all duration-300 group-hover/preview:scale-105 group-hover/preview:border-orange-300 group-hover/preview:shadow-[0_12px_35px_rgba(249,115,22,0.65)] ${className}`}
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-orange-400/60 shadow-[0_8px_25px_rgba(249,115,22,0.45)] transition-all duration-300 group-hover/preview:scale-105 group-hover/preview:border-orange-300 group-hover/preview:shadow-[0_12px_35px_rgba(249,115,22,0.65)] ${className}`}
     >
-      <div className="flex flex-col items-center justify-center text-white p-1 text-center select-none">
-        <Download className="size-6 sm:size-7 stroke-[2.8] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] animate-pulse" />
-        <span className="text-[9px] font-black tracking-tighter uppercase text-orange-100 mt-0.5 drop-shadow leading-none">Downloader</span>
-      </div>
+      <img
+        src="/apps/downloader.png"
+        alt="Downloader Official App Icon"
+        className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
+      />
     </div>
   );
 }
@@ -101,15 +102,13 @@ function NtDownAppIcon({ className = "size-14 sm:size-16" }: { className?: strin
   return (
     <div
       title="ntDown App Icon"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 via-teal-600 to-emerald-800 border-2 border-emerald-300/80 shadow-[0_8px_25px_rgba(16,185,129,0.45)] transition-all duration-300 group-hover/preview:scale-105 group-hover/preview:border-emerald-300 group-hover/preview:shadow-[0_12px_35px_rgba(16,185,129,0.65)] ${className}`}
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-emerald-400/60 shadow-[0_8px_25px_rgba(16,185,129,0.45)] transition-all duration-300 group-hover/preview:scale-105 group-hover/preview:border-emerald-300 group-hover/preview:shadow-[0_12px_35px_rgba(16,185,129,0.65)] ${className}`}
     >
-      <div className="flex flex-col items-center justify-center text-white p-1 text-center select-none">
-        <div className="flex items-center justify-center gap-0.5">
-          <Download className="size-5 sm:size-6 stroke-[2.8] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]" />
-          <span className="text-xs font-black text-emerald-100 tracking-tighter">NT</span>
-        </div>
-        <span className="text-[9px] font-black tracking-tighter uppercase text-emerald-100 mt-0.5 drop-shadow leading-none">ntDown</span>
-      </div>
+      <img
+        src="/apps/ntdown.png"
+        alt="ntDown Official App Icon"
+        className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
+      />
     </div>
   );
 }
