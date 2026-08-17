@@ -10,6 +10,7 @@ import {
   Monitor,
   Copy,
   Check,
+  Play,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -431,6 +432,23 @@ function MobileApkMethodCard() {
               Método mais rápido para dispositivos Android — baixa o instalador APK direto no seu aparelho
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* VÍDEO TUTORIAL YOUTUBE */}
+      <div className="mb-6 overflow-hidden rounded-2xl border border-white/15 bg-black/70 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+        <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-extrabold text-white">
+          <Play className="size-4 text-red-500 fill-red-500" />
+          <span>Vídeo Tutorial Passo a Passo — Instalação no Celular / Tablet</span>
+        </div>
+        <div className="relative aspect-video w-full">
+          <iframe
+            src="https://www.youtube.com/embed/Ge1WVaiOQxQ"
+            title="Vídeo Tutorial de Instalação UniTV Pro no Celular e Tablet"
+            className="size-full border-0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
         </div>
       </div>
 
