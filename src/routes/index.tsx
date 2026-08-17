@@ -558,12 +558,12 @@ function Index() {
                 <p className="text-xs sm:text-sm text-white/60 font-medium max-w-xl mx-auto text-center transition-opacity duration-200">
                   {
                     {
-                      "filmes": "Os filmes mais assistidos da semana recém-saídos do cinema.",
-                      "terror-raro": "As produções de terror exclusivas que estão dominando as telas dos nossos assinantes.",
-                      "series": "As séries mais maratonadas do momento com temporadas completas.",
-                      "animes": "Os episódios e animes mais bombados da temporada atual.",
-                      "proximos": "As próximas grandes estreias que nossos membros estão aguardando.",
-                    }[activeTab] || "Confira os conteúdos mais assistidos e em alta entre os nossos assinantes agora."
+                      "filmes": "Os filmes mais assistidos da semana recém-saídos do cinema com qualidade em até 4K e áudio em alta definição.",
+                      "terror-raro": "As produções de terror exclusivas e raras da Ásia que estão dominando as telas dos nossos assinantes.",
+                      "series": "As séries mais maratonadas do momento com temporadas completas dubladas e legendadas para você assistir.",
+                      "animes": "Os animes e episódios mais bombados da temporada atual com simulcast semanal e dublagem em português.",
+                      "proximos": "As próximas grandes estreias inéditas e lançamentos confirmados que nossos membros mais estão aguardando.",
+                    }[activeTab] || "Confira o que nossos assinantes mais têm assistido ultimamente em filmes, séries e lançamentos de terror."
                   }
                 </p>
               </div>
