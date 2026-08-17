@@ -35,7 +35,7 @@ const ESTADOS = [
   "Espírito Santo",
 ];
 
-const PLANOS = ["Plano Mensal", "Plano Semestral", "Plano de 2 Anos"];
+const PLANOS = ["Plano Mensal", "Plano Trimestral", "Plano Anual VIP"];
 
 const pick = <T,>(arr: T[]) => arr[Math.floor(Math.random() * arr.length)]!;
 
@@ -96,6 +96,7 @@ export function SocialProof() {
 
   useEffect(() => {
     let hideTimer: ReturnType<typeof setTimeout>;
+    let nextTimer: ReturnType<typeof setTimeout>;
     let id = 0;
 
     const show = () => {
@@ -106,15 +107,29 @@ export function SocialProof() {
         estado: pick(ESTADOS),
         plano: pick(PLANOS),
       });
-      hideTimer = setTimeout(() => setNotif(null), 5500);
+      // Permanece visível por 4 segundos
+      hideTimer = setTimeout(() => setNotif(null), 4000);
     };
 
-    const first = setTimeout(show, 6000);
-    const loop = setInterval(show, 16000);
+    const scheduleNext = () => {
+      // Intervalo orgânico e crível entre 60 e 95 segundos
+      const delay = Math.floor(Math.random() * (95000 - 60000) + 60000);
+      nextTimer = setTimeout(() => {
+        show();
+        scheduleNext();
+      }, delay);
+    };
+
+    // Primeira notificação aparece após 20 segundos
+    const first = setTimeout(() => {
+      show();
+      scheduleNext();
+    }, 20000);
+
     return () => {
       clearTimeout(first);
       clearTimeout(hideTimer);
-      clearInterval(loop);
+      clearTimeout(nextTimer);
     };
   }, []);
 
