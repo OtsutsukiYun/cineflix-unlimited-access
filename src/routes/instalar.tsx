@@ -229,7 +229,16 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
             3
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Clique em <strong>"Go"</strong>, conclua a instalação e abra o <strong>UniTV Pro</strong>!
+            Clique em <strong>"Go"</strong> (se necessário toque no botão azul <strong>unitv_RS-NPWN</strong>) e instale o aplicativo.
+          </div>
+        </li>
+
+        <li className="flex items-start gap-3.5">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+            4
+          </div>
+          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Se o Android pedir permissão para instalação de APKs, selecione <strong>"Permitir Fontes Desconhecidas"</strong> (ou <strong>"Instalar mesmo assim"</strong>) e abra o UniTV Pro!
           </div>
         </li>
       </ol>
@@ -302,7 +311,16 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Ideal para Smartphone 
             3
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Baixe, conclua a instalação e aproveite o <strong>UniTV Pro</strong>!
+            Clique no botão de download, conclua a instalação e abra o <strong>UniTV Pro</strong>.
+          </div>
+        </li>
+
+        <li className="flex items-start gap-3.5">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+            4
+          </div>
+          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Se o Android solicitar autorização para instalar o APK, confirme clicando em <strong>"Permitir Fontes Desconhecidas"</strong> (ou <strong>"Instalar mesmo assim"</strong>).
           </div>
         </li>
       </ol>
@@ -314,7 +332,11 @@ function InstalarPage() {
   const [activeTab, setActiveTab] = useState<"android" | "pc">("android");
 
   return (
-    <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#0f090b] text-white overflow-x-hidden">
+      {/* LUZ AMBIENTE AMBIENTAL NO FUNDO */}
+      <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[650px] rounded-full bg-red-600/15 blur-[160px] z-0" />
+      <div className="pointer-events-none fixed bottom-20 right-10 size-[450px] rounded-full bg-rose-700/15 blur-[140px] z-0" />
+
       {/* BARRA PROMOCIONAL DO TOPO */}
       <div className="fixed inset-x-0 top-0 z-[60]">
         <PromoBanner />
@@ -345,9 +367,9 @@ function InstalarPage() {
         </div>
       </header>
 
-      {/* CARROSSEL DE POSTERS DE FUNDO (EFEITO CINEMÁTICO SUAVE) */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080808] via-black/80 to-[#080808] z-10" />
+      {/* CARROSSEL DE POSTERS DE FUNDO (MAIS VISÍVEL E VIBRANTE) */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-45">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f090b]/75 via-[#0f090b]/55 to-[#0f090b]/85 z-10" />
         <div className="flex flex-col gap-6 pt-20 scale-105 blur-[1px]">
           <div className="flex w-max gap-4 animate-marquee">
             {POSTERS_ROW_JAPAN.concat(POSTERS_ROW_JAPAN).map((p, i) => (
