@@ -67,10 +67,10 @@ export function PromoBanner() {
 
       <Gift className="size-3.5 shrink-0 text-red-500 animate-bounce drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
 
-      <span className="text-[10px] sm:text-xs font-bold tracking-tight sm:tracking-wide text-white/90 whitespace-nowrap">
-        <span className="sm:hidden">Resgate seu teste grátis:</span>
+      <span className="text-[9.5px] sm:text-[11px] font-bold tracking-tight sm:tracking-wide text-white/90 whitespace-nowrap">
+        <span className="sm:hidden">Resgate seu teste de 3 dias grátis:</span>
         <span className="hidden sm:inline">
-          Resgate seu teste grátis hoje
+          Resgate seu teste de 3 dias grátis hoje
           {date ? (
             <>
               ,{" "}
@@ -80,11 +80,11 @@ export function PromoBanner() {
         </span>
       </span>
 
-      <span className="hidden sm:inline text-[10px] text-white/20">|</span>
+      <span className="hidden sm:inline text-[9.5px] text-white/20">|</span>
 
-      <span className="flex items-center gap-1.5 text-[10px] sm:text-xs font-extrabold whitespace-nowrap shrink-0">
+      <span className="flex items-center gap-1.5 text-[9.5px] sm:text-[11px] font-extrabold whitespace-nowrap shrink-0">
         <span className="opacity-90 font-semibold text-red-300">Resgate expira em:</span>
-        <span className="rounded-full bg-surface/80 border border-white/10 px-2 py-0.5 font-mono text-[10px] sm:text-xs text-white/90 shadow-sm">
+        <span className="rounded-full bg-surface/80 border border-white/10 px-2 py-0.5 font-mono text-[9.5px] sm:text-[11px] text-white/90 shadow-sm">
           {hh}h {mm}m {ss}s
         </span>
       </span>
