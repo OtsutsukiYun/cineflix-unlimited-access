@@ -159,13 +159,13 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
 export const Route = createFileRoute("/")(({
   head: () => ({
     meta: [
-      { title: "UniTV Pro — Filmes, Séries, Esportes e Terror em 4K" },
+      { title: "UniTV Pro — Filmes, Séries, Esportes e Terror em até 4K" },
       {
         name: "description",
         content:
-          "Todos os streamings reunidos: filmes recém-saídos do cinema, séries completas, animes, doramas, esportes ao vivo e o maior acervo de terror em 4K.",
+          "Todos os streamings reunidos: filmes recém-saídos do cinema, séries completas, animes, doramas, esportes ao vivo e o maior acervo de terror em até 4K.",
       },
-      { property: "og:title", content: "UniTV Pro — Filmes, Séries, Esportes e Terror em 4K" },
+      { property: "og:title", content: "UniTV Pro — Filmes, Séries, Esportes e Terror em até 4K" },
       {
         property: "og:description",
         content:
@@ -489,7 +489,7 @@ function Index() {
           </h1>
 
           <p className="mt-3.5 text-sm sm:text-base text-white/90 max-w-md mx-auto leading-relaxed">
-            Assista a produções do cinema, temporadas completas e conteúdos em qualidade 4K na sua TV, celular ou tablet.
+            Assista a produções do cinema, temporadas completas e conteúdos em até 4K na sua TV, celular ou tablet.
           </p>
 
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full max-w-sm sm:max-w-md mx-auto">
