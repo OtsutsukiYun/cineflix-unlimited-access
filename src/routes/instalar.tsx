@@ -149,13 +149,13 @@ function CodeCopyBox({ code }: { code: string }) {
   };
 
   return (
-    <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-2xl p-4 border border-white/10 bg-black/60 shadow-lg">
+    <div className="mt-2.5 flex items-center justify-between gap-3 rounded-2xl p-3.5 sm:p-4 border border-white/15 bg-black/80 shadow-md">
       <div className="flex items-center gap-3">
-        <div className="flex size-10 items-center justify-center rounded-xl bg-red-500/15 text-red-400 border border-red-500/30">
+        <div className="flex size-9 items-center justify-center rounded-xl bg-red-600/20 text-red-400 border border-red-500/30">
           <Hash className="size-5" />
         </div>
         <div>
-          <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground block">
+          <span className="text-[10px] font-extrabold uppercase tracking-wider text-muted-foreground block">
             Código de Instalação
           </span>
           <div className="font-mono font-black text-2xl sm:text-3xl tracking-widest leading-none mt-0.5 text-white">
@@ -166,19 +166,19 @@ function CodeCopyBox({ code }: { code: string }) {
 
       <button
         onClick={handleCopy}
-        className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-extrabold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+        className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-black uppercase tracking-wider transition-all duration-200 cursor-pointer ${
           copied
             ? "bg-emerald-600 text-white shadow-md"
-            : "bg-red-600/20 text-red-200 hover:bg-red-600/35 border border-red-500/40 hover:scale-[1.02]"
+            : "bg-red-600 text-white hover:bg-red-500 shadow-md hover:scale-[1.02]"
         }`}
       >
         {copied ? (
           <>
-            <Check className="size-4 text-white" /> COPIADO!
+            <Check className="size-3.5 text-white" /> COPIADO
           </>
         ) : (
           <>
-            <Copy className="size-4" /> COPIAR CÓDIGO
+            <Copy className="size-3.5" /> COPIAR CÓDIGO
           </>
         )}
       </button>
@@ -241,7 +241,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
             2
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Abra o <strong>Downloader</strong> e digite este código na barra de busca:
+            Abra o <strong>Downloader</strong> e digite o código de instalação:
             <CodeCopyBox code="1089401" />
           </div>
         </li>
@@ -251,7 +251,11 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
             3
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Clique em <strong>"Go"</strong> (se necessário toque no botão azul <strong>unitv_RS-NPWN</strong>) e instale o aplicativo.
+            Clique em <strong>"Go"</strong>. Se o download não iniciar automático, toque no botão azul{" "}
+            <span className="inline-block whitespace-nowrap rounded-md bg-blue-600 border border-blue-400/60 px-2 py-0.5 text-xs font-black text-white shadow-sm align-baseline">
+              unitv_RS-NPWN
+            </span>{" "}
+            e instale o aplicativo.
           </div>
         </li>
 
@@ -333,7 +337,11 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Ideal para Smartphone 
             3
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Clique no botão de download, conclua a instalação e abra o <strong>UniTV Pro</strong>.
+            Toque no botão azul{" "}
+            <span className="inline-block whitespace-nowrap rounded-md bg-blue-600 border border-blue-400/60 px-2 py-0.5 text-xs font-black text-white shadow-sm align-baseline">
+              unitv_RS-NPWN
+            </span>{" "}
+            para baixar, conclua a instalação e abra o <strong>UniTV Pro</strong>.
           </div>
         </li>
 
