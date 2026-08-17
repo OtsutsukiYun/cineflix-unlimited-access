@@ -70,17 +70,7 @@ export const heroSlides: HeroSlide[] = [
     objectPosition: "center 25%",
     objectPositionMobile: "50% 20%",
   },
-  {
-    title: "Dark Water: Água Negra",
-    year: "2002",
-    genre: "Terror Japonês / Clássico",
-    tagline: "Do mesmo diretor de Ringu (O Chamado), o clássico do terror psicológico japonês.",
-    backdrop: "/cEmyjg17WwSJaRZhZ9T8TRTh7mc.jpg",
-    poster: "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg",
-    objectPosition: "center 20%",
-    objectPositionMobile: "50% 15%",
-    brightness: "brightness(1.1)",
-  },
+
   {
     title: "Passageiro do Mal",
     year: "2026",
