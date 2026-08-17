@@ -28,6 +28,17 @@ export type Title = {
 /** Destaques do carrossel de fundo (lançamentos de terror reais - TMDB) */
 export const heroSlides: HeroSlide[] = [
   {
+    title: "Sobrenatural: Fora do Distante",
+    year: "2026",
+    genre: "Terror / Sobrenatural",
+    tagline: "O mal do Distante não pode mais ser contido no nosso mundo.",
+    backdrop: "/w2xDGa1252imRPgCbiY48AbkRBn.jpg",
+    poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+    brightness: "brightness(1.1)",
+  },
+  {
     title: "Obsessão",
     year: "2026",
     genre: "Terror / Suspense",
@@ -137,6 +148,7 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
+  { title: "Sobrenatural: Fora do Distante", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "Michael", poster: "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", year: "2026", tag: "🔥 Biografia 2026", rating: "5.0" },
   { title: "Socorro! (Send Help)", poster: "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
   { title: "Dia D (Disclosure Day)", poster: "/pmff1wjKrgJi92PPr346lAifzlg.jpg", year: "2026", tag: "🔥 Sci-Fi 2026", rating: "4.9" },
