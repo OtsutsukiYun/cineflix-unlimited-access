@@ -492,25 +492,24 @@ function Index() {
             <strong className="text-white font-bold">Todos os lançamentos do cinema, séries completas e acervo em até 4K</strong> para assistir na sua TV, celular ou tablet.
           </p>
 
-          <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-lg mx-auto">
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full max-w-sm sm:max-w-md mx-auto">
             <SmoothLink
               href={CTA_HREF}
-              className="btn-cta w-full sm:w-1/2 h-13 px-6 py-3.5 text-sm font-bold tracking-wide shadow-lg"
+              className="btn-cta w-full sm:w-1/2 h-11 px-4 py-2.5 text-xs font-black tracking-wider uppercase shadow-md"
             >
               QUERO ASSINAR
             </SmoothLink>
             <Link
               to="/instalar"
-              className="btn-ghost w-full sm:w-1/2 h-13 px-6 py-3.5 text-sm font-bold tracking-wide shadow-lg border border-white/20 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2"
+              className="btn-ghost w-full sm:w-1/2 h-11 px-4 py-2.5 text-xs font-black tracking-wider uppercase shadow-md border border-white/20 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-1.5"
             >
-              <Gift className="size-4 text-red-400 shrink-0" /> Iniciar Teste Grátis
+              <Gift className="size-3.5 text-red-400 shrink-0" /> Iniciar Teste Grátis
             </Link>
           </div>
 
           <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-5 text-xs sm:text-sm text-white font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,1)]">
             <span className="flex items-center gap-1.5"><Star className="size-3.5 fill-red-500 text-red-500" /> 4.9 de satisfação</span>
             <span className="flex items-center gap-1.5"><ShieldCheck className="size-3.5 text-red-500" /> Garantia de 7 dias</span>
-            <span className="flex items-center gap-1.5"><Zap className="size-3.5 text-red-500" /> Ativação imediata</span>
           </div>
 
           <div className="mt-7 flex justify-center gap-2">
