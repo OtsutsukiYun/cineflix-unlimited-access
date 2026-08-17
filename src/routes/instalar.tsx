@@ -677,7 +677,7 @@ function InstalarPage() {
               }`}
             >
               <Monitor className="size-4" />
-              <span>Computador &amp; PC</span>
+              <span>Computador &amp; PC (Emulador Android)</span>
             </button>
           </div>
         </div>
@@ -739,11 +739,12 @@ function InstalarPage() {
                     className="text-red-400 font-bold underline underline-offset-2"
                   >
                     LDPlayer <ExternalLink className="inline size-3" />
-                  </a>. Depois abra o app Downloader dentro dele e coloque o código <strong>1089401</strong>.
+                  </a>. Depois, você pode baixar o APK do UniTV Pro direto pelo botão verde abaixo ou usar o app Downloader com o código <strong>1089401</strong>.
                 </p>
               </div>
 
-              <DownloaderMethodCard methodNumber={1} subtitle="Método via Downloader no emulador PC" />
+              <MobileApkMethodCard />
+              <DownloaderMethodCard methodNumber={2} subtitle="Método via Downloader no emulador PC" />
             </div>
           )}
         </div>
