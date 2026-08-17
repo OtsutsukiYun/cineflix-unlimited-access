@@ -1002,9 +1002,9 @@ function Index() {
               features: [
                 "2 Telas simultâneas",
                 "Milhares de Filmes, Séries, Doramas, Animes & Novelas Turcas",
+                "Atualizações constantes com lançamentos de cinema, séries e animes",
                 "Exclusividades e produções asiáticas premiadas",
                 "O maior catálogo de filmes e séries de terror dos streamings",
-                "Atualizações constantes com lançamentos de cinema, séries e animes",
                 "365 dias de acesso total liberado",
                 "Canais Ao Vivo & Esportes em HD/4K",
                 "Compatível com TV, Box, Stick, Projetor e Celular",
