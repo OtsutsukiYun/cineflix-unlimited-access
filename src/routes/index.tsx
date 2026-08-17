@@ -489,7 +489,7 @@ function Index() {
           </h1>
 
           <p className="mt-3 text-xs sm:text-base text-white/90 max-w-[340px] sm:max-w-xl mx-auto leading-snug sm:leading-relaxed">
-            Assista a produções de terror exclusivas, esportes ao vivo e canais em até 4K na sua TV, celular, tablet ou projetor.
+            Assista a produções de terror exclusivas, animes, doramas e canais de TV em até 4K na sua TV, celular, tablet ou projetor.
           </p>
 
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full max-w-sm sm:max-w-md mx-auto">
