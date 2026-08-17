@@ -271,36 +271,26 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
       </ol>
 
       {/* AVISO DE ATIVAÇÃO DE 3 DIAS GRÁTIS */}
-      <div className="mt-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
-        <div className="flex items-start gap-3">
-          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300 font-bold text-base border border-emerald-500/40">
+      <div className="mt-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-3.5 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+        <div className="flex items-center gap-3">
+          <div className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300 font-bold text-sm border border-emerald-500/40">
             🎁
           </div>
-          <div>
-            <h4 className="text-xs sm:text-sm font-extrabold text-emerald-300">
-              Teste Grátis por 3 dias ativado automaticamente!
-            </h4>
-            <p className="text-xs text-white/80 leading-relaxed mt-1">
-              Após abrir o aplicativo <strong>UniTV Pro</strong>, basta aguardar o <strong>popup de aviso de 3 dias grátis</strong> que aparece na tela inicial e <strong>fecha automaticamente</strong>, e pronto: aproveite seu teste!
-            </p>
-          </div>
+          <p className="text-xs text-emerald-200/90 leading-normal">
+            <strong className="text-emerald-300 font-bold">Teste grátis de 3 dias ativado!</strong> Ao abrir o app, aguarde o popup inicial fechar automaticamente.
+          </p>
         </div>
       </div>
 
       {/* DICA SE APARECER "VOCÊ NÃO É VIP" */}
-      <div className="mt-3 rounded-2xl border border-amber-500/35 bg-amber-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
-        <div className="flex items-start gap-3">
-          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300 font-bold text-base border border-amber-500/40">
+      <div className="mt-2.5 rounded-2xl border border-amber-500/35 bg-amber-950/30 p-3.5 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+        <div className="flex items-center gap-3">
+          <div className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300 font-bold text-sm border border-amber-500/40">
             💡
           </div>
-          <div>
-            <h4 className="text-xs sm:text-sm font-extrabold text-amber-300">
-              Apareceu a mensagem "Você não é VIP"?
-            </h4>
-            <p className="text-xs text-white/80 leading-relaxed mt-1">
-              Não se preocupe! Se durante o teste aparecer <strong>"Você não é VIP"</strong>, basta <strong>clicar em qualquer canal ou entrar em qualquer conteúdo (filme ou série)</strong> que essa mensagem desaparece na hora e tudo é liberado!
-            </p>
-          </div>
+          <p className="text-xs text-amber-200/90 leading-normal">
+            <strong className="text-amber-300 font-bold">Apareceu "Você não é VIP"?</strong> Basta clicar em qualquer filme, série ou canal que tudo é liberado na hora!
+          </p>
         </div>
       </div>
     </div>
@@ -391,36 +381,26 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Compatível com Smart 
       </ol>
 
       {/* AVISO DE ATIVAÇÃO DE 3 DIAS GRÁTIS */}
-      <div className="mt-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
-        <div className="flex items-start gap-3">
-          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300 font-bold text-base border border-emerald-500/40">
+      <div className="mt-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-3.5 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+        <div className="flex items-center gap-3">
+          <div className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300 font-bold text-sm border border-emerald-500/40">
             🎁
           </div>
-          <div>
-            <h4 className="text-xs sm:text-sm font-extrabold text-emerald-300">
-              Teste Grátis por 3 dias ativado automaticamente!
-            </h4>
-            <p className="text-xs text-white/80 leading-relaxed mt-1">
-              Após abrir o aplicativo <strong>UniTV Pro</strong>, basta aguardar o <strong>popup de aviso de 3 dias grátis</strong> que aparece na tela inicial e <strong>fecha automaticamente</strong>, e pronto: aproveite seu teste!
-            </p>
-          </div>
+          <p className="text-xs text-emerald-200/90 leading-normal">
+            <strong className="text-emerald-300 font-bold">Teste grátis de 3 dias ativado!</strong> Ao abrir o app, aguarde o popup inicial fechar automaticamente.
+          </p>
         </div>
       </div>
 
       {/* DICA SE APARECER "VOCÊ NÃO É VIP" */}
-      <div className="mt-3 rounded-2xl border border-amber-500/35 bg-amber-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
-        <div className="flex items-start gap-3">
-          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300 font-bold text-base border border-amber-500/40">
+      <div className="mt-2.5 rounded-2xl border border-amber-500/35 bg-amber-950/30 p-3.5 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+        <div className="flex items-center gap-3">
+          <div className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300 font-bold text-sm border border-amber-500/40">
             💡
           </div>
-          <div>
-            <h4 className="text-xs sm:text-sm font-extrabold text-amber-300">
-              Apareceu a mensagem "Você não é VIP"?
-            </h4>
-            <p className="text-xs text-white/80 leading-relaxed mt-1">
-              Não se preocupe! Se durante o teste aparecer <strong>"Você não é VIP"</strong>, basta <strong>clicar em qualquer canal ou entrar em qualquer conteúdo (filme ou série)</strong> que essa mensagem desaparece na hora e tudo é liberado!
-            </p>
-          </div>
+          <p className="text-xs text-amber-200/90 leading-normal">
+            <strong className="text-amber-300 font-bold">Apareceu "Você não é VIP"?</strong> Basta clicar em qualquer filme, série ou canal que tudo é liberado na hora!
+          </p>
         </div>
       </div>
     </div>
@@ -505,36 +485,26 @@ function MobileApkMethodCard() {
       </ol>
 
       {/* AVISO DE ATIVAÇÃO DE 3 DIAS GRÁTIS */}
-      <div className="mt-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
-        <div className="flex items-start gap-3">
-          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300 font-bold text-base border border-emerald-500/40">
+      <div className="mt-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-3.5 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+        <div className="flex items-center gap-3">
+          <div className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300 font-bold text-sm border border-emerald-500/40">
             🎁
           </div>
-          <div>
-            <h4 className="text-xs sm:text-sm font-extrabold text-emerald-300">
-              Teste Grátis por 3 dias ativado automaticamente!
-            </h4>
-            <p className="text-xs text-white/80 leading-relaxed mt-1">
-              Após abrir o aplicativo <strong>UniTV Pro</strong>, basta aguardar o <strong>popup de aviso de 3 dias grátis</strong> que aparece na tela inicial e <strong>fecha automaticamente</strong>, e pronto: aproveite seu teste!
-            </p>
-          </div>
+          <p className="text-xs text-emerald-200/90 leading-normal">
+            <strong className="text-emerald-300 font-bold">Teste grátis de 3 dias ativado!</strong> Ao abrir o app, aguarde o popup inicial fechar automaticamente.
+          </p>
         </div>
       </div>
 
       {/* DICA SE APARECER "VOCÊ NÃO É VIP" */}
-      <div className="mt-3 rounded-2xl border border-amber-500/35 bg-amber-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
-        <div className="flex items-start gap-3">
-          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300 font-bold text-base border border-amber-500/40">
+      <div className="mt-2.5 rounded-2xl border border-amber-500/35 bg-amber-950/30 p-3.5 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+        <div className="flex items-center gap-3">
+          <div className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300 font-bold text-sm border border-amber-500/40">
             💡
           </div>
-          <div>
-            <h4 className="text-xs sm:text-sm font-extrabold text-amber-300">
-              Apareceu a mensagem "Você não é VIP"?
-            </h4>
-            <p className="text-xs text-white/80 leading-relaxed mt-1">
-              Não se preocupe! Se durante o teste aparecer <strong>"Você não é VIP"</strong>, basta <strong>clicar em qualquer canal ou entrar em qualquer conteúdo (filme ou série)</strong> que essa mensagem desaparece na hora e tudo é liberado!
-            </p>
-          </div>
+          <p className="text-xs text-amber-200/90 leading-normal">
+            <strong className="text-amber-300 font-bold">Apareceu "Você não é VIP"?</strong> Basta clicar em qualquer filme, série ou canal que tudo é liberado na hora!
+          </p>
         </div>
       </div>
     </div>
