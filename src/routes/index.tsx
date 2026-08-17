@@ -151,18 +151,13 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               🎉 3 Dias Liberados!
             </h2>
             <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto">
-              Seu benefício exclusivo do <strong className="text-white">CinePesadelo</strong> foi ativado! Basta <strong className="text-white">instalar o aplicativo</strong> no seu dispositivo para aproveitar seus 3 dias grátis.
+              Seu benefício exclusivo do <strong className="text-white">CinePesadelo</strong> foi ativado com sucesso! Navegue pelo site e clique em <strong className="text-white">"Resgatar Teste Grátis"</strong> a qualquer momento para instalar o aplicativo.
             </p>
-            <a
-              href="/instalar"
+            <button
               onClick={close}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all hover:scale-[1.02] active:scale-95 cursor-pointer mb-3"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
             >
-              <Download className="size-4" />
-              COMO INSTALAR E USAR
-            </a>
-            <button onClick={close} className="text-xs text-white/40 hover:text-white/70 transition-colors underline underline-offset-2">
-              Fechar e ver o site
+              ENTENDI! VER CATÁLOGO
             </button>
           </div>
         )}
