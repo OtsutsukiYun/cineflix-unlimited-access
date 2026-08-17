@@ -82,12 +82,12 @@
   --input: oklch(1 0 0 / 12%);
   --ring: oklch(0.55 0.24 27);
 
-  /* Gradiente vermelho → azul escuro (identidade UniTV Pro logo) */
+  /* Gradiente vermelho puro e vibrante (sem tons azuis) */
   --gradient-hot: linear-gradient(
     100deg,
-    oklch(0.60 0.26 27),
-    oklch(0.50 0.22 20),
-    oklch(0.38 0.17 255)
+    oklch(0.62 0.26 27),
+    oklch(0.52 0.24 25),
+    oklch(0.42 0.20 20)
   );
   --gradient-glass: linear-gradient(
     160deg,
@@ -103,6 +103,7 @@
 @layer base {
   * {
     border-color: var(--color-border);
+    -webkit-tap-highlight-color: transparent;
   }
 
   html {
@@ -205,7 +206,7 @@
   font-weight: 700;
   font-size: 0.95rem;
   letter-spacing: 0.01em;
-  color: var(--color-primary-foreground);
+  color: #ffffff;
   background-image: var(--gradient-hot);
   background-size: 200% 100%;
   box-shadow: var(--shadow-glow);
@@ -214,11 +215,19 @@
     transform 0.35s var(--ease-smooth),
     background-position 0.6s var(--ease-smooth),
     box-shadow 0.35s var(--ease-smooth);
+  outline: none !important;
 
   &:hover {
     animation-play-state: paused;
-    transform: translateY(-3px) scale(1.05);
+    transform: translateY(-2px) scale(1.03);
     background-position: 100% 0;
+  }
+
+  &:active,
+  &:focus,
+  &:focus-visible {
+    outline: none !important;
+    transform: scale(0.97);
   }
 }
 
@@ -234,10 +243,18 @@
   background: oklch(1 0 0 / 6%);
   backdrop-filter: blur(10px);
   transition: all 0.35s var(--ease-smooth);
+  outline: none !important;
 
   &:hover {
     background: oklch(1 0 0 / 12%);
     transform: translateY(-2px);
+  }
+
+  &:active,
+  &:focus,
+  &:focus-visible {
+    outline: none !important;
+    transform: scale(0.97);
   }
 }
 
