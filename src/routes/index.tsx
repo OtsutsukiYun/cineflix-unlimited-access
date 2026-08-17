@@ -503,7 +503,7 @@ function Index() {
               to="/instalar"
               className="btn-ghost w-full sm:w-1/2 h-11 px-4 py-2.5 text-xs font-black tracking-wider uppercase shadow-md border border-white/20 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-1.5"
             >
-              Teste Grátis de 3 Dias
+              Resgatar Teste Grátis
             </Link>
           </div>
 
