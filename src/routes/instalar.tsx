@@ -93,6 +93,7 @@ const ROW_4_POSTERS = [
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link.ntdev.ntdw";
 const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
+const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file";
 
 function DownloaderAppIcon({ className = "size-12 sm:size-14" }: { className?: string }) {
   return (
@@ -426,8 +427,119 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Compatível com Smart 
   );
 }
 
+function MobileApkMethodCard() {
+  return (
+    <div className="glass p-6 sm:p-8 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
+      <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
+        <div className="flex items-center gap-3.5">
+          <div className="flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 via-rose-600 to-red-800 border border-red-400/40 shadow-lg text-white">
+            <Smartphone className="size-7 sm:size-8" />
+          </div>
+          <div>
+            <h2 className="text-lg sm:text-xl font-black text-white flex items-center gap-2">
+              Download Direto APK (Celular &amp; Tablet)
+            </h2>
+            <p className="text-xs text-muted-foreground font-medium mt-0.5">
+              Método mais rápido para Android — baixa o instalador APK direto no seu aparelho
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* BOTÃO DE DOWNLOAD DIRETO DO APK */}
+      <div className="mb-6 rounded-2xl border border-red-500/35 bg-red-950/30 p-4 sm:p-5 text-center">
+        <p className="text-xs sm:text-sm text-white/90 mb-3.5 font-bold">
+          Clique no botão abaixo para baixar o instalador oficial do UniTV Pro:
+        </p>
+        <a
+          href={APK_MEDIAFIRE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 px-6 py-3.5 text-xs sm:text-sm font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.6)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(220,38,38,0.8)] active:scale-95 cursor-pointer w-full sm:w-auto"
+        >
+          <Download className="size-5" />
+          BAIXAR APK UNITV PRO (DOWNLOAD DIRETO)
+          <ExternalLink className="size-4 opacity-75" />
+        </a>
+      </div>
+
+      <ol className="space-y-5">
+        <li className="flex items-start gap-3.5">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+            1
+          </div>
+          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Toque no botão vermelho acima para baixar o arquivo <strong>unitv_RS-NPWN.apk</strong> no seu celular ou tablet.
+          </div>
+        </li>
+
+        <li className="flex items-start gap-3.5">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+            2
+          </div>
+          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Após a conclusão do download, abra as notificações (ou a pasta Downloads) e toque em <strong>"unitv_RS-NPWN.apk"</strong> para instalar.
+          </div>
+        </li>
+
+        <li className="flex items-start gap-3.5">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+            3
+          </div>
+          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Se o seu celular <strong>solicitar permissão</strong>, selecione <strong>"Permitir desta fonte"</strong> ou <strong>"Instalar mesmo assim"</strong>.
+          </div>
+        </li>
+
+        <li className="flex items-start gap-3.5">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+            4
+          </div>
+          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+            Abra o aplicativo <strong>UniTV Pro</strong> no seu celular ou tablet e aproveite todo o acervo!
+          </div>
+        </li>
+      </ol>
+
+      {/* AVISO DE ATIVAÇÃO DE 3 DIAS GRÁTIS */}
+      <div className="mt-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+        <div className="flex items-start gap-3">
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300 font-bold text-base border border-emerald-500/40">
+            🎁
+          </div>
+          <div>
+            <h4 className="text-xs sm:text-sm font-extrabold text-emerald-300">
+              Teste Grátis por 3 dias ativado automaticamente!
+            </h4>
+            <p className="text-xs text-white/80 leading-relaxed mt-1">
+              Após abrir o aplicativo <strong>UniTV Pro</strong>, basta aguardar o <strong>popup de aviso de 3 dias grátis</strong> que aparece na tela inicial e <strong>fecha automaticamente</strong>, e pronto: aproveite seu teste!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* DICA SE APARECER "VOCÊ NÃO É VIP" */}
+      <div className="mt-3 rounded-2xl border border-amber-500/35 bg-amber-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+        <div className="flex items-start gap-3">
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300 font-bold text-base border border-amber-500/40">
+            💡
+          </div>
+          <div>
+            <h4 className="text-xs sm:text-sm font-extrabold text-amber-300">
+              Apareceu a mensagem "Você não é VIP"?
+            </h4>
+            <p className="text-xs text-white/80 leading-relaxed mt-1">
+              Não se preocupe! Se durante o teste aparecer <strong>"Você não é VIP"</strong>, basta <strong>clicar em qualquer canal ou entrar em qualquer conteúdo (filme ou série)</strong> que essa mensagem desaparece na hora e tudo é liberado!
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function InstalarPage() {
-  const [activeTab, setActiveTab] = useState<"android" | "pc">("android");
+  const [activeTab, setActiveTab] = useState<"tv" | "mobile" | "pc">("tv");
 
   return (
     <div className="relative min-h-screen bg-[#0d090b] text-white overflow-x-hidden">
@@ -528,20 +640,29 @@ function InstalarPage() {
 
         {/* NAVEGAÇÃO DE DISPOSITIVOS EM ESTILO VIDRO */}
         <div className="mb-5">
-          <div className="grid grid-cols-2 gap-2.5 rounded-2xl glass p-1.5 border border-white/10 backdrop-blur-2xl shadow-xl">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 rounded-2xl glass p-1.5 border border-white/10 backdrop-blur-2xl shadow-xl">
             <button
-              onClick={() => setActiveTab("android")}
+              onClick={() => setActiveTab("tv")}
               className={`flex items-center justify-center gap-2 rounded-xl py-3 px-3 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
-                activeTab === "android"
+                activeTab === "tv"
                   ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-500/50"
                   : "bg-transparent text-muted-foreground hover:text-white"
               }`}
             >
-              <div className="flex items-center gap-1.5">
-                <Tv className="size-4" />
-                <Smartphone className="size-4" />
-              </div>
-              <span>TV, Box, Stick, Projetor, Celular &amp; Tablet</span>
+              <Tv className="size-4" />
+              <span>TV, Box &amp; Stick</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab("mobile")}
+              className={`flex items-center justify-center gap-2 rounded-xl py-3 px-3 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
+                activeTab === "mobile"
+                  ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-500/50"
+                  : "bg-transparent text-muted-foreground hover:text-white"
+              }`}
+            >
+              <Smartphone className="size-4" />
+              <span>Celular &amp; Tablet (APK)</span>
             </button>
 
             <button
@@ -553,17 +674,24 @@ function InstalarPage() {
               }`}
             >
               <Monitor className="size-4" />
-              <span>Computador &amp; Notebook</span>
+              <span>Computador &amp; PC</span>
             </button>
           </div>
         </div>
 
         {/* MÉTODOS EM CARDS DE VIDRO */}
         <div className="space-y-4">
-          {activeTab === "android" && (
+          {activeTab === "tv" && (
             <>
-              <DownloaderMethodCard methodNumber={1} subtitle="Recomendado para Smart TV, TV Box, FireTV Stick, Mi Stick e Tablet" />
-              <NtDownMethodCard methodNumber={2} subtitle="Opção via Play Store (Smart TV, TV Box, Stick, Projetor, Celular & Tablet)" />
+              <DownloaderMethodCard methodNumber={1} subtitle="Recomendado para Smart TV, TV Box, FireTV Stick e Mi Stick" />
+              <NtDownMethodCard methodNumber={2} subtitle="Opção alternativa via Play Store" />
+            </>
+          )}
+
+          {activeTab === "mobile" && (
+            <>
+              <MobileApkMethodCard />
+              <NtDownMethodCard methodNumber={2} subtitle="Opção alternativa via Play Store (ntDown)" />
             </>
           )}
 
