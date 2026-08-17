@@ -133,7 +133,7 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(220,38,38,0.7)] active:scale-95 mb-3 cursor-pointer"
             >
               <Gift className="size-4 text-amber-300" />
-              QUERO MEU TESTE GRÁTIS
+              RESGATAR MEU TESTE GRÁTIS
             </button>
             <button onClick={close} className="text-xs text-white/40 hover:text-white/70 transition-colors underline underline-offset-2">
               Agora não, quero só ver o catálogo
@@ -151,7 +151,7 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               🎉 3 Dias Liberados!
             </h2>
             <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto">
-              Seu benefício exclusivo do <strong className="text-white">CinePesadelo</strong> foi liberado com sucesso. Clique em <strong className="text-white">"Iniciar Teste"</strong> no site para aproveitar todo o nosso acervo!
+              Seu benefício exclusivo do <strong className="text-white">CinePesadelo</strong> foi liberado com sucesso. Clique em <strong className="text-white">"Resgatar Teste Grátis"</strong> no site para aproveitar todo o nosso acervo!
             </p>
             <button
               onClick={close}
