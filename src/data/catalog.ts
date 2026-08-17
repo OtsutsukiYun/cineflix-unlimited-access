@@ -47,7 +47,7 @@ export const heroSlides: HeroSlide[] = [
     poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "78% 15%",
-    brightness: "brightness(1.0)",
+    brightness: "brightness(0.75)",
   },
   {
     title: "Other Mommy (A Outra Mãe)",
@@ -90,6 +90,7 @@ export const heroSlides: HeroSlide[] = [
     poster: "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg",
     objectPosition: "center 15%",
     objectPositionMobile: "50% 12%",
+    brightness: "brightness(0.75)",
   },
   {
     title: "Origem (FROM)",
