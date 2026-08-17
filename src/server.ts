@@ -44,7 +44,7 @@ function renderGeoblockPage(): string {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Acesso Indisponível</title>
+  <title>404 Not Found</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -59,52 +59,40 @@ function renderGeoblockPage(): string {
       text-align: center;
     }
     .card {
-      max-width: 440px;
+      max-width: 420px;
       width: 100%;
       background: #111111;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 28px;
-      padding: 44px 32px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 40px 28px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
     }
-    .flag {
-      font-size: 56px;
-      margin-bottom: 20px;
+    .code {
+      font-size: 72px;
+      font-weight: 900;
+      color: #ef4444;
       line-height: 1;
-    }
-    .badge {
-      display: inline-block;
-      background: rgba(239, 68, 68, 0.15);
-      border: 1px solid rgba(239, 68, 68, 0.35);
-      color: #fca5a5;
-      font-size: 11px;
-      font-weight: 800;
-      padding: 6px 16px;
-      border-radius: 9999px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
+      letter-spacing: -2px;
     }
     h1 {
-      font-size: 22px;
-      font-weight: 900;
-      line-height: 1.3;
-      margin-bottom: 12px;
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 8px;
       color: #ffffff;
     }
     p {
       font-size: 14px;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.65);
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.5);
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="flag">🇧🇷</div>
-    <span class="badge">Acesso Restrito</span>
-    <h1>Conteúdo Exclusivo para o Brasil</h1>
-    <p>Desculpe, nossa plataforma está configurada para acesso exclusivo a conexões localizadas no Brasil.</p>
+    <div class="code">404</div>
+    <h1>Página Não Encontrada</h1>
+    <p>O endereço solicitado não está disponível ou foi removido do servidor.</p>
   </div>
 </body>
 </html>`;
@@ -140,7 +128,7 @@ export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     if (isRequestFromOutsideBrazil(request)) {
       return new Response(renderGeoblockPage(), {
-        status: 403,
+        status: 404,
         headers: { "content-type": "text/html; charset=utf-8" },
       });
     }
