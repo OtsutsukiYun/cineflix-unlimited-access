@@ -476,7 +476,7 @@ function Index() {
             }}
           />
         ))}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#080808]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#080808]" />
 
         <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-32 sm:pb-12 text-center">
           <p className="mb-3 text-xs sm:text-sm font-extrabold text-red-500 uppercase tracking-widest">
