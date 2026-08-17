@@ -1151,28 +1151,39 @@ function Index() {
       </Faq>
 
       {/* SUPORTE / CONTATO */}
-      <section id="suporte" className="relative z-10 border-t border-white/5 bg-black/30 py-10 scroll-mt-24">
+      <section id="suporte" className="relative z-10 border-t border-white/5 bg-black/30 py-12 scroll-mt-24">
         <div className="mx-auto w-[94%] max-w-2xl text-center">
-          <p className="text-sm text-white/50 mb-4">Precisa de ajuda? Fale com o nosso WhatsApp abaixo no site — atendimento 7 dias por semana.</p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="mx-auto flex size-11 items-center justify-center rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 mb-3">
+            <WhatsAppIcon className="size-5 fill-current" />
+          </div>
+          <h3 className="text-xl sm:text-2xl font-black text-white mb-2">Precisa de ajuda ou suporte?</h3>
+          <p className="text-xs sm:text-sm text-white/60 mb-6 max-w-md mx-auto leading-relaxed">
+            Fale com a nossa equipe no WhatsApp para tirar dúvidas ou solicitar suporte pós-compra! Atendimento 7 dias por semana.
+          </p>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="https://wa.me/5561984016006"
+              href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20o%20UniTV%20Pro"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-green-600 to-emerald-600 px-5 py-3 text-sm font-bold text-white shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:bg-green-600 transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-3.5 text-xs sm:text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.4)] transition-all hover:scale-[1.02]"
             >
-              <WhatsAppIcon className="size-4.5 fill-current" /> WhatsApp (61) 9 8401-6006
+              <WhatsAppIcon className="size-4.5 fill-current" />
+              Suporte Geral (Dúvidas &amp; Teste)
             </a>
+
             <a
-              href="https://wa.me/5561982743140"
+              href="https://wa.me/5561982743140?text=Ol%C3%A1!%20J%C3%A1%20comprei%20minha%20recarga%20e%20preciso%20de%20suporte"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-zinc-900/80 border border-green-700/50 px-5 py-3 text-sm font-bold text-white hover:bg-zinc-800 transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-zinc-900/90 border border-emerald-500/40 hover:bg-zinc-800 px-6 py-3.5 text-xs sm:text-sm font-black text-emerald-300 shadow-md transition-all hover:scale-[1.02]"
             >
-              <WhatsAppIcon className="size-4.5 text-green-400 fill-current" /> WhatsApp (61) 9 8274-3140
+              <WhatsAppIcon className="size-4.5 fill-current text-emerald-400" />
+              Já Comprei! Suporte ao Cliente
             </a>
           </div>
-          <p className="mt-3 text-xs text-white/30">
+
+          <p className="mt-5 text-xs text-white/30">
             ou por e-mail: <a href="mailto:unitvpro.oficial2026@gmail.com" className="text-white/50 hover:text-white transition-colors underline">unitvpro.oficial2026@gmail.com</a>
           </p>
         </div>
