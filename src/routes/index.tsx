@@ -453,7 +453,7 @@ function Index() {
               <SmoothLink href="#suporte" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</SmoothLink>
             </nav>
 
-            <SmoothLink href={CTA_HREF} className="btn-cta px-5 py-2.5 text-xs font-black">
+            <SmoothLink href={CTA_HREF} className="btn-cta px-3.5 py-1.5 text-[11px] font-extrabold tracking-wide">
               QUERO ASSINAR
             </SmoothLink>
           </div>
