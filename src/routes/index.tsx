@@ -476,20 +476,19 @@ function Index() {
             }}
           />
         ))}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.65)_0%,rgba(0,0,0,0.25)_60%,rgba(8,8,8,0.85)_100%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#080808] to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#080808]" />
 
         <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-32 sm:pb-12 text-center">
-          <p className="mb-3 text-xs sm:text-sm font-black text-red-400 uppercase tracking-wide drop-shadow-[0_2px_12px_rgba(0,0,0,1)] [text-shadow:_0_2px_12px_rgba(0,0,0,1),_0_0_25px_rgba(0,0,0,1)]">
+          <p className="mb-3 text-xs sm:text-sm font-extrabold text-red-500 uppercase tracking-widest">
             🔥 Cansado de procurar um filme ou série e nenhum streaming ter?
           </p>
 
-          <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.14] text-white tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,1)] max-w-2xl mx-auto">
+          <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.14] text-white tracking-tight max-w-2xl mx-auto">
             Aqui você encontra o maior acervo de{" "}
-            <span className="text-red-500 drop-shadow-[0_0_20px_rgba(239,68,68,0.4)]">filmes, séries e grandes lançamentos.</span>
+            <span className="text-red-500">filmes, séries e grandes lançamentos.</span>
           </h1>
 
-          <p className="mt-3.5 text-sm sm:text-base text-white/95 max-w-md mx-auto leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,1)]">
+          <p className="mt-3.5 text-sm sm:text-base text-white/90 max-w-md mx-auto leading-relaxed">
             <strong className="text-white font-bold">Todos os lançamentos do cinema, séries completas e acervo em até 4K</strong> para assistir na sua TV, celular ou tablet.
           </p>
 
