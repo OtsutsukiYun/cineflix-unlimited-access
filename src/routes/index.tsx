@@ -68,16 +68,25 @@ const TESTE_GRATIS_POSTERS = [
   "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", // Channel Zero
 ];
 
+import { isPromoExpired } from "@/utils/promo";
+
 // ── INSTAGRAM POPUP ─────────────────────────────────────────────────────────
 function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => void }) {
   const [open, setOpen] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
 
   useEffect(() => {
+    // Se o cronômetro de 24h já se esgotou para esta pessoa, o popup NÃO deve aparecer
+    if (isPromoExpired()) {
+      return;
+    }
+
     if (!sessionStorage.getItem("ig_popup_seen")) {
       const t = setTimeout(() => {
-        setOpen(true);
-        onOpenChange?.(true);
+        if (!isPromoExpired()) {
+          setOpen(true);
+          onOpenChange?.(true);
+        }
       }, 900);
       return () => clearTimeout(t);
     }
@@ -96,7 +105,7 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
     setConfirmed(true);
   }
 
-  if (!open) return null;
+  if (!open || isPromoExpired()) return null;
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 backdrop-blur-md bg-black/80 transition-all duration-300" role="dialog" aria-modal="true">
       <div className={`relative z-10 w-full max-w-md rounded-3xl border ${confirmed ? "border-emerald-500/40 bg-[#07140b] shadow-[0_0_60px_rgba(16,185,129,0.35)]" : "border-white/10 bg-[#0e0e0e] shadow-[0_40px_80px_rgba(0,0,0,0.95)]"} p-7 sm:p-9 text-center transition-all duration-500`}>
@@ -946,7 +955,7 @@ function Index() {
               iconColor: "text-red-500 drop-shadow-[0_0_10px_rgba(239,68,68,0.7)]",
               titleGradient: "text-white font-black",
               precoAntigo: "R$49",
-              preco: "R$35,00",
+              preco: "R$34,99",
               periodo: "mês",
               dias: "30 dias",
               telas: "1 tela",

@@ -87,13 +87,12 @@ function DownloaderAppIcon({ className = "size-14 sm:size-16" }: { className?: s
   return (
     <div
       title="Downloader App Icon"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-orange-400/60 shadow-[0_8px_25px_rgba(249,115,22,0.45)] transition-all duration-300 group-hover/preview:scale-105 group-hover/preview:border-orange-300 group-hover/preview:shadow-[0_12px_35px_rgba(249,115,22,0.65)] ${className}`}
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-orange-500 via-amber-600 to-orange-700 border-2 border-orange-300/80 shadow-[0_8px_25px_rgba(249,115,22,0.45)] transition-all duration-300 group-hover/preview:scale-105 group-hover/preview:border-orange-300 group-hover/preview:shadow-[0_12px_35px_rgba(249,115,22,0.65)] ${className}`}
     >
-      <img
-        src={DOWNLOADER_ICON_URL}
-        alt="Downloader App Icon"
-        className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
-      />
+      <div className="flex flex-col items-center justify-center text-white p-1 text-center select-none">
+        <Download className="size-6 sm:size-7 stroke-[2.8] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)] animate-pulse" />
+        <span className="text-[9px] font-black tracking-tighter uppercase text-orange-100 mt-0.5 drop-shadow leading-none">Downloader</span>
+      </div>
     </div>
   );
 }
@@ -102,13 +101,15 @@ function NtDownAppIcon({ className = "size-14 sm:size-16" }: { className?: strin
   return (
     <div
       title="ntDown App Icon"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-emerald-400/60 shadow-[0_8px_25px_rgba(16,185,129,0.45)] transition-all duration-300 group-hover/preview:scale-105 group-hover/preview:border-emerald-300 group-hover/preview:shadow-[0_12px_35px_rgba(16,185,129,0.65)] ${className}`}
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-500 via-teal-600 to-emerald-800 border-2 border-emerald-300/80 shadow-[0_8px_25px_rgba(16,185,129,0.45)] transition-all duration-300 group-hover/preview:scale-105 group-hover/preview:border-emerald-300 group-hover/preview:shadow-[0_12px_35px_rgba(16,185,129,0.65)] ${className}`}
     >
-      <img
-        src={NTDOWN_ICON_URL}
-        alt="ntDown App Icon"
-        className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
-      />
+      <div className="flex flex-col items-center justify-center text-white p-1 text-center select-none">
+        <div className="flex items-center justify-center gap-0.5">
+          <Download className="size-5 sm:size-6 stroke-[2.8] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]" />
+          <span className="text-xs font-black text-emerald-100 tracking-tighter">NT</span>
+        </div>
+        <span className="text-[9px] font-black tracking-tighter uppercase text-emerald-100 mt-0.5 drop-shadow leading-none">ntDown</span>
+      </div>
     </div>
   );
 }
@@ -117,13 +118,12 @@ function LdPlayerAppIcon({ className = "size-14 sm:size-16" }: { className?: str
   return (
     <div
       title="LDPlayer Official Icon"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border-2 border-yellow-400/80 shadow-[0_8px_25px_rgba(245,158,11,0.5)] transition-all duration-300 group-hover/preview:scale-105 group-hover/preview:border-yellow-300 group-hover/preview:shadow-[0_12px_35px_rgba(245,158,11,0.75)] ${className}`}
+      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-yellow-400 via-amber-500 to-yellow-600 border-2 border-yellow-200/90 shadow-[0_8px_25px_rgba(245,158,11,0.5)] transition-all duration-300 group-hover/preview:scale-105 group-hover/preview:border-yellow-300 group-hover/preview:shadow-[0_12px_35px_rgba(245,158,11,0.75)] ${className}`}
     >
-      <img
-        src={LDPLAYER_ICON_URL}
-        alt="LDPlayer Official Icon"
-        className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
-      />
+      <div className="flex flex-col items-center justify-center text-black font-black p-1 text-center select-none">
+        <Monitor className="size-6 sm:size-7 stroke-[2.8] text-black drop-shadow" />
+        <span className="text-[9px] font-black tracking-tighter uppercase text-yellow-950 mt-0.5 leading-none">LDPlayer</span>
+      </div>
     </div>
   );
 }
@@ -201,7 +201,15 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
     <div className="rounded-3xl border-2 border-orange-500/50 bg-gradient-to-b from-orange-950/40 via-zinc-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(249,115,22,0.15)]">
       <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
         <div className="flex items-center gap-3.5">
-          <DownloaderAppIcon className="size-14 sm:size-16" />
+          <a
+            href={DOWNLOADER_PLAYSTORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir Downloader na Play Store"
+            className="hover:scale-105 transition-transform shrink-0"
+          >
+            <DownloaderAppIcon className="size-14 sm:size-16" />
+          </a>
           <div>
             <a
               href={DOWNLOADER_PLAYSTORE_URL}
@@ -321,7 +329,15 @@ function NtDownMethodCard({ methodNumber = 1, subtitle = "Ideal para Smartphone 
     <div className="rounded-3xl border-2 border-emerald-500/50 bg-gradient-to-b from-emerald-950/40 via-zinc-900/60 to-black/80 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(16,185,129,0.15)]">
       <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
         <div className="flex items-center gap-3.5">
-          <NtDownAppIcon className="size-14 sm:size-16" />
+          <a
+            href={NTDOWN_PLAYSTORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Abrir ntDown na Play Store"
+            className="hover:scale-105 transition-transform shrink-0"
+          >
+            <NtDownAppIcon className="size-14 sm:size-16" />
+          </a>
           <div>
             <a
               href={NTDOWN_PLAYSTORE_URL}
@@ -591,7 +607,15 @@ export function InstalarPage() {
               <div className="rounded-3xl border-2 border-yellow-500/50 bg-gradient-to-b from-amber-950/20 via-zinc-900/70 to-black/90 p-6 sm:p-8 backdrop-blur-xl shadow-[0_0_40px_rgba(245,158,11,0.15)]">
                 <div className="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-white/10">
                   <div className="flex items-center gap-3.5">
-                    <LdPlayerAppIcon className="size-14 sm:size-16" />
+                    <a
+                      href={LDPLAYER_WEBSITE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Baixar LDPlayer no site oficial"
+                      className="hover:scale-105 transition-transform shrink-0"
+                    >
+                      <LdPlayerAppIcon className="size-14 sm:size-16" />
+                    </a>
                     <div>
                       <a
                         href={LDPLAYER_WEBSITE_URL}

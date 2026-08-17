@@ -1,63 +1,43 @@
 import { useEffect, useState } from "react";
 import { Gift } from "lucide-react";
-
-function getBrasiliaDate() {
-  return new Date(
-    new Date().toLocaleString("en-US", { timeZone: "America/Sao_Paulo" })
-  );
-}
-
-function getTargetDeadline(): number {
-  if (typeof window === "undefined") return Date.now() + (11 * 3600 + 48 * 60 + 30) * 1000;
-  
-  const KEY = "unitv_promo_deadline_12h";
-  const DURATION_MS = (11 * 3600 + 48 * 60 + 30) * 1000; // 11h 48m 30s
-  
-  let stored = localStorage.getItem(KEY);
-  let deadline = stored ? parseInt(stored, 10) : 0;
-  
-  const now = Date.now();
-  if (!deadline || deadline <= now) {
-    deadline = now + DURATION_MS;
-    localStorage.setItem(KEY, String(deadline));
-  }
-  
-  return deadline;
-}
-
-function getRemainingSeconds(deadline: number): number {
-  const diff = Math.floor((deadline - Date.now()) / 1000);
-  return Math.max(0, diff);
-}
-
-function formatDate(date: Date) {
-  return date.toLocaleDateString("pt-BR", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-    timeZone: "America/Sao_Paulo",
-  });
-}
+import {
+  getBrasiliaDate,
+  getPromoRemainingSeconds,
+  formatDate,
+  isPromoExpired,
+} from "@/utils/promo";
 
 export function PromoBanner() {
-  // Inicializa com null para evitar hydration mismatch (SSR vs cliente)
   const [seconds, setSeconds] = useState<number | null>(null);
   const [date, setDate] = useState<string | null>(null);
+  const [expired, setExpired] = useState(false);
 
   useEffect(() => {
-    // Só roda no cliente, após hydration
-    const deadline = getTargetDeadline();
-    setSeconds(getRemainingSeconds(deadline));
+    if (isPromoExpired()) {
+      setExpired(true);
+      return;
+    }
+
+    setSeconds(getPromoRemainingSeconds());
     setDate(formatDate(getBrasiliaDate()));
 
     const tick = setInterval(() => {
-      const remaining = getRemainingSeconds(deadline);
-      setSeconds(remaining);
-      setDate(formatDate(getBrasiliaDate()));
+      if (isPromoExpired()) {
+        setExpired(true);
+        clearInterval(tick);
+      } else {
+        setSeconds(getPromoRemainingSeconds());
+        setDate(formatDate(getBrasiliaDate()));
+      }
     }, 1000);
 
     return () => clearInterval(tick);
   }, []);
+
+  // Se a oferta de resgate expirou para a pessoa, a barra promocional NÃO aparece mais
+  if (expired || (seconds !== null && seconds <= 0)) {
+    return null;
+  }
 
   function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
