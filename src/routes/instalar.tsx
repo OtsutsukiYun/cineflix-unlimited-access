@@ -280,7 +280,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
               Teste Grátis por 3 dias ativado automaticamente!
             </h4>
             <p className="text-xs text-white/80 leading-relaxed mt-1">
-              Após abrir o aplicativo <strong>UniTV Pro</strong>, basta aguardar o <strong>popup de aviso de 3 dias grátis</strong> que aparece na tela inicial e começar a usar!
+              Após abrir o aplicativo <strong>UniTV Pro</strong>, basta aguardar o <strong>popup de aviso de 3 dias grátis</strong> que aparece na tela inicial e <strong>fecha automaticamente</strong>, e pronto: aproveite seu teste!
             </p>
           </div>
         </div>
@@ -383,7 +383,7 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Ideal para Smartphone 
               Teste Grátis por 3 dias ativado automaticamente!
             </h4>
             <p className="text-xs text-white/80 leading-relaxed mt-1">
-              Após abrir o aplicativo <strong>UniTV Pro</strong>, basta aguardar o <strong>popup de aviso de 3 dias grátis</strong> que aparece na tela inicial e começar a usar!
+              Após abrir o aplicativo <strong>UniTV Pro</strong>, basta aguardar o <strong>popup de aviso de 3 dias grátis</strong> que aparece na tela inicial e <strong>fecha automaticamente</strong>, e pronto: aproveite seu teste!
             </p>
           </div>
         </div>
