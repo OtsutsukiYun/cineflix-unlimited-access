@@ -125,8 +125,8 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               🎁 Teste Grátis<br /><span className="text-red-400">por 3 dias!</span>
             </h2>
             <p className="text-sm text-white/70 leading-relaxed mb-6">
-              Você veio pelo Instagram do <strong className="text-white">CinePesadelo</strong> e por isso está ganhando{" "}
-              <strong className="text-red-300">3 dias de teste grátis</strong> no UniTV Pro — todos os filmes, séries e o maior catálogo de terror.
+              Você veio pelo Instagram do <strong className="text-white">CinePesadelo</strong> e por isso ganhou{" "}
+              <strong className="text-red-300">3 dias de teste grátis</strong> no UniTV Pro! Basta instalar o aplicativo no seu dispositivo que o teste é liberado automaticamente.
             </p>
             <button
               onClick={handleClaim}
@@ -151,13 +151,18 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               🎉 3 Dias Liberados!
             </h2>
             <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto">
-              Seu benefício exclusivo do <strong className="text-white">CinePesadelo</strong> foi liberado com sucesso. Clique em <strong className="text-white">"Resgatar Teste Grátis"</strong> no site para aproveitar todo o nosso acervo!
+              Seu benefício exclusivo do <strong className="text-white">CinePesadelo</strong> foi ativado! Basta <strong className="text-white">instalar o aplicativo</strong> no seu dispositivo que os 3 dias grátis entram automaticamente.
             </p>
-            <button
+            <a
+              href="/instalar"
               onClick={close}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all hover:scale-[1.02] active:scale-95 cursor-pointer mb-3"
             >
-              ENTENDI! VER CATÁLOGO
+              <Download className="size-4" />
+              COMO INSTALAR E USAR
+            </a>
+            <button onClick={close} className="text-xs text-white/40 hover:text-white/70 transition-colors underline underline-offset-2">
+              Fechar e ver o site
             </button>
           </div>
         )}
