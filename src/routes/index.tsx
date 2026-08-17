@@ -490,7 +490,7 @@ function Index() {
           </h1>
 
           <p className="mt-3 text-sm sm:text-base text-white max-w-md mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,1)]">
-            <strong className="text-white font-bold">Milhares de filmes, séries e lançamentos em até 4K</strong> para assistir na sua TV, celular ou tablet.
+            <strong className="text-white font-bold">Todos os lançamentos do cinema, séries completas e acervo em até 4K</strong> para assistir na sua TV, celular ou tablet.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
@@ -527,7 +527,7 @@ function Index() {
               <Fragment key={i}>
                 <span className="flex items-center gap-2 text-red-400"><Sparkles className="size-3.5" /> Qualidade em até 4K</span>
                 <span className="flex items-center gap-2"><Film className="size-3.5 text-red-500" /> Cinema & Lançamentos</span>
-                <span className="flex items-center gap-2 text-blue-300"><Tv className="size-3.5 text-blue-400" /> Milhares de Conteúdos</span>
+                <span className="flex items-center gap-2 text-blue-300"><Tv className="size-3.5 text-blue-400" /> Todos os Lançamentos</span>
                 <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-red-500" /> Smart TV & TV Box</span>
                 <span className="flex items-center gap-2 text-red-300"><RefreshCcw className="size-3.5 text-red-500" /> Atualizações Semanais</span>
                 <span className="flex items-center gap-2"><Zap className="size-3.5 text-red-500" /> Ativação Imediata</span>
@@ -690,7 +690,7 @@ function Index() {
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-red-300",
               t: "Filmes incríveis",
-              qtd: "Milhares de Filmes",
+              qtd: "Todos os Lançamentos",
               d: "Lançamentos recém-saídos do cinema, produções exclusivas e superproduções em até 4K.",
               tabId: "filmes",
             },
@@ -709,7 +709,7 @@ function Index() {
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-rose-200",
               t: "Séries imperdíveis",
-              qtd: "Milhares de Séries",
+              qtd: "Séries Completas",
               d: "Séries das maiores plataformas mundiais com temporadas completas dubladas e legendadas.",
               tabId: "series",
             },
@@ -747,7 +747,7 @@ function Index() {
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-amber-200",
               t: "Animes atualizados",
-              qtd: "Milhares de Animes",
+              qtd: "Animes da Temporada",
               d: "Animes em alta, grandes clássicos, lançamentos da temporada, simulcast semanal e opções dubladas em português.",
               tabId: "animes",
             },
@@ -766,8 +766,8 @@ function Index() {
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-sky-200",
               t: "Conteúdos infantis",
-              qtd: "Milhares de Conteúdos Infantis",
-              d: "Milhares de conteúdos infantis, filmes, desenhos e canais 24h para a diversão de toda a família.",
+              qtd: "Espaço Kids & Animações",
+              d: "Filmes infantis, desenhos animados, animações 4K e canais 24h para a diversão de toda a família.",
               tabId: "filmes",
             },
             {
