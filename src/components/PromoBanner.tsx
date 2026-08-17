@@ -7,11 +7,27 @@ function getBrasiliaDate() {
   );
 }
 
-function getSecondsUntil12hBlockEnd() {
-  const now = getBrasiliaDate();
-  const secondsIn12h = 12 * 3600;
-  const currentSecondsIn12h = ((now.getHours() % 12) * 3600) + (now.getMinutes() * 60) + now.getSeconds();
-  return Math.max(0, secondsIn12h - currentSecondsIn12h);
+function getTargetDeadline(): number {
+  if (typeof window === "undefined") return Date.now() + (11 * 3600 + 48 * 60 + 30) * 1000;
+  
+  const KEY = "unitv_promo_deadline_12h";
+  const DURATION_MS = (11 * 3600 + 48 * 60 + 30) * 1000; // 11h 48m 30s
+  
+  let stored = localStorage.getItem(KEY);
+  let deadline = stored ? parseInt(stored, 10) : 0;
+  
+  const now = Date.now();
+  if (!deadline || deadline <= now) {
+    deadline = now + DURATION_MS;
+    localStorage.setItem(KEY, String(deadline));
+  }
+  
+  return deadline;
+}
+
+function getRemainingSeconds(deadline: number): number {
+  const diff = Math.floor((deadline - Date.now()) / 1000);
+  return Math.max(0, diff);
 }
 
 function formatDate(date: Date) {
@@ -30,12 +46,13 @@ export function PromoBanner() {
 
   useEffect(() => {
     // Só roda no cliente, após hydration
-    setSeconds(getSecondsUntil12hBlockEnd());
+    const deadline = getTargetDeadline();
+    setSeconds(getRemainingSeconds(deadline));
     setDate(formatDate(getBrasiliaDate()));
 
     const tick = setInterval(() => {
-      const s = getSecondsUntil12hBlockEnd();
-      setSeconds(s);
+      const remaining = getRemainingSeconds(deadline);
+      setSeconds(remaining);
       setDate(formatDate(getBrasiliaDate()));
     }, 1000);
 
