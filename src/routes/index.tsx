@@ -476,25 +476,20 @@ function Index() {
             }}
           />
         ))}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-[#080808]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#080808]" />
 
         <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-32 sm:pb-12 text-center">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-red-500/35 bg-red-950/70 px-4 py-1.5 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.6)]">
-            <span className="size-2 rounded-full bg-red-500 animate-pulse" />
-            <span className="text-xs sm:text-sm font-bold text-red-300 tracking-wide uppercase">
-              Cansado de procurar um filme e nenhum streaming ter?
-            </span>
-          </div>
+          <p className="mb-3 text-xs sm:text-sm font-extrabold text-red-500 uppercase tracking-widest">
+            🔥 Cansado de procurar um filme ou série e nenhum streaming ter?
+          </p>
 
-          <h1 className="font-display text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-[1.12] max-w-3xl mx-auto drop-shadow-md">
+          <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.14] text-white tracking-tight max-w-2xl mx-auto">
             Aqui você encontra o maior acervo de{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-red-500 to-rose-500 font-black">
-              filmes, séries e grandes lançamentos.
-            </span>
+            <span className="text-red-500">filmes, séries e grandes lançamentos.</span>
           </h1>
 
-          <p className="mt-4 text-sm sm:text-base text-zinc-300 max-w-xl mx-auto leading-relaxed font-medium">
-            Assista a todos os lançamentos do cinema, séries completas e conteúdos em até 4K na sua TV, celular ou tablet.
+          <p className="mt-3.5 text-sm sm:text-base text-white/90 max-w-md mx-auto leading-relaxed">
+            <strong className="text-white font-bold">Todos os lançamentos do cinema, séries completas e acervo em até 4K</strong> para assistir na sua TV, celular ou tablet.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
