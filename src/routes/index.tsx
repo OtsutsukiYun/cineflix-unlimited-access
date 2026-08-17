@@ -427,7 +427,7 @@ function Index() {
     return () => clearInterval(timer);
   }, [isPopupOpen]);
 
-  const currentTabObj = CATALOG_TABS.find((t) => t.id === activeTab) || CATALOG_TABS[0];
+  const currentTabObj = CATALOG_TABS.find((t) => t.id === activeTab) || CATALOG_TABS[0]!;
 
   return (
     <div className="relative w-full overflow-x-hidden min-h-screen bg-[#080808] font-sans text-foreground antialiased selection:bg-red-600 selection:text-white">
