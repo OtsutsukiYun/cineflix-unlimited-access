@@ -28,17 +28,6 @@ export type Title = {
 /** Destaques do carrossel de fundo (lançamentos de terror reais - TMDB) */
 export const heroSlides: HeroSlide[] = [
   {
-    title: "Sobrenatural: Fora do Distante",
-    year: "2026",
-    genre: "Terror / Sobrenatural",
-    tagline: "O mal do Distante não pode mais ser contido no nosso mundo.",
-    backdrop: "/w2xDGa1252imRPgCbiY48AbkRBn.jpg",
-    poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg",
-    objectPosition: "center 20%",
-    objectPositionMobile: "50% 15%",
-    brightness: "brightness(1.1)",
-  },
-  {
     title: "Obsessão",
     year: "2026",
     genre: "Terror / Suspense",
@@ -80,6 +69,17 @@ export const heroSlides: HeroSlide[] = [
     poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg",
     objectPosition: "center 25%",
     objectPositionMobile: "50% 20%",
+  },
+  {
+    title: "Sobrenatural: Fora do Distante",
+    year: "2026",
+    genre: "Terror / Sobrenatural",
+    tagline: "O mal do Distante não pode mais ser contido no nosso mundo.",
+    backdrop: "/juday8QWmjKAfIx7jbOEHzhAt4T.jpg",
+    poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+    brightness: "brightness(1.1)",
   },
   {
     title: "Passageiro do Mal",
