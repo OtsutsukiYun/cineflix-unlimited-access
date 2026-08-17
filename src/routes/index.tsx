@@ -969,6 +969,8 @@ function Index() {
               link: "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "1 Tela simultânea",
+                "🎬 Filmes, Séries e Lançamentos de TODAS as categorias",
+                "🔥 Atualizações semanais de cinema e streaming",
                 "Catálogo completo em qualidade até 4K",
                 "Títulos que não estão nos streamings tradicionais",
                 "Esportes & Canais Ao Vivo em alta definição",
@@ -1000,6 +1002,8 @@ function Index() {
               link: "https://pay.braip.co/ref?pl=pla6lllo&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "2 Telas simultâneas em até 4K",
+                "🎬 Filmes, Séries e Lançamentos de TODAS as categorias",
+                "🔥 Atualizações semanais de cinema e streaming",
                 "365 dias de acesso sem mensalidades",
                 "Catálogo completo com atualizações constantes",
                 "Títulos que não estão nos streamings tradicionais",
@@ -1031,6 +1035,8 @@ function Index() {
               link: "https://pay.braip.co/ref?pl=pla1qqq6&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "1 Tela simultânea",
+                "🎬 Filmes, Séries e Lançamentos de TODAS as categorias",
+                "🔥 Atualizações semanais de cinema e streaming",
                 "90 dias de acesso sem mensalidades",
                 "Catálogo completo em qualidade até 4K",
                 "Títulos que não estão nos streamings tradicionais",
