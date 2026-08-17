@@ -389,48 +389,48 @@ function InstalarPage() {
         </div>
       </header>
 
-      {/* GRADE DE CAPINHAS DE FILMES DE FUNDO (COBRE O SITE INTEIRO DE CIMA A BAIXO) */}
-      <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-30">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0d090b]/80 via-[#0d090b]/60 to-[#0d090b]/90 z-10" />
-        <div className="flex flex-col gap-5 pt-20 scale-105 blur-[1px]">
+      {/* GRADE DE CAPINHAS DE FILMES DE FUNDO (FIXO NO VIEWPORT - NUNCA ACABA AO ROLAR) */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-35">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0d090b]/85 via-[#0d090b]/65 to-[#0d090b]/90 z-10" />
+        <div className="flex flex-col gap-4 pt-16 scale-105 blur-[1px]">
           <div className="flex w-max gap-4 animate-marquee">
             {ROW_1_POSTERS.concat(ROW_1_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
-              <img
-                key={`r1-${i}`}
-                src={img(p, "w342")}
-                alt=""
-                className="h-44 w-32 rounded-xl object-cover shadow-md"
-              />
+              <img key={`r1-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
             ))}
           </div>
           <div className="flex w-max gap-4 animate-marquee-reverse">
             {ROW_2_POSTERS.concat(ROW_2_POSTERS).concat(ROW_2_POSTERS).map((p, i) => (
-              <img
-                key={`r2-${i}`}
-                src={img(p, "w342")}
-                alt=""
-                className="h-44 w-32 rounded-xl object-cover shadow-md"
-              />
+              <img key={`r2-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
             ))}
           </div>
           <div className="flex w-max gap-4 animate-marquee">
             {ROW_3_POSTERS.concat(ROW_3_POSTERS).concat(ROW_3_POSTERS).map((p, i) => (
-              <img
-                key={`r3-${i}`}
-                src={img(p, "w342")}
-                alt=""
-                className="h-44 w-32 rounded-xl object-cover shadow-md"
-              />
+              <img key={`r3-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
             ))}
           </div>
           <div className="flex w-max gap-4 animate-marquee-reverse">
             {ROW_4_POSTERS.concat(ROW_4_POSTERS).concat(ROW_4_POSTERS).map((p, i) => (
-              <img
-                key={`r4-${i}`}
-                src={img(p, "w342")}
-                alt=""
-                className="h-44 w-32 rounded-xl object-cover shadow-md"
-              />
+              <img key={`r4-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
+            ))}
+          </div>
+          <div className="flex w-max gap-4 animate-marquee">
+            {ROW_1_POSTERS.concat(ROW_2_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
+              <img key={`r5-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
+            ))}
+          </div>
+          <div className="flex w-max gap-4 animate-marquee-reverse">
+            {ROW_3_POSTERS.concat(ROW_4_POSTERS).concat(ROW_3_POSTERS).map((p, i) => (
+              <img key={`r6-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
+            ))}
+          </div>
+          <div className="flex w-max gap-4 animate-marquee">
+            {ROW_2_POSTERS.concat(ROW_4_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
+              <img key={`r7-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
+            ))}
+          </div>
+          <div className="flex w-max gap-4 animate-marquee-reverse">
+            {ROW_1_POSTERS.concat(ROW_3_POSTERS).concat(ROW_2_POSTERS).map((p, i) => (
+              <img key={`r8-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
             ))}
           </div>
         </div>
