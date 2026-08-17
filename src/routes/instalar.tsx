@@ -152,7 +152,7 @@ function CodeCopyBox({ code }: { code: string }) {
   return (
     <div className="mt-2.5 flex items-center justify-between gap-3 rounded-2xl p-3.5 sm:p-4 border border-white/15 bg-black/80 shadow-md">
       <div className="flex items-center gap-3">
-        <div className="flex size-9 items-center justify-center rounded-xl bg-red-600/20 text-red-400 border border-red-500/30">
+        <div className="flex size-9 items-center justify-center rounded-xl bg-emerald-600/30 text-emerald-400 border border-emerald-500/50">
           <Hash className="size-5" />
         </div>
         <div>
@@ -170,7 +170,7 @@ function CodeCopyBox({ code }: { code: string }) {
         className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-black uppercase tracking-wider transition-all duration-200 cursor-pointer ${
           copied
             ? "bg-emerald-600 text-white shadow-md"
-            : "bg-red-600 text-white hover:bg-red-500 shadow-md hover:scale-[1.02]"
+            : "bg-emerald-600 text-white hover:bg-emerald-500 shadow-md hover:scale-[1.02]"
         }`}
       >
         {copied ? (
@@ -221,7 +221,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
 
       <ol className="space-y-5">
         <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
             1
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -238,7 +238,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
         </li>
 
         <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
             2
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -248,7 +248,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
         </li>
 
         <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
             3
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -261,7 +261,7 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
         </li>
 
         <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
             4
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -341,7 +341,7 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Compatível com Smart 
 
       <ol className="space-y-5">
         <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
             1
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -358,7 +358,7 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Compatível com Smart 
         </li>
 
         <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
             2
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -368,7 +368,7 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Compatível com Smart 
         </li>
 
         <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
             3
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -381,7 +381,7 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Compatível com Smart 
         </li>
 
         <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
             4
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -465,7 +465,7 @@ function MobileApkMethodCard() {
 
       <ol className="space-y-5">
         <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/20 border border-emerald-500/40 text-emerald-400 text-xs font-black">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
             1
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -477,7 +477,7 @@ function MobileApkMethodCard() {
         </li>
 
         <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
             2
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -486,7 +486,7 @@ function MobileApkMethodCard() {
         </li>
 
         <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
             3
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -495,7 +495,7 @@ function MobileApkMethodCard() {
         </li>
 
         <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-red-600/20 border border-red-500/40 text-red-400 text-xs font-black">
+          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
             4
           </div>
           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
