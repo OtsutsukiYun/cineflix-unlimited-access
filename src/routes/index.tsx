@@ -170,17 +170,17 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
 export const Route = createFileRoute("/")(({
   head: () => ({
     meta: [
-      { title: "UniTV Pro — Filmes, Séries, Esportes e Terror em até 4K" },
+      { title: "UniTV Pro — Filmes, Séries, Esportes e Terror em Alta Definição" },
       {
         name: "description",
         content:
-          "Todos os streamings reunidos: filmes recém-saídos do cinema, séries completas, animes, doramas, esportes ao vivo e o maior acervo de terror em até 4K.",
+          "Todos os streamings reunidos: filmes recém-saídos do cinema, séries completas, animes, doramas, esportes ao vivo e o maior acervo de terror em Alta Definição.",
       },
-      { property: "og:title", content: "UniTV Pro — Filmes, Séries, Esportes e Terror em até 4K" },
+      { property: "og:title", content: "UniTV Pro — Filmes, Séries, Esportes e Terror em Alta Definição" },
       {
         property: "og:description",
         content:
-          "Filmes, séries de sucesso, esportes ao vivo e o maior catálogo de terror em até 4K.",
+          "Filmes, séries de sucesso, esportes ao vivo e o maior catálogo de terror em Alta Definição.",
       },
     ],
   }),
@@ -500,7 +500,7 @@ function Index() {
           </h1>
 
           <p className="mt-3 text-xs sm:text-base text-white/90 max-w-[340px] sm:max-w-xl mx-auto leading-snug sm:leading-relaxed">
-            Assista a produções de terror exclusivas, animes, doramas e canais de TV em até 4K na sua TV, celular, tablet ou projetor.
+            Assista a produções de terror exclusivas, animes, doramas e canais de TV na sua TV, celular, tablet ou projetor.
           </p>
 
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full max-w-sm sm:max-w-md mx-auto">
@@ -542,7 +542,7 @@ function Index() {
           <div className="animate-marquee flex shrink-0 items-center gap-8 sm:gap-16 pr-8 sm:pr-16 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-white/40 uppercase">
             {Array.from({ length: 4 }).fill(0).map((_, i) => (
               <Fragment key={i}>
-                <span className="flex items-center gap-2 text-red-400"><Sparkles className="size-3.5" /> Qualidade em até 4K</span>
+                <span className="flex items-center gap-2 text-red-400"><Sparkles className="size-3.5" /> Qualidade HD & Full HD</span>
                 <span className="flex items-center gap-2"><Film className="size-3.5 text-red-500" /> Cinema & Lançamentos</span>
                 <span className="flex items-center gap-2 text-blue-300"><Tv className="size-3.5 text-blue-400" /> Todos os Lançamentos</span>
                 <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-red-500" /> Smart TV & TV Box</span>
@@ -569,7 +569,7 @@ function Index() {
                 <p className="text-xs sm:text-sm text-white/60 font-medium max-w-xl mx-auto text-center transition-opacity duration-200">
                   {
                     {
-                      "filmes": "Os filmes mais assistidos da semana recém-saídos do cinema com qualidade em até 4K e áudio em alta definição.",
+                      "filmes": "Os filmes mais assistidos da semana recém-saídos do cinema com áudio e imagem em alta definição.",
                       "terror-raro": "As produções de terror exclusivas e raras da Ásia que estão dominando as telas dos nossos assinantes.",
                       "series": "As séries mais maratonadas do momento com temporadas completas dubladas e legendadas para você assistir.",
                       "animes": "Os animes e episódios mais bombados da temporada atual com simulcast semanal e dublagem em português.",
@@ -708,7 +708,7 @@ function Index() {
               titleHover: "group-hover:text-red-300",
               t: "Filmes incríveis",
               qtd: "Todos os Lançamentos",
-              d: "Lançamentos recém-saídos do cinema, produções exclusivas e superproduções em até 4K.",
+              d: "Lançamentos recém-saídos do cinema, produções exclusivas e superproduções em alta definição.",
               tabId: "filmes",
             },
             {
@@ -784,7 +784,7 @@ function Index() {
               titleHover: "group-hover:text-sky-200",
               t: "Conteúdos infantis",
               qtd: "Espaço Kids & Animações",
-              d: "Filmes infantis, desenhos animados, animações 4K e canais 24h para a diversão de toda a família.",
+              d: "Filmes infantis, desenhos animados, animações e canais 24h para a diversão de toda a família.",
               tabId: "filmes",
             },
             {
@@ -972,7 +972,7 @@ function Index() {
               features: [
                 "1 Tela simultânea",
                 "Filmes, Séries, Doramas, Animes & Novelas Turcas",
-                "Lançamentos de cinema & novos episódios toda semana",
+                "Lançamentos de cinema & novos episódios de séries e animes toda semana",
                 "Catálogo completo com atualizações constantes",
                 "Títulos exclusivos que não estão em outros streamings",
                 "Canais Ao Vivo & Esportes em HD/4K",
@@ -1002,9 +1002,9 @@ function Index() {
               btnText: "QUERO O PLANO ANUAL VIP",
               link: "https://pay.braip.co/ref?pl=pla6lllo&ck=che7eo0g&af=afixjm3pn2",
               features: [
-                "2 Telas simultâneas em até 4K",
+                "2 Telas simultâneas",
                 "Filmes, Séries, Doramas, Animes & Novelas Turcas",
-                "Lançamentos de cinema & novos episódios toda semana",
+                "Lançamentos de cinema & novos episódios de séries e animes toda semana",
                 "Catálogo completo com atualizações constantes",
                 "Títulos exclusivos que não estão em outros streamings",
                 "365 dias de acesso total (Pagamento único)",
@@ -1036,7 +1036,7 @@ function Index() {
               features: [
                 "1 Tela simultânea",
                 "Filmes, Séries, Doramas, Animes & Novelas Turcas",
-                "Lançamentos de cinema & novos episódios toda semana",
+                "Lançamentos de cinema & novos episódios de séries e animes toda semana",
                 "Catálogo completo com atualizações constantes",
                 "Títulos exclusivos que não estão em outros streamings",
                 "90 dias de acesso total (Pagamento único)",
