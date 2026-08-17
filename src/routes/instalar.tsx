@@ -556,17 +556,27 @@ function InstalarPage() {
           </div>
           <h3 className="text-lg font-black text-white mb-1">Precisa de ajuda para instalar?</h3>
           <p className="text-xs sm:text-sm text-muted-foreground mb-5 max-w-md mx-auto">
-            Nossa equipe de suporte técnico está no WhatsApp para tirar suas dúvidas e te ajudar a instalar!
+            Fale com a nossa equipe no WhatsApp para tirar dúvidas ou solicitar suporte pós-compra!
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
               href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20instalar%20o%20UniTV%20Pro"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-3 text-xs sm:text-sm font-extrabold text-white shadow-md transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-3 text-xs sm:text-sm font-extrabold text-white shadow-md transition-all"
             >
               <WhatsAppIcon className="size-4 fill-current" />
-              Falar com o Suporte Técnico
+              Suporte Geral (Dúvidas &amp; Teste)
+            </a>
+
+            <a
+              href="https://wa.me/5561982743140?text=Ol%C3%A1!%20J%C3%A1%20comprei%20minha%20recarga%20e%20preciso%20de%20ajuda%20na%20instala%C3%A7%C3%A3o"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-zinc-900/90 border border-emerald-500/40 hover:bg-zinc-800 px-5 py-3 text-xs sm:text-sm font-extrabold text-emerald-300 shadow-md transition-all"
+            >
+              <WhatsAppIcon className="size-4 fill-current text-emerald-400" />
+              Já Comprei! Suporte ao Cliente
             </a>
           </div>
         </div>
