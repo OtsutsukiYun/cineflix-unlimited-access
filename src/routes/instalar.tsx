@@ -268,6 +268,23 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
           </div>
         </li>
       </ol>
+
+      {/* AVISO DE ATIVAÇÃO DE 3 DIAS GRÁTIS */}
+      <div className="mt-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+        <div className="flex items-start gap-3">
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300 font-bold text-base border border-emerald-500/40">
+            🎁
+          </div>
+          <div>
+            <h4 className="text-xs sm:text-sm font-extrabold text-emerald-300">
+              Teste Grátis por 3 dias ativado automaticamente!
+            </h4>
+            <p className="text-xs text-white/80 leading-relaxed mt-1">
+              Após abrir o aplicativo <strong>UniTV Pro</strong>, basta aguardar o <strong>popup de aviso de 3 dias grátis</strong> que aparece na tela inicial e começar a usar!
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -354,6 +371,23 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Ideal para Smartphone 
           </div>
         </li>
       </ol>
+
+      {/* AVISO DE ATIVAÇÃO DE 3 DIAS GRÁTIS */}
+      <div className="mt-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
+        <div className="flex items-start gap-3">
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300 font-bold text-base border border-emerald-500/40">
+            🎁
+          </div>
+          <div>
+            <h4 className="text-xs sm:text-sm font-extrabold text-emerald-300">
+              Teste Grátis por 3 dias ativado automaticamente!
+            </h4>
+            <p className="text-xs text-white/80 leading-relaxed mt-1">
+              Após abrir o aplicativo <strong>UniTV Pro</strong>, basta aguardar o <strong>popup de aviso de 3 dias grátis</strong> que aparece na tela inicial e começar a usar!
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
