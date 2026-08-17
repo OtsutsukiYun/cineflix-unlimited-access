@@ -542,7 +542,7 @@ function Index() {
           <div className="animate-marquee flex shrink-0 items-center gap-8 sm:gap-16 pr-8 sm:pr-16 text-[10px] sm:text-xs font-bold tracking-[0.2em] text-white/40 uppercase">
             {Array.from({ length: 4 }).fill(0).map((_, i) => (
               <Fragment key={i}>
-                <span className="flex items-center gap-2 text-red-400"><Sparkles className="size-3.5" /> Qualidade HD & Full HD</span>
+                <span className="flex items-center gap-2 text-red-400"><Sparkles className="size-3.5" /> Alta Definição de Imagem</span>
                 <span className="flex items-center gap-2"><Film className="size-3.5 text-red-500" /> Cinema & Lançamentos</span>
                 <span className="flex items-center gap-2 text-blue-300"><Tv className="size-3.5 text-blue-400" /> Todos os Lançamentos</span>
                 <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-red-500" /> Smart TV & TV Box</span>
@@ -972,8 +972,7 @@ function Index() {
               features: [
                 "1 Tela simultânea",
                 "Filmes, Séries, Doramas, Animes & Novelas Turcas",
-                "Lançamentos de cinema & novos episódios de séries e animes toda semana",
-                "Catálogo completo com atualizações constantes",
+                "Atualizações constantes com lançamentos de cinema, séries e animes",
                 "Títulos exclusivos que não estão em outros streamings",
                 "Canais Ao Vivo & Esportes em HD/4K",
                 "Compatível com TV, Box, Stick, Projetor e Celular",
@@ -1004,8 +1003,7 @@ function Index() {
               features: [
                 "2 Telas simultâneas",
                 "Filmes, Séries, Doramas, Animes & Novelas Turcas",
-                "Lançamentos de cinema & novos episódios de séries e animes toda semana",
-                "Catálogo completo com atualizações constantes",
+                "Atualizações constantes com lançamentos de cinema, séries e animes",
                 "Títulos exclusivos que não estão em outros streamings",
                 "365 dias de acesso total (Pagamento único)",
                 "Canais Ao Vivo & Esportes em HD/4K",
@@ -1036,8 +1034,7 @@ function Index() {
               features: [
                 "1 Tela simultânea",
                 "Filmes, Séries, Doramas, Animes & Novelas Turcas",
-                "Lançamentos de cinema & novos episódios de séries e animes toda semana",
-                "Catálogo completo com atualizações constantes",
+                "Atualizações constantes com lançamentos de cinema, séries e animes",
                 "Títulos exclusivos que não estão em outros streamings",
                 "90 dias de acesso total (Pagamento único)",
                 "Canais Ao Vivo & Esportes em HD/4K",
