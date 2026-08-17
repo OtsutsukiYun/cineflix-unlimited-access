@@ -437,7 +437,7 @@ function MobileApkMethodCard() {
           </div>
           <div>
             <h2 className="text-lg sm:text-xl font-black text-white flex items-center gap-2">
-              Download Direto APK (Celular &amp; Tablet)
+              Download Direto APK (Android)
             </h2>
             <p className="text-xs text-muted-foreground font-medium mt-0.5">
               Método mais rápido para Android — baixa o instalador APK direto no seu aparelho
@@ -665,7 +665,7 @@ function InstalarPage() {
               }`}
             >
               <Smartphone className="size-4" />
-              <span>Celular &amp; Tablet (APK)</span>
+              <span>Android (APK)</span>
             </button>
 
             <button
