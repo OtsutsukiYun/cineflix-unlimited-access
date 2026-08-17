@@ -458,34 +458,34 @@ function InstalarPage() {
           </p>
         </div>
 
-        {/* NAVEGAÇÃO DE DISPOSITIVOS EM ESTILO VIDRO (FONTE AMPLIADA E DETALHADA) */}
-        <div className="mb-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 rounded-2xl glass p-2 border border-white/15 backdrop-blur-2xl shadow-2xl">
+        {/* NAVEGAÇÃO DE DISPOSITIVOS EM ESTILO VIDRO */}
+        <div className="mb-5">
+          <div className="grid grid-cols-2 gap-2.5 rounded-2xl glass p-1.5 border border-white/10 backdrop-blur-2xl shadow-xl">
             <button
               onClick={() => setActiveTab("android")}
-              className={`flex items-center justify-center gap-2.5 rounded-xl py-3.5 px-4 text-sm sm:text-base font-black transition-all cursor-pointer text-center ${
+              className={`flex items-center justify-center gap-2 rounded-xl py-3 px-3 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                 activeTab === "android"
-                  ? "bg-red-600 text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] border border-red-500/50"
-                  : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
+                  ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-500/50"
+                  : "bg-transparent text-muted-foreground hover:text-white"
               }`}
             >
-              <div className="flex items-center gap-1.5 shrink-0">
-                <Tv className="size-5" />
-                <Smartphone className="size-5" />
+              <div className="flex items-center gap-1.5">
+                <Tv className="size-4" />
+                <Smartphone className="size-4" />
               </div>
-              <span>Smart TV, TV Box, Stick, Celular &amp; Tablet</span>
+              <span>TV, Box, Stick, Projetor, Celular &amp; Tablet</span>
             </button>
 
             <button
               onClick={() => setActiveTab("pc")}
-              className={`flex items-center justify-center gap-2.5 rounded-xl py-3.5 px-4 text-sm sm:text-base font-black transition-all cursor-pointer text-center ${
+              className={`flex items-center justify-center gap-2 rounded-xl py-3 px-3 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
                 activeTab === "pc"
-                  ? "bg-red-600 text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] border border-red-500/50"
-                  : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
+                  ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-500/50"
+                  : "bg-transparent text-muted-foreground hover:text-white"
               }`}
             >
-              <Monitor className="size-5 shrink-0" />
-              <span>Computador PC &amp; Notebook</span>
+              <Monitor className="size-4" />
+              <span>Computador &amp; Notebook</span>
             </button>
           </div>
         </div>
