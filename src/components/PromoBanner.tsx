@@ -7,11 +7,11 @@ function getBrasiliaDate() {
   );
 }
 
-function getSecondsUntilMidnight() {
+function getSecondsUntil12hBlockEnd() {
   const now = getBrasiliaDate();
-  const end = new Date(now);
-  end.setHours(23, 59, 59, 999);
-  return Math.max(0, Math.floor((end.getTime() - now.getTime()) / 1000));
+  const secondsIn12h = 12 * 3600;
+  const currentSecondsIn12h = ((now.getHours() % 12) * 3600) + (now.getMinutes() * 60) + now.getSeconds();
+  return Math.max(0, secondsIn12h - currentSecondsIn12h);
 }
 
 function formatDate(date: Date) {
@@ -30,11 +30,11 @@ export function PromoBanner() {
 
   useEffect(() => {
     // Só roda no cliente, após hydration
-    setSeconds(getSecondsUntilMidnight());
+    setSeconds(getSecondsUntil12hBlockEnd());
     setDate(formatDate(getBrasiliaDate()));
 
     const tick = setInterval(() => {
-      const s = getSecondsUntilMidnight();
+      const s = getSecondsUntil12hBlockEnd();
       setSeconds(s);
       setDate(formatDate(getBrasiliaDate()));
     }, 1000);
