@@ -285,6 +285,23 @@ function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart T
           </div>
         </div>
       </div>
+
+      {/* DICA SE APARECER "VOCÊ NÃO É VIP" */}
+      <div className="mt-3 rounded-2xl border border-amber-500/35 bg-amber-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+        <div className="flex items-start gap-3">
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300 font-bold text-base border border-amber-500/40">
+            💡
+          </div>
+          <div>
+            <h4 className="text-xs sm:text-sm font-extrabold text-amber-300">
+              Apareceu a mensagem "Você não é VIP"?
+            </h4>
+            <p className="text-xs text-white/80 leading-relaxed mt-1">
+              Não se preocupe! Se durante o teste aparecer <strong>"Você não é VIP"</strong>, basta <strong>clicar em qualquer canal ou entrar em qualquer conteúdo (filme ou série)</strong> que essa mensagem desaparece na hora e tudo é liberado!
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -384,6 +401,23 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Compatível com Smart 
             </h4>
             <p className="text-xs text-white/80 leading-relaxed mt-1">
               Após abrir o aplicativo <strong>UniTV Pro</strong>, basta aguardar o <strong>popup de aviso de 3 dias grátis</strong> que aparece na tela inicial e <strong>fecha automaticamente</strong>, e pronto: aproveite seu teste!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* DICA SE APARECER "VOCÊ NÃO É VIP" */}
+      <div className="mt-3 rounded-2xl border border-amber-500/35 bg-amber-950/30 p-4 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+        <div className="flex items-start gap-3">
+          <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300 font-bold text-base border border-amber-500/40">
+            💡
+          </div>
+          <div>
+            <h4 className="text-xs sm:text-sm font-extrabold text-amber-300">
+              Apareceu a mensagem "Você não é VIP"?
+            </h4>
+            <p className="text-xs text-white/80 leading-relaxed mt-1">
+              Não se preocupe! Se durante o teste aparecer <strong>"Você não é VIP"</strong>, basta <strong>clicar em qualquer canal ou entrar em qualquer conteúdo (filme ou série)</strong> que essa mensagem desaparece na hora e tudo é liberado!
             </p>
           </div>
         </div>
