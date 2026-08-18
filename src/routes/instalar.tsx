@@ -358,6 +358,34 @@ function NtDownMethodCard({ methodNumber = 2, subtitle = "Compatível com Smart 
         </div>
       </div>
 
+      {/* VÍDEO TUTORIAL YOUTUBE */}
+      <div className="mb-6 overflow-hidden rounded-2xl border border-white/15 bg-black/70 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+        <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-extrabold text-white">
+          <Play className="size-4 text-red-500 fill-red-500" />
+          <span>Vídeo Tutorial Passo a Passo — Instalação via ntDown</span>
+        </div>
+        <div className="relative aspect-video w-full">
+          <iframe
+            src="https://www.youtube.com/embed/V5iwjBtQq0Y"
+            title="Vídeo Tutorial de Instalação UniTV Pro via ntDown"
+            className="size-full border-0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+        <div className="flex items-center justify-between border-t border-white/10 bg-white/[0.02] px-4 py-2 text-[11px] text-muted-foreground">
+          <span>Problemas para reproduzir?</span>
+          <a
+            href="https://youtu.be/V5iwjBtQq0Y"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 font-bold text-red-400 hover:text-red-300 underline"
+          >
+            Abrir direto no YouTube <ExternalLink className="size-3" />
+          </a>
+        </div>
+      </div>
+
       <ol className="space-y-5">
         <li className="flex items-start gap-3.5">
           <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
