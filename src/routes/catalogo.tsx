@@ -93,7 +93,8 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "Amizade Desfeita (Unfriended)", poster: "/8byPxREr3BqBNyyij5WHVSOVtYk.jpg", year: "2014", tag: "Screenlife Horror" },
   { title: "Infeção (Infection / Kansen)", poster: "/zCMSiJQ0iigWKaizcHN6Qv0tGqz.jpg", year: "2004", tag: "Clássico Japonês" },
   { title: "Quando as Luzes se Apagam", poster: "/8BnElzAQQpp7ZgdJJiAe1diomr4.jpg", year: "2016", tag: "Sobrenatural" },
-  { title: "The Houses October Built", poster: "/jGtBLu0JAKf5JxhWgmF68HROzCA.jpg", year: "2014", tag: "Found Footage" },
+  { title: "Malum: O Mal Encarnado", poster: "/m1rcLLs0KmS8Cg60sLoMZC2OyDR.jpg", year: "2023", tag: "Terror Religioso" },
+  { title: "Último Turno (Last Shift)", poster: "/fBrUODXYBb3lUoitnBzGz81Bo2D.jpg", year: "2014", tag: "Terror Psicológico" },
 
   { title: "Lake Mungo", poster: "/g0zCELYfBfSv8TOGC13buABVN53.jpg", year: "2009", tag: "Found Footage" },
   { title: "Reencarnação (Reincarnation / Rinne)", poster: "/lFAnm6625uMUZ1Xkg1XxwlXBEE.jpg", year: "2005", tag: "Terror Japonês" },
