@@ -224,8 +224,8 @@ function CatalogoPage() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6">
           <div className="flex items-center gap-6">
             <Link to="/" className="flex items-center gap-2">
-              <span className="text-2xl sm:text-3xl font-black tracking-tighter text-[#E50914]">
-                NETFLIX <span className="text-xs font-bold uppercase tracking-widest text-white/80 bg-[#E50914]/20 border border-[#E50914]/40 px-2 py-0.5 rounded ml-1">HORROR</span>
+              <span className="text-2xl sm:text-3xl font-black tracking-tighter text-white">
+                UniTV <span className="text-[#E50914]">Pro</span>
               </span>
             </Link>
 
