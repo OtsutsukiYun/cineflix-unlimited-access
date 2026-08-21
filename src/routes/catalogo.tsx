@@ -35,13 +35,13 @@ export const Route = createFileRoute("/catalogo")({
  * Filmes turcos, japoneses, indonésios, Found Footage e New French Extremity intercalados.
  */
 const CATALOGO_UNIFICADO: Title[] = [
-  // ── LANÇAMENTOS 2026 / 2025 EM PRIMEIRO ─────────────────────────────────
+  // ── LANÇAMENTOS 2026 EM PRIMEIRO ─────────────────────────────────
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1" },
   { title: "Evil Dead Burn: A Morte do Demônio", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Top 2" },
   { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Top 3" },
   { title: "Colony (A Colônia)", poster: "/tN799oUR0f1gUKDYdMNrDaY7I51.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "Ghost in the Cell", poster: "/9DugI1HXkRAHQsjVMDnyTT8hQZx.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
-  { title: "Panor", poster: "/o3tG02uudhv1YemqPUoC75q3lbr.jpg", year: "2025", tag: "🔥 Lançamento 2025" },
+  { title: "Panor", poster: "/o3tG02uudhv1YemqPUoC75q3lbr.jpg", year: "2025", tag: "🔥 Sucesso 2025" },
 
   { title: "Panor 2", poster: "/du6XOg3cd6SlRBQ1fxZDKpgavW0.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
