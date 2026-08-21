@@ -46,7 +46,7 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Top 3", rating: "4.9" },
   { title: "Colony (A Colônia)", poster: "/tN799oUR0f1gUKDYdMNrDaY7I51.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
   { title: "The Queen of Black Magic", poster: "/tQOBVQjXiBGstCGYvzmgm97EkMF.jpg", year: "2019", tag: "Terror Indonésio", rating: "4.8" },
-  { title: "House of Sayuri (A Casa de Sayuri)", poster: "/b3ZlT121rjvwtUfmyF83hZ5n6te.jpg", year: "2024", tag: "Terror Japonês 2024", rating: "4.9" },
+  { title: "House of Sayuri (A Casa de Sayuri)", poster: "/6GDikJ9SWEn7wE1WqruTdzoLS1G.jpg", year: "2024", tag: "Terror Japonês 2024", rating: "4.9" },
 
   { title: "Hokum", poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", year: "2026", tag: "Lançamento 2026", rating: "4.7" },
   { title: "A Maldição da Múmia", poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", year: "2026", tag: "Lançamento 2026", rating: "4.7" },
@@ -326,14 +326,6 @@ function CatalogoPage() {
                 {movie.tag && (
                   <div className="absolute top-2 left-2 z-20 rounded-lg bg-red-600/90 px-2 py-0.5 text-[10px] font-black text-white shadow-md backdrop-blur-md uppercase tracking-wider">
                     {movie.tag}
-                  </div>
-                )}
-
-                {/* NOTA RATING */}
-                {movie.rating && (
-                  <div className="absolute top-2 right-2 z-20 flex items-center gap-1 rounded-lg bg-black/80 px-2 py-0.5 text-[10px] font-black text-amber-400 border border-amber-400/30 backdrop-blur-md">
-                    <Star className="size-2.5 fill-amber-400" />
-                    {movie.rating}
                   </div>
                 )}
 
