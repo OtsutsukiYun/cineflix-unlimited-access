@@ -22,7 +22,7 @@ export const Route = createFileRoute("/catalogo")({
       {
         name: "description",
         content:
-          "Catálogo completo de filmes de terror estilo Netflix: lançamentos 2026, New French Extremity, terror asiático (coreano, japonês, indonésio), clássicos e franquias completas.",
+          "Catálogo completo de filmes de terror estilo Netflix: lançamentos 2026, terror asiático (coreano, japonês, indonésio), New French Extremity, clássicos e franquias completas.",
       },
     ],
   }),
@@ -33,10 +33,13 @@ export const Route = createFileRoute("/catalogo")({
  * Catálogo unificado de terror em grade contínua (6 por linha no desktop).
  * Fundo estilo Netflix (#141414).
  * Sem botões de categorias.
- * Ordem dos primeiros mantida:
+ * Sem selo 4k.
+ * Sem animes.
+ * Ordem inicial:
  * 1º: Obsessão
  * 2º: Evil Dead Burn
  * 3º: Leviticus
+ * Seguido imediatamente por Terror Asiático, New French Extremity, Em Alta e Clássicos.
  */
 const CATALOGO_UNIFICADO: Title[] = [
   // 1º, 2º e 3º solicitados
@@ -44,11 +47,32 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "Evil Dead Burn: A Morte do Demônio", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
   { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Top 3", rating: "4.9" },
 
-  // NEW FRENCH EXTREMITY (Extremo Francês)
+  // TERROR ASIÁTICO (COREANO, JAPONÊS, INDONÉSIO, TAIWANÊS) - AGORA ANTES DO NEW FRENCH
+  { title: "Exhuma: A Cura do Mal", poster: "/tw0i3kkmOTjDjGFZTLHKhoeXVvA.jpg", year: "2024", tag: "Terror Coreano", rating: "4.9" },
+  { title: "Marcas da Maldição (Incantation)", poster: "/1l4hxdc7PyYgZ0DeZtC0WPU3GOI.jpg", year: "2022", tag: "Terror Taiwanês", rating: "4.9" },
+  { title: "A Tristeza (The Sadness)", poster: "/qu7leaIvLWzwoHUEFHZj4vfut7N.jpg", year: "2021", tag: "Terror Extremo", rating: "4.8" },
+  { title: "Gonjiam: Manicômio Assombrado", poster: "/cHzyFneiUCBT0FWYFqna5XE3lsj.jpg", year: "2018", tag: "Terror Coreano", rating: "4.9" },
+  { title: "Projeto Caça ao Lobo", poster: "/uM0wcqCNbKfVowUKko7fvzOSSdf.jpg", year: "2022", tag: "Terror Coreano", rating: "4.8" },
+  { title: "Noroi: A Lenda de Kagutaba", poster: "/5H6bfU24aiYKF0KVTSoGt3MyAX.jpg", year: "2005", tag: "Terror Japonês", rating: "4.9" },
+  { title: "Pulse (Kairo)", poster: "/9ePdNzKVvGHsMMphfS3HeoMvuEX.jpg", year: "2001", tag: "Terror Japonês", rating: "4.8" },
+  { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Terror Coreano", rating: "4.7" },
+  { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Terror Indonésio", rating: "4.8" },
+  { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Terror Indonésio", rating: "4.6" },
+  { title: "Dark Water: Água Negra", poster: "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", year: "2002", tag: "Clássico Japonês", rating: "4.9" },
+  { title: "Killer Toon", poster: "/9ojbUahh8McTbR92Qf69ocWnggE.jpg", year: "2013", tag: "Terror Coreano", rating: "4.8" },
+  { title: "Cure (A Cura)", poster: "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", year: "1997", tag: "Clássico Japonês", rating: "4.9" },
+  { title: "Another", poster: "/c8VVGuc3lnPXCBStcKQWrOlBCSA.jpg", year: "2012", tag: "Terror Japonês", rating: "4.8" },
+  { title: "Whispering Corridors: Wishing Stairs", poster: "/hX1CdiS8hJJxY8TuAmMoExYXKfn.jpg", year: "2003", tag: "Terror Coreano", rating: "4.7" },
+  { title: "Eu Vi o Diabo", poster: "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", year: "2010", tag: "Terror Coreano", rating: "4.9" },
+  { title: "O Lamento (The Wailing)", poster: "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", year: "2016", tag: "Terror Coreano", rating: "4.9" },
+  { title: "Omukade", poster: "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", year: "2026", tag: "Terror Asiático", rating: "4.8" },
+
+  // NEW FRENCH EXTREMITY (EXTREMO FRANCÊS) - CAPINHAS OFICIAIS CORRIGIDAS
   { title: "Mártires (Martyrs)", poster: "/969mH6AnksRNWMHhGxVbFa6l9qj.jpg", year: "2008", tag: "New French Extremity", rating: "5.0" },
-  { title: "Alta Tensão (Haute Tension)", poster: "/qdMXDnLFPrVq6MvaX531YpsfKFC.jpg", year: "2003", tag: "New French Extremity", rating: "4.9" },
+  { title: "Alta Tensão (Haute Tension)", poster: "/vKeFa7CqSxmWsQDjHP6SJXKoDbj.jpg", year: "2003", tag: "New French Extremity", rating: "4.9" },
+  { title: "A Invasora (À l'intérieur)", poster: "/7gPOYKxoBzhfC8cLNMU3CKgURcm.jpg", year: "2007", tag: "New French Extremity", rating: "4.9" },
   { title: "(A) Fronteira (Frontière(s))", poster: "/qiJK2iJUifpO7eU8V6t4YWXAEEg.jpg", year: "2007", tag: "New French Extremity", rating: "4.8" },
-  { title: "Grave (Raw)", poster: "/v8K1sY1gJ5XJ6y5X7y5X7y5X7y5.jpg", year: "2016", tag: "New French Extremity", rating: "4.8" },
+  { title: "Grave (Raw)", poster: "/kc8jT1MAiKM0iwdjAwC5lQrTNry.jpg", year: "2016", tag: "New French Extremity", rating: "4.8" },
   { title: "Titane", poster: "/y93w5MGC9fbXjy1qfN6rUpSbBti.jpg", year: "2021", tag: "New French Extremity", rating: "4.7" },
   { title: "Calvário (Calvaire)", poster: "/opcj7nv96MwCjC25VJMgAxrYDOk.jpg", year: "2005", tag: "New French Extremity", rating: "4.6" },
   { title: "Irreversível", poster: "/zp6q1MQ9qEJuJj3zvQ5HJuutvQb.jpg", year: "2002", tag: "New French Extremity", rating: "4.9" },
@@ -76,28 +100,6 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "Alien: Romulus", poster: "/jB0W9tn4w07MFn7sTfqRTBLVytF.jpg", year: "2024", tag: "Sci-Fi Horror", rating: "4.9" },
   { title: "Um Lugar Silencioso: Dia Um", poster: "/pN9BtzUeqPIKybAu9baihz6YzyO.jpg", year: "2024", tag: "Suspense", rating: "4.8" },
   { title: "Deadstream", poster: "/dC38JMmb17geWFIjIBgNoKRMFnL.jpg", year: "2022", tag: "Found Footage", rating: "4.7" },
-
-  // TERROR ASIÁTICO (COREANO, JAPONÊS, INDONÉSIO, TAIWANÊS)
-  { title: "Exhuma: A Cura do Mal", poster: "/tw0i3kkmOTjDjGFZTLHKhoeXVvA.jpg", year: "2024", tag: "Terror Coreano", rating: "4.9" },
-  { title: "Marcas da Maldição (Incantation)", poster: "/1l4hxdc7PyYgZ0DeZtC0WPU3GOI.jpg", year: "2022", tag: "Terror Taiwanês", rating: "4.9" },
-  { title: "A Tristeza (The Sadness)", poster: "/qu7leaIvLWzwoHUEFHZj4vfut7N.jpg", year: "2021", tag: "Terror Extremo", rating: "4.8" },
-  { title: "Gonjiam: Manicômio Assombrado", poster: "/cHzyFneiUCBT0FWYFqna5XE3lsj.jpg", year: "2018", tag: "Terror Coreano", rating: "4.9" },
-  { title: "Projeto Caça ao Lobo", poster: "/uM0wcqCNbKfVowUKko7fvzOSSdf.jpg", year: "2022", tag: "Terror Coreano", rating: "4.8" },
-  { title: "Noroi: A Lenda de Kagutaba", poster: "/5H6bfU24aiYKF0KVTSoGt3MyAX.jpg", year: "2005", tag: "Terror Japonês", rating: "4.9" },
-  { title: "Pulse (Kairo)", poster: "/9ePdNzKVvGHsMMphfS3HeoMvuEX.jpg", year: "2001", tag: "Terror Japonês", rating: "4.8" },
-  { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Terror Coreano", rating: "4.7" },
-  { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Terror Indonésio", rating: "4.8" },
-  { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Terror Indonésio", rating: "4.6" },
-  { title: "Dark Water: Água Negra", poster: "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", year: "2002", tag: "Clássico Japonês", rating: "4.9" },
-  { title: "Killer Toon", poster: "/9ojbUahh8McTbR92Qf69ocWnggE.jpg", year: "2013", tag: "Terror Coreano", rating: "4.8" },
-  { title: "Cure (A Cura)", poster: "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", year: "1997", tag: "Clássico Japonês", rating: "4.9" },
-  { title: "Another", poster: "/c8VVGuc3lnPXCBStcKQWrOlBCSA.jpg", year: "2012", tag: "Terror Japonês", rating: "4.8" },
-  { title: "Whispering Corridors: Wishing Stairs", poster: "/hX1CdiS8hJJxY8TuAmMoExYXKfn.jpg", year: "2003", tag: "Terror Coreano", rating: "4.7" },
-  { title: "Eu Vi o Diabo", poster: "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", year: "2010", tag: "Terror Coreano", rating: "4.9" },
-  { title: "O Lamento (The Wailing)", poster: "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", year: "2016", tag: "Terror Coreano", rating: "4.9" },
-  { title: "Omukade", poster: "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", year: "2026", tag: "Terror Asiático", rating: "4.8" },
-  { title: "Shiki", poster: "/zsWbTnNwNjqWvgZ9gqTcK9WLoWy.jpg", year: "2010", tag: "Anime Terror", rating: "4.8" },
-  { title: "Mirai Nikki (The Future Diary)", poster: "/rQScQD92q6CYAGL0DWQQNxjuVVh.jpg", year: "2011", tag: "Anime Thriller", rating: "4.8" },
 
   // FRANQUIA PREMONIÇÃO (FINAL DESTINATION) - CAPINHAS OFICIAIS VERIFICADAS
   { title: "Premonição", poster: "/b5ERChzoI1aLzeYdmwWUtutwm8c.jpg", year: "2000", tag: "Clássico", rating: "4.9" },
@@ -253,7 +255,7 @@ function CatalogoPage() {
               Catálogo de <span className="text-[#E50914]">Terror</span>
             </h1>
             <p className="text-xs sm:text-sm text-[#AAAAAA] mt-2 max-w-2xl leading-relaxed">
-              Grade completa com 6 filmes por linha. Inclui New French Extremity, Terror Coreano, Japonês, Indonésio, lançamentos em alta e clássicos do terror.
+              Grade completa com 6 filmes por linha. Inclui Terror Asiático, New French Extremity, lançamentos em alta e clássicos do terror.
             </p>
           </div>
 
@@ -335,7 +337,6 @@ function CatalogoPage() {
                   </h3>
                   <div className="mt-2 flex items-center justify-between text-[11px] text-[#AAAAAA] font-medium">
                     <span>{movie.year}</span>
-                    <span className="text-[10px] text-[#E50914] font-black bg-[#E50914]/15 px-1.5 py-0.5 rounded border border-[#E50914]/30">4K ULTRA HD</span>
                   </div>
                 </div>
               </div>
