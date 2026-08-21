@@ -458,9 +458,12 @@ function Index() {
             </SmoothLink>
 
             <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
-              <SmoothLink href="#catalogo" className="text-white/80 transition-colors hover:text-white">Catálogo</SmoothLink>
+              <Link to="/catalogo" className="text-white/80 transition-colors hover:text-white font-bold flex items-center gap-1.5">
+                <Sparkles className="size-3.5 text-red-500" /> Catálogo (6 por Linha)
+              </Link>
               <SmoothLink href="#planos" className="text-white/80 transition-colors hover:text-white">Planos</SmoothLink>
               <SmoothLink href="#faq" className="text-white/80 transition-colors hover:text-white">Dúvidas</SmoothLink>
+              <Link to="/instalar" className="text-white/80 transition-colors hover:text-white">Como Instalar</Link>
               <SmoothLink href="#suporte" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</SmoothLink>
             </nav>
 

@@ -22,7 +22,7 @@ export const Route = createFileRoute("/catalogo")({
       {
         name: "description",
         content:
-          "Catálogo completo de filmes de terror do UniTV Pro: lançamentos 2026, terror asiático, filmes turcos (Siccin, Dabbe), New French Extremity, clássicos e franquias completas.",
+          "Catálogo completo de filmes de terror do UniTV Pro: lançamentos 2026 em primeiro, terror asiático (Japão, Indonésia, Coreia, Taiwan), filmes turcos (Siccin, Dabbe), New French Extremity e clássicos.",
       },
     ],
   }),
@@ -36,74 +36,83 @@ export const Route = createFileRoute("/catalogo")({
  * Sem botões de categorias.
  * Sem selo 4k.
  * Sem animes.
- * Filmes do New French Extremity intercalados naturalmente pelo catálogo.
- * Adicionados filmes turcos (Siccin, Dabbe) e terror aquático (The Deep House).
- * Ordem inicial:
- * 1º: Obsessão
- * 2º: Evil Dead Burn
- * 3º: Leviticus
+ * Lançamentos 2026/2025 no topo!
+ * Filmes turcos, japoneses, indonésios e New French Extremity intercalados naturalmente.
  */
 const CATALOGO_UNIFICADO: Title[] = [
-  // 1º, 2º e 3º solicitados
+  // ── LANÇAMENTOS 2026 / 2025 EM PRIMEIRO ─────────────────────────────────
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
   { title: "Evil Dead Burn: A Morte do Demônio", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
   { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Top 3", rating: "4.9" },
+  { title: "Colony (A Colônia)", poster: "/tN799oUR0f1gUKDYdMNrDaY7I51.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
+  { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
+  { title: "House of Sayuri (A Casa de Sayuri)", poster: "/b3ZlT121rjvwtUfmyF83hZ5n6te.jpg", year: "2024", tag: "Terror Japonês 2024", rating: "4.9" },
 
-  // TERROR ASIÁTICO E TURCO EM DESTAQUE INICIAL
+  { title: "Hokum", poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", year: "2026", tag: "Lançamento 2026", rating: "4.7" },
+  { title: "A Maldição da Múmia", poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", year: "2026", tag: "Lançamento 2026", rating: "4.7" },
+  { title: "A Boca do Diabo", poster: "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg", year: "2026", tag: "Novo 2026", rating: "4.5" },
+  { title: "Omukade", poster: "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", year: "2026", tag: "Terror Asiático 2026", rating: "4.8" },
+  { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Terror Coreano 2026", rating: "4.7" },
+  { title: "Best Wishes to All (Felicidade a Todos)", poster: "/vwWYIcVkDb8twv0unOCcriYCSrD.jpg", year: "2024", tag: "Terror Japonês 2024", rating: "4.8" },
+
+  // ── MISTURA FLUIDA DE ASIÁTICOS, TURCOS, FRENCH EXTREME E HOLLYWOOD ─────
   { title: "Exhuma: A Cura do Mal", poster: "/tw0i3kkmOTjDjGFZTLHKhoeXVvA.jpg", year: "2024", tag: "Terror Coreano", rating: "4.9" },
   { title: "Dabbe: A Noiva Possuída", poster: "/j537aN6h9w06VipRHqFHnuFB1Ef.jpg", year: "2013", tag: "Terror Turco", rating: "5.0" },
   { title: "Marcas da Maldição (Incantation)", poster: "/cWz28oGV3cSajWdziVQbqrYCmnX.jpg", year: "2022", tag: "Terror Taiwanês", rating: "4.9" },
-
-  { title: "Siccîn", poster: "/fYbhwSIVl42JA4f6rs3MeE2wR4s.jpg", year: "2014", tag: "Terror Turco", rating: "4.9" },
-  { title: "Mártires (Martyrs)", poster: "/969mH6AnksRNWMHhGxVbFa6l9qj.jpg", year: "2008", tag: "New French Extremity", rating: "5.0" },
-  { title: "A Casa Profunda (The Deep House)", poster: "/8ht7owVO2s5nvdWO5OlDxGapAiM.jpg", year: "2021", tag: "Terror Aquático", rating: "4.8" },
-  { title: "A Tristeza (The Sadness)", poster: "/qu7leaIvLWzwoHUEFHZj4vfut7N.jpg", year: "2021", tag: "Terror Extremo", rating: "4.8" },
   { title: "Fale Comigo (Talk to Me)", poster: "/7U3lC4YnHD8zpeoxbY6Hsj9jyeu.jpg", year: "2023", tag: "🔥 Em Alta", rating: "4.9" },
-  { title: "Gonjiam: Manicômio Assombrado", poster: "/cHzyFneiUCBT0FWYFqna5XE3lsj.jpg", year: "2018", tag: "Terror Coreano", rating: "4.9" },
-
-  { title: "Siccîn 2", poster: "/92HBT46woySCuwROxD0P1C1m0Af.jpg", year: "2015", tag: "Terror Turco", rating: "4.8" },
-  { title: "Alta Tensão (Haute Tension)", poster: "/vKeFa7CqSxmWsQDjHP6SJXKoDbj.jpg", year: "2003", tag: "New French Extremity", rating: "4.9" },
-  { title: "Projeto Caça ao Lobo", poster: "/uM0wcqCNbKfVowUKko7fvzOSSdf.jpg", year: "2022", tag: "Terror Coreano", rating: "4.8" },
-  { title: "Entrevista com o Demônio", poster: "/blckaGzdEJ4PdG5RxZPcb77VYFV.jpg", year: "2024", tag: "🔥 Em Alta", rating: "4.9" },
-  { title: "Baskin", poster: "/oNiinNDzPUH0I3K4puCwrJa7Hn1.jpg", year: "2015", tag: "Terror Turco", rating: "4.8" },
-  { title: "Noroi: A Lenda de Kagutaba", poster: "/5H6bfU24aiYKF0KVTSoGt3MyAX.jpg", year: "2005", tag: "Terror Japonês", rating: "4.9" },
-
-  { title: "Siccîn 3: Cürmü Aşk", poster: "/kUZJoSDQ42ccWUjNU9k69c56aMg.jpg", year: "2016", tag: "Terror Turco", rating: "4.8" },
-  { title: "A Invasora (À l'intérieur)", poster: "/7gPOYKxoBzhfC8cLNMU3CKgURcm.jpg", year: "2007", tag: "New French Extremity", rating: "4.9" },
-  { title: "Pulse (Kairo)", poster: "/9ePdNzKVvGHsMMphfS3HeoMvuEX.jpg", year: "2001", tag: "Terror Japonês", rating: "4.8" },
-  { title: "Noites Brutais (Barbarian)", poster: "/mXsvEjsWLvco0hLfhe5FgwmY3qg.jpg", year: "2022", tag: "🔥 Em Alta", rating: "4.9" },
-  { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Terror Coreano", rating: "4.7" },
-  { title: "A Substância", poster: "/vWeOgzlhnP1sS23H3rzctGHB9Nb.jpg", year: "2024", tag: "Body Horror", rating: "4.9" },
+  { title: "Mártires (Martyrs)", poster: "/969mH6AnksRNWMHhGxVbFa6l9qj.jpg", year: "2008", tag: "New French Extremity", rating: "5.0" },
+  { title: "Howling Village (A Vila Uivante)", poster: "/doM8q4gqgLSFDbajjvJTlng4ZkN.jpg", year: "2020", tag: "Terror Japonês", rating: "4.8" },
 
   { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Terror Indonésio", rating: "4.8" },
+  { title: "Siccîn", poster: "/fYbhwSIVl42JA4f6rs3MeE2wR4s.jpg", year: "2014", tag: "Terror Turco", rating: "4.9" },
+  { title: "A Casa Profunda (The Deep House)", poster: "/8ht7owVO2s5nvdWO5OlDxGapAiM.jpg", year: "2021", tag: "Terror Aquático", rating: "4.8" },
+  { title: "Gonjiam: Manicômio Assombrado", poster: "/cHzyFneiUCBT0FWYFqna5XE3lsj.jpg", year: "2018", tag: "Terror Coreano", rating: "4.9" },
+  { title: "A Tristeza (The Sadness)", poster: "/qu7leaIvLWzwoHUEFHZj4vfut7N.jpg", year: "2021", tag: "Terror Extremo", rating: "4.8" },
+  { title: "Alta Tensão (Haute Tension)", poster: "/vKeFa7CqSxmWsQDjHP6SJXKoDbj.jpg", year: "2003", tag: "New French Extremity", rating: "4.9" },
+
+  { title: "Satan's Slaves (Os Escravos de Satanás)", poster: "/k16xOaI9x5fqepxVwBwUJAozsW8.jpg", year: "2017", tag: "Terror Indonésio", rating: "4.9" },
+  { title: "Siccîn 2", poster: "/92HBT46woySCuwROxD0P1C1m0Af.jpg", year: "2015", tag: "Terror Turco", rating: "4.8" },
+  { title: "Entrevista com o Demônio", poster: "/blckaGzdEJ4PdG5RxZPcb77VYFV.jpg", year: "2024", tag: "🔥 Em Alta", rating: "4.9" },
+  { title: "Impetigore (Pele de Pecado)", poster: "/dku2KnAPALsi69MnvTV7cXrylWm.jpg", year: "2019", tag: "Terror Indonésio", rating: "4.9" },
+  { title: "A Invasora (À l'intérieur)", poster: "/7gPOYKxoBzhfC8cLNMU3CKgURcm.jpg", year: "2007", tag: "New French Extremity", rating: "4.9" },
+  { title: "Noroi: A Lenda de Kagutaba", poster: "/5H6bfU24aiYKF0KVTSoGt3MyAX.jpg", year: "2005", tag: "Terror Japonês", rating: "4.9" },
+
+  { title: "The Queen of Black Magic", poster: "/tQOBVQjXiBGstCGYvzmgm97EkMF.jpg", year: "2019", tag: "Terror Indonésio", rating: "4.8" },
+  { title: "Baskin", poster: "/oNiinNDzPUH0I3K4puCwrJa7Hn1.jpg", year: "2015", tag: "Terror Turco", rating: "4.8" },
+  { title: "Noites Brutais (Barbarian)", poster: "/mXsvEjsWLvco0hLfhe5FgwmY3qg.jpg", year: "2022", tag: "🔥 Em Alta", rating: "4.9" },
+  { title: "Satan's Slaves 2: Comunhão", poster: "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", year: "2022", tag: "Terror Indonésio", rating: "4.8" },
   { title: "(A) Fronteira (Frontière(s))", poster: "/qiJK2iJUifpO7eU8V6t4YWXAEEg.jpg", year: "2007", tag: "New French Extremity", rating: "4.8" },
+  { title: "Projeto Caça ao Lobo", poster: "/uM0wcqCNbKfVowUKko7fvzOSSdf.jpg", year: "2022", tag: "Terror Coreano", rating: "4.8" },
+
   { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Terror Indonésio", rating: "4.6" },
+  { title: "Siccîn 3: Cürmü Aşk", poster: "/kUZJoSDQ42ccWUjNU9k69c56aMg.jpg", year: "2016", tag: "Terror Turco", rating: "4.8" },
+  { title: "A Substância", poster: "/vWeOgzlhnP1sS23H3rzctGHB9Nb.jpg", year: "2024", tag: "Body Horror", rating: "4.9" },
+  { title: "Pulse (Kairo)", poster: "/9ePdNzKVvGHsMMphfS3HeoMvuEX.jpg", year: "2001", tag: "Terror Japonês", rating: "4.8" },
+  { title: "Grave (Raw)", poster: "/kc8jT1MAiKM0iwdjAwC5lQrTNry.jpg", year: "2016", tag: "New French Extremity", rating: "4.8" },
   { title: "Herege", poster: "/j5e2YS1PRUVC1YgSool0JJyNLxJ.jpg", year: "2024", tag: "Em Alta", rating: "4.8" },
+
   { title: "Dark Water: Água Negra", poster: "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", year: "2002", tag: "Clássico Japonês", rating: "4.9" },
   { title: "Nosferatu", poster: "/fbkUfzmVzEBFSt6p7VigknREIJT.jpg", year: "2024", tag: "Em Alta", rating: "4.9" },
-
   { title: "Killer Toon", poster: "/9ojbUahh8McTbR92Qf69ocWnggE.jpg", year: "2013", tag: "Terror Coreano", rating: "4.8" },
-  { title: "Grave (Raw)", poster: "/kc8jT1MAiKM0iwdjAwC5lQrTNry.jpg", year: "2016", tag: "New French Extremity", rating: "4.8" },
+  { title: "Titane", poster: "/y93w5MGC9fbXjy1qfN6rUpSbBti.jpg", year: "2021", tag: "New French Extremity", rating: "4.7" },
   { title: "Cure (A Cura)", poster: "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", year: "1997", tag: "Clássico Japonês", rating: "4.9" },
   { title: "Sorria 2", poster: "/ypHiYvSJmHIyRDRiosZuE595uir.jpg", year: "2024", tag: "Em Alta", rating: "4.8" },
-  { title: "Another", poster: "/c8VVGuc3lnPXCBStcKQWrOlBCSA.jpg", year: "2012", tag: "Terror Japonês", rating: "4.8" },
-  { title: "Terrifier 3", poster: "/3HeKb5H89HjzWTkVkAqomu9mek.jpg", year: "2024", tag: "Gore", rating: "4.8" },
 
+  { title: "Another", poster: "/c8VVGuc3lnPXCBStcKQWrOlBCSA.jpg", year: "2012", tag: "Terror Japonês", rating: "4.8" },
+  { title: "Calvário (Calvaire)", poster: "/opcj7nv96MwCjC25VJMgAxrYDOk.jpg", year: "2005", tag: "New French Extremity", rating: "4.6" },
+  { title: "Terrifier 3", poster: "/3HeKb5H89HjzWTkVkAqomu9mek.jpg", year: "2024", tag: "Gore", rating: "4.8" },
   { title: "Whispering Corridors: Wishing Stairs", poster: "/hX1CdiS8hJJxY8TuAmMoExYXKfn.jpg", year: "2003", tag: "Terror Coreano", rating: "4.7" },
-  { title: "Titane", poster: "/y93w5MGC9fbXjy1qfN6rUpSbBti.jpg", year: "2021", tag: "New French Extremity", rating: "4.7" },
+  { title: "Irreversível", poster: "/zp6q1MQ9qEJuJj3zvQ5HJuutvQb.jpg", year: "2002", tag: "New French Extremity", rating: "4.9" },
   { title: "Eu Vi o Diabo", poster: "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", year: "2010", tag: "Terror Coreano", rating: "4.9" },
+
   { title: "Longlegs - Vínculo Mortal", poster: "/uURBOrqLFyU8iKODcI3t2Xkbhqs.jpg", year: "2024", tag: "Suspense", rating: "4.7" },
+  { title: "Satã (Sheitan)", poster: "/rYdoMFMBbG7tzurtHrYNc1zcqQz.jpg", year: "2006", tag: "New French Extremity", rating: "4.5" },
   { title: "O Lamento (The Wailing)", poster: "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", year: "2016", tag: "Terror Coreano", rating: "4.9" },
   { title: "MaXXXine", poster: "/dmi277uSdCavkSLTVNBUMlyDYy0.jpg", year: "2024", tag: "Slasher", rating: "4.8" },
-
-  { title: "Omukade", poster: "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", year: "2026", tag: "Terror Asiático", rating: "4.8" },
-  { title: "Calvário (Calvaire)", poster: "/opcj7nv96MwCjC25VJMgAxrYDOk.jpg", year: "2005", tag: "New French Extremity", rating: "4.6" },
   { title: "Pearl: Uma História de Origem", poster: "/cTgLkhIMmzwH1NAaq7NDbFN20zi.jpg", year: "2022", tag: "Slasher", rating: "4.9" },
   { title: "X: A Marca da Morte", poster: "/4BarWJRYFB5fN7LsJI9U2ul79hB.jpg", year: "2022", tag: "Slasher", rating: "4.8" },
-  { title: "Irreversível", poster: "/zp6q1MQ9qEJuJj3zvQ5HJuutvQb.jpg", year: "2002", tag: "New French Extremity", rating: "4.9" },
-  { title: "Armadilha (Trap)", poster: "/fskXjlVKppUtAgbfqt4wIsNkCaI.jpg", year: "2024", tag: "Suspense", rating: "4.7" },
 
-  { title: "Satã (Sheitan)", poster: "/rYdoMFMBbG7tzurtHrYNc1zcqQz.jpg", year: "2006", tag: "New French Extremity", rating: "4.5" },
+  { title: "Armadilha (Trap)", poster: "/fskXjlVKppUtAgbfqt4wIsNkCaI.jpg", year: "2024", tag: "Suspense", rating: "4.7" },
   { title: "Oddity: Objetos Obscuros", poster: "/zwphX6D0pFzb6SI95wwVkIQzxZJ.jpg", year: "2024", tag: "Sobrenatural", rating: "4.8" },
   { title: "Cuckoo: O Medo Chama", poster: "/w7Z0x9Mw3lsjnEANC3BffQfx021.jpg", year: "2024", tag: "Suspense", rating: "4.6" },
   { title: "Pisque Duas Vezes", poster: "/1BCZ1rOI41cGkae6RZgLVVmYczE.jpg", year: "2024", tag: "Suspense", rating: "4.7" },
@@ -133,10 +142,6 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "Arraste-me para o Inferno", poster: "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", year: "2009", tag: "Clássico Anos 2000", rating: "4.7" },
   { title: "Olhos Famintos", poster: "/g410Y1U1ELbmJG14Zru3UAimm1G.jpg", year: "2001", tag: "Clássico Anos 2000", rating: "4.6" },
   { title: "A Bruxa de Blair", poster: "/jAKX4midH0vSm2XT54g5TWluQqw.jpg", year: "1999", tag: "Found Footage", rating: "4.8" },
-  { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
-  { title: "Hokum", poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", year: "2026", tag: "Lançamento 2026", rating: "4.7" },
-  { title: "A Maldição da Múmia", poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", year: "2026", tag: "Lançamento", rating: "4.7" },
-  { title: "A Boca do Diabo", poster: "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg", year: "2026", tag: "Novo", rating: "4.5" },
   { title: "Passageiro do Mal", poster: "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg", year: "2025", tag: "Em alta", rating: "4.6" },
   { title: "A Hora do Mal", poster: "/psEJSjQr6I9GSJTdW28CKC4Kffs.jpg", year: "2025", tag: "Em alta", rating: "4.7" },
   { title: "Pecadores", poster: "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg", year: "2025", tag: "Em alta", rating: "4.8" },
@@ -270,7 +275,7 @@ function CatalogoPage() {
               Catálogo de <span className="text-red-500">Terror</span>
             </h1>
             <p className="text-xs sm:text-sm text-white/60 mt-2 max-w-2xl leading-relaxed">
-              Grade completa com 6 filmes por linha. Inclui Terror Asiático, Filmes Turcos (Siccin, Dabbe), New French Extremity, lançamentos e clássicos.
+              Grade completa com 6 filmes por linha. Lançamentos 2026 no topo, terror japonês, indonésio, coreano, filmes turcos e New French Extremity intercalados.
             </p>
           </div>
 
