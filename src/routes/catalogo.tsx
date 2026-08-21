@@ -42,7 +42,7 @@ const CATALOGO_UNIFICADO: Title[] = [
   // 1º, 2º e 3º solicitados exatamente pelo usuário
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
   { title: "Evil Dead Burn: A Morte do Demônio", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
-  { title: "Leviticus", poster: "/j7URoxYxWJYBUHqFxIPaWbvWFKn.jpg", year: "2026", tag: "🔥 Top 3", rating: "4.9" },
+  { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Top 3", rating: "4.9" },
 
   // Filmes em Alta e Lançamentos Recentes / Asiáticos
   { title: "Other Mommy (A Outra Mãe)", poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg", year: "2026", tag: "Terror Sobrenatural", rating: "4.9" },
@@ -126,6 +126,32 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "Shiki", poster: "/zsWbTnNwNjqWvgZ9gqTcK9WLoWy.jpg", year: "2010", tag: "Anime Terror", rating: "4.8" },
   { title: "Mirai Nikki (The Future Diary)", poster: "/rQScQD92q6CYAGL0DWQQNxjuVVh.jpg", year: "2011", tag: "Anime Thriller", rating: "4.8" },
 ];
+
+function MoviePoster({ movie }: { movie: Title }) {
+  const [error, setError] = useState(false);
+
+  if (error || !movie.poster) {
+    return (
+      <div className="relative aspect-[2/3] w-full flex flex-col items-center justify-center p-3 text-center bg-gradient-to-b from-neutral-800 via-neutral-900 to-black border border-white/10 overflow-hidden">
+        <Film className="size-8 text-red-500 mb-2 opacity-80" />
+        <span className="text-[11px] font-black text-white leading-tight line-clamp-3">{movie.title}</span>
+        <span className="text-[10px] font-bold text-red-400 mt-2 bg-red-950/60 border border-red-500/30 px-2 py-0.5 rounded">
+          {movie.year}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={img(movie.poster, "w500")}
+      alt={movie.title}
+      loading="lazy"
+      onError={() => setError(true)}
+      className="size-full object-cover transition-all duration-500 group-hover:scale-110"
+    />
+  );
+}
 
 function CatalogoPage() {
   const [search, setSearch] = useState("");
@@ -331,14 +357,9 @@ function CatalogoPage() {
                   </div>
                 )}
 
-                {/* IMAGEM DO POSTER */}
+                {/* IMAGEM DO POSTER COM FALLBACK ELEGANTE */}
                 <div className="relative aspect-[2/3] w-full overflow-hidden bg-neutral-900">
-                  <img
-                    src={img(movie.poster, "w500")}
-                    alt={movie.title}
-                    loading="lazy"
-                    className="size-full object-cover transition-all duration-500 group-hover:scale-110"
-                  />
+                  <MoviePoster movie={movie} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
                   {/* ÍCONE DE PLAY NO HOVER */}
