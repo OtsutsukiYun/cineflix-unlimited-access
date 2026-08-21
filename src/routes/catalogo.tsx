@@ -222,6 +222,8 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "Corra!", poster: "/A0RoSZh8PEYJgDMgM2EV7Ycz3dR.jpg", year: "2017", tag: "Suspense" },
   { title: "[REC]", poster: "/nfbO00NKXSzBIzcN3KbUMdPT1EU.jpg", year: "2007", tag: "Found Footage" },
   { title: "Hellraiser: Renascido do Inferno", poster: "/77Jj3lwYCnI16yNPheHx6LwbKqZ.jpg", year: "1987", tag: "Clássico" },
+  { title: "O Iluminado (The Shining)", poster: "/uAR0AWqhQL1hQa69UDEbb2rE5Wx.jpg", year: "1980", tag: "Obra-Prima" },
+  { title: "O Exorcista (The Exorcist)", poster: "/5x0CeVHJI8tcDx8tUUwYHQSNILq.jpg", year: "1973", tag: "Clássico Supremo" },
 ];
 
 function MoviePoster({ movie }: { movie: Title }) {
