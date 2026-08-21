@@ -104,7 +104,6 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "R-Point (Ponto R)", poster: "/93Zn3ews5S0KiChq9mW5TkrhWi9.jpg", year: "2004", tag: "Terror Coreano" },
   { title: "White: Melodia da Morte", poster: "/vyjdFZMET5ZWk1pu480AQ7vKHlA.jpg", year: "2011", tag: "Terror Coreano" },
   { title: "The Closet (O Armário)", poster: "/aK9R6Xnm0Xcx9E0XapAbvTr8UtD.jpg", year: "2020", tag: "Terror Coreano" },
-  { title: "Krasue: A Maldição do Espírito", poster: "/vYBIS1gPjVwuhPj7nxcxscqjy9H.jpg", year: "2021", tag: "Terror Tailandês" },
 
   { title: "Laddaland", poster: "/vt6WwZTgWoyr4dAFNuoK2NXhidK.jpg", year: "2011", tag: "Terror Tailandês" },
 
