@@ -45,7 +45,7 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "Evil Dead Burn: A Morte do Demônio", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
   { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Top 3", rating: "4.9" },
   { title: "Colony (A Colônia)", poster: "/tN799oUR0f1gUKDYdMNrDaY7I51.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
-  { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
+  { title: "The Queen of Black Magic", poster: "/tQOBVQjXiBGstCGYvzmgm97EkMF.jpg", year: "2019", tag: "Terror Indonésio", rating: "4.8" },
   { title: "House of Sayuri (A Casa de Sayuri)", poster: "/b3ZlT121rjvwtUfmyF83hZ5n6te.jpg", year: "2024", tag: "Terror Japonês 2024", rating: "4.9" },
 
   { title: "Hokum", poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", year: "2026", tag: "Lançamento 2026", rating: "4.7" },
@@ -70,6 +70,7 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "A Tristeza (The Sadness)", poster: "/qu7leaIvLWzwoHUEFHZj4vfut7N.jpg", year: "2021", tag: "Terror Extremo", rating: "4.8" },
   { title: "Alta Tensão (Haute Tension)", poster: "/vKeFa7CqSxmWsQDjHP6SJXKoDbj.jpg", year: "2003", tag: "New French Extremity", rating: "4.9" },
 
+  { title: "Satan's Slaves 2: Comunhão", poster: "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", year: "2022", tag: "Terror Indonésio", rating: "4.8" },
   { title: "Satan's Slaves (Os Escravos de Satanás)", poster: "/k16xOaI9x5fqepxVwBwUJAozsW8.jpg", year: "2017", tag: "Terror Indonésio", rating: "4.9" },
   { title: "Siccîn 2", poster: "/92HBT46woySCuwROxD0P1C1m0Af.jpg", year: "2015", tag: "Terror Turco", rating: "4.8" },
   { title: "Entrevista com o Demônio", poster: "/blckaGzdEJ4PdG5RxZPcb77VYFV.jpg", year: "2024", tag: "🔥 Em Alta", rating: "4.9" },
@@ -77,10 +78,9 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "A Invasora (À l'intérieur)", poster: "/7gPOYKxoBzhfC8cLNMU3CKgURcm.jpg", year: "2007", tag: "New French Extremity", rating: "4.9" },
   { title: "Noroi: A Lenda de Kagutaba", poster: "/5H6bfU24aiYKF0KVTSoGt3MyAX.jpg", year: "2005", tag: "Terror Japonês", rating: "4.9" },
 
-  { title: "The Queen of Black Magic", poster: "/tQOBVQjXiBGstCGYvzmgm97EkMF.jpg", year: "2019", tag: "Terror Indonésio", rating: "4.8" },
+  { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
   { title: "Baskin", poster: "/oNiinNDzPUH0I3K4puCwrJa7Hn1.jpg", year: "2015", tag: "Terror Turco", rating: "4.8" },
   { title: "Noites Brutais (Barbarian)", poster: "/mXsvEjsWLvco0hLfhe5FgwmY3qg.jpg", year: "2022", tag: "🔥 Em Alta", rating: "4.9" },
-  { title: "Satan's Slaves 2: Comunhão", poster: "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", year: "2022", tag: "Terror Indonésio", rating: "4.8" },
   { title: "(A) Fronteira (Frontière(s))", poster: "/qiJK2iJUifpO7eU8V6t4YWXAEEg.jpg", year: "2007", tag: "New French Extremity", rating: "4.8" },
   { title: "Projeto Caça ao Lobo", poster: "/uM0wcqCNbKfVowUKko7fvzOSSdf.jpg", year: "2022", tag: "Terror Coreano", rating: "4.8" },
 
