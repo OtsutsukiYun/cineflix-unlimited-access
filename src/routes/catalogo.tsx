@@ -125,7 +125,7 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "A Casa de Cera (House of Wax)", poster: "/aCLSgw1DaqkRvosYc3YUttBTtpT.jpg", year: "2005", tag: "Clássico Anos 2000" },
   { title: "Os Estranhos (The Strangers)", poster: "/gwsg4qFmLOvlhwXj4OZuxfFUdP0.jpg", year: "2008", tag: "Clássico Anos 2000" },
 
-  { title: "O Lago da Morte (Eden Lake)", poster: "/tOg6ElTe1mJwaCFN0172U4oso22.jpg", year: "2008", tag: "Terror Psicológico" },
+  { title: "Sem Saída (Eden Lake)", poster: "/tOg6ElTe1mJwaCFN0172U4oso22.jpg", year: "2008", tag: "Terror Psicológico" },
   { title: "O Nevoeiro (The Mist)", poster: "/1CvJ6diBACKPVGOpcWuY4XPQdqX.jpg", year: "2007", tag: "Conto Stephen King" },
   { title: "Laddaland", poster: "/vt6WwZTgWoyr4dAFNuoK2NXhidK.jpg", year: "2011", tag: "Terror Tailandês" },
   { title: "4Bia: Fobia", poster: "/lhfLZazFFNuZ2BdPdPGRhrt3qty.jpg", year: "2008", tag: "Terror Tailandês" },
