@@ -634,6 +634,22 @@ function InstalarPage() {
             </div>
           </Link>
 
+          {/* MENU DE NAVEGAÇÃO */}
+          <nav className="hidden md:flex items-center gap-6 text-xs font-bold text-white/80">
+            <Link to="/" className="hover:text-white transition-colors">
+              Início
+            </Link>
+            <Link to="/catalogo" className="hover:text-white transition-colors">
+              Catálogo
+            </Link>
+            <Link to="/instalar" className="text-red-500 font-extrabold">
+              Como Instalar
+            </Link>
+            <Link to="/suporte" className="hover:text-white transition-colors">
+              Suporte
+            </Link>
+          </nav>
+
           <a
             href="/#planos"
             className="btn-cta px-4 py-1.5 text-[11px] font-extrabold tracking-wide uppercase shadow-md"
