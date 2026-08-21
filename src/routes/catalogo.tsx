@@ -18,11 +18,11 @@ import { PromoBanner } from "@/components/PromoBanner";
 export const Route = createFileRoute("/catalogo")({
   head: () => ({
     meta: [
-      { title: "Catálogo Completo de Terror — UniTV Pro" },
+      { title: "Catálogo Completo — UniTV Pro" },
       {
         name: "description",
         content:
-          "Catálogo completo de filmes de terror estilo Netflix: lançamentos 2026, terror asiático, filmes turcos de terror (Siccin, Dabbe), New French Extremity, clássicos e franquias completas.",
+          "Catálogo completo de filmes de terror do UniTV Pro: lançamentos 2026, terror asiático, filmes turcos (Siccin, Dabbe), New French Extremity, clássicos e franquias completas.",
       },
     ],
   }),
@@ -30,8 +30,9 @@ export const Route = createFileRoute("/catalogo")({
 });
 
 /**
- * Catálogo unificado de terror em grade contínua (6 por linha no desktop).
- * Fundo estilo Netflix (#141414).
+ * Catálogo unificado de terror do UniTV Pro (6 por linha no desktop).
+ * Floating navbar glass pill padrão do UniTV Pro.
+ * Fundo escuro premium (#0d090b) com glow vermelho.
  * Sem botões de categorias.
  * Sem selo 4k.
  * Sem animes.
@@ -171,10 +172,10 @@ function MoviePoster({ movie }: { movie: Title }) {
 
   if (error || !movie.poster) {
     return (
-      <div className="relative aspect-[2/3] w-full flex flex-col items-center justify-center p-3 text-center bg-gradient-to-b from-neutral-900 via-black to-[#18080a] border border-[#E50914]/20 overflow-hidden">
-        <Film className="size-8 text-[#E50914] mb-2 opacity-80" />
+      <div className="relative aspect-[2/3] w-full flex flex-col items-center justify-center p-3 text-center bg-gradient-to-b from-neutral-900 via-black to-[#18080a] border border-white/10 overflow-hidden">
+        <Film className="size-8 text-red-500 mb-2 opacity-80" />
         <span className="text-[11px] font-black text-white leading-tight line-clamp-3">{movie.title}</span>
-        <span className="text-[10px] font-bold text-[#E50914] mt-2 bg-[#E50914]/20 border border-[#E50914]/40 px-2 py-0.5 rounded">
+        <span className="text-[10px] font-bold text-red-400 mt-2 bg-red-950/60 border border-red-500/30 px-2 py-0.5 rounded">
           {movie.year}
         </span>
       </div>
@@ -209,77 +210,79 @@ function CatalogoPage() {
   }, [search]);
 
   return (
-    <div className="relative min-h-screen bg-[#141414] text-white selection:bg-[#E50914] selection:text-white font-sans antialiased overflow-x-hidden">
-      {/* GLOWS AMBIENTAIS VERMELHOS NETFLIX */}
-      <div className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 size-[800px] rounded-full bg-[#E50914]/15 blur-[180px] z-0" />
-      <div className="pointer-events-none fixed bottom-10 right-10 size-[600px] rounded-full bg-red-900/15 blur-[160px] z-0" />
+    <div className="relative min-h-screen bg-[#0d090b] text-white selection:bg-red-600 selection:text-white font-sans antialiased overflow-x-hidden">
+      {/* LUZ AMBIENTAL VERMELHOS UNITV PRO */}
+      <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[650px] rounded-full bg-red-600/15 blur-[160px] z-0" />
+      <div className="pointer-events-none fixed bottom-20 right-10 size-[500px] rounded-full bg-rose-700/15 blur-[140px] z-0" />
 
-      {/* BARRA PROMOCIONAL DO TOPO */}
-      <div className="fixed inset-x-0 top-0 z-[60]">
-        <PromoBanner />
-      </div>
-
-      {/* HEADER NAVBAR ESTILO NETFLIX HORROR */}
-      <header className="fixed inset-x-0 top-8 z-50 border-b border-[#222222] bg-[#141414]/95 backdrop-blur-md">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6">
-          <div className="flex items-center gap-6">
+      {/* BARRA PROMOCIONAL DO TOPO + HEADER FLUTUANTE DE VIDRO */}
+      <div className="fixed inset-x-0 top-0 z-50 flex flex-col">
+        <div className="z-[60]">
+          <PromoBanner />
+        </div>
+        <header>
+          <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-4 sm:px-6 py-2.5 sm:py-3 border border-white/15 bg-black/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
             <Link to="/" className="flex items-center gap-2">
-              <span className="text-2xl sm:text-3xl font-black tracking-tighter text-white">
-                UniTV <span className="text-[#E50914]">Pro</span>
+              <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-600 to-red-800 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+                <Play className="size-4 fill-current ml-0.5" />
+              </span>
+              <span className="font-display text-xl font-extrabold tracking-tight text-white">
+                UniTV<span className="text-red-500"> Pro</span>
               </span>
             </Link>
 
-            {/* MENU DE NAVEGAÇÃO */}
-            <nav className="hidden md:flex items-center gap-5 text-xs font-bold text-[#AAAAAA]">
-              <Link to="/" className="hover:text-white transition-colors">
+            <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
+              <Link to="/" className="text-white/80 transition-colors hover:text-white">
                 Início
               </Link>
-              <Link to="/catalogo" className="text-white font-extrabold flex items-center gap-1.5">
-                <Sparkles className="size-3.5 text-[#E50914]" /> Catálogo (6 por Linha)
+              <Link to="/catalogo" className="text-red-500 font-extrabold flex items-center gap-1.5">
+                <Sparkles className="size-3.5" /> Catálogo
               </Link>
-              <Link to="/instalar" className="hover:text-white transition-colors">
+              <Link to="/instalar" className="text-white/80 transition-colors hover:text-white">
                 Como Instalar
               </Link>
-              <Link to="/suporte" className="hover:text-white transition-colors">
+              <Link to="/suporte" className="text-white/80 transition-colors hover:text-white">
                 Suporte
               </Link>
             </nav>
-          </div>
 
-          <a
-            href="/#planos"
-            className="flex items-center gap-2 rounded bg-[#E50914] px-4 py-2 text-xs font-bold text-white shadow-md transition-all hover:bg-[#b80710] active:scale-95 uppercase tracking-wide"
-          >
-            TESTE GRÁTIS
-          </a>
-        </div>
-      </header>
+            <a
+              href="https://wa.me/5561984016006?text=Quero%20meu%20teste%20gr%C3%A1tis%20de%203%20dias!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-cta px-3.5 py-1.5 text-[11px] font-extrabold tracking-wide"
+            >
+              TESTE GRÁTIS
+            </a>
+          </div>
+        </header>
+      </div>
 
       {/* CONTEÚDO PRINCIPAL */}
-      <div className="relative z-10 mx-auto w-[94%] max-w-7xl pt-32 sm:pt-36 pb-20">
+      <div className="relative z-10 mx-auto w-[94%] max-w-6xl pt-32 sm:pt-36 pb-20">
         {/* CABEÇALHO DA PÁGINA */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 border-b border-[#262626] pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 border-b border-white/10 pb-6">
           <div>
-            <span className="inline-flex items-center gap-2 rounded bg-[#E50914]/20 border border-[#E50914]/40 px-3 py-1 text-xs font-black tracking-wider text-[#E50914] uppercase mb-3">
-              <Film className="size-3.5 text-[#E50914]" /> Grade Completa • {CATALOGO_UNIFICADO.length} Filmes de Terror
+            <span className="inline-flex items-center gap-2 rounded-full bg-red-600/20 border border-red-500/40 px-3 py-1 text-xs font-black tracking-wider text-red-400 uppercase mb-3">
+              <Film className="size-3.5 text-red-500" /> Grade Completa • {CATALOGO_UNIFICADO.length} Filmes
             </span>
-            <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
-              Catálogo de <span className="text-[#E50914]">Terror</span>
+            <h1 className="font-display text-3xl sm:text-5xl font-black tracking-tight text-white">
+              Catálogo de <span className="text-red-500">Terror</span>
             </h1>
-            <p className="text-xs sm:text-sm text-[#AAAAAA] mt-2 max-w-2xl leading-relaxed">
-              Grade completa com 6 filmes por linha. Inclui Terror Asiático, Filmes Turcos (Siccin, Dabbe), New French Extremity, lançamentos e clássicos do terror.
+            <p className="text-xs sm:text-sm text-white/60 mt-2 max-w-2xl leading-relaxed">
+              Grade completa com 6 filmes por linha. Inclui Terror Asiático, Filmes Turcos (Siccin, Dabbe), New French Extremity, lançamentos e clássicos.
             </p>
           </div>
 
           {/* BUSCA DE TÍTULOS */}
           <div className="relative w-full md:w-80 shrink-0">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-[#888888]" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-white/50" />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Buscar filme, ano ou subgênero..."
-              className="w-full rounded border border-[#333333] bg-[#000000]/60 py-2.5 pl-10 pr-9 text-xs sm:text-sm text-white placeholder-[#777777] outline-none transition-all focus:border-[#E50914] focus:bg-black/90 shadow-md"
+              className="w-full rounded-2xl border border-white/15 bg-white/[0.05] py-2.5 pl-10 pr-9 text-xs sm:text-sm text-white placeholder-white/40 outline-none transition-all focus:border-red-500 focus:bg-black/60 shadow-md backdrop-blur-md"
             />
             {search && (
               <button
@@ -295,13 +298,13 @@ function CatalogoPage() {
 
         {/* ── GRADE UNIFICADA DE FILMES: EXATAMENTE 6 POR LINHA NO DESKTOP ──────── */}
         {filteredCatalog.length === 0 ? (
-          <div className="py-20 text-center rounded-xl border border-[#2a2a2a] bg-[#181818] p-8">
-            <Info className="mx-auto size-12 text-[#E50914]/60 mb-3" />
+          <div className="py-20 text-center rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-8">
+            <Info className="mx-auto size-12 text-red-500/60 mb-3" />
             <h3 className="text-xl font-bold text-white">Nenhum filme encontrado</h3>
-            <p className="text-xs text-[#AAAAAA] mt-1">Tente buscar por outro termo ou limpe o campo de busca.</p>
+            <p className="text-xs text-white/60 mt-1">Tente buscar por outro termo ou limpe o campo de busca.</p>
             <button
               onClick={() => setSearch("")}
-              className="mt-5 rounded bg-[#E50914] px-5 py-2.5 text-xs font-bold text-white hover:bg-[#b80710] transition-colors shadow-lg"
+              className="mt-5 btn-cta px-5 py-2.5 text-xs font-bold text-white shadow-lg cursor-pointer"
             >
               Limpar Busca
             </button>
@@ -312,18 +315,18 @@ function CatalogoPage() {
               <div
                 key={`${movie.title}-${index}`}
                 onClick={() => setSelectedMovie(movie)}
-                className="group relative cursor-pointer overflow-hidden rounded bg-[#181818] border border-[#262626] transition-all duration-300 hover:scale-105 hover:z-30 hover:shadow-[0_12px_30px_rgba(0,0,0,0.9)] hover:border-[#E50914] flex flex-col justify-between"
+                className="group relative cursor-pointer overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 transition-all duration-300 hover:scale-105 hover:z-30 hover:shadow-[0_15px_35px_rgba(0,0,0,0.9)] hover:border-red-500/80 flex flex-col justify-between"
               >
-                {/* SELOS DE DESTAQUE NETFLIX */}
+                {/* SELOS DE DESTAQUE UNITV PRO */}
                 {movie.tag && (
-                  <div className="absolute top-2 left-2 z-20 rounded bg-[#E50914] px-2 py-0.5 text-[10px] font-black text-white shadow uppercase tracking-widest">
+                  <div className="absolute top-2 left-2 z-20 rounded-lg bg-red-600/90 px-2 py-0.5 text-[10px] font-black text-white shadow-md backdrop-blur-md uppercase tracking-wider">
                     {movie.tag}
                   </div>
                 )}
 
                 {/* NOTA RATING */}
                 {movie.rating && (
-                  <div className="absolute top-2 right-2 z-20 flex items-center gap-1 rounded bg-black/85 px-2 py-0.5 text-[10px] font-black text-amber-400 border border-amber-400/30">
+                  <div className="absolute top-2 right-2 z-20 flex items-center gap-1 rounded-lg bg-black/80 px-2 py-0.5 text-[10px] font-black text-amber-400 border border-amber-400/30 backdrop-blur-md">
                     <Star className="size-2.5 fill-amber-400" />
                     {movie.rating}
                   </div>
@@ -335,19 +338,19 @@ function CatalogoPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
                   {/* ÍCONE DE PLAY NO HOVER */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[1px]">
-                    <div className="flex size-12 items-center justify-center rounded-full bg-[#E50914] text-white shadow-[0_0_25px_rgba(229,9,20,0.8)] scale-75 group-hover:scale-100 transition-transform">
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-[2px]">
+                    <div className="flex size-12 items-center justify-center rounded-full bg-red-600 text-white shadow-[0_0_25px_rgba(220,38,38,0.8)] scale-75 group-hover:scale-100 transition-transform">
                       <Play className="size-6 fill-white ml-0.5" />
                     </div>
                   </div>
                 </div>
 
                 {/* INFORMAÇÕES DO FILME */}
-                <div className="p-3 bg-[#181818] flex flex-col justify-between grow border-t border-[#222222]">
-                  <h3 className="text-xs sm:text-sm font-extrabold text-white leading-tight line-clamp-2 group-hover:text-[#E50914] transition-colors">
+                <div className="p-3 bg-black/40 flex flex-col justify-between grow border-t border-white/5">
+                  <h3 className="text-xs sm:text-sm font-extrabold text-white leading-tight line-clamp-2 group-hover:text-red-400 transition-colors">
                     {movie.title}
                   </h3>
-                  <div className="mt-2 flex items-center justify-between text-[11px] text-[#AAAAAA] font-medium">
+                  <div className="mt-2 flex items-center justify-between text-[11px] text-white/50 font-medium">
                     <span>{movie.year}</span>
                   </div>
                 </div>
@@ -357,21 +360,21 @@ function CatalogoPage() {
         )}
 
         {/* BANNER CTA DE TESTE GRÁTIS NO FINAL */}
-        <div className="mt-16 rounded-xl border border-[#2a2a2a] bg-gradient-to-r from-[#1c080a] via-[#141414] to-[#1c080a] p-8 sm:p-12 text-center shadow-2xl">
-          <span className="inline-flex items-center gap-2 rounded bg-[#E50914]/20 border border-[#E50914]/40 px-4 py-1.5 text-xs font-black tracking-wider text-[#E50914] uppercase mb-4">
-            <Sparkles className="size-4 text-[#E50914]" /> Assista a Todos Esses Filmes no Seu Aparelho
+        <div className="mt-16 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl p-8 sm:p-12 text-center shadow-2xl">
+          <span className="inline-flex items-center gap-2 rounded-full bg-red-600/20 border border-red-500/40 px-4 py-1.5 text-xs font-black tracking-wider text-red-400 uppercase mb-4">
+            <Sparkles className="size-4 text-red-500" /> Assista a Todos Esses Filmes no Seu Aparelho
           </span>
-          <h2 className="text-2xl sm:text-4xl font-black text-white max-w-2xl mx-auto leading-tight mb-3">
-            Gostou do catálogo? <span className="text-[#E50914]">Teste grátis por 3 dias!</span>
+          <h2 className="font-display text-2xl sm:text-4xl font-black text-white max-w-2xl mx-auto leading-tight mb-3">
+            Gostou do catálogo? <span className="text-red-500">Teste grátis por 3 dias!</span>
           </h2>
-          <p className="text-xs sm:text-sm text-[#AAAAAA] max-w-xl mx-auto mb-8 leading-relaxed">
+          <p className="text-xs sm:text-sm text-white/60 max-w-xl mx-auto mb-8 leading-relaxed">
             Instale o UniTV Pro na sua Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV, Celular Android ou Tablet e libere o acesso imediato.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/instalar"
-              className="inline-flex items-center justify-center gap-2.5 rounded bg-[#E50914] px-8 py-3.5 text-xs sm:text-sm font-bold text-white shadow-md transition-all hover:bg-[#b80710] active:scale-95 w-full sm:w-auto uppercase tracking-wide"
+              className="btn-cta inline-flex items-center justify-center gap-2.5 px-8 py-3.5 text-xs sm:text-sm font-black text-white shadow-md transition-all hover:scale-[1.02] w-full sm:w-auto uppercase tracking-wide cursor-pointer"
             >
               <Download className="size-5" />
               VER PASSO A PASSO DE INSTALAÇÃO
@@ -380,7 +383,7 @@ function CatalogoPage() {
               href="https://wa.me/5561984016006?text=Quero%20testar%20o%20cat%C3%A1logo%20de%20terror%20por%203%20dias!"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded bg-[#222222] border border-[#333333] px-8 py-3.5 text-xs sm:text-sm font-bold text-white hover:bg-[#333333] transition-all w-full sm:w-auto uppercase tracking-wide"
+              className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white/10 border border-white/15 px-8 py-3.5 text-xs sm:text-sm font-bold text-white hover:bg-white/20 transition-all w-full sm:w-auto uppercase tracking-wide cursor-pointer"
             >
               <ShieldCheck className="size-5 text-emerald-400" />
               FALAR NO WHATSAPP
@@ -396,12 +399,12 @@ function CatalogoPage() {
           onClick={() => setSelectedMovie(null)}
         >
           <div
-            className="relative w-full max-w-md rounded-xl border border-[#2a2a2a] bg-[#181818] p-6 sm:p-8 shadow-2xl text-left"
+            className="relative w-full max-w-md rounded-3xl border border-white/15 bg-[#0e0e0e] p-6 sm:p-8 shadow-2xl text-left"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setSelectedMovie(null)}
-              className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-[#2a2a2a] text-white/60 hover:bg-[#333333] hover:text-white transition-all cursor-pointer"
+              className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white/60 hover:bg-white/20 hover:text-white transition-all cursor-pointer"
             >
               <X className="size-4" />
             </button>
@@ -410,16 +413,16 @@ function CatalogoPage() {
               <img
                 src={img(selectedMovie.poster, "w342")}
                 alt={selectedMovie.title}
-                className="w-24 h-36 rounded object-cover shadow-lg border border-[#2a2a2a] shrink-0"
+                className="w-24 h-36 rounded-xl object-cover shadow-lg border border-white/10 shrink-0"
               />
               <div>
                 {selectedMovie.tag && (
-                  <span className="inline-block rounded bg-[#E50914] px-2 py-0.5 text-[10px] font-black text-white uppercase tracking-widest mb-2">
+                  <span className="inline-block rounded-lg bg-red-600 px-2 py-0.5 text-[10px] font-black text-white uppercase tracking-widest mb-2">
                     {selectedMovie.tag}
                   </span>
                 )}
-                <h3 className="text-lg font-black text-white leading-tight">{selectedMovie.title}</h3>
-                <p className="text-xs text-[#AAAAAA] mt-1 font-medium">Lançamento • {selectedMovie.year}</p>
+                <h3 className="font-display text-lg font-black text-white leading-tight">{selectedMovie.title}</h3>
+                <p className="text-xs text-white/60 mt-1 font-medium">Lançamento • {selectedMovie.year}</p>
 
                 <div className="mt-3 flex items-center gap-1.5 text-xs text-amber-400 font-bold">
                   <Star className="size-3.5 fill-amber-400" />
@@ -428,13 +431,13 @@ function CatalogoPage() {
               </div>
             </div>
 
-            <div className="rounded border border-emerald-500/30 bg-emerald-950/20 p-4 mb-6">
+            <div className="rounded-2xl border border-emerald-500/30 bg-emerald-950/20 p-4 mb-6">
               <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold mb-1">
                 <CheckCircle2 className="size-4" />
-                <span>Disponível no UniTV Pro em 4K Ultra HD</span>
+                <span>Disponível no UniTV Pro</span>
               </div>
-              <p className="text-xs text-[#CCCCCC] leading-relaxed">
-                Este título faz parte do catálogo de terror do UniTV Pro. Baixe o app e teste por 3 dias grátis sem compromisso.
+              <p className="text-xs text-white/80 leading-relaxed">
+                Este título faz parte do catálogo do UniTV Pro. Baixe o app e teste por 3 dias grátis sem compromisso.
               </p>
             </div>
 
@@ -442,7 +445,7 @@ function CatalogoPage() {
               <Link
                 to="/instalar"
                 onClick={() => setSelectedMovie(null)}
-                className="flex w-full items-center justify-center gap-2.5 rounded bg-[#E50914] py-3.5 text-xs font-bold text-white shadow-md hover:bg-[#b80710] transition-colors uppercase tracking-wide"
+                className="btn-cta flex w-full items-center justify-center gap-2.5 py-3.5 text-xs font-black text-white uppercase tracking-wide cursor-pointer"
               >
                 <Download className="size-4" />
                 BAIXAR APP E ASSISTIR GRÁTIS
@@ -453,7 +456,7 @@ function CatalogoPage() {
                 )}%20no%20UniTV%20Pro`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center justify-center gap-2 rounded bg-[#2a2a2a] py-3 text-xs font-bold text-white hover:bg-[#333333] transition-colors"
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-white/10 border border-white/15 py-3 text-xs font-bold text-white hover:bg-white/20 transition-colors cursor-pointer"
               >
                 Pedir Teste no WhatsApp
               </a>
