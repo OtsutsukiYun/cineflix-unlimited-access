@@ -51,7 +51,7 @@ const CATALOGO_UNIFICADO: Title[] = [
   // TERROR ASIÁTICO E TURCO EM DESTAQUE INICIAL
   { title: "Exhuma: A Cura do Mal", poster: "/tw0i3kkmOTjDjGFZTLHKhoeXVvA.jpg", year: "2024", tag: "Terror Coreano", rating: "4.9" },
   { title: "Dabbe: A Noiva Possuída", poster: "/j537aN6h9w06VipRHqFHnuFB1Ef.jpg", year: "2013", tag: "Terror Turco", rating: "5.0" },
-  { title: "Marcas da Maldição (Incantation)", poster: "/1l4hxdc7PyYgZ0DeZtC0WPU3GOI.jpg", year: "2022", tag: "Terror Taiwanês", rating: "4.9" },
+  { title: "Marcas da Maldição (Incantation)", poster: "/cWz28oGV3cSajWdziVQbqrYCmnX.jpg", year: "2022", tag: "Terror Taiwanês", rating: "4.9" },
 
   { title: "Siccîn", poster: "/fYbhwSIVl42JA4f6rs3MeE2wR4s.jpg", year: "2014", tag: "Terror Turco", rating: "4.9" },
   { title: "Mártires (Martyrs)", poster: "/969mH6AnksRNWMHhGxVbFa6l9qj.jpg", year: "2008", tag: "New French Extremity", rating: "5.0" },
