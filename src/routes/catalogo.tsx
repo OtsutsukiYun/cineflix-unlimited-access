@@ -93,7 +93,7 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "Amizade Desfeita (Unfriended)", poster: "/8byPxREr3BqBNyyij5WHVSOVtYk.jpg", year: "2014", tag: "Screenlife Horror" },
   { title: "Infeção (Infection / Kansen)", poster: "/zCMSiJQ0iigWKaizcHN6Qv0tGqz.jpg", year: "2004", tag: "Clássico Japonês" },
   { title: "Quando as Luzes se Apagam", poster: "/8BnElzAQQpp7ZgdJJiAe1diomr4.jpg", year: "2016", tag: "Sobrenatural" },
-  { title: "The Houses October Built", poster: "/y4MBh0EjBlMuOzv9axM4qJlmhzz.jpg", year: "2011", tag: "Found Footage" },
+  { title: "The Houses October Built", poster: "/jGtBLu0JAKf5JxhWgmF68HROzCA.jpg", year: "2014", tag: "Found Footage" },
 
   { title: "Lake Mungo", poster: "/g0zCELYfBfSv8TOGC13buABVN53.jpg", year: "2009", tag: "Found Footage" },
   { title: "Reencarnação (Reincarnation / Rinne)", poster: "/lFAnm6625uMUZ1Xkg1XxwlXBEE.jpg", year: "2005", tag: "Terror Japonês" },
@@ -308,15 +308,9 @@ function CatalogoPage() {
         {/* CABEÇALHO DA PÁGINA */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 border-b border-white/10 pb-6">
           <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-red-600/20 border border-red-500/40 px-3 py-1 text-xs font-black tracking-wider text-red-400 uppercase mb-3">
-              <Film className="size-3.5 text-red-500" /> Grade Completa • {CATALOGO_UNIFICADO.length} Filmes
-            </span>
             <h1 className="font-display text-3xl sm:text-5xl font-black tracking-tight text-white">
               Catálogo de <span className="text-red-500">Terror</span>
             </h1>
-            <p className="text-xs sm:text-sm text-white/60 mt-2 max-w-2xl leading-relaxed">
-              Grade completa do UniTV Pro. Lançamentos 2026 no topo, coleção Found Footage, terror asiático, internacional, turco e séries.
-            </p>
           </div>
         </div>
 
