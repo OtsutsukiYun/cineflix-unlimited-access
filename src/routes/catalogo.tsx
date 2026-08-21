@@ -46,7 +46,7 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Top 3" },
   { title: "Colony (A Colônia)", poster: "/tN799oUR0f1gUKDYdMNrDaY7I51.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "Ghost in the Cell", poster: "/9DugI1HXkRAHQsjVMDnyTT8hQZx.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
-  { title: "Panor 1", poster: "/o3tG02uudhv1YemqPUoC75q3lbr.jpg", year: "2025", tag: "🔥 Lançamento 2025" },
+  { title: "Panor", poster: "/o3tG02uudhv1YemqPUoC75q3lbr.jpg", year: "2025", tag: "🔥 Lançamento 2025" },
   { title: "Panor 2", poster: "/du6XOg3cd6SlRBQ1fxZDKpgavW0.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "Kuyang: A Maldição do Demônio", poster: "/hGhePNHNxkfqbo0aX1VYr5Qdec4.jpg", year: "2024", tag: "Terror Indonésio" },
@@ -92,7 +92,6 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "A Invasora (À l'intérieur)", poster: "/7gPOYKxoBzhfC8cLNMU3CKgURcm.jpg", year: "2007", tag: "New French Extremity", rating: "4.9" },
   { title: "Noroi: A Lenda de Kagutaba", poster: "/5H6bfU24aiYKF0KVTSoGt3MyAX.jpg", year: "2005", tag: "Terror Japonês", rating: "4.9" },
 
-  { title: "Backrooms: Um Não-Lugar", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
   { title: "Baskin", poster: "/oNiinNDzPUH0I3K4puCwrJa7Hn1.jpg", year: "2015", tag: "Terror Turco", rating: "4.8" },
   { title: "Noites Brutais (Barbarian)", poster: "/mXsvEjsWLvco0hLfhe5FgwmY3qg.jpg", year: "2022", tag: "🔥 Em Alta", rating: "4.9" },
   { title: "(A) Fronteira (Frontière(s))", poster: "/qiJK2iJUifpO7eU8V6t4YWXAEEg.jpg", year: "2007", tag: "New French Extremity", rating: "4.8" },

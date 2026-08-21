@@ -224,7 +224,6 @@ function PosterCard({ item }: { item: { title: string; poster: string; year: str
         loading="lazy"
         className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       <div className="absolute bottom-0 inset-x-0 p-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
         <p className="text-[11px] font-bold text-white leading-tight line-clamp-2">{item.title}</p>
         <p className="text-[10px] text-white/60 mt-0.5">{item.year}</p>
@@ -246,9 +245,10 @@ const CATALOG_TABS = [
     items: [
       { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1" },
       { title: "A Morte do Demônio: Em Chamas", poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg", year: "2026", tag: "🔥 Top 2" },
-      { title: "Todo Mundo em Pânico 6", poster: "/y9yJd2qIIwhZcllHeKHsz5eRvNr.jpg", year: "2026", tag: "Comédia 2026" },
-      { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Terror 2026" },
-      { title: "The Eyes", poster: "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", year: "2026", tag: "Terror 2026" },
+      { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Top 3" },
+      { title: "Ghost in the Cell", poster: "/9DugI1HXkRAHQsjVMDnyTT8hQZx.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
+      { title: "Colony (A Colônia)", poster: "/tN799oUR0f1gUKDYdMNrDaY7I51.jpg", year: "2026", tag: "🔥 Terror 2026" },
+      { title: "Panor 2", poster: "/du6XOg3cd6SlRBQ1fxZDKpgavW0.jpg", year: "2026", tag: "🔥 Terror 2026" },
       { title: "Martyrs", poster: "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", year: "2008", tag: "🔥 Clássico do Terror" },
       { title: "Strange Harvest", poster: "/fYe0FNJNy0EIb8q4JUMLbbSmCth.jpg", year: "2025", tag: "🔥 Terror & Ocultismo" },
       { title: "Silo", poster: "/cxB16Cc7xZuqWgNDo7QlqLMlinu.jpg", year: "Série", tag: "Em alta" },
@@ -259,6 +259,8 @@ const CATALOG_TABS = [
     label: "🚀 Próximos Lançamentos (2026)",
     items: [
       { title: "Sobrenatural: Agora Entre Nós", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
+      { title: "Hokum", poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
+      { title: "A Maldição da Múmia", poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", year: "2026", tag: "🔥 Estreia 2026" },
       { title: "Other Mommy (A Outra Mãe)", poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
       { title: "Resident Evil: O Retorno", poster: "/zP83bIkBViw5b1s9bDemYJ3AAgX.jpg", year: "2026", tag: "🔥 Estreia Set/2026" },
       { title: "O Sorveteiro", poster: "/c987gxFjXqYOxZEZKcTkS1ONTWH.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
@@ -266,10 +268,6 @@ const CATALOG_TABS = [
       { title: "Acampamento Miasma", poster: "/5Cz1EJOKpZ8hqvBNZYF9C2zTB2T.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
       { title: "Cuidado com Boiúna", poster: "/tENVMxKvOkslv8kagVNdIEQ13RT.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
       { title: "Clayface: Rituais das Sombras", poster: "/5jCpQnWPikggmQZoDp1eAi6BI6w.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
-      { title: "Vingadores: Doutor Destino", poster: "/bh2OuKvq19jBHsloUVCfPSZZw81.jpg", year: "2026", tag: "🔥 Estreia Dez/2026" },
-      { title: "Duna: Parte 3", poster: "/d43fvHQsIMa4kpyhKXw0haEJIvI.jpg", year: "2026", tag: "🔥 Estreia Dez/2026" },
-      { title: "HOPE", poster: "/bcK5naYzzfY0JBCgrPrsrbV6NO1.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
-      { title: "O Fim da Rua", poster: "/fYXqpgPmHMphSF2W30GbTeJVIa5.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
     ],
   },
   {
@@ -277,6 +275,7 @@ const CATALOG_TABS = [
     label: "🎬 Filmes & Lançamentos",
     items: [
       { title: "Michael", poster: "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", year: "2026", tag: "🔥 Biografia 2026" },
+      { title: "Ghost in the Cell", poster: "/9DugI1HXkRAHQsjVMDnyTT8hQZx.jpg", year: "2026", tag: "🔥 Terror 2026" },
       { title: "Socorro! (Send Help)", poster: "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "A Boca do Diabo", poster: "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg", year: "2026", tag: "🔥 Terror 2026" },
       { title: "Dia D (Disclosure Day)", poster: "/pmff1wjKrgJi92PPr346lAifzlg.jpg", year: "2026", tag: "🔥 Sci-Fi 2026" },
@@ -285,23 +284,22 @@ const CATALOG_TABS = [
       { title: "Homem-Aranha: Um Novo Dia", poster: "/x0nvYzQpyJc5pdT9lMnkMuYAg0O.jpg", year: "2026", tag: "Super-herói" },
       { title: "Todo Mundo em Pânico 6", poster: "/y9yJd2qIIwhZcllHeKHsz5eRvNr.jpg", year: "2026", tag: "Comédia 2026" },
       { title: "Supergirl", poster: "/1QCWdqzTfh2x9UylVpspIU6QTuM.jpg", year: "2026", tag: "🔥 DC 2026" },
-      { title: "Devoradores de Estrelas", poster: "/yihdXomYb5kTeSivtFndMy5iDmf.jpg", year: "2026", tag: "🔥 Sci-Fi 2026" },
     ],
   },
   {
     id: "terror-raro",
     label: "👻 Terror Asiáticos Raros",
     items: [
+      { title: "Panor", poster: "/o3tG02uudhv1YemqPUoC75q3lbr.jpg", year: "2025", tag: "🔥 Terror Tailandês" },
+      { title: "Panor 2", poster: "/du6XOg3cd6SlRBQ1fxZDKpgavW0.jpg", year: "2026", tag: "🔥 Terror Tailandês" },
+      { title: "House of Sayuri", poster: "/6GDikJ9SWEn7wE1WqruTdzoLS1G.jpg", year: "2024", tag: "🔥 Japão 2024" },
+      { title: "Kuyang: A Maldição do Demônio", poster: "/hGhePNHNxkfqbo0aX1VYr5Qdec4.jpg", year: "2024", tag: "🔥 Indonésia" },
+      { title: "The Queen of Black Magic", poster: "/tQOBVQjXiBGstCGYvzmgm97EkMF.jpg", year: "2019", tag: "🔥 Indonésia" },
+      { title: "Best Wishes to All", poster: "/vwWYIcVkDb8twv0unOCcriYCSrD.jpg", year: "2024", tag: "🔥 Japão" },
       { title: "Pengabdi Setan 2: Communion", poster: "/xQNMM3u6srkhM8bdTCKVTFzyCF1.jpg", year: "2022", tag: "🔥 Indonésia" },
       { title: "O Lamento", poster: "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", year: "2016", tag: "🔥 Coreia" },
-      { title: "Zona Zero", poster: "/hWT5fHzVcxq06SuLfAWYVCrue7P.jpg", year: "2026", tag: "Terror Coreano" },
-      { title: "Omukade", poster: "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", year: "2026", tag: "Terror Asiático 2026" },
       { title: "Pemandi Jenazah", poster: "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", year: "2024", tag: "Indonésia" },
       { title: "Salmokji", poster: "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", year: "2026", tag: "Coreia" },
-      { title: "Dia Bukan Ibu", poster: "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", year: "2025", tag: "Exclusivo" },
-      { title: "Another", poster: "/c8VVGuc3lnPXCBStcKQWrOlBCSA.jpg", year: "2012", tag: "Terror Japonês" },
-      { title: "Whispering Corridors: Wishing Stairs", poster: "/hX1CdiS8hJJxY8TuAmMoExYXKfn.jpg", year: "2003", tag: "Terror Coreano" },
-      { title: "Eu Vi o Diabo", poster: "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", year: "2010", tag: "Terror Coreano" },
     ],
   },
   {
@@ -309,15 +307,15 @@ const CATALOG_TABS = [
     label: "📺 Séries",
     items: [
       { title: "O Segredo de Widow's Bay", poster: "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
-      { title: "Revenant (O Diabo)", poster: "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", year: "2023", tag: "🔥 Dorama de Terror" },
       { title: "FROM (Origem)", poster: "/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg", year: "Série", tag: "🔥 Terror & Mistério" },
-      { title: "Gannibal", poster: "/AvjCytHUq6AN6rYOFQFATrWbGSR.jpg", year: "Série", tag: "🔥 Terror Japonês" },
-      { title: "IT: Bem-Vindos a Derry", poster: "/gMTfrLvrDaD0zrhpLZ7zXIIpKfJ.jpg", year: "2025", tag: "🔥 Lançamento 2025" },
-      { title: "Lucky", poster: "/xsrkiXg8EuNNtbPtbmvCxg95gK7.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
-      { title: "Cabo do Medo", poster: "/3ZLy3cfQa9prahoRq1teMmr5pvW.jpg", year: "2026", tag: "🔥 Estreia 2026" },
+      { title: "Terror (The Terror)", poster: "/fUVn5mScv83FfwrRUUR694yA7bd.jpg", year: "Série", tag: "🔥 Série de Terror" },
+      { title: "Channel Zero", poster: "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", year: "Série", tag: "🔥 Antologia Rara" },
+      { title: "A Maldição da Residência Hill", poster: "/mQQGdDgn4WpUL9PXssHecWkjfi1.jpg", year: "Série", tag: "Série de Terror" },
+      { title: "Missa da Meia-Noite", poster: "/rka8ibtD6HayiEJmb6rns47lyAL.jpg", year: "Série", tag: "Série de Terror" },
+      { title: "Revenant (O Diabo)", poster: "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", year: "2023", tag: "Dorama de Terror" },
+      { title: "Gannibal", poster: "/AvjCytHUq6AN6rYOFQFATrWbGSR.jpg", year: "Série", tag: "Terror Japonês" },
+      { title: "IT: Bem-Vindos a Derry", poster: "/gMTfrLvrDaD0zrhpLZ7zXIIpKfJ.jpg", year: "2025", tag: "Lançamento 2025" },
       { title: "Yellowjackets", poster: "/xRnGrn7Z7SC0KIBodocoU1QgDZF.jpg", year: "Série", tag: "Terror & Drama" },
-      { title: "Channel Zero", poster: "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", year: "Série", tag: "Terror & Antologia" },
-      { title: "The Terror: Devil in Silver", poster: "/bdblQNZ4rP8AVJPqvGi82woxZkg.jpg", year: "2026", tag: "🔥 3ª Temporada" },
     ],
   },
   {
