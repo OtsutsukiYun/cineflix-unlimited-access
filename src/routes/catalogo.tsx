@@ -83,44 +83,50 @@ const CATALOGO_UNIFICADO: Title[] = [
   // ── COLEÇÃO DE FOUND FOOTAGE CLÁSSICOS & TERROR INTERNACIONAL ───────────
   { title: "Cloverfield: Monstro", poster: "/qIegUGJqyMMCRjkKV1s7A9MqdJ8.jpg", year: "2008", tag: "Found Footage" },
   { title: "Atividade Paranormal", poster: "/tmclkEpjeo4Zu564gf3KrwIOuKw.jpg", year: "2007", tag: "Found Footage" },
+  { title: "Sorria 2 (Smile 2)", poster: "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg", year: "2024", tag: "🔥 Em Alta" },
   { title: "The Poughkeepsie Tapes", poster: "/8ppkhu3pO3fnXr05YeE7ryKloVd.jpg", year: "2007", tag: "Found Footage" },
+  { title: "A Entidade (Sinister)", poster: "/nzx10sca3arCeYBAomHan4Q6wa1.jpg", year: "2012", tag: "Obra-Prima" },
   { title: "A Visita (The Visit)", poster: "/mtMfKRCa2V5b7d9k4piogB72mcY.jpg", year: "2015", tag: "Found Footage" },
+
+  { title: "Ju-On: O Grito", poster: "/6q1hlBC6rudc3mHwXsbMBR2xAT6.jpg", year: "2002", tag: "Clássico Japonês" },
+  { title: "Invocação do Mal", poster: "/wVYREutTvI2tmxr6ujrHT704wGF.jpg", year: "2013", tag: "Sobrenatural" },
   { title: "Amizade Desfeita (Unfriended)", poster: "/8byPxREr3BqBNyyij5WHVSOVtYk.jpg", year: "2014", tag: "Screenlife Horror" },
-  { title: "The Houses October Built", poster: "/IKsThHyrnAEyvNFSLkqt4jWiQK.jpg", year: "2011", tag: "Found Footage" },
+  { title: "Infeção (Infection / Kansen)", poster: "/zCMSiJQ0iigWKaizcHN6Qv0tGqz.jpg", year: "2004", tag: "Clássico Japonês" },
+  { title: "Quando as Luzes se Apagam", poster: "/8BnElzAQQpp7ZgdJJiAe1diomr4.jpg", year: "2016", tag: "Sobrenatural" },
+  { title: "The Houses October Built", poster: "/y4MBh0EjBlMuOzv9axM4qJlmhzz.jpg", year: "2011", tag: "Found Footage" },
 
   { title: "Lake Mungo", poster: "/g0zCELYfBfSv8TOGC13buABVN53.jpg", year: "2009", tag: "Found Footage" },
-  { title: "Afflicted", poster: "/iDbdxDHFtBZ8gnGsrinB7atE26P.jpg", year: "2014", tag: "Found Footage" },
-  { title: "Aterrados (Terrified)", poster: "/eMP4F0POBgrB4icn6XgYeLLIrld.jpg", year: "2018", tag: "Terror Argentino" },
-  { title: "Tumbbad", poster: "/vzjZAKozbDplHWcQXbXo0APKxst.jpg", year: "2018", tag: "Terror Indiano" },
-  { title: "Ju-On: O Grito", poster: "/6q1hlBC6rudc3mHwXsbMBR2xAT6.jpg", year: "2002", tag: "Clássico Japonês" },
-  { title: "Infeção (Infection / Kansen)", poster: "/zCMSiJQ0iigWKaizcHN6Qv0tGqz.jpg", year: "2004", tag: "Clássico Japonês" },
   { title: "Reencarnação (Reincarnation / Rinne)", poster: "/lFAnm6625uMUZ1Xkg1XxwlXBEE.jpg", year: "2005", tag: "Terror Japonês" },
+  { title: "O Homem nas Sombras (Don't Breathe)", poster: "/dSxHyPZ2nipSfvdft4IhQKjk5eZ.jpg", year: "2016", tag: "Suspense" },
+  { title: "Afflicted", poster: "/iDbdxDHFtBZ8gnGsrinB7atE26P.jpg", year: "2014", tag: "Found Footage" },
   { title: "Uma Chamada Perdida (Chakushin Ari)", poster: "/8ujSEEePCVMyi7Mt1RQMXd6SWmy.jpg", year: "2003", tag: "Terror Japonês" },
+  { title: "Aterrados (Terrified)", poster: "/eMP4F0POBgrB4icn6XgYeLLIrld.jpg", year: "2018", tag: "Terror Argentino" },
+
+  { title: "Tumbbad", poster: "/vzjZAKozbDplHWcQXbXo0APKxst.jpg", year: "2018", tag: "Terror Indiano" },
+  { title: "O Babadook (The Babadook)", poster: "/qt3fqapeo94TfvMyld8P7gkpXLz.jpg", year: "2014", tag: "Terror Psicológico" },
   { title: "Audition (O Teste de Seleção)", poster: "/zwGaUMm0wAqi0wkO7LJDlwoA5LP.jpg", year: "1999", tag: "Terror Japonês" },
+  { title: "A Bruxa (The Witch)", poster: "/zap5hpFCWSvdWSuPGAQyjUv2wAC.jpg", year: "2016", tag: "Terror Religioso" },
   { title: "Cure (A Cura)", poster: "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", year: "1997", tag: "Terror Psicológico" },
+  { title: "Corrente do Mal (It Follows)", poster: "/iwnQ1JH1wdWrGYkgWySptJ5284A.jpg", year: "2015", tag: "Suspense" },
 
   { title: "Marebito", poster: "/c1KyQx8mHwxQHTQgJDra84RfTYx.jpg", year: "2004", tag: "Terror Japonês" },
+  { title: "Pee Mak", poster: "/5gY0EPvTdeGjEEIQ7337ZxHXV55.jpg", year: "2013", tag: "Terror Tailandês" },
   { title: "Carved: A Mulher da Boca Cortada", poster: "/okrZ7VAfgLGMNK8XdIapSlXQhLY.jpg", year: "2007", tag: "Lenda Urbana Japão" },
+  { title: "O Orfanato (El Orfanato)", poster: "/vIpi1KtHLXUOfSVC2m6MqpjSPgL.jpg", year: "2007", tag: "Terror Espanhol" },
   { title: "R-Point (Ponto R)", poster: "/93Zn3ews5S0KiChq9mW5TkrhWi9.jpg", year: "2004", tag: "Terror Coreano" },
-  { title: "White: Melodia da Morte", poster: "/vyjdFZMET5ZWk1pu480AQ7vKHlA.jpg", year: "2011", tag: "Terror Coreano" },
   { title: "The Closet (O Armário)", poster: "/aK9R6Xnm0Xcx9E0XapAbvTr8UtD.jpg", year: "2020", tag: "Terror Coreano" },
 
   { title: "Laddaland", poster: "/vt6WwZTgWoyr4dAFNuoK2NXhidK.jpg", year: "2011", tag: "Terror Tailandês" },
-
-  { title: "Pee Mak", poster: "/5gY0EPvTdeGjEEIQ7337ZxHXV55.jpg", year: "2013", tag: "Terror Tailandês" },
   { title: "4Bia: Fobia", poster: "/lhfLZazFFNuZ2BdPdPGRhrt3qty.jpg", year: "2008", tag: "Terror Tailandês" },
   { title: "Macabre (Rumah Dara)", poster: "/bzirDRNA3JH7TjjhEMRz5QN8rAx.jpg", year: "2009", tag: "Terror Indonésio" },
   { title: "Que o Diabo te Leve (May the Devil Take You)", poster: "/i3UqtKPPWmDX4514kWF8hluCbsk.jpg", year: "2018", tag: "Terror Indonésio" },
   { title: "Medo (A Tale of Two Sisters)", poster: "/l3exwhwyGE0NnHJ3lFQ7eXoBSkH.jpg", year: "2003", tag: "Terror Coreano" },
   { title: "Invasão Zumbi (Train to Busan)", poster: "/vNVFt6dtcqnI7hqa6LFBUibuFiw.jpg", year: "2016", tag: "Terror Coreano" },
 
-  { title: "O Orfanato (El Orfanato)", poster: "/vIpi1KtHLXUOfSVC2m6MqpjSPgL.jpg", year: "2007", tag: "Terror Espanhol" },
-  { title: "O Poço (The Platform)", poster: "/iXvQnzy6JCAx1PiQEKXuTY04ZHl.jpg", year: "2019", tag: "Terror Espanhol" },
   { title: "Deixe-me Entrar (Let the Right One In)", poster: "/7IG4WjaAOVDlLvLUkh513HSwhW8.jpg", year: "2008", tag: "Terror Sueco" },
   { title: "Boa Noite, Mamãe (Goodnight Mommy)", poster: "/oHhD5jD4S5ElPNNFCDKXJAzMZ5h.jpg", year: "2022", tag: "Terror Psicológico" },
   { title: "Suspiria", poster: "/bRpKFPb8CWKRQxVo9NzOuPPlO3Q.jpg", year: "2018", tag: "Terror Psicológico" },
   { title: "Entes Queridos (The Loved Ones)", poster: "/ydsLYdSiPSIL1LOWWYu7VCvDTT8.jpg", year: "2010", tag: "Terror Australiano" },
-
   { title: "Verónica", poster: "/xHP6mYLQKbJY9pg99PGoGKmmBZX.jpg", year: "2017", tag: "Terror Espanhol" },
   { title: "O Mal Que Nos Habita (When Evil Lurks)", poster: "/iQ7G9LhP7NRRIUM4Vlai3eOxBAc.jpg", year: "2023", tag: "Obra-Prima Gore" },
   { title: "A Médium (The Medium)", poster: "/wOJbWVMqdKIerkvOegeHfORxWqV.jpg", year: "2021", tag: "Found Footage" },
@@ -294,7 +300,7 @@ function CatalogoPage() {
               Catálogo de <span className="text-red-500">Terror</span>
             </h1>
             <p className="text-xs sm:text-sm text-white/60 mt-2 max-w-2xl leading-relaxed">
-              Grade completa com 6 filmes por linha. Lançamentos 2026 no topo, coleção Found Footage, terror asiático, internacional, turco e séries.
+              Grade completa do UniTV Pro. Lançamentos 2026 no topo, coleção Found Footage, terror asiático, internacional, turco e séries.
             </p>
           </div>
         </div>
