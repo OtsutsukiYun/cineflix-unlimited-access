@@ -93,6 +93,19 @@ const CATALOGO_UNIFICADO: Title[] = [
   { title: "Aterrados (Terrified)", poster: "/eMP4F0POBgrB4icn6XgYeLLIrld.jpg", year: "2018", tag: "Terror Argentino" },
   { title: "Tumbbad", poster: "/vzjZAKozbDplHWcQXbXo0APKxst.jpg", year: "2018", tag: "Terror Indiano" },
   { title: "Ju-On: O Grito", poster: "/6q1hlBC6rudc3mHwXsbMBR2xAT6.jpg", year: "2002", tag: "Clássico Japonês" },
+  { title: "Infeção (Infection / Kansen)", poster: "/zCMSiJQ0iigWKaizcHN6Qv0tGqz.jpg", year: "2004", tag: "Clássico Japonês" },
+  { title: "Reencarnação (Reincarnation / Rinne)", poster: "/lFAnm6625uMUZ1Xkg1XxwlXBEE.jpg", year: "2005", tag: "Terror Japonês" },
+  { title: "Uma Chamada Perdida (Chakushin Ari)", poster: "/8ujSEEePCVMyi7Mt1RQMXd6SWmy.jpg", year: "2003", tag: "Terror Japonês" },
+  { title: "Audition (O Teste de Seleção)", poster: "/zwGaUMm0wAqi0wkO7LJDlwoA5LP.jpg", year: "1999", tag: "Terror Japonês" },
+  { title: "Cure (A Cura)", poster: "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", year: "1997", tag: "Terror Psicológico" },
+
+  { title: "Marebito", poster: "/c1KyQx8mHwxQHTQgJDra84RfTYx.jpg", year: "2004", tag: "Terror Japonês" },
+  { title: "Carved: A Mulher da Boca Cortada", poster: "/okrZ7VAfgLGMNK8XdIapSlXQhLY.jpg", year: "2007", tag: "Lenda Urbana Japão" },
+  { title: "R-Point (Ponto R)", poster: "/93Zn3ews5S0KiChq9mW5TkrhWi9.jpg", year: "2004", tag: "Terror Coreano" },
+  { title: "White: Melodia da Morte", poster: "/vyjdFZMET5ZWk1pu480AQ7vKHlA.jpg", year: "2011", tag: "Terror Coreano" },
+  { title: "The Closet (O Armário)", poster: "/aK9R6Xnm0Xcx9E0XapAbvTr8UtD.jpg", year: "2020", tag: "Terror Coreano" },
+  { title: "Krasue: A Maldição do Espírito", poster: "/vYBIS1gPjVwuhPj7nxcxscqjy9H.jpg", year: "2021", tag: "Terror Tailandês" },
+
   { title: "Laddaland", poster: "/vt6WwZTgWoyr4dAFNuoK2NXhidK.jpg", year: "2011", tag: "Terror Tailandês" },
 
   { title: "Pee Mak", poster: "/5gY0EPvTdeGjEEIQ7337ZxHXV55.jpg", year: "2013", tag: "Terror Tailandês" },
