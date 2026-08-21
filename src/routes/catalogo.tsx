@@ -150,6 +150,21 @@ const CATALOGO_UNIFICADO: Title[] = [
 
   { title: "Deadstream", poster: "/dC38JMmb17geWFIjIBgNoKRMFnL.jpg", year: "2022", tag: "Found Footage" },
 
+  // ── TERROR CÓSMICO, NOROI, ART OF THE DEVIL E SÉRIES OBSCURAS ───────────
+  { title: "Art of the Devil (A Arte do Diabo)", poster: "/rxLlAzwihpsUQQXAbNVmKg2peBZ.jpg", year: "2004", tag: "Terror Tailandês" },
+  { title: "Noroi: A Lenda de Kagutaba", poster: "/vA7uZSMx8VL6LIuNFPnymwkRPBV.jpg", year: "2005", tag: "Found Footage Raro" },
+  { title: "O Mensageiro do Último Dia", poster: "/8apzu9JFTUMtOpYkHk6LNPOs3pY.jpg", year: "2020", tag: "Terror Cósmico" },
+  { title: "Aniquilação (Annihilation)", poster: "/4YRplSk6BhH6PRuE9gfyw9byUJ6.jpg", year: "2018", tag: "Terror Cósmico" },
+  { title: "A Cor que Caiu do Espaço", poster: "/k7rD7LzlsPS4jmE6Siah0QO4tAc.jpg", year: "2020", tag: "Terror Cósmico" },
+  { title: "À Beira da Loucura (In the Mouth of Madness)", poster: "/msh4tEUzbnEqlHcFOUH4O0Zti8r.jpg", year: "1995", tag: "Terror Cósmico" },
+
+  { title: "Ameaça Profunda (Underwater)", poster: "/gzlbb3yeVISpQ3REd3Ga1scWGTU.jpg", year: "2020", tag: "Terror Cósmico" },
+  { title: "O Fim da Escuridão (The Endless)", poster: "/uVHPBTLb6Sj1Eso9HzyBAOMRheM.jpg", year: "2017", tag: "Terror Cósmico" },
+  { title: "Arquivo 81 (Archive 81)", poster: "/l1jeSEm6a88GFcLzlHQr60D0dOi.jpg", year: "Série", tag: "Série Obscura" },
+  { title: "Vingança Sabor Cereja", poster: "/cX4acZbi2l4v051NJZfonqY0E3X.jpg", year: "Série", tag: "Série Obscura" },
+  { title: "Chapelwaite (Conto de Stephen King)", poster: "/v7Oix3Zkhg3ftRxmLmyDBJc9ycp.jpg", year: "Série", tag: "Série de Terror" },
+  { title: "30 Moedas (30 Coins)", poster: "/nueyd0FDfX9aUDD1UrxbjdjIvC.jpg", year: "Série", tag: "Terror Religioso" },
+
   // FRANQUIA PREMONIÇÃO (FINAL DESTINATION) - CAPINHAS OFICIAIS VERIFICADAS
   { title: "Premonição", poster: "/b5ERChzoI1aLzeYdmwWUtutwm8c.jpg", year: "2000", tag: "Clássico" },
   { title: "Premonição 2", poster: "/v1HSfT3BjDRGfHji30VvHeCBJHu.jpg", year: "2003", tag: "Clássico" },
