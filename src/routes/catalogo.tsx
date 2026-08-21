@@ -223,10 +223,11 @@ function CatalogoPage() {
   }, [search]);
 
   return (
-    <div className="relative min-h-screen bg-[#0d090b] text-white selection:bg-red-600 selection:text-white font-sans antialiased overflow-x-hidden">
-      {/* LUZ AMBIENTAL VERMELHOS UNITV PRO */}
-      <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[650px] rounded-full bg-red-600/15 blur-[160px] z-0" />
-      <div className="pointer-events-none fixed bottom-20 right-10 size-[500px] rounded-full bg-rose-700/15 blur-[140px] z-0" />
+    <div className="relative min-h-screen bg-gradient-to-b from-[#250408] via-[#160205] to-[#0c0103] text-white selection:bg-red-600 selection:text-white font-sans antialiased overflow-x-hidden">
+      {/* LUZ AMBIENTAL VERMELHA UNITV PRO */}
+      <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[800px] rounded-full bg-red-600/25 blur-[180px] z-0" />
+      <div className="pointer-events-none fixed bottom-10 right-10 size-[600px] rounded-full bg-rose-700/20 blur-[160px] z-0" />
+      <div className="pointer-events-none fixed top-1/3 left-10 size-[500px] rounded-full bg-red-900/20 blur-[150px] z-0" />
 
       {/* BARRA PROMOCIONAL DO TOPO + HEADER FLUTUANTE DE VIDRO */}
       <div className="fixed inset-x-0 top-0 z-50 flex flex-col">
@@ -283,27 +284,6 @@ function CatalogoPage() {
             <p className="text-xs sm:text-sm text-white/60 mt-2 max-w-2xl leading-relaxed">
               Grade completa com 6 filmes por linha. Lançamentos 2026 no topo, coleção Found Footage, terror asiático, internacional, turco e séries.
             </p>
-          </div>
-
-          {/* BUSCA DE TÍTULOS */}
-          <div className="relative w-full md:w-80 shrink-0">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-white/50" />
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Buscar filme, ano ou subgênero..."
-              className="w-full rounded-2xl border border-white/15 bg-white/[0.05] py-2.5 pl-10 pr-9 text-xs sm:text-sm text-white placeholder-white/40 outline-none transition-all focus:border-red-500 focus:bg-black/60 shadow-md backdrop-blur-md"
-            />
-            {search && (
-              <button
-                type="button"
-                onClick={() => setSearch("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
-              >
-                <X className="size-4" />
-              </button>
-            )}
           </div>
         </div>
 
