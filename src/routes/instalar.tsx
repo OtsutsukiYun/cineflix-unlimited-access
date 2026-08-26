@@ -38,33 +38,41 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-// SLIDES DO FUNDO DA PÁGINA
-const PAGE_BACKDROP_SLIDES = [
-  "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", // Evil Dead Rise
-  "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg",  // Obsessão
-  "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg", // Backrooms
-];
-
 const ROW_1_POSTERS = [
-  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
-  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
-  "/kNxRgcTeqeU5jauBackTERoO2De.jpg",
-  "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg",
-  "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg",
-  "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg",
-  "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg",
-  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg",
+  "/v12w67F0fLoxw263v72d9m49M87.jpg", // Jogos Mortais (Saw 2004)
+  "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water 2002
+  "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", // Martyrs 2008
+  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo 2010
+  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento 2016
+  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", // Obsessão 2026
+  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", // Evil Dead Burn 2026
+  "/kNxRgcTeqeU5jauBackTERoO2De.jpg", // Other Mommy 2026
 ];
 
 const ROW_2_POSTERS = [
-  "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg",
-  "/pmff1wjKrgJi92PPr346lAifzlg.jpg",
-  "/yihdXomYb5kTeSivtFndMy5iDmf.jpg",
-  "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg",
-  "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg",
-  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg",
-  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg",
-  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg",
+  "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", // Undertone 2026
+  "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg", // Passageiro do Mal 2026
+  "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg", // Hokum 2026
+  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", // Backrooms 2026
+  "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", // Socorro! Send Help 2026
+  "/pmff1wjKrgJi92PPr346lAifzlg.jpg", // Dia D 2026
+  "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", // The Eyes 2026
+  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
+];
+
+const CLASSIC_2000S_POSTERS = [
+  { title: "Jogos Mortais (Saw)", poster: "/v12w67F0fLoxw263v72d9m49M87.jpg" },
+  { title: "Dark Water: Água Negra", poster: "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg" },
+  { title: "Mártires (Martyrs)", poster: "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg" },
+  { title: "Eu Vi o Diabo", poster: "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg" },
+  { title: "O Lamento (The Wailing)", poster: "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg" },
+  { title: "Obsessão (2026)", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg" },
+  { title: "Evil Dead Burn (2026)", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg" },
+  { title: "Other Mommy (2026)", poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg" },
+  { title: "Undertone (2026)", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg" },
+  { title: "Hokum (2026)", poster: "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg" },
+  { title: "Backrooms (2026)", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg" },
+  { title: "Socorro! Send Help (2026)", poster: "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg" },
 ];
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
@@ -143,16 +151,7 @@ function CodeCopyBox({ code }: { code: string }) {
 
 function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
-  const [bgSlide, setBgSlide] = useState(0);
   const [heroIndex, setHeroIndex] = useState(0);
-
-  // SLIDESHOW SUAVE DO FUNDO DA PÁGINA
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setBgSlide((prev) => (prev + 1) % PAGE_BACKDROP_SLIDES.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
 
   // SLIDESHOW DO CARROSSEL DE COMPRA
   useEffect(() => {
@@ -165,25 +164,37 @@ function InstalarPage() {
   const currentHero = heroSlides[heroIndex] || heroSlides[0]!;
 
   return (
-    <div className="relative min-h-screen bg-[#09090b] text-white overflow-x-hidden">
-      {/* LUZ AMBIENTAL SUAVE */}
-      <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[600px] rounded-full bg-red-600/10 blur-[160px] z-0" />
+    <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
+      {/* LUZ AMBIENTAL RED GLOW */}
+      <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-red-600/15 blur-[160px] z-0" />
 
-      {/* FUNDO DA PÁGINA DE TESTE RESTAURADO EXATAMENTE COMO ERA ANTES */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        {PAGE_BACKDROP_SLIDES.map((bd, i) => (
-          <img
-            key={bd}
-            src={img(bd, "w1280")}
-            alt=""
-            className="absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out"
-            style={{
-              opacity: i === bgSlide ? 0.12 : 0,
-              filter: "blur(2px) brightness(0.4)",
-            }}
-          />
-        ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/60 via-[#080808]/80 to-[#080808]" />
+      {/* ── FUNDO DA PÁGINA INTEIRA REPLETO DE CAPINHAS DE FILMES PASSANDO ── */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        <div className="flex flex-col gap-6 pt-10 scale-105 opacity-45">
+          <div className="flex w-max gap-4 animate-marquee">
+            {ROW_1_POSTERS.concat(ROW_1_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
+              <img
+                key={`page-bg-r1-${i}`}
+                src={img(p, "w342")}
+                alt=""
+                className="h-48 w-32 rounded-2xl object-cover shadow-2xl border border-white/20"
+              />
+            ))}
+          </div>
+          <div className="flex w-max gap-4 animate-marquee-reverse">
+            {ROW_2_POSTERS.concat(ROW_2_POSTERS).concat(ROW_2_POSTERS).map((p, i) => (
+              <img
+                key={`page-bg-r2-${i}`}
+                src={img(p, "w342")}
+                alt=""
+                className="h-48 w-32 rounded-2xl object-cover shadow-2xl border border-white/20"
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* GRADIENTE DE PROFUNDIDADE PARA MANTER TEXTOS 100% LEGÍVEIS */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/75 via-[#080808]/85 to-[#080808]" />
       </div>
 
       {/* BARRA PROMOCIONAL DO TOPO */}
@@ -193,7 +204,7 @@ function InstalarPage() {
 
       {/* HEADER COMPACTO */}
       <header className="fixed inset-x-0 top-8 z-50 transition-all duration-300 [transform:translateZ(0)]">
-        <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-5 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.7)] border border-white/10 backdrop-blur-2xl bg-black/60">
+        <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-5 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.7)] border border-white/10 backdrop-blur-2xl bg-black/70">
           <Link to="/" className="flex items-center gap-3">
             <span className="relative flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_15px_rgba(220,38,38,0.5)]">
               <svg className="size-5 fill-white" viewBox="0 0 24 24">
@@ -249,8 +260,8 @@ function InstalarPage() {
           </p>
         </div>
 
-        {/* CONTAINER MAESTRO NEUTRO E ELEGANTE (SEM EXCESSO DE VERMELHO OU PRETO TOTAL) */}
-        <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden">
+        {/* CONTAINER MAESTRO NEUTRO E ELEGANTE */}
+        <div className="rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.7)] overflow-hidden space-y-0">
 
           {/* 1. SELETOR DE DISPOSITIVOS EM ABAS NEUTRO */}
           <div className="p-4 sm:p-6 bg-white/[0.02] border-b border-white/10">
@@ -561,6 +572,33 @@ function InstalarPage() {
               </>
             )}
 
+            {/* VITRINE INTERATIVA DE CAPINHAS DE FILMES DE TERROR DOS ANOS 2000 E LANÇAMENTOS */}
+            <div className="pt-4 border-t border-white/10 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-[11px] font-black uppercase tracking-wider text-white/80 flex items-center gap-1.5">
+                  <Sparkles className="size-3.5 text-red-500" />
+                  Clássicos dos Anos 2000 &amp; Lançamentos 2026 Disponíveis:
+                </span>
+                <Link to="/catalogo" className="text-[11px] font-extrabold text-red-400 hover:text-red-300 transition-colors">
+                  Ver catálogo completo &rarr;
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 gap-2">
+                {CLASSIC_2000S_POSTERS.map((item) => (
+                  <div
+                    key={item.title}
+                    className="group relative aspect-[2/3] overflow-hidden rounded-xl border border-white/15 bg-black/60 shadow-md transition-all duration-300 hover:scale-105 hover:border-red-500"
+                  >
+                    <img src={img(item.poster, "w185")} alt={item.title} className="size-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-1">
+                      <p className="text-[9px] font-black text-white leading-tight line-clamp-1">{item.title}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
 
           {/* 3. CONFIRMAÇÃO DE TESTE LIBERADO (RIBBON VERDE INTEGRADO) */}
@@ -615,6 +653,30 @@ function InstalarPage() {
                 </p>
               </div>
 
+              {/* CAPINHAS EM DESTAQUE NA SEÇÃO DE COMPRA */}
+              <div className="flex items-center justify-center gap-2.5 sm:gap-3 py-1">
+                {[
+                  "/v12w67F0fLoxw263v72d9m49M87.jpg",
+                  "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg",
+                  "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg",
+                  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
+                  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
+                  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg",
+                ].map((path, index) => (
+                  <div
+                    key={index}
+                    className="group relative overflow-hidden rounded-xl border border-white/20 shadow-md transition-all duration-300 hover:scale-110 hover:border-red-500 shrink-0"
+                  >
+                    <img
+                      src={img(path, "w185")}
+                      alt=""
+                      className="h-16 w-11 sm:h-20 sm:w-14 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                  </div>
+                ))}
+              </div>
+
               {/* PONTINHOS NAVEGADORES */}
               <div className="flex items-center justify-center gap-1.5 py-1">
                 {heroSlides.map((_, i) => (
@@ -632,7 +694,7 @@ function InstalarPage() {
               {/* PREÇO EM DESTAQUE NEUTRO E MODERNO */}
               <div className="inline-flex flex-col items-center justify-center rounded-2xl border border-white/15 bg-white/[0.06] px-6 sm:px-9 py-3.5 backdrop-blur-md shadow-lg">
                 <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">
-                  Planos sem fidelidade • Cancele quando quiser
+                  Planos sem fidelidade • Cancele when quiser
                 </span>
                 <div className="flex items-baseline gap-1.5 mt-0.5">
                   <span className="text-xs font-bold text-red-400">A partir de apenas</span>
