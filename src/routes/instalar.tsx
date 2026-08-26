@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Download,
   Smartphone,
@@ -19,8 +19,10 @@ import {
   Sparkles,
   ArrowRight,
   Flame,
-  Crown,
-  Lock,
+  Clapperboard,
+  Tv2,
+  Trophy,
+  Film,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -67,98 +69,108 @@ const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link
 const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
 const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file";
 
-const PLANOS = [
+const CATEGORY_CARDS = [
   {
-    id: "mensal",
-    nome: "Plano Mensal",
-    icon: Zap,
-    iconColor: "text-red-500",
-    precoAntigo: "R$ 49",
-    preco: "R$ 34,99",
-    periodo: "mês",
-    dias: "30 dias de acesso",
-    telas: "1 tela simultânea",
-    destaque: false,
-    badge: "⚡ 30 Dias de Acesso",
-    badgeStyle: "bg-red-500/20 text-red-300 border-red-500/40",
-    cardStyle: "border border-red-500/30 bg-gradient-to-b from-[#25060b]/90 via-[#180307]/95 to-[#0e0204]/98 shadow-[0_0_40px_rgba(220,38,38,0.25)]",
-    btnStyle: "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_25px_rgba(220,38,38,0.6)] hover:scale-[1.02] border border-red-400/50 text-xs sm:text-sm transition-all",
-    btnText: "ASSINAR PLANO MENSAL",
-    link: "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2",
-    features: [
-      "1 Tela simultânea",
-      "O maior catálogo de filmes e séries dos streamings",
-      "Lançamentos semanais e produções inéditas",
-      "Filmes e séries do mundo todo que ainda nem estrearam no Brasil",
-      "Animes, Doramas & Novelas Turcas (aba Séries)",
-      "Canais Ao Vivo & Esportes em Full HD e 4K",
-      "Compatível com TV, Box, Stick, Projetor e Celular",
-      "Suporte 7 dias por semana via WhatsApp",
-      "Garantia de reembolso de 7 dias",
-      "Sem fidelidade (Cancele quando quiser)",
+    icon: Film,
+    title: "Filmes & Lançamentos 2026",
+    tag: "+50.000 Filmes",
+    desc: "Sucessos do cinema, estreias inéditas e produções exclusivas em 4K e Full HD.",
+    banners: [
+      "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", // Evil Dead Rise
+      "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg", // Obsessão
+      "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg", // Backrooms
     ],
+    gradient: "from-red-600 to-rose-700",
+    border: "border-red-500/40",
   },
   {
-    id: "anual",
-    nome: "Plano Anual VIP",
-    icon: Crown,
-    iconColor: "text-amber-400",
-    precoAntigo: "R$ 250",
-    preco: "R$ 179,99",
-    periodo: "ano",
-    dias: "365 dias de acesso",
-    telas: "2 telas simultâneas",
-    destaque: true,
-    badge: "🔥 RECOMENDADO VIP (2 TELAS)",
-    badgeStyle: "bg-gradient-to-r from-amber-500/30 via-red-500/30 to-amber-500/30 text-amber-300 border-amber-400/60 font-black shadow-[0_0_20px_rgba(245,158,11,0.4)]",
-    cardStyle: "border-2 border-amber-400/80 bg-gradient-to-b from-[#3a0912]/95 via-[#220409]/95 to-[#120205]/98 shadow-[0_0_60px_rgba(245,158,11,0.4)] sm:scale-[1.03] z-20",
-    btnStyle: "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-500 text-white font-black py-4 px-4 rounded-xl shadow-[0_0_35px_rgba(220,38,38,0.8)] hover:scale-[1.03] border border-amber-300/80 text-sm transition-all",
-    btnText: "QUERO O PLANO ANUAL VIP",
-    link: "https://pay.braip.co/ref?pl=pla6lllo&ck=che7eo0g&af=afixjm3pn2",
-    features: [
-      "2 Telas simultâneas",
-      "O maior catálogo de filmes e séries dos streamings",
-      "Lançamentos semanais e produções inéditas",
-      "Filmes e séries do mundo todo que ainda nem estrearam no Brasil",
-      "Animes, Doramas & Novelas Turcas (aba Séries)",
-      "365 dias de acesso total liberado",
-      "Canais Ao Vivo & Esportes em Full HD e 4K",
-      "Compatível com TV, Box, Stick, Projetor e Celular",
-      "Suporte VIP 7 dias por semana via WhatsApp",
-      "Garantia de reembolso de 7 dias",
+    icon: Clapperboard,
+    title: "Séries, Doramas & Animes",
+    tag: "+15.000 Séries",
+    desc: "Episódios atualizados diariamente com animes lendários, doramas coreanos e novelas turcas.",
+    banners: [
+      "/nTvM4z1Z56Sp5HAWYflab6EsNoL.jpg", // Demon Slayer
+      "/3A57V29u9143W2Z0l1JpG9F.jpg",      // Jujutsu Kaisen
+      "/9faGSFi5jam6pUdFi2Q4Sp5VRhC.jpg", // Last of Us
     ],
+    gradient: "from-purple-600 to-indigo-700",
+    border: "border-purple-500/40",
   },
   {
-    id: "trimestral",
-    nome: "Plano Trimestral",
-    icon: Sparkles,
-    iconColor: "text-emerald-400",
-    precoAntigo: "R$ 149",
-    preco: "R$ 99,99",
-    periodo: "3 meses",
-    dias: "90 dias de acesso",
-    telas: "1 tela simultânea",
-    destaque: false,
-    badge: "⚡ 90 Dias de Acesso",
-    badgeStyle: "bg-emerald-500/20 text-emerald-300 border-emerald-500/40",
-    cardStyle: "border border-emerald-500/30 bg-gradient-to-b from-[#082017]/90 via-[#04140e]/95 to-[#020a07]/98 shadow-[0_0_40px_rgba(16,185,129,0.25)]",
-    btnStyle: "bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_25px_rgba(16,185,129,0.6)] hover:scale-[1.02] border border-emerald-400/50 text-xs sm:text-sm transition-all",
-    btnText: "ASSINAR TRIMESTRAL",
-    link: "https://pay.braip.co/ref?pl=pla1qqq6&ck=che7eo0g&af=afixjm3pn2",
-    features: [
-      "1 Tela simultânea",
-      "O maior catálogo de filmes e séries dos streamings",
-      "Lançamentos semanais e produções inéditas",
-      "Filmes e séries do mundo todo que ainda nem estrearam no Brasil",
-      "Animes, Doramas & Novelas Turcas (aba Séries)",
-      "90 dias de acesso total liberado",
-      "Canais Ao Vivo & Esportes em Full HD e 4K",
-      "Compatível com TV, Box, Stick, Projetor e Celular",
-      "Suporte 7 dias por semana via WhatsApp",
-      "Garantia de reembolso de 7 dias",
+    icon: Trophy,
+    title: "Esportes Ao Vivo em 4K",
+    tag: "Futebol & Lutas 24h",
+    desc: "Brasileirão, Champions League, Premier League, UFC, F1 e NBA sem travamentos.",
+    banners: [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Erling_Haaland_France_v_Norway_26_June_26-008.jpg/1280px-Erling_Haaland_France_v_Norway_26_June_26-008.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg",
     ],
+    gradient: "from-emerald-600 to-teal-700",
+    border: "border-emerald-500/40",
+  },
+  {
+    icon: Tv2,
+    title: "Canais Ao Vivo 24h",
+    tag: "+500 Canais HD/4K",
+    desc: "Telecine, HBO, Premiere, SporTV, BBB 24h, Infantil, Notícias e Variedades.",
+    banners: [
+      "/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg", // Inside Out 2
+      "/9l1E2v92uqx09u4345u310b809.jpg",  // Moana 2
+    ],
+    gradient: "from-amber-500 to-orange-600",
+    border: "border-amber-500/40",
   },
 ];
+
+function CategorySlideshowCard({ card }: { card: (typeof CATEGORY_CARDS)[0] }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (!card.banners || card.banners.length <= 1) return;
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % card.banners.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [card.banners]);
+
+  const IconComp = card.icon;
+
+  return (
+    <div className={`relative min-h-[170px] sm:min-h-[190px] overflow-hidden rounded-2xl border ${card.border} bg-black/80 p-5 shadow-xl transition-all duration-300 hover:scale-[1.02]`}>
+      {/* BACKGROUND SLIDESHOW IMAGES */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {card.banners.map((b, i) => (
+          <img
+            key={b}
+            src={img(b, "w780")}
+            alt=""
+            className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out ${
+              i === index ? "opacity-35 scale-105" : "opacity-0"
+            }`}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/30" />
+      </div>
+
+      {/* CARD CONTENT */}
+      <div className="relative z-10 flex flex-col justify-between h-full space-y-3">
+        <div className="flex items-center justify-between">
+          <div className={`flex size-10 items-center justify-center rounded-xl bg-gradient-to-br ${card.gradient} text-white shadow-md border border-white/20`}>
+            <IconComp className="size-5" />
+          </div>
+          <span className="rounded-full bg-white/10 backdrop-blur-md px-3 py-1 text-[10px] font-black text-white border border-white/20">
+            {card.tag}
+          </span>
+        </div>
+
+        <div>
+          <h4 className="text-base font-black text-white tracking-tight">{card.title}</h4>
+          <p className="text-xs text-white/80 leading-relaxed font-medium mt-0.5">{card.desc}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 function DownloaderAppIcon({ className = "size-12" }: { className?: string }) {
   return (
@@ -354,16 +366,16 @@ function InstalarPage() {
           </nav>
 
           <a
-            href="#planos"
+            href="#plano-mensal"
             className="btn-cta px-4 py-1.5 text-[11px] font-extrabold tracking-wide uppercase shadow-md"
           >
-            VER PLANOS
+            VER PLANO
           </a>
         </div>
       </header>
 
       {/* CONTEÚDO PRINCIPAL */}
-      <main className="relative z-10 mx-auto w-[94%] max-w-5xl pt-34 sm:pt-38 pb-20 space-y-10">
+      <main className="relative z-10 mx-auto w-[94%] max-w-3xl pt-34 sm:pt-38 pb-20 space-y-8">
 
         {/* TOPO E TÍTULO PRINCIPAL */}
         <div className="text-center">
@@ -380,8 +392,8 @@ function InstalarPage() {
           </p>
         </div>
 
-        {/* MASTER CONTAINER DO TUTORIAL */}
-        <div className="mx-auto max-w-3xl rounded-3xl border border-red-500/40 bg-gradient-to-b from-[#280910]/95 via-[#1a0509]/95 to-[#0e0205]/98 backdrop-blur-2xl shadow-[0_25px_80px_rgba(220,38,38,0.35)] overflow-hidden">
+        {/* MASTER CONTAINER ÚNICO INTEGRADO (TUTORIAL + CATEGORIAS + PLANO MENSAL) */}
+        <div className="rounded-3xl border border-red-500/40 bg-gradient-to-b from-[#280910]/95 via-[#1a0509]/95 to-[#0e0205]/98 backdrop-blur-2xl shadow-[0_25px_80px_rgba(220,38,38,0.35)] overflow-hidden">
 
           {/* 1. SELETOR DE DISPOSITIVOS EM ABAS DE ALTO IMPACTO */}
           <div className="p-4 sm:p-6 bg-red-950/30 border-b border-red-500/20">
@@ -711,115 +723,138 @@ function InstalarPage() {
             </div>
           </div>
 
-        </div>
+          {/* 4. RETÂNGULOS DE CATEGORIAS PASSANDO COM SLIDESHOW (FILMES, ESPORTES, DORAMAS, CANAIS) */}
+          <div id="plano-mensal" className="p-6 sm:p-8 bg-gradient-to-b from-black/60 to-[#1e050b]/90 border-t border-red-500/20 space-y-6">
+            <div className="text-center space-y-1">
+              <span className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-red-400">
+                <Sparkles className="size-3.5 text-red-400 animate-pulse" />
+                Tudo Incluso No UniTV Pro
+              </span>
+              <h3 className="text-xl sm:text-3xl font-black text-white tracking-tight">
+                Gostou do que encontrou?
+              </h3>
+              <p className="text-xs sm:text-sm text-white/70">
+                Assista em qualquer aparelho com o Plano Mensal sem fidelidade!
+              </p>
+            </div>
 
-        {/* ── SEÇÃO COMPLETA DOS 3 PLANOS COM TODAS AS FEATURES ── */}
-        <section id="planos" className="pt-6 space-y-6">
-          <div className="text-center space-y-2">
-            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/60 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-red-400">
-              <Sparkles className="size-3.5 text-red-400 animate-spin" /> Escolha Seu Plano de Acesso
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
-              Assine com <span className="text-red-500">desconto exclusivo</span>
-            </h2>
-            <p className="text-xs sm:text-sm text-white/70 max-w-md mx-auto">
-              Sem fidelidade. Cancele quando quiser. Ativação imediata e garantia de 7 dias.
-            </p>
-          </div>
+            {/* GRADE 2x2 DE RETÂNGULOS COM ANIMAÇÃO SLIDESHOW IGUAL DA HOME */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {CATEGORY_CARDS.map((card) => (
+                <CategorySlideshowCard key={card.title} card={card} />
+              ))}
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch pt-2">
-            {PLANOS.map((p) => {
-              const IconComp = p.icon;
-              return (
-                <div
-                  key={p.id}
-                  className={`group relative flex flex-col justify-between rounded-3xl p-6 sm:p-7 backdrop-blur-2xl transition-all duration-300 ${p.cardStyle}`}
-                >
-                  <div className="space-y-5">
-                    {/* BADGE DO PLANO */}
-                    <div className="flex items-center justify-between">
-                      <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-black border ${p.badgeStyle}`}>
-                        {p.badge}
-                      </span>
-                      <IconComp className={`size-6 ${p.iconColor}`} />
-                    </div>
+            {/* CARD ÚNICO DO PLANO MENSAL DENTRO DA ÁREA DE COMPRA */}
+            <div className="rounded-3xl border-2 border-red-500/60 bg-gradient-to-b from-[#380913]/95 via-[#23040b]/95 to-[#120104]/98 p-6 sm:p-8 shadow-[0_0_50px_rgba(220,38,38,0.4)] text-center space-y-5">
+              
+              <div className="inline-flex items-center gap-2 rounded-full border border-red-400/50 bg-red-950/80 px-4 py-1.5 backdrop-blur-md shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+                <Zap className="size-4 text-red-400" />
+                <span className="text-xs font-black uppercase tracking-wider text-red-200">
+                  🔥 PLANO MENSAL — SEM FIDELIDADE
+                </span>
+              </div>
 
-                    {/* TÍTULO E PREÇO */}
-                    <div>
-                      <h3 className="text-xl font-black text-white">{p.nome}</h3>
-                      <p className="text-xs text-white/60 font-medium">{p.telas} • {p.dias}</p>
-
-                      <div className="mt-3 flex items-baseline gap-2">
-                        <span className="text-xs font-bold text-white/40 line-through">{p.precoAntigo}</span>
-                        <span className="text-3xl sm:text-4xl font-black text-white">{p.preco}</span>
-                        <span className="text-xs font-bold text-white/60">/{p.periodo}</span>
-                      </div>
-                    </div>
-
-                    {/* BOTÃO ASSINAR */}
-                    <a
-                      href={p.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex w-full items-center justify-center gap-2 ${p.btnStyle}`}
-                    >
-                      <span>{p.btnText}</span>
-                      <ArrowRight className="size-4" />
-                    </a>
-
-                    {/* LISTA COMPLETA DE FEATURES DO PLANO */}
-                    <div className="pt-4 border-t border-white/10 space-y-2.5">
-                      <p className="text-[11px] font-black uppercase tracking-wider text-white/50">
-                        Recursos inclusos neste plano:
-                      </p>
-                      {p.features.map((f, idx) => (
-                        <div key={idx} className="flex items-start gap-2.5">
-                          <CheckCircle2 className="size-4 shrink-0 text-emerald-400 mt-0.5" />
-                          <span className="text-xs text-white/85 leading-snug font-medium">{f}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* GARANTIA RODAPÉ DO CARD */}
-                  <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-center gap-2 text-[10px] font-extrabold text-white/60">
-                    <ShieldCheck className="size-3.5 text-emerald-400" />
-                    <span>Garantia incondicional de 7 dias</span>
-                  </div>
+              {/* CAIXA DE PREÇO EM DESTAQUE */}
+              <div className="inline-flex flex-col items-center justify-center rounded-3xl border border-red-500/50 bg-gradient-to-r from-red-950/95 via-rose-950/95 to-red-950/95 px-5 sm:px-10 py-4 backdrop-blur-xl shadow-[0_0_40px_rgba(220,38,38,0.4)] max-w-full">
+                <span className="text-[10px] sm:text-[11px] font-black text-red-200 uppercase tracking-[0.15em] flex items-center gap-1.5 whitespace-nowrap">
+                  <Sparkles className="size-3 sm:size-3.5 text-red-400 animate-pulse" />
+                  30 DIAS DE ACESSO ILIMITADO
+                </span>
+                <div className="flex items-baseline justify-center gap-1.5 sm:gap-2 mt-1 flex-nowrap whitespace-nowrap">
+                  <span className="text-[11px] sm:text-sm font-bold text-red-300 whitespace-nowrap">A partir de apenas</span>
+                  <span className="text-3xl sm:text-5xl font-black text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.7)] tracking-tight whitespace-nowrap">
+                    R$ 34,99
+                  </span>
+                  <span className="text-[11px] sm:text-sm font-bold text-white/90 whitespace-nowrap">/mês</span>
                 </div>
-              );
-            })}
+              </div>
+
+              {/* LISTA COMPLETA DE RECURSOS */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left max-w-xl mx-auto pt-2 border-t border-white/10">
+                {[
+                  "1 Tela simultânea",
+                  "O maior catálogo de filmes e séries dos streamings",
+                  "Lançamentos semanais e produções inéditas",
+                  "Filmes e séries que nem estrearam no Brasil",
+                  "Animes, Doramas & Novelas Turcas",
+                  "Canais Ao Vivo & Esportes em Full HD e 4K",
+                  "Compatível com TV, Box, Stick e Celular",
+                  "Suporte 7 dias por semana via WhatsApp",
+                  "Garantia de reembolso de 7 dias",
+                  "Sem fidelidade (Cancele quando quiser)",
+                ].map((f, idx) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    <CheckCircle2 className="size-4 shrink-0 text-emerald-400" />
+                    <span className="text-xs text-white/90 font-medium">{f}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* BOTÃO PRINCIPAL DE ASSINATURA DO PLANO MENSAL */}
+              <div className="pt-2">
+                <a
+                  href="https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-9 py-4.5 text-sm sm:text-base font-black text-white shadow-[0_0_40px_rgba(220,38,38,0.9)] border border-red-300/70 transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer w-full sm:w-auto"
+                >
+                  <span className="flex size-6 items-center justify-center rounded-lg bg-white/20 text-white group-hover:scale-110 transition-transform shadow-inner">
+                    <Zap className="size-3.5 fill-current" />
+                  </span>
+                  <span>ASSINAR PLANO MENSAL — R$ 34,99</span>
+                  <ArrowRight className="size-4 text-white/90 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+
+              {/* REASSURANCE BADGES */}
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 text-[11px] font-extrabold text-white/80 pt-2 border-t border-white/10">
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck className="size-3.5 text-emerald-400" /> Garantia de 7 dias
+                </span>
+                <span className="text-white/30">•</span>
+                <span className="flex items-center gap-1.5">
+                  <CreditCard className="size-3.5 text-blue-400" /> Pix ou cartão
+                </span>
+                <span className="text-white/30">•</span>
+                <span className="flex items-center gap-1.5">
+                  <Zap className="size-3.5 text-amber-400" /> Ativação imediata
+                </span>
+              </div>
+
+            </div>
           </div>
 
-          {/* BARRA DE SUPORTE RODAPÉ */}
-          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-              <div className="flex items-center gap-3.5">
-                <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 shadow-md">
-                  <HelpCircle className="size-6" />
+          {/* 5. SUPORTE INLINE RODAPÉ */}
+          <div className="p-4 sm:p-5 bg-white/[0.02] border-t border-white/10">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+              <div className="flex items-center gap-3">
+                <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
+                  <HelpCircle className="size-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm sm:text-base font-black text-white">
-                    Precisa de ajuda ou tirou dúvidas sobre os planos?
+                  <h4 className="text-xs sm:text-sm font-black text-white">
+                    Está com dificuldade para instalar?
                   </h4>
-                  <p className="text-xs text-muted-foreground font-medium">
-                    Nosso atendimento no WhatsApp está disponível 7 dias por semana.
+                  <p className="text-[11px] text-muted-foreground">
+                    Fale direto com a equipe de suporte no WhatsApp.
                   </p>
                 </div>
               </div>
 
               <a
-                href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20os%20planos%20do%20UniTV%20Pro"
+                href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Estou%20com%20dificuldade%20para%20instalar%20o%20UniTV%20Pro"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-3 text-xs sm:text-sm font-extrabold text-white shadow-lg transition-all hover:scale-105 cursor-pointer shrink-0 w-full sm:w-auto border border-emerald-400/50"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-2.5 text-xs font-black text-white shadow-md transition-all hover:scale-[1.02] cursor-pointer shrink-0 w-full sm:w-auto"
               >
-                <WhatsAppIcon className="size-5 fill-current" />
-                ATENDIMENTO NO WHATSAPP
+                <WhatsAppIcon className="size-4 fill-current" />
+                FALAR COM SUPORTE
               </a>
             </div>
           </div>
-        </section>
+
+        </div>
 
       </main>
     </div>
