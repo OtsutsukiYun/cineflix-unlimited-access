@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Download,
   Smartphone,
@@ -19,9 +19,10 @@ import {
   Sparkles,
   ArrowRight,
   Flame,
-  Star,
+  Crown,
+  Lock,
 } from "lucide-react";
-import { img, heroSlides } from "@/data/catalog";
+import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
 import { WhatsAppIcon } from "@/components/icons";
 
@@ -66,9 +67,102 @@ const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link
 const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
 const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file";
 
+const PLANOS = [
+  {
+    id: "mensal",
+    nome: "Plano Mensal",
+    icon: Zap,
+    iconColor: "text-red-500",
+    precoAntigo: "R$ 49",
+    preco: "R$ 34,99",
+    periodo: "mês",
+    dias: "30 dias de acesso",
+    telas: "1 tela simultânea",
+    destaque: false,
+    badge: "⚡ 30 Dias de Acesso",
+    badgeStyle: "bg-red-500/20 text-red-300 border-red-500/40",
+    cardStyle: "border border-red-500/30 bg-gradient-to-b from-[#25060b]/90 via-[#180307]/95 to-[#0e0204]/98 shadow-[0_0_40px_rgba(220,38,38,0.25)]",
+    btnStyle: "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_25px_rgba(220,38,38,0.6)] hover:scale-[1.02] border border-red-400/50 text-xs sm:text-sm transition-all",
+    btnText: "ASSINAR PLANO MENSAL",
+    link: "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2",
+    features: [
+      "1 Tela simultânea",
+      "O maior catálogo de filmes e séries dos streamings",
+      "Lançamentos semanais e produções inéditas",
+      "Filmes e séries do mundo todo que ainda nem estrearam no Brasil",
+      "Animes, Doramas & Novelas Turcas (aba Séries)",
+      "Canais Ao Vivo & Esportes em Full HD e 4K",
+      "Compatível com TV, Box, Stick, Projetor e Celular",
+      "Suporte 7 dias por semana via WhatsApp",
+      "Garantia de reembolso de 7 dias",
+      "Sem fidelidade (Cancele quando quiser)",
+    ],
+  },
+  {
+    id: "anual",
+    nome: "Plano Anual VIP",
+    icon: Crown,
+    iconColor: "text-amber-400",
+    precoAntigo: "R$ 250",
+    preco: "R$ 179,99",
+    periodo: "ano",
+    dias: "365 dias de acesso",
+    telas: "2 telas simultâneas",
+    destaque: true,
+    badge: "🔥 RECOMENDADO VIP (2 TELAS)",
+    badgeStyle: "bg-gradient-to-r from-amber-500/30 via-red-500/30 to-amber-500/30 text-amber-300 border-amber-400/60 font-black shadow-[0_0_20px_rgba(245,158,11,0.4)]",
+    cardStyle: "border-2 border-amber-400/80 bg-gradient-to-b from-[#3a0912]/95 via-[#220409]/95 to-[#120205]/98 shadow-[0_0_60px_rgba(245,158,11,0.4)] sm:scale-[1.03] z-20",
+    btnStyle: "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-500 text-white font-black py-4 px-4 rounded-xl shadow-[0_0_35px_rgba(220,38,38,0.8)] hover:scale-[1.03] border border-amber-300/80 text-sm transition-all",
+    btnText: "QUERO O PLANO ANUAL VIP",
+    link: "https://pay.braip.co/ref?pl=pla6lllo&ck=che7eo0g&af=afixjm3pn2",
+    features: [
+      "2 Telas simultâneas",
+      "O maior catálogo de filmes e séries dos streamings",
+      "Lançamentos semanais e produções inéditas",
+      "Filmes e séries do mundo todo que ainda nem estrearam no Brasil",
+      "Animes, Doramas & Novelas Turcas (aba Séries)",
+      "365 dias de acesso total liberado",
+      "Canais Ao Vivo & Esportes em Full HD e 4K",
+      "Compatível com TV, Box, Stick, Projetor e Celular",
+      "Suporte VIP 7 dias por semana via WhatsApp",
+      "Garantia de reembolso de 7 dias",
+    ],
+  },
+  {
+    id: "trimestral",
+    nome: "Plano Trimestral",
+    icon: Sparkles,
+    iconColor: "text-emerald-400",
+    precoAntigo: "R$ 149",
+    preco: "R$ 99,99",
+    periodo: "3 meses",
+    dias: "90 dias de acesso",
+    telas: "1 tela simultânea",
+    destaque: false,
+    badge: "⚡ 90 Dias de Acesso",
+    badgeStyle: "bg-emerald-500/20 text-emerald-300 border-emerald-500/40",
+    cardStyle: "border border-emerald-500/30 bg-gradient-to-b from-[#082017]/90 via-[#04140e]/95 to-[#020a07]/98 shadow-[0_0_40px_rgba(16,185,129,0.25)]",
+    btnStyle: "bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white font-black py-3.5 px-4 rounded-xl shadow-[0_0_25px_rgba(16,185,129,0.6)] hover:scale-[1.02] border border-emerald-400/50 text-xs sm:text-sm transition-all",
+    btnText: "ASSINAR TRIMESTRAL",
+    link: "https://pay.braip.co/ref?pl=pla1qqq6&ck=che7eo0g&af=afixjm3pn2",
+    features: [
+      "1 Tela simultânea",
+      "O maior catálogo de filmes e séries dos streamings",
+      "Lançamentos semanais e produções inéditas",
+      "Filmes e séries do mundo todo que ainda nem estrearam no Brasil",
+      "Animes, Doramas & Novelas Turcas (aba Séries)",
+      "90 dias de acesso total liberado",
+      "Canais Ao Vivo & Esportes em Full HD e 4K",
+      "Compatível com TV, Box, Stick, Projetor e Celular",
+      "Suporte 7 dias por semana via WhatsApp",
+      "Garantia de reembolso de 7 dias",
+    ],
+  },
+];
+
 function DownloaderAppIcon({ className = "size-12" }: { className?: string }) {
   return (
-    <div className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-amber-400/40 bg-gradient-to-br from-amber-500 via-orange-600 to-red-600 shadow-[0_0_20px_rgba(245,158,11,0.5)] ${className}`}>
+    <div className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-orange-500/40 bg-gradient-to-br from-amber-500 via-orange-600 to-red-600 shadow-[0_0_20px_rgba(245,158,11,0.4)] ${className}`}>
       <img
         src="/apps/downloader.png"
         alt="Downloader Icon"
@@ -95,18 +189,18 @@ function CodeCopyBox({ code }: { code: string }) {
   };
 
   return (
-    <div className="relative overflow-hidden my-3 rounded-2xl p-4 sm:p-5 border-2 border-emerald-400/50 bg-gradient-to-r from-emerald-950/90 via-black to-emerald-950/90 shadow-[0_0_35px_rgba(16,185,129,0.35)]">
-      <div className="pointer-events-none absolute -right-10 -bottom-10 size-32 rounded-full bg-emerald-500/25 blur-2xl" />
+    <div className="relative overflow-hidden my-3 rounded-2xl p-4 sm:p-5 border border-emerald-500/40 bg-gradient-to-r from-emerald-950/90 via-black to-emerald-950/90 shadow-[0_0_30px_rgba(16,185,129,0.3)]">
+      <div className="pointer-events-none absolute -right-10 -bottom-10 size-32 rounded-full bg-emerald-500/20 blur-2xl" />
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
         <div className="flex items-center gap-3.5 w-full sm:w-auto">
-          <div className="flex size-13 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 via-green-600 to-emerald-800 text-white border border-emerald-300 shadow-[0_0_20px_rgba(16,185,129,0.6)]">
-            <Hash className="size-8" />
+          <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 via-green-600 to-emerald-800 text-white border border-emerald-300 shadow-[0_0_20px_rgba(16,185,129,0.5)]">
+            <Hash className="size-7" />
           </div>
           <div>
             <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block">
-              ⚡ CÓDIGO DE INSTALAÇÃO RÁPIDA
+              CÓDIGO DE INSTALAÇÃO RÁPIDA
             </span>
-            <div className="font-mono font-black text-3xl sm:text-5xl tracking-widest text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.6)] leading-tight">
+            <div className="font-mono font-black text-3xl sm:text-4xl tracking-widest text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] leading-tight">
               {code}
             </div>
           </div>
@@ -114,19 +208,19 @@ function CodeCopyBox({ code }: { code: string }) {
 
         <button
           onClick={handleCopy}
-          className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-7 py-4 text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-lg active:scale-95 ${
+          className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-xs font-black uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-lg active:scale-95 ${
             copied
-              ? "bg-emerald-400 text-black shadow-emerald-400/60 border border-emerald-300 scale-105"
-              : "bg-gradient-to-r from-emerald-500 via-green-600 to-emerald-600 hover:from-emerald-400 hover:to-green-500 text-white hover:scale-105 shadow-[0_0_25px_rgba(16,185,129,0.5)] border border-emerald-300/60"
+              ? "bg-emerald-400 text-black shadow-emerald-400/50 border border-emerald-300"
+              : "bg-gradient-to-r from-emerald-500 via-green-600 to-emerald-600 hover:from-emerald-400 hover:to-green-500 text-white hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.4)] border border-emerald-400/60"
           }`}
         >
           {copied ? (
             <>
-              <Check className="size-5 stroke-[3]" /> CÓDIGO COPIADO!
+              <Check className="size-4 stroke-[3]" /> CÓDIGO COPIADO!
             </>
           ) : (
             <>
-              <Copy className="size-5" /> COPIAR CÓDIGO
+              <Copy className="size-4" /> COPIAR CÓDIGO
             </>
           )}
         </button>
@@ -137,23 +231,11 @@ function CodeCopyBox({ code }: { code: string }) {
 
 function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
-  const [heroIndex, setHeroIndex] = useState(0);
-
-  // SLIDESHOW DO CARROSSEL DE COMPRA
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setHeroIndex((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const currentHero = heroSlides[heroIndex] || heroSlides[0]!;
 
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
       {/* LUZ AMBIENTAL RED GLOW */}
       <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[750px] rounded-full bg-red-600/20 blur-[180px] z-0" />
-      <div className="pointer-events-none fixed bottom-1/4 right-10 size-[500px] rounded-full bg-amber-500/15 blur-[160px] z-0" />
 
       {/* ── FUNDO DA PÁGINA INTEIRA REPLETO DE CAPINHAS DE FILMES DE CIMA A EMBAIXO ── */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
@@ -272,7 +354,7 @@ function InstalarPage() {
           </nav>
 
           <a
-            href="/#planos"
+            href="#planos"
             className="btn-cta px-4 py-1.5 text-[11px] font-extrabold tracking-wide uppercase shadow-md"
           >
             VER PLANOS
@@ -281,10 +363,10 @@ function InstalarPage() {
       </header>
 
       {/* CONTEÚDO PRINCIPAL */}
-      <main className="relative z-10 mx-auto w-[94%] max-w-3xl pt-34 sm:pt-38 pb-20">
+      <main className="relative z-10 mx-auto w-[94%] max-w-5xl pt-34 sm:pt-38 pb-20 space-y-10">
 
-        {/* TOPO E TÍTULO PRINCIPAL COM BRILHO CINEMATOGRÁFICO */}
-        <div className="text-center mb-6">
+        {/* TOPO E TÍTULO PRINCIPAL */}
+        <div className="text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-red-500/50 bg-gradient-to-r from-red-950/90 via-black to-red-950/90 px-5 py-2 text-xs sm:text-sm font-black tracking-wider text-red-400 uppercase mb-3 backdrop-blur-md shadow-[0_0_30px_rgba(220,38,38,0.4)]">
             <Gift className="size-4 text-red-400 animate-pulse" />
             <span>🎁 TESTE O UNITV PRO GRÁTIS POR 3 DIAS</span>
@@ -298,17 +380,17 @@ function InstalarPage() {
           </p>
         </div>
 
-        {/* MASTER CONTAINER ÚNICO E REFINADO */}
-        <div className="rounded-3xl border border-red-500/40 bg-gradient-to-b from-[#1c060b]/95 via-[#120306]/95 to-[#0a0204]/98 backdrop-blur-2xl shadow-[0_25px_80px_rgba(220,38,38,0.35)] overflow-hidden">
+        {/* MASTER CONTAINER DO TUTORIAL */}
+        <div className="mx-auto max-w-3xl rounded-3xl border border-red-500/40 bg-gradient-to-b from-[#280910]/95 via-[#1a0509]/95 to-[#0e0205]/98 backdrop-blur-2xl shadow-[0_25px_80px_rgba(220,38,38,0.35)] overflow-hidden">
 
-          {/* 1. SELETOR DE DISPOSITIVOS EM ABAS DE ALTA IMPACTO */}
+          {/* 1. SELETOR DE DISPOSITIVOS EM ABAS DE ALTO IMPACTO */}
           <div className="p-4 sm:p-6 bg-red-950/30 border-b border-red-500/20">
             <div className="grid grid-cols-3 gap-2 rounded-2xl bg-black/60 p-1.5 border border-red-500/30">
               <button
                 onClick={() => setDeviceTab("tv")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3.5 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
                   deviceTab === "tv"
-                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_30px_rgba(220,38,38,0.8)] border border-red-400/70 scale-[1.03]"
+                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-400/70 scale-[1.02]"
                     : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -318,9 +400,9 @@ function InstalarPage() {
 
               <button
                 onClick={() => setDeviceTab("mobile")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3.5 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
                   deviceTab === "mobile"
-                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_30px_rgba(220,38,38,0.8)] border border-red-400/70 scale-[1.03]"
+                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-400/70 scale-[1.02]"
                     : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -330,9 +412,9 @@ function InstalarPage() {
 
               <button
                 onClick={() => setDeviceTab("pc")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3.5 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
                   deviceTab === "pc"
-                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_30px_rgba(220,38,38,0.8)] border border-red-400/70 scale-[1.03]"
+                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-400/70 scale-[1.02]"
                     : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -342,7 +424,7 @@ function InstalarPage() {
             </div>
           </div>
 
-          {/* 2. CONTEÚDO DO TUTORIAL COM ÍCONES E EMBLEMAS 3D */}
+          {/* 2. CONTEÚDO DO TUTORIAL */}
           <div className="p-6 sm:p-9 space-y-6">
 
             {/* TUTORIAL: TV / TV BOX */}
@@ -369,7 +451,7 @@ function InstalarPage() {
                       <Play className="size-4 text-red-500 fill-red-500" />
                       <span>Vídeo Tutorial Curto — Passo a Passo para Smart TV</span>
                     </div>
-                    <span className="hidden sm:inline-flex items-center gap-1 text-[10px] text-red-400 bg-red-950/70 px-2.5 py-0.5 rounded-full border border-red-500/40">
+                    <span className="hidden sm:inline-flex items-center gap-1 text-[10px] text-red-400 bg-red-950/60 px-2 py-0.5 rounded border border-red-500/30">
                       <Flame className="size-3" /> Vídeo Prático (1 min)
                     </span>
                   </div>
@@ -384,13 +466,13 @@ function InstalarPage() {
                   </div>
                 </div>
 
-                {/* PASSOS COM BADGES 3D */}
+                {/* PASSOS RESTAURADOS COM BADGES 'PASSO 1', 'PASSO 2' */}
                 <ol className="space-y-5">
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-gradient-to-tr from-red-600 via-rose-600 to-amber-500 border border-white/20 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.7)] tracking-wider">
-                      1
+                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                      Passo 1
                     </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                       Abra a loja de aplicativos da sua Smart TV ou TV Box (Play Store / App Store) e instale o app{" "}
                       <a
                         href={DOWNLOADER_PLAYSTORE_URL}
@@ -404,32 +486,32 @@ function InstalarPage() {
                   </li>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-gradient-to-tr from-red-600 via-rose-600 to-amber-500 border border-white/20 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.7)] tracking-wider">
-                      2
+                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                      Passo 2
                     </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1 w-full">
+                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
                       Abra o app <strong>Downloader</strong> e digite no campo de busca:
                     </div>
                   </li>
 
-                  <div className="pl-0 sm:pl-12">
+                  <div className="pl-0 sm:pl-20">
                     <CodeCopyBox code="1089401" />
                   </div>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-gradient-to-tr from-red-600 via-rose-600 to-amber-500 border border-white/20 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.7)] tracking-wider">
-                      3
+                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                      Passo 3
                     </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                       Clique em <strong>"Go"</strong>. O download do app iniciará imediatamente. Quando terminar, toque no botão para instalar.
                     </div>
                   </li>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-gradient-to-tr from-red-600 via-rose-600 to-amber-500 border border-white/20 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.7)] tracking-wider">
-                      4
+                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                      Passo 4
                     </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                       Se o sistema solicitar permissão para instalar apps desconhecidos, escolha <strong>"Permitir desta fonte"</strong> ou <strong>"Instalar mesmo assim"</strong>. Abra o UniTV Pro e aproveite!
                     </div>
                   </li>
@@ -442,7 +524,7 @@ function InstalarPage() {
               <>
                 <div className="flex items-center justify-between pb-4 border-b border-white/10">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 via-green-600 to-emerald-800 text-white border border-emerald-400/50 shadow-[0_0_20px_rgba(16,185,129,0.5)]">
+                    <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-600 to-green-700 text-white border border-emerald-400/50 shadow-[0_4px_20px_rgba(16,185,129,0.35)]">
                       <AndroidIcon className="size-7" />
                     </div>
                     <div>
@@ -463,7 +545,7 @@ function InstalarPage() {
                       <Play className="size-4 text-red-500 fill-red-500" />
                       <span>Vídeo Tutorial Curto — Passo a Passo no Smartphone</span>
                     </div>
-                    <span className="hidden sm:inline-flex items-center gap-1 text-[10px] text-emerald-400 bg-emerald-950/70 px-2.5 py-0.5 rounded-full border border-emerald-500/40">
+                    <span className="hidden sm:inline-flex items-center gap-1 text-[10px] text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
                       <Flame className="size-3" /> Instalação Rápida
                     </span>
                   </div>
@@ -480,20 +562,20 @@ function InstalarPage() {
 
                 <ol className="space-y-5">
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-500 to-green-700 border border-emerald-300 text-xs font-black text-white shadow-[0_0_15px_rgba(16,185,129,0.5)] tracking-wider">
-                      1
+                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                      Passo 1
                     </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                       Toque no botão verde abaixo para baixar o instalador oficial do UniTV Pro diretamente no seu celular.
                     </div>
                   </li>
 
-                  <div className="pl-0 sm:pl-12">
+                  <div className="pl-0 sm:pl-20">
                     <a
                       href={APK_MEDIAFIRE_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-emerald-500 via-green-600 to-emerald-700 px-6 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_35px_rgba(16,185,129,0.6)] transition-all hover:scale-[1.03] hover:shadow-[0_0_50px_rgba(16,185,129,0.8)] w-full border border-emerald-300/60 cursor-pointer"
+                      className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 px-6 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_30px_rgba(16,185,129,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(16,185,129,0.7)] w-full border border-emerald-400/50"
                     >
                       <Download className="size-5 animate-bounce" />
                       BAIXAR APK UNITV PRO (DOWNLOAD DIRETO)
@@ -501,19 +583,19 @@ function InstalarPage() {
                   </div>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-500 to-green-700 border border-emerald-300 text-xs font-black text-white shadow-[0_0_15px_rgba(16,185,129,0.5)] tracking-wider">
-                      2
+                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                      Passo 2
                     </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                       Abra as notificações do celular ou a pasta <strong>Downloads</strong> e toque no arquivo <strong>unitv_RS-NPWN.apk</strong>.
                     </div>
                   </li>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-500 to-green-700 border border-emerald-300 text-xs font-black text-white shadow-[0_0_15px_rgba(16,185,129,0.5)] tracking-wider">
-                      3
+                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                      Passo 3
                     </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                       Opção alternativa via Play Store: Instale o app{" "}
                       <a href={NTDOWN_PLAYSTORE_URL} target="_blank" rel="noopener noreferrer" className="text-red-400 font-bold underline">
                         ntDown <ExternalLink className="inline size-3" />
@@ -522,15 +604,15 @@ function InstalarPage() {
                     </div>
                   </li>
 
-                  <div className="pl-0 sm:pl-12">
+                  <div className="pl-0 sm:pl-20">
                     <CodeCopyBox code="94596" />
                   </div>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-gradient-to-tr from-emerald-500 to-green-700 border border-emerald-300 text-xs font-black text-white shadow-[0_0_15px_rgba(16,185,129,0.5)] tracking-wider">
-                      4
+                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                      Passo 4
                     </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                       Permita a instalação no celular quando solicitado e abra o UniTV Pro!
                     </div>
                   </li>
@@ -543,7 +625,7 @@ function InstalarPage() {
               <>
                 <div className="flex items-center justify-between pb-4 border-b border-white/10">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-black font-black text-lg shadow-[0_0_20px_rgba(245,158,11,0.5)] border border-amber-300">
+                    <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-black font-black text-base shadow-[0_4px_20px_rgba(245,158,11,0.4)] border border-amber-300">
                       LD
                     </div>
                     <div>
@@ -559,10 +641,10 @@ function InstalarPage() {
 
                 <ol className="space-y-5">
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-gradient-to-tr from-amber-500 to-orange-600 border border-amber-300 text-xs font-black text-black shadow-[0_0_15px_rgba(245,158,11,0.5)] tracking-wider">
-                      1
+                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                      Passo 1
                     </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                       Baixe o emulador gratuito{" "}
                       <a
                         href={LDPLAYER_WEBSITE_URL}
@@ -577,32 +659,32 @@ function InstalarPage() {
                   </li>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-gradient-to-tr from-amber-500 to-orange-600 border border-amber-300 text-xs font-black text-black shadow-[0_0_15px_rgba(245,158,11,0.5)] tracking-wider">
-                      2
+                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                      Passo 2
                     </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                       Abra o LDPlayer e instale o app <strong>Downloader</strong> pela Play Store do emulador.
                     </div>
                   </li>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-gradient-to-tr from-amber-500 to-orange-600 border border-amber-300 text-xs font-black text-black shadow-[0_0_15px_rgba(245,158,11,0.5)] tracking-wider">
-                      3
+                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                      Passo 3
                     </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1 w-full">
+                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
                       No Downloader dentro do emulador, digite o código:
                     </div>
                   </li>
 
-                  <div className="pl-0 sm:pl-12">
+                  <div className="pl-0 sm:pl-20">
                     <CodeCopyBox code="1089401" />
                   </div>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-gradient-to-tr from-amber-500 to-orange-600 border border-amber-300 text-xs font-black text-black shadow-[0_0_15px_rgba(245,158,11,0.5)] tracking-wider">
-                      4
+                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                      Passo 4
                     </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                       Instale o UniTV Pro no emulador e assista em tela cheia no monitor ou TV!
                     </div>
                   </li>
@@ -612,120 +694,105 @@ function InstalarPage() {
 
           </div>
 
-          {/* 3. CONFIRMAÇÃO DE TESTE LIBERADO (RIBBON VERDE INTEGRADO SEM ESPAÇAMENTO MORTO) */}
-          <div className="bg-gradient-to-r from-emerald-950/80 via-emerald-900/60 to-emerald-950/80 p-4 sm:p-5 border-y border-emerald-500/40 text-center">
+          {/* 3. CONFIRMAÇÃO DE TESTE LIBERADO (RIBBON VERDE INTEGRADO) */}
+          <div className="bg-gradient-to-r from-emerald-950/80 via-emerald-900/60 to-emerald-950/80 p-4 sm:p-5 border-t border-emerald-500/30 text-center">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-400/50 shadow-[0_0_20px_rgba(16,185,129,0.4)]">
-                <CheckCircle2 className="size-6 stroke-[2.5]" />
+              <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                <CheckCircle2 className="size-5 stroke-[2.5]" />
               </div>
               <div className="text-center sm:text-left">
                 <h3 className="text-base sm:text-lg font-black text-white leading-tight">
                   Pronto! Seu teste grátis está liberado 🎉
                 </h3>
-                <p className="text-xs text-emerald-200 font-medium">
+                <p className="text-xs text-emerald-200/90 font-medium">
                   Abra o UniTV Pro no seu aparelho e escolha o que quer assistir agora mesmo.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* 4. MICROVENDA DE IMPACTO (APROXIMADO E ENRIQUECIDO COM PREÇO GIGANTE E BRILHO 3D) */}
-          <div className="relative overflow-hidden p-7 sm:p-11 bg-gradient-to-br from-[#30070e] via-[#1a0408] to-[#0c0204] text-center space-y-6">
+        </div>
 
-            {/* SLIDESHOW DO CARROSSEL HERO NA SEÇÃO DE VENDA */}
-            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-              {heroSlides.map((s, idx) => (
-                <img
-                  key={s.title}
-                  src={img(s.backdrop, "w1280")}
-                  alt={s.title}
-                  className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out ${
-                    idx === heroIndex ? "opacity-35 scale-105" : "opacity-0"
-                  }`}
-                />
-              ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0204] via-[#1a0408]/85 to-[#30070e]/90" />
-            </div>
-
-            <div className="relative z-10 space-y-5">
-              <div className="inline-flex items-center gap-2 rounded-full border border-amber-400/50 bg-red-950/80 px-4 py-1.5 backdrop-blur-md shadow-[0_0_25px_rgba(245,158,11,0.4)]">
-                <Sparkles className="size-4 text-amber-400 animate-spin" />
-                <span className="text-xs font-black uppercase tracking-wider text-amber-200">
-                  🔥 EM DESTAQUE NO APP: {currentHero.title} ({currentHero.year})
-                </span>
-              </div>
-
-              <div>
-                <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-1.5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-                  Gostou do que encontrou?
-                </h2>
-                <p className="text-xs sm:text-base text-white/90 max-w-md mx-auto leading-relaxed font-medium italic">
-                  "{currentHero.tagline}"
-                </p>
-              </div>
-
-              {/* PONTINHOS NAVEGADORES */}
-              <div className="flex items-center justify-center gap-1.5 py-1">
-                {heroSlides.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setHeroIndex(i)}
-                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      i === heroIndex ? "w-8 bg-amber-400 shadow-[0_0_12px_rgba(251,191,36,0.8)]" : "w-2 bg-white/30 hover:bg-white/60"
-                    }`}
-                    aria-label={`Slide ${i + 1}`}
-                  />
-                ))}
-              </div>
-
-              {/* CAIXA DE PREÇO GIGANTE, GLOW E ALTÍSSIMA CONVERSÃO */}
-              <div className="inline-flex flex-col items-center justify-center rounded-3xl border-2 border-amber-400/70 bg-gradient-to-r from-red-950/95 via-rose-950/95 to-red-950/95 px-8 sm:px-12 py-5 backdrop-blur-xl shadow-[0_0_50px_rgba(245,158,11,0.5)] transform-gpu hover:scale-105 transition-all duration-300 my-2">
-                <span className="text-[11px] font-black text-amber-300 uppercase tracking-[0.2em] flex items-center gap-1.5">
-                  <Star className="size-3.5 text-amber-400 fill-amber-400 animate-pulse" />
-                  MELHOR PLANO DE ACESSO ILIMITADO
-                </span>
-                <div className="flex items-baseline gap-2 mt-1">
-                  <span className="text-xs sm:text-sm font-bold text-red-200">A partir de apenas</span>
-                  <span className="text-4xl sm:text-6xl font-black text-amber-300 drop-shadow-[0_0_25px_rgba(251,191,36,0.8)] tracking-tight">
-                    R$ 34,99
-                  </span>
-                  <span className="text-xs sm:text-sm font-bold text-white/90">/mês</span>
-                </div>
-              </div>
-
-              {/* BOTÃO PRINCIPAL CTA DE IMPACTO */}
-              <div>
-                <a
-                  href="/#planos"
-                  className="group relative inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-amber-500 hover:from-red-500 hover:to-amber-500 px-9 py-5 text-sm sm:text-base font-black text-white shadow-[0_0_45px_rgba(220,38,38,0.9)] border-2 border-amber-300/60 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer w-full sm:w-auto"
-                >
-                  <span className="flex size-7 items-center justify-center rounded-xl bg-white/20 text-white group-hover:scale-110 transition-transform shadow-inner">
-                    <Zap className="size-4 fill-current text-amber-300" />
-                  </span>
-                  <span>QUERO CONTINUAR COM O ACESSO</span>
-                  <ArrowRight className="size-5 text-white group-hover:translate-x-1 transition-transform" />
-                </a>
-              </div>
-
-              {/* BENEFÍCIOS E SEGURANÇA */}
-              <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs font-extrabold text-white/90 pt-3 border-t border-white/15">
-                <span className="flex items-center gap-1.5">
-                  <ShieldCheck className="size-4 text-emerald-400" /> Garantia de 7 dias
-                </span>
-                <span className="text-white/30">•</span>
-                <span className="flex items-center gap-1.5">
-                  <CreditCard className="size-4 text-blue-400" /> Pix ou cartão
-                </span>
-                <span className="text-white/30">•</span>
-                <span className="flex items-center gap-1.5">
-                  <Zap className="size-4 text-amber-400" /> Ativação após confirmação
-                </span>
-              </div>
-            </div>
+        {/* ── SEÇÃO COMPLETA DOS 3 PLANOS COM TODAS AS FEATURES ── */}
+        <section id="planos" className="pt-6 space-y-6">
+          <div className="text-center space-y-2">
+            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/60 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-red-400">
+              <Sparkles className="size-3.5 text-red-400 animate-spin" /> Escolha Seu Plano de Acesso
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
+              Assine com <span className="text-red-500">desconto exclusivo</span>
+            </h2>
+            <p className="text-xs sm:text-sm text-white/70 max-w-md mx-auto">
+              Sem fidelidade. Cancele quando quiser. Ativação imediata e garantia de 7 dias.
+            </p>
           </div>
 
-          {/* 5. SUPORTE INLINE RODAPÉ */}
-          <div className="p-5 sm:p-6 bg-white/[0.03] border-t border-white/10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch pt-2">
+            {PLANOS.map((p) => {
+              const IconComp = p.icon;
+              return (
+                <div
+                  key={p.id}
+                  className={`group relative flex flex-col justify-between rounded-3xl p-6 sm:p-7 backdrop-blur-2xl transition-all duration-300 ${p.cardStyle}`}
+                >
+                  <div className="space-y-5">
+                    {/* BADGE DO PLANO */}
+                    <div className="flex items-center justify-between">
+                      <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-black border ${p.badgeStyle}`}>
+                        {p.badge}
+                      </span>
+                      <IconComp className={`size-6 ${p.iconColor}`} />
+                    </div>
+
+                    {/* TÍTULO E PREÇO */}
+                    <div>
+                      <h3 className="text-xl font-black text-white">{p.nome}</h3>
+                      <p className="text-xs text-white/60 font-medium">{p.telas} • {p.dias}</p>
+
+                      <div className="mt-3 flex items-baseline gap-2">
+                        <span className="text-xs font-bold text-white/40 line-through">{p.precoAntigo}</span>
+                        <span className="text-3xl sm:text-4xl font-black text-white">{p.preco}</span>
+                        <span className="text-xs font-bold text-white/60">/{p.periodo}</span>
+                      </div>
+                    </div>
+
+                    {/* BOTÃO ASSINAR */}
+                    <a
+                      href={p.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex w-full items-center justify-center gap-2 ${p.btnStyle}`}
+                    >
+                      <span>{p.btnText}</span>
+                      <ArrowRight className="size-4" />
+                    </a>
+
+                    {/* LISTA COMPLETA DE FEATURES DO PLANO */}
+                    <div className="pt-4 border-t border-white/10 space-y-2.5">
+                      <p className="text-[11px] font-black uppercase tracking-wider text-white/50">
+                        Recursos inclusos neste plano:
+                      </p>
+                      {p.features.map((f, idx) => (
+                        <div key={idx} className="flex items-start gap-2.5">
+                          <CheckCircle2 className="size-4 shrink-0 text-emerald-400 mt-0.5" />
+                          <span className="text-xs text-white/85 leading-snug font-medium">{f}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* GARANTIA RODAPÉ DO CARD */}
+                  <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-center gap-2 text-[10px] font-extrabold text-white/60">
+                    <ShieldCheck className="size-3.5 text-emerald-400" />
+                    <span>Garantia incondicional de 7 dias</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* BARRA DE SUPORTE RODAPÉ */}
+          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
               <div className="flex items-center gap-3.5">
                 <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 shadow-md">
@@ -733,27 +800,26 @@ function InstalarPage() {
                 </div>
                 <div>
                   <h4 className="text-sm sm:text-base font-black text-white">
-                    Está com dificuldade para instalar?
+                    Precisa de ajuda ou tirou dúvidas sobre os planos?
                   </h4>
                   <p className="text-xs text-muted-foreground font-medium">
-                    Fale direto com a equipe de suporte no WhatsApp.
+                    Nosso atendimento no WhatsApp está disponível 7 dias por semana.
                   </p>
                 </div>
               </div>
 
               <a
-                href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Estou%20com%20dificuldade%20para%20instalar%20o%20UniTV%20Pro"
+                href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20os%20planos%20do%20UniTV%20Pro"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-3 text-xs sm:text-sm font-extrabold text-white shadow-lg transition-all hover:scale-105 cursor-pointer shrink-0 w-full sm:w-auto border border-emerald-400/50"
               >
                 <WhatsAppIcon className="size-5 fill-current" />
-                FALAR COM SUPORTE
+                ATENDIMENTO NO WHATSAPP
               </a>
             </div>
           </div>
-
-        </div>
+        </section>
 
       </main>
     </div>
