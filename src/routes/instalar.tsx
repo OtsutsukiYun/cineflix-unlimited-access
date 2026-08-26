@@ -68,6 +68,13 @@ const HERO_BACKDROPS = [
   "/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg", // Inside Out 2
 ];
 
+const SHOWCASE_IMAGES = [
+  { title: "Filmes & Lançamentos", img: "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg" },
+  { title: "Séries & Doramas", img: "/nTvM4z1Z56Sp5HAWYflab6EsNoL.jpg" },
+  { title: "Esportes Ao Vivo 4K", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Erling_Haaland_France_v_Norway_26_June_26-008.jpg/1280px-Erling_Haaland_France_v_Norway_26_June_26-008.jpg" },
+  { title: "Canais Ao Vivo 24h", img: "/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg" },
+];
+
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link.ntdev.ntdw";
 const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
@@ -150,14 +157,15 @@ function InstalarPage() {
   useEffect(() => {
     const timer = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % HERO_BACKDROPS.length);
-    }, 4500);
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
       {/* LUZ AMBIENTAL RED GLOW */}
-      <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[750px] rounded-full bg-red-600/20 blur-[180px] z-0" />
+      <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[800px] rounded-full bg-red-600/20 blur-[180px] z-0 animate-pulse" />
+      <div className="pointer-events-none fixed bottom-1/4 right-10 size-[500px] rounded-full bg-rose-600/15 blur-[160px] z-0" />
 
       {/* ── FUNDO DA PÁGINA INTEIRA REPLETO DE CAPINHAS DE FILMES DE CIMA A EMBAIXO ── */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
@@ -633,7 +641,7 @@ function InstalarPage() {
             </div>
           </div>
 
-          {/* 4. SEÇÃO DE COMPRA PERFEITA: GOSTOU DO QUE VIU? COM SLIDESHOW DE IMAGENS DENTRO DO RETÂNGULO DE PLANO MENSAL */}
+          {/* 4. SEÇÃO DE COMPRA SUPER MODERNA: GOSTOU DO QUE VIU? COM SLIDESHOW DE IMAGENS E IMAGENS FLUTUANTES DENTRO DO RETÂNGULO */}
           <div id="plano-mensal" className="relative overflow-hidden p-7 sm:p-11 bg-gradient-to-br from-[#3b0811] via-[#240409] to-[#140103] text-center space-y-6">
 
             {/* SLIDESHOW DE IMAGENS (FILMES, ESPORTES, DORAMAS, CANAIS) PASSANDO DENTRO DO RETÂNGULO DE COMPRA */}
@@ -651,8 +659,8 @@ function InstalarPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#140103] via-[#240409]/85 to-[#3b0811]/90" />
             </div>
 
-            <div className="relative z-10 space-y-5">
-              <div className="inline-flex items-center gap-2 rounded-full border border-red-400/50 bg-red-950/80 px-4 py-1.5 backdrop-blur-md shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+            <div className="relative z-10 space-y-6">
+              <div className="inline-flex items-center gap-2 rounded-full border border-red-400/50 bg-red-950/80 px-4.5 py-1.5 backdrop-blur-md shadow-[0_0_25px_rgba(220,38,38,0.5)]">
                 <Sparkles className="size-4 text-red-400 animate-spin" />
                 <span className="text-xs font-black uppercase tracking-wider text-red-200">
                   🔥 ACESSO ILIMITADO • SEM FIDELIDADE
@@ -660,7 +668,7 @@ function InstalarPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+                <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-2 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                   Gostou do que viu?
                 </h2>
                 <p className="text-xs sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-medium">
@@ -668,15 +676,36 @@ function InstalarPage() {
                 </p>
               </div>
 
-              {/* CAIXA DE PREÇO EM DESTAQUE */}
-              <div className="inline-flex flex-col items-center justify-center rounded-3xl border border-red-500/50 bg-gradient-to-r from-red-950/95 via-rose-950/95 to-red-950/95 px-5 sm:px-10 py-4 backdrop-blur-xl shadow-[0_0_40px_rgba(220,38,38,0.4)] max-w-full">
+              {/* IMAGENS FLUTUANTES SEM SUB-RETÂNGULOS (FILMES, ESPORTES, DORAMAS, CANAIS) DENTRO DO RETÂNGULO DE COMPRA */}
+              <div className="flex items-center justify-center gap-3 sm:gap-4 py-2 overflow-x-auto">
+                {SHOWCASE_IMAGES.map((item) => (
+                  <div
+                    key={item.title}
+                    className="group relative h-20 w-32 sm:h-24 sm:w-40 overflow-hidden rounded-2xl border border-white/25 shadow-xl transition-all duration-300 hover:scale-110 hover:border-red-500 shrink-0"
+                  >
+                    <img
+                      src={img(item.img, "w500")}
+                      alt={item.title}
+                      className="size-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-2 text-left">
+                      <span className="text-[10px] sm:text-[11px] font-black text-white leading-tight drop-shadow-[0_1px_4px_rgba(0,0,0,0.95)]">
+                        {item.title}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* CAIXA DE PREÇO VIBRANTE E ELEGANTE */}
+              <div className="inline-flex flex-col items-center justify-center rounded-3xl border-2 border-red-500/60 bg-gradient-to-r from-red-950/95 via-rose-950/95 to-red-950/95 px-6 sm:px-12 py-5 backdrop-blur-xl shadow-[0_0_50px_rgba(220,38,38,0.5)] max-w-full my-1">
                 <span className="text-[10px] sm:text-[11px] font-black text-red-200 uppercase tracking-[0.15em] flex items-center gap-1.5 whitespace-nowrap">
                   <Sparkles className="size-3 sm:size-3.5 text-red-400 animate-pulse" />
                   PLANO MENSAL (30 DIAS DE ACESSO)
                 </span>
                 <div className="flex items-baseline justify-center gap-1.5 sm:gap-2 mt-1 flex-nowrap whitespace-nowrap">
                   <span className="text-[11px] sm:text-sm font-bold text-red-300 whitespace-nowrap">A partir de apenas</span>
-                  <span className="text-3xl sm:text-5xl font-black text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.7)] tracking-tight whitespace-nowrap">
+                  <span className="text-3xl sm:text-5xl font-black text-white drop-shadow-[0_0_25px_rgba(255,255,255,0.8)] tracking-tight whitespace-nowrap">
                     R$ 34,99
                   </span>
                   <span className="text-[11px] sm:text-sm font-bold text-white/90 whitespace-nowrap">/mês</span>
@@ -710,7 +739,7 @@ function InstalarPage() {
                   href="https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-9 py-4.5 text-sm sm:text-base font-black text-white shadow-[0_0_40px_rgba(220,38,38,0.9)] border border-red-300/70 transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer w-full sm:w-auto"
+                  className="group relative inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-9 py-5 text-sm sm:text-base font-black text-white shadow-[0_0_50px_rgba(220,38,38,0.95)] border-2 border-red-300/80 transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer w-full sm:w-auto"
                 >
                   <span className="flex size-6 items-center justify-center rounded-lg bg-white/20 text-white group-hover:scale-110 transition-transform shadow-inner">
                     <Zap className="size-3.5 fill-current" />
