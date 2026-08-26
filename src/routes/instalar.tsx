@@ -38,26 +38,11 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-const ROW_1_POSTERS = [
-  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
-  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
-  "/kNxRgcTeqeU5jauBackTERoO2De.jpg",
-  "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg",
-  "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg",
-  "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg",
-  "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg",
-  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg",
-];
-
-const ROW_2_POSTERS = [
-  "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg",
-  "/pmff1wjKrgJi92PPr346lAifzlg.jpg",
-  "/yihdXomYb5kTeSivtFndMy5iDmf.jpg",
-  "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg",
-  "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg",
-  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg",
-  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg",
-  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg",
+// SLIDES DO FUNDO DA PÁGINA (CONFORME O LAYOUT ORIGINAL)
+const PAGE_BACKDROP_SLIDES = [
+  "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", // Evil Dead Rise
+  "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg",  // Obsessão
+  "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg", // Backrooms
 ];
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
@@ -136,9 +121,18 @@ function CodeCopyBox({ code }: { code: string }) {
 
 function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
+  const [bgSlide, setBgSlide] = useState(0);
   const [heroIndex, setHeroIndex] = useState(0);
 
-  // CARROSSEL ROTATIVO DO SLIDE DE VENDA (IGUAL À HOME)
+  // SLIDESHOW DO FUNDO DA PÁGINA (RESTAURADO DA VERSÃO ANTERIOR)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setBgSlide((prev) => (prev + 1) % PAGE_BACKDROP_SLIDES.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // SLIDE ROTATIVO DENTRO DO RETÂNGULO DE COMPRA (IGUAL À HOME)
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroIndex((prev) => (prev + 1) % heroSlides.length);
@@ -149,10 +143,26 @@ function InstalarPage() {
   const currentHero = heroSlides[heroIndex] || heroSlides[0]!;
 
   return (
-    <div className="relative min-h-screen bg-[#0d090b] text-white overflow-x-hidden">
+    <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
       {/* LUZ AMBIENTAL VERMELHA */}
       <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-red-600/15 blur-[170px] z-0" />
-      <div className="pointer-events-none fixed bottom-20 right-10 size-[500px] rounded-full bg-rose-700/15 blur-[140px] z-0" />
+
+      {/* ── FUNDO DA PÁGINA DE TESTE ORIGINAL (RESTAURADO EXATAMENTE COMO ESTAVA ANTES) ── */}
+      <div className="pointer-events-none fixed inset-0 z-0">
+        {PAGE_BACKDROP_SLIDES.map((bd, i) => (
+          <img
+            key={bd}
+            src={img(bd, "w1280")}
+            alt=""
+            className="absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out"
+            style={{
+              opacity: i === bgSlide ? 0.12 : 0,
+              filter: "blur(2px) brightness(0.4)",
+            }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/60 via-[#080808]/80 to-[#080808]" />
+      </div>
 
       {/* BARRA PROMOCIONAL DO TOPO */}
       <div className="fixed inset-x-0 top-0 z-[60]">
@@ -198,23 +208,6 @@ function InstalarPage() {
           </a>
         </div>
       </header>
-
-      {/* ── FUNDO DA PÁGINA INTEIRA COM MARQUEE COMPLETO DE FILMES (RESTAURADO) ── */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0d090b]/85 via-[#0d090b]/65 to-[#0d090b]/90 z-10" />
-        <div className="flex flex-col gap-4 pt-16 scale-105 blur-[1px]">
-          <div className="flex w-max gap-4 animate-marquee">
-            {ROW_1_POSTERS.concat(ROW_1_POSTERS).map((p, i) => (
-              <img key={`r1-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
-            ))}
-          </div>
-          <div className="flex w-max gap-4 animate-marquee-reverse">
-            {ROW_2_POSTERS.concat(ROW_2_POSTERS).map((p, i) => (
-              <img key={`r2-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* CONTEÚDO PRINCIPAL */}
       <main className="relative z-10 mx-auto w-[94%] max-w-3xl pt-34 sm:pt-38 pb-20">
