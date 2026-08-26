@@ -314,11 +314,11 @@ function InstalarPage() {
 
               {/* PASSOS NUMERADOS COM CÓDIGO GRANDE + BOTAO COPIAR */}
               <ol className="space-y-6">
-                <li className="flex items-start gap-4">
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                <li className="flex items-start gap-3.5">
+                  <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 1
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                  </span>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                     Abra a loja de aplicativos da sua Smart TV ou TV Box (Play Store / App Store) e instale o app{" "}
                     <a
                       href={DOWNLOADER_PLAYSTORE_URL}
@@ -331,34 +331,34 @@ function InstalarPage() {
                   </div>
                 </li>
 
-                <li className="flex items-start gap-4">
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                <li className="flex items-start gap-3.5">
+                  <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 2
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1 w-full">
+                  </span>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
                     Abra o app <strong>Downloader</strong> e digite no campo de busca:
                   </div>
                 </li>
 
                 {/* CÓDIGO GRANDE + BOTAO COPIAR */}
-                <div className="pl-0 sm:pl-11">
+                <div className="pl-0 sm:pl-24">
                   <CodeCopyBox code="1089401" />
                 </div>
 
-                <li className="flex items-start gap-4">
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                <li className="flex items-start gap-3.5">
+                  <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 3
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                  </span>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                     Clique em <strong>"Go"</strong>. O download do app iniciará imediatamente. Quando terminar, toque no botão para instalar.
                   </div>
                 </li>
 
-                <li className="flex items-start gap-4">
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                <li className="flex items-start gap-3.5">
+                  <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 4
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                  </span>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                     Se o sistema solicitar permissão para instalar apps desconhecidos, escolha <strong>"Permitir desta fonte"</strong> ou <strong>"Instalar mesmo assim"</strong>. Abra o UniTV Pro e aproveite!
                   </div>
                 </li>
@@ -403,16 +403,16 @@ function InstalarPage() {
               </div>
 
               <ol className="space-y-6">
-                <li className="flex items-start gap-4">
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                <li className="flex items-start gap-3.5">
+                  <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 1
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                  </span>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                     Toque no botão verde abaixo para baixar o instalador oficial do UniTV Pro diretamente no seu celular.
                   </div>
                 </li>
 
-                <div className="pl-0 sm:pl-11">
+                <div className="pl-0 sm:pl-24">
                   <a
                     href={APK_MEDIAFIRE_URL}
                     target="_blank"
@@ -424,20 +424,20 @@ function InstalarPage() {
                   </a>
                 </div>
 
-                <li className="flex items-start gap-4">
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                <li className="flex items-start gap-3.5">
+                  <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 2
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                  </span>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                     Abra as notificações do celular ou a pasta <strong>Downloads</strong> e toque no arquivo <strong>unitv_RS-NPWN.apk</strong>.
                   </div>
                 </li>
 
-                <li className="flex items-start gap-4">
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                <li className="flex items-start gap-3.5">
+                  <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 3
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                  </span>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                     Opção alternativa via Play Store: Instale o app{" "}
                     <a href={NTDOWN_PLAYSTORE_URL} target="_blank" rel="noopener noreferrer" className="text-red-400 font-bold underline">
                       ntDown <ExternalLink className="inline size-3" />
@@ -446,15 +446,15 @@ function InstalarPage() {
                   </div>
                 </li>
 
-                <div className="pl-0 sm:pl-11">
+                <div className="pl-0 sm:pl-24">
                   <CodeCopyBox code="94596" />
                 </div>
 
-                <li className="flex items-start gap-4">
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                <li className="flex items-start gap-3.5">
+                  <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 4
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                  </span>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                     Permita a instalação no celular quando solicitado e abra o UniTV Pro!
                   </div>
                 </li>
@@ -482,11 +482,11 @@ function InstalarPage() {
               </div>
 
               <ol className="space-y-6">
-                <li className="flex items-start gap-4">
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                <li className="flex items-start gap-3.5">
+                  <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 1
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                  </span>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                     Baixe o emulador gratuito{" "}
                     <a
                       href={LDPLAYER_WEBSITE_URL}
@@ -500,33 +500,33 @@ function InstalarPage() {
                   </div>
                 </li>
 
-                <li className="flex items-start gap-4">
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                <li className="flex items-start gap-3.5">
+                  <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 2
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                  </span>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                     Abra o LDPlayer e instale o app <strong>Downloader</strong> pela Play Store do emulador.
                   </div>
                 </li>
 
-                <li className="flex items-start gap-4">
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                <li className="flex items-start gap-3.5">
+                  <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 3
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1 w-full">
+                  </span>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
                     No Downloader dentro do emulador, digite o código:
                   </div>
                 </li>
 
-                <div className="pl-0 sm:pl-11">
+                <div className="pl-0 sm:pl-24">
                   <CodeCopyBox code="1089401" />
                 </div>
 
-                <li className="flex items-start gap-4">
-                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                <li className="flex items-start gap-3.5">
+                  <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 4
-                  </div>
-                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                  </span>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                     Instale o UniTV Pro no emulador e assista em tela cheia no monitor ou TV!
                   </div>
                 </li>
