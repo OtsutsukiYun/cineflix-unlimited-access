@@ -19,10 +19,6 @@ import {
   Sparkles,
   ArrowRight,
   Flame,
-  Clapperboard,
-  Tv2,
-  Trophy,
-  Film,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -64,113 +60,18 @@ const ROW_2_POSTERS = [
   "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
 ];
 
+const HERO_BACKDROPS = [
+  "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", // Evil Dead Rise
+  "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg", // Obsessão
+  "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg", // Backrooms
+  "/nTvM4z1Z56Sp5HAWYflab6EsNoL.jpg", // Demon Slayer
+  "/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg", // Inside Out 2
+];
+
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link.ntdev.ntdw";
 const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
 const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file";
-
-const CATEGORY_CARDS = [
-  {
-    icon: Film,
-    title: "Filmes & Lançamentos 2026",
-    tag: "+50.000 Filmes",
-    desc: "Sucessos do cinema, estreias inéditas e produções exclusivas em 4K e Full HD.",
-    banners: [
-      "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", // Evil Dead Rise
-      "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg", // Obsessão
-      "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg", // Backrooms
-    ],
-    gradient: "from-red-600 to-rose-700",
-    border: "border-red-500/40",
-  },
-  {
-    icon: Clapperboard,
-    title: "Séries, Doramas & Animes",
-    tag: "+15.000 Séries",
-    desc: "Episódios atualizados diariamente com animes lendários, doramas coreanos e novelas turcas.",
-    banners: [
-      "/nTvM4z1Z56Sp5HAWYflab6EsNoL.jpg", // Demon Slayer
-      "/3A57V29u9143W2Z0l1JpG9F.jpg",      // Jujutsu Kaisen
-      "/9faGSFi5jam6pUdFi2Q4Sp5VRhC.jpg", // Last of Us
-    ],
-    gradient: "from-purple-600 to-indigo-700",
-    border: "border-purple-500/40",
-  },
-  {
-    icon: Trophy,
-    title: "Esportes Ao Vivo em 4K",
-    tag: "Futebol & Lutas 24h",
-    desc: "Brasileirão, Champions League, Premier League, UFC, F1 e NBA sem travamentos.",
-    banners: [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Erling_Haaland_France_v_Norway_26_June_26-008.jpg/1280px-Erling_Haaland_France_v_Norway_26_June_26-008.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg",
-    ],
-    gradient: "from-emerald-600 to-teal-700",
-    border: "border-emerald-500/40",
-  },
-  {
-    icon: Tv2,
-    title: "Canais Ao Vivo 24h",
-    tag: "+500 Canais HD/4K",
-    desc: "Telecine, HBO, Premiere, SporTV, BBB 24h, Infantil, Notícias e Variedades.",
-    banners: [
-      "/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg", // Inside Out 2
-      "/9l1E2v92uqx09u4345u310b809.jpg",  // Moana 2
-    ],
-    gradient: "from-amber-500 to-orange-600",
-    border: "border-amber-500/40",
-  },
-];
-
-function CategorySlideshowCard({ card }: { card: (typeof CATEGORY_CARDS)[0] }) {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    if (!card.banners || card.banners.length <= 1) return;
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % card.banners.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [card.banners]);
-
-  const IconComp = card.icon;
-
-  return (
-    <div className={`relative min-h-[170px] sm:min-h-[190px] overflow-hidden rounded-2xl border ${card.border} bg-black/80 p-5 shadow-xl transition-all duration-300 hover:scale-[1.02]`}>
-      {/* BACKGROUND SLIDESHOW IMAGES */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {card.banners.map((b, i) => (
-          <img
-            key={b}
-            src={img(b, "w780")}
-            alt=""
-            className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out ${
-              i === index ? "opacity-35 scale-105" : "opacity-0"
-            }`}
-          />
-        ))}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/30" />
-      </div>
-
-      {/* CARD CONTENT */}
-      <div className="relative z-10 flex flex-col justify-between h-full space-y-3">
-        <div className="flex items-center justify-between">
-          <div className={`flex size-10 items-center justify-center rounded-xl bg-gradient-to-br ${card.gradient} text-white shadow-md border border-white/20`}>
-            <IconComp className="size-5" />
-          </div>
-          <span className="rounded-full bg-white/10 backdrop-blur-md px-3 py-1 text-[10px] font-black text-white border border-white/20">
-            {card.tag}
-          </span>
-        </div>
-
-        <div>
-          <h4 className="text-base font-black text-white tracking-tight">{card.title}</h4>
-          <p className="text-xs text-white/80 leading-relaxed font-medium mt-0.5">{card.desc}</p>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function DownloaderAppIcon({ className = "size-12" }: { className?: string }) {
   return (
@@ -243,6 +144,15 @@ function CodeCopyBox({ code }: { code: string }) {
 
 function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
+  const [bgIndex, setBgIndex] = useState(0);
+
+  // SLIDESHOW DE IMAGENS PASSANDO NO FUNDO DA CAIXA DE COMPRA
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setBgIndex((prev) => (prev + 1) % HERO_BACKDROPS.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
@@ -392,7 +302,7 @@ function InstalarPage() {
           </p>
         </div>
 
-        {/* MASTER CONTAINER ÚNICO INTEGRADO (TUTORIAL + CATEGORIAS + PLANO MENSAL) */}
+        {/* MASTER CONTAINER ÚNICO INTEGRADO (TUTORIAL + SEÇÃO DE VENDA 'GOSTOU DO QUE VIU?') */}
         <div className="rounded-3xl border border-red-500/40 bg-gradient-to-b from-[#280910]/95 via-[#1a0509]/95 to-[#0e0205]/98 backdrop-blur-2xl shadow-[0_25px_80px_rgba(220,38,38,0.35)] overflow-hidden">
 
           {/* 1. SELETOR DE DISPOSITIVOS EM ABAS DE ALTO IMPACTO */}
@@ -723,43 +633,46 @@ function InstalarPage() {
             </div>
           </div>
 
-          {/* 4. RETÂNGULOS DE CATEGORIAS PASSANDO COM SLIDESHOW (FILMES, ESPORTES, DORAMAS, CANAIS) */}
-          <div id="plano-mensal" className="p-6 sm:p-8 bg-gradient-to-b from-black/60 to-[#1e050b]/90 border-t border-red-500/20 space-y-6">
-            <div className="text-center space-y-1">
-              <span className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-red-400">
-                <Sparkles className="size-3.5 text-red-400 animate-pulse" />
-                Tudo Incluso No UniTV Pro
-              </span>
-              <h3 className="text-xl sm:text-3xl font-black text-white tracking-tight">
-                Gostou do que encontrou?
-              </h3>
-              <p className="text-xs sm:text-sm text-white/70">
-                Assista em qualquer aparelho com o Plano Mensal sem fidelidade!
-              </p>
-            </div>
+          {/* 4. SEÇÃO DE COMPRA PERFEITA: GOSTOU DO QUE VIU? COM SLIDESHOW DE IMAGENS DENTRO DO RETÂNGULO DE PLANO MENSAL */}
+          <div id="plano-mensal" className="relative overflow-hidden p-7 sm:p-11 bg-gradient-to-br from-[#3b0811] via-[#240409] to-[#140103] text-center space-y-6">
 
-            {/* GRADE 2x2 DE RETÂNGULOS COM ANIMAÇÃO SLIDESHOW IGUAL DA HOME */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {CATEGORY_CARDS.map((card) => (
-                <CategorySlideshowCard key={card.title} card={card} />
+            {/* SLIDESHOW DE IMAGENS (FILMES, ESPORTES, DORAMAS, CANAIS) PASSANDO DENTRO DO RETÂNGULO DE COMPRA */}
+            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+              {HERO_BACKDROPS.map((b, idx) => (
+                <img
+                  key={b}
+                  src={img(b, "w1280")}
+                  alt=""
+                  className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out ${
+                    idx === bgIndex ? "opacity-35 scale-105" : "opacity-0"
+                  }`}
+                />
               ))}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#140103] via-[#240409]/85 to-[#3b0811]/90" />
             </div>
 
-            {/* CARD ÚNICO DO PLANO MENSAL DENTRO DA ÁREA DE COMPRA */}
-            <div className="rounded-3xl border-2 border-red-500/60 bg-gradient-to-b from-[#380913]/95 via-[#23040b]/95 to-[#120104]/98 p-6 sm:p-8 shadow-[0_0_50px_rgba(220,38,38,0.4)] text-center space-y-5">
-              
+            <div className="relative z-10 space-y-5">
               <div className="inline-flex items-center gap-2 rounded-full border border-red-400/50 bg-red-950/80 px-4 py-1.5 backdrop-blur-md shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                <Zap className="size-4 text-red-400" />
+                <Sparkles className="size-4 text-red-400 animate-spin" />
                 <span className="text-xs font-black uppercase tracking-wider text-red-200">
-                  🔥 PLANO MENSAL — SEM FIDELIDADE
+                  🔥 ACESSO ILIMITADO • SEM FIDELIDADE
                 </span>
+              </div>
+
+              <div>
+                <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-2 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+                  Gostou do que viu?
+                </h2>
+                <p className="text-xs sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-medium">
+                  Continue assistindo a todos os seus filmes, séries, esportes e canais ao vivo no UniTV Pro sem interrupções!
+                </p>
               </div>
 
               {/* CAIXA DE PREÇO EM DESTAQUE */}
               <div className="inline-flex flex-col items-center justify-center rounded-3xl border border-red-500/50 bg-gradient-to-r from-red-950/95 via-rose-950/95 to-red-950/95 px-5 sm:px-10 py-4 backdrop-blur-xl shadow-[0_0_40px_rgba(220,38,38,0.4)] max-w-full">
                 <span className="text-[10px] sm:text-[11px] font-black text-red-200 uppercase tracking-[0.15em] flex items-center gap-1.5 whitespace-nowrap">
                   <Sparkles className="size-3 sm:size-3.5 text-red-400 animate-pulse" />
-                  30 DIAS DE ACESSO ILIMITADO
+                  PLANO MENSAL (30 DIAS DE ACESSO)
                 </span>
                 <div className="flex items-baseline justify-center gap-1.5 sm:gap-2 mt-1 flex-nowrap whitespace-nowrap">
                   <span className="text-[11px] sm:text-sm font-bold text-red-300 whitespace-nowrap">A partir de apenas</span>
@@ -802,7 +715,7 @@ function InstalarPage() {
                   <span className="flex size-6 items-center justify-center rounded-lg bg-white/20 text-white group-hover:scale-110 transition-transform shadow-inner">
                     <Zap className="size-3.5 fill-current" />
                   </span>
-                  <span>ASSINAR PLANO MENSAL — R$ 34,99</span>
+                  <span>QUERO CONTINUAR COM O ACESSO</span>
                   <ArrowRight className="size-4 text-white/90 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
