@@ -168,26 +168,77 @@ function InstalarPage() {
       {/* LUZ AMBIENTAL RED GLOW */}
       <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-red-600/15 blur-[160px] z-0" />
 
-      {/* ── FUNDO DA PÁGINA INTEIRA REPLETO DE CAPINHAS DE FILMES PASSANDO ── */}
+      {/* ── FUNDO DA PÁGINA INTEIRA REPLETO DE CAPINHAS DE FILMES DE CIMA A EMBAIXO ── */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-        <div className="flex flex-col gap-6 pt-10 scale-105 opacity-45">
+        <div className="flex flex-col gap-5 -top-10 relative opacity-45 scale-105">
+          {/* FILEIRA 1 */}
           <div className="flex w-max gap-4 animate-marquee">
             {ROW_1_POSTERS.concat(ROW_1_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
               <img
                 key={`page-bg-r1-${i}`}
                 src={img(p, "w342")}
                 alt=""
-                className="h-48 w-32 rounded-2xl object-cover shadow-2xl border border-white/20"
+                className="h-44 w-30 rounded-2xl object-cover shadow-2xl border border-white/20"
               />
             ))}
           </div>
+
+          {/* FILEIRA 2 */}
           <div className="flex w-max gap-4 animate-marquee-reverse">
             {ROW_2_POSTERS.concat(ROW_2_POSTERS).concat(ROW_2_POSTERS).map((p, i) => (
               <img
                 key={`page-bg-r2-${i}`}
                 src={img(p, "w342")}
                 alt=""
-                className="h-48 w-32 rounded-2xl object-cover shadow-2xl border border-white/20"
+                className="h-44 w-30 rounded-2xl object-cover shadow-2xl border border-white/20"
+              />
+            ))}
+          </div>
+
+          {/* FILEIRA 3 */}
+          <div className="flex w-max gap-4 animate-marquee">
+            {ROW_1_POSTERS.slice().reverse().concat(ROW_1_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
+              <img
+                key={`page-bg-r3-${i}`}
+                src={img(p, "w342")}
+                alt=""
+                className="h-44 w-30 rounded-2xl object-cover shadow-2xl border border-white/20"
+              />
+            ))}
+          </div>
+
+          {/* FILEIRA 4 */}
+          <div className="flex w-max gap-4 animate-marquee-reverse">
+            {ROW_2_POSTERS.slice().reverse().concat(ROW_2_POSTERS).concat(ROW_2_POSTERS).map((p, i) => (
+              <img
+                key={`page-bg-r4-${i}`}
+                src={img(p, "w342")}
+                alt=""
+                className="h-44 w-30 rounded-2xl object-cover shadow-2xl border border-white/20"
+              />
+            ))}
+          </div>
+
+          {/* FILEIRA 5 */}
+          <div className="flex w-max gap-4 animate-marquee">
+            {ROW_1_POSTERS.concat(ROW_2_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
+              <img
+                key={`page-bg-r5-${i}`}
+                src={img(p, "w342")}
+                alt=""
+                className="h-44 w-30 rounded-2xl object-cover shadow-2xl border border-white/20"
+              />
+            ))}
+          </div>
+
+          {/* FILEIRA 6 */}
+          <div className="flex w-max gap-4 animate-marquee-reverse">
+            {ROW_2_POSTERS.concat(ROW_1_POSTERS).concat(ROW_2_POSTERS).map((p, i) => (
+              <img
+                key={`page-bg-r6-${i}`}
+                src={img(p, "w342")}
+                alt=""
+                className="h-44 w-30 rounded-2xl object-cover shadow-2xl border border-white/20"
               />
             ))}
           </div>
