@@ -45,6 +45,28 @@ const PAGE_BACKDROP_SLIDES = [
   "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg", // Backrooms
 ];
 
+const ROW_1_POSTERS = [
+  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
+  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
+  "/kNxRgcTeqeU5jauBackTERoO2De.jpg",
+  "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg",
+  "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg",
+  "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg",
+  "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg",
+  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg",
+];
+
+const ROW_2_POSTERS = [
+  "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg",
+  "/pmff1wjKrgJi92PPr346lAifzlg.jpg",
+  "/yihdXomYb5kTeSivtFndMy5iDmf.jpg",
+  "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg",
+  "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg",
+  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg",
+  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg",
+  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg",
+];
+
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link.ntdev.ntdw";
 const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
