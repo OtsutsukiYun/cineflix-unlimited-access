@@ -562,47 +562,72 @@ function InstalarPage() {
           </div>
         </section>
 
-        {/* ── 4. MICROVENDA COM PERSONAGENS E BOTÃO IMPONENTE ─────────────── */}
-        <section className="relative overflow-hidden glass p-7 sm:p-9 rounded-3xl border border-red-500/40 bg-gradient-to-b from-red-950/40 via-black/90 to-black backdrop-blur-2xl text-center shadow-[0_20px_60px_rgba(220,38,38,0.3)] space-y-6">
+        {/* ── 4. MICROVENDA COM VISUAL CINEMATOGRÁFICO RICO E BOTÃO VIBRANTE ──── */}
+        <section className="relative overflow-hidden p-7 sm:p-10 rounded-3xl border border-red-500/50 bg-gradient-to-br from-[#3b0811] via-[#240409] to-[#140103] backdrop-blur-2xl text-center shadow-[0_0_60px_rgba(220,38,38,0.35)] space-y-6">
 
-          {/* BACKDROP DE FILME COM VIGNETTE DECORATIVO */}
-          <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-15">
+          {/* FUNDO CINEMATOGRÁFICO COM VIGNETTE E BRILHO VERMELHO VIVO */}
+          <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
             <img
               src={img("/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", "w1280")}
               alt=""
-              className="size-full object-cover scale-110 blur-[1px]"
+              className="size-full object-cover scale-105 opacity-30 mix-blend-overlay blur-[1px]"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#140103] via-[#240409]/80 to-[#3b0811]/90" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[450px] rounded-full bg-red-600/25 blur-[120px]" />
           </div>
 
-          <div className="relative z-10 space-y-4">
-            <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/70 px-4 py-1.5 shadow-[0_0_20px_rgba(220,38,38,0.3)] backdrop-blur-md">
-              <Sparkles className="size-3.5 text-red-400 animate-spin" />
-              <span className="text-xs font-black uppercase tracking-wider text-red-300">
-                +10.000 Filmes, Séries &amp; Canais em 4K
+          <div className="relative z-10 space-y-5">
+            {/* BADGE MODERNO GLOW */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-red-400/50 bg-red-950/80 px-4 py-1.5 shadow-[0_0_25px_rgba(220,38,38,0.5)] backdrop-blur-md">
+              <Sparkles className="size-4 text-red-400 animate-spin" />
+              <span className="text-xs font-black uppercase tracking-wider text-red-200">
+                +10.000 Filmes, Séries &amp; TV Ao Vivo em 4K
               </span>
             </div>
 
             <div>
-              <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-1.5">
+              <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-1.5 drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
                 Gostou do que encontrou?
               </h2>
-              <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed">
-                Você pode continuar com acesso ilimitado a todos os filmes, séries e canais quando quiser!
+              <p className="text-xs sm:text-sm text-white/85 max-w-md mx-auto leading-relaxed font-medium">
+                Você pode continuar com acesso completo e ilimitado a todo o acervo quando quiser!
               </p>
             </div>
 
-            {/* PREÇO EM DESTAQUE */}
-            <div className="inline-flex flex-col items-center justify-center rounded-2xl border border-red-500/40 bg-gradient-to-r from-red-950/80 via-black to-red-950/80 px-6 sm:px-8 py-3.5 backdrop-blur-md shadow-[0_0_25px_rgba(220,38,38,0.25)]">
-              <span className="text-[11px] font-extrabold text-muted-foreground uppercase tracking-widest">
-                Planos sem fidelidade com ativação na hora
+            {/* SHOWCASE CAROUSEL COMPACTO DE CAPINHAS EM ALTA DEFINIÇÃO */}
+            <div className="flex items-center justify-center gap-2.5 sm:gap-3 py-1">
+              {[
+                "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
+                "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
+                "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg",
+                "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg",
+                "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg",
+              ].map((path, index) => (
+                <div
+                  key={index}
+                  className="group relative overflow-hidden rounded-xl border border-white/20 shadow-[0_8px_25px_rgba(0,0,0,0.7)] transition-all duration-300 hover:scale-110 hover:border-red-500 hover:shadow-[0_0_20px_rgba(220,38,38,0.6)] shrink-0"
+                >
+                  <img
+                    src={img(path, "w185")}
+                    alt=""
+                    className="h-16 w-11 sm:h-20 sm:w-14 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                </div>
+              ))}
+            </div>
+
+            {/* PREÇO EM DESTAQUE COM GRADIENTE RUBI BRILLANTE */}
+            <div className="inline-flex flex-col items-center justify-center rounded-2xl border border-red-400/50 bg-gradient-to-r from-red-950/90 via-rose-950/90 to-red-950/90 px-6 sm:px-9 py-4 backdrop-blur-md shadow-[0_0_35px_rgba(220,38,38,0.4)]">
+              <span className="text-[11px] font-extrabold text-red-200/90 uppercase tracking-widest">
+                Planos sem fidelidade • Cancele quando quiser
               </span>
-              <div className="flex items-baseline gap-1.5 mt-0.5">
-                <span className="text-xs font-bold text-red-400">A partir de</span>
-                <span className="text-2xl sm:text-4xl font-black text-white drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+              <div className="flex items-baseline gap-1.5 mt-1">
+                <span className="text-xs font-bold text-red-300">A partir de apenas</span>
+                <span className="text-3xl sm:text-4xl font-black text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]">
                   R$ 34,99
                 </span>
-                <span className="text-xs font-bold text-white/70">/mês</span>
+                <span className="text-xs font-bold text-white/80">/mês</span>
               </div>
             </div>
 
@@ -610,9 +635,9 @@ function InstalarPage() {
             <div>
               <a
                 href="/#planos"
-                className="group relative inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 px-8 py-4 text-sm sm:text-base font-black text-white shadow-[0_0_35px_rgba(220,38,38,0.7)] border border-red-400/60 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_50px_rgba(220,38,38,0.9)] active:scale-95 cursor-pointer w-full sm:w-auto"
+                className="group relative inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-8 py-4 text-sm sm:text-base font-black text-white shadow-[0_0_40px_rgba(220,38,38,0.8)] border border-red-300/70 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_60px_rgba(220,38,38,1)] active:scale-95 cursor-pointer w-full sm:w-auto"
               >
-                <span className="flex size-7 items-center justify-center rounded-lg bg-white/20 text-white group-hover:scale-110 transition-transform">
+                <span className="flex size-7 items-center justify-center rounded-lg bg-white/20 text-white group-hover:scale-110 transition-transform shadow-inner">
                   <Zap className="size-4 fill-current" />
                 </span>
                 <span>QUERO CONTINUAR COM O ACESSO</span>
@@ -621,7 +646,7 @@ function InstalarPage() {
             </div>
 
             {/* MICROBENEFÍCIOS DE GARANTIA E SEGURANÇA */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 text-xs font-extrabold text-white/75 pt-3 border-t border-white/10">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs font-extrabold text-white/85 pt-3 border-t border-white/15">
               <span className="flex items-center gap-1.5">
                 <ShieldCheck className="size-4 text-emerald-400" /> Garantia de 7 dias
               </span>
