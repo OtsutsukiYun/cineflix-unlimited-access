@@ -576,29 +576,14 @@ function InstalarPage() {
           </div>
 
           <div className="relative z-10 space-y-4">
-            {/* MINI STRIP DE POSTERS / PERSONAGENS SOBREPOSTOS COM EFEITO 3D */}
-            <div className="flex items-center justify-center gap-2 sm:gap-3 py-1">
-              {MINI_FEATURED_POSTERS.map((item, idx) => (
-                <div
-                  key={item.title}
-                  className={`group relative overflow-hidden rounded-xl border border-white/20 shadow-[0_10px_25px_rgba(0,0,0,0.8)] transition-all duration-300 hover:scale-110 hover:z-30 ${
-                    idx === 0 ? "-rotate-6 translate-y-1" : idx === 1 ? "-rotate-2 -translate-y-1" : idx === 2 ? "rotate-2 translate-y-1" : "rotate-6"
-                  }`}
-                >
-                  <img
-                    src={img(item.path, "w185")}
-                    alt={item.title}
-                    className="h-16 w-11 sm:h-20 sm:w-14 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                </div>
-              ))}
+            <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/70 px-4 py-1.5 shadow-[0_0_20px_rgba(220,38,38,0.3)] backdrop-blur-md">
+              <Sparkles className="size-3.5 text-red-400 animate-spin" />
+              <span className="text-xs font-black uppercase tracking-wider text-red-300">
+                +10.000 Filmes, Séries &amp; Canais em 4K
+              </span>
             </div>
 
             <div>
-              <span className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-[0.2em] text-red-400 bg-red-950/70 border border-red-500/30 px-3 py-1 rounded-full mb-2">
-                <Sparkles className="size-3.5 text-red-400 animate-spin" /> ACESSO VIP COMPLETO
-              </span>
               <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-1.5">
                 Gostou do que encontrou?
               </h2>
@@ -607,7 +592,7 @@ function InstalarPage() {
               </p>
             </div>
 
-            {/* PREÇO EM DESTAQUE COM BADGES DE PERSONAGENS */}
+            {/* PREÇO EM DESTAQUE */}
             <div className="inline-flex flex-col items-center justify-center rounded-2xl border border-red-500/40 bg-gradient-to-r from-red-950/80 via-black to-red-950/80 px-6 sm:px-8 py-3.5 backdrop-blur-md shadow-[0_0_25px_rgba(220,38,38,0.25)]">
               <span className="text-[11px] font-extrabold text-muted-foreground uppercase tracking-widest">
                 Planos sem fidelidade com ativação na hora
@@ -621,7 +606,7 @@ function InstalarPage() {
               </div>
             </div>
 
-            {/* BOTÃO COMPACTO E APROXIMADO DE CONTINUAR ACESSO COM ILUSTRAÇÃO/PERSONAGENS */}
+            {/* BOTÃO COMPACTO E APROXIMADO DE CONTINUAR ACESSO */}
             <div>
               <a
                 href="/#planos"
@@ -642,11 +627,11 @@ function InstalarPage() {
               </span>
               <span className="text-white/30">•</span>
               <span className="flex items-center gap-1.5">
-                <CreditCard className="size-4 text-blue-400" /> Pix ou cartão em até 12x
+                <CreditCard className="size-4 text-blue-400" /> Pix ou cartão
               </span>
               <span className="text-white/30">•</span>
               <span className="flex items-center gap-1.5">
-                <Zap className="size-4 text-amber-400" /> Liberação imediata
+                <Zap className="size-4 text-amber-400" /> Ativação após confirmação
               </span>
             </div>
           </div>
