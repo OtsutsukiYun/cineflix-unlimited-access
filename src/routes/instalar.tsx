@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Download,
   Smartphone,
@@ -20,7 +20,7 @@ import {
   ArrowRight,
   Flame,
 } from "lucide-react";
-import { img } from "@/data/catalog";
+import { img, heroSlides } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
 import { WhatsAppIcon } from "@/components/icons";
 
@@ -136,6 +136,17 @@ function CodeCopyBox({ code }: { code: string }) {
 
 function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  // CARROSSEL ROTATIVO DO SLIDE DE VENDA (IGUAL À HOME)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroIndex((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const currentHero = heroSlides[heroIndex] || heroSlides[0]!;
 
   return (
     <div className="relative min-h-screen bg-[#0d090b] text-white overflow-x-hidden">
@@ -188,7 +199,7 @@ function InstalarPage() {
         </div>
       </header>
 
-      {/* GRID DE CAPINHAS DE BACKGROUND */}
+      {/* ── FUNDO DA PÁGINA INTEIRA COM MARQUEE COMPLETO DE FILMES (RESTAURADO) ── */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-20">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0d090b]/85 via-[#0d090b]/65 to-[#0d090b]/90 z-10" />
         <div className="flex flex-col gap-4 pt-16 scale-105 blur-[1px]">
@@ -205,10 +216,10 @@ function InstalarPage() {
         </div>
       </div>
 
-      {/* CONTEÚDO PRINCIPAL EM UM ÚNICO CONTAINER UNIFICADO E FLUIDO */}
+      {/* CONTEÚDO PRINCIPAL */}
       <main className="relative z-10 mx-auto w-[94%] max-w-3xl pt-34 sm:pt-38 pb-20">
 
-        {/* COTO E TITULO PRINCIPAL */}
+        {/* TOPO E TÍTULO PRINCIPAL */}
         <div className="text-center mb-6">
           <div className="inline-flex items-center gap-2 rounded-full border border-red-500/50 bg-gradient-to-r from-red-950/80 via-black to-red-950/80 px-4 py-2 text-xs sm:text-sm font-black tracking-wider text-red-400 uppercase mb-3 shadow-[0_0_25px_rgba(220,38,38,0.35)]">
             <Gift className="size-4 text-red-400 animate-pulse" />
@@ -223,7 +234,7 @@ function InstalarPage() {
           </p>
         </div>
 
-        {/* CONTAINER MAESTRO UNIFICADO COM GRADIENTE RUBI RICO */}
+        {/* CONTAINER MAESTRO UNIFICADO */}
         <div className="rounded-3xl border border-red-500/40 bg-gradient-to-b from-[#280910]/90 via-[#1a0509]/90 to-[#0e0205]/95 backdrop-blur-2xl shadow-[0_25px_80px_rgba(220,38,38,0.3)] overflow-hidden">
 
           {/* 1. SELETOR DE DISPOSITIVOS EM ABAS */}
@@ -554,31 +565,30 @@ function InstalarPage() {
             </div>
           </div>
 
-          {/* 4. MICROVENDA CINEMATOGRÁFICA COM MARQUEE ANIMADO DE LANÇAMENTOS 2026 NO FUNDO */}
+          {/* 4. MICROVENDA COM SLIDE DE FILMES ROTATIVO (IGUAL AO HERO SLIDER DA HOME) */}
           <div className="relative overflow-hidden p-6 sm:p-10 bg-gradient-to-br from-[#3b0811] via-[#240409] to-[#140103] text-center space-y-5">
 
-            {/* MARQUEE ANIMADO DE FILMES LANÇAMENTOS 2026 PASSANDO NO FUNDO */}
-            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-30">
-              <div className="flex flex-col gap-2.5 -rotate-1 scale-105 pt-1 blur-[0.5px]">
-                <div className="flex w-max gap-3 animate-marquee">
-                  {ROW_1_POSTERS.concat(ROW_1_POSTERS).map((p, i) => (
-                    <img key={`lanc-bg1-${i}`} src={img(p, "w342")} alt="" className="h-28 w-20 rounded-xl object-cover shadow-md border border-white/15" />
-                  ))}
-                </div>
-                <div className="flex w-max gap-3 animate-marquee-reverse">
-                  {ROW_2_POSTERS.concat(ROW_2_POSTERS).map((p, i) => (
-                    <img key={`lanc-bg2-${i}`} src={img(p, "w342")} alt="" className="h-28 w-20 rounded-xl object-cover shadow-md border border-white/15" />
-                  ))}
-                </div>
-              </div>
+            {/* BACKDROP ROTATIVO DO SLIDESHOW DO HERO (IGUAL À HOME) */}
+            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
+              {heroSlides.map((s, idx) => (
+                <img
+                  key={s.title}
+                  src={img(s.backdrop, "w1280")}
+                  alt={s.title}
+                  className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out ${
+                    idx === heroIndex ? "opacity-35 scale-105" : "opacity-0"
+                  }`}
+                />
+              ))}
               <div className="absolute inset-0 bg-gradient-to-t from-[#140103] via-[#240409]/85 to-[#3b0811]/90" />
             </div>
 
             <div className="relative z-10 space-y-4">
+              {/* BADGE COM O FILME ATUAL DO CARROSSEL */}
               <div className="inline-flex items-center gap-2 rounded-full border border-red-400/50 bg-red-950/80 px-4 py-1 shadow-[0_0_20px_rgba(220,38,38,0.4)] backdrop-blur-md">
                 <Sparkles className="size-3.5 text-red-400 animate-spin" />
                 <span className="text-[11px] font-black uppercase tracking-wider text-red-200">
-                  +10.000 Filmes, Séries &amp; TV Ao Vivo em 4K
+                  🔥 LANÇAMENTO NO APP: {currentHero.title} ({currentHero.year})
                 </span>
               </div>
 
@@ -586,9 +596,23 @@ function InstalarPage() {
                 <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-1">
                   Gostou do que encontrou?
                 </h2>
-                <p className="text-xs sm:text-sm text-white/85 max-w-md mx-auto leading-relaxed font-medium">
-                  Você pode continuar com acesso ilimitado a todo o acervo quando quiser!
+                <p className="text-xs sm:text-sm text-white/85 max-w-md mx-auto leading-relaxed font-medium italic">
+                  "{currentHero.tagline}"
                 </p>
+              </div>
+
+              {/* PONTINHOS NAVEGADORES DO CARROSSEL */}
+              <div className="flex items-center justify-center gap-1.5 py-1">
+                {heroSlides.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setHeroIndex(i)}
+                    className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      i === heroIndex ? "w-6 bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)]" : "w-1.5 bg-white/30 hover:bg-white/60"
+                    }`}
+                    aria-label={`Slide ${i + 1}`}
+                  />
+                ))}
               </div>
 
               {/* PREÇO EM DESTAQUE */}
@@ -605,7 +629,7 @@ function InstalarPage() {
                 </div>
               </div>
 
-              {/* BOTÃO COMPACTO E APROXIMADO DE CONTINUAR ACESSO */}
+              {/* BOTÃO COMPACTO DE CONTINUAR ACESSO */}
               <div>
                 <a
                   href="/#planos"
