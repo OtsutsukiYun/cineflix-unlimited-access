@@ -223,17 +223,17 @@ function InstalarPage() {
           </p>
         </div>
 
-        {/* CONTAINER MAESTRO UNIFICADO (UNIFIES ALL STEPS INTO ONE UNIFIED EXPERIENCE) */}
-        <div className="rounded-3xl border border-white/15 bg-black/60 backdrop-blur-2xl shadow-[0_25px_60px_rgba(0,0,0,0.8)] overflow-hidden">
+        {/* CONTAINER MAESTRO UNIFICADO COM GRADIENTE RUBI RICO */}
+        <div className="rounded-3xl border border-red-500/40 bg-gradient-to-b from-[#280910]/90 via-[#1a0509]/90 to-[#0e0205]/95 backdrop-blur-2xl shadow-[0_25px_80px_rgba(220,38,38,0.3)] overflow-hidden">
 
           {/* 1. SELETOR DE DISPOSITIVOS EM ABAS */}
-          <div className="p-4 sm:p-6 bg-white/[0.02] border-b border-white/10">
-            <div className="grid grid-cols-3 gap-2 rounded-2xl bg-black/70 p-1.5 border border-white/10">
+          <div className="p-4 sm:p-6 bg-red-950/30 border-b border-red-500/20">
+            <div className="grid grid-cols-3 gap-2 rounded-2xl bg-red-950/60 p-1.5 border border-red-500/30">
               <button
                 onClick={() => setDeviceTab("tv")}
                 className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
                   deviceTab === "tv"
-                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.6)] border border-red-400/60 scale-[1.02]"
+                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-400/70 scale-[1.02]"
                     : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -245,7 +245,7 @@ function InstalarPage() {
                 onClick={() => setDeviceTab("mobile")}
                 className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
                   deviceTab === "mobile"
-                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.6)] border border-red-400/60 scale-[1.02]"
+                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-400/70 scale-[1.02]"
                     : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -257,7 +257,7 @@ function InstalarPage() {
                 onClick={() => setDeviceTab("pc")}
                 className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
                   deviceTab === "pc"
-                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.6)] border border-red-400/60 scale-[1.02]"
+                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-400/70 scale-[1.02]"
                     : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
