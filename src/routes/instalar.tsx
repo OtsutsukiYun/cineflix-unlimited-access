@@ -16,6 +16,9 @@ import {
   Zap,
   CreditCard,
   HelpCircle,
+  Sparkles,
+  ArrowRight,
+  Flame,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -35,7 +38,7 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-// CAPINHAS VERIFICADAS PARA O BANNER DE FUNDO
+// POSTERS PARA O BANNER E CARDS
 const ROW_1_POSTERS = [
   "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
   "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
@@ -45,8 +48,6 @@ const ROW_1_POSTERS = [
   "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg",
   "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg",
   "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg",
-  "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg",
-  "/vKq8XEJKxQTHd2Bm5zZMFPUrke7.jpg",
 ];
 
 const ROW_2_POSTERS = [
@@ -58,8 +59,13 @@ const ROW_2_POSTERS = [
   "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg",
   "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg",
   "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg",
-  "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg",
-  "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg",
+];
+
+const MINI_FEATURED_POSTERS = [
+  { title: "Evil Dead Rise", path: "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg" },
+  { title: "Obsessão 2026", path: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg" },
+  { title: "Sorria 2", path: "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg" },
+  { title: "Pecadores", path: "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg" },
 ];
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
@@ -67,9 +73,9 @@ const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link
 const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
 const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file";
 
-function DownloaderAppIcon({ className = "size-10 sm:size-12" }: { className?: string }) {
+function DownloaderAppIcon({ className = "size-11 sm:size-13" }: { className?: string }) {
   return (
-    <div className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/20 shadow-md ${className}`}>
+    <div className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-orange-500/40 bg-gradient-to-br from-amber-500 to-orange-600 shadow-[0_4px_20px_rgba(245,158,11,0.35)] ${className}`}>
       <img
         src="/apps/downloader.png"
         alt="Downloader Icon"
@@ -79,19 +85,7 @@ function DownloaderAppIcon({ className = "size-10 sm:size-12" }: { className?: s
   );
 }
 
-function NtDownAppIcon({ className = "size-10 sm:size-12" }: { className?: string }) {
-  return (
-    <div className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/20 shadow-md ${className}`}>
-      <img
-        src="/apps/ntdown.png"
-        alt="ntDown Icon"
-        className="size-full object-cover"
-      />
-    </div>
-  );
-}
-
-function AndroidIcon({ className = "size-4" }: { className?: string }) {
+function AndroidIcon({ className = "size-5" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor">
       <path d="M6 18c0 .55.45 1 1 1h1v3c0 .55.45 1 1 1s1-.45 1-1v-3h4v3c0 .55.45 1 1 1s1-.45 1-1v-3h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zM15.53 2.16l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z" />
@@ -108,39 +102,44 @@ function CodeCopyBox({ code }: { code: string }) {
   };
 
   return (
-    <div className="my-3 flex flex-col sm:flex-row items-center justify-between gap-3 rounded-2xl p-4 border border-emerald-500/30 bg-black/90 shadow-[0_0_25px_rgba(16,185,129,0.15)]">
-      <div className="flex items-center gap-3 w-full sm:w-auto">
-        <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600/30 text-emerald-400 border border-emerald-500/50">
-          <Hash className="size-6" />
-        </div>
-        <div>
-          <span className="text-[10px] font-black uppercase tracking-wider text-muted-foreground block">
-            Código de Instalação (Downloader / NTDown)
-          </span>
-          <div className="font-mono font-black text-3xl sm:text-4xl tracking-widest text-emerald-400 leading-tight">
-            {code}
+    <div className="relative overflow-hidden my-3 rounded-2xl p-4 sm:p-5 border border-emerald-500/40 bg-gradient-to-r from-emerald-950/90 via-black to-emerald-950/90 shadow-[0_0_30px_rgba(16,185,129,0.25)]">
+      {/* GLOW DECORATIVO DE FUNDO */}
+      <div className="pointer-events-none absolute -right-10 -bottom-10 size-32 rounded-full bg-emerald-500/20 blur-2xl" />
+
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
+        <div className="flex items-center gap-3.5 w-full sm:w-auto">
+          <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-green-700 text-white border border-emerald-400/50 shadow-[0_0_20px_rgba(16,185,129,0.5)]">
+            <Hash className="size-7" />
+          </div>
+          <div>
+            <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400/90 block">
+              CÓDIGO DE INSTALAÇÃO RÁPIDA
+            </span>
+            <div className="font-mono font-black text-3xl sm:text-4xl tracking-widest text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] leading-tight">
+              {code}
+            </div>
           </div>
         </div>
-      </div>
 
-      <button
-        onClick={handleCopy}
-        className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-xs font-black uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-md ${
-          copied
-            ? "bg-emerald-500 text-black shadow-emerald-500/40"
-            : "bg-emerald-600 hover:bg-emerald-500 text-white hover:scale-[1.02]"
-        }`}
-      >
-        {copied ? (
-          <>
-            <Check className="size-4 stroke-[3]" /> CÓDIGO COPIADO!
-          </>
-        ) : (
-          <>
-            <Copy className="size-4" /> COPIAR CÓDIGO
-          </>
-        )}
-      </button>
+        <button
+          onClick={handleCopy}
+          className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-xs font-black uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-lg active:scale-95 ${
+            copied
+              ? "bg-emerald-400 text-black shadow-emerald-400/50 border border-emerald-300"
+              : "bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white hover:scale-[1.03] shadow-[0_0_20px_rgba(16,185,129,0.4)] border border-emerald-400/60"
+          }`}
+        >
+          {copied ? (
+            <>
+              <Check className="size-4 stroke-[3]" /> CÓDIGO COPIADO!
+            </>
+          ) : (
+            <>
+              <Copy className="size-4" /> COPIAR CÓDIGO
+            </>
+          )}
+        </button>
+      </div>
     </div>
   );
 }
@@ -151,7 +150,7 @@ function InstalarPage() {
   return (
     <div className="relative min-h-screen bg-[#0d090b] text-white overflow-x-hidden">
       {/* LUZ AMBIENTAL VERMELHA */}
-      <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[650px] rounded-full bg-red-600/15 blur-[160px] z-0" />
+      <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-red-600/15 blur-[170px] z-0" />
       <div className="pointer-events-none fixed bottom-20 right-10 size-[500px] rounded-full bg-rose-700/15 blur-[140px] z-0" />
 
       {/* BARRA PROMOCIONAL DO TOPO */}
@@ -200,7 +199,7 @@ function InstalarPage() {
       </header>
 
       {/* GRID DE CAPINHAS NO BACKGROUND DECORATIVO */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-25">
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-20">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0d090b]/85 via-[#0d090b]/65 to-[#0d090b]/90 z-10" />
         <div className="flex flex-col gap-4 pt-16 scale-105 blur-[1px]">
           <div className="flex w-max gap-4 animate-marquee">
@@ -216,59 +215,59 @@ function InstalarPage() {
         </div>
       </div>
 
-      {/* CONTEÚDO PRINCIPAL (ESTRUTURA 5 ETAPAS SOLICITADA) */}
-      <main className="relative z-10 mx-auto w-[94%] max-w-3xl pt-36 sm:pt-40 pb-20 space-y-10">
+      {/* CONTEÚDO PRINCIPAL (COM FLUXO APROXIMADO E VISUALMENTE ENRIQUECIDO) */}
+      <main className="relative z-10 mx-auto w-[94%] max-w-3xl pt-34 sm:pt-38 pb-20 space-y-5">
 
         {/* ── 1. TOPO ────────────────────────────────────────────── */}
         <section className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/60 px-4 py-1.5 text-xs sm:text-sm font-black tracking-wider text-red-400 uppercase mb-4 shadow-[0_0_20px_rgba(220,38,38,0.3)]">
-            <Gift className="size-4 text-red-400" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/50 bg-gradient-to-r from-red-950/80 via-black to-red-950/80 px-4 py-2 text-xs sm:text-sm font-black tracking-wider text-red-400 uppercase mb-3 shadow-[0_0_25px_rgba(220,38,38,0.35)]">
+            <Gift className="size-4 text-red-400 animate-pulse" />
             <span>🎁 TESTE O UNITV PRO GRÁTIS POR 3 DIAS</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight mb-3">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight mb-2">
             Escolha onde você quer assistir e <span className="text-red-500">siga o passo a passo</span>
           </h1>
           <p className="text-xs sm:text-base text-white/70 max-w-lg mx-auto leading-relaxed">
             Selecione seu dispositivo abaixo para ver o tutorial interativo e o código de ativação imediato.
           </p>
 
-          {/* SELETOR DE DISPOSITIVOS EM ABAS */}
-          <div className="mt-6">
-            <div className="grid grid-cols-3 gap-2 rounded-2xl glass p-1.5 border border-white/15 bg-black/60 backdrop-blur-2xl shadow-2xl">
+          {/* SELETOR DE DISPOSITIVOS EM ABAS COM ÍCONES E RELEVO 3D */}
+          <div className="mt-5">
+            <div className="grid grid-cols-3 gap-2 rounded-2xl glass p-2 border border-white/15 bg-black/70 backdrop-blur-2xl shadow-2xl">
               <button
                 onClick={() => setDeviceTab("tv")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
                   deviceTab === "tv"
-                    ? "bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] border border-red-500/60 scale-[1.02]"
+                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.6)] border border-red-400/60 scale-[1.02]"
                     : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
-                <Tv className="size-4 sm:size-5" />
+                <Tv className="size-4 sm:size-5 text-red-400" />
                 <span>TV / TV Box</span>
               </button>
 
               <button
                 onClick={() => setDeviceTab("mobile")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
                   deviceTab === "mobile"
-                    ? "bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] border border-red-500/60 scale-[1.02]"
+                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.6)] border border-red-400/60 scale-[1.02]"
                     : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
-                <Smartphone className="size-4 sm:size-5" />
+                <Smartphone className="size-4 sm:size-5 text-emerald-400" />
                 <span>Celular</span>
               </button>
 
               <button
                 onClick={() => setDeviceTab("pc")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
                   deviceTab === "pc"
-                    ? "bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] border border-red-500/60 scale-[1.02]"
+                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.6)] border border-red-400/60 scale-[1.02]"
                     : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
-                <Monitor className="size-4 sm:size-5" />
+                <Monitor className="size-4 sm:size-5 text-amber-400" />
                 <span>Computador</span>
               </button>
             </div>
@@ -276,20 +275,20 @@ function InstalarPage() {
         </section>
 
         {/* ── 2. TUTORIAL ────────────────────────────────────────── */}
-        <section className="glass p-6 sm:p-9 rounded-3xl border border-white/15 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.7)] space-y-7">
+        <section className="glass p-6 sm:p-9 rounded-3xl border border-white/15 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.7)] space-y-6">
 
           {/* TUTORIAL: TV / TV BOX */}
           {deviceTab === "tv" && (
             <>
               <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3.5">
                   <DownloaderAppIcon />
                   <div>
                     <h2 className="text-lg sm:text-xl font-black text-white flex items-center gap-2">
                       Instalação em Smart TV, TV Box &amp; Stick
                     </h2>
                     <p className="text-xs text-muted-foreground font-medium">
-                      Método via aplicativo Downloader (compatível com Android TV, FireTV, Xiaomi Mi Stick)
+                      Via Downloader (compatível com Android TV, FireTV Stick, Xiaomi Mi Stick)
                     </p>
                   </div>
                 </div>
@@ -297,9 +296,14 @@ function InstalarPage() {
 
               {/* VÍDEO CURTO */}
               <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/80 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-                <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-black text-white">
-                  <Play className="size-4 text-red-500 fill-red-500" />
-                  <span>Vídeo Tutorial Curto — Passo a Passo para Smart TV</span>
+                <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-black text-white">
+                  <div className="flex items-center gap-2">
+                    <Play className="size-4 text-red-500 fill-red-500" />
+                    <span>Vídeo Tutorial Curto — Passo a Passo para Smart TV</span>
+                  </div>
+                  <span className="hidden sm:inline-flex items-center gap-1 text-[10px] text-red-400 bg-red-950/60 px-2 py-0.5 rounded border border-red-500/30">
+                    <Flame className="size-3" /> Vídeo Prático (1 min)
+                  </span>
                 </div>
                 <div className="relative aspect-video w-full">
                   <iframe
@@ -313,7 +317,7 @@ function InstalarPage() {
               </div>
 
               {/* PASSOS NUMERADOS COM CÓDIGO GRANDE + BOTAO COPIAR */}
-              <ol className="space-y-6">
+              <ol className="space-y-5">
                 <li className="flex items-start gap-3.5">
                   <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 1
@@ -341,7 +345,7 @@ function InstalarPage() {
                 </li>
 
                 {/* CÓDIGO GRANDE + BOTAO COPIAR */}
-                <div className="pl-0 sm:pl-24">
+                <div className="pl-0 sm:pl-20">
                   <CodeCopyBox code="1089401" />
                 </div>
 
@@ -370,9 +374,9 @@ function InstalarPage() {
           {deviceTab === "mobile" && (
             <>
               <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-md">
-                    <AndroidIcon className="size-6" />
+                <div className="flex items-center gap-3.5">
+                  <div className="flex size-11 sm:size-13 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-600 to-green-700 text-white border border-emerald-400/50 shadow-[0_4px_20px_rgba(16,185,129,0.35)]">
+                    <AndroidIcon className="size-7" />
                   </div>
                   <div>
                     <h2 className="text-lg sm:text-xl font-black text-white flex items-center gap-2">
@@ -387,9 +391,14 @@ function InstalarPage() {
 
               {/* VÍDEO CURTO */}
               <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/80 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-                <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-black text-white">
-                  <Play className="size-4 text-red-500 fill-red-500" />
-                  <span>Vídeo Tutorial Curto — Passo a Passo no Smartphone</span>
+                <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-black text-white">
+                  <div className="flex items-center gap-2">
+                    <Play className="size-4 text-red-500 fill-red-500" />
+                    <span>Vídeo Tutorial Curto — Passo a Passo no Smartphone</span>
+                  </div>
+                  <span className="hidden sm:inline-flex items-center gap-1 text-[10px] text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
+                    <Flame className="size-3" /> Instalação Rápida
+                  </span>
                 </div>
                 <div className="relative aspect-video w-full">
                   <iframe
@@ -402,7 +411,7 @@ function InstalarPage() {
                 </div>
               </div>
 
-              <ol className="space-y-6">
+              <ol className="space-y-5">
                 <li className="flex items-start gap-3.5">
                   <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 1
@@ -412,14 +421,14 @@ function InstalarPage() {
                   </div>
                 </li>
 
-                <div className="pl-0 sm:pl-24">
+                <div className="pl-0 sm:pl-20">
                   <a
                     href={APK_MEDIAFIRE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 px-6 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(16,185,129,0.7)] w-full"
+                    className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 px-6 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_30px_rgba(16,185,129,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(16,185,129,0.7)] w-full border border-emerald-400/50"
                   >
-                    <Download className="size-5" />
+                    <Download className="size-5 animate-bounce" />
                     BAIXAR APK UNITV PRO (DOWNLOAD DIRETO)
                   </a>
                 </div>
@@ -446,7 +455,7 @@ function InstalarPage() {
                   </div>
                 </li>
 
-                <div className="pl-0 sm:pl-24">
+                <div className="pl-0 sm:pl-20">
                   <CodeCopyBox code="94596" />
                 </div>
 
@@ -466,8 +475,8 @@ function InstalarPage() {
           {deviceTab === "pc" && (
             <>
               <div className="flex items-center justify-between pb-4 border-b border-white/10">
-                <div className="flex items-center gap-3">
-                  <div className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-xl bg-amber-500 text-black font-black text-sm shadow-md">
+                <div className="flex items-center gap-3.5">
+                  <div className="flex size-11 sm:size-13 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-black font-black text-base shadow-[0_4px_20px_rgba(245,158,11,0.4)] border border-amber-300">
                     LD
                   </div>
                   <div>
@@ -481,7 +490,7 @@ function InstalarPage() {
                 </div>
               </div>
 
-              <ol className="space-y-6">
+              <ol className="space-y-5">
                 <li className="flex items-start gap-3.5">
                   <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
                     Passo 1
@@ -518,7 +527,7 @@ function InstalarPage() {
                   </div>
                 </li>
 
-                <div className="pl-0 sm:pl-24">
+                <div className="pl-0 sm:pl-20">
                   <CodeCopyBox code="1089401" />
                 </div>
 
@@ -536,87 +545,135 @@ function InstalarPage() {
 
         </section>
 
-        {/* ── 3. CONFIRMAÇÃO ─────────────────────────────────────── */}
-        <section className="rounded-3xl border border-emerald-500/40 bg-gradient-to-br from-emerald-950/40 via-emerald-900/20 to-black/80 p-6 sm:p-8 backdrop-blur-2xl text-center shadow-[0_0_30px_rgba(16,185,129,0.2)]">
-          <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 shadow-inner">
-            <CheckCircle2 className="size-8 stroke-[2.5]" />
-          </div>
-          <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">
-            Pronto! Seu teste grátis está liberado 🎉
-          </h2>
-          <p className="text-xs sm:text-base text-emerald-200/90 max-w-md mx-auto leading-relaxed font-medium">
-            Agora abra o UniTV Pro no seu aparelho e escolha algo para assistir imediatamente.
-          </p>
-        </section>
-
-        {/* ── 4. MICROVENDA ──────────────────────────────────────── */}
-        <section className="glass p-7 sm:p-10 rounded-3xl border border-red-500/30 bg-gradient-to-b from-red-950/30 via-black/80 to-black p-8 backdrop-blur-2xl text-center shadow-[0_20px_50px_rgba(220,38,38,0.2)] space-y-6">
-          <div>
-            <span className="text-xs font-black uppercase tracking-[0.2em] text-red-400 block mb-2">
-              GARANTA SEU ACESSO DEFINITIVO
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-2">
-              Gostou do que encontrou?
-            </h2>
-            <p className="text-sm sm:text-base text-white/75 max-w-md mx-auto leading-relaxed">
-              Você pode continuar com acesso completo e ilimitado quando quiser.
-            </p>
-          </div>
-
-          <div className="inline-flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-3.5 backdrop-blur-md">
-            <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Planos com recarga mensal</span>
-            <span className="text-xl sm:text-3xl font-black text-red-400 mt-0.5">
-              A partir de R$ 34,99/mês
-            </span>
-          </div>
-
-          <div>
-            <a
-              href="/#planos"
-              className="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 px-8 py-4 text-sm sm:text-base font-black text-white shadow-[0_0_30px_rgba(220,38,38,0.6)] transition-all hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(220,38,38,0.8)] active:scale-95 cursor-pointer w-full sm:w-auto"
-            >
-              <Zap className="size-5 fill-current" />
-              QUERO CONTINUAR COM O ACESSO
-            </a>
-          </div>
-
-          {/* MICROBENEFÍCIOS DE GARANTIA E SEGURANÇA */}
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-white/70 pt-2 border-t border-white/10">
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="size-4 text-emerald-400" /> Garantia de 7 dias
-            </span>
-            <span className="text-white/30">•</span>
-            <span className="flex items-center gap-1.5">
-              <CreditCard className="size-4 text-blue-400" /> Pix ou cartão
-            </span>
-            <span className="text-white/30">•</span>
-            <span className="flex items-center gap-1.5">
-              <Zap className="size-4 text-amber-400" /> Ativação após confirmação
-            </span>
+        {/* ── 3. CONFIRMAÇÃO (COMPACTO E INTEGRADO AO FLUXO) ──────────────── */}
+        <section className="rounded-3xl border border-emerald-500/40 bg-gradient-to-br from-emerald-950/50 via-emerald-900/30 to-black/90 p-5 sm:p-6 backdrop-blur-2xl text-center shadow-[0_0_30px_rgba(16,185,129,0.25)]">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-inner">
+              <CheckCircle2 className="size-7 stroke-[2.5]" />
+            </div>
+            <div className="text-center sm:text-left">
+              <h2 className="text-xl sm:text-2xl font-black text-white leading-tight">
+                Pronto! Seu teste grátis está liberado 🎉
+              </h2>
+              <p className="text-xs sm:text-sm text-emerald-200/90 leading-relaxed font-medium">
+                Agora é só abrir o UniTV Pro no seu dispositivo e escolher o que quer assistir!
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* ── 5. SUPORTE ─────────────────────────────────────────── */}
-        <section className="glass p-7 sm:p-9 rounded-3xl border border-white/15 bg-white/[0.03] backdrop-blur-2xl text-center shadow-xl space-y-4">
-          <div className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
-            <HelpCircle className="size-6" />
+        {/* ── 4. MICROVENDA COM PERSONAGENS E BOTÃO IMPONENTE ─────────────── */}
+        <section className="relative overflow-hidden glass p-7 sm:p-9 rounded-3xl border border-red-500/40 bg-gradient-to-b from-red-950/40 via-black/90 to-black backdrop-blur-2xl text-center shadow-[0_20px_60px_rgba(220,38,38,0.3)] space-y-6">
+
+          {/* BACKDROP DE FILME COM VIGNETTE DECORATIVO */}
+          <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-15">
+            <img
+              src={img("/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", "w1280")}
+              alt=""
+              className="size-full object-cover scale-110 blur-[1px]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/80 to-black" />
           </div>
 
-          <div>
-            <h3 className="text-xl font-black text-white mb-1">
-              Está com dificuldade para instalar?
-            </h3>
-            <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto">
-              Nossa equipe de suporte está online no WhatsApp para te guiar passo a passo!
-            </p>
-          </div>
+          <div className="relative z-10 space-y-4">
+            {/* MINI STRIP DE POSTERS / PERSONAGENS SOBREPOSTOS COM EFEITO 3D */}
+            <div className="flex items-center justify-center gap-2 sm:gap-3 py-1">
+              {MINI_FEATURED_POSTERS.map((item, idx) => (
+                <div
+                  key={item.title}
+                  className={`group relative overflow-hidden rounded-xl border border-white/20 shadow-[0_10px_25px_rgba(0,0,0,0.8)] transition-all duration-300 hover:scale-110 hover:z-30 ${
+                    idx === 0 ? "-rotate-6 translate-y-1" : idx === 1 ? "-rotate-2 -translate-y-1" : idx === 2 ? "rotate-2 translate-y-1" : "rotate-6"
+                  }`}
+                >
+                  <img
+                    src={img(item.path, "w185")}
+                    alt={item.title}
+                    className="h-16 w-11 sm:h-20 sm:w-14 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                </div>
+              ))}
+            </div>
 
-          <div>
+            <div>
+              <span className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-[0.2em] text-red-400 bg-red-950/70 border border-red-500/30 px-3 py-1 rounded-full mb-2">
+                <Sparkles className="size-3.5 text-red-400 animate-spin" /> ACESSO VIP COMPLETO
+              </span>
+              <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-1.5">
+                Gostou do que encontrou?
+              </h2>
+              <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed">
+                Você pode continuar com acesso ilimitado a todos os filmes, séries e canais quando quiser!
+              </p>
+            </div>
+
+            {/* PREÇO EM DESTAQUE COM BADGES DE PERSONAGENS */}
+            <div className="inline-flex flex-col items-center justify-center rounded-2xl border border-red-500/40 bg-gradient-to-r from-red-950/80 via-black to-red-950/80 px-6 sm:px-8 py-3.5 backdrop-blur-md shadow-[0_0_25px_rgba(220,38,38,0.25)]">
+              <span className="text-[11px] font-extrabold text-muted-foreground uppercase tracking-widest">
+                Planos sem fidelidade com ativação na hora
+              </span>
+              <div className="flex items-baseline gap-1.5 mt-0.5">
+                <span className="text-xs font-bold text-red-400">A partir de</span>
+                <span className="text-2xl sm:text-4xl font-black text-white drop-shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+                  R$ 34,99
+                </span>
+                <span className="text-xs font-bold text-white/70">/mês</span>
+              </div>
+            </div>
+
+            {/* BOTÃO COMPACTO E APROXIMADO DE CONTINUAR ACESSO COM ILUSTRAÇÃO/PERSONAGENS */}
+            <div>
+              <a
+                href="/#planos"
+                className="group relative inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 px-8 py-4 text-sm sm:text-base font-black text-white shadow-[0_0_35px_rgba(220,38,38,0.7)] border border-red-400/60 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_50px_rgba(220,38,38,0.9)] active:scale-95 cursor-pointer w-full sm:w-auto"
+              >
+                <span className="flex size-7 items-center justify-center rounded-lg bg-white/20 text-white group-hover:scale-110 transition-transform">
+                  <Zap className="size-4 fill-current" />
+                </span>
+                <span>QUERO CONTINUAR COM O ACESSO</span>
+                <ArrowRight className="size-5 text-white/90 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+
+            {/* MICROBENEFÍCIOS DE GARANTIA E SEGURANÇA */}
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5 text-xs font-extrabold text-white/75 pt-3 border-t border-white/10">
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="size-4 text-emerald-400" /> Garantia de 7 dias
+              </span>
+              <span className="text-white/30">•</span>
+              <span className="flex items-center gap-1.5">
+                <CreditCard className="size-4 text-blue-400" /> Pix ou cartão em até 12x
+              </span>
+              <span className="text-white/30">•</span>
+              <span className="flex items-center gap-1.5">
+                <Zap className="size-4 text-amber-400" /> Liberação imediata
+              </span>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 5. SUPORTE (COMPACTO) ───────────────────────────────── */}
+        <section className="glass p-6 sm:p-7 rounded-3xl border border-white/15 bg-white/[0.03] backdrop-blur-2xl text-center shadow-xl space-y-3">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3 text-left">
+              <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
+                <HelpCircle className="size-6" />
+              </div>
+              <div>
+                <h3 className="text-base sm:text-lg font-black text-white">
+                  Está com dificuldade para instalar?
+                </h3>
+                <p className="text-xs text-muted-foreground">
+                  Nossa equipe de suporte está online no WhatsApp para te ajudar passo a passo.
+                </p>
+              </div>
+            </div>
+
             <a
               href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Estou%20com%20dificuldade%20para%20instalar%20o%20UniTV%20Pro"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-7 py-3.5 text-xs sm:text-sm font-extrabold text-white shadow-lg transition-all hover:scale-[1.02] cursor-pointer w-full sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-3 text-xs sm:text-sm font-extrabold text-white shadow-lg transition-all hover:scale-[1.02] cursor-pointer shrink-0 w-full sm:w-auto"
             >
               <WhatsAppIcon className="size-4 fill-current" />
               FALAR COM O SUPORTE
