@@ -38,7 +38,7 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-// SLIDES DO FUNDO DA PÁGINA (CONFORME O LAYOUT ORIGINAL)
+// SLIDES DO FUNDO DA PÁGINA
 const PAGE_BACKDROP_SLIDES = [
   "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", // Evil Dead Rise
   "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg",  // Obsessão
@@ -52,7 +52,7 @@ const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_
 
 function DownloaderAppIcon({ className = "size-11 sm:size-12" }: { className?: string }) {
   return (
-    <div className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-orange-500/40 bg-gradient-to-br from-amber-500 to-orange-600 shadow-[0_4px_20px_rgba(245,158,11,0.35)] ${className}`}>
+    <div className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-orange-500/30 bg-gradient-to-br from-amber-500 to-orange-600 shadow-md ${className}`}>
       <img
         src="/apps/downloader.png"
         alt="Downloader Icon"
@@ -79,18 +79,18 @@ function CodeCopyBox({ code }: { code: string }) {
   };
 
   return (
-    <div className="relative overflow-hidden my-3 rounded-2xl p-4 sm:p-5 border border-emerald-500/40 bg-gradient-to-r from-emerald-950/90 via-black to-emerald-950/90 shadow-[0_0_30px_rgba(16,185,129,0.25)]">
-      <div className="pointer-events-none absolute -right-10 -bottom-10 size-32 rounded-full bg-emerald-500/20 blur-2xl" />
+    <div className="relative overflow-hidden my-3 rounded-2xl p-4 sm:p-5 border border-emerald-500/30 bg-emerald-950/30 backdrop-blur-md shadow-lg">
+      <div className="pointer-events-none absolute -right-10 -bottom-10 size-32 rounded-full bg-emerald-500/10 blur-2xl" />
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
         <div className="flex items-center gap-3.5 w-full sm:w-auto">
-          <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-green-700 text-white border border-emerald-400/50 shadow-[0_0_20px_rgba(16,185,129,0.5)]">
+          <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-600 to-green-700 text-white border border-emerald-400/40 shadow-md">
             <Hash className="size-7" />
           </div>
           <div>
-            <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400/90 block">
+            <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block">
               CÓDIGO DE INSTALAÇÃO RÁPIDA
             </span>
-            <div className="font-mono font-black text-3xl sm:text-4xl tracking-widest text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] leading-tight">
+            <div className="font-mono font-black text-3xl sm:text-4xl tracking-widest text-white leading-tight">
               {code}
             </div>
           </div>
@@ -98,10 +98,10 @@ function CodeCopyBox({ code }: { code: string }) {
 
         <button
           onClick={handleCopy}
-          className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-xs font-black uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-lg active:scale-95 ${
+          className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-xs font-black uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-md active:scale-95 ${
             copied
-              ? "bg-emerald-400 text-black shadow-emerald-400/50 border border-emerald-300"
-              : "bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-white hover:scale-[1.03] shadow-[0_0_20px_rgba(16,185,129,0.4)] border border-emerald-400/60"
+              ? "bg-emerald-400 text-black shadow-emerald-400/40 border border-emerald-300"
+              : "bg-emerald-600 hover:bg-emerald-500 text-white hover:scale-[1.02] border border-emerald-400/50"
           }`}
         >
           {copied ? (
@@ -124,7 +124,7 @@ function InstalarPage() {
   const [bgSlide, setBgSlide] = useState(0);
   const [heroIndex, setHeroIndex] = useState(0);
 
-  // SLIDESHOW DO FUNDO DA PÁGINA (RESTAURADO DA VERSÃO ANTERIOR)
+  // SLIDESHOW SUAVE DO FUNDO DA PÁGINA
   useEffect(() => {
     const timer = setInterval(() => {
       setBgSlide((prev) => (prev + 1) % PAGE_BACKDROP_SLIDES.length);
@@ -132,7 +132,7 @@ function InstalarPage() {
     return () => clearInterval(timer);
   }, []);
 
-  // SLIDE ROTATIVO DENTRO DO RETÂNGULO DE COMPRA (IGUAL À HOME)
+  // SLIDESHOW DO CARROSSEL DE COMPRA
   useEffect(() => {
     const timer = setInterval(() => {
       setHeroIndex((prev) => (prev + 1) % heroSlides.length);
@@ -143,11 +143,11 @@ function InstalarPage() {
   const currentHero = heroSlides[heroIndex] || heroSlides[0]!;
 
   return (
-    <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
-      {/* LUZ AMBIENTAL VERMELHA */}
-      <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-red-600/15 blur-[170px] z-0" />
+    <div className="relative min-h-screen bg-[#09090b] text-white overflow-x-hidden">
+      {/* LUZ AMBIENTAL SUAVE */}
+      <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[600px] rounded-full bg-red-600/10 blur-[160px] z-0" />
 
-      {/* ── FUNDO DA PÁGINA DE TESTE ORIGINAL (RESTAURADO EXATAMENTE COMO ESTAVA ANTES) ── */}
+      {/* FUNDO DA PÁGINA DE TESTE SUAVE E LIMPO */}
       <div className="pointer-events-none fixed inset-0 z-0">
         {PAGE_BACKDROP_SLIDES.map((bd, i) => (
           <img
@@ -156,12 +156,12 @@ function InstalarPage() {
             alt=""
             className="absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out"
             style={{
-              opacity: i === bgSlide ? 0.12 : 0,
-              filter: "blur(2px) brightness(0.4)",
+              opacity: i === bgSlide ? 0.15 : 0,
+              filter: "blur(3px) brightness(0.5)",
             }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/60 via-[#080808]/80 to-[#080808]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#09090b]/70 via-[#09090b]/85 to-[#09090b]" />
       </div>
 
       {/* BARRA PROMOCIONAL DO TOPO */}
@@ -171,9 +171,9 @@ function InstalarPage() {
 
       {/* HEADER COMPACTO */}
       <header className="fixed inset-x-0 top-8 z-50 transition-all duration-300 [transform:translateZ(0)]">
-        <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-5 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.8)] border border-white/15 backdrop-blur-2xl bg-black/60">
+        <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-5 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.7)] border border-white/10 backdrop-blur-2xl bg-black/60">
           <Link to="/" className="flex items-center gap-3">
-            <span className="relative flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_20px_rgba(220,38,38,0.7)]">
+            <span className="relative flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_15px_rgba(220,38,38,0.5)]">
               <svg className="size-5 fill-white" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
@@ -214,7 +214,7 @@ function InstalarPage() {
 
         {/* TOPO E TÍTULO PRINCIPAL */}
         <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/50 bg-gradient-to-r from-red-950/80 via-black to-red-950/80 px-4 py-2 text-xs sm:text-sm font-black tracking-wider text-red-400 uppercase mb-3 shadow-[0_0_25px_rgba(220,38,38,0.35)]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/50 px-4 py-1.5 text-xs sm:text-sm font-bold tracking-wider text-red-400 uppercase mb-3 backdrop-blur-md">
             <Gift className="size-4 text-red-400 animate-pulse" />
             <span>🎁 TESTE O UNITV PRO GRÁTIS POR 3 DIAS</span>
           </div>
@@ -227,17 +227,17 @@ function InstalarPage() {
           </p>
         </div>
 
-        {/* CONTAINER MAESTRO UNIFICADO */}
-        <div className="rounded-3xl border border-red-500/40 bg-gradient-to-b from-[#280910]/90 via-[#1a0509]/90 to-[#0e0205]/95 backdrop-blur-2xl shadow-[0_25px_80px_rgba(220,38,38,0.3)] overflow-hidden">
+        {/* CONTAINER MAESTRO NEUTRO E ELEGANTE (SEM EXCESSO DE VERMELHO OU PRETO TOTAL) */}
+        <div className="rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] overflow-hidden">
 
-          {/* 1. SELETOR DE DISPOSITIVOS EM ABAS */}
-          <div className="p-4 sm:p-6 bg-red-950/30 border-b border-red-500/20">
-            <div className="grid grid-cols-3 gap-2 rounded-2xl bg-red-950/60 p-1.5 border border-red-500/30">
+          {/* 1. SELETOR DE DISPOSITIVOS EM ABAS NEUTRO */}
+          <div className="p-4 sm:p-6 bg-white/[0.02] border-b border-white/10">
+            <div className="grid grid-cols-3 gap-2 rounded-2xl bg-white/[0.05] p-1.5 border border-white/10">
               <button
                 onClick={() => setDeviceTab("tv")}
                 className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
                   deviceTab === "tv"
-                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-400/70 scale-[1.02]"
+                    ? "bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-lg scale-[1.02]"
                     : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -249,7 +249,7 @@ function InstalarPage() {
                 onClick={() => setDeviceTab("mobile")}
                 className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
                   deviceTab === "mobile"
-                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-400/70 scale-[1.02]"
+                    ? "bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-lg scale-[1.02]"
                     : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -261,7 +261,7 @@ function InstalarPage() {
                 onClick={() => setDeviceTab("pc")}
                 className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-black transition-all duration-300 cursor-pointer ${
                   deviceTab === "pc"
-                    ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-400/70 scale-[1.02]"
+                    ? "bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-lg scale-[1.02]"
                     : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -292,13 +292,13 @@ function InstalarPage() {
                 </div>
 
                 {/* VÍDEO CURTO */}
-                <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/80 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-                  <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-black text-white">
+                <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/60 shadow-lg">
+                  <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-bold text-white">
                     <div className="flex items-center gap-2">
                       <Play className="size-4 text-red-500 fill-red-500" />
                       <span>Vídeo Tutorial Curto — Passo a Passo para Smart TV</span>
                     </div>
-                    <span className="hidden sm:inline-flex items-center gap-1 text-[10px] text-red-400 bg-red-950/60 px-2 py-0.5 rounded border border-red-500/30">
+                    <span className="hidden sm:inline-flex items-center gap-1 text-[10px] text-red-400 bg-red-950/50 px-2 py-0.5 rounded border border-red-500/20">
                       <Flame className="size-3" /> Vídeo Prático (1 min)
                     </span>
                   </div>
@@ -316,7 +316,7 @@ function InstalarPage() {
                 {/* PASSOS */}
                 <ol className="space-y-5">
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                    <span className="shrink-0 rounded-xl bg-red-600 border border-red-500/40 px-3 py-1 text-xs font-extrabold text-white shadow-sm tracking-wider">
                       Passo 1
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -333,7 +333,7 @@ function InstalarPage() {
                   </li>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                    <span className="shrink-0 rounded-xl bg-red-600 border border-red-500/40 px-3 py-1 text-xs font-extrabold text-white shadow-sm tracking-wider">
                       Passo 2
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -346,7 +346,7 @@ function InstalarPage() {
                   </div>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                    <span className="shrink-0 rounded-xl bg-red-600 border border-red-500/40 px-3 py-1 text-xs font-extrabold text-white shadow-sm tracking-wider">
                       Passo 3
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -355,7 +355,7 @@ function InstalarPage() {
                   </li>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                    <span className="shrink-0 rounded-xl bg-red-600 border border-red-500/40 px-3 py-1 text-xs font-extrabold text-white shadow-sm tracking-wider">
                       Passo 4
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -371,7 +371,7 @@ function InstalarPage() {
               <>
                 <div className="flex items-center justify-between pb-4 border-b border-white/10">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-600 to-green-700 text-white border border-emerald-400/50 shadow-[0_4px_20px_rgba(16,185,129,0.35)]">
+                    <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-600 to-green-700 text-white border border-emerald-400/40 shadow-sm">
                       <AndroidIcon className="size-7" />
                     </div>
                     <div>
@@ -386,13 +386,13 @@ function InstalarPage() {
                 </div>
 
                 {/* VÍDEO CURTO */}
-                <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/80 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-                  <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-black text-white">
+                <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/60 shadow-lg">
+                  <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-bold text-white">
                     <div className="flex items-center gap-2">
                       <Play className="size-4 text-red-500 fill-red-500" />
                       <span>Vídeo Tutorial Curto — Passo a Passo no Smartphone</span>
                     </div>
-                    <span className="hidden sm:inline-flex items-center gap-1 text-[10px] text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30">
+                    <span className="hidden sm:inline-flex items-center gap-1 text-[10px] text-emerald-400 bg-emerald-950/50 px-2 py-0.5 rounded border border-emerald-500/20">
                       <Flame className="size-3" /> Instalação Rápida
                     </span>
                   </div>
@@ -409,7 +409,7 @@ function InstalarPage() {
 
                 <ol className="space-y-5">
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                    <span className="shrink-0 rounded-xl bg-red-600 border border-red-500/40 px-3 py-1 text-xs font-extrabold text-white shadow-sm tracking-wider">
                       Passo 1
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -422,7 +422,7 @@ function InstalarPage() {
                       href={APK_MEDIAFIRE_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 px-6 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_30px_rgba(16,185,129,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(16,185,129,0.7)] w-full border border-emerald-400/50"
+                      className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 px-6 py-4 text-xs sm:text-sm font-black text-white shadow-lg transition-all hover:scale-[1.02] w-full border border-emerald-400/40"
                     >
                       <Download className="size-5 animate-bounce" />
                       BAIXAR APK UNITV PRO (DOWNLOAD DIRETO)
@@ -430,7 +430,7 @@ function InstalarPage() {
                   </div>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                    <span className="shrink-0 rounded-xl bg-red-600 border border-red-500/40 px-3 py-1 text-xs font-extrabold text-white shadow-sm tracking-wider">
                       Passo 2
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -439,7 +439,7 @@ function InstalarPage() {
                   </li>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                    <span className="shrink-0 rounded-xl bg-red-600 border border-red-500/40 px-3 py-1 text-xs font-extrabold text-white shadow-sm tracking-wider">
                       Passo 3
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -456,7 +456,7 @@ function InstalarPage() {
                   </div>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                    <span className="shrink-0 rounded-xl bg-red-600 border border-red-500/40 px-3 py-1 text-xs font-extrabold text-white shadow-sm tracking-wider">
                       Passo 4
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -472,7 +472,7 @@ function InstalarPage() {
               <>
                 <div className="flex items-center justify-between pb-4 border-b border-white/10">
                   <div className="flex items-center gap-3.5">
-                    <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-black font-black text-base shadow-[0_4px_20px_rgba(245,158,11,0.4)] border border-amber-300">
+                    <div className="flex size-11 sm:size-12 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-black font-black text-base shadow-sm border border-amber-300">
                       LD
                     </div>
                     <div>
@@ -488,7 +488,7 @@ function InstalarPage() {
 
                 <ol className="space-y-5">
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                    <span className="shrink-0 rounded-xl bg-red-600 border border-red-500/40 px-3 py-1 text-xs font-extrabold text-white shadow-sm tracking-wider">
                       Passo 1
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -506,7 +506,7 @@ function InstalarPage() {
                   </li>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                    <span className="shrink-0 rounded-xl bg-red-600 border border-red-500/40 px-3 py-1 text-xs font-extrabold text-white shadow-sm tracking-wider">
                       Passo 2
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -515,7 +515,7 @@ function InstalarPage() {
                   </li>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                    <span className="shrink-0 rounded-xl bg-red-600 border border-red-500/40 px-3 py-1 text-xs font-extrabold text-white shadow-sm tracking-wider">
                       Passo 3
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -528,7 +528,7 @@ function InstalarPage() {
                   </div>
 
                   <li className="flex items-start gap-3.5">
-                    <span className="shrink-0 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 border border-red-400/40 px-3 py-1 text-xs font-black text-white shadow-[0_0_15px_rgba(220,38,38,0.4)] tracking-wider">
+                    <span className="shrink-0 rounded-xl bg-red-600 border border-red-500/40 px-3 py-1 text-xs font-extrabold text-white shadow-sm tracking-wider">
                       Passo 4
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -542,9 +542,9 @@ function InstalarPage() {
           </div>
 
           {/* 3. CONFIRMAÇÃO DE TESTE LIBERADO (RIBBON VERDE INTEGRADO) */}
-          <div className="bg-gradient-to-r from-emerald-950/70 via-emerald-900/50 to-emerald-950/70 p-4 sm:p-5 border-y border-emerald-500/30 text-center">
+          <div className="bg-emerald-950/40 p-4 sm:p-5 border-y border-emerald-500/30 text-center">
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+              <div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
                 <CheckCircle2 className="size-5 stroke-[2.5]" />
               </div>
               <div className="text-center sm:text-left">
@@ -558,10 +558,10 @@ function InstalarPage() {
             </div>
           </div>
 
-          {/* 4. MICROVENDA COM SLIDE DE FILMES ROTATIVO (IGUAL AO HERO SLIDER DA HOME) */}
-          <div className="relative overflow-hidden p-6 sm:p-10 bg-gradient-to-br from-[#3b0811] via-[#240409] to-[#140103] text-center space-y-5">
+          {/* 4. MICROVENDA COM CARROSSEL DE FILMES CINEMATOGRÁFICO E LIMPO */}
+          <div className="relative overflow-hidden p-6 sm:p-10 bg-gradient-to-b from-white/[0.02] to-black/80 text-center space-y-5">
 
-            {/* BACKDROP ROTATIVO DO SLIDESHOW DO HERO (IGUAL À HOME) */}
+            {/* SLIDESHOW DO CARROSSEL HERO NA SEÇÃO DE VENDA */}
             <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
               {heroSlides.map((s, idx) => (
                 <img
@@ -569,19 +569,18 @@ function InstalarPage() {
                   src={img(s.backdrop, "w1280")}
                   alt={s.title}
                   className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out ${
-                    idx === heroIndex ? "opacity-35 scale-105" : "opacity-0"
+                    idx === heroIndex ? "opacity-20 scale-105" : "opacity-0"
                   }`}
                 />
               ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#140103] via-[#240409]/85 to-[#3b0811]/90" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/80 to-black/70" />
             </div>
 
             <div className="relative z-10 space-y-4">
-              {/* BADGE COM O FILME ATUAL DO CARROSSEL */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-red-400/50 bg-red-950/80 px-4 py-1 shadow-[0_0_20px_rgba(220,38,38,0.4)] backdrop-blur-md">
+              <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/60 px-4 py-1 backdrop-blur-md">
                 <Sparkles className="size-3.5 text-red-400 animate-spin" />
                 <span className="text-[11px] font-black uppercase tracking-wider text-red-200">
-                  🔥 LANÇAMENTO NO APP: {currentHero.title} ({currentHero.year})
+                  🔥 EM DESTAQUE NO APP: {currentHero.title} ({currentHero.year})
                 </span>
               </div>
 
@@ -589,46 +588,46 @@ function InstalarPage() {
                 <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-1">
                   Gostou do que encontrou?
                 </h2>
-                <p className="text-xs sm:text-sm text-white/85 max-w-md mx-auto leading-relaxed font-medium italic">
+                <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed font-medium italic">
                   "{currentHero.tagline}"
                 </p>
               </div>
 
-              {/* PONTINHOS NAVEGADORES DO CARROSSEL */}
+              {/* PONTINHOS NAVEGADORES */}
               <div className="flex items-center justify-center gap-1.5 py-1">
                 {heroSlides.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => setHeroIndex(i)}
                     className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      i === heroIndex ? "w-6 bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)]" : "w-1.5 bg-white/30 hover:bg-white/60"
+                      i === heroIndex ? "w-6 bg-red-500 shadow-md" : "w-1.5 bg-white/30 hover:bg-white/60"
                     }`}
                     aria-label={`Slide ${i + 1}`}
                   />
                 ))}
               </div>
 
-              {/* PREÇO EM DESTAQUE */}
-              <div className="inline-flex flex-col items-center justify-center rounded-2xl border border-red-400/40 bg-gradient-to-r from-red-950/90 via-rose-950/90 to-red-950/90 px-6 sm:px-9 py-3.5 backdrop-blur-md shadow-[0_0_35px_rgba(220,38,38,0.35)]">
-                <span className="text-[10px] font-extrabold text-red-200/90 uppercase tracking-widest">
+              {/* PREÇO EM DESTAQUE NEUTRO E MODERNO */}
+              <div className="inline-flex flex-col items-center justify-center rounded-2xl border border-white/15 bg-white/[0.06] px-6 sm:px-9 py-3.5 backdrop-blur-md shadow-lg">
+                <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">
                   Planos sem fidelidade • Cancele quando quiser
                 </span>
                 <div className="flex items-baseline gap-1.5 mt-0.5">
-                  <span className="text-xs font-bold text-red-300">A partir de apenas</span>
-                  <span className="text-2xl sm:text-3xl font-black text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.6)]">
+                  <span className="text-xs font-bold text-red-400">A partir de apenas</span>
+                  <span className="text-2xl sm:text-3xl font-black text-white">
                     R$ 34,99
                   </span>
-                  <span className="text-xs font-bold text-white/80">/mês</span>
+                  <span className="text-xs font-bold text-white/70">/mês</span>
                 </div>
               </div>
 
-              {/* BOTÃO COMPACTO DE CONTINUAR ACESSO */}
+              {/* BOTÃO PRINCIPAL CTA */}
               <div>
                 <a
                   href="/#planos"
-                  className="group relative inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_35px_rgba(220,38,38,0.8)] border border-red-300/70 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_55px_rgba(220,38,38,1)] active:scale-95 cursor-pointer w-full sm:w-auto"
+                  className="group relative inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_30px_rgba(220,38,38,0.6)] border border-red-400/50 transition-all duration-300 hover:scale-[1.03] active:scale-95 cursor-pointer w-full sm:w-auto"
                 >
-                  <span className="flex size-6 items-center justify-center rounded-lg bg-white/20 text-white group-hover:scale-110 transition-transform shadow-inner">
+                  <span className="flex size-6 items-center justify-center rounded-lg bg-white/20 text-white group-hover:scale-110 transition-transform">
                     <Zap className="size-3.5 fill-current" />
                   </span>
                   <span>QUERO CONTINUAR COM O ACESSO</span>
