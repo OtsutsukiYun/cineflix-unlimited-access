@@ -4,13 +4,18 @@ import {
   Download,
   Smartphone,
   Hash,
-  ArrowLeft,
   ExternalLink,
   Tv,
   Monitor,
   Copy,
   Check,
   Play,
+  Gift,
+  CheckCircle2,
+  ShieldCheck,
+  Zap,
+  CreditCard,
+  HelpCircle,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -19,76 +24,42 @@ import { WhatsAppIcon } from "@/components/icons";
 export const Route = createFileRoute("/instalar")({
   head: () => ({
     meta: [
-      { title: "Como Instalar UniTV Pro — Smart TV, TV Box, TV Stick, Projetor Android e Celular" },
+      { title: "🎁 Teste Grátis 3 Dias — Como Instalar UniTV Pro (Smart TV, Celular, TV Box, PC)" },
       {
         name: "description",
         content:
-          "Passo a passo simples para instalar o UniTV Pro na sua Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Amazon, projetor Android, celular Android ou tablet.",
+          "Passo a passo rápido para instalar o UniTV Pro e ativar seus 3 dias de teste grátis no seu aparelho Android, TV Box, FireTV, Celular ou Computador.",
       },
     ],
   }),
   component: InstalarPage,
 });
 
-// CAPINHAS 100% VERIFICADAS DO CATÁLOGO DO SITE (ZERO FALHAS OU ERROS DE IMAGEM)
+// CAPINHAS VERIFICADAS PARA O BANNER DE FUNDO
 const ROW_1_POSTERS = [
-  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", // Obsessão
-  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", // Evil Dead Burn
-  "/kNxRgcTeqeU5jauBackTERoO2De.jpg", // Other Mommy
-  "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", // Undertone
-  "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg", // Passageiro do Mal
-  "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg", // Hokum
-  "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg", // Origem
-  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", // Backrooms
-  "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", // Channel Zero
-  "/vKq8XEJKxQTHd2Bm5zZMFPUrke7.jpg", // Widow's Bay
-  "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water
-  "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", // Michael
+  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
+  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
+  "/kNxRgcTeqeU5jauBackTERoO2De.jpg",
+  "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg",
+  "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg",
+  "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg",
+  "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg",
+  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg",
+  "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg",
+  "/vKq8XEJKxQTHd2Bm5zZMFPUrke7.jpg",
 ];
 
 const ROW_2_POSTERS = [
-  "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", // Socorro!
-  "/pmff1wjKrgJi92PPr346lAifzlg.jpg", // Dia D
-  "/yihdXomYb5kTeSivtFndMy5iDmf.jpg", // Devoradores de Estrelas
-  "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", // The Eyes
-  "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg", // Cure
-  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo
-  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
-  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
-  "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", // Salmokji
-  "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", // Dia Bukan Ibu
-  "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", // Hokum 2
-  "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", // A Maldição da Múmia
-];
-
-const ROW_3_POSTERS = [
-  "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg", // Pecadores
-  "/40nHGUfypLhlr7gJx8At1IbYkaK.jpg", // Invocação do Mal 4
-  "/p3epSUdF9qSWWHTBlA3mJ0w2i2Y.jpg", // O Telefone Preto 2
-  "/xfmnUz6C5WRboIMQZD0j3SNDT7v.jpg", // Faça Ela Voltar
-  "/temIXpcua7j5v4FipOxmzTfrB06.jpg", // Premonição 6
-  "/12H82Xrr2ijDF0lJWUarqGFV7bC.jpg", // FNAF 2
-  "/skwydfnpaQdRQZfXMroh59FMJyY.jpg", // Rua do Medo
-  "/2jME1L29XGE3T4f0zUHgpiKsPrV.jpg", // O Macaco
-  "/fbkUfzmVzEBFSt6p7VigknREIJT.jpg", // Nosferatu
-  "/j5e2YS1PRUVC1YgSool0JJyNLxJ.jpg", // Herege
-  "/vWeOgzlhnP1sS23H3rzctGHB9Nb.jpg", // A Substância
-  "/3HeKb5H89HjzWTkVkAqomu9mek.jpg", // Terrifier 3
-];
-
-const ROW_4_POSTERS = [
-  "/ypHiYvSJmHIyRDRiosZuE595uir.jpg", // Sorria 2
-  "/uURBOrqLFyU8iKODcI3t2Xkbhqs.jpg", // Longlegs
-  "/5gKKSoD3iezjoL7YqZONjmyAiRA.jpg", // Abigail
-  "/6EYfWxIGPc23m1GFs9Gt3kzTl5O.jpg", // Imaculada
-  "/zppeHKLHljU2uI7NBJ1JyDNpn6L.jpg", // A Primeira Profecia
-  "/jB0W9tn4w07MFn7sTfqRTBLVytF.jpg", // Alien: Romulus
-  "/pN9BtzUeqPIKybAu9baihz6YzyO.jpg", // Um Lugar Silencioso: Dia Um
-  "/6lp4uDxLqLEw1CzW1SUOYJ3zdKD.jpg", // Sobrenatural: A Porta Vermelha
-  "/hqIIoGsKKGWK7HjpgCSvV6mgKyT.jpg", // O Exorcista do Papa
-  "/omV2IW2OlFTSw6Hih13hz6lFdvP.jpg", // A Freira 2
-  "/nocx1g4AwO4HyyuWF5gnM5WjGJL.jpg", // Terrifier 2
-  "/aAdnNifQo2qxDYnuDD3blsxinH1.jpg", // O Telefone Preto
+  "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg",
+  "/pmff1wjKrgJi92PPr346lAifzlg.jpg",
+  "/yihdXomYb5kTeSivtFndMy5iDmf.jpg",
+  "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg",
+  "/xNVJr9q6AtSbjosS6Ed9YirOkSo.jpg",
+  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg",
+  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg",
+  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg",
+  "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg",
+  "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg",
 ];
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
@@ -96,370 +67,26 @@ const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link
 const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
 const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file";
 
-function DownloaderAppIcon({ className = "size-12 sm:size-14" }: { className?: string }) {
+function DownloaderAppIcon({ className = "size-10 sm:size-12" }: { className?: string }) {
   return (
-    <div
-      title="Downloader App Icon"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/20 shadow-md transition-all duration-300 ${className}`}
-    >
+    <div className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/20 shadow-md ${className}`}>
       <img
         src="/apps/downloader.png"
-        alt="Downloader Official App Icon"
-        className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
+        alt="Downloader Icon"
+        className="size-full object-cover"
       />
     </div>
   );
 }
 
-function NtDownAppIcon({ className = "size-12 sm:size-14" }: { className?: string }) {
+function NtDownAppIcon({ className = "size-10 sm:size-12" }: { className?: string }) {
   return (
-    <div
-      title="ntDown App Icon"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-white/20 shadow-md transition-all duration-300 ${className}`}
-    >
+    <div className={`relative flex shrink-0 items-center justify-center overflow-hidden rounded-xl border border-white/20 shadow-md ${className}`}>
       <img
         src="/apps/ntdown.png"
-        alt="ntDown Official App Icon"
-        className="size-full object-cover transition-transform duration-300 group-hover/icon:scale-105"
+        alt="ntDown Icon"
+        className="size-full object-cover"
       />
-    </div>
-  );
-}
-
-function LdPlayerAppIcon({ className = "size-12 sm:size-14" }: { className?: string }) {
-  return (
-    <div
-      title="LDPlayer Official Icon"
-      className={`group/icon relative flex shrink-0 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 border border-amber-300/70 shadow-[0_4px_20px_rgba(245,158,11,0.4)] transition-all duration-300 ${className}`}
-    >
-      <div className="flex flex-col items-center justify-center text-black font-black select-none">
-        <span className="text-xl sm:text-2xl font-black tracking-tighter leading-none text-black drop-shadow-sm flex items-center gap-0.5">
-          LD<span className="text-amber-950 font-black text-xs">►</span>
-        </span>
-        <span className="text-[8px] font-black tracking-tighter uppercase text-black/90 leading-none mt-0.5">PLAYER</span>
-      </div>
-    </div>
-  );
-}
-
-function CodeCopyBox({ code }: { code: string }) {
-  const [copied, setCopied] = useState(false);
-  const handleCopy = () => {
-    navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
-  return (
-    <div className="mt-2.5 flex items-center justify-between gap-3 rounded-2xl p-3.5 sm:p-4 border border-white/15 bg-black/80 shadow-md">
-      <div className="flex items-center gap-3">
-        <div className="flex size-9 items-center justify-center rounded-xl bg-emerald-600/30 text-emerald-400 border border-emerald-500/50">
-          <Hash className="size-5" />
-        </div>
-        <div>
-          <span className="text-[10px] font-extrabold uppercase tracking-wider text-muted-foreground block">
-            Código de Instalação
-          </span>
-          <div className="font-mono font-black text-2xl sm:text-3xl tracking-widest leading-none mt-0.5 text-white">
-            {code}
-          </div>
-        </div>
-      </div>
-
-      <button
-        onClick={handleCopy}
-        className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-black uppercase tracking-wider transition-all duration-200 cursor-pointer ${
-          copied
-            ? "bg-emerald-600 text-white shadow-md"
-            : "bg-emerald-600 text-white hover:bg-emerald-500 shadow-md hover:scale-[1.02]"
-        }`}
-      >
-        {copied ? (
-          <>
-            <Check className="size-3.5 text-white" /> COPIADO
-          </>
-        ) : (
-          <>
-            <Copy className="size-3.5" /> COPIAR CÓDIGO
-          </>
-        )}
-      </button>
-    </div>
-  );
-}
-
-function DownloaderMethodCard({ methodNumber = 1, subtitle = "Ideal para Smart TV, TV Box, FireTV e Mi Stick" }: { methodNumber?: number; subtitle?: string }) {
-  return (
-    <div className="glass p-6 sm:p-8 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-      <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
-        <div className="flex items-center gap-3.5">
-          <a
-            href={DOWNLOADER_PLAYSTORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Abrir Downloader na Play Store"
-            className="hover:scale-105 transition-transform shrink-0"
-          >
-            <DownloaderAppIcon className="size-12 sm:size-14" />
-          </a>
-          <div>
-            <a
-              href={DOWNLOADER_PLAYSTORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/title inline-flex items-center gap-2 hover:text-red-400 transition-colors"
-            >
-              <h2 className="text-lg sm:text-xl font-black text-white group-hover/title:text-red-400 flex items-center gap-2">
-                Método {methodNumber}: Downloader <ExternalLink className="size-4 text-muted-foreground opacity-70 group-hover/title:opacity-100" />
-              </h2>
-            </a>
-            <p className="text-xs text-muted-foreground font-medium mt-0.5">
-              {subtitle}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* VÍDEO TUTORIAL YOUTUBE */}
-      <div className="mb-6 overflow-hidden rounded-2xl border border-white/15 bg-black/70 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-        <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-extrabold text-white">
-          <Play className="size-4 text-red-500 fill-red-500" />
-          <span>Vídeo Tutorial Passo a Passo — Instalação na Smart TV, TV Box &amp; Stick</span>
-        </div>
-        <div className="relative aspect-video w-full">
-          <iframe
-            src="https://www.youtube.com/embed/0QH2y4005EQ"
-            title="Vídeo Tutorial de Instalação UniTV Pro na Smart TV e TV Box"
-            className="size-full border-0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
-        <div className="flex items-center justify-between border-t border-white/10 bg-white/[0.02] px-4 py-2 text-[11px] text-muted-foreground">
-          <span>Problemas para reproduzir?</span>
-          <a
-            href="https://youtu.be/0QH2y4005EQ"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 font-bold text-red-400 hover:text-red-300 underline"
-          >
-            Abrir direto no YouTube <ExternalLink className="size-3" />
-          </a>
-        </div>
-      </div>
-
-      <ol className="space-y-5">
-        <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
-            1
-          </div>
-          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Abra a loja do seu aparelho Android (Play Store ou TV Store) e instale o app{" "}
-            <a
-              href={DOWNLOADER_PLAYSTORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-red-400 font-bold underline underline-offset-2 hover:text-red-300"
-            >
-              Downloader <ExternalLink className="size-3" />
-            </a>.
-          </div>
-        </li>
-
-        <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
-            2
-          </div>
-          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Abra o <strong>Downloader</strong> e digite o código de instalação:
-            <CodeCopyBox code="1089401" />
-          </div>
-        </li>
-
-        <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
-            3
-          </div>
-          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Clique em <strong>"Go"</strong>. Se o download não iniciar automático, toque no botão azul{" "}
-            <span className="inline-block whitespace-nowrap rounded-md bg-blue-600 border border-blue-400/60 px-2 py-0.5 text-xs font-black text-white shadow-sm align-baseline">
-              unitv_RS-NPWN
-            </span>{" "}
-            e instale o aplicativo.
-          </div>
-        </li>
-
-        <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
-            4
-          </div>
-          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Se o Android <strong>pedir permissão ou bloquear a instalação</strong>, escolha <strong>"Permitir desta fonte"</strong> (ou <strong>"Instalar mesmo assim"</strong>). Isso é <strong>100% normal</strong> por ser uma instalação fora da Play Store!
-          </div>
-        </li>
-      </ol>
-
-      {/* AVISO DE ATIVAÇÃO DE 3 DIAS GRÁTIS */}
-      <div className="mt-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-3.5 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
-        <div className="flex items-center gap-3">
-          <div className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300 font-bold text-sm border border-emerald-500/40">
-            🎁
-          </div>
-          <p className="text-xs text-emerald-200/90 leading-normal">
-            <strong className="text-emerald-300 font-bold">Teste grátis de 3 dias ativado!</strong> Ao abrir o app, aguarde o popup inicial fechar automaticamente.
-          </p>
-        </div>
-      </div>
-
-      {/* DICA SE APARECER "VOCÊ NÃO É VIP" */}
-      <div className="mt-2.5 rounded-2xl border border-amber-500/35 bg-amber-950/30 p-3.5 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
-        <div className="flex items-center gap-3">
-          <div className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300 font-bold text-sm border border-amber-500/40">
-            💡
-          </div>
-          <p className="text-xs text-amber-200/90 leading-normal">
-            <strong className="text-amber-300 font-bold">Apareceu "Você não é VIP"?</strong> Basta clicar em qualquer filme, série ou canal que tudo é liberado na hora!
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function NtDownMethodCard({ methodNumber = 2, subtitle = "Compatível com Smart TV, TV Box, FireTV, Projetor, Celular & Tablet" }: { methodNumber?: number; subtitle?: string }) {
-  return (
-    <div className="glass p-6 sm:p-8 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-      <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
-        <div className="flex items-center gap-3.5">
-          <a
-            href={NTDOWN_PLAYSTORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Abrir ntDown na Play Store"
-            className="hover:scale-105 transition-transform shrink-0"
-          >
-            <NtDownAppIcon className="size-12 sm:size-14" />
-          </a>
-          <div>
-            <a
-              href={NTDOWN_PLAYSTORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/title inline-flex items-center gap-2 hover:text-red-400 transition-colors"
-            >
-              <h2 className="text-lg sm:text-xl font-black text-white group-hover/title:text-red-400 flex items-center gap-2">
-                Método {methodNumber}: NTDown <ExternalLink className="size-4 text-muted-foreground opacity-70 group-hover/title:opacity-100" />
-              </h2>
-            </a>
-            <p className="text-xs text-muted-foreground font-medium mt-0.5">
-              {subtitle}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* VÍDEO TUTORIAL YOUTUBE */}
-      <div className="mb-6 overflow-hidden rounded-2xl border border-white/15 bg-black/70 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-        <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-extrabold text-white">
-          <Play className="size-4 text-red-500 fill-red-500" />
-          <span>Vídeo Tutorial Passo a Passo — Instalação via ntDown</span>
-        </div>
-        <div className="relative aspect-video w-full">
-          <iframe
-            src="https://www.youtube.com/embed/V5iwjBtQq0Y"
-            title="Vídeo Tutorial de Instalação UniTV Pro via ntDown"
-            className="size-full border-0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
-        <div className="flex items-center justify-between border-t border-white/10 bg-white/[0.02] px-4 py-2 text-[11px] text-muted-foreground">
-          <span>Problemas para reproduzir?</span>
-          <a
-            href="https://youtu.be/V5iwjBtQq0Y"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 font-bold text-red-400 hover:text-red-300 underline"
-          >
-            Abrir direto no YouTube <ExternalLink className="size-3" />
-          </a>
-        </div>
-      </div>
-
-      <ol className="space-y-5">
-        <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
-            1
-          </div>
-          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Abra a <strong>Play Store</strong> no seu aparelho Android (celular, tablet, TV ou TV Box) e instale o app{" "}
-            <a
-              href={NTDOWN_PLAYSTORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-red-400 font-bold underline underline-offset-2 hover:text-red-300"
-            >
-              ntDown <ExternalLink className="size-3" />
-            </a>.
-          </div>
-        </li>
-
-        <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
-            2
-          </div>
-          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Abra o <strong>ntDown</strong> e coloque o código:
-            <CodeCopyBox code="94596" />
-          </div>
-        </li>
-
-        <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
-            3
-          </div>
-          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Toque no botão azul{" "}
-            <span className="inline-block whitespace-nowrap rounded-md bg-blue-600 border border-blue-400/60 px-2 py-0.5 text-xs font-black text-white shadow-sm align-baseline">
-              unitv_RS-NPWN
-            </span>{" "}
-            para baixar, conclua a instalação e abra o <strong>UniTV Pro</strong>.
-          </div>
-        </li>
-
-        <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
-            4
-          </div>
-          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Se o Android <strong>pedir permissão ou bloquear a instalação</strong>, escolha <strong>"Permitir desta fonte"</strong> (ou <strong>"Instalar mesmo assim"</strong>). Isso é <strong>100% normal</strong> por ser uma instalação fora da Play Store!
-          </div>
-        </li>
-      </ol>
-
-      {/* AVISO DE ATIVAÇÃO DE 3 DIAS GRÁTIS */}
-      <div className="mt-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-3.5 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
-        <div className="flex items-center gap-3">
-          <div className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300 font-bold text-sm border border-emerald-500/40">
-            🎁
-          </div>
-          <p className="text-xs text-emerald-200/90 leading-normal">
-            <strong className="text-emerald-300 font-bold">Teste grátis de 3 dias ativado!</strong> Ao abrir o app, aguarde o popup inicial fechar automaticamente.
-          </p>
-        </div>
-      </div>
-
-      {/* DICA SE APARECER "VOCÊ NÃO É VIP" */}
-      <div className="mt-2.5 rounded-2xl border border-amber-500/35 bg-amber-950/30 p-3.5 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
-        <div className="flex items-center gap-3">
-          <div className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300 font-bold text-sm border border-amber-500/40">
-            💡
-          </div>
-          <p className="text-xs text-amber-200/90 leading-normal">
-            <strong className="text-amber-300 font-bold">Apareceu "Você não é VIP"?</strong> Basta clicar em qualquer filme, série ou canal que tudo é liberado na hora!
-          </p>
-        </div>
-      </div>
     </div>
   );
 }
@@ -472,144 +99,58 @@ function AndroidIcon({ className = "size-4" }: { className?: string }) {
   );
 }
 
-function MobileApkMethodCard() {
+function CodeCopyBox({ code }: { code: string }) {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2500);
+  };
+
   return (
-    <div className="glass p-6 sm:p-8 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-      <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-white/10">
-        <div className="flex items-center gap-3.5">
-          <div className="flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-600 via-green-600 to-emerald-800 border border-emerald-400/40 shadow-lg text-white">
-            <AndroidIcon className="size-7 sm:size-8" />
-          </div>
-          <div>
-            <h2 className="text-lg sm:text-xl font-black text-white flex items-center gap-2">
-              Download Direto APK (Celulares ou Tablets)
-            </h2>
-            <p className="text-xs text-muted-foreground font-medium mt-0.5">
-              Método mais rápido para dispositivos Android — baixa o instalador APK direto no seu aparelho
-            </p>
+    <div className="my-3 flex flex-col sm:flex-row items-center justify-between gap-3 rounded-2xl p-4 border border-emerald-500/30 bg-black/90 shadow-[0_0_25px_rgba(16,185,129,0.15)]">
+      <div className="flex items-center gap-3 w-full sm:w-auto">
+        <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600/30 text-emerald-400 border border-emerald-500/50">
+          <Hash className="size-6" />
+        </div>
+        <div>
+          <span className="text-[10px] font-black uppercase tracking-wider text-muted-foreground block">
+            Código de Instalação (Downloader / NTDown)
+          </span>
+          <div className="font-mono font-black text-3xl sm:text-4xl tracking-widest text-emerald-400 leading-tight">
+            {code}
           </div>
         </div>
       </div>
 
-      {/* VÍDEO TUTORIAL YOUTUBE */}
-      <div className="mb-6 overflow-hidden rounded-2xl border border-white/15 bg-black/70 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
-        <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-extrabold text-white">
-          <Play className="size-4 text-red-500 fill-red-500" />
-          <span>Vídeo Tutorial Passo a Passo — Instalação no Celular / Tablet</span>
-        </div>
-        <div className="relative aspect-video w-full">
-          <iframe
-            src="https://www.youtube.com/embed/Ge1WVaiOQxQ"
-            title="Vídeo Tutorial de Instalação UniTV Pro no Celular e Tablet"
-            className="size-full border-0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        </div>
-        <div className="flex items-center justify-between border-t border-white/10 bg-white/[0.02] px-4 py-2 text-[11px] text-muted-foreground">
-          <span>Problemas para reproduzir?</span>
-          <a
-            href="https://youtu.be/Ge1WVaiOQxQ"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 font-bold text-red-400 hover:text-red-300 underline"
-          >
-            Abrir direto no YouTube <ExternalLink className="size-3" />
-          </a>
-        </div>
-      </div>
-
-      {/* BOTÃO DE DOWNLOAD DIRETO DO APK */}
-      <div className="mb-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-4 sm:p-5 text-center">
-        <p className="text-xs sm:text-sm text-white/90 mb-3.5 font-bold">
-          Clique no botão verde abaixo para abrir o servidor de download oficial:
-        </p>
-        <a
-          href={APK_MEDIAFIRE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 px-6 py-3.5 text-xs sm:text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(16,185,129,0.7)] active:scale-95 cursor-pointer w-full sm:w-auto"
-        >
-          <Download className="size-5" />
-          BAIXAR APK UNITV PRO (DOWNLOAD DIRETO)
-          <ExternalLink className="size-4 opacity-75" />
-        </a>
-      </div>
-
-      <ol className="space-y-5">
-        <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
-            1
-          </div>
-          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Toque no <strong>botão verde acima</strong>. Na página que se abrir, clique no <strong>botão azul de download</strong> com o nome do arquivo:
-            <span className="ml-2 inline-block whitespace-nowrap rounded-md bg-blue-600 border border-blue-400/60 px-2.5 py-1 text-xs font-black text-white shadow-sm align-baseline mt-1 sm:mt-0">
-              unitv_RS-NPWN.apk
-            </span>
-          </div>
-        </li>
-
-        <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
-            2
-          </div>
-          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Após a conclusão do download, abra as notificações (ou a pasta Downloads) e toque em <strong>"unitv_RS-NPWN.apk"</strong> para instalar.
-          </div>
-        </li>
-
-        <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
-            3
-          </div>
-          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Se o celular <strong>pedir permissão ou bloquear a instalação</strong>, selecione <strong>"Permitir desta fonte"</strong> (ou <strong>"Instalar mesmo assim"</strong>). Isso é <strong>100% normal</strong> por ser um app instalado fora da Play Store!
-          </div>
-        </li>
-
-        <li className="flex items-start gap-3.5">
-          <div className="mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-emerald-600/30 border border-emerald-500/50 text-emerald-400 text-xs font-black">
-            4
-          </div>
-          <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-            Abra o aplicativo <strong>UniTV Pro</strong> no seu celular ou tablet e aproveite todo o acervo!
-          </div>
-        </li>
-      </ol>
-
-      {/* AVISO DE ATIVAÇÃO DE 3 DIAS GRÁTIS */}
-      <div className="mt-6 rounded-2xl border border-emerald-500/35 bg-emerald-950/30 p-3.5 backdrop-blur-md shadow-[0_0_20px_rgba(16,185,129,0.15)]">
-        <div className="flex items-center gap-3">
-          <div className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-300 font-bold text-sm border border-emerald-500/40">
-            🎁
-          </div>
-          <p className="text-xs text-emerald-200/90 leading-normal">
-            <strong className="text-emerald-300 font-bold">Teste grátis de 3 dias ativado!</strong> Ao abrir o app, aguarde o popup inicial fechar automaticamente.
-          </p>
-        </div>
-      </div>
-
-      {/* DICA SE APARECER "VOCÊ NÃO É VIP" */}
-      <div className="mt-2.5 rounded-2xl border border-amber-500/35 bg-amber-950/30 p-3.5 backdrop-blur-md shadow-[0_0_20px_rgba(245,158,11,0.15)]">
-        <div className="flex items-center gap-3">
-          <div className="flex size-7 shrink-0 items-center justify-center rounded-xl bg-amber-500/20 text-amber-300 font-bold text-sm border border-amber-500/40">
-            💡
-          </div>
-          <p className="text-xs text-amber-200/90 leading-normal">
-            <strong className="text-amber-300 font-bold">Apareceu "Você não é VIP"?</strong> Basta clicar em qualquer filme, série ou canal que tudo é liberado na hora!
-          </p>
-        </div>
-      </div>
+      <button
+        onClick={handleCopy}
+        className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-xs font-black uppercase tracking-wider transition-all duration-200 cursor-pointer shadow-md ${
+          copied
+            ? "bg-emerald-500 text-black shadow-emerald-500/40"
+            : "bg-emerald-600 hover:bg-emerald-500 text-white hover:scale-[1.02]"
+        }`}
+      >
+        {copied ? (
+          <>
+            <Check className="size-4 stroke-[3]" /> CÓDIGO COPIADO!
+          </>
+        ) : (
+          <>
+            <Copy className="size-4" /> COPIAR CÓDIGO
+          </>
+        )}
+      </button>
     </div>
   );
 }
 
 function InstalarPage() {
-  const [activeTab, setActiveTab] = useState<"tv" | "mobile" | "pc">("tv");
+  const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
 
   return (
     <div className="relative min-h-screen bg-[#0d090b] text-white overflow-x-hidden">
-      {/* LUZ AMBIENTAL VERMELHA SUAVE */}
+      {/* LUZ AMBIENTAL VERMELHA */}
       <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[650px] rounded-full bg-red-600/15 blur-[160px] z-0" />
       <div className="pointer-events-none fixed bottom-20 right-10 size-[500px] rounded-full bg-rose-700/15 blur-[140px] z-0" />
 
@@ -618,7 +159,7 @@ function InstalarPage() {
         <PromoBanner />
       </div>
 
-      {/* HEADER COMPACTO VIDRO COM BLUR PREMIUM */}
+      {/* HEADER COMPACTO COM VIDRO E BLUR */}
       <header className="fixed inset-x-0 top-8 z-50 transition-all duration-300 [transform:translateZ(0)]">
         <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-5 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.8)] border border-white/15 backdrop-blur-2xl bg-black/60">
           <Link to="/" className="flex items-center gap-3">
@@ -634,7 +175,6 @@ function InstalarPage() {
             </div>
           </Link>
 
-          {/* MENU DE NAVEGAÇÃO */}
           <nav className="hidden md:flex items-center gap-6 text-xs font-bold text-white/80">
             <Link to="/" className="hover:text-white transition-colors">
               Início
@@ -643,7 +183,7 @@ function InstalarPage() {
               Catálogo
             </Link>
             <Link to="/instalar" className="text-red-500 font-extrabold">
-              Como Instalar
+              Teste Grátis
             </Link>
             <Link to="/suporte" className="hover:text-white transition-colors">
               Suporte
@@ -654,212 +194,437 @@ function InstalarPage() {
             href="/#planos"
             className="btn-cta px-4 py-1.5 text-[11px] font-extrabold tracking-wide uppercase shadow-md"
           >
-            QUERO ASSINAR
+            VER PLANOS
           </a>
         </div>
       </header>
 
-      {/* GRADE DE CAPINHAS DE FILMES DE FUNDO (FIXO NO VIEWPORT - NUNCA ACABA AO ROLAR) */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-35">
+      {/* GRID DE CAPINHAS NO BACKGROUND DECORATIVO */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-25">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0d090b]/85 via-[#0d090b]/65 to-[#0d090b]/90 z-10" />
         <div className="flex flex-col gap-4 pt-16 scale-105 blur-[1px]">
           <div className="flex w-max gap-4 animate-marquee">
-            {ROW_1_POSTERS.concat(ROW_1_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
+            {ROW_1_POSTERS.concat(ROW_1_POSTERS).map((p, i) => (
               <img key={`r1-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
             ))}
           </div>
           <div className="flex w-max gap-4 animate-marquee-reverse">
-            {ROW_2_POSTERS.concat(ROW_2_POSTERS).concat(ROW_2_POSTERS).map((p, i) => (
+            {ROW_2_POSTERS.concat(ROW_2_POSTERS).map((p, i) => (
               <img key={`r2-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
-            ))}
-          </div>
-          <div className="flex w-max gap-4 animate-marquee">
-            {ROW_3_POSTERS.concat(ROW_3_POSTERS).concat(ROW_3_POSTERS).map((p, i) => (
-              <img key={`r3-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
-            ))}
-          </div>
-          <div className="flex w-max gap-4 animate-marquee-reverse">
-            {ROW_4_POSTERS.concat(ROW_4_POSTERS).concat(ROW_4_POSTERS).map((p, i) => (
-              <img key={`r4-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
-            ))}
-          </div>
-          <div className="flex w-max gap-4 animate-marquee">
-            {ROW_1_POSTERS.concat(ROW_2_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
-              <img key={`r5-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
-            ))}
-          </div>
-          <div className="flex w-max gap-4 animate-marquee-reverse">
-            {ROW_3_POSTERS.concat(ROW_4_POSTERS).concat(ROW_3_POSTERS).map((p, i) => (
-              <img key={`r6-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
-            ))}
-          </div>
-          <div className="flex w-max gap-4 animate-marquee">
-            {ROW_2_POSTERS.concat(ROW_4_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
-              <img key={`r7-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
-            ))}
-          </div>
-          <div className="flex w-max gap-4 animate-marquee-reverse">
-            {ROW_1_POSTERS.concat(ROW_3_POSTERS).concat(ROW_2_POSTERS).map((p, i) => (
-              <img key={`r8-${i}`} src={img(p, "w342")} alt="" className="h-40 w-28 rounded-xl object-cover shadow-md" />
             ))}
           </div>
         </div>
       </div>
 
-      {/* CONTEÚDO PRINCIPAL (ESPAÇAMENTO TOP ADEQUADO PARA NÃO CONFLITAR COM O HEADER FLUTUANTE) */}
-      <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-36 sm:pt-40 pb-16">
-        <div className="text-center mb-6">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-red-500/30 bg-red-950/40 px-4 py-1.5 text-xs sm:text-sm font-black tracking-wider text-red-400 uppercase mb-3">
-            <Download className="size-4" /> Guia Rápido de Instalação
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight mb-2.5">
-            Como instalar o <span className="text-red-500">UniTV Pro</span>
-          </h1>
-          <p className="text-sm sm:text-base text-white/85 max-w-xl mx-auto leading-relaxed font-medium">
-            Passo a passo completo para Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Amazon, Projetor, Celular, Tablet ou PC.
-          </p>
-        </div>
+      {/* CONTEÚDO PRINCIPAL (ESTRUTURA 5 ETAPAS SOLICITADA) */}
+      <main className="relative z-10 mx-auto w-[94%] max-w-3xl pt-36 sm:pt-40 pb-20 space-y-10">
 
-        {/* NAVEGAÇÃO DE DISPOSITIVOS EM ESTILO VIDRO */}
-        <div className="mb-5">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 rounded-2xl glass p-1.5 border border-white/10 backdrop-blur-2xl shadow-xl">
-            <button
-              onClick={() => setActiveTab("tv")}
-              className={`flex items-center justify-center gap-2 rounded-xl py-3 px-3 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
-                activeTab === "tv"
-                  ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-500/50"
-                  : "bg-transparent text-muted-foreground hover:text-white"
-              }`}
-            >
-              <Tv className="size-4" />
-              <span>TV, Box &amp; Stick</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab("mobile")}
-              className={`flex items-center justify-center gap-2 rounded-xl py-3 px-3 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
-                activeTab === "mobile"
-                  ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-500/50"
-                  : "bg-transparent text-muted-foreground hover:text-white"
-              }`}
-            >
-              <AndroidIcon className="size-4" />
-              <span>Celulares ou Tablets</span>
-            </button>
-
-            <button
-              onClick={() => setActiveTab("pc")}
-              className={`flex items-center justify-center gap-2 rounded-xl py-3 px-3 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
-                activeTab === "pc"
-                  ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] border border-red-500/50"
-                  : "bg-transparent text-muted-foreground hover:text-white"
-              }`}
-            >
-              <Monitor className="size-4" />
-              <span>Computador &amp; PC (Emulador Android)</span>
-            </button>
+        {/* ── 1. TOPO ────────────────────────────────────────────── */}
+        <section className="text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/60 px-4 py-1.5 text-xs sm:text-sm font-black tracking-wider text-red-400 uppercase mb-4 shadow-[0_0_20px_rgba(220,38,38,0.3)]">
+            <Gift className="size-4 text-red-400" />
+            <span>🎁 TESTE O UNITV PRO GRÁTIS POR 3 DIAS</span>
           </div>
-        </div>
 
-        {/* MÉTODOS EM CARDS DE VIDRO */}
-        <div className="space-y-4">
-          {activeTab === "tv" && (
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight mb-3">
+            Escolha onde você quer assistir e <span className="text-red-500">siga o passo a passo</span>
+          </h1>
+          <p className="text-xs sm:text-base text-white/70 max-w-lg mx-auto leading-relaxed">
+            Selecione seu dispositivo abaixo para ver o tutorial interativo e o código de ativação imediato.
+          </p>
+
+          {/* SELETOR DE DISPOSITIVOS EM ABAS */}
+          <div className="mt-6">
+            <div className="grid grid-cols-3 gap-2 rounded-2xl glass p-1.5 border border-white/15 bg-black/60 backdrop-blur-2xl shadow-2xl">
+              <button
+                onClick={() => setDeviceTab("tv")}
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
+                  deviceTab === "tv"
+                    ? "bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] border border-red-500/60 scale-[1.02]"
+                    : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                <Tv className="size-4 sm:size-5" />
+                <span>TV / TV Box</span>
+              </button>
+
+              <button
+                onClick={() => setDeviceTab("mobile")}
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
+                  deviceTab === "mobile"
+                    ? "bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] border border-red-500/60 scale-[1.02]"
+                    : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                <Smartphone className="size-4 sm:size-5" />
+                <span>Celular</span>
+              </button>
+
+              <button
+                onClick={() => setDeviceTab("pc")}
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl py-3 px-2 sm:px-4 text-xs sm:text-sm font-extrabold transition-all cursor-pointer ${
+                  deviceTab === "pc"
+                    ? "bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] border border-red-500/60 scale-[1.02]"
+                    : "bg-transparent text-white/70 hover:text-white hover:bg-white/5"
+                }`}
+              >
+                <Monitor className="size-4 sm:size-5" />
+                <span>Computador</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 2. TUTORIAL ────────────────────────────────────────── */}
+        <section className="glass p-6 sm:p-9 rounded-3xl border border-white/15 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.7)] space-y-7">
+
+          {/* TUTORIAL: TV / TV BOX */}
+          {deviceTab === "tv" && (
             <>
-              <DownloaderMethodCard methodNumber={1} subtitle="Recomendado para Smart TV, TV Box, FireTV Stick e Mi Stick" />
-              <NtDownMethodCard methodNumber={2} subtitle="Opção alternativa via Play Store" />
+              <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                <div className="flex items-center gap-3">
+                  <DownloaderAppIcon />
+                  <div>
+                    <h2 className="text-lg sm:text-xl font-black text-white flex items-center gap-2">
+                      Instalação em Smart TV, TV Box &amp; Stick
+                    </h2>
+                    <p className="text-xs text-muted-foreground font-medium">
+                      Método via aplicativo Downloader (compatível com Android TV, FireTV, Xiaomi Mi Stick)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* VÍDEO CURTO */}
+              <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/80 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-black text-white">
+                  <Play className="size-4 text-red-500 fill-red-500" />
+                  <span>Vídeo Tutorial Curto — Passo a Passo para Smart TV</span>
+                </div>
+                <div className="relative aspect-video w-full">
+                  <iframe
+                    src="https://www.youtube.com/embed/0QH2y4005EQ"
+                    title="Vídeo Tutorial de Instalação UniTV Pro na Smart TV"
+                    className="size-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+
+              {/* PASSOS NUMERADOS COM CÓDIGO GRANDE + BOTAO COPIAR */}
+              <ol className="space-y-6">
+                <li className="flex items-start gap-4">
+                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                    Passo 1
+                  </div>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    Abra a loja de aplicativos da sua Smart TV ou TV Box (Play Store / App Store) e instale o app{" "}
+                    <a
+                      href={DOWNLOADER_PLAYSTORE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-red-400 font-bold underline underline-offset-2 hover:text-red-300"
+                    >
+                      Downloader <ExternalLink className="inline size-3" />
+                    </a>.
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                    Passo 2
+                  </div>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1 w-full">
+                    Abra o app <strong>Downloader</strong> e digite no campo de busca:
+                  </div>
+                </li>
+
+                {/* CÓDIGO GRANDE + BOTAO COPIAR */}
+                <div className="pl-0 sm:pl-11">
+                  <CodeCopyBox code="1089401" />
+                </div>
+
+                <li className="flex items-start gap-4">
+                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                    Passo 3
+                  </div>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    Clique em <strong>"Go"</strong>. O download do app iniciará imediatamente. Quando terminar, toque no botão para instalar.
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                    Passo 4
+                  </div>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    Se o sistema solicitar permissão para instalar apps desconhecidos, escolha <strong>"Permitir desta fonte"</strong> ou <strong>"Instalar mesmo assim"</strong>. Abra o UniTV Pro e aproveite!
+                  </div>
+                </li>
+              </ol>
             </>
           )}
 
-          {activeTab === "mobile" && (
+          {/* TUTORIAL: CELULAR */}
+          {deviceTab === "mobile" && (
             <>
-              <MobileApkMethodCard />
-              <NtDownMethodCard methodNumber={2} subtitle="Opção alternativa via Play Store (ntDown)" />
+              <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-md">
+                    <AndroidIcon className="size-6" />
+                  </div>
+                  <div>
+                    <h2 className="text-lg sm:text-xl font-black text-white flex items-center gap-2">
+                      Instalação no Celular ou Tablet
+                    </h2>
+                    <p className="text-xs text-muted-foreground font-medium">
+                      Download direto do APK instalador para Android
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* VÍDEO CURTO */}
+              <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/80 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                <div className="flex items-center gap-2 border-b border-white/10 bg-white/[0.04] px-4 py-2.5 text-xs font-black text-white">
+                  <Play className="size-4 text-red-500 fill-red-500" />
+                  <span>Vídeo Tutorial Curto — Passo a Passo no Smartphone</span>
+                </div>
+                <div className="relative aspect-video w-full">
+                  <iframe
+                    src="https://www.youtube.com/embed/Ge1WVaiOQxQ"
+                    title="Vídeo Tutorial de Instalação UniTV Pro no Celular"
+                    className="size-full border-0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+
+              <ol className="space-y-6">
+                <li className="flex items-start gap-4">
+                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                    Passo 1
+                  </div>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    Toque no botão verde abaixo para baixar o instalador oficial do UniTV Pro diretamente no seu celular.
+                  </div>
+                </li>
+
+                <div className="pl-0 sm:pl-11">
+                  <a
+                    href={APK_MEDIAFIRE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 px-6 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(16,185,129,0.7)] w-full"
+                  >
+                    <Download className="size-5" />
+                    BAIXAR APK UNITV PRO (DOWNLOAD DIRETO)
+                  </a>
+                </div>
+
+                <li className="flex items-start gap-4">
+                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                    Passo 2
+                  </div>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    Abra as notificações do celular ou a pasta <strong>Downloads</strong> e toque no arquivo <strong>unitv_RS-NPWN.apk</strong>.
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                    Passo 3
+                  </div>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    Opção alternativa via Play Store: Instale o app{" "}
+                    <a href={NTDOWN_PLAYSTORE_URL} target="_blank" rel="noopener noreferrer" className="text-red-400 font-bold underline">
+                      ntDown <ExternalLink className="inline size-3" />
+                    </a>{" "}
+                    e digite o código:
+                  </div>
+                </li>
+
+                <div className="pl-0 sm:pl-11">
+                  <CodeCopyBox code="94596" />
+                </div>
+
+                <li className="flex items-start gap-4">
+                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                    Passo 4
+                  </div>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    Permita a instalação no celular quando solicitado e abra o UniTV Pro!
+                  </div>
+                </li>
+              </ol>
             </>
           )}
 
-          {activeTab === "pc" && (
-            <div className="space-y-6">
-              <div className="glass p-6 sm:p-8 rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
-                <div className="flex items-center justify-between gap-4 mb-4 pb-4 border-b border-white/10">
-                  <div className="flex items-center gap-3.5">
+          {/* TUTORIAL: COMPUTADOR */}
+          {deviceTab === "pc" && (
+            <>
+              <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                <div className="flex items-center gap-3">
+                  <div className="flex size-10 sm:size-12 shrink-0 items-center justify-center rounded-xl bg-amber-500 text-black font-black text-sm shadow-md">
+                    LD
+                  </div>
+                  <div>
+                    <h2 className="text-lg sm:text-xl font-black text-white flex items-center gap-2">
+                      Instalação no Computador / PC
+                    </h2>
+                    <p className="text-xs text-muted-foreground font-medium">
+                      Via emulador Android leve (Windows &amp; Mac)
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <ol className="space-y-6">
+                <li className="flex items-start gap-4">
+                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                    Passo 1
+                  </div>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    Baixe o emulador gratuito{" "}
                     <a
                       href={LDPLAYER_WEBSITE_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      title="Baixar LDPlayer no site oficial"
-                      className="hover:scale-105 transition-transform shrink-0"
+                      className="text-red-400 font-bold underline"
                     >
-                      <LdPlayerAppIcon className="size-12 sm:size-14" />
-                    </a>
-                    <div>
-                      <a
-                        href={LDPLAYER_WEBSITE_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group/title inline-flex items-center gap-2 hover:text-red-400 transition-colors"
-                      >
-                        <h3 className="font-black text-white text-lg sm:text-xl group-hover/title:text-red-400 flex items-center gap-2">
-                          LDPlayer (Emulador PC) <ExternalLink className="size-4 text-muted-foreground opacity-70 group-hover/title:opacity-100" />
-                        </h3>
-                      </a>
-                      <p className="text-xs text-muted-foreground font-medium mt-0.5">
-                        Emulador leve e grátis para Windows &amp; Mac
-                      </p>
-                    </div>
+                      LDPlayer <ExternalLink className="inline size-3" />
+                    </a>{" "}
+                    no seu computador e faça a instalação.
                   </div>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                    Passo 2
+                  </div>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    Abra o LDPlayer e instale o app <strong>Downloader</strong> pela Play Store do emulador.
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                    Passo 3
+                  </div>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1 w-full">
+                    No Downloader dentro do emulador, digite o código:
+                  </div>
+                </li>
+
+                <div className="pl-0 sm:pl-11">
+                  <CodeCopyBox code="1089401" />
                 </div>
 
-                <p className="text-xs sm:text-sm text-white/90 leading-relaxed mb-4">
-                  Para assistir no PC ou Notebook, instale o emulador grátis{" "}
-                  <a
-                    href={LDPLAYER_WEBSITE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-red-400 font-bold underline underline-offset-2"
-                  >
-                    LDPlayer <ExternalLink className="inline size-3" />
-                  </a>. Depois, você pode baixar o APK do UniTV Pro direto pelo botão verde abaixo ou usar o app Downloader com o código <strong>1089401</strong>.
-                </p>
-              </div>
-
-              <MobileApkMethodCard />
-              <DownloaderMethodCard methodNumber={2} subtitle="Método via Downloader no emulador PC" />
-            </div>
+                <li className="flex items-start gap-4">
+                  <div className="flex size-7 shrink-0 items-center justify-center rounded-full bg-red-600 text-white font-black text-xs shadow-md">
+                    Passo 4
+                  </div>
+                  <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-1">
+                    Instale o UniTV Pro no emulador e assista em tela cheia no monitor ou TV!
+                  </div>
+                </li>
+              </ol>
+            </>
           )}
-        </div>
 
-        {/* CTA ATENDIMENTO E AJUDA VIA WHATSAPP EM CARD DE VIDRO */}
-        <div className="mt-10 glass p-7 text-center rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-2xl shadow-xl">
-          <div className="mx-auto flex size-11 items-center justify-center rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 mb-3">
-            <WhatsAppIcon className="size-5 fill-current" />
+        </section>
+
+        {/* ── 3. CONFIRMAÇÃO ─────────────────────────────────────── */}
+        <section className="rounded-3xl border border-emerald-500/40 bg-gradient-to-br from-emerald-950/40 via-emerald-900/20 to-black/80 p-6 sm:p-8 backdrop-blur-2xl text-center shadow-[0_0_30px_rgba(16,185,129,0.2)]">
+          <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 shadow-inner">
+            <CheckCircle2 className="size-8 stroke-[2.5]" />
           </div>
-          <h3 className="text-lg font-black text-white mb-1">Precisa de ajuda para instalar?</h3>
-          <p className="text-xs sm:text-sm text-muted-foreground mb-5 max-w-md mx-auto">
-            Fale com a nossa equipe no WhatsApp para tirar dúvidas ou solicitar suporte pós-compra!
+          <h2 className="text-2xl sm:text-3xl font-black text-white mb-2">
+            Pronto! Seu teste grátis está liberado 🎉
+          </h2>
+          <p className="text-xs sm:text-base text-emerald-200/90 max-w-md mx-auto leading-relaxed font-medium">
+            Agora abra o UniTV Pro no seu aparelho e escolha algo para assistir imediatamente.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+        </section>
+
+        {/* ── 4. MICROVENDA ──────────────────────────────────────── */}
+        <section className="glass p-7 sm:p-10 rounded-3xl border border-red-500/30 bg-gradient-to-b from-red-950/30 via-black/80 to-black p-8 backdrop-blur-2xl text-center shadow-[0_20px_50px_rgba(220,38,38,0.2)] space-y-6">
+          <div>
+            <span className="text-xs font-black uppercase tracking-[0.2em] text-red-400 block mb-2">
+              GARANTA SEU ACESSO DEFINITIVO
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-2">
+              Gostou do que encontrou?
+            </h2>
+            <p className="text-sm sm:text-base text-white/75 max-w-md mx-auto leading-relaxed">
+              Você pode continuar com acesso completo e ilimitado quando quiser.
+            </p>
+          </div>
+
+          <div className="inline-flex flex-col items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04] px-6 py-3.5 backdrop-blur-md">
+            <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">Planos com recarga mensal</span>
+            <span className="text-xl sm:text-3xl font-black text-red-400 mt-0.5">
+              A partir de R$ 34,99/mês
+            </span>
+          </div>
+
+          <div>
             <a
-              href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20instalar%20o%20UniTV%20Pro"
+              href="/#planos"
+              className="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 px-8 py-4 text-sm sm:text-base font-black text-white shadow-[0_0_30px_rgba(220,38,38,0.6)] transition-all hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(220,38,38,0.8)] active:scale-95 cursor-pointer w-full sm:w-auto"
+            >
+              <Zap className="size-5 fill-current" />
+              QUERO CONTINUAR COM O ACESSO
+            </a>
+          </div>
+
+          {/* MICROBENEFÍCIOS DE GARANTIA E SEGURANÇA */}
+          <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-bold text-white/70 pt-2 border-t border-white/10">
+            <span className="flex items-center gap-1.5">
+              <ShieldCheck className="size-4 text-emerald-400" /> Garantia de 7 dias
+            </span>
+            <span className="text-white/30">•</span>
+            <span className="flex items-center gap-1.5">
+              <CreditCard className="size-4 text-blue-400" /> Pix ou cartão
+            </span>
+            <span className="text-white/30">•</span>
+            <span className="flex items-center gap-1.5">
+              <Zap className="size-4 text-amber-400" /> Ativação após confirmação
+            </span>
+          </div>
+        </section>
+
+        {/* ── 5. SUPORTE ─────────────────────────────────────────── */}
+        <section className="glass p-7 sm:p-9 rounded-3xl border border-white/15 bg-white/[0.03] backdrop-blur-2xl text-center shadow-xl space-y-4">
+          <div className="mx-auto flex size-12 items-center justify-center rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400">
+            <HelpCircle className="size-6" />
+          </div>
+
+          <div>
+            <h3 className="text-xl font-black text-white mb-1">
+              Está com dificuldade para instalar?
+            </h3>
+            <p className="text-xs sm:text-sm text-muted-foreground max-w-md mx-auto">
+              Nossa equipe de suporte está online no WhatsApp para te guiar passo a passo!
+            </p>
+          </div>
+
+          <div>
+            <a
+              href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Estou%20com%20dificuldade%20para%20instalar%20o%20UniTV%20Pro"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-3 text-xs sm:text-sm font-extrabold text-white shadow-md transition-all"
+              className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-7 py-3.5 text-xs sm:text-sm font-extrabold text-white shadow-lg transition-all hover:scale-[1.02] cursor-pointer w-full sm:w-auto"
             >
               <WhatsAppIcon className="size-4 fill-current" />
-              Suporte Geral (Dúvidas &amp; Teste)
-            </a>
-
-            <a
-              href="https://wa.me/5561982743140?text=Ol%C3%A1!%20J%C3%A1%20comprei%20minha%20recarga%20e%20preciso%20de%20ajuda%20na%20instala%C3%A7%C3%A3o"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-zinc-900/90 border border-emerald-500/40 hover:bg-zinc-800 px-5 py-3 text-xs sm:text-sm font-extrabold text-emerald-300 shadow-md transition-all"
-            >
-              <WhatsAppIcon className="size-4 fill-current text-emerald-400" />
-              Já Comprei! Suporte ao Cliente
+              FALAR COM O SUPORTE
             </a>
           </div>
-        </div>
-      </div>
+        </section>
+
+      </main>
     </div>
   );
 }

@@ -327,7 +327,7 @@ function CatalogoPage() {
           </div>
         </div>
 
-        {/* ── GRADE UNIFICADA DE FILMES: EXATAMENTE 6 POR LINHA NO DESKTOP ──────── */}
+        {/* ── GRADE UNIFICADA DE FILMES: EXATAMENTE 5 POR LINHA NO DESKTOP ──────── */}
         {filteredCatalog.length === 0 ? (
           <div className="py-20 text-center rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur-xl p-8">
             <Info className="mx-auto size-12 text-red-500/60 mb-3" />
@@ -341,7 +341,7 @@ function CatalogoPage() {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3.5 sm:gap-4.5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5 sm:gap-4.5">
             {filteredCatalog.map((movie, index) => (
               <div
                 key={`${movie.title}-${index}`}
