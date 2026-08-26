@@ -60,21 +60,6 @@ const ROW_2_POSTERS = [
   "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
 ];
 
-const CLASSIC_2000S_POSTERS = [
-  { title: "Jogos Mortais (Saw)", poster: "/v12w67F0fLoxw263v72d9m49M87.jpg" },
-  { title: "Dark Water: Água Negra", poster: "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg" },
-  { title: "Mártires (Martyrs)", poster: "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg" },
-  { title: "Eu Vi o Diabo", poster: "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg" },
-  { title: "O Lamento (The Wailing)", poster: "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg" },
-  { title: "Obsessão (2026)", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg" },
-  { title: "Evil Dead Burn (2026)", poster: "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg" },
-  { title: "Other Mommy (2026)", poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg" },
-  { title: "Undertone (2026)", poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg" },
-  { title: "Hokum (2026)", poster: "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg" },
-  { title: "Backrooms (2026)", poster: "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg" },
-  { title: "Socorro! Send Help (2026)", poster: "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg" },
-];
-
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link.ntdev.ntdw";
 const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
@@ -623,33 +608,6 @@ function InstalarPage() {
               </>
             )}
 
-            {/* VITRINE INTERATIVA DE CAPINHAS DE FILMES DE TERROR DOS ANOS 2000 E LANÇAMENTOS */}
-            <div className="pt-4 border-t border-white/10 space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] font-black uppercase tracking-wider text-white/80 flex items-center gap-1.5">
-                  <Sparkles className="size-3.5 text-red-500" />
-                  Clássicos dos Anos 2000 &amp; Lançamentos 2026 Disponíveis:
-                </span>
-                <Link to="/catalogo" className="text-[11px] font-extrabold text-red-400 hover:text-red-300 transition-colors">
-                  Ver catálogo completo &rarr;
-                </Link>
-              </div>
-
-              <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 gap-2">
-                {CLASSIC_2000S_POSTERS.map((item) => (
-                  <div
-                    key={item.title}
-                    className="group relative aspect-[2/3] overflow-hidden rounded-xl border border-white/15 bg-black/60 shadow-md transition-all duration-300 hover:scale-105 hover:border-red-500"
-                  >
-                    <img src={img(item.poster, "w185")} alt={item.title} className="size-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-1">
-                      <p className="text-[9px] font-black text-white leading-tight line-clamp-1">{item.title}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
           </div>
 
           {/* 3. CONFIRMAÇÃO DE TESTE LIBERADO (RIBBON VERDE INTEGRADO) */}
@@ -704,30 +662,6 @@ function InstalarPage() {
                 </p>
               </div>
 
-              {/* CAPINHAS EM DESTAQUE NA SEÇÃO DE COMPRA */}
-              <div className="flex items-center justify-center gap-2.5 sm:gap-3 py-1">
-                {[
-                  "/v12w67F0fLoxw263v72d9m49M87.jpg",
-                  "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg",
-                  "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg",
-                  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
-                  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
-                  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg",
-                ].map((path, index) => (
-                  <div
-                    key={index}
-                    className="group relative overflow-hidden rounded-xl border border-white/20 shadow-md transition-all duration-300 hover:scale-110 hover:border-red-500 shrink-0"
-                  >
-                    <img
-                      src={img(path, "w185")}
-                      alt=""
-                      className="h-16 w-11 sm:h-20 sm:w-14 object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  </div>
-                ))}
-              </div>
-
               {/* PONTINHOS NAVEGADORES */}
               <div className="flex items-center justify-center gap-1.5 py-1">
                 {heroSlides.map((_, i) => (
@@ -745,7 +679,7 @@ function InstalarPage() {
               {/* PREÇO EM DESTAQUE NEUTRO E MODERNO */}
               <div className="inline-flex flex-col items-center justify-center rounded-2xl border border-white/15 bg-white/[0.06] px-6 sm:px-9 py-3.5 backdrop-blur-md shadow-lg">
                 <span className="text-[10px] font-extrabold text-muted-foreground uppercase tracking-widest">
-                  Planos sem fidelidade • Cancele when quiser
+                  Planos sem fidelidade • Cancele quando quiser
                 </span>
                 <div className="flex items-baseline gap-1.5 mt-0.5">
                   <span className="text-xs font-bold text-red-400">A partir de apenas</span>
