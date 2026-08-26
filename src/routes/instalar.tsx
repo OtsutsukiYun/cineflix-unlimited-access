@@ -554,15 +554,17 @@ function InstalarPage() {
             </div>
           </div>
 
-          {/* 4. MICROVENDA CINEMATOGRÁFICA UNIFICADA */}
-          <div className="relative overflow-hidden p-6 sm:p-9 bg-gradient-to-br from-[#3b0811] via-[#240409] to-[#140103] text-center space-y-5">
-            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-              <img
-                src={img("/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", "w1280")}
-                alt=""
-                className="size-full object-cover scale-105 opacity-30 mix-blend-overlay blur-[1px]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#140103] via-[#240409]/80 to-[#3b0811]/90" />
+          {/* 4. MICROVENDA CINEMATOGRÁFICA COM MARQUEE ANIMADO DE FILMES NO FUNDO */}
+          <div className="relative overflow-hidden p-6 sm:p-10 bg-gradient-to-br from-[#3b0811] via-[#240409] to-[#140103] text-center space-y-5">
+
+            {/* MARQUEE ANIMADO DE FILMES PASSANDO NO FUNDO */}
+            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-25">
+              <div className="flex w-max gap-3 animate-marquee pt-2 scale-105 blur-[1px]">
+                {ROW_1_POSTERS.concat(ROW_2_POSTERS).map((p, i) => (
+                  <img key={`card-bg-${i}`} src={img(p, "w342")} alt="" className="h-28 w-20 rounded-lg object-cover shadow-sm" />
+                ))}
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#140103] via-[#240409]/85 to-[#3b0811]/90" />
             </div>
 
             <div className="relative z-10 space-y-4">
@@ -574,38 +576,16 @@ function InstalarPage() {
               </div>
 
               <div>
-                <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-1">
+                <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-1">
                   Gostou do que encontrou?
                 </h2>
-                <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed">
+                <p className="text-xs sm:text-sm text-white/85 max-w-md mx-auto leading-relaxed font-medium">
                   Você pode continuar com acesso ilimitado a todo o acervo quando quiser!
                 </p>
               </div>
 
-              {/* CAPINHAS EM CAROUSEL COMPACTO */}
-              <div className="flex items-center justify-center gap-2 py-0.5">
-                {[
-                  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
-                  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
-                  "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg",
-                  "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg",
-                  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg",
-                ].map((path, index) => (
-                  <div
-                    key={index}
-                    className="group relative overflow-hidden rounded-lg border border-white/20 shadow-md transition-transform duration-300 hover:scale-105 shrink-0"
-                  >
-                    <img
-                      src={img(path, "w185")}
-                      alt=""
-                      className="h-14 w-10 sm:h-16 sm:w-11 object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-
               {/* PREÇO EM DESTAQUE */}
-              <div className="inline-flex flex-col items-center justify-center rounded-2xl border border-red-400/40 bg-gradient-to-r from-red-950/90 via-rose-950/90 to-red-950/90 px-6 sm:px-8 py-3 backdrop-blur-md shadow-[0_0_30px_rgba(220,38,38,0.35)]">
+              <div className="inline-flex flex-col items-center justify-center rounded-2xl border border-red-400/40 bg-gradient-to-r from-red-950/90 via-rose-950/90 to-red-950/90 px-6 sm:px-9 py-3.5 backdrop-blur-md shadow-[0_0_35px_rgba(220,38,38,0.35)]">
                 <span className="text-[10px] font-extrabold text-red-200/90 uppercase tracking-widest">
                   Planos sem fidelidade • Cancele quando quiser
                 </span>
@@ -622,7 +602,7 @@ function InstalarPage() {
               <div>
                 <a
                   href="/#planos"
-                  className="group relative inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-7 py-3.5 text-xs sm:text-sm font-black text-white shadow-[0_0_35px_rgba(220,38,38,0.8)] border border-red-300/70 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_55px_rgba(220,38,38,1)] active:scale-95 cursor-pointer w-full sm:w-auto"
+                  className="group relative inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_35px_rgba(220,38,38,0.8)] border border-red-300/70 transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_55px_rgba(220,38,38,1)] active:scale-95 cursor-pointer w-full sm:w-auto"
                 >
                   <span className="flex size-6 items-center justify-center rounded-lg bg-white/20 text-white group-hover:scale-110 transition-transform shadow-inner">
                     <Zap className="size-3.5 fill-current" />
