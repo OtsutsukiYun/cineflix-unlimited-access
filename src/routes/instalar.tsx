@@ -169,8 +169,8 @@ function InstalarPage() {
       {/* LUZ AMBIENTAL SUAVE */}
       <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[600px] rounded-full bg-red-600/10 blur-[160px] z-0" />
 
-      {/* FUNDO DA PÁGINA DE TESTE COM FILMES E CAPINHAS BEM VISÍVEIS */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+      {/* FUNDO DA PÁGINA DE TESTE RESTAURADO EXATAMENTE COMO ERA ANTES */}
+      <div className="pointer-events-none fixed inset-0 z-0">
         {PAGE_BACKDROP_SLIDES.map((bd, i) => (
           <img
             key={bd}
@@ -178,27 +178,12 @@ function InstalarPage() {
             alt=""
             className="absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out"
             style={{
-              opacity: i === bgSlide ? 0.45 : 0,
-              filter: "brightness(0.82)",
+              opacity: i === bgSlide ? 0.12 : 0,
+              filter: "blur(2px) brightness(0.4)",
             }}
           />
         ))}
-
-        {/* ESTEIRA DE CAPINHAS PASSANDO NO FUNDO */}
-        <div className="flex flex-col gap-4 pt-16 scale-105 opacity-35">
-          <div className="flex w-max gap-4 animate-marquee">
-            {ROW_1_POSTERS.concat(ROW_1_POSTERS).map((p, i) => (
-              <img key={`r1-${i}`} src={img(p, "w342")} alt="" className="h-44 w-30 rounded-2xl object-cover shadow-xl border border-white/20" />
-            ))}
-          </div>
-          <div className="flex w-max gap-4 animate-marquee-reverse">
-            {ROW_2_POSTERS.concat(ROW_2_POSTERS).map((p, i) => (
-              <img key={`r2-${i}`} src={img(p, "w342")} alt="" className="h-44 w-30 rounded-2xl object-cover shadow-xl border border-white/20" />
-            ))}
-          </div>
-        </div>
-
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/50 via-[#080808]/75 to-[#080808]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/60 via-[#080808]/80 to-[#080808]" />
       </div>
 
       {/* BARRA PROMOCIONAL DO TOPO */}
