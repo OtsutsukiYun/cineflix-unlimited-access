@@ -554,15 +554,22 @@ function InstalarPage() {
             </div>
           </div>
 
-          {/* 4. MICROVENDA CINEMATOGRÁFICA COM MARQUEE ANIMADO DE FILMES NO FUNDO */}
+          {/* 4. MICROVENDA CINEMATOGRÁFICA COM MARQUEE ANIMADO DE LANÇAMENTOS 2026 NO FUNDO */}
           <div className="relative overflow-hidden p-6 sm:p-10 bg-gradient-to-br from-[#3b0811] via-[#240409] to-[#140103] text-center space-y-5">
 
-            {/* MARQUEE ANIMADO DE FILMES PASSANDO NO FUNDO */}
-            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-25">
-              <div className="flex w-max gap-3 animate-marquee pt-2 scale-105 blur-[1px]">
-                {ROW_1_POSTERS.concat(ROW_2_POSTERS).map((p, i) => (
-                  <img key={`card-bg-${i}`} src={img(p, "w342")} alt="" className="h-28 w-20 rounded-lg object-cover shadow-sm" />
-                ))}
+            {/* MARQUEE ANIMADO DE FILMES LANÇAMENTOS 2026 PASSANDO NO FUNDO */}
+            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden opacity-30">
+              <div className="flex flex-col gap-2.5 -rotate-1 scale-105 pt-1 blur-[0.5px]">
+                <div className="flex w-max gap-3 animate-marquee">
+                  {ROW_1_POSTERS.concat(ROW_1_POSTERS).map((p, i) => (
+                    <img key={`lanc-bg1-${i}`} src={img(p, "w342")} alt="" className="h-28 w-20 rounded-xl object-cover shadow-md border border-white/15" />
+                  ))}
+                </div>
+                <div className="flex w-max gap-3 animate-marquee-reverse">
+                  {ROW_2_POSTERS.concat(ROW_2_POSTERS).map((p, i) => (
+                    <img key={`lanc-bg2-${i}`} src={img(p, "w342")} alt="" className="h-28 w-20 rounded-xl object-cover shadow-md border border-white/15" />
+                  ))}
+                </div>
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#140103] via-[#240409]/85 to-[#3b0811]/90" />
             </div>
