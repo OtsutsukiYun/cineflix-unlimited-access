@@ -41,20 +41,46 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-// EXCLUSIVAMENTE FILMES LANÇAMENTOS 2026 DE TERROR (MARTYRS, TERRIFIER 3, SMILE 2, ALIEN, SUBSTANCE, NOSFERATU, HERETIC)
+// EXPANDIDA LISTA DE FILMES E SÉRIES PARA ESTEIRA INFINITA
 const HORROR_2026_POSTERS = [
+  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", // Obsessão
+  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", // Evil Dead Burn
+  "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", // Motor City
+  "/kNxRgcTeqeU5jauBackTERoO2De.jpg", // Other Mommy
+  "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", // Undertone
+  "/360qdtu2hLnqMu8SVHMywn420w1.jpg", // Batman Knightfall
+  "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg", // Passageiro do Mal
+  "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg", // Hokum
+  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", // Backrooms
+  "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", // Omukade
   "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", // Martyrs
-  "/ju10W5gl3PPK3b7TjEmVOZap51I.jpg", // Terrifier 3 (2026)
-  "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg", // Smile 2 (2026)
-  "/2uSWRTtCG336nuBiG8jOTEUKSy8.jpg", // Alien Romulus (2026)
-  "/uYJvxMWMb9W4zIY3cbM50sj3dpC.jpg", // The Substance (2026)
-  "/1EwNyiiNFd863H4e8nWEzutnZD7.jpg", // Longlegs (2026)
+  "/ju10W5gl3PPK3b7TjEmVOZap51I.jpg", // Terrifier 3
+  "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg", // Smile 2
+  "/2uSWRTtCG336nuBiG8jOTEUKSy8.jpg", // Alien Romulus
+  "/uYJvxMWMb9W4zIY3cbM50sj3dpC.jpg", // The Substance
+  "/1EwNyiiNFd863H4e8nWEzutnZD7.jpg", // Longlegs
   "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
-  "/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg", // Nosferatu (2026)
-  "/fr96XzlzsONrQrGfdLMiwtQjott.jpg", // Heretic (2026)
+  "/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg", // Nosferatu
+  "/fr96XzlzsONrQrGfdLMiwtQjott.jpg", // Heretic
   "/wVYREutTvI2tmxr6ujrHT704wGF.jpg", // The Conjuring
-  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah (2026)
+  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
   "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo
+  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
+  "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", // Salmokji
+  "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", // Dia Bukan Ibu
+  "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", // A Maldição da Múmia
+  "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg", // A Boca do Diabo
+  "/psEJSjQr6I9GSJTdW28CKC4Kffs.jpg", // A Hora do Mal
+  "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg", // Pecadores
+  "/40nHGUfypLhlr7gJx8At1IbYkaK.jpg", // Invocação do Mal 4
+  "/p3epSUdF9qSWWHTBlA3mJ0w2i2Y.jpg", // O Telefone Preto 2
+  "/xfmnUz6C5WRboIMQZD0j3SNDT7v.jpg", // Faça Ela Voltar
+  "/temIXpcua7j5v4FipOxmzTfrB06.jpg", // Premonição 6
+  "/12H82Xrr2ijDF0lJWUarqGFV7bC.jpg", // Five Nights at Freddy's 2
+  "/skwydfnpaQdRQZfXMroh59FMJyY.jpg", // Rua do Medo Rainha do Baile
+  "/2jME1L29XGE3T4f0zUHgpiKsPrV.jpg", // O Macaco
+  "/7LbrEQvturE05hljvTCWST7rLQL.jpg", // Acompanhante Perfeita
+  "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg", // FROM (Origem)
 ];
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
@@ -593,7 +619,7 @@ function InstalarPage() {
               <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-[#0d090a] to-transparent" />
 
               <div className="flex w-max gap-3 animate-marquee">
-                {HORROR_2026_POSTERS.concat(HORROR_2026_POSTERS).map((p, i) => (
+                {HORROR_2026_POSTERS.concat(HORROR_2026_POSTERS, HORROR_2026_POSTERS).map((p, i) => (
                   <img
                     key={`p-marquee-${i}`}
                     src={img(p, "w185")}
