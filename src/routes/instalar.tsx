@@ -553,11 +553,11 @@ function InstalarPage() {
               </div>
             </div>
 
-            {/* 🌟 LISTA EXATA DE 10 RECURSOS E BENEFÍCIOS */}
+            {/* 🌟 LISTA EXATA DE 10 RECURSOS E BENEFÍCIOS (SEM NÚMEROS DE QUANTIDADE) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left max-w-lg mx-auto py-3 border-t border-white/15">
               {[
                 "1 Tela simultânea (TV, TV Box, Celular ou PC)",
-                "+60.000 Filmes & Séries em HD e 4K Ultra HD",
+                "Catálogo completo de Filmes & Séries em HD e 4K",
                 "Lançamentos semanais inéditos de terror & cinema",
                 "Canais Ao Vivo & Esportes sem travar (4K/FHD)",
                 "Animes, Doramas & Novelas Turcas atualizadas",
