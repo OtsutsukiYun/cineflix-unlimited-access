@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BemVindoRouteImport } from './routes/bem-vindo'
 import { Route as CatalogoRouteImport } from './routes/catalogo'
 import { Route as InstalarRouteImport } from './routes/instalar'
 import { Route as SuporteRouteImport } from './routes/suporte'
@@ -17,6 +18,11 @@ import { Route as SuporteRouteImport } from './routes/suporte'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BemVindoRoute = BemVindoRouteImport.update({
+  id: '/bem-vindo',
+  path: '/bem-vindo',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CatalogoRoute = CatalogoRouteImport.update({
@@ -37,12 +43,14 @@ const SuporteRoute = SuporteRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bem-vindo': typeof BemVindoRoute
   '/catalogo': typeof CatalogoRoute
   '/instalar': typeof InstalarRoute
   '/suporte': typeof SuporteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bem-vindo': typeof BemVindoRoute
   '/catalogo': typeof CatalogoRoute
   '/instalar': typeof InstalarRoute
   '/suporte': typeof SuporteRoute
@@ -50,20 +58,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bem-vindo': typeof BemVindoRoute
   '/catalogo': typeof CatalogoRoute
   '/instalar': typeof InstalarRoute
   '/suporte': typeof SuporteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/catalogo' | '/instalar' | '/suporte'
+  fullPaths: '/' | '/bem-vindo' | '/catalogo' | '/instalar' | '/suporte'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/catalogo' | '/instalar' | '/suporte'
-  id: '__root__' | '/' | '/catalogo' | '/instalar' | '/suporte'
+  to: '/' | '/bem-vindo' | '/catalogo' | '/instalar' | '/suporte'
+  id: '__root__' | '/' | '/bem-vindo' | '/catalogo' | '/instalar' | '/suporte'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BemVindoRoute: typeof BemVindoRoute
   CatalogoRoute: typeof CatalogoRoute
   InstalarRoute: typeof InstalarRoute
   SuporteRoute: typeof SuporteRoute
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bem-vindo': {
+      id: '/bem-vindo'
+      path: '/bem-vindo'
+      fullPath: '/bem-vindo'
+      preLoaderRoute: typeof BemVindoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/catalogo': {
@@ -104,6 +121,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BemVindoRoute: BemVindoRoute,
   CatalogoRoute: CatalogoRoute,
   InstalarRoute: InstalarRoute,
   SuporteRoute: SuporteRoute,
