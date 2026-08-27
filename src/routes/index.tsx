@@ -754,9 +754,9 @@ function Index() {
               bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
               titleHover: "group-hover:text-pink-200",
               t: "Doramas & Produções Asiáticas",
-              qtd: "Doramas & K-Dramas",
-              d: "Doramas como Rainha das Lágrimas, Pousando no Amor, A Lição e os maiores sucessos asiáticos dublados.",
-              tabId: "terror-raro",
+              qtd: "Disponíveis na Aba Séries",
+              d: "Os Doramas estão localizados na categoria de Séries do aplicativo. Assista a Rainha das Lágrimas, Pousando no Amor, A Lição e os maiores sucessos asiáticos dublados.",
+              tabId: "series",
             },
             {
               icon: Flame,
