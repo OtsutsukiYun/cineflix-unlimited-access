@@ -105,7 +105,7 @@ function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
 
         {/* LOGO UNITV PRO */}
         <div className="flex items-center justify-center gap-2 mb-4 relative z-10">
-          <span className="relative flex size-7 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_12px_rgba(220,38,38,0.7)] border border-white/20">
+          <span className="relative flex size-7 items-center justify-center rounded-lg bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_12px_rgba(220,38,38,0.7)] border border-white/20">
             <svg className="size-3.5 fill-white" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
             </svg>
@@ -532,7 +532,7 @@ function InstalarPage() {
           </div>
 
           {/* SEÇÃO DE COMPRA VIDRO "GOSTOU DO QUE VIU?" */}
-          <div id="plano-mensal" className="p-6 sm:p-10 border-t border-white/15 bg-white/[0.03] backdrop-blur-2xl text-center space-y-6">
+          <div id="plano-mensal" className="p-6 sm:p-10 border-t border-white/15 bg-white/[0.03] backdrop-blur-2xl text-center space-y-5">
 
             <div className="space-y-2">
               <span className="text-[11px] font-black text-red-400 uppercase tracking-widest block">
@@ -565,7 +565,7 @@ function InstalarPage() {
             </div>
 
             {/* 💰 PREÇO EXIBIDO EM TAMANHO GIGANTE */}
-            <div className="py-2">
+            <div className="py-1">
               <span className="text-xs font-bold text-red-400 uppercase tracking-widest block mb-1">
                 30 DIAS DE ACESSO COMPLETO
               </span>
@@ -579,12 +579,12 @@ function InstalarPage() {
             </div>
 
             {/* 🌟 LISTA EXATA DE 10 RECURSOS E BENEFÍCIOS */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left max-w-lg mx-auto py-3 border-t border-white/15">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left max-w-lg mx-auto pt-3 pb-1 border-t border-white/15">
               {[
                 "1 Tela simultânea (TV, TV Box, Celular ou PC)",
-                "Milhares de Filmes & Séries em alta definição (HD)",
+                "Milhares de Filmes & Séries",
                 "Lançamentos semanais inéditos de terror & cinema",
-                "Canais Ao Vivo & Esportes sem travar (Full HD/HD)",
+                "Canais Ao Vivo & Esportes sem travar (4K & Full HD)",
                 "Animes, Doramas & Novelas Turcas atualizadas",
                 "Programação Infantil & Desenhos Dublados",
                 "Guia de Programação EPG & Replay de 7 dias",
@@ -599,8 +599,8 @@ function InstalarPage() {
               ))}
             </div>
 
-            {/* BOTÃO ASSINATURA VERMELHO VIDRO */}
-            <div className="pt-2">
+            {/* BOTÃO ASSINATURA VERMELHO VIDRO — POSICIONADO BEM COLADO ÀS FEATURES */}
+            <div className="pt-1">
               <a
                 href="https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2"
                 target="_blank"
