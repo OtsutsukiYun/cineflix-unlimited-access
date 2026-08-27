@@ -98,6 +98,30 @@ function renderGeoblockPage(): string {
 </html>`;
 }
 
+/**
+ * Aplica cabeçalhos HTTP de segurança rígidos em todas as respostas do servidor:
+ * - Anti-Clickjacking (X-Frame-Options)
+ * - Anti-MIME Sniffing (X-Content-Type-Options)
+ * - Anti-XSS (X-XSS-Protection)
+ * - HSTS (Strict-Transport-Security)
+ * - Política de Privacidade e Referrer (Referrer-Policy & Permissions-Policy)
+ */
+function applySecurityHeaders(res: Response): Response {
+  const headers = new Headers(res.headers);
+  headers.set("X-Content-Type-Options", "nosniff");
+  headers.set("X-Frame-Options", "SAMEORIGIN");
+  headers.set("X-XSS-Protection", "1; mode=block");
+  headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=()");
+  headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload");
+
+  return new Response(res.body, {
+    status: res.status,
+    statusText: res.statusText,
+    headers,
+  });
+}
+
 // h3 swallows in-handler throws into a normal 500 Response with body
 // {"unhandled":true,"message":"HTTPError"} — try/catch alone never fires for those.
 async function normalizeCatastrophicSsrResponse(response: Response): Promise<Response> {
@@ -127,22 +151,27 @@ function isH3SwallowedErrorBody(body: string): boolean {
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     if (isRequestFromOutsideBrazil(request)) {
-      return new Response(renderGeoblockPage(), {
-        status: 404,
-        headers: { "content-type": "text/html; charset=utf-8" },
-      });
+      return applySecurityHeaders(
+        new Response(renderGeoblockPage(), {
+          status: 404,
+          headers: { "content-type": "text/html; charset=utf-8" },
+        })
+      );
     }
 
     try {
       const handler = await getServerEntry();
-      const response = await handler.fetch(request, env, ctx);
-      return await normalizeCatastrophicSsrResponse(response);
+      const rawResponse = await handler.fetch(request, env, ctx);
+      const response = await normalizeCatastrophicSsrResponse(rawResponse);
+      return applySecurityHeaders(response);
     } catch (error) {
       console.error(error);
-      return new Response(renderErrorPage(), {
-        status: 500,
-        headers: { "content-type": "text/html; charset=utf-8" },
-      });
+      return applySecurityHeaders(
+        new Response(renderErrorPage(), {
+          status: 500,
+          headers: { "content-type": "text/html; charset=utf-8" },
+        })
+      );
     }
   },
 };
