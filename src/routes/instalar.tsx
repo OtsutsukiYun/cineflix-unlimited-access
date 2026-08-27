@@ -30,11 +30,11 @@ import { WhatsAppIcon } from "@/components/icons";
 export const Route = createFileRoute("/instalar")({
   head: () => ({
     meta: [
-      { title: "🎁 Teste Grátis 3 Dias — Como Instalar UniTV Pro (Smart TV Android, Celular e Tablet, TV Box, PC)" },
+      { title: "🎁 Teste Grátis 3 Dias — Como Instalar UniTV Pro (Smart TV Android, Celular e Tablet, TV Box, Computador via Emulação)" },
       {
         name: "description",
         content:
-          "Passo a passo simples e rápido para instalar o UniTV Pro em aparelhos com sistema Android (Smart TV Android, TV Box, FireTV, Celular e Tablet Android ou PC via Emulador).",
+          "Passo a passo simples e rápido para instalar o UniTV Pro em aparelhos com sistema Android (Smart TV Android, TV Box, FireTV, Celular e Tablet Android ou Computador via Emulação).",
       },
     ],
   }),
@@ -311,7 +311,7 @@ function InstalarPage() {
             Como instalar o <span className="text-red-500">UniTV Pro</span>
           </h1>
           <p className="text-xs sm:text-base text-white/80 max-w-md mx-auto leading-relaxed font-medium">
-            Compatível com Smart TV Android, TV Box, FireTV, Celular e Tablet Android e PC (Emulador). Escolha seu aparelho:
+            Compatível com Smart TV Android, TV Box, FireTV, Celular e Tablet Android e Computador (via emulação). Escolha seu aparelho:
           </p>
         </div>
 
@@ -354,7 +354,7 @@ function InstalarPage() {
                 }`}
               >
                 <Monitor className="size-5 sm:size-6 text-amber-400 shrink-0" />
-                <span>Computador</span>
+                <span>Computador (via emulação)</span>
               </button>
             </div>
           </div>
@@ -512,7 +512,7 @@ function InstalarPage() {
                     <Monitor className="size-5" />
                   </div>
                   <div>
-                    <h2 className="text-base sm:text-lg font-black text-white">Computador / PC</h2>
+                    <h2 className="text-base sm:text-lg font-black text-white">Computador (via emulação)</h2>
                     <p className="text-xs text-white/60">Via emulador Android leve (LDPlayer)</p>
                   </div>
                 </div>
