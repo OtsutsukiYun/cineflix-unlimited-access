@@ -127,7 +127,7 @@ function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
         <div className="relative z-10 text-xs sm:text-sm text-white/90 leading-relaxed space-y-3 mb-6 text-left bg-white/[0.04] backdrop-blur-2xl p-4 rounded-2xl border border-white/15 shadow-inner">
           <p>
             Ao instalar o App, o Android pode exibir uma mensagem avisando que o aplicativo é de{" "}
-            <strong className="text-white font-extrabold">"fonte desconhecida"</strong> ou <strong className="text-white font-extrabold">"pode ser nocivo"</strong>.
+            <strong className="text-white font-extrabold">"fonte desconhecida"</strong>.
           </p>
 
           <div className="p-3 rounded-xl bg-white/[0.08] border border-white/20 text-white text-xs font-semibold backdrop-blur-md">
