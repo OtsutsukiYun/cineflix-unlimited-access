@@ -39,9 +39,9 @@ const BOTOES = [
     glow: "shadow-[0_12px_35px_rgba(249,115,22,0.6)]",
     titulo: "Iniciar instalação",
     desc: "Passo a passo completo para ativar na sua Smart TV, TV Box, celular ou PC.",
-    phone: "5561984016006",
+    phone: "556184016006",
     mensagem: "INICIAR INSTALAÇÃO UNITV PRO",
-    url: "https://wa.me/5561984016006?text=INICIAR%20INSTALA%C3%87%C3%83O%20UNITV%20PRO",
+    url: "https://wa.me/556184016006?text=INICIAR%20INSTALA%C3%87%C3%83O%20UNITV%20PRO",
   },
   {
     icon: Headset,

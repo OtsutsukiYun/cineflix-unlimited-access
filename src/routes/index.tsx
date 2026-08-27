@@ -188,7 +188,7 @@ export const Route = createFileRoute("/")(({
 } as any));
 
 const CTA_HREF = "#planos";
-const WA_LINK = "https://wa.me/5561984016006";
+const WA_LINK = "https://wa.me/556184016006";
 
 function smoothTo(e: React.MouseEvent<HTMLAnchorElement>, href: string) {
   const el = document.querySelector(href);
@@ -1167,7 +1167,7 @@ function Index() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20o%20UniTV%20Pro"
+              href="https://wa.me/556184016006?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20o%20UniTV%20Pro"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-3.5 text-xs sm:text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.4)] transition-all hover:scale-[1.02]"

@@ -638,7 +638,7 @@ function InstalarPage() {
 
             <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full md:w-auto shrink-0">
               <a
-                href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20instalar"
+                href="https://wa.me/556184016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20instalar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-emerald-600/90 hover:bg-emerald-500 px-4 py-2.5 text-xs font-bold text-white transition-colors border border-emerald-400/30 shadow-md"
