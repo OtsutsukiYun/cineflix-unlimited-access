@@ -50,6 +50,17 @@ export const heroSlides: HeroSlide[] = [
     brightness: "brightness(0.75)",
   },
   {
+    title: "Motor City",
+    year: "2026",
+    genre: "Ação / Policial",
+    tagline: "Na Detroit dos anos 70, um homem em busca de vingança enfrenta a máfia local após ser incriminado.",
+    backdrop: "/l7asYmqOad01F2u0oCMM8nQjoEP.jpg",
+    poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg",
+    objectPosition: "85% 20%",
+    objectPositionMobile: "85% 15%",
+    brightness: "brightness(0.85)",
+  },
+  {
     title: "Other Mommy (A Outra Mãe)",
     year: "2026",
     genre: "Terror / Sobrenatural",
@@ -69,18 +80,6 @@ export const heroSlides: HeroSlide[] = [
     poster: "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg",
     objectPosition: "center 25%",
     objectPositionMobile: "50% 20%",
-  },
-
-  {
-    title: "Motor City",
-    year: "2026",
-    genre: "Ação / Policial",
-    tagline: "Na Detroit dos anos 70, um homem em busca de vingança enfrenta a máfia local após ser incriminado.",
-    backdrop: "/l7asYmqOad01F2u0oCMM8nQjoEP.jpg",
-    poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg",
-    objectPosition: "85% 20%",
-    objectPositionMobile: "85% 15%",
-    brightness: "brightness(0.85)",
   },
   {
     title: "Batman: Knightfall - Parte 1",
