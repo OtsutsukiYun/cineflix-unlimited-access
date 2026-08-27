@@ -19,6 +19,7 @@ import {
   ArrowRight,
   Flame,
   Sparkles,
+  ShieldAlert,
   X,
 } from "lucide-react";
 import { img } from "@/data/catalog";
@@ -80,7 +81,7 @@ function AndroidIcon({ className = "size-5" }: { className?: string }) {
   );
 }
 
-// 💡 POPUP DE DICA AMIGÁVEL DA INSTALAÇÃO NO ANDROID
+// 💡 POPUP DE DICA AMIGÁVEL DA INSTALAÇÃO NO ANDROID COM AVISO "INSTALAR ASSIM MESMO"
 function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   if (!isOpen) return null;
 
@@ -98,27 +99,32 @@ function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
           <X className="size-4" />
         </button>
 
-        <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-          <Sparkles className="size-7 animate-pulse" />
+        <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/30">
+          <ShieldAlert className="size-7" />
         </div>
 
         <h3 className="text-xl sm:text-2xl font-black text-white mb-2">
-          Dica de Instalação 💡
+          Dica de Instalação no Android 💡
         </h3>
 
-        <p className="text-xs sm:text-sm text-white/85 leading-relaxed mb-6">
-          Ao instalar, caso seu aparelho peça permissão para{" "}
-          <strong className="text-emerald-300 font-black">"Fontes Desconhecidas"</strong>, basta clicar em{" "}
-          <strong className="text-white">Permitir</strong> ou <strong className="text-white">Autorizar</strong>. 🙂
-          <br /><br />
-          Fique tranquilo! Isso é super normal no Android porque o <strong className="text-red-400 font-bold">UniTV Pro</strong> é instalado diretamente via Downloader fora da Play Store.
-        </p>
+        <div className="text-xs sm:text-sm text-white/85 leading-relaxed space-y-3 mb-6 text-left bg-white/[0.04] p-4 rounded-2xl border border-white/10">
+          <p>
+            Ao instalar, o Android pode exibir uma mensagem avisando que o aplicativo é de{" "}
+            <strong className="text-amber-300">"fonte desconhecida"</strong> ou <strong className="text-amber-300">"pode ser nocivo"</strong>.
+          </p>
+          <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs font-medium">
+            👉 Clique em <strong className="text-white underline">"Instalar assim mesmo"</strong> ou acesse as Configurações e selecione <strong className="text-white underline">"Permitir desta fonte"</strong>.
+          </div>
+          <p className="text-[11px] text-white/60 text-center pt-1">
+            Fique tranquilo! Esse aviso é padrão do Android para apps baixados fora da Play Store. O UniTV Pro é <strong>100% seguro</strong>!
+          </p>
+        </div>
 
         <button
           onClick={onClose}
           className="w-full rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 py-3.5 text-xs font-black text-white shadow-lg transition-all hover:scale-[1.02] cursor-pointer uppercase tracking-wider border border-white/20"
         >
-          ENTENDI, OBRIGADO!
+          ENTENDI, CONTINUAR
         </button>
       </div>
     </div>
