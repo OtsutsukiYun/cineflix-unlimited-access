@@ -76,7 +76,7 @@ export const heroSlides: HeroSlide[] = [
     year: "2026",
     genre: "Ação / Animação DC",
     tagline: "Arkham foi destruído e Bane soltou todos os vilões sobre Gotham. Batman enfrenta seu maior desafio.",
-    backdrop: "/6c78xuvSoFLJkwlmx8Z2FGmMtzr.jpg",
+    backdrop: "/caBIySpwuFi2i7ynvHIlnxJLOdN.jpg",
     poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
