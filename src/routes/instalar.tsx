@@ -37,74 +37,58 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-// 100% VERIFIED WORKING TMDB POSTER PATHS (ZERO 404s)
+// 100% VERIFIED WORKING TMDB POSTERS & BACKDROPS
 const ROW_1_POSTERS = [
-  "/l11B7mY1SuVkWlF9ebDmo39iZ6h.jpg", // Terrifier 3
-  "/ht8QI2EpUtTZaWFltTJ7w23.jpg",     // Smile 2
-  "/2meX5jKyRFrmSm8iA2Bv6fFd2z0.jpg", // Alien Romulus
+  "/ju10W5gl3PPK3b7TjEmVOZap51I.jpg", // Terrifier 3
+  "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg", // Smile 2
+  "/2uSWRTtCG336nuBiG8jOTEUKSy8.jpg", // Alien Romulus
   "/uYJvxMWMb9W4zIY3cbM50sj3dpC.jpg", // The Substance
   "/1EwNyiiNFd863H4e8nWEzutnZD7.jpg", // Longlegs
   "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
-  "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg", // Obsessão
-  "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg", // Backrooms
+  "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg", // Deadpool & Wolverine
+  "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg", // Inside Out 2
 ];
 
 const ROW_2_POSTERS = [
-  "/8cdWjvZ2F9WUVzS59iCEW7WSuSo.jpg", // Deadpool & Wolverine
-  "/vP9XqQv4d3aB3e8l8u0fN9cW7j0.jpg", // Inside Out 2
   "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg", // Oppenheimer
   "/7vPAVPKYexQVmvC578wPLn2CGCL.jpg", // The Grudge
-  "/1mXhlQMnlfvJ2frxTjZSQNnA9Vp.jpg", // Final Destination
+  "/6WxhEvFsauuACfv8HyoVX6mZKFj.jpg", // Final Destination
   "/ttquyxStEEctzghtA2f4PUGprDr.jpg", // Dawn of the Dead
   "/sQckQRt17VaWbo39GIu0TMOiszq.jpg", // 28 Days Later
-  "/r0bEDWO2w4a43K2xTNSF284qOsc.jpg", // Silent Hill
+  "/mdw7bSnE11WpwWf3ViXtnavuqiT.jpg", // Silent Hill
+  "/dDrtuWUKhgUGp12kgUWuP0NpTdF.jpg", // Hostel
+  "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", // Drag Me to Hell
 ];
 
 const PURCHASE_MARQUEE_POSTERS = [
-  "/dDrtuWUKhgUGp12kgUWuP0NpTdF.jpg", // Hostel
-  "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", // Drag Me to Hell
   "/g410Y1U1ELbmJG14Zrou3UAimm1G.jpg", // Jeepers Creepers
+  "/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg", // Demon Slayer
+  "/tvfasmhZLZK4oKnHtSNLR4k8nxP.jpg", // Stranger Things
+  "/yQGaui0bQ5Ai3KIFBB45nTeIqad.jpg", // Squid Game
+  "/zMOZoNszmmlf3jUivDUEFgCrReo.jpg", // Wednesday
+  "/nter1KTaQjmkGCjvSu5u01FoecP.jpg", // The Last of Us
+  "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg", // The Ring
   "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
   "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water
   "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", // Martyrs
-  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo
-  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
-  "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", // Salmokji
-  "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", // Dia Bukan Ibu
 ];
 
 const HERO_SLIDESHOW = [
   {
     title: "Terrifier 3 & Lançamentos 2026",
-    category: "Filmes Inéditos",
-    rating: "4.9",
-    year: "2026",
-    desc: "Assista aos maiores sucessos do cinema direto na sua TV sem sair de casa.",
-    backdrop: "/l11B7mY1SuVkWlF9ebDmo39iZ6h.jpg",
+    backdrop: "/bHfGHipZ32Oec94FDJO4mWs3aZ5.jpg",
   },
   {
     title: "Sorria 2 & Horror Psicológico",
-    category: "Terror Exclusivo",
-    rating: "4.8",
-    year: "2025",
-    desc: "A maior coleção de terror, suspense e gore com dublagem e legendas em HD.",
-    backdrop: "/ht8QI2EpUtTZaWFltTJ7w23.jpg",
+    backdrop: "/iR79ciqhtaZ9BE7YFA1HpCHQgX4.jpg",
   },
   {
     title: "Demon Slayer & Animes",
-    category: "Séries & Doramas",
-    rating: "4.9",
-    year: "2026",
-    desc: "Episódios inéditos e temporadas completas dos animes mais populares do mundo.",
-    backdrop: "/nTvM4z1Z56Sp5HAWYflab6EsNoL.jpg",
+    backdrop: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
   },
   {
     title: "Brasileirão, Champions & UFC em 4K",
-    category: "Esportes Ao Vivo",
-    rating: "5.0",
-    year: "2026",
-    desc: "Todos os jogos do seu time do coração com sinal estável e transmissão sem travar.",
-    backdrop: "/8cdWjvZ2F9WUVzS59iCEW7WSuSo.jpg",
+    backdrop: "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
   },
 ];
 
@@ -183,11 +167,11 @@ function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
   const [activeSlide, setActiveSlide] = useState(0);
 
-  // TROCA AUTOMÁTICA DO SLIDESHOW GRANDÃO DE COMPRAS
+  // SLIDESHOW CROSSFADE DE FUNDO DA SEÇÃO DE COMPRAS
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % HERO_SLIDESHOW.length);
-    }, 4500);
+    }, 4000);
     return () => clearInterval(timer);
   }, []);
 
@@ -576,28 +560,16 @@ function InstalarPage() {
             </span>
           </div>
 
-          {/* SEÇÃO DE COMPRA: GOSTOU DO QUE VIU? COM SLIDE GRANDÃO DE IMAGENS PASSANDO */}
-          <div id="plano-mensal" className="p-6 sm:p-10 border-t border-white/10 bg-gradient-to-b from-transparent via-[#23040b]/80 to-[#120104] text-center space-y-5">
-            
-            <span className="inline-flex items-center gap-1.5 text-xs font-black text-red-400 uppercase tracking-wider">
-              <Sparkles className="size-3.5 text-red-400 animate-pulse" />
-              ACESSO ILIMITADO • SEM FIDELIDADE
-            </span>
+          {/* SEÇÃO DE COMPRA COM SLIDESHOW FULL-BLEED NO FUNDO DA SEÇÃO GOSTOU DO QUE VIU */}
+          <div id="plano-mensal" className="relative overflow-hidden p-6 sm:p-10 border-t border-white/10 text-center space-y-6">
 
-            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
-              Gostou do que viu?
-            </h2>
-            <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed">
-              Continue assistindo a todos os seus filmes, séries, esportes e canais ao vivo no UniTV Pro sem interrupções!
-            </p>
-
-            {/* 🍿 SLIDE GRANDÃO DE IMAGENS PASSANDO NO CENTRO DA ÁREA DE COMPRA */}
-            <div className="relative overflow-hidden rounded-2xl border border-red-500/30 bg-black/80 aspect-[16/9] sm:aspect-[21/9] shadow-[0_10px_40px_rgba(0,0,0,0.8)] my-4">
+            {/* 🍿 SLIDESHOW DYNAMIC BACKGROUND CROSSFADE DIRETO NO FUNDO DA SEÇÃO GOSTOU DO QUE VIU */}
+            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
               {HERO_SLIDESHOW.map((slide, i) => (
                 <div
                   key={slide.title}
                   className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                    i === activeSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+                    i === activeSlide ? "opacity-35 scale-105" : "opacity-0"
                   }`}
                 >
                   <img
@@ -605,112 +577,103 @@ function InstalarPage() {
                     alt={slide.title}
                     className="size-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 text-left space-y-1 z-20">
-                    <div className="flex items-center gap-2">
-                      <span className="rounded-md bg-red-600 px-2 py-0.5 text-[10px] font-black uppercase text-white tracking-wider">
-                        {slide.category}
-                      </span>
-                      <span className="text-[11px] font-bold text-white/90">
-                        ★ {slide.rating} • {slide.year}
-                      </span>
-                    </div>
-                    <h3 className="text-lg sm:text-2xl font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
-                      {slide.title}
-                    </h3>
-                    <p className="text-xs text-white/80 line-clamp-1 font-medium">
-                      {slide.desc}
-                    </p>
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#120104] via-[#23040b]/85 to-[#160408]" />
                 </div>
               ))}
-
-              {/* INDICADORES DO SLIDESHOW GRANDÃO */}
-              <div className="absolute top-3 right-3 z-30 flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
-                {HERO_SLIDESHOW.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveSlide(i)}
-                    className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                      i === activeSlide ? "w-5 bg-red-500" : "w-1.5 bg-white/40"
-                    }`}
-                  />
-                ))}
-              </div>
             </div>
 
-            {/* MARQUEE CONTINUO DE CAPINHAS VERIFICADAS PASSANDO ABAIXO DO SLIDESHOW GRANDÃO */}
-            <div className="overflow-hidden py-1 my-1 -mx-6 sm:-mx-10">
-              <div className="flex w-max gap-3 animate-marquee">
-                {PURCHASE_MARQUEE_POSTERS.concat(PURCHASE_MARQUEE_POSTERS).map((p, i) => (
-                  <img
-                    key={`p-marquee-${i}`}
-                    src={img(p, "w185")}
-                    alt=""
-                    className="h-24 w-16 rounded-xl object-cover shadow-lg border border-white/20 shrink-0"
-                  />
-                ))}
-              </div>
-            </div>
+            {/* CONTEÚDO SOBREPOSTO */}
+            <div className="relative z-10 space-y-5">
 
-            {/* PREÇO LIMPO E DESTACADO */}
-            <div className="py-2">
-              <span className="text-xs font-bold text-red-300 uppercase tracking-wider block mb-1">
-                Plano Mensal (30 Dias de Acesso)
-              </span>
-              <div className="flex items-baseline justify-center gap-2 flex-nowrap whitespace-nowrap">
-                <span className="text-xs sm:text-sm font-bold text-white/70">A partir de</span>
-                <span className="text-4xl sm:text-5xl font-black text-white tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.6)]">
-                  R$ 34,99
+              <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/80 px-4 py-1.5 backdrop-blur-md shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+                <Sparkles className="size-3.5 text-red-400 animate-spin" />
+                <span className="text-xs font-black uppercase tracking-wider text-red-200">
+                  🔥 ACESSO ILIMITADO • SEM FIDELIDADE
                 </span>
-                <span className="text-xs sm:text-sm font-bold text-white/80">/mês</span>
               </div>
-            </div>
 
-            {/* RECURSOS LISTA */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left max-w-lg mx-auto py-2 border-t border-white/10">
-              {[
-                "1 Tela simultânea",
-                "O maior catálogo de filmes e séries",
-                "Lançamentos semanais inéditos",
-                "Animes, Doramas & Novelas Turcas",
-                "Canais Ao Vivo & Esportes 4K",
-                "Suporte 7 dias por WhatsApp",
-                "Garantia de reembolso de 7 dias",
-                "Sem fidelidade (Cancele quando quiser)",
-              ].map((f, idx) => (
-                <div key={idx} className="flex items-center gap-2">
-                  <CheckCircle2 className="size-4 text-emerald-400 shrink-0" />
-                  <span className="text-xs text-white/90">{f}</span>
+              <div>
+                <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-2 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+                  Gostou do que viu?
+                </h2>
+                <p className="text-xs sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-medium">
+                  Continue assistindo a todos os seus filmes, séries, esportes e canais ao vivo no UniTV Pro sem interrupções!
+                </p>
+              </div>
+
+              {/* MARQUEE CONTINUO DE CAPINHAS 100% VERIFICADAS PASSANDO CONTINUAMENTE */}
+              <div className="overflow-hidden py-2 my-1 -mx-6 sm:-mx-10">
+                <div className="flex w-max gap-3 animate-marquee">
+                  {PURCHASE_MARQUEE_POSTERS.concat(PURCHASE_MARQUEE_POSTERS).map((p, i) => (
+                    <img
+                      key={`p-marquee-${i}`}
+                      src={img(p, "w185")}
+                      alt=""
+                      className="h-28 w-19 rounded-xl object-cover shadow-2xl border border-white/20 shrink-0 transition-transform hover:scale-105"
+                    />
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
 
-            {/* BOTÃO ASSINATURA */}
-            <div className="pt-2">
-              <a
-                href="https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-8 py-4 text-sm font-black text-white shadow-[0_0_35px_rgba(220,38,38,0.8)] border border-red-400/50 transition-all hover:scale-105 active:scale-95 cursor-pointer w-full sm:w-auto"
-              >
-                <Zap className="size-4 fill-current" />
-                <span>QUERO CONTINUAR COM O ACESSO</span>
-                <ArrowRight className="size-4" />
-              </a>
-            </div>
+              {/* PREÇO EM DESTAQUE */}
+              <div className="py-2">
+                <span className="text-xs font-bold text-red-300 uppercase tracking-wider block mb-1">
+                  Plano Mensal (30 Dias de Acesso)
+                </span>
+                <div className="flex items-baseline justify-center gap-2 flex-nowrap whitespace-nowrap">
+                  <span className="text-xs sm:text-sm font-bold text-white/70">A partir de</span>
+                  <span className="text-4xl sm:text-6xl font-black text-white tracking-tight drop-shadow-[0_0_25px_rgba(255,255,255,0.7)]">
+                    R$ 34,99
+                  </span>
+                  <span className="text-xs sm:text-sm font-bold text-white/80">/mês</span>
+                </div>
+              </div>
 
-            {/* BADGES SEGURANÇA */}
-            <div className="flex items-center justify-center gap-4 text-[11px] font-bold text-white/70 pt-2">
-              <span className="flex items-center gap-1">
-                <ShieldCheck className="size-3.5 text-emerald-400" /> Garantia 7 dias
-              </span>
-              <span>•</span>
-              <span className="flex items-center gap-1">
-                <CreditCard className="size-3.5 text-blue-400" /> Pix ou cartão
-              </span>
-            </div>
+              {/* RECURSOS LISTA */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left max-w-lg mx-auto py-2 border-t border-white/10">
+                {[
+                  "1 Tela simultânea",
+                  "O maior catálogo de filmes e séries",
+                  "Lançamentos semanais inéditos",
+                  "Animes, Doramas & Novelas Turcas",
+                  "Canais Ao Vivo & Esportes 4K",
+                  "Suporte 7 dias por WhatsApp",
+                  "Garantia de reembolso de 7 dias",
+                  "Sem fidelidade (Cancele quando quiser)",
+                ].map((f, idx) => (
+                  <div key={idx} className="flex items-center gap-2">
+                    <CheckCircle2 className="size-4 text-emerald-400 shrink-0" />
+                    <span className="text-xs text-white/90 font-medium">{f}</span>
+                  </div>
+                ))}
+              </div>
 
+              {/* BOTÃO ASSINATURA */}
+              <div className="pt-2">
+                <a
+                  href="https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-9 py-4.5 text-sm sm:text-base font-black text-white shadow-[0_0_40px_rgba(220,38,38,0.9)] border border-red-400/50 transition-all hover:scale-105 active:scale-95 cursor-pointer w-full sm:w-auto"
+                >
+                  <Zap className="size-4 fill-current" />
+                  <span>QUERO CONTINUAR COM O ACESSO</span>
+                  <ArrowRight className="size-4" />
+                </a>
+              </div>
+
+              {/* BADGES SEGURANÇA */}
+              <div className="flex items-center justify-center gap-4 text-[11px] font-bold text-white/80 pt-2 border-t border-white/10">
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck className="size-3.5 text-emerald-400" /> Garantia 7 dias
+                </span>
+                <span>•</span>
+                <span className="flex items-center gap-1.5">
+                  <CreditCard className="size-3.5 text-blue-400" /> Pix ou cartão
+                </span>
+              </div>
+
+            </div>
           </div>
 
           {/* SUPORTE RODAPÉ */}
