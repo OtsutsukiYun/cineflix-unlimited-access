@@ -1211,7 +1211,7 @@ function Index() {
                 { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
                 { icon: Zap, title: "Envio Imediato", desc: "No WhatsApp & E-mail", color: "text-amber-400" },
                 { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão em até 12x", color: "text-purple-400" },
-                { icon: Award, title: "+10 mil Clientes", desc: "Satisfação Garantida", color: "text-rose-400" },
+                { icon: Award, title: "+20 mil Clientes", desc: "Satisfação Garantida", color: "text-rose-400" },
                 { icon: CheckCircle2, title: "Sem Fidelidade", desc: "Cancele quando quiser", color: "text-teal-400" },
               ].map((c) => (
                 <div
