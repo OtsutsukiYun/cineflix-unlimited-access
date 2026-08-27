@@ -16,9 +16,7 @@ import {
   Zap,
   CreditCard,
   HelpCircle,
-  Sparkles,
   ArrowRight,
-  Flame,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -132,9 +130,11 @@ function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
 
   return (
-    <div className="relative min-h-screen bg-[#070707] text-white overflow-x-hidden">
-      {/* LUZES AMBIENTAIS SUAVES (MINIMALISTA) */}
-      <div className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 size-[650px] rounded-full bg-red-600/10 blur-[150px] z-0" />
+    /* 🔴 GRADIENTE ELEGANTE DE VERMELHO RUBI PARA PRETO OBSIDIANA NO FUNDO */
+    <div className="relative min-h-screen bg-gradient-to-b from-[#34040a] via-[#120205] to-[#070707] text-white overflow-x-hidden">
+      {/* LUZES AMBIENTAIS SUAVES */}
+      <div className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-red-600/15 blur-[160px] z-0" />
+      <div className="pointer-events-none fixed bottom-1/4 right-10 size-[500px] rounded-full bg-rose-900/10 blur-[140px] z-0" />
 
       {/* BARRA PROMOCIONAL DO TOPO */}
       <div className="fixed inset-x-0 top-0 z-[60]">
@@ -184,12 +184,12 @@ function InstalarPage() {
 
         {/* HERO TITLE MINIMALISTA */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/30 px-4 py-1.5 text-xs font-bold tracking-wider text-red-400 uppercase backdrop-blur-md">
+          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/40 px-4 py-1.5 text-xs font-bold tracking-wider text-red-400 uppercase backdrop-blur-md">
             <Gift className="size-3.5 text-red-400" />
             <span>3 Dias de Teste Grátis</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white drop-shadow-md">
             Como instalar o <span className="text-red-500">UniTV Pro</span>
           </h1>
           <p className="text-xs sm:text-base text-white/70 max-w-md mx-auto leading-relaxed font-normal">
@@ -198,7 +198,7 @@ function InstalarPage() {
         </div>
 
         {/* CONTAINER PRINCIPAL MINIMALISTA DE INSTALAÇÃO */}
-        <div className="rounded-3xl border border-white/10 bg-[#0e0e0e] shadow-2xl overflow-hidden">
+        <div className="rounded-3xl border border-white/10 bg-[#0e0e0e]/95 backdrop-blur-xl shadow-2xl overflow-hidden">
 
           {/* ABAS DE DISPOSITIVO CLEAN */}
           <div className="p-3 sm:p-4 bg-black/40 border-b border-white/10">
