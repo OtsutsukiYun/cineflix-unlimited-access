@@ -39,9 +39,9 @@ const BOTOES = [
     glow: "shadow-[0_12px_35px_rgba(249,115,22,0.6)]",
     titulo: "Iniciar instalação",
     desc: "Passo a passo completo para ativar na sua Smart TV, TV Box, celular ou PC.",
-    phone: "5519981875907",
+    phone: "5561984016006",
     mensagem: "INICIAR INSTALAÇÃO UNITV PRO",
-    url: "https://wa.me/5519981875907?text=INICIAR%20INSTALA%C3%87%C3%83O%20UNITV%20PRO",
+    url: "https://wa.me/5561984016006?text=INICIAR%20INSTALA%C3%87%C3%83O%20UNITV%20PRO",
   },
   {
     icon: Headset,
@@ -50,9 +50,9 @@ const BOTOES = [
     glow: "shadow-[0_12px_35px_rgba(249,115,22,0.6)]",
     titulo: "Desejo renovar",
     desc: "Renove sua assinatura rapidamente sem perder suas configurações.",
-    phone: "5519981875907",
+    phone: "556182743140",
     mensagem: "Olá, quero renovar o meu plano",
-    url: "https://wa.me/5519981875907?text=Ol%C3%A1%2C%20quero%20renovar%20o%20meu%20plano",
+    url: "https://wa.me/556182743140?text=Ol%C3%A1%2C%20quero%20renovar%20o%20meu%20plano",
   },
   {
     icon: MessageCircleQuestion,
@@ -61,9 +61,9 @@ const BOTOES = [
     glow: "shadow-[0_12px_35px_rgba(249,115,22,0.6)]",
     titulo: "Falar com o suporte",
     desc: "Tire dúvidas técnicas, receba auxílio com seu login ou ajuste de conta.",
-    phone: "5519981875907",
+    phone: "556182743140",
     mensagem: "Olá, preciso de suporte",
-    url: "https://wa.me/5519981875907?text=Ol%C3%A1%2C%20preciso%20de%20suporte",
+    url: "https://wa.me/556182743140?text=Ol%C3%A1%2C%20preciso%20de%20suporte",
   },
 ];
 

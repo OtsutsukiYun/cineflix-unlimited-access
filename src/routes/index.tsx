@@ -1177,7 +1177,7 @@ function Index() {
             </a>
 
             <a
-              href="https://wa.me/5561982743140?text=Ol%C3%A1!%20J%C3%A1%20comprei%20minha%20recarga%20e%20preciso%20de%20suporte"
+              href="https://wa.me/556182743140?text=Ol%C3%A1!%20J%C3%A1%20comprei%20minha%20recarga%20e%20preciso%20de%20suporte"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-zinc-900/90 border border-emerald-500/40 hover:bg-zinc-800 px-6 py-3.5 text-xs sm:text-sm font-black text-emerald-300 shadow-md transition-all hover:scale-[1.02]"
