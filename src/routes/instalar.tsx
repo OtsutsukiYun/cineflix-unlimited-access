@@ -398,7 +398,7 @@ function InstalarPage() {
                       01
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Abra a loja de aplicativos da sua Smart TV Android (Google Play Store) e instale o app{" "}
+                      Abra a loja de aplicativos da sua Smart TV Android ou TV Box (Google Play Store) e instale o app{" "}
                       <a href={DOWNLOADER_PLAYSTORE_URL} target="_blank" rel="noopener noreferrer" className="text-red-400 font-bold underline">
                         Downloader <ExternalLink className="inline size-3" />
                       </a>.

@@ -27,8 +27,8 @@ const PERGUNTAS = [
     a: "Para realizar um teste grátis, basta instalar o aplicativo em seu dispositivo Android! Os testes são disponibilizados automaticamente através do dispositivo e da conta, podendo ser realizados uma única vez por aparelho/usuário.",
   },
   {
-    q: "Como instalar o UniTV Pro na Smart TV Android ou TV Stick?",
-    a: "MÉTODO 1 (Downloader): Baixe o app Downloader na loja de aplicativos, abra-o e digite o código 1089401. Siga as instruções na tela. — MÉTODO 2 (NtDown): Baixe o app NtDown na Play Store e coloque o código 94596.",
+    q: "Como instalar o UniTV Pro na Smart TV Android ou TV Box?",
+    a: "MÉTODO 1 (Downloader): Abra a loja de aplicativos da sua Smart TV Android ou TV Box, baixe o app Downloader, abra-o e digite o código 1089401. Siga as instruções na tela. — MÉTODO 2 (NtDown): Baixe o app NtDown na Play Store e coloque o código 94596.",
   },
   {
     q: "Como fazer uma recarga UniTV Pro?",
