@@ -18,8 +18,6 @@ import {
   HelpCircle,
   ArrowRight,
   Flame,
-  Sparkles,
-  ShieldAlert,
   Smile,
   X,
 } from "lucide-react";
@@ -82,32 +80,32 @@ function AndroidIcon({ className = "size-5" }: { className?: string }) {
   );
 }
 
-// 💎 POPUP DE DICA AMIGÁVEL ESTILO VIDRO (GLASSMORPHISM) COM ROSTO FELIZ E LOGO UNITV PRO
+// 💎 POPUP DE DICA PURAMENTE EM ESTILO VIDRO TRANSLÚCIDO (GLASSMORPHISM)
 function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
-      {/* BACKDROP ESCURO COM BLUR DE VIDRO */}
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={onClose} />
+      {/* BACKDROP ESCURO COM BLUR INTENSO */}
+      <div className="absolute inset-0 bg-black/85 backdrop-blur-xl" onClick={onClose} />
 
-      {/* CARD DO POPUP ESTILO VIDRO (GLASSMORPHISM) */}
-      <div className="relative z-10 w-full max-w-md overflow-hidden rounded-3xl border border-white/20 bg-black/75 backdrop-blur-2xl p-6 sm:p-8 text-center shadow-[0_25px_80px_rgba(0,0,0,0.9)] animate-in fade-in zoom-in-95 duration-200">
+      {/* CARD DO POPUP VIDRO TRANSLÚCIDO (GLASSMORPHISM) */}
+      <div className="relative z-10 w-full max-w-md overflow-hidden rounded-3xl border border-white/20 bg-white/[0.06] backdrop-blur-2xl p-6 sm:p-8 text-center shadow-[0_25px_80px_rgba(0,0,0,0.95)] animate-in fade-in zoom-in-95 duration-200">
         
-        {/* LUZES AMBIENTAIS DE VIDRO NO POPUP */}
-        <div className="pointer-events-none absolute -top-12 -left-12 size-44 rounded-full bg-red-600/20 blur-2xl" />
-        <div className="pointer-events-none absolute -bottom-12 -right-12 size-44 rounded-full bg-emerald-500/20 blur-2xl" />
+        {/* LUZ DE VIDRO INTERNA */}
+        <div className="pointer-events-none absolute -top-16 -left-16 size-48 rounded-full bg-white/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -right-16 size-48 rounded-full bg-red-600/15 blur-3xl" />
 
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors cursor-pointer z-20"
+          className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors cursor-pointer border border-white/10 backdrop-blur-md z-20"
         >
           <X className="size-4" />
         </button>
 
         {/* LOGO UNITV PRO */}
-        <div className="flex items-center justify-center gap-2 mb-3 relative z-10">
-          <span className="relative flex size-7 items-center justify-center rounded-lg bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_12px_rgba(220,38,38,0.7)] border border-white/20">
+        <div className="flex items-center justify-center gap-2 mb-4 relative z-10">
+          <span className="relative flex size-7 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_12px_rgba(220,38,38,0.7)] border border-white/20">
             <svg className="size-3.5 fill-white" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
             </svg>
@@ -117,31 +115,33 @@ function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
           </span>
         </div>
 
-        {/* ROSTO FELIZ (HAPPY FACE) VIDRO */}
-        <div className="relative z-10 mx-auto mb-3 flex size-14 items-center justify-center rounded-2xl bg-white/[0.08] backdrop-blur-md text-emerald-400 border border-emerald-500/40 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-          <Smile className="size-8 text-emerald-400" />
+        {/* ROSTO FELIZ (HAPPY FACE) EM CAIXA DE VIDRO TRANSLÚCIDO */}
+        <div className="relative z-10 mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-white/[0.08] backdrop-blur-xl text-white border border-white/25 shadow-lg">
+          <Smile className="size-7 text-white" />
         </div>
 
-        <h3 className="relative z-10 text-xl sm:text-2xl font-black text-white mb-2">
-          Dica de Instalação no Android 💡
+        <h3 className="relative z-10 text-xl sm:text-2xl font-black text-white mb-2 tracking-tight">
+          Dica de Instalação 💡
         </h3>
 
-        <div className="relative z-10 text-xs sm:text-sm text-white/85 leading-relaxed space-y-3 mb-6 text-left bg-white/[0.06] backdrop-blur-xl p-4 rounded-2xl border border-white/15 shadow-inner">
+        <div className="relative z-10 text-xs sm:text-sm text-white/90 leading-relaxed space-y-3 mb-6 text-left bg-white/[0.04] backdrop-blur-2xl p-4 rounded-2xl border border-white/15 shadow-inner">
           <p>
             Ao instalar o App, o Android pode exibir uma mensagem avisando que o aplicativo é de{" "}
-            <strong className="text-amber-300">"fonte desconhecida"</strong> ou <strong className="text-amber-300">"pode ser nocivo"</strong>.
+            <strong className="text-white font-extrabold">"fonte desconhecida"</strong> ou <strong className="text-white font-extrabold">"pode ser nocivo"</strong>.
           </p>
-          <div className="p-3 rounded-xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-200 text-xs font-medium backdrop-blur-md">
-            👉 Basta clicar em <strong className="text-white underline">"Instalar assim mesmo"</strong> ou <strong className="text-white underline">"Permitir desta fonte"</strong>. 🙂
+
+          <div className="p-3 rounded-xl bg-white/[0.08] border border-white/20 text-white text-xs font-semibold backdrop-blur-md">
+            👉 Basta clicar em <strong className="text-red-400 underline font-black">"Instalar assim mesmo"</strong> ou <strong className="text-red-400 underline font-black">"Permitir desta fonte"</strong>. 🙂
           </div>
-          <p className="text-[11px] text-white/60 text-center pt-1">
+
+          <p className="text-[11px] text-white/60 text-center pt-1 font-medium">
             Fique tranquilo! Esse aviso é padrão do Android para apps baixados fora da Play Store. O UniTV Pro é <strong>100% seguro</strong>!
           </p>
         </div>
 
         <button
           onClick={onClose}
-          className="relative z-10 w-full rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 py-3.5 text-xs font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.6)] backdrop-blur-md transition-all hover:scale-[1.02] cursor-pointer uppercase tracking-wider border border-white/20"
+          className="relative z-10 w-full rounded-xl bg-red-600 hover:bg-red-500 py-3.5 text-xs font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] backdrop-blur-md transition-all hover:scale-[1.02] cursor-pointer uppercase tracking-wider border border-white/20"
         >
           ENTENDI, CONTINUAR
         </button>
