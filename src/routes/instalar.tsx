@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
   Download,
   Smartphone,
@@ -60,19 +60,17 @@ const ROW_2_POSTERS = [
   "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
 ];
 
-const HERO_BACKDROPS = [
-  "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", // Evil Dead Rise
-  "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg", // Obsessão
-  "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg", // Backrooms
-  "/nTvM4z1Z56Sp5HAWYflab6EsNoL.jpg", // Demon Slayer
-  "/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg", // Inside Out 2
-];
-
-const SHOWCASE_IMAGES = [
-  { title: "Filmes & Lançamentos", img: "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg" },
-  { title: "Séries & Doramas", img: "/nTvM4z1Z56Sp5HAWYflab6EsNoL.jpg" },
-  { title: "Esportes Ao Vivo 4K", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Erling_Haaland_France_v_Norway_26_June_26-008.jpg/1280px-Erling_Haaland_France_v_Norway_26_June_26-008.jpg" },
-  { title: "Canais Ao Vivo 24h", img: "/x2LSRK2Cm7MZhjluni1msVJ3wDF.jpg" },
+const PURCHASE_MARQUEE_POSTERS = [
+  "/v12w67F0fLoxw263v72d9m49M87.jpg", // Jogos Mortais (Saw)
+  "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water
+  "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", // Martyrs
+  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo
+  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
+  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", // Obsessão
+  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", // Evil Dead Burn
+  "/kNxRgcTeqeU5jauBackTERoO2De.jpg", // Other Mommy
+  "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", // Undertone
+  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", // Backrooms
 ];
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
@@ -151,15 +149,6 @@ function CodeCopyBox({ code }: { code: string }) {
 
 function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
-  const [bgIndex, setBgIndex] = useState(0);
-
-  // SLIDESHOW DE IMAGENS PASSANDO NO FUNDO DA CAIXA DE COMPRA
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setBgIndex((prev) => (prev + 1) % HERO_BACKDROPS.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
 
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
@@ -641,23 +630,8 @@ function InstalarPage() {
             </div>
           </div>
 
-          {/* 4. SEÇÃO DE COMPRA SUPER MODERNA: GOSTOU DO QUE VIU? COM SLIDESHOW DE IMAGENS E IMAGENS FLUTUANTES DENTRO DO RETÂNGULO */}
+          {/* 4. SEÇÃO DE COMPRA COM ESTEIRA DE CAPINHAS DE FILMES PASSANDO CONTINUAMENTE DENTRO DO RETÂNGULO DE COMPRA */}
           <div id="plano-mensal" className="relative overflow-hidden p-7 sm:p-11 bg-gradient-to-br from-[#3b0811] via-[#240409] to-[#140103] text-center space-y-6">
-
-            {/* SLIDESHOW DE IMAGENS (FILMES, ESPORTES, DORAMAS, CANAIS) PASSANDO DENTRO DO RETÂNGULO DE COMPRA */}
-            <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-              {HERO_BACKDROPS.map((b, idx) => (
-                <img
-                  key={b}
-                  src={img(b, "w1280")}
-                  alt=""
-                  className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ease-in-out ${
-                    idx === bgIndex ? "opacity-35 scale-105" : "opacity-0"
-                  }`}
-                />
-              ))}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#140103] via-[#240409]/85 to-[#3b0811]/90" />
-            </div>
 
             <div className="relative z-10 space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full border border-red-400/50 bg-red-950/80 px-4.5 py-1.5 backdrop-blur-md shadow-[0_0_25px_rgba(220,38,38,0.5)]">
@@ -676,25 +650,23 @@ function InstalarPage() {
                 </p>
               </div>
 
-              {/* IMAGENS FLUTUANTES SEM SUB-RETÂNGULOS (FILMES, ESPORTES, DORAMAS, CANAIS) DENTRO DO RETÂNGULO DE COMPRA */}
-              <div className="flex items-center justify-center gap-3 sm:gap-4 py-2 overflow-x-auto">
-                {SHOWCASE_IMAGES.map((item) => (
-                  <div
-                    key={item.title}
-                    className="group relative h-20 w-32 sm:h-24 sm:w-40 overflow-hidden rounded-2xl border border-white/25 shadow-xl transition-all duration-300 hover:scale-110 hover:border-red-500 shrink-0"
-                  >
-                    <img
-                      src={img(item.img, "w500")}
-                      alt={item.title}
-                      className="size-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex items-end p-2 text-left">
-                      <span className="text-[10px] sm:text-[11px] font-black text-white leading-tight drop-shadow-[0_1px_4px_rgba(0,0,0,0.95)]">
-                        {item.title}
-                      </span>
+              {/* ESTEIRA DE FILMES PASSANDO CONTINUAMENTE DENTRO DA ÁREA DE COMPRA (ANIMATED MARQUEE OF CAPINHAS) */}
+              <div className="overflow-hidden py-3 my-2 -mx-7 sm:-mx-11">
+                <div className="flex w-max gap-3.5 animate-marquee">
+                  {PURCHASE_MARQUEE_POSTERS.concat(PURCHASE_MARQUEE_POSTERS).concat(PURCHASE_MARQUEE_POSTERS).map((p, i) => (
+                    <div
+                      key={`purchase-marquee-${i}`}
+                      className="group relative overflow-hidden rounded-xl border border-white/20 shadow-xl shrink-0 transition-transform hover:scale-110 hover:border-red-500"
+                    >
+                      <img
+                        src={img(p, "w185")}
+                        alt=""
+                        className="h-24 w-16 sm:h-28 sm:w-20 object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
 
               {/* CAIXA DE PREÇO VIBRANTE E ELEGANTE */}
