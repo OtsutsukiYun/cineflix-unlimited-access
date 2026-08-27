@@ -83,9 +83,30 @@ function BemVindoPage() {
             Você está a poucos passos de começar a assistir.
           </p>
 
-          <p className="text-xs sm:text-base text-white/75 max-w-lg mx-auto leading-relaxed mb-8">
+          <p className="text-xs sm:text-base text-white/75 max-w-lg mx-auto leading-relaxed mb-6">
             Agora é só baixar o aplicativo e seguir o passo a passo de instalação abaixo. Leva apenas alguns minutos.
           </p>
+
+          {/* IMAGEM DE ONDE CLICAR NO MEDIAFIRE (ANTES DO BOTÃO DE DOWNLOAD) */}
+          <div className="my-6 max-w-lg mx-auto overflow-hidden rounded-2xl border border-blue-500/40 bg-[#09101d] p-4 sm:p-5 shadow-2xl relative text-left backdrop-blur-md">
+            <div className="flex items-center gap-2 text-xs font-extrabold text-blue-400 uppercase mb-2">
+              <ExternalLink className="size-4 shrink-0 text-blue-400" />
+              <span>Onde clicar na tela a seguir (MediaFire):</span>
+            </div>
+            <p className="text-xs text-white/85 mb-3 font-medium">
+              Ao clicar no botão abaixo, você verá esta tela. Clique na <strong>barra azul grande</strong> para iniciar:
+            </p>
+            <div className="relative mx-auto overflow-hidden rounded-xl border border-white/20 shadow-[0_0_25px_rgba(37,99,235,0.4)] bg-black/60 p-2">
+              <img
+                src="/mediafire_tutorial.png"
+                alt="Onde clicar no MediaFire para baixar o UniTV Pro"
+                className="w-full object-contain max-h-[220px] rounded-lg"
+              />
+              <div className="mt-2 text-center text-xs text-blue-300 font-bold bg-blue-950/80 p-2 rounded-lg border border-blue-500/30">
+                👈 Clique na <strong>barra azul retangular grande</strong> (Download 37.17MB)
+              </div>
+            </div>
+          </div>
 
           {/* BOTÃO PRINCIPAL SOLICITADO: ⬇️ INICIAR DOWNLOAD */}
           <div className="max-w-md mx-auto mb-4">
@@ -128,7 +149,7 @@ function BemVindoPage() {
                   1. Clique no botão de Download
                 </h3>
                 <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
-                  Clique no botão vermelho <strong className="text-white">"⬇️ INICIAR DOWNLOAD"</strong> acima. O navegador ou o Downloader começará a baixar o arquivo <code className="rounded bg-white/10 px-2 py-0.5 text-xs text-red-300 font-mono">unitv_RS-NPWN.apk</code>.
+                  Clique no botão vermelho <strong className="text-white">"⬇️ INICIAR DOWNLOAD"</strong> acima. O navegador ou o Downloader abrirá a página e começará a baixar o arquivo <code className="rounded bg-white/10 px-2 py-0.5 text-xs text-red-300 font-mono">unitv_RS-NPWN.apk</code>.
                 </p>
                 <div className="mt-3 rounded-2xl border border-white/10 bg-black/40 p-4 flex items-center justify-between text-xs text-white/90">
                   <div className="flex items-center gap-2">
@@ -138,24 +159,6 @@ function BemVindoPage() {
                   <span className="text-emerald-400 font-bold text-[11px] bg-emerald-950/60 px-2.5 py-1 rounded-full border border-emerald-500/30">
                     Pronto para instalar
                   </span>
-                </div>
-
-                {/* IMAGEM E GUIA DE ONDE CLICAR NO MEDIAFIRE */}
-                <div className="mt-4 overflow-hidden rounded-2xl border border-blue-500/40 bg-[#09101d] p-4 sm:p-5 shadow-2xl relative">
-                  <div className="flex items-center gap-2 text-xs font-extrabold text-blue-400 uppercase mb-3">
-                    <ExternalLink className="size-4 shrink-0" />
-                    <span>Onde clicar na tela do MediaFire:</span>
-                  </div>
-                  <div className="relative mx-auto overflow-hidden rounded-xl border border-white/20 shadow-[0_0_25px_rgba(37,99,235,0.4)] bg-black/60 p-2">
-                    <img
-                      src="/mediafire_tutorial.png"
-                      alt="Onde clicar no MediaFire para baixar o UniTV Pro"
-                      className="w-full object-contain max-h-[220px] rounded-lg"
-                    />
-                    <div className="mt-2 text-center text-xs text-blue-300 font-bold bg-blue-950/70 p-2 rounded-lg border border-blue-500/30">
-                      👈 Clique na <strong>barra azul retangular grande</strong> (Download 37.17MB)
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
