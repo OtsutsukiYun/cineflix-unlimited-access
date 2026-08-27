@@ -328,7 +328,7 @@ function InstalarPage() {
                 }`}
               >
                 <Tv className="size-4 text-red-400" />
-                <span>Smart TV, TV Box, Stick</span>
+                <span>Smart TV, TV Box, Stick &amp; Projetor</span>
               </button>
 
               <button
