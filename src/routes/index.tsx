@@ -277,6 +277,7 @@ const CATALOG_TABS = [
     id: "filmes",
     label: "🎬 Filmes & Lançamentos",
     items: [
+      { title: "Motor City", poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", year: "2026", tag: "🔥 Ação 2026" },
       { title: "Batman: Knightfall - Parte 1", poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg", year: "2026", tag: "🔥 DC 2026" },
       { title: "Michael", poster: "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", year: "2026", tag: "🔥 Biografia 2026" },
       { title: "Ghost in the Cell", poster: "/9DugI1HXkRAHQsjVMDnyTT8hQZx.jpg", year: "2026", tag: "🔥 Terror 2026" },

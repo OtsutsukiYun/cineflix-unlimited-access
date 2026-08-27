@@ -72,6 +72,17 @@ export const heroSlides: HeroSlide[] = [
   },
 
   {
+    title: "Motor City",
+    year: "2026",
+    genre: "Ação / Policial",
+    tagline: "Na Detroit dos anos 70, um homem em busca de vingança enfrenta a máfia local após ser incriminado.",
+    backdrop: "/l7asYmqOad01F2u0oCMM8nQjoEP.jpg",
+    poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+    brightness: "brightness(0.85)",
+  },
+  {
     title: "Batman: Knightfall - Parte 1",
     year: "2026",
     genre: "Ação / Animação DC",
@@ -149,6 +160,7 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
+  { title: "Motor City", poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", year: "2026", tag: "🔥 Ação 2026", rating: "4.9" },
   { title: "Batman: Knightfall - Parte 1", poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "Dark Water: Água Negra", poster: "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", year: "2002", tag: "Clássico Japonês", rating: "4.9" },
   { title: "Michael", poster: "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", year: "2026", tag: "🔥 Biografia 2026", rating: "5.0" },
