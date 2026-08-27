@@ -301,7 +301,7 @@ const CATALOG_TABS = [
     id: "terror-raro",
     label: "👻 Terror Asiáticos Raros",
     items: [
-      { title: "Panor", poster: "/o3tG02uudhv1YemqPUoC75q3lbr.jpg", year: "2025", tag: "🔥 Terror Tailandês" },
+      { title: "Noroi: The Curse", poster: "/vA7uZSMx8VL6LIuNFPnymwkRPBV.jpg", year: "2005", tag: "🔥 Clássico Japonês" },
       { title: "Panor 2", poster: "/du6XOg3cd6SlRBQ1fxZDKpgavW0.jpg", year: "2026", tag: "🔥 Terror Tailandês" },
       { title: "House of Sayuri", poster: "/6GDikJ9SWEn7wE1WqruTdzoLS1G.jpg", year: "2024", tag: "🔥 Japão 2024" },
       { title: "Kuyang: A Maldição do Demônio", poster: "/hGhePNHNxkfqbo0aX1VYr5Qdec4.jpg", year: "2024", tag: "🔥 Indonésia" },
