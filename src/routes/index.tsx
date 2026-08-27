@@ -510,7 +510,7 @@ function Index() {
             <span className="text-red-500">filmes, séries e grandes lançamentos.</span>
           </h1>
 
-          <p className="mt-3 text-xs sm:text-base text-white/90 max-w-[340px] sm:max-w-xl mx-auto leading-snug sm:leading-relaxed">
+          <p className="mt-3 text-xs sm:text-base text-white/90 max-w-[360px] sm:max-w-xl mx-auto leading-snug sm:leading-relaxed text-balance">
             Assista a produções exclusivas, animes, doramas e canais ao vivo na sua Smart TV Android, TV Box, celular, tablet ou projetor.
           </p>
 
