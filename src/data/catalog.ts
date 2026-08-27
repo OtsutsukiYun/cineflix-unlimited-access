@@ -72,6 +72,17 @@ export const heroSlides: HeroSlide[] = [
   },
 
   {
+    title: "Batman: Knightfall - Parte 1",
+    year: "2026",
+    genre: "Ação / Animação DC",
+    tagline: "Arkham foi destruído e Bane soltou todos os vilões sobre Gotham. Batman enfrenta seu maior desafio.",
+    backdrop: "/6c78xuvSoFLJkwlmx8Z2FGmMtzr.jpg",
+    poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+    brightness: "brightness(0.95)",
+  },
+  {
     title: "Passageiro do Mal",
     year: "2026",
     genre: "Terror / Suspense",
@@ -138,6 +149,7 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
+  { title: "Batman: Knightfall - Parte 1", poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "Dark Water: Água Negra", poster: "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", year: "2002", tag: "Clássico Japonês", rating: "4.9" },
   { title: "Michael", poster: "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", year: "2026", tag: "🔥 Biografia 2026", rating: "5.0" },
   { title: "Socorro! (Send Help)", poster: "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },

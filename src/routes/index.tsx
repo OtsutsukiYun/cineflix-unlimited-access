@@ -245,6 +245,7 @@ const CATALOG_TABS = [
     id: "em-alta",
     label: "🔥 Em Alta",
     items: [
+      { title: "Batman: Knightfall - Parte 1", poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg", year: "2026", tag: "🔥 DC 2026" },
       { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1" },
       { title: "A Morte do Demônio: Em Chamas", poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg", year: "2026", tag: "🔥 Top 2" },
       { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Top 3" },
@@ -254,6 +255,7 @@ const CATALOG_TABS = [
       { title: "Martyrs", poster: "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", year: "2008", tag: "🔥 Clássico do Terror" },
       { title: "Strange Harvest", poster: "/fYe0FNJNy0EIb8q4JUMLbbSmCth.jpg", year: "2025", tag: "🔥 Terror & Ocultismo" },
       { title: "Silo", poster: "/cxB16Cc7xZuqWgNDo7QlqLMlinu.jpg", year: "Série", tag: "Em alta" },
+      { title: "Hokum", poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
     ],
   },
   {
@@ -261,7 +263,6 @@ const CATALOG_TABS = [
     label: "🚀 Próximos Lançamentos (2026)",
     items: [
       { title: "Sobrenatural: Agora Entre Nós", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
-      { title: "Hokum", poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "A Maldição da Múmia", poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", year: "2026", tag: "🔥 Estreia 2026" },
       { title: "Other Mommy (A Outra Mãe)", poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
       { title: "Resident Evil: O Retorno", poster: "/zP83bIkBViw5b1s9bDemYJ3AAgX.jpg", year: "2026", tag: "🔥 Estreia Set/2026" },
@@ -276,6 +277,7 @@ const CATALOG_TABS = [
     id: "filmes",
     label: "🎬 Filmes & Lançamentos",
     items: [
+      { title: "Batman: Knightfall - Parte 1", poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg", year: "2026", tag: "🔥 DC 2026" },
       { title: "Michael", poster: "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", year: "2026", tag: "🔥 Biografia 2026" },
       { title: "Ghost in the Cell", poster: "/9DugI1HXkRAHQsjVMDnyTT8hQZx.jpg", year: "2026", tag: "🔥 Terror 2026" },
       { title: "Socorro! (Send Help)", poster: "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
@@ -1209,7 +1211,7 @@ function Index() {
               {[
                 { icon: Lock, title: "SSL 256-bit", desc: "Ambiente Criptografado", color: "text-emerald-400" },
                 { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
-                { icon: Zap, title: "Envio Imediato", desc: "No WhatsApp & E-mail", color: "text-amber-400" },
+                { icon: Zap, title: "Envio Imediato", desc: "Envio no E-mail", color: "text-amber-400" },
                 { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão em até 12x", color: "text-purple-400" },
                 { icon: Award, title: "+20 mil Clientes", desc: "Satisfação Garantida", color: "text-rose-400" },
                 { icon: CheckCircle2, title: "Sem Fidelidade", desc: "Cancele quando quiser", color: "text-teal-400" },
