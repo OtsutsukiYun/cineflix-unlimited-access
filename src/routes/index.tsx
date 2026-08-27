@@ -755,7 +755,7 @@ function Index() {
               titleHover: "group-hover:text-pink-200",
               t: "Doramas & Produções Asiáticas",
               qtd: "Disponíveis na Aba Séries",
-              d: "Os Doramas estão localizados na categoria de Séries do aplicativo. Assista a Rainha das Lágrimas, Pousando no Amor, A Lição e os maiores sucessos asiáticos dublados.",
+              d: "Assista a Rainha das Lágrimas, Pousando no Amor, A Lição e os maiores sucessos asiáticos dublados. Os Doramas estão localizados na categoria Séries do aplicativo.",
               tabId: "series",
             },
             {
