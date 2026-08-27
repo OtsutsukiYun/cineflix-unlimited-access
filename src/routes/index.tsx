@@ -136,7 +136,7 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               RESGATAR MEU TESTE GRÁTIS
             </button>
             <button onClick={close} className="text-xs text-white/40 hover:text-white/70 transition-colors underline underline-offset-2">
-              Agora não, quero só ver o catálogo
+              Agora não, fechar
             </button>
           </>
         ) : (
@@ -157,7 +157,7 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               onClick={close}
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
             >
-              ENTENDI! VER CATÁLOGO
+              ENTENDI, CONTINUAR
             </button>
           </div>
         )}
@@ -456,9 +456,6 @@ function Index() {
             </SmoothLink>
 
             <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
-              <Link to="/catalogo" className="text-white/80 transition-colors hover:text-white font-bold flex items-center gap-1.5">
-                <Sparkles className="size-3.5 text-red-500" /> Catálogo (6 por Linha)
-              </Link>
               <SmoothLink href="#planos" className="text-white/80 transition-colors hover:text-white">Planos</SmoothLink>
               <SmoothLink href="#faq" className="text-white/80 transition-colors hover:text-white">Dúvidas</SmoothLink>
               <Link to="/instalar" className="text-white/80 transition-colors hover:text-white">Como Instalar</Link>
