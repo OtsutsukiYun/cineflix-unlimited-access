@@ -258,6 +258,8 @@ const CATALOG_TABS = [
       { title: "Silo", poster: "/cxB16Cc7xZuqWgNDo7QlqLMlinu.jpg", year: "Série", tag: "Em alta" },
       { title: "Hokum", poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "A Maldição da Múmia", poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
+      { title: "Devoradores de Estrelas", poster: "/yihdXomYb5kTeSivtFndMy5iDmf.jpg", year: "2026", tag: "🔥 Sci-Fi 2026" },
+      { title: "O Diabo Veste Prada 2", poster: "/xTI42pmsP5EDnvsNJPEDubwWBQO.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
     ],
   },
   {
@@ -279,6 +281,7 @@ const CATALOG_TABS = [
     label: "🎬 Filmes & Lançamentos",
     items: [
       { title: "Motor City", poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", year: "2026", tag: "🔥 Ação 2026" },
+      { title: "O Diabo Veste Prada 2", poster: "/xTI42pmsP5EDnvsNJPEDubwWBQO.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Batman: Knightfall - Parte 1", poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg", year: "2026", tag: "🔥 DC 2026" },
       { title: "Michael", poster: "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", year: "2026", tag: "🔥 Biografia 2026" },
       { title: "Ghost in the Cell", poster: "/9DugI1HXkRAHQsjVMDnyTT8hQZx.jpg", year: "2026", tag: "🔥 Terror 2026" },
