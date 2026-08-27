@@ -533,7 +533,7 @@ function Index() {
 
           <DOMIntegrityShield />
           <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-5 text-xs sm:text-sm text-white font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,1)]">
-            <span className="flex items-center gap-1.5"><Users className="size-3.5 text-red-500" /> +77.000 assinantes ativos</span>
+            <span className="flex items-center gap-1.5"><Users className="size-3.5 text-red-500" /> +30.000 assinantes ativos</span>
             <span className="flex items-center gap-1.5"><Star className="size-3.5 fill-red-500 text-red-500" /> 4.9 de satisfação</span>
             <span className="flex items-center gap-1.5"><ShieldCheck className="size-3.5 text-red-500" /> Garantia de 7 dias</span>
           </div>
@@ -1226,7 +1226,7 @@ function Index() {
                 { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
                 { icon: Zap, title: "Envio Imediato", desc: "Envio no E-mail", color: "text-amber-400" },
                 { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão em até 12x", color: "text-purple-400" },
-                { icon: Award, title: "+77.000 Clientes", desc: "Assinantes Ativos", color: "text-rose-400" },
+                { icon: Award, title: "+30.000 Clientes", desc: "Assinantes Ativos", color: "text-rose-400" },
                 { icon: CheckCircle2, title: "Sem Fidelidade", desc: "Cancele quando quiser", color: "text-teal-400" },
               ].map((c) => (
                 <div
