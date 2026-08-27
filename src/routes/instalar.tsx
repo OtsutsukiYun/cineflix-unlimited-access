@@ -553,7 +553,7 @@ function InstalarPage() {
               </div>
             </div>
 
-            {/* 🌟 LISTA COMPLETA DE RECURSOS E BENEFÍCIOS (TODAS AS FEATURES) */}
+            {/* 🌟 LISTA EXATA DE 10 RECURSOS E BENEFÍCIOS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left max-w-lg mx-auto py-3 border-t border-white/15">
               {[
                 "1 Tela simultânea (TV, TV Box, Celular ou PC)",
@@ -562,12 +562,10 @@ function InstalarPage() {
                 "Canais Ao Vivo & Esportes sem travar (4K/FHD)",
                 "Animes, Doramas & Novelas Turcas atualizadas",
                 "Programação Infantil & Desenhos Dublados",
-                "Qualidade de Imagem 4K e Som Digital 5.1",
                 "Guia de Programação EPG & Replay de 7 dias",
                 "Suporte VIP 7 dias por semana via WhatsApp",
                 "Garantia incondicional de reembolso por 7 dias",
                 "Sem fidelidade ou multa (Cancele quando quiser)",
-                "Ativação instantânea logo após o pagamento",
               ].map((f, idx) => (
                 <div key={idx} className="flex items-start gap-2.5">
                   <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" />
