@@ -18,6 +18,9 @@ import {
   HelpCircle,
   Sparkles,
   ArrowRight,
+  Flame,
+  Layers,
+  Cpu,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -117,6 +120,7 @@ function AndroidIcon({ className = "size-5" }: { className?: string }) {
   );
 }
 
+// 🌟 RETÂNGULO DO CÓDIGO RESTAURADO COM DESIGN ULTRA MODERNO E GLOW NEON
 function CodeCopyBox({ code }: { code: string }) {
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
@@ -126,39 +130,42 @@ function CodeCopyBox({ code }: { code: string }) {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-between gap-3 my-2 py-2">
-      <div className="flex items-center gap-3">
-        <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 font-mono font-black text-2xl tracking-wider">
-          <Hash className="size-5" />
-        </div>
-        <div>
-          <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block">
-            CÓDIGO DE INSTALAÇÃO
-          </span>
-          <div className="font-mono font-black text-2xl sm:text-3xl tracking-widest text-white leading-tight">
-            {code}
+    <div className="relative overflow-hidden my-4 rounded-2xl p-4 sm:p-5 border border-emerald-500/40 bg-gradient-to-r from-emerald-950/90 via-black to-emerald-950/90 shadow-[0_0_35px_rgba(16,185,129,0.35)]">
+      <div className="pointer-events-none absolute -right-10 -bottom-10 size-32 rounded-full bg-emerald-500/20 blur-2xl" />
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 relative z-10">
+        <div className="flex items-center gap-3.5 w-full sm:w-auto">
+          <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 via-green-600 to-emerald-800 text-white border border-emerald-300 shadow-[0_0_20px_rgba(16,185,129,0.5)]">
+            <Hash className="size-7" />
+          </div>
+          <div>
+            <span className="text-[10px] font-black uppercase tracking-widest text-emerald-400 block">
+              CÓDIGO DE INSTALAÇÃO RÁPIDA
+            </span>
+            <div className="font-mono font-black text-3xl sm:text-4xl tracking-widest text-white drop-shadow-[0_0_12px_rgba(255,255,255,0.4)] leading-tight">
+              {code}
+            </div>
           </div>
         </div>
-      </div>
 
-      <button
-        onClick={handleCopy}
-        className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-xs font-black uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-md active:scale-95 ${
-          copied
-            ? "bg-emerald-400 text-black font-extrabold"
-            : "bg-emerald-600 hover:bg-emerald-500 text-white"
-        }`}
-      >
-        {copied ? (
-          <>
-            <Check className="size-4 stroke-[3]" /> COPIADO!
-          </>
-        ) : (
-          <>
-            <Copy className="size-4" /> COPIAR CÓDIGO
-          </>
-        )}
-      </button>
+        <button
+          onClick={handleCopy}
+          className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-xs font-black uppercase tracking-wider transition-all duration-300 cursor-pointer shadow-lg active:scale-95 ${
+            copied
+              ? "bg-emerald-400 text-black shadow-emerald-400/50 border border-emerald-300 font-black"
+              : "bg-gradient-to-r from-emerald-500 via-green-600 to-emerald-600 hover:from-emerald-400 hover:to-green-500 text-white hover:scale-105 shadow-[0_0_20px_rgba(16,185,129,0.4)] border border-emerald-400/60"
+          }`}
+        >
+          {copied ? (
+            <>
+              <Check className="size-4 stroke-[3]" /> CÓDIGO COPIADO!
+            </>
+          ) : (
+            <>
+              <Copy className="size-4" /> COPIAR CÓDIGO
+            </>
+          )}
+        </button>
+      </div>
     </div>
   );
 }
@@ -323,17 +330,17 @@ function InstalarPage() {
           </p>
         </div>
 
-        {/* ESTRUTURA UNIFICADA DA PÁGINA */}
-        <div className="rounded-3xl border border-red-500/40 bg-[#160408]/95 backdrop-blur-2xl shadow-[0_25px_80px_rgba(220,38,38,0.3)] overflow-hidden">
+        {/* FRAMEWORK INTEGRADO DE INSTALAÇÃO DE ALTO DESEMPENHO */}
+        <div className="rounded-3xl border border-red-500/40 bg-[#160408]/95 backdrop-blur-2xl shadow-[0_25px_80px_rgba(220,38,38,0.35)] overflow-hidden">
 
-          {/* SELETOR DE ABAS DE DISPOSITIVO */}
-          <div className="p-4 sm:p-5 bg-black/40 border-b border-white/10">
+          {/* FRAMEWORK HEADER DE APOSENTADORIA DE PASSOS / ABAS DE DISPOSITIVO */}
+          <div className="p-4 sm:p-5 bg-black/50 border-b border-white/10">
             <div className="grid grid-cols-3 gap-2">
               <button
                 onClick={() => setDeviceTab("tv")}
                 className={`flex items-center justify-center gap-2 rounded-xl py-3 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer ${
                   deviceTab === "tv"
-                    ? "bg-red-600 text-white shadow-md"
+                    ? "bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-red-400/50"
                     : "text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -345,7 +352,7 @@ function InstalarPage() {
                 onClick={() => setDeviceTab("mobile")}
                 className={`flex items-center justify-center gap-2 rounded-xl py-3 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer ${
                   deviceTab === "mobile"
-                    ? "bg-red-600 text-white shadow-md"
+                    ? "bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-red-400/50"
                     : "text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -357,7 +364,7 @@ function InstalarPage() {
                 onClick={() => setDeviceTab("pc")}
                 className={`flex items-center justify-center gap-2 rounded-xl py-3 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer ${
                   deviceTab === "pc"
-                    ? "bg-red-600 text-white shadow-md"
+                    ? "bg-gradient-to-r from-red-600 to-rose-700 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-red-400/50"
                     : "text-white/70 hover:text-white hover:bg-white/5"
                 }`}
               >
@@ -367,25 +374,32 @@ function InstalarPage() {
             </div>
           </div>
 
-          {/* TUTORIAL PASSOS */}
-          <div className="p-6 sm:p-8 space-y-5">
+          {/* CONTEÚDO DOS TUTORIAIS COM O RETÂNGULO DO CÓDIGO NEON RESTAURADO */}
+          <div className="p-6 sm:p-8 space-y-6">
 
             {deviceTab === "tv" && (
               <>
-                <div className="flex items-center gap-3 pb-3 border-b border-white/10">
+                <div className="flex items-center gap-3.5 pb-4 border-b border-white/10">
                   <DownloaderAppIcon />
                   <div>
-                    <h2 className="text-lg font-black text-white">Instalação em Smart TV e TV Box</h2>
-                    <p className="text-xs text-white/60">Via Downloader (Android TV, FireTV Stick, Xiaomi Mi Stick)</p>
+                    <h2 className="text-lg font-black text-white flex items-center gap-2">
+                      Instalação em Smart TV e TV Box
+                    </h2>
+                    <p className="text-xs text-white/60 font-medium">
+                      Via Downloader (Android TV, FireTV Stick, Xiaomi Mi Stick)
+                    </p>
                   </div>
                 </div>
 
-                <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/60">
-                  <div className="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs font-bold text-white">
+                <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/70 shadow-lg">
+                  <div className="flex items-center justify-between border-b border-white/10 px-4 py-2.5 text-xs font-bold text-white bg-white/[0.03]">
                     <div className="flex items-center gap-2">
                       <Play className="size-4 text-red-500 fill-red-500" />
-                      <span>Vídeo Tutorial (1 min)</span>
+                      <span>Vídeo Tutorial Prático (1 min)</span>
                     </div>
+                    <span className="text-[10px] text-red-400 bg-red-950/60 px-2 py-0.5 rounded border border-red-500/30">
+                      <Flame className="size-3 inline mr-1" /> Passo a Passo
+                    </span>
                   </div>
                   <div className="relative aspect-video w-full">
                     <iframe
@@ -398,8 +412,8 @@ function InstalarPage() {
                 </div>
 
                 <ol className="space-y-4 pt-2">
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 rounded-lg bg-red-600 px-2.5 py-0.5 text-xs font-black text-white">
+                  <li className="flex items-start gap-3.5">
+                    <span className="shrink-0 rounded-xl bg-red-600 px-3 py-1 text-xs font-black text-white shadow-md">
                       Passo 1
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -410,31 +424,32 @@ function InstalarPage() {
                     </p>
                   </li>
 
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 rounded-lg bg-red-600 px-2.5 py-0.5 text-xs font-black text-white">
+                  <li className="flex items-start gap-3.5">
+                    <span className="shrink-0 rounded-xl bg-red-600 px-3 py-1 text-xs font-black text-white shadow-md">
                       Passo 2
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-                      No <strong>Downloader</strong>, digite o código de instalação:
+                      Abra o app <strong>Downloader</strong> e digite o código de instalação rápida:
+                      {/* 🌟 RETÂNGULO DO CÓDIGO NEON RESTAURADO */}
                       <CodeCopyBox code="1089401" />
                     </div>
                   </li>
 
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 rounded-lg bg-red-600 px-2.5 py-0.5 text-xs font-black text-white">
+                  <li className="flex items-start gap-3.5">
+                    <span className="shrink-0 rounded-xl bg-red-600 px-3 py-1 text-xs font-black text-white shadow-md">
                       Passo 3
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Clique em <strong>"Go"</strong> para baixar e toque em instalar quando concluir.
+                      Clique em <strong>"Go"</strong> para iniciar o download e toque em instalar quando concluir.
                     </p>
                   </li>
 
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 rounded-lg bg-red-600 px-2.5 py-0.5 text-xs font-black text-white">
+                  <li className="flex items-start gap-3.5">
+                    <span className="shrink-0 rounded-xl bg-red-600 px-3 py-1 text-xs font-black text-white shadow-md">
                       Passo 4
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Permita a instalação e abra o UniTV Pro para aproveitar seus 3 dias grátis!
+                      Permita a instalação no aparelho e abra o UniTV Pro para aproveitar seus 3 dias grátis!
                     </p>
                   </li>
                 </ol>
@@ -443,18 +458,18 @@ function InstalarPage() {
 
             {deviceTab === "mobile" && (
               <>
-                <div className="flex items-center gap-3 pb-3 border-b border-white/10">
-                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white font-bold">
+                <div className="flex items-center gap-3.5 pb-4 border-b border-white/10">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-emerald-600 text-white font-bold shadow-md">
                     <AndroidIcon className="size-6" />
                   </div>
                   <div>
                     <h2 className="text-lg font-black text-white">Instalação no Celular Android</h2>
-                    <p className="text-xs text-white/60">Download direto do APK oficial</p>
+                    <p className="text-xs text-white/60 font-medium">Download direto do APK oficial</p>
                   </div>
                 </div>
 
-                <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/60">
-                  <div className="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs font-bold text-white">
+                <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/70 shadow-lg">
+                  <div className="flex items-center justify-between border-b border-white/10 px-4 py-2.5 text-xs font-bold text-white bg-white/[0.03]">
                     <div className="flex items-center gap-2">
                       <Play className="size-4 text-red-500 fill-red-500" />
                       <span>Vídeo Tutorial Celular</span>
@@ -471,39 +486,40 @@ function InstalarPage() {
                 </div>
 
                 <ol className="space-y-4 pt-2">
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 rounded-lg bg-red-600 px-2.5 py-0.5 text-xs font-black text-white">
+                  <li className="flex items-start gap-3.5">
+                    <span className="shrink-0 rounded-xl bg-red-600 px-3 py-1 text-xs font-black text-white shadow-md">
                       Passo 1
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-                      Toque abaixo para baixar o instalador oficial:
+                      Toque no botão abaixo para baixar o APK instalador oficial:
                       <a
                         href={APK_MEDIAFIRE_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 my-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-3 text-xs font-black text-white shadow-md transition-all"
+                        className="flex items-center justify-center gap-2.5 my-3 rounded-2xl bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 px-6 py-3.5 text-xs font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.4)] transition-all hover:scale-[1.02] border border-emerald-400/50"
                       >
                         <Download className="size-4 animate-bounce" />
-                        BAIXAR APK UNITV PRO
+                        BAIXAR APK UNITV PRO (DOWNLOAD DIRETO)
                       </a>
                     </div>
                   </li>
 
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 rounded-lg bg-red-600 px-2.5 py-0.5 text-xs font-black text-white">
+                  <li className="flex items-start gap-3.5">
+                    <span className="shrink-0 rounded-xl bg-red-600 px-3 py-1 text-xs font-black text-white shadow-md">
                       Passo 2
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Abra a pasta <strong>Downloads</strong> do seu celular e toque no arquivo <strong>unitv_RS-NPWN.apk</strong>.
+                      Abra a pasta <strong>Downloads</strong> do celular e toque em <strong>unitv_RS-NPWN.apk</strong>.
                     </p>
                   </li>
 
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 rounded-lg bg-red-600 px-2.5 py-0.5 text-xs font-black text-white">
+                  <li className="flex items-start gap-3.5">
+                    <span className="shrink-0 rounded-xl bg-red-600 px-3 py-1 text-xs font-black text-white shadow-md">
                       Passo 3
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
                       Ou instale o app <strong className="text-white">ntDown</strong> na Play Store com o código:
+                      {/* 🌟 RETÂNGULO DO CÓDIGO NEON RESTAURADO */}
                       <CodeCopyBox code="94596" />
                     </div>
                   </li>
@@ -513,19 +529,19 @@ function InstalarPage() {
 
             {deviceTab === "pc" && (
               <>
-                <div className="flex items-center gap-3 pb-3 border-b border-white/10">
-                  <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-amber-500 text-black font-black text-sm">
+                <div className="flex items-center gap-3.5 pb-4 border-b border-white/10">
+                  <div className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-amber-500 text-black font-black text-sm shadow-md">
                     LD
                   </div>
                   <div>
                     <h2 className="text-lg font-black text-white">Instalação no Computador / PC</h2>
-                    <p className="text-xs text-white/60">Via emulador Android leve (LDPlayer)</p>
+                    <p className="text-xs text-white/60 font-medium">Via emulador Android leve (LDPlayer)</p>
                   </div>
                 </div>
 
                 <ol className="space-y-4 pt-2">
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 rounded-lg bg-red-600 px-2.5 py-0.5 text-xs font-black text-white">
+                  <li className="flex items-start gap-3.5">
+                    <span className="shrink-0 rounded-xl bg-red-600 px-3 py-1 text-xs font-black text-white shadow-md">
                       Passo 1
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -537,12 +553,13 @@ function InstalarPage() {
                     </p>
                   </li>
 
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 rounded-lg bg-red-600 px-2.5 py-0.5 text-xs font-black text-white">
+                  <li className="flex items-start gap-3.5">
+                    <span className="shrink-0 rounded-xl bg-red-600 px-3 py-1 text-xs font-black text-white shadow-md">
                       Passo 2
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
                       Abra o Downloader no emulador e coloque o código:
+                      {/* 🌟 RETÂNGULO DO CÓDIGO NEON RESTAURADO */}
                       <CodeCopyBox code="1089401" />
                     </div>
                   </li>
