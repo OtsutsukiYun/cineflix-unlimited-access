@@ -94,7 +94,7 @@ function BemVindoPage() {
               <span>Onde clicar na tela a seguir (MediaFire):</span>
             </div>
             <p className="text-xs text-white/85 mb-3 font-medium">
-              Ao clicar no botão abaixo, você verá esta tela. Clique na <strong>barra azul grande</strong> para iniciar:
+              Ao clicar no <strong className="text-emerald-400 font-extrabold">botão verde abaixo</strong>, você verá esta tela. Clique na <strong>barra azul grande</strong> para iniciar o download:
             </p>
             <div className="relative mx-auto overflow-hidden rounded-xl border border-white/20 shadow-[0_0_25px_rgba(37,99,235,0.4)] bg-black/60 p-2">
               <img
@@ -108,29 +108,29 @@ function BemVindoPage() {
             </div>
           </div>
 
-          {/* BOTÃO PRINCIPAL SOLICITADO: ⬇️ INICIAR DOWNLOAD */}
+          {/* BOTÃO PRINCIPAL SOLICITADO: ⬇️ INICIAR DOWNLOAD (VERDE CONVIDATIVO) */}
           <div className="max-w-md mx-auto mb-4">
             <a
               href={APK_DIRECT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 px-8 py-5 text-lg sm:text-xl font-black text-white shadow-[0_0_35px_rgba(220,38,38,0.7)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_50px_rgba(220,38,38,0.9)] border border-white/20 active:scale-[0.98]"
+              className="group relative flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 px-8 py-5 text-lg sm:text-xl font-black text-white shadow-[0_0_35px_rgba(16,185,129,0.7)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_50px_rgba(16,185,129,0.9)] border border-white/25 active:scale-[0.98]"
             >
-              <Download className="size-6 transition-transform group-hover:translate-y-1 animate-bounce" />
+              <Download className="size-6 transition-transform group-hover:translate-y-1 animate-bounce text-white" />
               <span>⬇️ INICIAR DOWNLOAD</span>
             </a>
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-white/70">
             <span className="flex items-center gap-1.5"><ShieldCheck className="size-4 text-emerald-400" /> Versão Oficial Protegida</span>
-            <span className="flex items-center gap-1.5"><CheckCircle2 className="size-4 text-red-400" /> APK 100% Seguro</span>
+            <span className="flex items-center gap-1.5"><CheckCircle2 className="size-4 text-emerald-400" /> APK 100% Seguro</span>
           </div>
         </div>
 
         {/* GUIA DE INSTALAÇÃO PASSO A PASSO COM IMAGENS/ILUSTRAÇÕES */}
         <div className="mt-12 space-y-6">
           <div className="text-center mb-8">
-            <span className="text-xs font-black tracking-[0.2em] text-red-400 uppercase block mb-1">
+            <span className="text-xs font-black tracking-[0.2em] text-emerald-400 uppercase block mb-1">
               Guia Visual de Instalação
             </span>
             <h2 className="text-xl sm:text-3xl font-black text-white tracking-tight">
@@ -141,15 +141,15 @@ function BemVindoPage() {
           {/* PASSO 1 */}
           <div className="group relative overflow-hidden rounded-3xl border border-white/15 bg-white/[0.04] backdrop-blur-xl p-6 sm:p-8 transition-all hover:border-white/25">
             <div className="flex flex-col sm:flex-row items-start gap-5">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-red-600 font-black text-xl text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/20">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-600 font-black text-xl text-white shadow-[0_0_20px_rgba(16,185,129,0.6)] border border-white/20">
                 01
               </div>
               <div className="space-y-2 flex-1">
                 <h3 className="text-lg sm:text-xl font-black text-white">
-                  1. Clique no botão de Download
+                  1. Clique no botão verde de Download
                 </h3>
                 <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
-                  Clique no botão vermelho <strong className="text-white">"⬇️ INICIAR DOWNLOAD"</strong> acima. O navegador ou o Downloader abrirá a página e começará a baixar o arquivo <code className="rounded bg-white/10 px-2 py-0.5 text-xs text-red-300 font-mono">unitv_RS-NPWN.apk</code>.
+                  Clique no botão verde <strong className="text-emerald-400 font-bold">"⬇️ INICIAR DOWNLOAD"</strong> acima. O navegador ou o Downloader abrirá a página e começará a baixar o arquivo <code className="rounded bg-white/10 px-2 py-0.5 text-xs text-emerald-300 font-mono">unitv_RS-NPWN.apk</code>.
                 </p>
                 <div className="mt-3 rounded-2xl border border-white/10 bg-black/40 p-4 flex items-center justify-between text-xs text-white/90">
                   <div className="flex items-center gap-2">
