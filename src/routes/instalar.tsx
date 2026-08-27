@@ -323,38 +323,38 @@ function InstalarPage() {
             <div className="grid grid-cols-3 gap-1.5 sm:gap-2.5 items-stretch">
               <button
                 onClick={() => setDeviceTab("tv")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 rounded-xl p-2 sm:py-3 sm:px-4 text-[11px] sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[68px] sm:min-h-0 ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 rounded-xl p-2 sm:py-3 sm:px-2.5 lg:px-4 text-[10px] min-[360px]:text-[11px] sm:text-xs lg:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[64px] sm:min-h-[52px] w-full overflow-hidden ${
                   deviceTab === "tv"
                     ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                 }`}
               >
-                <Tv className="size-5 sm:size-6 text-red-400 shrink-0" />
-                <span>Smart TV Android &amp; TV Box</span>
+                <Tv className="size-4.5 sm:size-5 lg:size-6 text-white shrink-0" />
+                <span className="break-words max-w-full">Smart TV Android &amp; TV Box</span>
               </button>
 
               <button
                 onClick={() => setDeviceTab("mobile")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 rounded-xl p-2 sm:py-3 sm:px-4 text-[11px] sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[68px] sm:min-h-0 ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 rounded-xl p-2 sm:py-3 sm:px-2.5 lg:px-4 text-[10px] min-[360px]:text-[11px] sm:text-xs lg:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[64px] sm:min-h-[52px] w-full overflow-hidden ${
                   deviceTab === "mobile"
                     ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                 }`}
               >
-                <Smartphone className="size-5 sm:size-6 text-emerald-400 shrink-0" />
-                <span>Celular e Tablet</span>
+                <Smartphone className="size-4.5 sm:size-5 lg:size-6 text-emerald-400 shrink-0" />
+                <span className="break-words max-w-full">Celular e Tablet</span>
               </button>
 
               <button
                 onClick={() => setDeviceTab("pc")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 rounded-xl p-2 sm:py-3 sm:px-4 text-[11px] sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[68px] sm:min-h-0 ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 rounded-xl p-2 sm:py-3 sm:px-2.5 lg:px-4 text-[10px] min-[360px]:text-[11px] sm:text-xs lg:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[64px] sm:min-h-[52px] w-full overflow-hidden ${
                   deviceTab === "pc"
                     ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                 }`}
               >
-                <Monitor className="size-5 sm:size-6 text-amber-400 shrink-0" />
-                <span>Computador (Emulador)</span>
+                <Monitor className="size-4.5 sm:size-5 lg:size-6 text-amber-400 shrink-0" />
+                <span className="break-words max-w-full">Computador (Emulador)</span>
               </button>
             </div>
           </div>
