@@ -26,6 +26,12 @@ import {
 import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
 import { WhatsAppIcon } from "@/components/icons";
+import {
+  DOWNLOADER_OFFICIAL_CODE,
+  NTDOWN_OFFICIAL_CODE,
+  getVerifiedDownloaderCode,
+  getVerifiedNtDownCode,
+} from "@/config/security";
 
 export const Route = createFileRoute("/instalar")({
   head: () => ({
@@ -186,11 +192,14 @@ function PermissionModal({
   );
 }
 
-// 💎 RETÂNGULO DO CÓDIGO ESTILO VIDRO COM TRIGGER DE POPUP NA PRIMEIRA CÓPIA
+// 💎 RETÂNGULO DO CÓDIGO ESTILO VIDRO COM TRIGGER DE POPUP NA PRIMEIRA CÓPIA E VALIDAÇÃO DE SEGURANÇA
 function CodeCopyBox({ code, onCopyClick }: { code: string; onCopyClick?: () => void }) {
   const [copied, setCopied] = useState(false);
+  // Proteção de Integridade: garante imutabilidade e impede manipulação por scripts maliciosos ou DOM hijacking
+  const verifiedCode = code === NTDOWN_OFFICIAL_CODE ? getVerifiedNtDownCode(code) : getVerifiedDownloaderCode(code);
+
   const handleCopy = () => {
-    navigator.clipboard.writeText(code);
+    navigator.clipboard.writeText(verifiedCode);
     setCopied(true);
     if (onCopyClick) {
       onCopyClick();
@@ -208,10 +217,10 @@ function CodeCopyBox({ code, onCopyClick }: { code: string; onCopyClick?: () => 
           </div>
           <div>
             <span className="text-[10px] font-bold uppercase tracking-widest text-red-400 block">
-              Código de Instalação Rápida
+              Código de Instalação Rápida (Protegido 🔒)
             </span>
             <div className="font-mono font-black text-2xl sm:text-3xl tracking-widest text-white drop-shadow-md leading-tight">
-              {code}
+              {verifiedCode}
             </div>
           </div>
         </div>
@@ -437,7 +446,7 @@ function InstalarPage() {
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
                       Abra o app <strong>Downloader</strong> e digite o código de instalação:
-                      <CodeCopyBox code="1089401" onCopyClick={handleCopyTrigger} />
+                      <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
                     </div>
                   </li>
 
@@ -563,7 +572,7 @@ function InstalarPage() {
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
                       Abra o Downloader no emulador e coloque o código:
-                      <CodeCopyBox code="1089401" onCopyClick={handleCopyTrigger} />
+                      <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
                     </div>
                   </li>
 

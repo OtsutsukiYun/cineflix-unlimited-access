@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown, HelpCircle } from "lucide-react";
+import { DOWNLOADER_OFFICIAL_CODE, NTDOWN_OFFICIAL_CODE } from "@/config/security";
 
 function SmoothCardReveal({ children }: { children: React.ReactNode; delay?: number }) {
   return <div>{children}</div>;
@@ -28,7 +29,7 @@ const PERGUNTAS = [
   },
   {
     q: "Como instalar o UniTV Pro na Smart TV Android ou TV Box?",
-    a: "MÉTODO 1 (Downloader): Abra a loja de aplicativos da sua Smart TV Android ou TV Box, baixe o app Downloader, abra-o e digite o código 1089401. Siga as instruções na tela. — MÉTODO 2 (NtDown): Baixe o app NtDown na Play Store e coloque o código 94596.",
+    a: `MÉTODO 1 (Downloader): Abra a loja de aplicativos da sua Smart TV Android ou TV Box, baixe o app Downloader, abra-o e digite o código ${DOWNLOADER_OFFICIAL_CODE}. Siga as instruções na tela. — MÉTODO 2 (NtDown): Baixe o app NtDown na Play Store e coloque o código ${NTDOWN_OFFICIAL_CODE}.`,
   },
   {
     q: "Como fazer uma recarga UniTV Pro?",
