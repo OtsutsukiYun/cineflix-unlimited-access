@@ -61,7 +61,7 @@ const ROW_2_POSTERS = [
 ];
 
 const PURCHASE_MARQUEE_POSTERS = [
-  "/g410Y1U1ELbmJG14Zrou3UAimm1G.jpg", // Jeepers Creepers
+  "/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg", // Nosferatu
   "/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg", // Demon Slayer
   "/tvfasmhZLZK4oKnHtSNLR4k8nxP.jpg", // Stranger Things
   "/yQGaui0bQ5Ai3KIFBB45nTeIqad.jpg", // Squid Game
@@ -560,16 +560,16 @@ function InstalarPage() {
             </span>
           </div>
 
-          {/* SEÇÃO DE COMPRA COM SLIDESHOW FULL-BLEED NO FUNDO DA SEÇÃO GOSTOU DO QUE VIU */}
-          <div id="plano-mensal" className="relative overflow-hidden p-6 sm:p-10 border-t border-white/10 text-center space-y-6">
+          {/* SEÇÃO DE COMPRA COM SLIDESHOW LIMPO E ESCURO NO FUNDO (SEM TINTA VERMELHA MISTURANDO) */}
+          <div id="plano-mensal" className="relative overflow-hidden p-6 sm:p-10 border-t border-white/10 text-center space-y-6 bg-black">
 
-            {/* 🍿 SLIDESHOW DYNAMIC BACKGROUND CROSSFADE DIRETO NO FUNDO DA SEÇÃO GOSTOU DO QUE VIU */}
+            {/* 🍿 SLIDESHOW DYNAMIC BACKGROUND CROSSFADE COM CORES NATURAIS E GRADIENTE ESCURO (SEM VERMELHO MISTURANDO) */}
             <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
               {HERO_SLIDESHOW.map((slide, i) => (
                 <div
                   key={slide.title}
                   className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                    i === activeSlide ? "opacity-35 scale-105" : "opacity-0"
+                    i === activeSlide ? "opacity-60 scale-105" : "opacity-0"
                   }`}
                 >
                   <img
@@ -577,7 +577,8 @@ function InstalarPage() {
                     alt={slide.title}
                     className="size-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#120104] via-[#23040b]/85 to-[#160408]" />
+                  {/* GRADIENTE NEUTRO ESCURO PARA LEGIBILIDADE PERFEITA DAS CORES NATURAIS */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#0d0d0d]/85 to-[#080808]" />
                 </div>
               ))}
             </div>
@@ -585,7 +586,7 @@ function InstalarPage() {
             {/* CONTEÚDO SOBREPOSTO */}
             <div className="relative z-10 space-y-5">
 
-              <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/80 px-4 py-1.5 backdrop-blur-md shadow-[0_0_20px_rgba(220,38,38,0.4)]">
+              <div className="inline-flex items-center gap-2 rounded-full border border-red-500/50 bg-black/80 px-4 py-1.5 backdrop-blur-md shadow-[0_0_20px_rgba(220,38,38,0.4)]">
                 <Sparkles className="size-3.5 text-red-400 animate-spin" />
                 <span className="text-xs font-black uppercase tracking-wider text-red-200">
                   🔥 ACESSO ILIMITADO • SEM FIDELIDADE
@@ -593,10 +594,10 @@ function InstalarPage() {
               </div>
 
               <div>
-                <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-2 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+                <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight mb-2 drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
                   Gostou do que viu?
                 </h2>
-                <p className="text-xs sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-medium">
+                <p className="text-xs sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-medium drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">
                   Continue assistindo a todos os seus filmes, séries, esportes e canais ao vivo no UniTV Pro sem interrupções!
                 </p>
               </div>
@@ -617,7 +618,7 @@ function InstalarPage() {
 
               {/* PREÇO EM DESTAQUE */}
               <div className="py-2">
-                <span className="text-xs font-bold text-red-300 uppercase tracking-wider block mb-1">
+                <span className="text-xs font-bold text-red-400 uppercase tracking-wider block mb-1">
                   Plano Mensal (30 Dias de Acesso)
                 </span>
                 <div className="flex items-baseline justify-center gap-2 flex-nowrap whitespace-nowrap">
