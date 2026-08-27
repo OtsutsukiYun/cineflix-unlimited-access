@@ -43,23 +43,23 @@ type Notif = { id: number; nome: string; estado: string; plano: string };
 
 function getDailySales() {
   const now = new Date();
-  const dateKey = `unitv_daily_sales_v3_${now.getFullYear()}_${now.getMonth() + 1}_${now.getDate()}`;
+  const dateKey = `unitv_daily_sales_v4_${now.getFullYear()}_${now.getMonth() + 1}_${now.getDate()}`;
   
   // Minutos decorridos no dia (0 a 1439)
   const minutesToday = now.getHours() * 60 + now.getMinutes();
   
-  // Base inicial da manhã (variando entre 4 e 8)
-  const morningBase = 4 + (now.getDate() % 5);
+  // Base inicial da manhã dobrada (variando entre 18 e 28)
+  const morningBase = 18 + (now.getDate() % 10);
   
-  // Crescimento realista ao longo do dia (~1 assinatura a cada 45-50 min)
-  const salesThroughoutDay = Math.floor(minutesToday / 48);
+  // Crescimento realista dobrado ao longo do dia (~1 assinatura a cada 20 min)
+  const salesThroughoutDay = Math.floor(minutesToday / 20);
   const calculatedBase = morningBase + salesThroughoutDay;
   
   try {
     const stored = localStorage.getItem(dateKey);
     if (stored) {
       const parsed = parseInt(stored, 10);
-      if (!isNaN(parsed) && parsed >= calculatedBase && parsed < calculatedBase + 10) {
+      if (!isNaN(parsed) && parsed >= calculatedBase && parsed < calculatedBase + 15) {
         return parsed;
       }
     }
