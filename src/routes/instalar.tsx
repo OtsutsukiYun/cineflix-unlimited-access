@@ -327,8 +327,8 @@ function InstalarPage() {
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                 }`}
               >
-                <Tv className="size-4 text-red-400" />
-                <span>Smart TV, TV Box, Stick &amp; Projetor</span>
+                <Tv className="size-5 sm:size-6 text-red-400 shrink-0" />
+                <span>Smart TV, TV Box &amp; Projetor</span>
               </button>
 
               <button
@@ -339,7 +339,7 @@ function InstalarPage() {
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                 }`}
               >
-                <Smartphone className="size-4 text-emerald-400" />
+                <Smartphone className="size-5 sm:size-6 text-emerald-400 shrink-0" />
                 <span>Celular</span>
               </button>
 
@@ -351,7 +351,7 @@ function InstalarPage() {
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                 }`}
               >
-                <Monitor className="size-4 text-amber-400" />
+                <Monitor className="size-5 sm:size-6 text-amber-400 shrink-0" />
                 <span>Computador</span>
               </button>
             </div>
