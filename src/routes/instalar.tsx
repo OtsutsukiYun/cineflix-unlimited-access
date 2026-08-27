@@ -78,7 +78,7 @@ function AndroidIcon({ className = "size-5" }: { className?: string }) {
   );
 }
 
-// 💎 RETÂNGULO DO CÓDIGO ESTILO VIDRO (GLASSMORPHISM)
+// 💎 RETÂNGULO DO CÓDIGO ESTILO VIDRO LUMINOSO
 function CodeCopyBox({ code }: { code: string }) {
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
@@ -88,11 +88,11 @@ function CodeCopyBox({ code }: { code: string }) {
   };
 
   return (
-    <div className="relative overflow-hidden my-3 rounded-2xl p-4 border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-      <div className="pointer-events-none absolute -right-12 -bottom-12 size-36 rounded-full bg-red-600/15 blur-2xl" />
+    <div className="relative overflow-hidden my-3 rounded-2xl p-4 border border-white/25 bg-white/[0.08] backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+      <div className="pointer-events-none absolute -right-10 -bottom-10 size-36 rounded-full bg-red-600/20 blur-2xl" />
       <div className="flex flex-col sm:flex-row items-center justify-between gap-3 relative z-10">
         <div className="flex items-center gap-3">
-          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-white/10 text-red-400 border border-white/20 font-mono font-black text-xl backdrop-blur-md shadow-inner">
+          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-red-600/30 text-red-300 border border-white/20 font-mono font-black text-xl backdrop-blur-md shadow-inner">
             <Hash className="size-5" />
           </div>
           <div>
@@ -110,7 +110,7 @@ function CodeCopyBox({ code }: { code: string }) {
           className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-xs font-black tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-md backdrop-blur-md active:scale-95 ${
             copied
               ? "bg-emerald-400 text-black font-extrabold border border-emerald-300"
-              : "bg-red-600/90 hover:bg-red-500 text-white border border-white/20 shadow-[0_0_20px_rgba(220,38,38,0.4)]"
+              : "bg-red-600 hover:bg-red-500 text-white border border-white/20 shadow-[0_0_15px_rgba(220,38,38,0.5)]"
           }`}
         >
           {copied ? (
@@ -132,21 +132,21 @@ function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
 
   return (
-    /* 💎 DESIGN PRETO E VERMELHO ESTILO VIDRO (GLASSMORPHISM) */
-    <div className="relative min-h-screen bg-gradient-to-b from-[#240307] via-[#0e0103] to-[#040404] text-white overflow-x-hidden">
-      {/* LUZES AMBIENTAIS SUAVES E REFLEXOS DE VIDRO */}
-      <div className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 size-[800px] rounded-full bg-red-600/20 blur-[180px] z-0 animate-pulse" />
-      <div className="pointer-events-none fixed top-1/3 left-10 size-[500px] rounded-full bg-rose-800/15 blur-[160px] z-0" />
-      <div className="pointer-events-none fixed bottom-1/4 right-10 size-[550px] rounded-full bg-red-900/15 blur-[160px] z-0" />
+    /* 🖤 FUNDO PRETO OBSIDIANA COM RETÂNGULOS EM VIDRO LUMINOSO */
+    <div className="relative min-h-screen bg-[#060606] text-white overflow-x-hidden">
+      {/* LUZES AMBIENTAIS SUAVES */}
+      <div className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 size-[800px] rounded-full bg-red-600/15 blur-[180px] z-0 animate-pulse" />
+      <div className="pointer-events-none fixed top-1/3 left-10 size-[500px] rounded-full bg-rose-900/15 blur-[160px] z-0" />
+      <div className="pointer-events-none fixed bottom-10 right-10 size-[600px] rounded-full bg-red-900/15 blur-[160px] z-0" />
 
       {/* BARRA PROMOCIONAL DO TOPO */}
       <div className="fixed inset-x-0 top-0 z-[60]">
         <PromoBanner />
       </div>
 
-      {/* HEADER VIDRO / GLASSMORPHISM */}
+      {/* HEADER VIDRO */}
       <header className="fixed inset-x-0 top-8 z-50 transition-all duration-300">
-        <div className="mx-auto mt-2 flex w-[92%] max-w-5xl items-center justify-between rounded-full px-5 py-2.5 border border-white/15 backdrop-blur-2xl bg-black/60 shadow-[0_8px_32px_rgba(0,0,0,0.6)]">
+        <div className="mx-auto mt-2 flex w-[92%] max-w-5xl items-center justify-between rounded-full px-5 py-2.5 border border-white/15 backdrop-blur-2xl bg-black/60 shadow-[0_8px_32px_rgba(0,0,0,0.8)]">
           <Link to="/" className="flex items-center gap-2.5">
             <span className="relative flex size-8 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_15px_rgba(220,38,38,0.7)] border border-white/20">
               <svg className="size-4 fill-white" viewBox="0 0 24 24">
@@ -182,12 +182,12 @@ function InstalarPage() {
         </div>
       </header>
 
-      {/* CONTEÚDO PRINCIPAL ESTILO VIDRO */}
+      {/* CONTEÚDO PRINCIPAL */}
       <main className="relative z-10 mx-auto w-[92%] max-w-3xl pt-32 sm:pt-36 pb-20 space-y-8">
 
-        {/* HERO TITLE COM BADGE ESTILO VIDRO */}
+        {/* HERO TITLE */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.05] px-4 py-1.5 text-xs font-black tracking-wider text-red-400 uppercase backdrop-blur-xl shadow-md">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-xs font-black tracking-wider text-red-400 uppercase backdrop-blur-xl shadow-md">
             <Gift className="size-3.5 text-red-400 animate-pulse" />
             <span>3 Dias de Teste Grátis</span>
           </div>
@@ -200,17 +200,17 @@ function InstalarPage() {
           </p>
         </div>
 
-        {/* 💎 CARD PRINCIPAL PAINEL ESTILO VIDRO (GLASSMORPHISM) */}
-        <div className="rounded-3xl border border-white/15 bg-white/[0.04] backdrop-blur-2xl shadow-[0_25px_70px_rgba(0,0,0,0.8)] overflow-hidden">
+        {/* 💎 RETÂNGULO PRINCIPAL ESTILO VIDRO TRANSLÚCIDO E LUMINOSO (GLASSMORPHISM) */}
+        <div className="rounded-3xl border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden">
 
           {/* ABAS DE DISPOSITIVO VIDRO */}
-          <div className="p-3 sm:p-4 bg-black/40 border-b border-white/10 backdrop-blur-md">
+          <div className="p-3 sm:p-4 bg-white/[0.04] border-b border-white/15 backdrop-blur-md">
             <div className="grid grid-cols-3 gap-2">
               <button
                 onClick={() => setDeviceTab("tv")}
                 className={`flex items-center justify-center gap-2 rounded-xl py-2.5 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md ${
                   deviceTab === "tv"
-                    ? "bg-red-600/90 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/25"
+                    ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                 }`}
               >
@@ -222,7 +222,7 @@ function InstalarPage() {
                 onClick={() => setDeviceTab("mobile")}
                 className={`flex items-center justify-center gap-2 rounded-xl py-2.5 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md ${
                   deviceTab === "mobile"
-                    ? "bg-red-600/90 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/25"
+                    ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                 }`}
               >
@@ -234,7 +234,7 @@ function InstalarPage() {
                 onClick={() => setDeviceTab("pc")}
                 className={`flex items-center justify-center gap-2 rounded-xl py-2.5 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md ${
                   deviceTab === "pc"
-                    ? "bg-red-600/90 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/25"
+                    ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                 }`}
               >
@@ -244,12 +244,12 @@ function InstalarPage() {
             </div>
           </div>
 
-          {/* PASSOS TUTORIAL ESTILO VIDRO */}
+          {/* PASSOS TUTORIAL VIDRO */}
           <div className="p-6 sm:p-8 space-y-6">
 
             {deviceTab === "tv" && (
               <>
-                <div className="flex items-center gap-3 pb-3 border-b border-white/10">
+                <div className="flex items-center gap-3 pb-3 border-b border-white/15">
                   <DownloaderAppIcon />
                   <div>
                     <h2 className="text-base sm:text-lg font-black text-white">Smart TV &amp; TV Box</h2>
@@ -257,8 +257,8 @@ function InstalarPage() {
                   </div>
                 </div>
 
-                <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/50 backdrop-blur-xl shadow-md">
-                  <div className="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs font-bold text-white bg-white/[0.03]">
+                <div className="overflow-hidden rounded-2xl border border-white/20 bg-black/50 backdrop-blur-xl shadow-md">
+                  <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs font-bold text-white bg-white/[0.04]">
                     <div className="flex items-center gap-2">
                       <Play className="size-3.5 text-red-500 fill-red-500" />
                       <span>Vídeo Tutorial (1 min)</span>
@@ -279,7 +279,7 @@ function InstalarPage() {
 
                 <ol className="space-y-4 pt-1">
                   <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600/80 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
                       01
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -291,7 +291,7 @@ function InstalarPage() {
                   </li>
 
                   <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600/80 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
                       02
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -301,7 +301,7 @@ function InstalarPage() {
                   </li>
 
                   <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600/80 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
                       03
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -310,7 +310,7 @@ function InstalarPage() {
                   </li>
 
                   <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600/80 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
                       04
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -323,8 +323,8 @@ function InstalarPage() {
 
             {deviceTab === "mobile" && (
               <>
-                <div className="flex items-center gap-3 pb-3 border-b border-white/10">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600/80 text-white font-bold shadow-md border border-white/20">
+                <div className="flex items-center gap-3 pb-3 border-b border-white/15">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-md">
                     <AndroidIcon className="size-5" />
                   </div>
                   <div>
@@ -333,8 +333,8 @@ function InstalarPage() {
                   </div>
                 </div>
 
-                <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/50 backdrop-blur-xl shadow-md">
-                  <div className="flex items-center justify-between border-b border-white/10 px-4 py-2 text-xs font-bold text-white bg-white/[0.03]">
+                <div className="overflow-hidden rounded-2xl border border-white/20 bg-black/50 backdrop-blur-xl shadow-md">
+                  <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs font-bold text-white bg-white/[0.04]">
                     <div className="flex items-center gap-2">
                       <Play className="size-3.5 text-red-500 fill-red-500" />
                       <span>Vídeo Tutorial Celular</span>
@@ -352,7 +352,7 @@ function InstalarPage() {
 
                 <ol className="space-y-4 pt-1">
                   <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600/80 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
                       01
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -361,7 +361,7 @@ function InstalarPage() {
                         href={APK_MEDIAFIRE_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 my-2 rounded-xl bg-emerald-600/90 hover:bg-emerald-500 px-5 py-3 text-xs font-black text-white transition-colors shadow-md border border-white/20 backdrop-blur-md"
+                        className="flex items-center justify-center gap-2 my-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-3 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30"
                       >
                         <Download className="size-4 animate-bounce" />
                         BAIXAR APK UNITV PRO (DIRETO)
@@ -370,7 +370,7 @@ function InstalarPage() {
                   </li>
 
                   <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600/80 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
                       02
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -379,7 +379,7 @@ function InstalarPage() {
                   </li>
 
                   <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600/80 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
                       03
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -393,8 +393,8 @@ function InstalarPage() {
 
             {deviceTab === "pc" && (
               <>
-                <div className="flex items-center gap-3 pb-3 border-b border-white/10">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-amber-500 text-black font-black text-xs shadow-md border border-white/20">
+                <div className="flex items-center gap-3 pb-3 border-b border-white/15">
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-amber-500 text-black font-black text-xs shadow-md">
                     LD
                   </div>
                   <div>
@@ -405,7 +405,7 @@ function InstalarPage() {
 
                 <ol className="space-y-4 pt-1">
                   <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600/80 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
                       01
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -418,7 +418,7 @@ function InstalarPage() {
                   </li>
 
                   <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600/80 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
                       02
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
@@ -432,16 +432,16 @@ function InstalarPage() {
 
           </div>
 
-          {/* RIBBON VERDE ESTILO VIDRO */}
-          <div className="bg-emerald-950/40 p-3.5 border-t border-emerald-500/30 text-center flex items-center justify-center gap-2 backdrop-blur-md">
+          {/* RIBBON VERDE VIDRO */}
+          <div className="bg-emerald-950/60 p-3.5 border-t border-emerald-500/30 text-center flex items-center justify-center gap-2 backdrop-blur-md">
             <CheckCircle2 className="size-4 text-emerald-400 shrink-0" />
             <span className="text-xs font-black text-white">
               Seu teste grátis de 3 dias está liberado 🎉
             </span>
           </div>
 
-          {/* SEÇÃO DE COMPRA ESTILO VIDRO "GOSTOU DO QUE VIU?" */}
-          <div id="plano-mensal" className="p-6 sm:p-10 border-t border-white/10 bg-black/60 backdrop-blur-2xl text-center space-y-6">
+          {/* SEÇÃO DE COMPRA VIDRO "GOSTOU DO QUE VIU?" */}
+          <div id="plano-mensal" className="p-6 sm:p-10 border-t border-white/15 bg-white/[0.03] backdrop-blur-2xl text-center space-y-6">
 
             <div className="space-y-2">
               <span className="text-[11px] font-black text-red-400 uppercase tracking-widest block">
@@ -458,8 +458,8 @@ function InstalarPage() {
 
             {/* 🎬 ESTEIRA HORIZONTAL DE CAPINHAS DE TERROR 2026 COM FADE SUAVE NAS BORDAS */}
             <div className="relative overflow-hidden py-2 my-2 max-w-xl mx-auto rounded-2xl">
-              <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-black/80 to-transparent" />
-              <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-black/80 to-transparent" />
+              <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-[#0d090a] to-transparent" />
+              <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-[#0d090a] to-transparent" />
 
               <div className="flex w-max gap-3 animate-marquee">
                 {HORROR_2026_POSTERS.concat(HORROR_2026_POSTERS).map((p, i) => (
@@ -467,13 +467,13 @@ function InstalarPage() {
                     key={`p-marquee-${i}`}
                     src={img(p, "w185")}
                     alt=""
-                    className="h-28 w-19 rounded-xl object-cover shadow-lg border border-white/20 shrink-0 transition-transform hover:scale-105"
+                    className="h-28 w-19 rounded-xl object-cover shadow-lg border border-red-500/30 shrink-0 transition-transform hover:scale-105"
                   />
                 ))}
               </div>
             </div>
 
-            {/* PREÇO EXIBIDO EM VIDRO E BRANCO */}
+            {/* PREÇO EXIBIDO EM VERMELHO E BRANCO */}
             <div className="py-1">
               <div className="flex items-baseline justify-center gap-2 flex-nowrap whitespace-nowrap">
                 <span className="text-xs font-bold text-white/70">Apenas</span>
@@ -484,8 +484,8 @@ function InstalarPage() {
               </div>
             </div>
 
-            {/* LISTA DE BENEFÍCIOS ESTILO VIDRO */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left max-w-md mx-auto py-2 border-t border-white/10">
+            {/* LISTA DE BENEFÍCIOS VIDRO */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left max-w-md mx-auto py-2 border-t border-white/15">
               {[
                 "1 Tela simultânea",
                 "Catálogo de filmes e séries 2026",
@@ -501,13 +501,13 @@ function InstalarPage() {
               ))}
             </div>
 
-            {/* BOTÃO ASSINATURA VIDRO COM GLOW RED */}
+            {/* BOTÃO ASSINATURA VERMELHO VIDRO */}
             <div className="pt-2">
               <a
                 href="https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_30px_rgba(220,38,38,0.7)] border border-white/20 transition-all hover:scale-105 cursor-pointer w-full sm:w-auto backdrop-blur-md"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_30px_rgba(220,38,38,0.7)] border border-red-400/40 transition-all hover:scale-105 cursor-pointer w-full sm:w-auto backdrop-blur-md"
               >
                 <Zap className="size-4 fill-current" />
                 <span>QUERO CONTINUAR COM O ACESSO</span>
@@ -516,7 +516,7 @@ function InstalarPage() {
             </div>
 
             {/* BADGES SEGURANÇA */}
-            <div className="flex items-center justify-center gap-4 text-[11px] font-bold text-white/70 pt-2 border-t border-white/10">
+            <div className="flex items-center justify-center gap-4 text-[11px] font-bold text-white/70 pt-2 border-t border-white/15">
               <span className="flex items-center gap-1">
                 <ShieldCheck className="size-3.5 text-emerald-400" /> Garantia 7 dias
               </span>
@@ -529,7 +529,7 @@ function InstalarPage() {
           </div>
 
           {/* SUPORTE RODAPÉ VIDRO */}
-          <div className="p-4 bg-black/60 border-t border-white/10 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-3 backdrop-blur-md">
+          <div className="p-4 bg-white/[0.02] border-t border-white/15 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-3 backdrop-blur-md">
             <div className="flex items-center gap-3">
               <HelpCircle className="size-4 text-emerald-400 shrink-0" />
               <p className="text-xs text-white/80 font-medium">Dúvidas na instalação? Fale com nosso suporte via WhatsApp.</p>
@@ -538,7 +538,7 @@ function InstalarPage() {
               href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20instalar"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl bg-emerald-600/90 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-500 transition-colors shrink-0 border border-white/20 backdrop-blur-md"
+              className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-xs font-bold text-white hover:bg-emerald-500 transition-colors shrink-0 border border-emerald-400/30"
             >
               <WhatsAppIcon className="size-3.5 fill-current" />
               SUPORTE WHATSAPP
