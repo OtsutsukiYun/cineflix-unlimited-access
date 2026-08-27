@@ -30,11 +30,11 @@ import { WhatsAppIcon } from "@/components/icons";
 export const Route = createFileRoute("/instalar")({
   head: () => ({
     meta: [
-      { title: "🎁 Teste Grátis 3 Dias — Como Instalar UniTV Pro (Smart TV, Celular, TV Box, PC)" },
+      { title: "🎁 Teste Grátis 3 Dias — Como Instalar UniTV Pro (Smart TV Android, Celular, TV Box, PC)" },
       {
         name: "description",
         content:
-          "Passo a passo simples e rápido para instalar o UniTV Pro e ativar seus 3 dias de teste grátis no seu aparelho Android, TV Box, FireTV, Celular ou Computador.",
+          "Passo a passo simples e rápido para instalar o UniTV Pro em aparelhos com sistema Android (Smart TV Android, TV Box, FireTV, Celular Android ou PC via Emulador).",
       },
     ],
   }),
@@ -311,7 +311,7 @@ function InstalarPage() {
             Como instalar o <span className="text-red-500">UniTV Pro</span>
           </h1>
           <p className="text-xs sm:text-base text-white/80 max-w-md mx-auto leading-relaxed font-medium">
-            Escolha seu dispositivo abaixo para ver o passo a passo de ativação.
+            Compatível com Smart TV Android, TV Box, FireTV, Celular Android e PC (Emulador). Escolha seu aparelho:
           </p>
         </div>
 
@@ -330,7 +330,7 @@ function InstalarPage() {
                 }`}
               >
                 <Tv className="size-5 sm:size-6 text-red-400 shrink-0" />
-                <span>Smart TV, TV Box &amp; Projetor</span>
+                <span>Smart TV Android, TV Box &amp; Projetor</span>
               </button>
 
               <button
@@ -367,7 +367,7 @@ function InstalarPage() {
                 <div className="flex items-center gap-3 pb-3 border-b border-white/15">
                   <DownloaderAppIcon />
                   <div>
-                    <h2 className="text-base sm:text-lg font-black text-white">Smart TV &amp; TV Box</h2>
+                    <h2 className="text-base sm:text-lg font-black text-white">Smart TV Android &amp; TV Box</h2>
                     <p className="text-xs text-white/60">Android TV, FireTV Stick, Xiaomi Mi Stick</p>
                   </div>
                 </div>
@@ -398,7 +398,7 @@ function InstalarPage() {
                       01
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Abra a loja de aplicativos da Smart TV (Play Store) e instale o app{" "}
+                      Abra a loja de aplicativos da sua Smart TV Android (Google Play Store) e instale o app{" "}
                       <a href={DOWNLOADER_PLAYSTORE_URL} target="_blank" rel="noopener noreferrer" className="text-red-400 font-bold underline">
                         Downloader <ExternalLink className="inline size-3" />
                       </a>.
@@ -621,7 +621,7 @@ function InstalarPage() {
             {/* 🌟 LISTA EXATA DE 10 RECURSOS E BENEFÍCIOS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left max-w-lg mx-auto pt-3 pb-1 border-t border-white/15">
               {[
-                "1 Tela simultânea (TV, TV Box, Celular ou PC)",
+                "1 Tela simultânea (Smart TV Android, TV Box, Celular ou PC)",
                 "Milhares de Filmes & Séries",
                 "Lançamentos semanais inéditos de terror & cinema",
                 "Canais Ao Vivo & Esportes sem travar (4K & Full HD)",

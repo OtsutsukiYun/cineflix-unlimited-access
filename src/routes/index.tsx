@@ -511,7 +511,7 @@ function Index() {
           </h1>
 
           <p className="mt-3 text-xs sm:text-base text-white/90 max-w-[340px] sm:max-w-xl mx-auto leading-snug sm:leading-relaxed">
-            Assista a produções exclusivas, animes, doramas e canais ao vivo na sua TV, celular, tablet ou projetor.
+            Assista a produções exclusivas, animes, doramas e canais ao vivo na sua Smart TV Android, TV Box, celular, tablet ou projetor.
           </p>
 
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full max-w-sm sm:max-w-md mx-auto">
@@ -556,7 +556,7 @@ function Index() {
                 <span className="flex items-center gap-2 text-red-400"><Sparkles className="size-3.5" /> Alta Definição de Imagem</span>
                 <span className="flex items-center gap-2"><Film className="size-3.5 text-red-500" /> Cinema & Lançamentos</span>
                 <span className="flex items-center gap-2 text-blue-300"><Tv className="size-3.5 text-blue-400" /> Todos os Lançamentos</span>
-                <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-red-500" /> Smart TV & TV Box</span>
+                <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-red-500" /> Smart TV Android & TV Box</span>
                 <span className="flex items-center gap-2 text-red-300"><RefreshCcw className="size-3.5 text-red-500" /> Atualizações Semanais</span>
                 <span className="flex items-center gap-2"><Zap className="size-3.5 text-red-500" /> Ativação Imediata</span>
               </Fragment>
@@ -985,7 +985,7 @@ function Index() {
                 "Filmes e séries do mundo todo que ainda nem estrearam no Brasil",
                 "Animes, Doramas & Novelas Turcas (disponíveis na aba Séries do App)",
                 "Canais Ao Vivo & Esportes em Full HD e 4K",
-                "Compatível com TV, Box, Stick, Projetor e Celular",
+                "Compatível com Smart TV Android, Box, Stick, Projetor e Celular",
                 "Suporte 7 dias por semana via WhatsApp",
                 "Garantia de reembolso de 7 dias",
                 "Sem fidelidade (Cancele quando quiser)",
@@ -1018,7 +1018,7 @@ function Index() {
                 "Animes, Doramas & Novelas Turcas (disponíveis na aba Séries do App)",
                 "365 dias de acesso total liberado",
                 "Canais Ao Vivo & Esportes em Full HD e 4K",
-                "Compatível com TV, Box, Stick, Projetor e Celular",
+                "Compatível com Smart TV Android, Box, Stick, Projetor e Celular",
                 "Suporte VIP 7 dias por semana via WhatsApp",
                 "Garantia de reembolso de 7 dias",
               ],
@@ -1050,7 +1050,7 @@ function Index() {
                 "Animes, Doramas & Novelas Turcas (disponíveis na aba Séries do App)",
                 "90 dias de acesso total liberado",
                 "Canais Ao Vivo & Esportes em Full HD e 4K",
-                "Compatível com TV, Box, Stick, Projetor e Celular",
+                "Compatível com Smart TV Android, Box, Stick, Projetor e Celular",
                 "Suporte 7 dias por semana via WhatsApp",
                 "Garantia de reembolso de 7 dias",
               ],

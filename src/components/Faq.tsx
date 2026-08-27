@@ -12,7 +12,7 @@ const PERGUNTAS = [
   },
   {
     q: "O app é compatível com quais aparelhos?",
-    a: "O UniTV Pro é compatível com Smart TV Android, TV Box, Mi Stick Xiaomi, FireTV Amazon, celular Android, tablets e projetores Android. Para assistir no computador ou notebook Windows, é necessário utilizar um emulador Android — recomendamos o LDPlayer por ser leve e rápido (evite o BlueStacks).",
+    a: "O UniTV Pro é compatível exclusivamente com sistema Android: Smart TV Android, TV Box Android, Mi Stick Xiaomi, FireTV Amazon, celular Android, tablets e projetores Android. Para assistir no computador ou notebook Windows, é necessário utilizar um emulador Android — recomendamos o LDPlayer por ser leve e rápido (evite o BlueStacks).",
   },
   {
     q: "Posso assistir em vários aparelhos ao mesmo tempo?",
@@ -27,7 +27,7 @@ const PERGUNTAS = [
     a: "Para realizar um teste grátis, basta instalar o aplicativo em seu dispositivo Android! Os testes são disponibilizados automaticamente através do dispositivo e da conta, podendo ser realizados uma única vez por aparelho/usuário.",
   },
   {
-    q: "Como instalar o UniTV Pro na Smart TV ou TV Stick?",
+    q: "Como instalar o UniTV Pro na Smart TV Android ou TV Stick?",
     a: "MÉTODO 1 (Downloader): Baixe o app Downloader na loja de aplicativos, abra-o e digite o código 1089401. Siga as instruções na tela. — MÉTODO 2 (NtDown): Baixe o app NtDown na Play Store e coloque o código 94596.",
   },
   {
