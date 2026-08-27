@@ -139,6 +139,24 @@ function BemVindoPage() {
                     Pronto para instalar
                   </span>
                 </div>
+
+                {/* IMAGEM E GUIA DE ONDE CLICAR NO MEDIAFIRE */}
+                <div className="mt-4 overflow-hidden rounded-2xl border border-blue-500/40 bg-[#09101d] p-4 sm:p-5 shadow-2xl relative">
+                  <div className="flex items-center gap-2 text-xs font-extrabold text-blue-400 uppercase mb-3">
+                    <ExternalLink className="size-4 shrink-0" />
+                    <span>Onde clicar na tela do MediaFire:</span>
+                  </div>
+                  <div className="relative mx-auto overflow-hidden rounded-xl border border-white/20 shadow-[0_0_25px_rgba(37,99,235,0.4)] bg-black/60 p-2">
+                    <img
+                      src="/mediafire_tutorial.png"
+                      alt="Onde clicar no MediaFire para baixar o UniTV Pro"
+                      className="w-full object-contain max-h-[220px] rounded-lg"
+                    />
+                    <div className="mt-2 text-center text-xs text-blue-300 font-bold bg-blue-950/70 p-2 rounded-lg border border-blue-500/30">
+                      👈 Clique na <strong>barra azul retangular grande</strong> (Download 37.17MB)
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
