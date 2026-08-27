@@ -539,7 +539,7 @@ function InstalarPage() {
               </div>
             </div>
 
-            {/* 💰 PREÇO EXIBIDO EM TAMANHO MAIOR */}
+            {/* 💰 PREÇO EXIBIDO EM TAMANHO GIGANTE */}
             <div className="py-2">
               <span className="text-xs font-bold text-red-400 uppercase tracking-widest block mb-1">
                 30 DIAS DE ACESSO COMPLETO
@@ -553,19 +553,25 @@ function InstalarPage() {
               </div>
             </div>
 
-            {/* LISTA DE BENEFÍCIOS VIDRO */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left max-w-md mx-auto py-2 border-t border-white/15">
+            {/* 🌟 LISTA COMPLETA DE RECURSOS E BENEFÍCIOS (TODAS AS FEATURES) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left max-w-lg mx-auto py-3 border-t border-white/15">
               {[
-                "1 Tela simultânea",
-                "Catálogo de filmes e séries 2026",
-                "Lançamentos semanais de terror",
-                "Canais Ao Vivo & Esportes 4K",
-                "Sem fidelidade (Cancele quando quiser)",
-                "Garantia de reembolso de 7 dias",
+                "1 Tela simultânea (TV, TV Box, Celular ou PC)",
+                "+60.000 Filmes & Séries em HD e 4K Ultra HD",
+                "Lançamentos semanais inéditos de terror & cinema",
+                "Canais Ao Vivo & Esportes sem travar (4K/FHD)",
+                "Animes, Doramas & Novelas Turcas atualizadas",
+                "Programação Infantil & Desenhos Dublados",
+                "Qualidade de Imagem 4K e Som Digital 5.1",
+                "Guia de Programação EPG & Replay de 7 dias",
+                "Suporte VIP 7 dias por semana via WhatsApp",
+                "Garantia incondicional de reembolso por 7 dias",
+                "Sem fidelidade ou multa (Cancele quando quiser)",
+                "Ativação instantânea logo após o pagamento",
               ].map((f, idx) => (
-                <div key={idx} className="flex items-center gap-2">
-                  <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0" />
-                  <span className="text-xs text-white/90 font-medium">{f}</span>
+                <div key={idx} className="flex items-start gap-2.5">
+                  <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="text-xs text-white/90 font-medium leading-relaxed">{f}</span>
                 </div>
               ))}
             </div>
