@@ -538,6 +538,23 @@ function InstalarPage() {
                       <CodeCopyBox code="1089401" onCopyClick={handleCopyTrigger} />
                     </div>
                   </li>
+
+                  <li className="flex items-start gap-3">
+                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                      03
+                    </span>
+                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
+                      Ou baixe o APK oficial para instalar direto no emulador:
+                      <a
+                        href={APK_MEDIAFIRE_URL}
+                        onClick={handleApkDownloadClick}
+                        className="flex items-center justify-center gap-2 my-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-3 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30 cursor-pointer"
+                      >
+                        <Download className="size-4 animate-bounce" />
+                        BAIXAR APK UNITV PRO (DIRETO)
+                      </a>
+                    </div>
+                  </li>
                 </ol>
               </>
             )}
