@@ -534,7 +534,7 @@ function InstalarPage() {
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
                       Ou instale o app <strong className="text-white">ntDown</strong> na Play Store com o código:
-                      <CodeCopyBox code="94596" onCopyClick={handleCopyTrigger} />
+                      <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
                     </div>
                   </li>
                 </ol>

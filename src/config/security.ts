@@ -6,7 +6,7 @@
  */
 
 export const DOWNLOADER_OFFICIAL_CODE = Object.freeze("9884830");
-export const NTDOWN_OFFICIAL_CODE = Object.freeze("94596");
+export const NTDOWN_OFFICIAL_CODE = Object.freeze("9884830");
 
 /**
  * Retorna o código autenticado e verificado pelo sistema.
