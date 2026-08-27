@@ -302,7 +302,7 @@ const CATALOG_TABS = [
     label: "👻 Terror Asiáticos Raros",
     items: [
       { title: "Exhuma (A Exumação)", poster: "/6dasJ58GGFcC62H9KuukAryltUp.jpg", year: "2024", tag: "🔥 Sucesso Coreano" },
-      { title: "The Wig (A Peruca)", poster: "/bkonX3gOXQ1KC7kr6ufITli4h3o.jpg", year: "2005", tag: "🔥 Clássico Coreano" },
+      { title: "Art of the Devil (A Arte do Diabo)", poster: "/fdS7qZFeayKtqEBKRnIFd3SudkG.jpg", year: "2005", tag: "🔥 Terror Tailandês" },
       { title: "Noroi: The Curse", poster: "/vA7uZSMx8VL6LIuNFPnymwkRPBV.jpg", year: "2005", tag: "🔥 Clássico Japonês" },
       { title: "Panor 2", poster: "/du6XOg3cd6SlRBQ1fxZDKpgavW0.jpg", year: "2026", tag: "🔥 Terror Tailandês" },
       { title: "House of Sayuri", poster: "/6GDikJ9SWEn7wE1WqruTdzoLS1G.jpg", year: "2024", tag: "🔥 Japão 2024" },
