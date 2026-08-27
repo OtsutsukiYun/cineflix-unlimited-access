@@ -245,8 +245,9 @@ const CATALOG_TABS = [
     id: "em-alta",
     label: "🔥 Em Alta",
     items: [
-      { title: "Batman: Knightfall - Parte 1", poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg", year: "2026", tag: "🔥 DC 2026" },
       { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1" },
+      { title: "Motor City", poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", year: "2026", tag: "🔥 Ação 2026" },
+      { title: "Batman: Knightfall - Parte 1", poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg", year: "2026", tag: "🔥 DC 2026" },
       { title: "A Morte do Demônio: Em Chamas", poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg", year: "2026", tag: "🔥 Top 2" },
       { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Top 3" },
       { title: "Ghost in the Cell", poster: "/9DugI1HXkRAHQsjVMDnyTT8hQZx.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
