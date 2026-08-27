@@ -352,6 +352,10 @@
   animation: marquee 95s linear infinite;
 }
 
+@utility animate-marquee-slow {
+  animation: marquee 220s linear infinite;
+}
+
 @keyframes marquee-reverse {
   from {
     transform: translateX(-50%);

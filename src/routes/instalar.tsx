@@ -62,7 +62,7 @@ const HORROR_2026_POSTERS = [
   "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
   "/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg", // Nosferatu
   "/fr96XzlzsONrQrGfdLMiwtQjott.jpg", // Heretic
-  "/wVYREutTvI2tmxr6ujrHT704wGF.jpg", // The Conjuring
+  "/omV2IW2OlFTSw6Hih13hz6lFdvP.jpg", // A Freira 2
   "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
   "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo
   "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
@@ -618,7 +618,7 @@ function InstalarPage() {
               <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-[#0d090a] to-transparent" />
               <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-[#0d090a] to-transparent" />
 
-              <div className="flex w-max gap-3 animate-marquee">
+              <div className="flex w-max gap-3 animate-marquee-slow">
                 {HORROR_2026_POSTERS.concat(HORROR_2026_POSTERS, HORROR_2026_POSTERS).map((p, i) => (
                   <img
                     key={`p-marquee-${i}`}
