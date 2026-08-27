@@ -319,23 +319,23 @@ function InstalarPage() {
         <div className="rounded-3xl border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden">
 
           {/* ABAS DE DISPOSITIVO VIDRO */}
-          <div className="p-3 sm:p-4 bg-white/[0.04] border-b border-white/15 backdrop-blur-md">
-            <div className="grid grid-cols-3 gap-2">
+          <div className="p-2.5 sm:p-4 bg-white/[0.04] border-b border-white/15 backdrop-blur-md">
+            <div className="grid grid-cols-3 gap-1.5 sm:gap-2.5 items-stretch">
               <button
                 onClick={() => setDeviceTab("tv")}
-                className={`flex items-center justify-center gap-2 rounded-xl py-2.5 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 rounded-xl p-2 sm:py-3 sm:px-4 text-[11px] sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[68px] sm:min-h-0 ${
                   deviceTab === "tv"
                     ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                 }`}
               >
                 <Tv className="size-5 sm:size-6 text-red-400 shrink-0" />
-                <span>Smart TV Android, TV Box &amp; Projetor</span>
+                <span>Smart TV Android &amp; TV Box</span>
               </button>
 
               <button
                 onClick={() => setDeviceTab("mobile")}
-                className={`flex items-center justify-center gap-2 rounded-xl py-2.5 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 rounded-xl p-2 sm:py-3 sm:px-4 text-[11px] sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[68px] sm:min-h-0 ${
                   deviceTab === "mobile"
                     ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
@@ -347,14 +347,14 @@ function InstalarPage() {
 
               <button
                 onClick={() => setDeviceTab("pc")}
-                className={`flex items-center justify-center gap-2 rounded-xl py-2.5 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2.5 rounded-xl p-2 sm:py-3 sm:px-4 text-[11px] sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[68px] sm:min-h-0 ${
                   deviceTab === "pc"
                     ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                 }`}
               >
                 <Monitor className="size-5 sm:size-6 text-amber-400 shrink-0" />
-                <span>Computador (via emulação)</span>
+                <span>Computador (Emulador)</span>
               </button>
             </div>
           </div>
