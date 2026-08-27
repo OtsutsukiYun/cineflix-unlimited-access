@@ -30,11 +30,11 @@ import { WhatsAppIcon } from "@/components/icons";
 export const Route = createFileRoute("/instalar")({
   head: () => ({
     meta: [
-      { title: "🎁 Teste Grátis 3 Dias — Como Instalar UniTV Pro (Smart TV Android, Celular, TV Box, PC)" },
+      { title: "🎁 Teste Grátis 3 Dias — Como Instalar UniTV Pro (Smart TV Android, Celular e Tablet, TV Box, PC)" },
       {
         name: "description",
         content:
-          "Passo a passo simples e rápido para instalar o UniTV Pro em aparelhos com sistema Android (Smart TV Android, TV Box, FireTV, Celular Android ou PC via Emulador).",
+          "Passo a passo simples e rápido para instalar o UniTV Pro em aparelhos com sistema Android (Smart TV Android, TV Box, FireTV, Celular e Tablet Android ou PC via Emulador).",
       },
     ],
   }),
@@ -311,7 +311,7 @@ function InstalarPage() {
             Como instalar o <span className="text-red-500">UniTV Pro</span>
           </h1>
           <p className="text-xs sm:text-base text-white/80 max-w-md mx-auto leading-relaxed font-medium">
-            Compatível com Smart TV Android, TV Box, FireTV, Celular Android e PC (Emulador). Escolha seu aparelho:
+            Compatível com Smart TV Android, TV Box, FireTV, Celular e Tablet Android e PC (Emulador). Escolha seu aparelho:
           </p>
         </div>
 
@@ -342,7 +342,7 @@ function InstalarPage() {
                 }`}
               >
                 <Smartphone className="size-5 sm:size-6 text-emerald-400 shrink-0" />
-                <span>Celular</span>
+                <span>Celular e Tablet</span>
               </button>
 
               <button
@@ -443,8 +443,8 @@ function InstalarPage() {
                     <AndroidIcon className="size-5" />
                   </div>
                   <div>
-                    <h2 className="text-base sm:text-lg font-black text-white">Celular Android</h2>
-                    <p className="text-xs text-white/60">Download direto do APK oficial</p>
+                    <h2 className="text-base sm:text-lg font-black text-white">Celular e Tablet Android</h2>
+                    <p className="text-xs text-white/60">Download direto do APK oficial para Smartphones e Tablets Android</p>
                   </div>
                 </div>
 
@@ -452,13 +452,13 @@ function InstalarPage() {
                   <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs font-bold text-white bg-white/[0.04]">
                     <div className="flex items-center gap-2">
                       <Play className="size-3.5 text-red-500 fill-red-500" />
-                      <span>Vídeo Tutorial Celular</span>
+                      <span>Vídeo Tutorial Celular e Tablet</span>
                     </div>
                   </div>
                   <div className="relative aspect-video w-full">
                     <iframe
                       src="https://www.youtube.com/embed/Ge1WVaiOQxQ"
-                      title="Vídeo Tutorial Celular"
+                      title="Vídeo Tutorial Celular e Tablet"
                       className="size-full border-0"
                       allowFullScreen
                     />
