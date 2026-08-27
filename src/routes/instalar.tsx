@@ -460,8 +460,8 @@ function InstalarPage() {
             {deviceTab === "pc" && (
               <>
                 <div className="flex items-center gap-3 pb-3 border-b border-white/15">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-amber-500 text-black font-black text-xs shadow-md">
-                    LD
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 text-black font-bold shadow-md">
+                    <Monitor className="size-5" />
                   </div>
                   <div>
                     <h2 className="text-base sm:text-lg font-black text-white">Computador / PC</h2>
@@ -553,17 +553,17 @@ function InstalarPage() {
               </div>
             </div>
 
-            {/* 🌟 LISTA EXATA DE 10 RECURSOS E BENEFÍCIOS (SEM NÚMEROS DE QUANTIDADE) */}
+            {/* 🌟 LISTA EXATA DE 10 RECURSOS E BENEFÍCIOS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-left max-w-lg mx-auto py-3 border-t border-white/15">
               {[
                 "1 Tela simultânea (TV, TV Box, Celular ou PC)",
-                "Catálogo completo de Filmes & Séries em HD e 4K",
+                "Milhares de Filmes & Séries em alta definição (HD)",
                 "Lançamentos semanais inéditos de terror & cinema",
-                "Canais Ao Vivo & Esportes sem travar (4K/FHD)",
+                "Canais Ao Vivo & Esportes sem travar (Full HD/HD)",
                 "Animes, Doramas & Novelas Turcas atualizadas",
                 "Programação Infantil & Desenhos Dublados",
                 "Guia de Programação EPG & Replay de 7 dias",
-                "Suporte VIP 7 dias por semana via WhatsApp",
+                "Suporte VIP via WhatsApp",
                 "Garantia incondicional de reembolso por 7 dias",
                 "Sem fidelidade ou multa (Cancele quando quiser)",
               ].map((f, idx) => (
