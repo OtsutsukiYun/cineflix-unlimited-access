@@ -18,7 +18,7 @@ import {
   HelpCircle,
   ArrowRight,
   Flame,
-  ShieldAlert,
+  Sparkles,
   X,
 } from "lucide-react";
 import { img } from "@/data/catalog";
@@ -80,7 +80,7 @@ function AndroidIcon({ className = "size-5" }: { className?: string }) {
   );
 }
 
-// 🛡️ POPUP DE PERMISSÃO DO ANDROID / FONTES DESCONHECIDAS
+// 💡 POPUP DE DICA AMIGÁVEL DA INSTALAÇÃO NO ANDROID
 function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   if (!isOpen) return null;
 
@@ -98,27 +98,27 @@ function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
           <X className="size-4" />
         </button>
 
-        <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/30">
-          <ShieldAlert className="size-7" />
+        <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+          <Sparkles className="size-7 animate-pulse" />
         </div>
 
         <h3 className="text-xl sm:text-2xl font-black text-white mb-2">
-          Aviso de Permissão Android 🛡️
+          Dica de Instalação 💡
         </h3>
 
-        <p className="text-xs sm:text-sm text-white/80 leading-relaxed mb-6">
-          Se o seu aparelho solicitar permissão para{" "}
-          <strong className="text-amber-300">"Instalar de fontes desconhecidas"</strong>, clique em{" "}
-          <strong className="text-white">Permitir</strong> ou <strong className="text-white">Autorizar</strong>.
+        <p className="text-xs sm:text-sm text-white/85 leading-relaxed mb-6">
+          Ao instalar, caso seu aparelho peça permissão para{" "}
+          <strong className="text-emerald-300 font-black">"Fontes Desconhecidas"</strong>, basta clicar em{" "}
+          <strong className="text-white">Permitir</strong> ou <strong className="text-white">Autorizar</strong>. 🙂
           <br /><br />
-          Isso acontece normalmente porque o aplicativo <strong className="text-red-400">UniTV Pro</strong> é instalado de forma direta via Downloader fora da Play Store oficial.
+          Fique tranquilo! Isso é super normal no Android porque o <strong className="text-red-400 font-bold">UniTV Pro</strong> é instalado diretamente via Downloader fora da Play Store.
         </p>
 
         <button
           onClick={onClose}
           className="w-full rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 py-3.5 text-xs font-black text-white shadow-lg transition-all hover:scale-[1.02] cursor-pointer uppercase tracking-wider border border-white/20"
         >
-          ENTENDI, CONTINUAR
+          ENTENDI, OBRIGADO!
         </button>
       </div>
     </div>
@@ -183,7 +183,7 @@ function InstalarPage() {
   const [showPermissionModal, setShowPermissionModal] = useState(false);
 
   const handleCopyTrigger = () => {
-    // Exibe o popup na primeira vez que copia por sessão
+    // Exibe a dica na primeira vez que copia por sessão
     if (!sessionStorage.getItem("android_permission_pop_seen")) {
       setShowPermissionModal(true);
       sessionStorage.setItem("android_permission_pop_seen", "1");
@@ -193,7 +193,7 @@ function InstalarPage() {
   return (
     /* 🖤 FUNDO PRETO OBSIDIANA COM RETÂNGULOS EM VIDRO LUMINOSO */
     <div className="relative min-h-screen bg-[#060606] text-white overflow-x-hidden">
-      {/* POPUP DE PERMISSÃO DO ANDROID */}
+      {/* POPUP DE DICA DA INSTALAÇÃO NO ANDROID */}
       <PermissionModal
         isOpen={showPermissionModal}
         onClose={() => setShowPermissionModal(false)}
