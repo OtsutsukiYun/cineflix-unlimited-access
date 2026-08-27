@@ -38,7 +38,7 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-// 100% VERIFIED UNIQUE WORKING TMDB POSTERS (12 IN ROW 1, 12 IN ROW 2 - ZERO REPETITIONS)
+// 100% VERIFIED UNIQUE WORKING TMDB POSTERS
 const ROW_1_POSTERS = [
   "/ju10W5gl3PPK3b7TjEmVOZap51I.jpg", // Terrifier 3
   "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg", // Smile 2
@@ -55,6 +55,7 @@ const ROW_1_POSTERS = [
 ];
 
 const ROW_2_POSTERS = [
+  "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", // Martyrs
   "/7vPAVPKYexQVmvC578wPLn2CGCL.jpg", // The Grudge
   "/6WxhEvFsauuACfv8HyoVX6mZKFj.jpg", // Final Destination
   "/ttquyxStEEctzghtA2f4PUGprDr.jpg", // Dawn of the Dead
@@ -64,13 +65,13 @@ const ROW_2_POSTERS = [
   "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", // Drag Me to Hell
   "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
   "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water
-  "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", // Martyrs
   "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo
   "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
 ];
 
-// EXCLUSIVAMENTE FILMES LANÇAMENTOS 2026 NA SEÇÃO DE COMPRA
+// EXCLUSIVAMENTE FILMES LANÇAMENTOS 2026 DE TERROR (INCLUINDO MARTYRS, TERRIFIER 3, SMILE 2, ALIEN, SUBSTANCE, NOSFERATU)
 const PURCHASE_MARQUEE_POSTERS = [
+  "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", // Martyrs
   "/ju10W5gl3PPK3b7TjEmVOZap51I.jpg", // Terrifier 3 (2026)
   "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg", // Smile 2 (2026)
   "/2uSWRTtCG336nuBiG8jOTEUKSy8.jpg", // Alien Romulus (2026)
@@ -79,10 +80,9 @@ const PURCHASE_MARQUEE_POSTERS = [
   "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
   "/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg", // Nosferatu (2026)
   "/fr96XzlzsONrQrGfdLMiwtQjott.jpg", // Heretic (2026)
-  "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg", // Deadpool & Wolverine (2026)
-  "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg", // Inside Out 2
-  "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg", // Oppenheimer
   "/wVYREutTvI2tmxr6ujrHT704wGF.jpg", // The Conjuring
+  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah (2026)
+  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo
 ];
 
 const HERO_SLIDESHOW = [
@@ -99,7 +99,7 @@ const HERO_SLIDESHOW = [
     backdrop: "/iYqSQaWDttQIQzsxg9xHyg0bttG.jpg",
   },
   {
-    title: "Deadpool & Wolverine em 4K",
+    title: "Nosferatu & Terror Clássico",
     backdrop: "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
   },
 ];
@@ -628,15 +628,19 @@ function InstalarPage() {
                 </p>
               </div>
 
-              {/* 🎬 ESTEIRA EXCLUSIVA DE FILMES LANÇAMENTOS 2026 PASSANDO CONTINUAMENTE */}
-              <div className="overflow-hidden py-2 my-1 -mx-6 sm:-mx-10">
-                <div className="flex w-max gap-3 animate-marquee">
+              {/* 🎬 ESTEIRA DE CAPINHAS DE TERROR LANÇAMENTOS 2026 COM MARGEM PROPORCIONAL E SUAVE FADE NAS BORDAS */}
+              <div className="relative overflow-hidden py-3 my-2 max-w-xl mx-auto rounded-2xl">
+                {/* FADE GRADIENTE NAS ESQUINAS ESQUERDA E DIREITA PARA ENTRADA/SAÍDA SUAVE */}
+                <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 z-10 bg-gradient-to-r from-black to-transparent" />
+                <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 z-10 bg-gradient-to-l from-black to-transparent" />
+
+                <div className="flex w-max gap-3.5 animate-marquee">
                   {PURCHASE_MARQUEE_POSTERS.concat(PURCHASE_MARQUEE_POSTERS).map((p, i) => (
                     <img
                       key={`p-marquee-${i}`}
                       src={img(p, "w185")}
                       alt=""
-                      className="h-28 w-19 rounded-xl object-cover shadow-2xl border border-white/20 shrink-0 transition-transform hover:scale-105"
+                      className="h-28 w-19 rounded-xl object-cover shadow-2xl border border-white/25 shrink-0 transition-transform hover:scale-105"
                     />
                   ))}
                 </div>
