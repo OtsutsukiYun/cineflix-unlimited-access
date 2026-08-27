@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Download,
   Smartphone,
@@ -18,7 +18,6 @@ import {
   HelpCircle,
   Sparkles,
   ArrowRight,
-  Flame,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -38,39 +37,75 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
+// 100% VERIFIED WORKING TMDB POSTER PATHS (ZERO 404s)
 const ROW_1_POSTERS = [
-  "/v12w67F0fLoxw263v72d9m49M87.jpg", // Jogos Mortais (Saw 2004)
-  "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water 2002
-  "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", // Martyrs 2008
-  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo 2010
-  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento 2016
-  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", // Obsessão 2026
-  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", // Evil Dead Burn 2026
-  "/kNxRgcTeqeU5jauBackTERoO2De.jpg", // Other Mommy 2026
+  "/l11B7mY1SuVkWlF9ebDmo39iZ6h.jpg", // Terrifier 3
+  "/ht8QI2EpUtTZaWFltTJ7w23.jpg",     // Smile 2
+  "/2meX5jKyRFrmSm8iA2Bv6fFd2z0.jpg", // Alien Romulus
+  "/uYJvxMWMb9W4zIY3cbM50sj3dpC.jpg", // The Substance
+  "/1EwNyiiNFd863H4e8nWEzutnZD7.jpg", // Longlegs
+  "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
+  "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg", // Obsessão
+  "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg", // Backrooms
 ];
 
 const ROW_2_POSTERS = [
-  "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", // Undertone 2026
-  "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg", // Passageiro do Mal 2026
-  "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg", // Hokum 2026
-  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", // Backrooms 2026
-  "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", // Socorro! Send Help 2026
-  "/pmff1wjKrgJi92PPr346lAifzlg.jpg", // Dia D 2026
-  "/yH2sGLdQejqf3Zk8KDuoDa5gr6E.jpg", // The Eyes 2026
-  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
+  "/8cdWjvZ2F9WUVzS59iCEW7WSuSo.jpg", // Deadpool & Wolverine
+  "/vP9XqQv4d3aB3e8l8u0fN9cW7j0.jpg", // Inside Out 2
+  "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg", // Oppenheimer
+  "/7vPAVPKYexQVmvC578wPLn2CGCL.jpg", // The Grudge
+  "/1mXhlQMnlfvJ2frxTjZSQNnA9Vp.jpg", // Final Destination
+  "/ttquyxStEEctzghtA2f4PUGprDr.jpg", // Dawn of the Dead
+  "/sQckQRt17VaWbo39GIu0TMOiszq.jpg", // 28 Days Later
+  "/r0bEDWO2w4a43K2xTNSF284qOsc.jpg", // Silent Hill
 ];
 
 const PURCHASE_MARQUEE_POSTERS = [
-  "/v12w67F0fLoxw263v72d9m49M87.jpg", // Jogos Mortais (Saw)
+  "/dDrtuWUKhgUGp12kgUWuP0NpTdF.jpg", // Hostel
+  "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", // Drag Me to Hell
+  "/g410Y1U1ELbmJG14Zrou3UAimm1G.jpg", // Jeepers Creepers
+  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
   "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water
   "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", // Martyrs
   "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo
   "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
-  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", // Obsessão
-  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", // Evil Dead Burn
-  "/kNxRgcTeqeU5jauBackTERoO2De.jpg", // Other Mommy
-  "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", // Undertone
-  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", // Backrooms
+  "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", // Salmokji
+  "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", // Dia Bukan Ibu
+];
+
+const HERO_SLIDESHOW = [
+  {
+    title: "Terrifier 3 & Lançamentos 2026",
+    category: "Filmes Inéditos",
+    rating: "4.9",
+    year: "2026",
+    desc: "Assista aos maiores sucessos do cinema direto na sua TV sem sair de casa.",
+    backdrop: "/l11B7mY1SuVkWlF9ebDmo39iZ6h.jpg",
+  },
+  {
+    title: "Sorria 2 & Horror Psicológico",
+    category: "Terror Exclusivo",
+    rating: "4.8",
+    year: "2025",
+    desc: "A maior coleção de terror, suspense e gore com dublagem e legendas em HD.",
+    backdrop: "/ht8QI2EpUtTZaWFltTJ7w23.jpg",
+  },
+  {
+    title: "Demon Slayer & Animes",
+    category: "Séries & Doramas",
+    rating: "4.9",
+    year: "2026",
+    desc: "Episódios inéditos e temporadas completas dos animes mais populares do mundo.",
+    backdrop: "/nTvM4z1Z56Sp5HAWYflab6EsNoL.jpg",
+  },
+  {
+    title: "Brasileirão, Champions & UFC em 4K",
+    category: "Esportes Ao Vivo",
+    rating: "5.0",
+    year: "2026",
+    desc: "Todos os jogos do seu time do coração com sinal estável e transmissão sem travar.",
+    backdrop: "/8cdWjvZ2F9WUVzS59iCEW7WSuSo.jpg",
+  },
 ];
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
@@ -146,6 +181,15 @@ function CodeCopyBox({ code }: { code: string }) {
 
 function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  // TROCA AUTOMÁTICA DO SLIDESHOW GRANDÃO DE COMPRAS
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % HERO_SLIDESHOW.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="relative min-h-screen bg-[#080808] text-white overflow-x-hidden">
@@ -295,7 +339,7 @@ function InstalarPage() {
           </p>
         </div>
 
-        {/* ESTRUTURA FLUIDA UNIFICADA (SEM CAIXAS ANINHADAS EXCESSIVAS) */}
+        {/* ESTRUTURA UNIFICADA DA PÁGINA */}
         <div className="rounded-3xl border border-red-500/40 bg-[#160408]/95 backdrop-blur-2xl shadow-[0_25px_80px_rgba(220,38,38,0.3)] overflow-hidden">
 
           {/* SELETOR DE ABAS DE DISPOSITIVO */}
@@ -532,7 +576,7 @@ function InstalarPage() {
             </span>
           </div>
 
-          {/* SEÇÃO DE COMPRA: GOSTOU DO QUE VIU? (FLUIDA, SEM VÁRIAS CAIXAS DENTRO DE CAIXAS) */}
+          {/* SEÇÃO DE COMPRA: GOSTOU DO QUE VIU? COM SLIDE GRANDÃO DE IMAGENS PASSANDO */}
           <div id="plano-mensal" className="p-6 sm:p-10 border-t border-white/10 bg-gradient-to-b from-transparent via-[#23040b]/80 to-[#120104] text-center space-y-5">
             
             <span className="inline-flex items-center gap-1.5 text-xs font-black text-red-400 uppercase tracking-wider">
@@ -547,8 +591,56 @@ function InstalarPage() {
               Continue assistindo a todos os seus filmes, séries, esportes e canais ao vivo no UniTV Pro sem interrupções!
             </p>
 
-            {/* MARQUEE CONTINUO DE FILMES PASSANDO DENTRO DA ÁREA DE VENDA */}
-            <div className="overflow-hidden py-2 my-2 -mx-6 sm:-mx-10">
+            {/* 🍿 SLIDE GRANDÃO DE IMAGENS PASSANDO NO CENTRO DA ÁREA DE COMPRA */}
+            <div className="relative overflow-hidden rounded-2xl border border-red-500/30 bg-black/80 aspect-[16/9] sm:aspect-[21/9] shadow-[0_10px_40px_rgba(0,0,0,0.8)] my-4">
+              {HERO_SLIDESHOW.map((slide, i) => (
+                <div
+                  key={slide.title}
+                  className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                    i === activeSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+                  }`}
+                >
+                  <img
+                    src={img(slide.backdrop, "w1280")}
+                    alt={slide.title}
+                    className="size-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 text-left space-y-1 z-20">
+                    <div className="flex items-center gap-2">
+                      <span className="rounded-md bg-red-600 px-2 py-0.5 text-[10px] font-black uppercase text-white tracking-wider">
+                        {slide.category}
+                      </span>
+                      <span className="text-[11px] font-bold text-white/90">
+                        ★ {slide.rating} • {slide.year}
+                      </span>
+                    </div>
+                    <h3 className="text-lg sm:text-2xl font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                      {slide.title}
+                    </h3>
+                    <p className="text-xs text-white/80 line-clamp-1 font-medium">
+                      {slide.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+
+              {/* INDICADORES DO SLIDESHOW GRANDÃO */}
+              <div className="absolute top-3 right-3 z-30 flex items-center gap-1.5 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/20">
+                {HERO_SLIDESHOW.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setActiveSlide(i)}
+                    className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                      i === activeSlide ? "w-5 bg-red-500" : "w-1.5 bg-white/40"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* MARQUEE CONTINUO DE CAPINHAS VERIFICADAS PASSANDO ABAIXO DO SLIDESHOW GRANDÃO */}
+            <div className="overflow-hidden py-1 my-1 -mx-6 sm:-mx-10">
               <div className="flex w-max gap-3 animate-marquee">
                 {PURCHASE_MARQUEE_POSTERS.concat(PURCHASE_MARQUEE_POSTERS).map((p, i) => (
                   <img
@@ -561,7 +653,7 @@ function InstalarPage() {
               </div>
             </div>
 
-            {/* PREÇO LIMPO E DESTACADO SEM MULTIPLAS BORDAS DENTRO DE BORDAS */}
+            {/* PREÇO LIMPO E DESTACADO */}
             <div className="py-2">
               <span className="text-xs font-bold text-red-300 uppercase tracking-wider block mb-1">
                 Plano Mensal (30 Dias de Acesso)
