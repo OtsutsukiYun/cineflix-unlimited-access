@@ -18,6 +18,8 @@ import {
   HelpCircle,
   ArrowRight,
   Flame,
+  ShieldAlert,
+  X,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -78,12 +80,60 @@ function AndroidIcon({ className = "size-5" }: { className?: string }) {
   );
 }
 
-// 💎 RETÂNGULO DO CÓDIGO ESTILO VIDRO LUMINOSO
-function CodeCopyBox({ code }: { code: string }) {
+// 🛡️ POPUP DE PERMISSÃO DO ANDROID / FONTES DESCONHECIDAS
+function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
+      {/* BACKDROP ESCURO */}
+      <div className="absolute inset-0 bg-black/85 backdrop-blur-md" onClick={onClose} />
+
+      {/* CARD DO POPUP */}
+      <div className="relative z-10 w-full max-w-md rounded-3xl border border-white/20 bg-[#0e0e0e] p-6 sm:p-8 text-center shadow-[0_25px_80px_rgba(0,0,0,0.9)] animate-in fade-in zoom-in-95 duration-200">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors"
+        >
+          <X className="size-4" />
+        </button>
+
+        <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/30">
+          <ShieldAlert className="size-7" />
+        </div>
+
+        <h3 className="text-xl sm:text-2xl font-black text-white mb-2">
+          Aviso de Permissão Android 🛡️
+        </h3>
+
+        <p className="text-xs sm:text-sm text-white/80 leading-relaxed mb-6">
+          Se o seu aparelho solicitar permissão para{" "}
+          <strong className="text-amber-300">"Instalar de fontes desconhecidas"</strong>, clique em{" "}
+          <strong className="text-white">Permitir</strong> ou <strong className="text-white">Autorizar</strong>.
+          <br /><br />
+          Isso acontece normalmente porque o aplicativo <strong className="text-red-400">UniTV Pro</strong> é instalado de forma direta via Downloader fora da Play Store oficial.
+        </p>
+
+        <button
+          onClick={onClose}
+          className="w-full rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 py-3.5 text-xs font-black text-white shadow-lg transition-all hover:scale-[1.02] cursor-pointer uppercase tracking-wider border border-white/20"
+        >
+          ENTENDI, CONTINUAR
+        </button>
+      </div>
+    </div>
+  );
+}
+
+// 💎 RETÂNGULO DO CÓDIGO ESTILO VIDRO COM TRIGGER DE POPUP NA PRIMEIRA CÓPIA
+function CodeCopyBox({ code, onCopyClick }: { code: string; onCopyClick?: () => void }) {
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
+    if (onCopyClick) {
+      onCopyClick();
+    }
     setTimeout(() => setCopied(false), 2500);
   };
 
@@ -130,10 +180,25 @@ function CodeCopyBox({ code }: { code: string }) {
 
 function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
+  const [showPermissionModal, setShowPermissionModal] = useState(false);
+
+  const handleCopyTrigger = () => {
+    // Exibe o popup na primeira vez que copia por sessão
+    if (!sessionStorage.getItem("android_permission_pop_seen")) {
+      setShowPermissionModal(true);
+      sessionStorage.setItem("android_permission_pop_seen", "1");
+    }
+  };
 
   return (
     /* 🖤 FUNDO PRETO OBSIDIANA COM RETÂNGULOS EM VIDRO LUMINOSO */
     <div className="relative min-h-screen bg-[#060606] text-white overflow-x-hidden">
+      {/* POPUP DE PERMISSÃO DO ANDROID */}
+      <PermissionModal
+        isOpen={showPermissionModal}
+        onClose={() => setShowPermissionModal(false)}
+      />
+
       {/* LUZES AMBIENTAIS SUAVES */}
       <div className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 size-[800px] rounded-full bg-red-600/15 blur-[180px] z-0 animate-pulse" />
       <div className="pointer-events-none fixed top-1/3 left-10 size-[500px] rounded-full bg-rose-900/15 blur-[160px] z-0" />
@@ -296,7 +361,7 @@ function InstalarPage() {
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
                       Abra o app <strong>Downloader</strong> e digite o código de instalação:
-                      <CodeCopyBox code="1089401" />
+                      <CodeCopyBox code="1089401" onCopyClick={handleCopyTrigger} />
                     </div>
                   </li>
 
@@ -361,6 +426,7 @@ function InstalarPage() {
                         href={APK_MEDIAFIRE_URL}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={handleCopyTrigger}
                         className="flex items-center justify-center gap-2 my-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-3 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30"
                       >
                         <Download className="size-4 animate-bounce" />
@@ -384,7 +450,7 @@ function InstalarPage() {
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
                       Ou instale o app <strong className="text-white">ntDown</strong> na Play Store com o código:
-                      <CodeCopyBox code="94596" />
+                      <CodeCopyBox code="94596" onCopyClick={handleCopyTrigger} />
                     </div>
                   </li>
                 </ol>
@@ -423,7 +489,7 @@ function InstalarPage() {
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
                       Abra o Downloader no emulador e coloque o código:
-                      <CodeCopyBox code="1089401" />
+                      <CodeCopyBox code="1089401" onCopyClick={handleCopyTrigger} />
                     </div>
                   </li>
                 </ol>
@@ -473,14 +539,17 @@ function InstalarPage() {
               </div>
             </div>
 
-            {/* PREÇO EXIBIDO EM VERMELHO E BRANCO */}
-            <div className="py-1">
+            {/* 💰 PREÇO EXIBIDO EM TAMANHO MAIOR */}
+            <div className="py-2">
+              <span className="text-xs font-bold text-red-400 uppercase tracking-widest block mb-1">
+                30 DIAS DE ACESSO COMPLETO
+              </span>
               <div className="flex items-baseline justify-center gap-2 flex-nowrap whitespace-nowrap">
-                <span className="text-xs font-bold text-white/70">Apenas</span>
-                <span className="text-4xl sm:text-5xl font-black text-white tracking-tight drop-shadow-[0_0_20px_rgba(220,38,38,0.6)]">
+                <span className="text-xs sm:text-sm font-bold text-white/60">Apenas</span>
+                <span className="text-6xl sm:text-7xl font-black text-white tracking-tight drop-shadow-[0_0_35px_rgba(255,255,255,0.8)]">
                   R$ 34,99
                 </span>
-                <span className="text-xs font-bold text-white/80">/mês</span>
+                <span className="text-xs sm:text-sm font-bold text-white/80">/mês</span>
               </div>
             </div>
 
@@ -507,7 +576,7 @@ function InstalarPage() {
                 href="https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_30px_rgba(220,38,38,0.7)] border border-red-400/40 transition-all hover:scale-105 cursor-pointer w-full sm:w-auto backdrop-blur-md"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_30px_rgba(220,38,38,0.7)] border border-red-400/40 transition-all hover:scale-105 cursor-pointer w-full sm:w-auto backdrop-blur-md uppercase tracking-wider"
               >
                 <Zap className="size-4 fill-current" />
                 <span>QUERO CONTINUAR COM O ACESSO</span>
