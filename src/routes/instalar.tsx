@@ -20,6 +20,8 @@ import {
   Flame,
   Smile,
   X,
+  Lock,
+  Award,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -662,6 +664,40 @@ function InstalarPage() {
               </span>
             </div>
 
+          </div>
+
+          {/* CERTIFICADOS DE SEGURANÇA & GARANTIA VIDRO */}
+          <div className="p-6 sm:p-8 bg-white/[0.02] border-t border-white/15 backdrop-blur-xl text-center">
+            <div className="mb-6">
+              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-extrabold tracking-widest text-emerald-400 uppercase backdrop-blur-md shadow-sm">
+                <ShieldCheck className="size-3.5" /> Compra 100% Segura &amp; Protegida
+              </span>
+              <h3 className="mt-2 text-lg sm:text-xl font-black text-white">
+                Ambiente seguro com <span className="text-emerald-400">garantia total</span>
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 text-center">
+              {[
+                { icon: Lock, title: "SSL 256-bit", desc: "Ambiente Criptografado", color: "text-emerald-400" },
+                { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
+                { icon: Zap, title: "Envio Imediato", desc: "No WhatsApp & E-mail", color: "text-amber-400" },
+                { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão 12x", color: "text-purple-400" },
+                { icon: Award, title: "+10 mil Clientes", desc: "Satisfação Garantida", color: "text-rose-400" },
+                { icon: CheckCircle2, title: "Sem Fidelidade", desc: "Cancele quando quiser", color: "text-teal-400" },
+              ].map((c) => (
+                <div
+                  key={c.title}
+                  className="group flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-xl transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08]"
+                >
+                  <div className={`flex size-10 items-center justify-center rounded-xl bg-white/[0.06] border border-white/10 ${c.color} shadow-inner transition-transform group-hover:scale-110`}>
+                    <c.icon className="size-4.5" />
+                  </div>
+                  <p className="text-xs font-black text-white">{c.title}</p>
+                  <p className="text-[10px] text-white/50 leading-tight font-medium">{c.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* SUPORTE RODAPÉ VIDRO — COM 2 BOTÕES DE WHATSAPP (INSTALAÇÃO E PÓS-VENDA CLIENTES) */}
