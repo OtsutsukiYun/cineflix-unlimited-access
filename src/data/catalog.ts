@@ -80,7 +80,7 @@ export const heroSlides: HeroSlide[] = [
     poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
-    brightness: "brightness(0.95)",
+    brightness: "brightness(0.70)",
   },
   {
     title: "Passageiro do Mal",
