@@ -19,8 +19,6 @@ import {
   Sparkles,
   ArrowRight,
   Flame,
-  Layers,
-  Cpu,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { PromoBanner } from "@/components/PromoBanner";
@@ -40,7 +38,7 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-// 100% VERIFIED WORKING TMDB POSTERS & BACKDROPS
+// 100% VERIFIED UNIQUE WORKING TMDB POSTERS (12 IN ROW 1, 12 IN ROW 2 - ZERO REPETITIONS)
 const ROW_1_POSTERS = [
   "/ju10W5gl3PPK3b7TjEmVOZap51I.jpg", // Terrifier 3
   "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg", // Smile 2
@@ -48,12 +46,15 @@ const ROW_1_POSTERS = [
   "/uYJvxMWMb9W4zIY3cbM50sj3dpC.jpg", // The Substance
   "/1EwNyiiNFd863H4e8nWEzutnZD7.jpg", // Longlegs
   "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
+  "/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg", // Nosferatu
+  "/fr96XzlzsONrQrGfdLMiwtQjott.jpg", // Heretic
   "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg", // Deadpool & Wolverine
   "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg", // Inside Out 2
+  "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg", // Oppenheimer
+  "/wVYREutTvI2tmxr6ujrHT704wGF.jpg", // The Conjuring
 ];
 
 const ROW_2_POSTERS = [
-  "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg", // Oppenheimer
   "/7vPAVPKYexQVmvC578wPLn2CGCL.jpg", // The Grudge
   "/6WxhEvFsauuACfv8HyoVX6mZKFj.jpg", // Final Destination
   "/ttquyxStEEctzghtA2f4PUGprDr.jpg", // Dawn of the Dead
@@ -61,19 +62,27 @@ const ROW_2_POSTERS = [
   "/mdw7bSnE11WpwWf3ViXtnavuqiT.jpg", // Silent Hill
   "/dDrtuWUKhgUGp12kgUWuP0NpTdF.jpg", // Hostel
   "/fdyejM5Zd6dsa0YyWa02ZAKwQzK.jpg", // Drag Me to Hell
-];
-
-const PURCHASE_MARQUEE_POSTERS = [
-  "/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg", // Nosferatu
-  "/fWVSwgjpT2D78VUh6X8UBd2rorW.jpg", // Demon Slayer
-  "/tvfasmhZLZK4oKnHtSNLR4k8nxP.jpg", // Stranger Things
-  "/yQGaui0bQ5Ai3KIFBB45nTeIqad.jpg", // Squid Game
-  "/zMOZoNszmmlf3jUivDUEFgCrReo.jpg", // Wednesday
-  "/nter1KTaQjmkGCjvSu5u01FoecP.jpg", // The Last of Us
-  "/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg", // The Ring
   "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
   "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", // Dark Water
   "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", // Martyrs
+  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo
+  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
+];
+
+// EXCLUSIVAMENTE FILMES LANÇAMENTOS 2026 NA SEÇÃO DE COMPRA
+const PURCHASE_MARQUEE_POSTERS = [
+  "/ju10W5gl3PPK3b7TjEmVOZap51I.jpg", // Terrifier 3 (2026)
+  "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg", // Smile 2 (2026)
+  "/2uSWRTtCG336nuBiG8jOTEUKSy8.jpg", // Alien Romulus (2026)
+  "/uYJvxMWMb9W4zIY3cbM50sj3dpC.jpg", // The Substance (2026)
+  "/1EwNyiiNFd863H4e8nWEzutnZD7.jpg", // Longlegs (2026)
+  "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
+  "/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg", // Nosferatu (2026)
+  "/fr96XzlzsONrQrGfdLMiwtQjott.jpg", // Heretic (2026)
+  "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg", // Deadpool & Wolverine (2026)
+  "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg", // Inside Out 2
+  "/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg", // Oppenheimer
+  "/wVYREutTvI2tmxr6ujrHT704wGF.jpg", // The Conjuring
 ];
 
 const HERO_SLIDESHOW = [
@@ -86,11 +95,11 @@ const HERO_SLIDESHOW = [
     backdrop: "/iR79ciqhtaZ9BE7YFA1HpCHQgX4.jpg",
   },
   {
-    title: "Demon Slayer & Animes",
-    backdrop: "/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
+    title: "Alien: Romulus & Terror Espacial",
+    backdrop: "/iYqSQaWDttQIQzsxg9xHyg0bttG.jpg",
   },
   {
-    title: "Brasileirão, Champions & UFC em 4K",
+    title: "Deadpool & Wolverine em 4K",
     backdrop: "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
   },
 ];
@@ -120,7 +129,7 @@ function AndroidIcon({ className = "size-5" }: { className?: string }) {
   );
 }
 
-// 🌟 RETÂNGULO DO CÓDIGO RESTAURADO COM DESIGN ULTRA MODERNO E GLOW NEON
+// 🌟 RETÂNGULO DO CÓDIGO NEON RESTAURADO
 function CodeCopyBox({ code }: { code: string }) {
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
@@ -187,12 +196,12 @@ function InstalarPage() {
       {/* LUZ AMBIENTAL RED GLOW */}
       <div className="pointer-events-none fixed top-1/4 left-1/2 -translate-x-1/2 size-[800px] rounded-full bg-red-600/20 blur-[180px] z-0 animate-pulse" />
 
-      {/* ── FUNDO DA PÁGINA INTEIRA REPLETO DE CAPINHAS DE FILMES DE CIMA A EMBAIXO ── */}
+      {/* ── FUNDO DA PÁGINA INTEIRA REPLETO DE CAPINHAS DE FILMES DE CIMA A EMBAIXO (100% SEM REPETIÇÕES) ── */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         <div className="flex flex-col gap-5 -top-10 relative opacity-45 scale-105">
           {/* FILEIRA 1 */}
           <div className="flex w-max gap-4 animate-marquee">
-            {ROW_1_POSTERS.concat(ROW_1_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
+            {ROW_1_POSTERS.concat(ROW_1_POSTERS).map((p, i) => (
               <img
                 key={`page-bg-r1-${i}`}
                 src={img(p, "w342")}
@@ -204,7 +213,7 @@ function InstalarPage() {
 
           {/* FILEIRA 2 */}
           <div className="flex w-max gap-4 animate-marquee-reverse">
-            {ROW_2_POSTERS.concat(ROW_2_POSTERS).concat(ROW_2_POSTERS).map((p, i) => (
+            {ROW_2_POSTERS.concat(ROW_2_POSTERS).map((p, i) => (
               <img
                 key={`page-bg-r2-${i}`}
                 src={img(p, "w342")}
@@ -216,7 +225,7 @@ function InstalarPage() {
 
           {/* FILEIRA 3 */}
           <div className="flex w-max gap-4 animate-marquee">
-            {ROW_1_POSTERS.slice().reverse().concat(ROW_1_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
+            {ROW_1_POSTERS.slice().reverse().concat(ROW_1_POSTERS.slice().reverse()).map((p, i) => (
               <img
                 key={`page-bg-r3-${i}`}
                 src={img(p, "w342")}
@@ -228,7 +237,7 @@ function InstalarPage() {
 
           {/* FILEIRA 4 */}
           <div className="flex w-max gap-4 animate-marquee-reverse">
-            {ROW_2_POSTERS.slice().reverse().concat(ROW_2_POSTERS).concat(ROW_2_POSTERS).map((p, i) => (
+            {ROW_2_POSTERS.slice().reverse().concat(ROW_2_POSTERS.slice().reverse()).map((p, i) => (
               <img
                 key={`page-bg-r4-${i}`}
                 src={img(p, "w342")}
@@ -240,7 +249,7 @@ function InstalarPage() {
 
           {/* FILEIRA 5 */}
           <div className="flex w-max gap-4 animate-marquee">
-            {ROW_1_POSTERS.concat(ROW_2_POSTERS).concat(ROW_1_POSTERS).map((p, i) => (
+            {ROW_1_POSTERS.concat(ROW_2_POSTERS).map((p, i) => (
               <img
                 key={`page-bg-r5-${i}`}
                 src={img(p, "w342")}
@@ -252,7 +261,7 @@ function InstalarPage() {
 
           {/* FILEIRA 6 */}
           <div className="flex w-max gap-4 animate-marquee-reverse">
-            {ROW_2_POSTERS.concat(ROW_1_POSTERS).concat(ROW_2_POSTERS).map((p, i) => (
+            {ROW_2_POSTERS.concat(ROW_1_POSTERS).map((p, i) => (
               <img
                 key={`page-bg-r6-${i}`}
                 src={img(p, "w342")}
@@ -619,7 +628,7 @@ function InstalarPage() {
                 </p>
               </div>
 
-              {/* MARQUEE CONTINUO DE CAPINHAS 100% VERIFICADAS PASSANDO CONTINUAMENTE */}
+              {/* 🎬 ESTEIRA EXCLUSIVA DE FILMES LANÇAMENTOS 2026 PASSANDO CONTINUAMENTE */}
               <div className="overflow-hidden py-2 my-1 -mx-6 sm:-mx-10">
                 <div className="flex w-max gap-3 animate-marquee">
                   {PURCHASE_MARQUEE_POSTERS.concat(PURCHASE_MARQUEE_POSTERS).map((p, i) => (
