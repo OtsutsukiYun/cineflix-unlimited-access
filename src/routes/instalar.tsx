@@ -81,7 +81,15 @@ function AndroidIcon({ className = "size-5" }: { className?: string }) {
 }
 
 // 💎 POPUP DE DICA PURAMENTE EM ESTILO VIDRO TRANSLÚCIDO (GLASSMORPHISM)
-function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+function PermissionModal({
+  isOpen,
+  onClose,
+  hasPendingRedirect,
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  hasPendingRedirect?: boolean;
+}) {
   if (!isOpen) return null;
 
   return (
@@ -143,7 +151,7 @@ function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
           onClick={onClose}
           className="relative z-10 w-full rounded-xl bg-red-600 hover:bg-red-500 py-3.5 text-xs font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] backdrop-blur-md transition-all hover:scale-[1.02] cursor-pointer uppercase tracking-wider border border-white/20"
         >
-          ENTENDI, CONTINUAR
+          {hasPendingRedirect ? "ENTENDI, CONTINUAR PARA DOWNLOAD 🚀" : "ENTENDI, CONTINUAR"}
         </button>
       </div>
     </div>
@@ -206,12 +214,29 @@ function CodeCopyBox({ code, onCopyClick }: { code: string; onCopyClick?: () => 
 function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
   const [showPermissionModal, setShowPermissionModal] = useState(false);
+  const [pendingRedirectUrl, setPendingRedirectUrl] = useState<string | null>(null);
 
   const handleCopyTrigger = () => {
     // Exibe a dica na primeira vez que copia por sessão
     if (!sessionStorage.getItem("android_permission_pop_seen")) {
+      setPendingRedirectUrl(null);
       setShowPermissionModal(true);
       sessionStorage.setItem("android_permission_pop_seen", "1");
+    }
+  };
+
+  const handleApkDownloadClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setPendingRedirectUrl(APK_MEDIAFIRE_URL);
+    setShowPermissionModal(true);
+    sessionStorage.setItem("android_permission_pop_seen", "1");
+  };
+
+  const handleCloseModal = () => {
+    setShowPermissionModal(false);
+    if (pendingRedirectUrl) {
+      window.open(pendingRedirectUrl, "_blank", "noopener,noreferrer");
+      setPendingRedirectUrl(null);
     }
   };
 
@@ -221,7 +246,8 @@ function InstalarPage() {
       {/* POPUP DE DICA DA INSTALAÇÃO NO ANDROID */}
       <PermissionModal
         isOpen={showPermissionModal}
-        onClose={() => setShowPermissionModal(false)}
+        onClose={handleCloseModal}
+        hasPendingRedirect={Boolean(pendingRedirectUrl)}
       />
 
       {/* LUZES AMBIENTAIS SUAVES */}
@@ -446,10 +472,8 @@ function InstalarPage() {
                       Toque no botão abaixo para baixar o instalador oficial:
                       <a
                         href={APK_MEDIAFIRE_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={handleCopyTrigger}
-                        className="flex items-center justify-center gap-2 my-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-3 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30"
+                        onClick={handleApkDownloadClick}
+                        className="flex items-center justify-center gap-2 my-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-3 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30 cursor-pointer"
                       >
                         <Download className="size-4 animate-bounce" />
                         BAIXAR APK UNITV PRO (DIRETO)
