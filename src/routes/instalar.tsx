@@ -20,6 +20,7 @@ import {
   Flame,
   Sparkles,
   ShieldAlert,
+  Smile,
   X,
 } from "lucide-react";
 import { img } from "@/data/catalog";
@@ -81,7 +82,7 @@ function AndroidIcon({ className = "size-5" }: { className?: string }) {
   );
 }
 
-// 💡 POPUP DE DICA AMIGÁVEL DA INSTALAÇÃO NO ANDROID COM AVISO "INSTALAR ASSIM MESMO"
+// 💡 POPUP DE DICA AMIGÁVEL COM ROSTO FELIZ E LOGO UNITV PRO
 function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   if (!isOpen) return null;
 
@@ -99,8 +100,21 @@ function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
           <X className="size-4" />
         </button>
 
-        <div className="mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-400 border border-amber-500/30">
-          <ShieldAlert className="size-7" />
+        {/* LOGO UNITV PRO */}
+        <div className="flex items-center justify-center gap-2 mb-3">
+          <span className="relative flex size-7 items-center justify-center rounded-lg bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_12px_rgba(220,38,38,0.7)] border border-white/20">
+            <svg className="size-3.5 fill-white" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </span>
+          <span className="font-display text-sm font-black tracking-wider text-white">
+            UniTV <span className="text-red-500">Pro</span>
+          </span>
+        </div>
+
+        {/* ROSTO FELIZ (HAPPY FACE) */}
+        <div className="mx-auto mb-3 flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-500/20 text-emerald-400 border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+          <Smile className="size-8 text-emerald-400" />
         </div>
 
         <h3 className="text-xl sm:text-2xl font-black text-white mb-2">
@@ -112,8 +126,8 @@ function PermissionModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => 
             Ao instalar, o Android pode exibir uma mensagem avisando que o aplicativo é de{" "}
             <strong className="text-amber-300">"fonte desconhecida"</strong> ou <strong className="text-amber-300">"pode ser nocivo"</strong>.
           </p>
-          <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs font-medium">
-            👉 Clique em <strong className="text-white underline">"Instalar assim mesmo"</strong> ou acesse as Configurações e selecione <strong className="text-white underline">"Permitir desta fonte"</strong>.
+          <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-200 text-xs font-medium">
+            👉 Basta clicar em <strong className="text-white underline">"Instalar assim mesmo"</strong> ou <strong className="text-white underline">"Permitir desta fonte"</strong>. 🙂
           </div>
           <p className="text-[11px] text-white/60 text-center pt-1">
             Fique tranquilo! Esse aviso é padrão do Android para apps baixados fora da Play Store. O UniTV Pro é <strong>100% seguro</strong>!
