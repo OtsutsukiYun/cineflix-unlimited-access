@@ -123,16 +123,16 @@ export function SocialProof({ showCounter = true, fastCycle = false }: SocialPro
       {/* Contador de assinaturas do dia (Exibido apenas quando showCounter for true) */}
       {showCounter && (
         <div className="pointer-events-none fixed bottom-4 left-4 z-40 md:bottom-6 md:left-6">
-          <div className="flex items-center gap-2 rounded-full px-4 py-2 text-xs font-semibold border border-white/10 bg-black/60 backdrop-blur-md shadow-[0_4px_25px_rgba(0,0,0,0.5)] text-white">
-            <TrendingUp className="size-3.5 text-red-500 shrink-0" />
+          <div className="flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold border border-white/20 bg-white/10 backdrop-blur-2xl shadow-[0_10px_30px_rgba(0,0,0,0.6)] text-white">
+            <TrendingUp className="size-3.5 text-red-400 shrink-0 animate-pulse" />
             <span className="whitespace-nowrap">
-              <span className="text-red-400 font-extrabold">{vendas}</span> pessoas assinaram hoje
+              <span className="text-red-300 font-black">{vendas}</span> pessoas assinaram hoje
             </span>
           </div>
         </div>
       )}
 
-      {/* Notificação de compra recente com nome do assinante — no canto esquerdo, elevado para não colidir com suporte no direito */}
+      {/* Notificação de compra recente com nome do assinante — estilo vidro translúcido (Glassmorphism) */}
       <div
         aria-live="polite"
         className="pointer-events-none fixed bottom-20 left-4 z-40 sm:bottom-6 sm:left-6"
@@ -140,17 +140,17 @@ export function SocialProof({ showCounter = true, fastCycle = false }: SocialPro
         {notif && (
           <div
             key={notif.id}
-            className="toast-in flex max-w-[240px] min-[380px]:max-w-[280px] sm:max-w-[320px] items-center gap-2.5 sm:gap-3 rounded-2xl px-3.5 py-2.5 sm:px-4 sm:py-3 border border-red-500/40 bg-[#0c0c0c]/95 backdrop-blur-xl shadow-[0_10px_35px_rgba(0,0,0,0.9)] text-white border-l-4 border-l-red-500"
+            className="toast-in flex max-w-[240px] min-[380px]:max-w-[280px] sm:max-w-[340px] items-center gap-3 rounded-2xl px-3.5 py-3 sm:px-4 sm:py-3.5 border border-white/20 bg-white/10 backdrop-blur-2xl shadow-[0_15px_40px_rgba(0,0,0,0.8),0_0_20px_rgba(220,38,38,0.2)] text-white"
           >
-            <div className="bg-gradient-to-br from-red-600 to-rose-700 flex size-8 sm:size-9 shrink-0 items-center justify-center rounded-full shadow-[0_0_12px_rgba(220,38,38,0.5)]">
-              <BadgeCheck className="size-4 sm:size-5 text-white" />
+            <div className="bg-gradient-to-br from-red-600 to-rose-700 flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-full shadow-[0_0_15px_rgba(220,38,38,0.6)] border border-white/30">
+              <BadgeCheck className="size-4.5 sm:size-5 text-white" />
             </div>
             <div className="text-left min-w-0">
-              <p className="text-[11px] sm:text-xs leading-tight font-bold truncate text-white">
-                {notif.nome}, <span className="text-red-400 font-medium">de {notif.estado}</span>
+              <p className="text-[11px] sm:text-xs leading-tight font-extrabold truncate text-white">
+                {notif.nome}, <span className="text-red-300 font-semibold">de {notif.estado}</span>
               </p>
-              <p className="text-[10px] sm:text-[11px] text-white/75 truncate mt-0.5">
-                acabou de assinar o <strong className="text-white font-bold">{notif.plano}</strong>.
+              <p className="text-[10px] sm:text-[11px] text-white/80 truncate mt-0.5 font-medium">
+                acabou de assinar o <strong className="text-white font-extrabold">{notif.plano}</strong>
               </p>
             </div>
           </div>
