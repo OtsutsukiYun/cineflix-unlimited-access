@@ -18,6 +18,7 @@ import { img } from "@/data/catalog";
 import { WhatsAppIcon } from "@/components/icons";
 import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
 import { FloatingSupportButton } from "@/components/FloatingSupportButton";
+import { SocialProof } from "@/components/SocialProof";
 
 export const Route = createFileRoute("/bem-vindo")({
   head: () => ({
@@ -334,6 +335,7 @@ function BemVindoPage() {
       </div>
 
       <FloatingSupportButton />
+      <SocialProof showCounter={false} fastCycle={true} />
     </div>
   );
 }
