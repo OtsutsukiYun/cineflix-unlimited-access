@@ -58,7 +58,8 @@ function getDailySales() {
   const minutesToday = now.getHours() * 60 + now.getMinutes();
   const morningBase = 18 + (now.getDate() % 10);
   const salesThroughoutDay = Math.floor(minutesToday / 20);
-  return morningBase + salesThroughoutDay;
+  const total = morningBase + salesThroughoutDay;
+  return Math.floor(total * 0.6);
 }
 
 interface SocialProofProps {
