@@ -412,7 +412,7 @@ function InstalarPage() {
                   <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs font-bold text-white bg-white/[0.04]">
                     <div className="flex items-center gap-2">
                       <Play className="size-3.5 text-red-500 fill-red-500" />
-                      <span>Vídeo Tutorial (menos de 2 min)</span>
+                      <span>Instale em 2 minutos</span>
                     </div>
                     <span className="text-[10px] text-red-400 font-extrabold uppercase">
                       <Flame className="size-3 inline mr-1" /> Passo a Passo
