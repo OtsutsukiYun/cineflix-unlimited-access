@@ -427,7 +427,7 @@ function InstalarPage() {
                     <h2 className="text-base sm:text-lg font-black text-white">
                       Smart TV, TV Box &amp; Projetor <span className="text-xs sm:text-sm font-bold text-red-400 block sm:inline sm:ml-2">(Instale em 2 minutos)</span>
                     </h2>
-                    <p className="text-xs text-white/60">Compatível com Fire Stick, Mi Stick e aparelhos Android TV</p>
+                    <p className="text-xs text-white/60">Para todas as marcas de Smart TV, adaptadores TV Box, Fire Stick e Projetores</p>
                   </div>
                 </div>
 
