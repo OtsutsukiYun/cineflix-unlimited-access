@@ -537,14 +537,27 @@ function InstalarPage() {
 
                 {/* AVISO TIKTOK (EXCLUSIVO PARA QUEM VEM DO TIKTOK) */}
                 {isTikTokUser && (
-                  <div className="rounded-2xl border border-amber-500/70 bg-gradient-to-r from-amber-950/95 via-amber-900/80 to-amber-950/95 p-4 text-left text-xs text-amber-200 shadow-[0_0_30px_rgba(245,158,11,0.3)] backdrop-blur-md">
-                    <div className="flex items-center gap-2 font-black text-amber-300 text-xs sm:text-sm mb-1.5 uppercase tracking-wide">
+                  <div className="rounded-2xl border border-amber-500/70 bg-gradient-to-r from-amber-950/95 via-amber-900/80 to-amber-950/95 p-4 sm:p-5 text-left text-xs sm:text-sm text-amber-200 shadow-[0_0_30px_rgba(245,158,11,0.35)] backdrop-blur-md">
+                    <div className="flex items-center gap-2 font-black text-amber-300 text-xs sm:text-sm mb-2 uppercase tracking-wide">
                       <span className="flex size-6 items-center justify-center rounded-lg bg-amber-500/20 text-amber-300 font-bold">⚠️</span>
-                      <span>ATENÇÃO (Quem veio pelo TikTok):</span>
+                      <span>ATENÇÃO PARA QUEM VEIO DO TIKTOK:</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-amber-100 leading-relaxed font-bold">
-                      Para evitar que o TikTok bloqueie o seu download do aplicativo, toque agora nos <strong>3 pontinhos (⋮ ou ···)</strong> no canto superior direito da tela e selecione <strong className="text-white underline font-black">"Abrir no Navegador"</strong>!
+                    <p className="text-xs sm:text-sm text-amber-100 leading-relaxed font-semibold mb-2">
+                      O TikTok bloqueia a instalação direta de aplicativos. Para instalar sem erros, utilize o <strong className="text-white font-extrabold underline">Método do Downloader</strong>:
                     </p>
+                    <div className="rounded-xl border border-amber-500/40 bg-black/60 p-3 text-xs text-amber-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+                      <div>
+                        1. Abra o app <strong className="text-white font-black">Downloader</strong>
+                        <br />
+                        2. Digite o código oficial: <strong className="text-amber-300 font-black text-sm">9884830</strong>
+                      </div>
+                      <button
+                        onClick={() => setDeviceTab("tv")}
+                        className="px-3 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold text-xs border border-amber-500/40 transition-colors"
+                      >
+                        Ver Tutorial do Downloader ➔
+                      </button>
+                    </div>
                   </div>
                 )}
 
