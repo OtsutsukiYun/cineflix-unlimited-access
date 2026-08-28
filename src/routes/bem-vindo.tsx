@@ -109,17 +109,16 @@ function BemVindoPage() {
             Agora é só baixar o aplicativo e seguir o passo a passo de instalação abaixo. Leva apenas alguns minutos.
           </p>
 
-          {/* DICA ESPECIAL CASO O USUÁRIO VENHA DO TIKTOK */}
-          {isTikTokUser && (
-            <div className="my-5 max-w-lg mx-auto rounded-2xl border border-amber-500/50 bg-amber-950/70 p-4 text-left text-xs text-amber-200 shadow-xl backdrop-blur-md">
-              <p className="font-extrabold text-amber-300 text-xs sm:text-sm mb-1 flex items-center gap-2">
-                <span>📱</span> AVISO DE NAVEGADOR DO TIKTOK:
-              </p>
-              <p className="text-[11px] sm:text-xs text-amber-200/90 leading-relaxed">
-                Se o TikTok bloquear o download ao clicar no botão verde, toque nos <strong>3 pontinhos (⋮ ou ···)</strong> no canto superior direito da tela e clique em <strong>"Abrir no Navegador"</strong>.
-              </p>
+          {/* DICA ESPECIAL CASO O USUÁRIO VENHA DO TIKTOK OU OUTRA REDE SOCIAL */}
+          <div className="my-5 max-w-xl mx-auto rounded-2xl border border-amber-500/60 bg-gradient-to-r from-amber-950/90 via-amber-900/70 to-amber-950/90 p-4 text-left text-xs text-amber-200 shadow-[0_0_25px_rgba(245,158,11,0.25)] backdrop-blur-md">
+            <div className="flex items-center gap-2 font-black text-amber-300 text-xs sm:text-sm mb-1.5 uppercase tracking-wide">
+              <span className="flex size-6 items-center justify-center rounded-lg bg-amber-500/20 text-amber-300 font-bold">📱</span>
+              <span>Aviso para quem veio pelo TikTok ou Instagram:</span>
             </div>
-          )}
+            <p className="text-xs text-amber-100/90 leading-relaxed font-medium">
+              Se o aplicativo do TikTok bloquear o download ao clicar no botão verde abaixo, toque nos <strong>3 pontinhos (⋮ ou ···)</strong> no canto superior direito da tela e escolha <strong className="text-white underline font-bold">"Abrir no Navegador"</strong> (ou "Abrir no Chrome/Safari").
+            </p>
+          </div>
 
           {/* IMAGEM DE ONDE CLICAR NO MEDIAFIRE (ANTES DO BOTÃO DE DOWNLOAD) - MAIOR E MAIS CLARA */}
           <div className="my-6 max-w-xl mx-auto overflow-hidden rounded-3xl border border-blue-500/50 bg-[#070e1b] p-5 sm:p-7 shadow-[0_0_40px_rgba(37,99,235,0.3)] relative text-left backdrop-blur-xl">

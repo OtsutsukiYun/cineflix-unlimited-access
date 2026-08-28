@@ -518,6 +518,17 @@ function InstalarPage() {
                   </div>
                 </div>
 
+                {/* AVISO TIKTOK / INSTAGRAM */}
+                <div className="rounded-2xl border border-amber-500/60 bg-gradient-to-r from-amber-950/90 via-amber-900/70 to-amber-950/90 p-4 text-left text-xs text-amber-200 shadow-[0_0_25px_rgba(245,158,11,0.25)] backdrop-blur-md">
+                  <div className="flex items-center gap-2 font-black text-amber-300 text-xs sm:text-sm mb-1.5 uppercase tracking-wide">
+                    <span className="flex size-6 items-center justify-center rounded-lg bg-amber-500/20 text-amber-300 font-bold">📱</span>
+                    <span>Aviso para quem veio pelo TikTok ou Instagram:</span>
+                  </div>
+                  <p className="text-xs text-amber-100/90 leading-relaxed font-medium">
+                    Se o aplicativo do TikTok bloquear o download do APK ao clicar abaixo, toque nos <strong>3 pontinhos (⋮ ou ···)</strong> no canto superior direito e selecione <strong className="text-white underline font-bold">"Abrir no Navegador"</strong>.
+                  </p>
+                </div>
+
                 <ol className="space-y-4 pt-1">
                   <li className="flex items-start gap-3">
                     <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
