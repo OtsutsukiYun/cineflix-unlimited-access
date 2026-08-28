@@ -251,7 +251,7 @@ function CodeCopyBox({ code, onCopyClick }: { code: string; onCopyClick?: () => 
 }
 
 function InstalarPage() {
-  const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
+  const [deviceTab, setDeviceTab] = useState<"tv" | "mobile">("tv");
   const [showPermissionModal, setShowPermissionModal] = useState(false);
   const [pendingRedirectUrl, setPendingRedirectUrl] = useState<string | null>(null);
   const [isTikTokUser, setIsTikTokUser] = useState(false);
@@ -380,7 +380,7 @@ function InstalarPage() {
             Como instalar o <span className="text-red-500">UniTV Pro</span>
           </h1>
           <p className="text-xs sm:text-base text-white/80 max-w-md mx-auto leading-relaxed font-medium">
-            Compatível com Smart TV Android, TV Box, FireTV, Celular e Tablet Android e Computador (via emulação). Escolha seu aparelho:
+            Compatível com Smart TV Android, TV Box, FireTV, Projetor Android, Celular e Tablet Android. Escolha seu aparelho:
           </p>
         </div>
 
@@ -389,41 +389,29 @@ function InstalarPage() {
 
           {/* ABAS DE DISPOSITIVO VIDRO */}
           <div className="p-2.5 sm:p-4 bg-white/[0.04] border-b border-white/15 backdrop-blur-md">
-            <div className="grid grid-cols-3 gap-1.5 sm:gap-2.5 items-stretch">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 items-stretch">
               <button
                 onClick={() => setDeviceTab("tv")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 rounded-xl p-2 sm:py-3 sm:px-2.5 lg:px-4 text-[10px] min-[360px]:text-[11px] sm:text-xs lg:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[64px] sm:min-h-[52px] w-full overflow-hidden ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl p-2.5 sm:py-3.5 sm:px-4 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[56px] w-full overflow-hidden ${
                   deviceTab === "tv"
                     ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                 }`}
               >
-                <Tv className="size-4.5 sm:size-5 lg:size-6 text-white shrink-0" />
-                <span className="break-words max-w-full">Smart TV Android &amp; TV Box</span>
+                <Tv className="size-5 sm:size-6 text-white shrink-0" />
+                <span className="break-words max-w-full">Smart TV, TV Box &amp; Projetor</span>
               </button>
 
               <button
                 onClick={() => setDeviceTab("mobile")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 rounded-xl p-2 sm:py-3 sm:px-2.5 lg:px-4 text-[10px] min-[360px]:text-[11px] sm:text-xs lg:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[64px] sm:min-h-[52px] w-full overflow-hidden ${
+                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl p-2.5 sm:py-3.5 sm:px-4 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[56px] w-full overflow-hidden ${
                   deviceTab === "mobile"
                     ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
                     : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                 }`}
               >
-                <Smartphone className="size-4.5 sm:size-5 lg:size-6 text-emerald-400 shrink-0" />
+                <Smartphone className="size-5 sm:size-6 text-emerald-400 shrink-0" />
                 <span className="break-words max-w-full">Celular e Tablet</span>
-              </button>
-
-              <button
-                onClick={() => setDeviceTab("pc")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 rounded-xl p-2 sm:py-3 sm:px-2.5 lg:px-4 text-[10px] min-[360px]:text-[11px] sm:text-xs lg:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[64px] sm:min-h-[52px] w-full overflow-hidden ${
-                  deviceTab === "pc"
-                    ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
-                    : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
-                }`}
-              >
-                <Monitor className="size-4.5 sm:size-5 lg:size-6 text-amber-400 shrink-0" />
-                <span className="break-words max-w-full">Computador (Emulador)</span>
               </button>
             </div>
           </div>
@@ -437,9 +425,9 @@ function InstalarPage() {
                   <DownloaderAppIcon />
                   <div>
                     <h2 className="text-base sm:text-lg font-black text-white">
-                      Smart TV Android &amp; TV Box <span className="text-xs sm:text-sm font-bold text-red-400 block sm:inline sm:ml-2">(Instale em 2 minutos)</span>
+                      Smart TV Android, TV Box &amp; Projetor Android <span className="text-xs sm:text-sm font-bold text-red-400 block sm:inline sm:ml-2">(Instale em 2 minutos)</span>
                     </h2>
-                    <p className="text-xs text-white/60">Android TV, FireTV Stick, Xiaomi Mi Stick</p>
+                    <p className="text-xs text-white/60">Android TV, FireTV Stick, Xiaomi Mi Stick, Projetores com sistema Android</p>
                   </div>
                 </div>
 
@@ -470,7 +458,7 @@ function InstalarPage() {
                       01
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Abra a loja de aplicativos da sua Smart TV Android ou TV Box (Google Play Store) e instale o app{" "}
+                      Abra a loja de aplicativos da sua Smart TV Android, TV Box ou Projetor Android (Google Play Store) e instale o app{" "}
                       <a href={DOWNLOADER_PLAYSTORE_URL} target="_blank" rel="noopener noreferrer" className="text-red-400 font-bold underline">
                         Downloader <ExternalLink className="inline size-3" />
                       </a>.
@@ -612,62 +600,6 @@ function InstalarPage() {
                       </a>{" "}
                       e digite o código:
                       <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
-                    </div>
-                  </li>
-                </ol>
-              </>
-            )}
-
-            {deviceTab === "pc" && (
-              <>
-                <div className="flex items-center gap-3 pb-3 border-b border-white/15">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 to-amber-600 text-black font-bold shadow-md">
-                    <Monitor className="size-5" />
-                  </div>
-                  <div>
-                    <h2 className="text-base sm:text-lg font-black text-white">Computador (via emulação)</h2>
-                    <p className="text-xs text-white/60">Via emulador Android leve (LDPlayer)</p>
-                  </div>
-                </div>
-
-                <ol className="space-y-4 pt-1">
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
-                      01
-                    </span>
-                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Baixe o emulador{" "}
-                      <a href={LDPLAYER_WEBSITE_URL} target="_blank" rel="noopener noreferrer" className="text-red-400 font-bold underline">
-                        LDPlayer <ExternalLink className="inline size-3" />
-                      </a>{" "}
-                      no seu computador e faça a instalação.
-                    </p>
-                  </li>
-
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
-                      02
-                    </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-                      Abra o Downloader no emulador e coloque o código:
-                      <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
-                    </div>
-                  </li>
-
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
-                      03
-                    </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-                      Ou baixe o APK oficial para instalar direto no emulador:
-                      <a
-                        href={APK_MEDIAFIRE_URL}
-                        onClick={handleApkDownloadClick}
-                        className="flex items-center justify-center gap-2 my-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-3 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30 cursor-pointer"
-                      >
-                        <Download className="size-4 animate-bounce" />
-                        BAIXAR APK UNITV PRO (DIRETO)
-                      </a>
                     </div>
                   </li>
                 </ol>

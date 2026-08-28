@@ -28,8 +28,8 @@ const PERGUNTAS = [
     a: "Para realizar um teste grátis, basta instalar o aplicativo em seu dispositivo Android! Os testes são disponibilizados automaticamente através do dispositivo e da conta, podendo ser realizados uma única vez por aparelho/usuário.",
   },
   {
-    q: "Como instalar o UniTV Pro na Smart TV Android ou TV Box?",
-    a: `Abra a loja de aplicativos da sua Smart TV, TV Box, celular ou tablet Android, baixe o app Downloader, abra-o e digite o código de instalação ${DOWNLOADER_OFFICIAL_CODE}. Siga as instruções simples na tela para concluir.`,
+    q: "Como instalar o UniTV Pro na Smart TV, TV Box ou Projetor Android?",
+    a: `Abra a loja de aplicativos da sua Smart TV Android, TV Box, Projetor Android, celular ou tablet Android, baixe o app Downloader, abra-o e digite o código de instalação ${DOWNLOADER_OFFICIAL_CODE}. Siga as instruções simples na tela para concluir.`,
   },
   {
     q: "Como fazer uma recarga UniTV Pro?",
