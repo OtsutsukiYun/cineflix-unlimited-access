@@ -435,7 +435,9 @@ function InstalarPage() {
                 <div className="flex items-center gap-3 pb-3 border-b border-white/15">
                   <DownloaderAppIcon />
                   <div>
-                    <h2 className="text-base sm:text-lg font-black text-white">Smart TV Android &amp; TV Box</h2>
+                    <h2 className="text-base sm:text-lg font-black text-white">
+                      Smart TV Android &amp; TV Box <span className="text-xs sm:text-sm font-bold text-red-400 block sm:inline sm:ml-2">(Instale em 2 minutos)</span>
+                    </h2>
                     <p className="text-xs text-white/60">Android TV, FireTV Stick, Xiaomi Mi Stick</p>
                   </div>
                 </div>
@@ -512,7 +514,9 @@ function InstalarPage() {
                     <Smartphone className="size-5" />
                   </div>
                   <div>
-                    <h2 className="text-base sm:text-lg font-black text-white">Celular e Tablet Android</h2>
+                    <h2 className="text-base sm:text-lg font-black text-white">
+                      Celular e Tablet Android <span className="text-xs sm:text-sm font-bold text-emerald-400 block sm:inline sm:ml-2">(Instale em 1 minuto)</span>
+                    </h2>
                     <p className="text-xs text-white/60">Smartphones e Tablets com sistema Android</p>
                   </div>
                 </div>
