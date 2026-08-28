@@ -70,7 +70,7 @@ function BemVindoPage() {
           {/* BADGE BEM-VINDO */}
           <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/60 px-4 py-2 text-xs sm:text-sm font-extrabold tracking-wide text-red-400 uppercase mb-5 backdrop-blur-md shadow-md">
             <Sparkles className="size-4 text-red-400" />
-            Acesso Liberado no Downloader
+            ⚡ Como Instalar em Menos de 2 Minutos
           </div>
 
           {/* TÍTULO SOLICITADO PELO USUÁRIO */}
@@ -83,8 +83,8 @@ function BemVindoPage() {
             Você está a poucos passos de começar a assistir.
           </p>
 
-          <p className="text-xs sm:text-base text-white/75 max-w-lg mx-auto leading-relaxed mb-6">
-            Agora é só baixar o aplicativo e seguir o passo a passo de instalação abaixo. Leva menos de 2 minutos.
+          <p className="text-xs sm:text-base text-white/75 max-w-lg mx-auto leading-relaxed mb-6 font-medium">
+            Agora é só baixar o aplicativo e seguir o passo a passo fácil de <strong className="text-white font-extrabold">como instalar em menos de 2 minutos</strong>.
           </p>
 
           {/* IMAGEM DE ONDE CLICAR NO MEDIAFIRE (ANTES DO BOTÃO DE DOWNLOAD) - MAIOR E MAIS CLARA */}
@@ -131,10 +131,10 @@ function BemVindoPage() {
         <div className="mt-12 space-y-6">
           <div className="text-center mb-8">
             <span className="text-xs font-black tracking-[0.2em] text-emerald-400 uppercase block mb-1">
-              Guia Visual de Instalação
+              ⚡ Instalação Rápida e Fácil
             </span>
             <h2 className="text-xl sm:text-3xl font-black text-white tracking-tight">
-              Passo a Passo de Instalação no Aparelho
+              Como Instalar em Menos de 2 Minutos
             </h2>
           </div>
 
