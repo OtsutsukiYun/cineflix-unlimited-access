@@ -408,7 +408,7 @@ function InstalarPage() {
                   </div>
                 </div>
 
-                <div className="overflow-hidden rounded-2xl border border-white/20 bg-black/50 backdrop-blur-xl shadow-md">
+                <div className="overflow-hidden rounded-2xl border border-white/20 bg-zinc-900 shadow-md">
                   <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs font-bold text-white bg-white/[0.04]">
                     <div className="flex items-center gap-2">
                       <Play className="size-3.5 text-red-500 fill-red-500" />
@@ -418,12 +418,12 @@ function InstalarPage() {
                       <Flame className="size-3 inline mr-1" /> Passo a Passo
                     </span>
                   </div>
-                  <div className="relative aspect-video w-full">
+                  <div className="relative aspect-video w-full bg-black z-20">
                     <iframe
-                      src="https://www.youtube.com/embed/TDeBxB6lWjY?vq=hd1080&hd=1&rel=0&modestbranding=1"
-                      title="Vídeo Tutorial de Instalação no TV e TV Box (1080p HD)"
-                      className="size-full border-0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      src="https://www.youtube.com/embed/TDeBxB6lWjY?rel=0&enablejsapi=1"
+                      title="Vídeo Tutorial de Instalação no TV e TV Box"
+                      className="size-full border-0 relative z-20 pointer-events-auto"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                     />
                   </div>
@@ -476,27 +476,28 @@ function InstalarPage() {
             {deviceTab === "mobile" && (
               <>
                 <div className="flex items-center gap-3 pb-3 border-b border-white/15">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-600 text-white font-bold shadow-md">
-                    <AndroidIcon className="size-5" />
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-black font-bold shadow-md">
+                    <Smartphone className="size-5" />
                   </div>
                   <div>
                     <h2 className="text-base sm:text-lg font-black text-white">Celular e Tablet Android</h2>
-                    <p className="text-xs text-white/60">Download direto do APK oficial para Smartphones e Tablets Android</p>
+                    <p className="text-xs text-white/60">Smartphones e Tablets com sistema Android</p>
                   </div>
                 </div>
 
-                <div className="overflow-hidden rounded-2xl border border-white/20 bg-black/50 backdrop-blur-xl shadow-md">
+                <div className="overflow-hidden rounded-2xl border border-white/20 bg-zinc-900 shadow-md">
                   <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs font-bold text-white bg-white/[0.04]">
                     <div className="flex items-center gap-2">
                       <Play className="size-3.5 text-red-500 fill-red-500" />
                       <span>Vídeo Tutorial Celular e Tablet</span>
                     </div>
                   </div>
-                  <div className="relative aspect-video w-full">
+                  <div className="relative aspect-video w-full bg-black z-20">
                     <iframe
-                      src="https://www.youtube.com/embed/Ge1WVaiOQxQ"
+                      src="https://www.youtube.com/embed/Ge1WVaiOQxQ?rel=0&enablejsapi=1"
                       title="Vídeo Tutorial Celular e Tablet"
-                      className="size-full border-0"
+                      className="size-full border-0 relative z-20 pointer-events-auto"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                     />
                   </div>
