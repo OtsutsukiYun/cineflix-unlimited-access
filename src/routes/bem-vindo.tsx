@@ -84,7 +84,7 @@ function BemVindoPage() {
           </p>
 
           <p className="text-xs sm:text-base text-white/75 max-w-lg mx-auto leading-relaxed mb-6">
-            Agora é só baixar o aplicativo e seguir o passo a passo de instalação abaixo. Leva apenas alguns minutos.
+            Agora é só baixar o aplicativo e seguir o passo a passo de instalação abaixo. Leva menos de 2 minutos.
           </p>
 
           {/* IMAGEM DE ONDE CLICAR NO MEDIAFIRE (ANTES DO BOTÃO DE DOWNLOAD) - MAIOR E MAIS CLARA */}
