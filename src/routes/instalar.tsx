@@ -380,7 +380,7 @@ function InstalarPage() {
             Como instalar o <span className="text-red-500">UniTV Pro</span>
           </h1>
           <p className="text-xs sm:text-base text-white/80 max-w-md mx-auto leading-relaxed font-medium">
-            Compatível com Smart TV Android, TV Box, FireTV, Projetor Android, Celular e Tablet Android. Escolha seu aparelho:
+            Guia passo a passo para Smart TV, TV Box, Fire Stick, Projetor, Celular ou Tablet:
           </p>
         </div>
 
@@ -425,9 +425,9 @@ function InstalarPage() {
                   <DownloaderAppIcon />
                   <div>
                     <h2 className="text-base sm:text-lg font-black text-white">
-                      Smart TV Android, TV Box &amp; Projetor Android <span className="text-xs sm:text-sm font-bold text-red-400 block sm:inline sm:ml-2">(Instale em 2 minutos)</span>
+                      Smart TV, TV Box &amp; Projetor <span className="text-xs sm:text-sm font-bold text-red-400 block sm:inline sm:ml-2">(Instale em 2 minutos)</span>
                     </h2>
-                    <p className="text-xs text-white/60">Android TV, FireTV Stick, Xiaomi Mi Stick, Projetores com sistema Android</p>
+                    <p className="text-xs text-white/60">Compatível com Fire Stick, Mi Stick e aparelhos Android TV</p>
                   </div>
                 </div>
 
@@ -458,7 +458,7 @@ function InstalarPage() {
                       01
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Abra a loja de aplicativos da sua Smart TV Android, TV Box ou Projetor Android (Google Play Store) e instale o app{" "}
+                      Abra a loja de aplicativos do seu aparelho (Google Play Store ou Amazon Store) e instale o app{" "}
                       <a href={DOWNLOADER_PLAYSTORE_URL} target="_blank" rel="noopener noreferrer" className="text-red-400 font-bold underline">
                         Downloader <ExternalLink className="inline size-3" />
                       </a>.
@@ -504,9 +504,9 @@ function InstalarPage() {
                   </div>
                   <div>
                     <h2 className="text-base sm:text-lg font-black text-white">
-                      Celular e Tablet Android <span className="text-xs sm:text-sm font-bold text-emerald-400 block sm:inline sm:ml-2">(Instale em 1 minuto)</span>
+                      Celular &amp; Tablet <span className="text-xs sm:text-sm font-bold text-emerald-400 block sm:inline sm:ml-2">(Instale em 1 minuto)</span>
                     </h2>
-                    <p className="text-xs text-white/60">Smartphones e Tablets com sistema Android</p>
+                    <p className="text-xs text-white/60">Smartphones e tablets Android</p>
                   </div>
                 </div>
 
