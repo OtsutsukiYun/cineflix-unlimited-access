@@ -526,7 +526,7 @@ function InstalarPage() {
                   </div>
                   <div className="relative aspect-video w-full bg-black z-20">
                     <iframe
-                      src="https://www.youtube.com/embed/Ge1WVaiOQxQ?rel=0&enablejsapi=1"
+                      src="https://www.youtube.com/embed/0dSJ_Q4DDus?rel=0&enablejsapi=1"
                       title="Vídeo Tutorial Celular e Tablet"
                       className="size-full border-0 relative z-20 pointer-events-auto"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
