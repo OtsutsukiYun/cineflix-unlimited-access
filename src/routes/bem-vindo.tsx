@@ -121,13 +121,13 @@ function BemVindoPage() {
 
           {/* DICA ESPECIAL CASO O USUÁRIO VENHA EXCLUSIVAMENTE DO TIKTOK */}
           {isTikTokUser && (
-            <div className="my-5 max-w-xl mx-auto rounded-2xl border border-amber-500/60 bg-gradient-to-r from-amber-950/90 via-amber-900/70 to-amber-950/90 p-4 text-left text-xs text-amber-200 shadow-[0_0_25px_rgba(245,158,11,0.25)] backdrop-blur-md">
+            <div className="my-5 max-w-xl mx-auto rounded-2xl border border-amber-500/70 bg-gradient-to-r from-amber-950/95 via-amber-900/80 to-amber-950/95 p-4 text-left text-xs text-amber-200 shadow-[0_0_30px_rgba(245,158,11,0.3)] backdrop-blur-md">
               <div className="flex items-center gap-2 font-black text-amber-300 text-xs sm:text-sm mb-1.5 uppercase tracking-wide">
-                <span className="flex size-6 items-center justify-center rounded-lg bg-amber-500/20 text-amber-300 font-bold">📱</span>
-                <span>Aviso para quem veio pelo TikTok:</span>
+                <span className="flex size-6 items-center justify-center rounded-lg bg-amber-500/20 text-amber-300 font-bold">⚠️</span>
+                <span>ATENÇÃO (Quem veio pelo TikTok):</span>
               </div>
-              <p className="text-xs text-amber-100/90 leading-relaxed font-medium">
-                Se o aplicativo do TikTok bloquear o download ao clicar no botão verde abaixo, toque nos <strong>3 pontinhos (⋮ ou ···)</strong> no canto superior direito da tela e escolha <strong className="text-white underline font-bold">"Abrir no Navegador"</strong>.
+              <p className="text-xs sm:text-sm text-amber-100 leading-relaxed font-bold">
+                Para evitar que o TikTok bloqueie o seu download do aplicativo, toque agora nos <strong>3 pontinhos (⋮ ou ···)</strong> no canto superior direito da tela e selecione <strong className="text-white underline font-black">"Abrir no Navegador"</strong>!
               </p>
             </div>
           )}
