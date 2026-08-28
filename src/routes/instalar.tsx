@@ -253,6 +253,23 @@ function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile" | "pc">("tv");
   const [showPermissionModal, setShowPermissionModal] = useState(false);
   const [pendingRedirectUrl, setPendingRedirectUrl] = useState<string | null>(null);
+  const [isTikTokUser, setIsTikTokUser] = useState(false);
+
+  useEffect(() => {
+    const ua = (typeof navigator !== "undefined" ? navigator.userAgent : "") || "";
+    const ref = (typeof document !== "undefined" ? document.referrer : "") || "";
+    const search = (typeof window !== "undefined" ? window.location.search : "") || "";
+
+    const isTikTok =
+      /TikTok|Musical_ly|Bytedance|Trill/i.test(ua) ||
+      /tiktok\.com/i.test(ref) ||
+      /[?&](ref|src|from|utm_source)=tiktok/i.test(search) ||
+      /[?&]tt=1/i.test(search);
+
+    if (isTikTok) {
+      setIsTikTokUser(true);
+    }
+  }, []);
 
   const handleCopyTrigger = () => {
     // Exibe a dica na primeira vez que copia por sessão
@@ -518,16 +535,18 @@ function InstalarPage() {
                   </div>
                 </div>
 
-                {/* AVISO TIKTOK / INSTAGRAM */}
-                <div className="rounded-2xl border border-amber-500/60 bg-gradient-to-r from-amber-950/90 via-amber-900/70 to-amber-950/90 p-4 text-left text-xs text-amber-200 shadow-[0_0_25px_rgba(245,158,11,0.25)] backdrop-blur-md">
-                  <div className="flex items-center gap-2 font-black text-amber-300 text-xs sm:text-sm mb-1.5 uppercase tracking-wide">
-                    <span className="flex size-6 items-center justify-center rounded-lg bg-amber-500/20 text-amber-300 font-bold">📱</span>
-                    <span>Aviso para quem veio pelo TikTok ou Instagram:</span>
+                {/* AVISO TIKTOK (EXCLUSIVO PARA QUEM VEM DO TIKTOK) */}
+                {isTikTokUser && (
+                  <div className="rounded-2xl border border-amber-500/60 bg-gradient-to-r from-amber-950/90 via-amber-900/70 to-amber-950/90 p-4 text-left text-xs text-amber-200 shadow-[0_0_25px_rgba(245,158,11,0.25)] backdrop-blur-md">
+                    <div className="flex items-center gap-2 font-black text-amber-300 text-xs sm:text-sm mb-1.5 uppercase tracking-wide">
+                      <span className="flex size-6 items-center justify-center rounded-lg bg-amber-500/20 text-amber-300 font-bold">📱</span>
+                      <span>Aviso para quem veio pelo TikTok:</span>
+                    </div>
+                    <p className="text-xs text-amber-100/90 leading-relaxed font-medium">
+                      Se o aplicativo do TikTok bloquear o download do APK ao clicar abaixo, toque nos <strong>3 pontinhos (⋮ ou ···)</strong> no canto superior direito e selecione <strong className="text-white underline font-bold">"Abrir no Navegador"</strong>.
+                    </p>
                   </div>
-                  <p className="text-xs text-amber-100/90 leading-relaxed font-medium">
-                    Se o aplicativo do TikTok bloquear o download do APK ao clicar abaixo, toque nos <strong>3 pontinhos (⋮ ou ···)</strong> no canto superior direito e selecione <strong className="text-white underline font-bold">"Abrir no Navegador"</strong>.
-                  </p>
-                </div>
+                )}
 
                 <ol className="space-y-4 pt-1">
                   <li className="flex items-start gap-3">

@@ -39,14 +39,23 @@ function BemVindoPage() {
 
   useEffect(() => {
     const ua = (typeof navigator !== "undefined" ? navigator.userAgent : "") || "";
-    if (/TikTok|Musical_ly|Bytedance/i.test(ua)) {
+    const ref = (typeof document !== "undefined" ? document.referrer : "") || "";
+    const search = (typeof window !== "undefined" ? window.location.search : "") || "";
+
+    const isTikTok =
+      /TikTok|Musical_ly|Bytedance|Trill/i.test(ua) ||
+      /tiktok\.com/i.test(ref) ||
+      /[?&](ref|src|from|utm_source)=tiktok/i.test(search) ||
+      /[?&]tt=1/i.test(search);
+
+    if (isTikTok) {
       setIsTikTokUser(true);
     }
   }, []);
 
   const handleDownloadClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const ua = (typeof navigator !== "undefined" ? navigator.userAgent : "") || "";
-    const isTikTok = /TikTok|Musical_ly|Bytedance/i.test(ua);
+    const isTikTok = /TikTok|Musical_ly|Bytedance|Trill/i.test(ua);
     const isAndroid = /Android/i.test(ua);
 
     if (isTikTok && isAndroid) {
@@ -109,16 +118,18 @@ function BemVindoPage() {
             Agora é só baixar o aplicativo e seguir o passo a passo de instalação abaixo. Leva apenas alguns minutos.
           </p>
 
-          {/* DICA ESPECIAL CASO O USUÁRIO VENHA DO TIKTOK OU OUTRA REDE SOCIAL */}
-          <div className="my-5 max-w-xl mx-auto rounded-2xl border border-amber-500/60 bg-gradient-to-r from-amber-950/90 via-amber-900/70 to-amber-950/90 p-4 text-left text-xs text-amber-200 shadow-[0_0_25px_rgba(245,158,11,0.25)] backdrop-blur-md">
-            <div className="flex items-center gap-2 font-black text-amber-300 text-xs sm:text-sm mb-1.5 uppercase tracking-wide">
-              <span className="flex size-6 items-center justify-center rounded-lg bg-amber-500/20 text-amber-300 font-bold">📱</span>
-              <span>Aviso para quem veio pelo TikTok ou Instagram:</span>
+          {/* DICA ESPECIAL CASO O USUÁRIO VENHA EXCLUSIVAMENTE DO TIKTOK */}
+          {isTikTokUser && (
+            <div className="my-5 max-w-xl mx-auto rounded-2xl border border-amber-500/60 bg-gradient-to-r from-amber-950/90 via-amber-900/70 to-amber-950/90 p-4 text-left text-xs text-amber-200 shadow-[0_0_25px_rgba(245,158,11,0.25)] backdrop-blur-md">
+              <div className="flex items-center gap-2 font-black text-amber-300 text-xs sm:text-sm mb-1.5 uppercase tracking-wide">
+                <span className="flex size-6 items-center justify-center rounded-lg bg-amber-500/20 text-amber-300 font-bold">📱</span>
+                <span>Aviso para quem veio pelo TikTok:</span>
+              </div>
+              <p className="text-xs text-amber-100/90 leading-relaxed font-medium">
+                Se o aplicativo do TikTok bloquear o download ao clicar no botão verde abaixo, toque nos <strong>3 pontinhos (⋮ ou ···)</strong> no canto superior direito da tela e escolha <strong className="text-white underline font-bold">"Abrir no Navegador"</strong>.
+              </p>
             </div>
-            <p className="text-xs text-amber-100/90 leading-relaxed font-medium">
-              Se o aplicativo do TikTok bloquear o download ao clicar no botão verde abaixo, toque nos <strong>3 pontinhos (⋮ ou ···)</strong> no canto superior direito da tela e escolha <strong className="text-white underline font-bold">"Abrir no Navegador"</strong> (ou "Abrir no Chrome/Safari").
-            </p>
-          </div>
+          )}
 
           {/* IMAGEM DE ONDE CLICAR NO MEDIAFIRE (ANTES DO BOTÃO DE DOWNLOAD) - MAIOR E MAIS CLARA */}
           <div className="my-6 max-w-xl mx-auto overflow-hidden rounded-3xl border border-blue-500/50 bg-[#070e1b] p-5 sm:p-7 shadow-[0_0_40px_rgba(37,99,235,0.3)] relative text-left backdrop-blur-xl">
