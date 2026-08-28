@@ -344,7 +344,7 @@ function InstalarPage() {
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-            Como instalar o <span className="text-red-500">UniTV Pro</span> em menos de 2 minutos
+            Instale o <span className="text-red-500">UniTV Pro</span> em 2 minutos
           </h1>
           <p className="text-xs sm:text-base text-white/80 max-w-md mx-auto leading-relaxed font-medium">
             Compatível com Smart TV Android, TV Box, FireTV, Celular e Tablet Android e Computador (via emulação). Escolha seu aparelho:
