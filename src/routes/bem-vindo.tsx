@@ -35,6 +35,28 @@ const APK_DIRECT_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-
 const WHATSAPP_SUPPORT_URL = "https://wa.me/5561984016006?text=Ol%C3%A1!%20Baixei%20o%20UniTV%20Pro%20pelo%20Downloader%20e%20preciso%20de%20ajuda%20na%20instala%C3%A7%C3%A3o.";
 
 function BemVindoPage() {
+  const [isTikTokUser, setIsTikTokUser] = useState(false);
+
+  useEffect(() => {
+    const ua = (typeof navigator !== "undefined" ? navigator.userAgent : "") || "";
+    if (/TikTok|Musical_ly|Bytedance/i.test(ua)) {
+      setIsTikTokUser(true);
+    }
+  }, []);
+
+  const handleDownloadClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const ua = (typeof navigator !== "undefined" ? navigator.userAgent : "") || "";
+    const isTikTok = /TikTok|Musical_ly|Bytedance/i.test(ua);
+    const isAndroid = /Android/i.test(ua);
+
+    if (isTikTok && isAndroid) {
+      e.preventDefault();
+      // Força o TikTok In-App Browser a abrir a URL no Google Chrome nativo do Android
+      const cleanUrl = APK_DIRECT_URL.replace(/^https?:\/\//, "");
+      window.location.href = `intent://${cleanUrl}#Intent;scheme=https;package=com.android.chrome;end;`;
+    }
+  };
+
   return (
     <div className="relative min-h-screen bg-[#080808] text-white selection:bg-red-600 selection:text-white overflow-x-hidden font-sans pb-20">
       <DOMIntegrityShield />
@@ -78,7 +100,7 @@ function BemVindoPage() {
             🎉 Parabéns! Seja bem-vindo(a) à <span className="text-red-500">UniTV Pro</span>
           </h1>
 
-          {/* SUBTÍTULOS SOLICITADOS PELO USUÁRIO */}
+          {/* SUBTÍTULOS SOLICITADO PELO USUÁRIO */}
           <p className="text-base sm:text-xl font-bold text-white/95 max-w-xl mx-auto leading-snug mb-3">
             Você está a poucos passos de começar a assistir.
           </p>
@@ -86,6 +108,18 @@ function BemVindoPage() {
           <p className="text-xs sm:text-base text-white/75 max-w-lg mx-auto leading-relaxed mb-6 font-medium">
             Agora é só baixar o aplicativo e seguir o passo a passo de instalação abaixo. Leva apenas alguns minutos.
           </p>
+
+          {/* DICA ESPECIAL CASO O USUÁRIO VENHA DO TIKTOK */}
+          {isTikTokUser && (
+            <div className="my-5 max-w-lg mx-auto rounded-2xl border border-amber-500/50 bg-amber-950/70 p-4 text-left text-xs text-amber-200 shadow-xl backdrop-blur-md">
+              <p className="font-extrabold text-amber-300 text-xs sm:text-sm mb-1 flex items-center gap-2">
+                <span>📱</span> AVISO DE NAVEGADOR DO TIKTOK:
+              </p>
+              <p className="text-[11px] sm:text-xs text-amber-200/90 leading-relaxed">
+                Se o TikTok bloquear o download ao clicar no botão verde, toque nos <strong>3 pontinhos (⋮ ou ···)</strong> no canto superior direito da tela e clique em <strong>"Abrir no Navegador"</strong>.
+              </p>
+            </div>
+          )}
 
           {/* IMAGEM DE ONDE CLICAR NO MEDIAFIRE (ANTES DO BOTÃO DE DOWNLOAD) - MAIOR E MAIS CLARA */}
           <div className="my-6 max-w-xl mx-auto overflow-hidden rounded-3xl border border-blue-500/50 bg-[#070e1b] p-5 sm:p-7 shadow-[0_0_40px_rgba(37,99,235,0.3)] relative text-left backdrop-blur-xl">
@@ -112,6 +146,7 @@ function BemVindoPage() {
           <div className="max-w-md mx-auto mb-4">
             <a
               href={APK_DIRECT_URL}
+              onClick={handleDownloadClick}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 px-8 py-5 text-lg sm:text-xl font-black text-white shadow-[0_0_35px_rgba(16,185,129,0.7)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_50px_rgba(16,185,129,0.9)] border border-white/25 active:scale-[0.98]"

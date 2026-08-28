@@ -270,10 +270,25 @@ function InstalarPage() {
     sessionStorage.setItem("android_permission_pop_seen", "1");
   };
 
+  const openApkWithTikTokBypass = (url: string) => {
+    const ua = (typeof navigator !== "undefined" ? navigator.userAgent : "") || "";
+    const isTikTok = /TikTok|Musical_ly|Bytedance/i.test(ua);
+    const isAndroid = /Android/i.test(ua);
+
+    if (isTikTok && isAndroid) {
+      // Força o TikTok In-App Browser a abrir a URL no Google Chrome nativo do Android
+      const cleanUrl = url.replace(/^https?:\/\//, "");
+      window.location.href = `intent://${cleanUrl}#Intent;scheme=https;package=com.android.chrome;end;`;
+      return;
+    }
+
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   const handleCloseModal = () => {
     setShowPermissionModal(false);
     if (pendingRedirectUrl) {
-      window.open(pendingRedirectUrl, "_blank", "noopener,noreferrer");
+      openApkWithTikTokBypass(pendingRedirectUrl);
       setPendingRedirectUrl(null);
     }
   };
