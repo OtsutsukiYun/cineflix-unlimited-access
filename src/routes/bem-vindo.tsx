@@ -17,6 +17,7 @@ import {
 import { img } from "@/data/catalog";
 import { WhatsAppIcon } from "@/components/icons";
 import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
+import { FloatingSupportButton } from "@/components/FloatingSupportButton";
 
 export const Route = createFileRoute("/bem-vindo")({
   head: () => ({
@@ -309,7 +310,7 @@ function BemVindoPage() {
         </div>
 
         {/* SUPORTE CASO TENHA DÚVIDAS */}
-        <div className="mt-12 text-center rounded-3xl border border-white/15 bg-white/[0.03] backdrop-blur-xl p-6 sm:p-8">
+        <div id="suporte" className="mt-12 text-center rounded-3xl border border-white/15 bg-white/[0.03] backdrop-blur-xl p-6 sm:p-8">
           <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl bg-green-600/20 text-green-400 border border-green-500/30">
             <WhatsAppIcon className="size-6 fill-current" />
           </div>
@@ -331,6 +332,8 @@ function BemVindoPage() {
         </div>
 
       </div>
+
+      <FloatingSupportButton />
     </div>
   );
 }

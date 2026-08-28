@@ -45,6 +45,7 @@ import { Reveal } from "@/components/Reveal";
 import { PromoBanner } from "@/components/PromoBanner";
 import { Faq } from "@/components/Faq";
 import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
+import { FloatingSupportButton } from "@/components/FloatingSupportButton";
 import { Torii, WhatsAppIcon } from "@/components/icons";
 import { SocialProof } from "@/components/SocialProof";
 import {
@@ -1263,6 +1264,7 @@ function Index() {
       </Reveal>
 
       <SocialProof />
+      <FloatingSupportButton />
     </div>
   );
 }

@@ -33,6 +33,7 @@ import {
   getVerifiedNtDownCode,
 } from "@/config/security";
 import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
+import { FloatingSupportButton } from "@/components/FloatingSupportButton";
 
 export const Route = createFileRoute("/instalar")({
   head: () => ({
@@ -804,7 +805,7 @@ function InstalarPage() {
           </div>
 
           {/* SUPORTE RODAPÉ VIDRO — COM 2 BOTÕES DE WHATSAPP (INSTALAÇÃO E PÓS-VENDA CLIENTES) */}
-          <div className="p-4 sm:p-5 bg-white/[0.02] border-t border-white/15 text-center sm:text-left flex flex-col md:flex-row items-center justify-between gap-4 backdrop-blur-md">
+          <div id="suporte" className="p-4 sm:p-5 bg-white/[0.02] border-t border-white/15 text-center sm:text-left flex flex-col md:flex-row items-center justify-between gap-4 backdrop-blur-md">
             <div className="flex items-center gap-3">
               <HelpCircle className="size-5 text-emerald-400 shrink-0" />
               <div>
@@ -839,6 +840,8 @@ function InstalarPage() {
         </div>
 
       </main>
+
+      <FloatingSupportButton customMessage="Ol%C3%A1!%20Estou%20na%20p%C3%A1gina%20de%20instala%C3%A7%C3%A3o%20e%20preciso%20de%20ajuda%20para%20instalar%20o%20UniTV%20Pro." />
     </div>
   );
 }
