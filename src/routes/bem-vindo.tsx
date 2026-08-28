@@ -18,7 +18,6 @@ import { img } from "@/data/catalog";
 import { WhatsAppIcon } from "@/components/icons";
 import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
 import { FloatingSupportButton } from "@/components/FloatingSupportButton";
-import { SocialProof } from "@/components/SocialProof";
 
 export const Route = createFileRoute("/bem-vindo")({
   head: () => ({
@@ -133,7 +132,15 @@ function BemVindoPage() {
               </p>
               <div className="rounded-xl border border-amber-500/40 bg-black/60 p-3 text-xs text-amber-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
                 <div>
-                  1. Abra o app <strong className="text-white font-black">Downloader</strong>
+                  1. Baixe o app{" "}
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.esaba.downloader"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-amber-300 font-extrabold underline hover:text-amber-200 inline-flex items-center gap-1"
+                  >
+                    Downloader na Play Store <ExternalLink className="size-3 inline shrink-0" />
+                  </a>
                   <br />
                   2. Digite o código oficial: <strong className="text-amber-300 font-black text-sm">9884830</strong>
                 </div>
@@ -335,7 +342,6 @@ function BemVindoPage() {
       </div>
 
       <FloatingSupportButton />
-      <SocialProof showCounter={false} fastCycle={true} />
     </div>
   );
 }

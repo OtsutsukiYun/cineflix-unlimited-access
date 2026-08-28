@@ -34,7 +34,6 @@ import {
 } from "@/config/security";
 import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
 import { FloatingSupportButton } from "@/components/FloatingSupportButton";
-import { SocialProof } from "@/components/SocialProof";
 
 export const Route = createFileRoute("/instalar")({
   head: () => ({
@@ -602,7 +601,16 @@ function InstalarPage() {
                       03
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-                      Ou instale o app <strong className="text-white">Downloader</strong> na Play Store e digite o código:
+                      Ou instale o app{" "}
+                      <a
+                        href={DOWNLOADER_PLAYSTORE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-black text-emerald-400 underline underline-offset-2 hover:text-emerald-300 inline-flex items-center gap-1"
+                      >
+                        Downloader na Play Store <ExternalLink className="size-3 inline shrink-0" />
+                      </a>{" "}
+                      e digite o código:
                       <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
                     </div>
                   </li>
@@ -843,7 +851,6 @@ function InstalarPage() {
       </main>
 
       <FloatingSupportButton customMessage="Ol%C3%A1!%20Estou%20na%20p%C3%A1gina%20de%20instala%C3%A7%C3%A3o%20e%20preciso%20de%20ajuda%20para%20instalar%20o%20UniTV%20Pro." />
-      <SocialProof showCounter={false} fastCycle={true} />
     </div>
   );
 }
