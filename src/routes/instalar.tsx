@@ -420,9 +420,10 @@ function InstalarPage() {
                   </div>
                   <div className="relative aspect-video w-full">
                     <iframe
-                      src="https://www.youtube.com/embed/0QH2y4005EQ"
-                      title="Vídeo Tutorial"
+                      src="https://www.youtube.com/embed/TDeBxB6lWjY"
+                      title="Vídeo Tutorial de Instalação no TV e TV Box"
                       className="size-full border-0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
                   </div>
