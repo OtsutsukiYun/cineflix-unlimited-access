@@ -425,13 +425,13 @@ function AnimatedHeroHeadline() {
   }, []);
 
   return (
-    <div className="relative min-h-[5rem] sm:min-h-[7rem] md:min-h-[8.5rem] flex items-center justify-center mb-3 sm:mb-4 md:mb-5">
+    <div className="grid grid-cols-1 grid-rows-1 place-items-center w-full max-w-2xl mx-auto mb-2 sm:mb-2.5">
       {/* FRASE 1 (INICIAL): Filmes, séries e lançamentos em um só lugar. */}
       <h1
-        className={`absolute inset-x-0 flex items-center justify-center font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.1] text-white tracking-tight max-w-2xl mx-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
+        className={`col-start-1 row-start-1 font-display text-2xl sm:text-4xl md:text-5xl font-black leading-[1.12] text-white tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
           headlineIndex === 0
             ? "opacity-100 scale-100 translate-y-0 z-10"
-            : "opacity-0 scale-95 -translate-y-3 z-0 pointer-events-none"
+            : "opacity-0 scale-95 -translate-y-2 z-0 pointer-events-none"
         }`}
       >
         <span>
@@ -441,10 +441,10 @@ function AnimatedHeroHeadline() {
 
       {/* FRASE 2: Cansado de procurar um filme e não encontrar onde assistir? */}
       <h1
-        className={`absolute inset-x-0 flex items-center justify-center font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.1] text-white tracking-tight max-w-2xl mx-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
+        className={`col-start-1 row-start-1 font-display text-2xl sm:text-4xl md:text-5xl font-black leading-[1.12] text-white tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
           headlineIndex === 1
             ? "opacity-100 scale-100 translate-y-0 z-10"
-            : "opacity-0 scale-95 translate-y-3 z-0 pointer-events-none"
+            : "opacity-0 scale-95 translate-y-2 z-0 pointer-events-none"
         }`}
       >
         <span>
