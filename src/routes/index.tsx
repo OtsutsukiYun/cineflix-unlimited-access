@@ -437,7 +437,7 @@ function AnimatedHeroHeadline() {
   useEffect(() => {
     const timer = setInterval(() => {
       setHeadlineIndex((prev) => (prev === 0 ? 1 : 0));
-    }, 4500);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
