@@ -503,12 +503,9 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#080808]" />
 
         <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-36 sm:pb-14 text-center">
-          {/* BADGE DE TOPO */}
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/60 px-4 py-1.5 backdrop-blur-md shadow-[0_0_20px_rgba(220,38,38,0.2)]">
-            <span className="text-xs sm:text-sm font-bold tracking-wide text-red-400">
-              🔥 Cansado de procurar um filme e não encontrar onde assistir?
-            </span>
-          </div>
+          <p className="mb-3 text-xs sm:text-sm font-extrabold text-red-500 uppercase tracking-widest">
+            🔥 Cansado de procurar um filme e não encontrar onde assistir?
+          </p>
 
           {/* TÍTULO PRINCIPAL - HIERARQUIA TIPOGRÁFICA DE DESTAQUE */}
           <h1 className="font-display text-3xl font-black sm:text-5xl md:text-6xl leading-[1.1] text-white tracking-tight max-w-2xl mx-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
