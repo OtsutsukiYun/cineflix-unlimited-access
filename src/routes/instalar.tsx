@@ -213,38 +213,37 @@ function CodeCopyBox({ code, onCopyClick }: { code: string; onCopyClick?: () => 
   };
 
   return (
-    <div className="relative overflow-hidden my-3 rounded-2xl p-4 sm:p-5 border border-white/25 bg-white/[0.08] backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-      <div className="pointer-events-none absolute -right-10 -bottom-10 size-36 rounded-full bg-red-600/20 blur-2xl" />
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left relative z-10">
-        <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left w-full sm:w-auto justify-center sm:justify-start">
-          <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-red-600/30 text-red-300 border border-white/20 font-mono font-black text-xl backdrop-blur-md shadow-inner">
-            <Hash className="size-5" />
+    <div className="relative overflow-hidden my-2 rounded-xl py-2 px-3.5 sm:px-4 border border-white/20 bg-white/[0.06] backdrop-blur-xl shadow-sm max-w-md mx-auto">
+      <div className="flex items-center justify-between gap-2.5 relative z-10 w-full">
+        <div className="flex items-center gap-2.5 min-w-0">
+          <div className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-red-600/30 text-red-300 border border-white/15 font-mono font-bold text-sm backdrop-blur-md">
+            <Hash className="size-3.5" />
           </div>
-          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-red-400 block">
-              Código de Instalação Rápida (Protegido 🔒)
+          <div className="flex items-baseline gap-2 min-w-0 truncate">
+            <span className="text-[10px] font-medium uppercase tracking-wider text-white/70 shrink-0">
+              Código:
             </span>
-            <div className="font-mono font-black text-2xl sm:text-3xl tracking-widest text-white drop-shadow-md leading-tight">
+            <span className="font-mono font-black text-base sm:text-lg tracking-widest text-white drop-shadow-sm">
               {verifiedCode}
-            </div>
+            </span>
           </div>
         </div>
 
         <button
           onClick={handleCopy}
-          className={`w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-xs font-black tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-md backdrop-blur-md active:scale-95 ${
+          className={`shrink-0 inline-flex items-center justify-center gap-1.5 rounded-lg px-3 py-1.5 text-[11px] font-bold tracking-wide uppercase transition-all duration-200 cursor-pointer backdrop-blur-md active:scale-95 ${
             copied
-              ? "bg-emerald-400 text-black font-extrabold border border-emerald-300"
-              : "bg-red-600 hover:bg-red-500 text-white border border-white/20 shadow-[0_0_15px_rgba(220,38,38,0.5)]"
+              ? "bg-emerald-500 text-black border border-emerald-400 font-extrabold"
+              : "bg-red-600 hover:bg-red-500 text-white border border-white/20 shadow-sm"
           }`}
         >
           {copied ? (
             <>
-              <Check className="size-4 stroke-[3]" /> COPIADO!
+              <Check className="size-3.5 stroke-[3]" /> COPIADO!
             </>
           ) : (
             <>
-              <Copy className="size-4" /> COPIAR CÓDIGO
+              <Copy className="size-3.5" /> COPIAR
             </>
           )}
         </button>
@@ -500,14 +499,16 @@ function InstalarPage() {
                     </p>
                   </li>
 
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
-                      02
-                    </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-                      Abra o Downloader e digite o código:
-                      <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
+                  <li className="space-y-2">
+                    <div className="flex items-center gap-3">
+                      <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                        02
+                      </span>
+                      <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
+                        Abra o Downloader e digite o código:
+                      </p>
                     </div>
+                    <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
                   </li>
 
                   <li className="flex items-start gap-3">
@@ -618,23 +619,25 @@ function InstalarPage() {
                     </p>
                   </li>
 
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
-                      03
-                    </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-                      Ou use o{" "}
-                      <a
-                        href={DOWNLOADER_PLAYSTORE_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="font-black text-emerald-400 underline underline-offset-2 hover:text-emerald-300 inline-flex items-center gap-1"
-                      >
-                        Downloader na Play Store <ExternalLink className="size-3 inline shrink-0" />
-                      </a>{" "}
-                      com o código:
-                      <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
+                  <li className="space-y-2">
+                    <div className="flex items-center gap-3">
+                      <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                        03
+                      </span>
+                      <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
+                        Ou use o{" "}
+                        <a
+                          href={DOWNLOADER_PLAYSTORE_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-black text-emerald-400 underline underline-offset-2 hover:text-emerald-300 inline-flex items-center gap-1"
+                        >
+                          Downloader na Play Store <ExternalLink className="size-3 inline shrink-0" />
+                        </a>{" "}
+                        com o código:
+                      </div>
                     </div>
+                    <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
                   </li>
                 </ol>
               </>
