@@ -34,8 +34,8 @@ export const heroSlides: HeroSlide[] = [
     tagline: "Quando o desejo se torna um pesadelo sem saída.",
     backdrop: "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg",
     poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
-    objectPosition: "center 2%",
-    objectPositionMobile: "50% 0%",
+    objectPosition: "center 40%",
+    objectPositionMobile: "50% 30%",
     brightness: "brightness(1.3)",
   },
   {
