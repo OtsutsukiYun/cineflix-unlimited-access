@@ -13,6 +13,8 @@ import {
   Tv,
   ArrowDown,
   Info,
+  Copy,
+  Check,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { WhatsAppIcon } from "@/components/icons";
@@ -37,6 +39,7 @@ const WHATSAPP_SUPPORT_URL = "https://wa.me/5561984016006?text=Ol%C3%A1!%20Baixe
 
 function BemVindoPage() {
   const [isTikTokUser, setIsTikTokUser] = useState(false);
+  const [copiedMediaFire, setCopiedMediaFire] = useState(false);
 
   useEffect(() => {
     const ua = (typeof navigator !== "undefined" ? navigator.userAgent : "") || "";
@@ -127,9 +130,37 @@ function BemVindoPage() {
                 <span>ATENÇÃO PARA QUEM VEIO DO TIKTOK:</span>
               </div>
               <p className="text-xs sm:text-sm text-amber-100 leading-relaxed font-semibold mb-2">
-                O aplicativo do TikTok bloqueia a instalação direta de aplicativos. Para instalar sem erros, recomendamos usar o <strong className="text-white font-extrabold underline">Método do Downloader</strong>:
+                O aplicativo do TikTok bloqueia o clique de download direto. Você pode usar o <strong className="text-white font-extrabold underline">Método do Downloader</strong> ou <strong>copiar o link do MediaFire</strong> para colar no seu navegador (Chrome/Safari):
               </p>
-              <div className="rounded-xl border border-amber-500/40 bg-black/60 p-3 text-xs text-amber-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+              
+              <div className="rounded-xl border border-amber-500/40 bg-black/60 p-3 text-xs text-amber-200 flex flex-col gap-2.5 mb-2.5">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="font-mono text-[11px] text-amber-200 truncate select-all pr-2">
+                    https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      navigator.clipboard.writeText("https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file");
+                      setCopiedMediaFire(true);
+                      setTimeout(() => setCopiedMediaFire(false), 2500);
+                    }}
+                    className="shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-black text-xs transition-colors cursor-pointer shadow-md"
+                  >
+                    {copiedMediaFire ? (
+                      <>
+                        <Check className="size-3.5" /> COPIADO!
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="size-3.5" /> COPIAR LINK MEDIAFIRE
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-amber-500/30 bg-black/40 p-3 text-xs text-amber-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
                 <div>
                   1. Baixe o app{" "}
                   <a

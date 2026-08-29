@@ -254,6 +254,7 @@ function InstalarPage() {
   const [showPermissionModal, setShowPermissionModal] = useState(false);
   const [pendingRedirectUrl, setPendingRedirectUrl] = useState<string | null>(null);
   const [isTikTokUser, setIsTikTokUser] = useState(false);
+  const [copiedMediaFire, setCopiedMediaFire] = useState(false);
 
   useEffect(() => {
     const ua = (typeof navigator !== "undefined" ? navigator.userAgent : "") || "";
@@ -556,6 +557,42 @@ function InstalarPage() {
                         <Download className="size-4 animate-bounce" />
                         BAIXAR APK UNITV PRO (DIRETO)
                       </a>
+
+                      {/* CAIXA DE COPIAR LINK MEDIAFIRE EXCLUSIVA PARA QUEM VEM DO TIKTOK */}
+                      {isTikTokUser && (
+                        <div className="mt-2.5 rounded-xl border border-amber-500/50 bg-amber-950/60 p-3 text-amber-100 shadow-md">
+                          <p className="font-extrabold text-amber-300 text-xs mb-1 uppercase flex items-center gap-1.5">
+                            <span>📋</span> Para quem veio do TikTok:
+                          </p>
+                          <p className="text-[11px] text-amber-200/90 mb-2 leading-tight">
+                            Como o TikTok bloqueia o clique direto, <strong>copie o link do MediaFire</strong> abaixo e cole no seu navegador (Chrome/Safari):
+                          </p>
+                          <div className="flex items-center justify-between gap-2 rounded-lg bg-black/70 p-2 border border-amber-500/40">
+                            <span className="font-mono text-[10px] text-amber-200 truncate select-all pr-2">
+                              {APK_MEDIAFIRE_URL}
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                navigator.clipboard.writeText(APK_MEDIAFIRE_URL);
+                                setCopiedMediaFire(true);
+                                setTimeout(() => setCopiedMediaFire(false), 2500);
+                              }}
+                              className="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-md bg-amber-500 hover:bg-amber-400 text-black font-black text-[11px] transition-colors cursor-pointer"
+                            >
+                              {copiedMediaFire ? (
+                                <>
+                                  <Check className="size-3" /> COPIADO!
+                                </>
+                              ) : (
+                                <>
+                                  <Copy className="size-3" /> COPIAR LINK MEDIAFIRE
+                                </>
+                              )}
+                            </button>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </li>
 
