@@ -86,9 +86,14 @@ const HORROR_2026_POSTERS = [
   "/12H82Xrr2ijDF0lJWUarqGFV7bC.jpg", // Five Nights at Freddy's 2
   "/skwydfnpaQdRQZfXMroh59FMJyY.jpg", // Rua do Medo Rainha do Baile
   "/2jME1L29XGE3T4f0zUHgpiKsPrV.jpg", // O Macaco
-  "/7LbrEQvturE05hljvTCWST7rLQL.jpg", // Acompanhante Perfeita
   "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg", // FROM (Origem)
 ];
+
+const linha1 = HORROR_2026_POSTERS.slice(0, 8);
+const linha2 = HORROR_2026_POSTERS.slice(8, 16);
+const linha3 = HORROR_2026_POSTERS.slice(16, 24);
+const linha4 = HORROR_2026_POSTERS.slice(24, 32);
+const linha5 = HORROR_2026_POSTERS.slice(32, 40);
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link.ntdev.ntdw";
@@ -315,36 +320,36 @@ function InstalarPage() {
         <div className="flex flex-col gap-3.5 -rotate-6 scale-110 -translate-y-12">
           <div className="flex overflow-hidden">
             <div className="animate-marquee-slow flex shrink-0 items-center gap-3.5 pr-3.5">
-              {[...linha1, ...linha1, ...linha1].map((t, idx) => (
-                <img key={t.title + idx} src={img(t.poster, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
+              {[...linha1, ...linha1, ...linha1].map((p, idx) => (
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
               ))}
             </div>
           </div>
           <div className="flex overflow-hidden">
             <div className="animate-marquee-reverse-slow flex shrink-0 items-center gap-3.5 pr-3.5">
-              {[...linha2, ...linha2, ...linha2].map((t, idx) => (
-                <img key={t.title + idx} src={img(t.poster, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
+              {[...linha2, ...linha2, ...linha2].map((p, idx) => (
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
               ))}
             </div>
           </div>
           <div className="flex overflow-hidden">
             <div className="animate-marquee-slow flex shrink-0 items-center gap-3.5 pr-3.5">
-              {[...linha3, ...linha3, ...linha3].map((t, idx) => (
-                <img key={t.title + idx} src={img(t.poster, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
+              {[...linha3, ...linha3, ...linha3].map((p, idx) => (
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
               ))}
             </div>
           </div>
           <div className="flex overflow-hidden">
             <div className="animate-marquee-reverse-slow flex shrink-0 items-center gap-3.5 pr-3.5">
-              {[...linha4, ...linha4, ...linha4].map((t, idx) => (
-                <img key={t.title + idx} src={img(t.poster, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
+              {[...linha4, ...linha4, ...linha4].map((p, idx) => (
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
               ))}
             </div>
           </div>
           <div className="flex overflow-hidden">
             <div className="animate-marquee-slow flex shrink-0 items-center gap-3.5 pr-3.5">
-              {[...linha5, ...linha5, ...linha5].map((t, idx) => (
-                <img key={t.title + idx} src={img(t.poster, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
+              {[...linha5, ...linha5, ...linha5].map((p, idx) => (
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
               ))}
             </div>
           </div>
