@@ -657,132 +657,68 @@ function InstalarPage() {
           </div>
 
           {/* SEÇÃO DE COMPRA VIDRO "GOSTOU DO QUE VIU?" */}
-          <div id="plano-mensal" className="p-6 sm:p-10 border-t border-white/15 bg-white/[0.03] backdrop-blur-2xl text-center space-y-5">
+          <div id="plano-mensal" className="p-6 sm:p-8 border-t border-white/15 bg-white/[0.03] backdrop-blur-2xl text-center space-y-4">
 
-            <div className="space-y-2">
+            <div className="space-y-1.5">
               <span className="text-[11px] font-black text-red-400 uppercase tracking-widest block">
                 Plano Mensal • Acesso Ilimitado
               </span>
-
-              <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
-                Gostou do que viu?
+              <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                Gostou do teste? <span className="text-red-500">Garanta seu acesso</span>
               </h2>
-              <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed font-medium">
-                Continue assistindo a todos os seus filmes, séries, esportes e canais ao vivo no UniTV Pro sem interrupções!
-              </p>
             </div>
 
-            {/* 🎬 ESTEIRA HORIZONTAL DE CAPINHAS DE TERROR 2026 COM FADE SUAVE NAS BORDAS */}
-            <div className="relative overflow-hidden py-2 my-2 max-w-xl mx-auto rounded-2xl">
-              <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-[#0d090a] to-transparent" />
-              <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-[#0d090a] to-transparent" />
-
-              <div className="flex w-max gap-3 animate-marquee-slow">
-                {HORROR_2026_POSTERS.concat(HORROR_2026_POSTERS, HORROR_2026_POSTERS).map((p, i) => (
-                  <img
-                    key={`p-marquee-${i}`}
-                    src={img(p, "w185")}
-                    alt=""
-                    className="h-28 w-19 rounded-xl object-cover shadow-lg border border-red-500/30 shrink-0 transition-transform hover:scale-105"
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* 💰 PREÇO EXIBIDO EM TAMANHO GIGANTE */}
+            {/* 💰 PREÇO EXIBIDO EM TAMANHO DESTAQUE */}
             <div className="py-1">
-              <span className="text-xs font-bold text-red-400 uppercase tracking-widest block mb-1">
-                30 DIAS DE ACESSO COMPLETO
-              </span>
               <div className="flex items-baseline justify-center gap-2 flex-nowrap whitespace-nowrap">
                 <span className="text-xs sm:text-sm font-bold text-white/60">Apenas</span>
-                <span className="text-6xl sm:text-7xl font-black text-white tracking-tight drop-shadow-[0_0_35px_rgba(255,255,255,0.8)]">
+                <span className="text-5xl sm:text-6xl font-black text-white tracking-tight drop-shadow-[0_0_30px_rgba(255,255,255,0.7)]">
                   R$ 34,99
                 </span>
                 <span className="text-xs sm:text-sm font-bold text-white/80">/mês</span>
               </div>
             </div>
 
-            {/* 🌟 LISTA EXATA DE 10 RECURSOS E BENEFÍCIOS */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left max-w-lg mx-auto pt-3 pb-1 border-t border-white/15">
+            {/* 🌟 4 DESTAQUES DIRETO AO PONTO */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left max-w-md mx-auto pt-2 pb-1">
               {[
-                "1 Tela simultânea (Smart TV Android, TV Box, Celular ou PC)",
-                "Milhares de Filmes & Séries",
-                "Lançamentos semanais inéditos de terror & cinema",
-                "Canais Ao Vivo & Esportes sem travar (4K & Full HD)",
-                "Animes, Doramas & Novelas Turcas atualizadas",
-                "Programação Infantil & Desenhos Dublados",
-                "Guia de Programação EPG & Replay de 7 dias",
-                "Suporte VIP via WhatsApp",
-                "Garantia incondicional de reembolso por 7 dias",
-                "Sem fidelidade ou multa (Cancele quando quiser)",
+                "1 Tela simultânea (Smart TV, Celular ou PC)",
+                "Filmes, Séries, Animes & Doramas ilimitados",
+                "Canais ao vivo & Esportes sem travamentos",
+                "Sem fidelidade e com 7 dias de garantia",
               ].map((f, idx) => (
-                <div key={idx} className="flex items-start gap-2.5">
-                  <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span className="text-xs text-white/90 font-medium leading-relaxed">{f}</span>
+                <div key={idx} className="flex items-center gap-2">
+                  <CheckCircle2 className="size-4 text-emerald-400 shrink-0" />
+                  <span className="text-xs text-white/90 font-medium">{f}</span>
                 </div>
               ))}
             </div>
 
-            {/* BOTÃO ASSINATURA VERMELHO VIDRO — POSICIONADO BEM COLADO ÀS FEATURES */}
-            <div className="pt-1">
+            {/* BOTÃO ASSINATURA */}
+            <div className="pt-2">
               <a
                 href="https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_30px_rgba(220,38,38,0.7)] border border-red-400/40 transition-all hover:scale-105 cursor-pointer w-full sm:w-auto backdrop-blur-md uppercase tracking-wider"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-7 py-3.5 text-xs sm:text-sm font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-400/40 transition-all hover:scale-105 cursor-pointer w-full sm:w-auto backdrop-blur-md uppercase tracking-wider"
               >
                 <Zap className="size-4 fill-current" />
-                <span>QUERO CONTINUAR COM O ACESSO</span>
+                <span>ASSINAR PLANO MENSAL</span>
                 <ArrowRight className="size-4" />
               </a>
             </div>
 
             {/* BADGES SEGURANÇA */}
-            <div className="flex items-center justify-center gap-4 text-[11px] font-bold text-white/70 pt-2 border-t border-white/15">
+            <div className="flex items-center justify-center gap-4 text-[11px] font-bold text-white/60 pt-2 border-t border-white/10">
               <span className="flex items-center gap-1">
-                <ShieldCheck className="size-3.5 text-emerald-400" /> Garantia 7 dias
+                <ShieldCheck className="size-3.5 text-emerald-400" /> 7 dias de garantia
               </span>
               <span>•</span>
               <span className="flex items-center gap-1">
-                <CreditCard className="size-3.5 text-blue-400" /> Pix ou cartão
+                <Lock className="size-3.5 text-blue-400" /> Pagamento seguro (Pix ou Cartão)
               </span>
             </div>
 
-          </div>
-
-          {/* CERTIFICADOS DE SEGURANÇA & GARANTIA VIDRO */}
-          <div className="p-6 sm:p-8 bg-white/[0.02] border-t border-white/15 backdrop-blur-xl text-center">
-            <div className="mb-6">
-              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-extrabold tracking-widest text-emerald-400 uppercase backdrop-blur-md shadow-sm">
-                <ShieldCheck className="size-3.5" /> Compra 100% Segura &amp; Protegida
-              </span>
-              <h3 className="mt-2 text-lg sm:text-xl font-black text-white">
-                Ambiente seguro com <span className="text-emerald-400">garantia total</span>
-              </h3>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 text-center">
-              {[
-                { icon: Lock, title: "SSL 256-bit", desc: "Ambiente Criptografado", color: "text-emerald-400" },
-                { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
-                { icon: Zap, title: "Envio Imediato", desc: "Envio no E-mail", color: "text-amber-400" },
-                { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão 12x", color: "text-purple-400" },
-                { icon: Award, title: "+30.000 Clientes", desc: "Assinantes Ativos", color: "text-rose-400" },
-                { icon: CheckCircle2, title: "Sem Fidelidade", desc: "Cancele quando quiser", color: "text-teal-400" },
-              ].map((c) => (
-                <div
-                  key={c.title}
-                  className="group flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-xl transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08]"
-                >
-                  <div className={`flex size-10 items-center justify-center rounded-xl bg-white/[0.06] border border-white/10 ${c.color} shadow-inner transition-transform group-hover:scale-110`}>
-                    <c.icon className="size-4.5" />
-                  </div>
-                  <p className="text-xs font-black text-white">{c.title}</p>
-                  <p className="text-[10px] text-white/50 leading-tight font-medium">{c.desc}</p>
-                </div>
-              ))}
-            </div>
           </div>
 
           {/* SUPORTE RODAPÉ VIDRO — COM 2 BOTÕES DE WHATSAPP (INSTALAÇÃO E PÓS-VENDA CLIENTES) */}
