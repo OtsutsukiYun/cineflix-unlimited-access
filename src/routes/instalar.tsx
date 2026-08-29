@@ -173,7 +173,7 @@ function PermissionModal({
 
         <div className="relative z-10 text-xs sm:text-sm text-white/90 leading-relaxed space-y-3 mb-6 text-left bg-white/[0.04] backdrop-blur-2xl p-4 rounded-2xl border border-white/15 shadow-inner">
           <p>
-            Por padrão, o <strong className="text-white font-extrabold">Android bloqueia aplicativos instalados fora da Play Store</strong> e pode exibir um aviso de <strong className="text-amber-400 font-bold font-mono">"Fonte Desconhecida"</strong> ou <strong className="text-amber-400 font-bold font-mono">"App Não Verificado"</strong>.
+            Por padrão, o <strong className="text-white font-extrabold">Android bloqueia aplicativos instalados fora da Play Store</strong> e pode exibir um aviso de <strong className="text-amber-400 font-bold font-mono">"Fonte Desconhecida"</strong> ou <strong className="text-amber-400 font-bold font-mono">"App Nocivo Bloqueado"</strong>.
           </p>
 
           <div className="p-3 rounded-xl bg-white/[0.08] border border-white/20 text-white text-xs font-semibold backdrop-blur-md">
@@ -708,7 +708,7 @@ function InstalarPage() {
             {/* 🌟 LISTA EXATA DE 10 RECURSOS E BENEFÍCIOS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left max-w-lg mx-auto pt-3 pb-1 border-t border-white/15">
               {[
-                "1 Tela simultânea (Smart TV Android, TV Box, Celular ou PC)",
+                "1 Tela simultânea (Smart TV Android, TV Box ou Celular)",
                 "Milhares de Filmes & Séries",
                 "Lançamentos semanais inéditos de terror & cinema",
                 "Canais Ao Vivo & Esportes sem travar (4K & Full HD)",
