@@ -647,17 +647,20 @@ function InstalarPage() {
             )}
 
           </div>
+        </div>
 
-          {/* RIBBON VERDE VIDRO */}
-          <div className="bg-emerald-950/60 p-3.5 border-t border-emerald-500/30 text-center flex items-center justify-center gap-2 backdrop-blur-md">
-            <CheckCircle2 className="size-4 text-emerald-400 shrink-0" />
-            <span className="text-xs font-black text-white">
-              Seu teste grátis de 3 dias está liberado 🎉
-            </span>
-          </div>
+        {/* BANNER VERDE VIDRO DESTACADO E SEPARADO */}
+        <div className="rounded-2xl border border-emerald-500/40 bg-emerald-950/60 p-4 text-center flex items-center justify-center gap-2.5 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] my-6">
+          <CheckCircle2 className="size-5 text-emerald-400 shrink-0 animate-pulse" />
+          <span className="text-xs sm:text-sm font-black text-white tracking-wide">
+            Seu teste grátis de 3 dias está liberado 🎉
+          </span>
+        </div>
 
-          {/* SEÇÃO DE COMPRA VIDRO "GOSTOU DO QUE VIU?" */}
-          <div id="plano-mensal" className="p-6 sm:p-10 border-t border-white/15 bg-white/[0.03] backdrop-blur-2xl text-center space-y-5">
+        {/* SEÇÃO DE COMPRA VIDRO "GOSTOU DO QUE VIU?" (CARD SEPARADO) */}
+        <div id="plano-mensal" className="rounded-3xl border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden">
+
+          <div className="p-6 sm:p-10 text-center space-y-5">
 
             <div className="space-y-2">
               <span className="text-[11px] font-black text-red-400 uppercase tracking-widest block">
