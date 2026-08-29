@@ -754,7 +754,7 @@ function InstalarPage() {
 
           </div>
 
-          {/* CERTIFICADOS DE SEGURANÇA & GARANTIA VIDRO 3D */}
+          {/* CERTIFICADOS DE SEGURANÇA & GARANTIA VIDRO */}
           <div className="p-6 sm:p-8 bg-white/[0.02] border-t border-white/15 backdrop-blur-xl text-center">
             <div className="mb-6">
               <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-extrabold tracking-widest text-emerald-400 uppercase backdrop-blur-md shadow-sm">
@@ -765,39 +765,24 @@ function InstalarPage() {
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6 text-center">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 text-center">
               {[
-                { icon: Lock, title: "SSL 256-bit", desc: "Ambiente Criptografado", color: "from-emerald-400 via-emerald-600 to-teal-800", glow: "rgba(16,185,129,0.5)", delay: "0s" },
-                { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "from-blue-400 via-blue-600 to-indigo-800", glow: "rgba(59,130,246,0.5)", delay: "0.6s" },
-                { icon: Zap, title: "Envio Imediato", desc: "Envio no E-mail", color: "from-amber-300 via-amber-500 to-orange-700", glow: "rgba(245,158,11,0.5)", delay: "1.2s" },
-                { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão 12x", color: "from-purple-400 via-purple-600 to-pink-800", glow: "rgba(168,85,247,0.5)", delay: "1.8s" },
-                { icon: Award, title: "+30.000 Clientes", desc: "Assinantes Ativos", color: "from-rose-400 via-rose-600 to-red-800", glow: "rgba(244,63,94,0.5)", delay: "2.4s" },
-                { icon: CheckCircle2, title: "Sem Fidelidade", desc: "Cancele quando quiser", color: "from-teal-300 via-teal-500 to-emerald-800", glow: "rgba(20,184,166,0.5)", delay: "3.0s" },
+                { icon: Lock, title: "SSL 256-bit", desc: "Ambiente Criptografado", color: "text-emerald-400" },
+                { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
+                { icon: Zap, title: "Envio Imediato", desc: "Envio no E-mail", color: "text-amber-400" },
+                { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão 12x", color: "text-purple-400" },
+                { icon: Award, title: "+30.000 Clientes", desc: "Assinantes Ativos", color: "text-rose-400" },
+                { icon: CheckCircle2, title: "Sem Fidelidade", desc: "Cancele quando quiser", color: "text-teal-400" },
               ].map((c) => (
                 <div
                   key={c.title}
-                  className="group flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.03] p-4 backdrop-blur-xl transition-all duration-300 hover:border-white/25 hover:bg-white/[0.07] hover:shadow-[0_12px_30px_rgba(0,0,0,0.6)]"
+                  className="group flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-xl transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08]"
                 >
-                  {/* 🌟 3D FLOATING ICON BADGE WITH STAGGERED LEVITATION */}
-                  <div
-                    style={{ animationDelay: c.delay }}
-                    className="animate-float-3d relative flex size-13 items-center justify-center transition-transform group-hover:scale-110 my-1"
-                  >
-                    {/* 3D GLOW AURA */}
-                    <div
-                      className="absolute inset-0 rounded-2xl blur-md opacity-70 group-hover:opacity-100 transition-opacity"
-                      style={{ background: `radial-gradient(circle, ${c.glow} 0%, transparent 70%)` }}
-                    />
-                    
-                    {/* 3D GLASS SHINE BADGE */}
-                    <div className={`relative flex size-full items-center justify-center rounded-2xl bg-gradient-to-br ${c.color} text-white border border-white/40 shadow-[inset_0_2px_6px_rgba(255,255,255,0.7),inset_0_-2px_6px_rgba(0,0,0,0.5),0_10px_20px_rgba(0,0,0,0.7)] backdrop-blur-md`}>
-                      <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/35 to-transparent rounded-t-2xl pointer-events-none" />
-                      <c.icon className="relative z-10 size-6 text-white drop-shadow-[0_3px_6px_rgba(0,0,0,0.9)]" />
-                    </div>
+                  <div className={`flex size-10 items-center justify-center rounded-xl bg-white/[0.06] border border-white/10 ${c.color} shadow-inner transition-transform group-hover:scale-110`}>
+                    <c.icon className="size-4.5" />
                   </div>
-
                   <p className="text-xs font-black text-white">{c.title}</p>
-                  <p className="text-[10px] text-white/60 leading-tight font-medium">{c.desc}</p>
+                  <p className="text-[10px] text-white/50 leading-tight font-medium">{c.desc}</p>
                 </div>
               ))}
             </div>
