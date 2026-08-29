@@ -22,6 +22,7 @@ import {
   X,
   Lock,
   Award,
+  Headphones,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { WhatsAppIcon } from "@/components/icons";
@@ -393,12 +394,24 @@ function InstalarPage() {
             </Link>
           </nav>
 
-          <a
-            href="#plano-mensal"
-            className="btn-cta px-3.5 py-1.5 text-[11px] font-extrabold tracking-wide uppercase shadow-md"
-          >
-            Assinar
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href="https://wa.me/556184016006?text=Ol%C3%A1!%20Preciso%20de%20suporte%20no%20UniTV%20Pro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 sm:px-3.5 py-1.5 text-[11px] font-extrabold tracking-wide uppercase rounded-full border border-white/20 bg-white/10 hover:bg-white/20 text-white/90 hover:text-white transition-all flex items-center gap-1.5 backdrop-blur-md cursor-pointer"
+            >
+              <Headphones className="size-3.5 text-emerald-400" />
+              <span>Suporte</span>
+            </a>
+
+            <a
+              href="#plano-mensal"
+              className="btn-cta px-3.5 py-1.5 text-[11px] font-extrabold tracking-wide uppercase shadow-md"
+            >
+              Assinar
+            </a>
+          </div>
         </div>
       </header>
 
