@@ -426,7 +426,7 @@ function AnimatedHeroHeadline() {
 
   return (
     <div className="relative min-h-[5.5rem] sm:min-h-[7rem] md:min-h-[8rem] flex items-center justify-center">
-      {/* FRASE 1: Cansado de procurar um filme e não encontrar onde assistir? */}
+      {/* FRASE 1 (INICIAL): Filmes, séries e lançamentos em um só lugar. */}
       <h1
         className={`absolute inset-x-0 flex items-center justify-center font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.1] text-white tracking-tight max-w-2xl mx-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
           headlineIndex === 0
@@ -435,11 +435,11 @@ function AnimatedHeroHeadline() {
         }`}
       >
         <span>
-          Cansado de procurar um filme <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">e não encontrar onde assistir?</span>
+          Filmes, séries e lançamentos em <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">um só lugar.</span>
         </span>
       </h1>
 
-      {/* FRASE 2: Filmes, séries e lançamentos em um só lugar. */}
+      {/* FRASE 2: Cansado de procurar um filme e não encontrar onde assistir? */}
       <h1
         className={`absolute inset-x-0 flex items-center justify-center font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.1] text-white tracking-tight max-w-2xl mx-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
           headlineIndex === 1
@@ -448,7 +448,7 @@ function AnimatedHeroHeadline() {
         }`}
       >
         <span>
-          Filmes, séries e lançamentos em <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">um só lugar.</span>
+          Cansado de procurar um filme <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">e não encontrar onde assistir?</span>
         </span>
       </h1>
     </div>
