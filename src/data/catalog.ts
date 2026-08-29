@@ -312,7 +312,6 @@ export const animes: Title[] = [
 export const novelasTurcas: Title[] = [
   { title: "Será Isso Amor? (Sen Çal Kapımı)", poster: "/cccW8YiPphlbcbOzj84imtDSPZN.jpg", year: "2020", tag: "🔥 #1 Fenômeno" },
   { title: "Meu Nome é Farah (Adım Farah)", poster: "/Aj4qfs1KxhdfcPphWyJiTNYXirE.jpg", year: "2023", tag: "🔥 Drama & Romance" },
-  { title: "Fatmagül: A Força do Amor", poster: "/zRbndORP3qUuIFOxhgPmgEA3Mul.jpg", year: "2010", tag: "⭐ Clássico Inesquecível" },
   { title: "Segredos de Família (Yargı)", poster: "/2oMk0CFflhAodqPJD1Kua9RKpDD.jpg", year: "2021", tag: "🔥 Emmy Internacional" },
   { title: "Hercai: Amor e Vingança", poster: "/iilYRWFCXwv4zKC96QkFwpIxbfg.jpg", year: "2019", tag: "🔥 Sucesso" },
   { title: "Amor Eterno (Kara Sevda)", poster: "/uDSk3PCQLWbrxyjiNrYzO6GqyR7.jpg", year: "2015", tag: "Emmy Internacional" },
