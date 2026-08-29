@@ -238,19 +238,22 @@ function Cta({ children = "QUERO ASSINAR" }: { children?: string }) {
 // ── POSTER CARD ─────────────────────────────────────────────────────────────
 function PosterCard({ item }: { item: { title: string; poster: string; year: string; tag?: string } }) {
   return (
-    <div className="group relative overflow-hidden rounded-xl aspect-[2/3] bg-surface cursor-pointer">
+    <div className="group relative overflow-hidden rounded-xl aspect-[2/3] bg-surface cursor-pointer border border-white/10 hover:border-red-500/40 transition-all duration-300 shadow-md hover:shadow-[0_10px_30px_rgba(220,38,38,0.3)]">
       <img
         src={img(item.poster, "w342")}
         alt={item.title}
         loading="lazy"
         className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <div className="absolute bottom-0 inset-x-0 p-2.5 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-        <p className="text-[11px] font-bold text-white leading-tight line-clamp-2">{item.title}</p>
-        <p className="text-[10px] text-white/60 mt-0.5">{item.year}</p>
+      {/* CAMADA ESCURA INTENSA NO HOVER PARA GARANTIR ALTO CONTRASTE DO TEXTO */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/95 via-black/80 to-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+      <div className="absolute bottom-0 inset-x-0 p-3 z-10 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+        <p className="text-xs font-black text-white leading-snug line-clamp-2 drop-shadow-[0_2px_6px_rgba(0,0,0,1)]">{item.title}</p>
+        <p className="text-[10px] font-bold text-red-400 mt-1 drop-shadow-md">{item.year}</p>
       </div>
       {item.tag && (
-        <span className="absolute top-2 left-2 rounded-full bg-red-600 px-2 py-0.5 text-[9px] font-black text-white uppercase tracking-wide">
+        <span className="absolute top-2 left-2 z-10 rounded-full bg-red-600 px-2 py-0.5 text-[9px] font-black text-white uppercase tracking-wide shadow-md">
           {item.tag}
         </span>
       )}
