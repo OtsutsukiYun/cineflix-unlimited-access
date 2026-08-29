@@ -17,7 +17,6 @@ import {
 import { img } from "@/data/catalog";
 import { WhatsAppIcon } from "@/components/icons";
 import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
-import { FloatingSupportButton } from "@/components/FloatingSupportButton";
 
 export const Route = createFileRoute("/bem-vindo")({
   head: () => ({
@@ -340,8 +339,6 @@ function BemVindoPage() {
         </div>
 
       </div>
-
-      <FloatingSupportButton />
     </div>
   );
 }

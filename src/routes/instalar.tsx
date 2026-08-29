@@ -33,7 +33,6 @@ import {
   getVerifiedNtDownCode,
 } from "@/config/security";
 import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
-import { FloatingSupportButton } from "@/components/FloatingSupportButton";
 
 export const Route = createFileRoute("/instalar")({
   head: () => ({
@@ -766,8 +765,6 @@ function InstalarPage() {
         </div>
 
       </main>
-
-      <FloatingSupportButton customMessage="Ol%C3%A1!%20Estou%20na%20p%C3%A1gina%20de%20instala%C3%A7%C3%A3o%20e%20preciso%20de%20ajuda%20para%20instalar%20o%20UniTV%20Pro." />
     </div>
   );
 }

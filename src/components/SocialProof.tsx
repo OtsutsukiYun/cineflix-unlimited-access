@@ -121,22 +121,10 @@ export function SocialProof({ showCounter = true, fastCycle = false }: SocialPro
 
   return (
     <>
-      {/* Contador de assinaturas do dia (Exibido apenas quando showCounter for true) */}
-      {showCounter && (
-        <div className="pointer-events-none fixed bottom-4 left-4 z-40 md:bottom-6 md:left-6">
-          <div className="flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold border border-white/20 bg-white/10 backdrop-blur-2xl shadow-[0_10px_30px_rgba(0,0,0,0.6)] text-white">
-            <TrendingUp className="size-3.5 text-red-400 shrink-0 animate-pulse" />
-            <span className="whitespace-nowrap">
-              <span className="text-red-300 font-black">{vendas}</span> pessoas assinaram hoje
-            </span>
-          </div>
-        </div>
-      )}
-
       {/* Notificação de compra recente com nome do assinante — estilo vidro translúcido (Glassmorphism) */}
       <div
         aria-live="polite"
-        className="pointer-events-none fixed bottom-20 left-4 z-40 sm:bottom-6 sm:left-6"
+        className="pointer-events-none fixed bottom-5 left-4 z-40 sm:bottom-6 sm:left-6"
       >
         {notif && (
           <div
