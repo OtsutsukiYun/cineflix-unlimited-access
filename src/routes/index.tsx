@@ -439,7 +439,7 @@ function AnimatedHeroHeadline() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setHeadlineIndex((prev) => (prev === 0 ? 1 : 0));
+      setHeadlineIndex((prev) => (prev + 1) % 3);
     }, 6000);
     return () => clearInterval(timer);
   }, []);
@@ -448,7 +448,7 @@ function AnimatedHeroHeadline() {
     <div className="grid grid-cols-1 grid-rows-1 place-items-center w-full max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto mb-1.5 sm:mb-2">
       {/* FRASE 1 (INICIAL): Seus filmes, séries e lançamentos em um só lugar. */}
       <h1
-        className={`col-start-1 row-start-1 font-display text-2xl sm:text-4xl md:text-5xl font-black leading-[1.08] text-white tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
+        className={`col-start-1 row-start-1 font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-[1.1] text-white tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
           headlineIndex === 0
             ? "opacity-100 scale-100 translate-y-0 z-10"
             : "opacity-0 scale-95 -translate-y-2 z-0 pointer-events-none"
@@ -461,7 +461,7 @@ function AnimatedHeroHeadline() {
 
       {/* FRASE 2: Chega de procurar e não encontrar onde assistir. */}
       <h1
-        className={`col-start-1 row-start-1 font-display text-2xl sm:text-4xl md:text-5xl font-black leading-[1.08] text-white tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
+        className={`col-start-1 row-start-1 font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-[1.1] text-white tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
           headlineIndex === 1
             ? "opacity-100 scale-100 translate-y-0 z-10"
             : "opacity-0 scale-95 translate-y-2 z-0 pointer-events-none"
@@ -469,6 +469,19 @@ function AnimatedHeroHeadline() {
       >
         <span>
           Chega de procurar <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">e não encontrar onde assistir.</span>
+        </span>
+      </h1>
+
+      {/* FRASE 3: Terror asiático, filmes de vários países e conteúdos que você não encontra nos outros streamings. */}
+      <h1
+        className={`col-start-1 row-start-1 font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black leading-[1.15] text-white tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
+          headlineIndex === 2
+            ? "opacity-100 scale-100 translate-y-0 z-10"
+            : "opacity-0 scale-95 translate-y-2 z-0 pointer-events-none"
+        }`}
+      >
+        <span>
+          Terror asiático, filmes de vários países e conteúdos que você <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">não encontra nos outros streamings.</span>
         </span>
       </h1>
     </div>
