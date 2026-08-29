@@ -593,7 +593,7 @@ function Index() {
 
           {/* SUBTÍTULO */}
           <p className="text-[13px] sm:text-base font-medium text-white/80 max-w-lg mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-            Doramas, animes, novelas turcas, canais ao vivo e muito mais para assistir na sua Smart TV Android, projetor Android, <span className="whitespace-nowrap">celular ou tablet.</span>
+            Doramas, animes, novelas turcas, canais ao vivo e muito mais para assistir na sua Smart TV Android, TV Box, celular, tablet ou projetor.
           </p>
 
           {/* BOTÕES PRINCIPAIS - HIERARQUIA VISUAL PERFEITA */}
