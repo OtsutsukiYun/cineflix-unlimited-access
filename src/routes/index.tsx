@@ -512,7 +512,7 @@ function Index() {
           </h1>
 
           <p className="mt-3 text-xs sm:text-base text-white/90 max-w-[360px] sm:max-w-xl mx-auto leading-snug sm:leading-relaxed text-balance">
-            Doramas, animes, canais ao vivo e muito mais para assistir na TV, celular ou tablet.
+            Doramas, animes, novelas turcas, canais ao vivo e muito mais para assistir na TV, celular ou tablet.
           </p>
 
           <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 w-full max-w-[280px] sm:max-w-[340px] mx-auto">
