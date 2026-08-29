@@ -515,16 +515,16 @@ function Index() {
             Doramas, animes, canais ao vivo e muito mais para assistir na TV, celular ou tablet.
           </p>
 
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 w-full max-w-sm sm:max-w-md mx-auto">
+          <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 w-full max-w-[280px] sm:max-w-[340px] mx-auto">
             <Link
               to="/instalar"
-              className="btn-cta w-full sm:w-1/2 h-11 px-4 py-2.5 text-xs font-black tracking-wider uppercase shadow-md flex items-center justify-center gap-1.5"
+              className="btn-cta w-full sm:w-1/2 h-9 sm:h-9.5 px-3 py-1.5 text-[11px] sm:text-xs font-black tracking-wider uppercase shadow-md flex items-center justify-center gap-1.5"
             >
               TESTAR GRÁTIS
             </Link>
             <SmoothLink
               href={CTA_HREF}
-              className="btn-ghost w-full sm:w-1/2 h-11 px-4 py-2.5 text-xs font-black tracking-wider uppercase shadow-md border border-white/20 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-1.5"
+              className="btn-ghost w-full sm:w-1/2 h-9 sm:h-9.5 px-3 py-1.5 text-[11px] sm:text-xs font-black tracking-wider uppercase shadow-md border border-white/20 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-1.5"
             >
               VER PLANOS
             </SmoothLink>
