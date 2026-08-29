@@ -757,8 +757,8 @@ function InstalarPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left max-w-lg mx-auto pt-3 pb-1 border-t border-white/15">
               {[
                 planTab === "anual"
-                  ? "2 Telas simultâneas (Smart TV Android, TV Box, Celular ou Tablet)"
-                  : "1 Tela simultânea (Smart TV Android, TV Box, Celular ou Tablet)",
+                  ? "2 Telas simultâneas (Smart TV Android, TV Box, Celular, Tablet ou Projetor)"
+                  : "1 Tela simultânea (Smart TV Android, TV Box, Celular, Tablet ou Projetor)",
                 "Milhares de Filmes & Séries",
                 "Lançamentos semanais inéditos de terror & cinema",
                 "Canais Ao Vivo & Esportes sem travar (4K & Full HD)",
@@ -800,7 +800,7 @@ function InstalarPage() {
                 <span>
                   {planTab === "mensal" && "ASSINAR PLANO MENSAL"}
                   {planTab === "trimestral" && "ASSINAR PLANO TRIMESTRAL"}
-                  {planTab === "anual" && "QUERO O PLANO ANUAL VIP (2 TELAS)"}
+                  {planTab === "anual" && "ASSINAR PLANO ANUAL VIP (2 TELAS)"}
                 </span>
                 <ArrowRight className="size-4" />
               </a>
