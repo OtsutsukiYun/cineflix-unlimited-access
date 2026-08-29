@@ -413,6 +413,48 @@ function SlideshowBanner({
   );
 }
 
+// ── TÍTULO ANIMADO DO HERO COM ALTERNÂNCIA DE FRASES ───────────────────────
+function AnimatedHeroHeadline() {
+  const [headlineIndex, setHeadlineIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeadlineIndex((prev) => (prev === 0 ? 1 : 0));
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative min-h-[5.5rem] sm:min-h-[7rem] md:min-h-[8rem] flex items-center justify-center">
+      {/* FRASE 1: Cansado de procurar um filme e não encontrar onde assistir? */}
+      <h1
+        className={`absolute inset-x-0 flex items-center justify-center font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.1] text-white tracking-tight max-w-2xl mx-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
+          headlineIndex === 0
+            ? "opacity-100 scale-100 translate-y-0 z-10"
+            : "opacity-0 scale-95 -translate-y-3 z-0 pointer-events-none"
+        }`}
+      >
+        <span>
+          Cansado de procurar um filme <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">e não encontrar onde assistir?</span>
+        </span>
+      </h1>
+
+      {/* FRASE 2: Filmes, séries e lançamentos em um só lugar. */}
+      <h1
+        className={`absolute inset-x-0 flex items-center justify-center font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.1] text-white tracking-tight max-w-2xl mx-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
+          headlineIndex === 1
+            ? "opacity-100 scale-100 translate-y-0 z-10"
+            : "opacity-0 scale-95 translate-y-3 z-0 pointer-events-none"
+        }`}
+      >
+        <span>
+          Filmes, séries e lançamentos em <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">um só lugar.</span>
+        </span>
+      </h1>
+    </div>
+  );
+}
+
 // ── MAIN PAGE ────────────────────────────────────────────────────────────────
 function Index() {
   const [slide, setSlide] = useState(0);
@@ -503,14 +545,8 @@ function Index() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#080808]" />
 
         <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-36 sm:pb-14 text-center">
-          <p className="mb-3 text-xs sm:text-sm font-extrabold text-red-500 uppercase tracking-widest">
-            🔥 Cansado de procurar um filme e não encontrar onde assistir?
-          </p>
-
-          {/* TÍTULO PRINCIPAL - HIERARQUIA TIPOGRÁFICA DE DESTAQUE */}
-          <h1 className="font-display text-3xl font-black sm:text-5xl md:text-6xl leading-[1.1] text-white tracking-tight max-w-2xl mx-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
-            Filmes, séries e lançamentos em <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">um só lugar.</span>
-          </h1>
+          {/* TÍTULO PRINCIPAL ANIMADO - TRANSIÇÃO SUAVE ENTRE FRASES DE IMPACTO */}
+          <AnimatedHeroHeadline />
 
           {/* SUBTÍTULO */}
           <p className="mt-4 text-sm sm:text-lg font-medium text-white/85 max-w-xl mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
