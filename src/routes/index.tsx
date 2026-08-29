@@ -544,7 +544,7 @@ function Index() {
         ))}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#080808]" />
 
-        <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-36 sm:pb-14 text-center">
+        <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-36 pb-10 sm:pt-48 sm:pb-14 text-center">
           {/* TÍTULO PRINCIPAL ANIMADO - TRANSIÇÃO SUAVE ENTRE FRASES DE IMPACTO */}
           <AnimatedHeroHeadline />
 
