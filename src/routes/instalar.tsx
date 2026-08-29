@@ -168,21 +168,20 @@ function PermissionModal({
         </div>
 
         <h3 className="relative z-10 text-xl sm:text-2xl font-black text-white mb-2 tracking-tight">
-          Dica de Instalação 💡
+          Aviso do Android 💡
         </h3>
 
         <div className="relative z-10 text-xs sm:text-sm text-white/90 leading-relaxed space-y-3 mb-6 text-left bg-white/[0.04] backdrop-blur-2xl p-4 rounded-2xl border border-white/15 shadow-inner">
           <p>
-            Ao instalar o App, o Android pode exibir uma mensagem avisando que o aplicativo é de{" "}
-            <strong className="text-white font-extrabold">"fonte desconhecida"</strong>.
+            Por padrão, o <strong className="text-white font-extrabold">Android bloqueia aplicativos instalados fora da Play Store</strong> e pode exibir um aviso de <strong className="text-amber-400 font-bold font-mono">"Fonte Desconhecida"</strong> ou <strong className="text-amber-400 font-bold font-mono">"App Não Verificado"</strong>.
           </p>
 
           <div className="p-3 rounded-xl bg-white/[0.08] border border-white/20 text-white text-xs font-semibold backdrop-blur-md">
-            👉 Basta clicar em <strong className="text-red-400 underline font-black">"Instalar assim mesmo"</strong> ou <strong className="text-red-400 underline font-black">"Permitir desta fonte"</strong>. 🙂
+            👉 Para concluir, basta clicar em <strong className="text-red-400 underline font-black">"Permitir desta fonte"</strong> ou <strong className="text-red-400 underline font-black">"Instalar assim mesmo"</strong>. 🙂
           </div>
 
-          <p className="text-[11px] text-white/60 text-center pt-1 font-medium">
-            Fique tranquilo! Esse aviso é padrão do Android para apps baixados fora da Play Store. O UniTV Pro é <strong>100% seguro</strong>!
+          <p className="text-[11px] text-white/70 text-center pt-1 font-medium leading-normal">
+            🛡️ Fique 100% tranquilo! Esse aviso é uma proteção padrão do Android para qualquer APK externo. O UniTV Pro é <strong>totalmente seguro e livre de vírus</strong>.
           </p>
         </div>
 
