@@ -256,6 +256,7 @@ function CodeCopyBox({ code, onCopyClick }: { code: string; onCopyClick?: () => 
 
 function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile">("tv");
+  const [planTab, setPlanTab] = useState<"mensal" | "trimestral" | "anual">("mensal");
   const [showPermissionModal, setShowPermissionModal] = useState(false);
   const [pendingRedirectUrl, setPendingRedirectUrl] = useState<string | null>(null);
   const [isTikTokUser, setIsTikTokUser] = useState(false);
@@ -663,7 +664,9 @@ function InstalarPage() {
 
             <div className="space-y-2">
               <span className="text-[11px] font-black text-red-400 uppercase tracking-widest block">
-                Plano Mensal • Acesso Ilimitado
+                {planTab === "mensal" && "Plano Mensal • Acesso Ilimitado"}
+                {planTab === "trimestral" && "Plano Trimestral • Economize no 90 Dias"}
+                {planTab === "anual" && "👑 Plano Anual VIP • 2 Telas • Melhor Custo-Benefício"}
               </span>
 
               <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
@@ -672,6 +675,43 @@ function InstalarPage() {
               <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed font-medium">
                 Continue assistindo a todos os seus filmes, séries, esportes e canais ao vivo no UniTV Pro sem interrupções!
               </p>
+            </div>
+
+            {/* 💎 ALTERNADOR DE PLANOS ESTILO VIDRO (MENSAL / TRIMESTRAL / ANUAL VIP) */}
+            <div className="flex items-center justify-center p-1.5 rounded-2xl bg-white/[0.06] border border-white/20 backdrop-blur-xl max-w-md mx-auto my-3 gap-1 shadow-inner">
+              <button
+                type="button"
+                onClick={() => setPlanTab("mensal")}
+                className={`flex-1 py-2.5 px-3 rounded-xl text-xs font-black transition-all cursor-pointer ${
+                  planTab === "mensal"
+                    ? "bg-red-600 text-white shadow-[0_0_15px_rgba(220,38,38,0.7)] border border-white/30"
+                    : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
+                }`}
+              >
+                Mensal
+              </button>
+              <button
+                type="button"
+                onClick={() => setPlanTab("trimestral")}
+                className={`flex-1 py-2.5 px-3 rounded-xl text-xs font-black transition-all cursor-pointer ${
+                  planTab === "trimestral"
+                    ? "bg-emerald-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.7)] border border-white/30"
+                    : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
+                }`}
+              >
+                Trimestral
+              </button>
+              <button
+                type="button"
+                onClick={() => setPlanTab("anual")}
+                className={`flex-1 py-2.5 px-3 rounded-xl text-xs font-black transition-all cursor-pointer ${
+                  planTab === "anual"
+                    ? "bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-black shadow-[0_0_20px_rgba(245,158,11,0.8)] border border-amber-200 font-extrabold"
+                    : "text-amber-300 hover:bg-white/10 border border-amber-500/30"
+                }`}
+              >
+                Anual VIP 👑
+              </button>
             </div>
 
             {/* 🎬 ESTEIRA HORIZONTAL DE CAPINHAS DE TERROR 2026 COM FADE SUAVE NAS BORDAS */}
@@ -691,24 +731,34 @@ function InstalarPage() {
               </div>
             </div>
 
-            {/* 💰 PREÇO EXIBIDO EM TAMANHO GIGANTE */}
+            {/* 💰 PREÇO EXIBIDO DINAMICAMENTE CONFORME PLANO SELECIONADO */}
             <div className="py-1">
               <span className="text-xs font-bold text-red-400 uppercase tracking-widest block mb-1">
-                30 DIAS DE ACESSO COMPLETO
+                {planTab === "mensal" && "30 DIAS DE ACESSO COMPLETO"}
+                {planTab === "trimestral" && "⚡ 90 DIAS DE ACESSO COMPLETO"}
+                {planTab === "anual" && "👑 365 DIAS DE ACESSO (2 TELAS SIMULTÂNEAS)"}
               </span>
               <div className="flex items-baseline justify-center gap-2 flex-nowrap whitespace-nowrap">
                 <span className="text-xs sm:text-sm font-bold text-white/60">Apenas</span>
                 <span className="text-6xl sm:text-7xl font-black text-white tracking-tight drop-shadow-[0_0_35px_rgba(255,255,255,0.8)]">
-                  R$ 34,99
+                  {planTab === "mensal" && "R$ 34,99"}
+                  {planTab === "trimestral" && "R$ 99,99"}
+                  {planTab === "anual" && "R$ 179,99"}
                 </span>
-                <span className="text-xs sm:text-sm font-bold text-white/80">/mês</span>
+                <span className="text-xs sm:text-sm font-bold text-white/80">
+                  {planTab === "mensal" && "/mês"}
+                  {planTab === "trimestral" && "/3 meses"}
+                  {planTab === "anual" && "/ano"}
+                </span>
               </div>
             </div>
 
-            {/* 🌟 LISTA EXATA DE 10 RECURSOS E BENEFÍCIOS */}
+            {/* 🌟 LISTA EXATA DE RECURSOS E BENEFÍCIOS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left max-w-lg mx-auto pt-3 pb-1 border-t border-white/15">
               {[
-                "1 Tela simultânea (Smart TV Android, TV Box, Celular ou Tablet)",
+                planTab === "anual"
+                  ? "2 Telas simultâneas (Smart TV Android, TV Box, Celular ou Tablet)"
+                  : "1 Tela simultânea (Smart TV Android, TV Box, Celular ou Tablet)",
                 "Milhares de Filmes & Séries",
                 "Lançamentos semanais inéditos de terror & cinema",
                 "Canais Ao Vivo & Esportes sem travar (4K & Full HD)",
@@ -726,16 +776,32 @@ function InstalarPage() {
               ))}
             </div>
 
-            {/* BOTÃO ASSINATURA VERMELHO VIDRO — POSICIONADO BEM COLADO ÀS FEATURES */}
+            {/* BOTÃO ASSINATURA DINÂMICO CONFORME PLANO SELECIONADO */}
             <div className="pt-1">
               <a
-                href="https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2"
+                href={
+                  planTab === "mensal"
+                    ? "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2"
+                    : planTab === "trimestral"
+                      ? "https://pay.braip.co/ref?pl=pla1qqq6&ck=che7eo0g&af=afixjm3pn2"
+                      : "https://pay.braip.co/ref?pl=pla6lllo&ck=che7eo0g&af=afixjm3pn2"
+                }
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 px-8 py-4 text-xs sm:text-sm font-black text-white shadow-[0_0_30px_rgba(220,38,38,0.7)] border border-red-400/40 transition-all hover:scale-105 cursor-pointer w-full sm:w-auto backdrop-blur-md uppercase tracking-wider"
+                className={`inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-xs sm:text-sm font-black transition-all hover:scale-105 cursor-pointer w-full sm:w-auto backdrop-blur-md uppercase tracking-wider ${
+                  planTab === "anual"
+                    ? "bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-black shadow-[0_0_35px_rgba(245,158,11,0.9)] border border-yellow-200"
+                    : planTab === "trimestral"
+                      ? "bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white shadow-[0_0_30px_rgba(16,185,129,0.7)] border border-emerald-400/50"
+                      : "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white shadow-[0_0_30px_rgba(220,38,38,0.7)] border border-red-400/40"
+                }`}
               >
                 <Zap className="size-4 fill-current" />
-                <span>QUERO CONTINUAR COM O ACESSO</span>
+                <span>
+                  {planTab === "mensal" && "ASSINAR PLANO MENSAL"}
+                  {planTab === "trimestral" && "ASSINAR PLANO TRIMESTRAL"}
+                  {planTab === "anual" && "QUERO O PLANO ANUAL VIP (2 TELAS)"}
+                </span>
                 <ArrowRight className="size-4" />
               </a>
             </div>
