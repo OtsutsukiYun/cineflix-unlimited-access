@@ -249,12 +249,28 @@ function CodeCopyBox({ code, onCopyClick }: { code: string; onCopyClick?: () => 
   );
 }
 
+const BACKDROP_SLIDES = [
+  "/7bWxAsNPv9CXHOhZbJVlj2KxgfP.jpg", // Evil Dead Rise
+  "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg", // Obsessão
+  "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg", // Backrooms
+  "/qY7zVZ7liULhfRoXg4c9Xl83LcR.jpg", // Hokum
+  "/mUpxARLqGbNJsWX3YuF0uUKpecO.jpg", // Undertone
+];
+
 function InstalarPage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile">("tv");
   const [showPermissionModal, setShowPermissionModal] = useState(false);
   const [pendingRedirectUrl, setPendingRedirectUrl] = useState<string | null>(null);
   const [isTikTokUser, setIsTikTokUser] = useState(false);
   const [copiedMediaFire, setCopiedMediaFire] = useState(false);
+  const [bgSlide, setBgSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setBgSlide((prev) => (prev + 1) % BACKDROP_SLIDES.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const ua = (typeof navigator !== "undefined" ? navigator.userAgent : "") || "";
@@ -312,8 +328,26 @@ function InstalarPage() {
   };
 
   return (
-    /* 🖤 FUNDO PRETO OBSIDIANA COM RETÂNGULOS EM VIDRO LUMINOSO */
+    /* 🖤 FUNDO PRETO OBSIDIANA COM RETÂNGULOS EM VIDRO LUMINOSO E CAPINHAS DE FILMES PASSANDO */
     <div className="relative min-h-screen bg-[#060606] text-white overflow-x-hidden">
+      {/* FUNDO DINÂMICO COM CAPINHAS DE FILMES PASSANDO */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        {BACKDROP_SLIDES.map((bd, i) => (
+          <img
+            key={bd}
+            src={img(bd, "w1280")}
+            alt=""
+            className={`absolute inset-0 size-full object-cover transition-all duration-1000 ease-in-out ${
+              i === bgSlide ? "opacity-25 scale-105" : "opacity-0 scale-100"
+            }`}
+            style={{
+              filter: "blur(3px) brightness(0.4)",
+            }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#060606]/75 via-[#060606]/85 to-[#060606]" />
+      </div>
+
       {/* POPUP DE DICA DA INSTALAÇÃO NO ANDROID */}
       <PermissionModal
         isOpen={showPermissionModal}
@@ -351,9 +385,6 @@ function InstalarPage() {
             </Link>
             <Link to="/instalar" className="text-red-500 font-extrabold">
               Teste Grátis
-            </Link>
-            <Link to="/suporte" className="hover:text-white transition-colors">
-              Suporte
             </Link>
           </nav>
 
