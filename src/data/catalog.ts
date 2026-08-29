@@ -316,8 +316,6 @@ export const novelasTurcas: Title[] = [
   { title: "Hercai: Amor e Vingança", poster: "/iilYRWFCXwv4zKC96QkFwpIxbfg.jpg", year: "2019", tag: "🔥 Sucesso" },
   { title: "Amor Eterno (Kara Sevda)", poster: "/uDSk3PCQLWbrxyjiNrYzO6GqyR7.jpg", year: "2015", tag: "Emmy Internacional" },
   { title: "Pássaro Sonhador (Erkenci Kuş)", poster: "/mndpDoIc8xAagZc162xKNNvPROY.jpg", year: "2018", tag: "Comédia Romântica" },
-  { title: "Segredos do Destino (Kızılcık Şerbeti)", poster: "/fXATVTtJDNizWjKpHgJEZegr6R2.jpg", year: "2022", tag: "Em Alta" },
-  { title: "Botões Vermelhos (Kızıl Goncalar)", poster: "/nTNGJnl1qA4nVSxl0RUGX7plo4R.jpg", year: "2026", tag: "🔥 Sucesso 2026" },
   { title: "Şahmaran: Lenda das Serpentes", poster: "/Syz73lDTw9A4AeUIVDJvaYbXJh.jpg", year: "2023", tag: "Fantasia & Romance" },
 ];
 
