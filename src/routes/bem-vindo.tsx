@@ -319,6 +319,10 @@ function BemVindoPage() {
             <WhatsAppIcon className="size-4 fill-current" />
             Falar com Suporte no WhatsApp
           </a>
+
+          <p className="mt-4 text-xs text-white/50">
+            ou por e-mail: <a href="mailto:unitvpro.oficial2026@gmail.com" className="text-white/80 hover:text-white font-bold underline transition-colors">unitvpro.oficial2026@gmail.com</a>
+          </p>
         </div>
 
       </div>

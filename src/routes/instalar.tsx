@@ -23,6 +23,7 @@ import {
   Lock,
   Award,
   Headphones,
+  Mail,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { WhatsAppIcon } from "@/components/icons";
@@ -864,35 +865,45 @@ function InstalarPage() {
             </div>
           </div>
 
-          {/* SUPORTE RODAPÉ VIDRO — COM 2 BOTÕES DE WHATSAPP (INSTALAÇÃO E PÓS-VENDA CLIENTES) */}
-          <div id="suporte" className="p-4 sm:p-5 bg-white/[0.02] border-t border-white/15 text-center sm:text-left flex flex-col md:flex-row items-center justify-between gap-4 backdrop-blur-md">
-            <div className="flex items-center gap-3">
-              <HelpCircle className="size-5 text-emerald-400 shrink-0" />
-              <div>
-                <p className="text-xs sm:text-sm text-white font-bold">Precisa de ajuda ou suporte?</p>
-                <p className="text-[11px] text-white/60 font-medium">Atendimento via WhatsApp 7 dias por semana.</p>
+          {/* SUPORTE RODAPÉ VIDRO — COM 2 BOTÕES DE WHATSAPP E E-MAIL DE CONTATO */}
+          <div id="suporte" className="p-4 sm:p-5 bg-white/[0.02] border-t border-white/15 text-center sm:text-left flex flex-col gap-3.5 backdrop-blur-md">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <HelpCircle className="size-5 text-emerald-400 shrink-0" />
+                <div>
+                  <p className="text-xs sm:text-sm text-white font-bold">Precisa de ajuda ou suporte?</p>
+                  <p className="text-[11px] text-white/60 font-medium">Atendimento via WhatsApp 7 dias por semana.</p>
+                </div>
+              </div>
+
+              <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full md:w-auto shrink-0">
+                <a
+                  href="https://wa.me/556184016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20instalar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-emerald-600/90 hover:bg-emerald-500 px-4 py-2.5 text-xs font-bold text-white transition-colors border border-emerald-400/30 shadow-md"
+                >
+                  <WhatsAppIcon className="size-3.5 fill-current" />
+                  DÚVIDAS / INSTALAÇÃO
+                </a>
+
+                <a
+                  href="https://wa.me/556182743140?text=J%C3%A1%20sou%20cliente%20e%20preciso%20de%20suporte%20com%20meu%20acesso"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 px-4 py-2.5 text-xs font-bold text-white transition-colors border border-blue-400/30 shadow-md"
+                >
+                  <WhatsAppIcon className="size-3.5 fill-current" />
+                  JÁ SOU CLIENTE (SUPORTE)
+                </a>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full md:w-auto shrink-0">
-              <a
-                href="https://wa.me/556184016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20instalar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-emerald-600/90 hover:bg-emerald-500 px-4 py-2.5 text-xs font-bold text-white transition-colors border border-emerald-400/30 shadow-md"
-              >
-                <WhatsAppIcon className="size-3.5 fill-current" />
-                DÚVIDAS / INSTALAÇÃO
-              </a>
-
-              <a
-                href="https://wa.me/556182743140?text=J%C3%A1%20sou%20cliente%20e%20preciso%20de%20suporte%20com%20meu%20acesso"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 px-4 py-2.5 text-xs font-bold text-white transition-colors border border-blue-400/30 shadow-md"
-              >
-                <WhatsAppIcon className="size-3.5 fill-current" />
-                JÁ SOU CLIENTE (SUPORTE)
+            <div className="pt-2.5 border-t border-white/10 text-center text-xs text-white/60 flex items-center justify-center gap-1.5 flex-wrap">
+              <Mail className="size-3.5 text-emerald-400 shrink-0" />
+              <span>Ou se preferir, envie um e-mail para:</span>
+              <a href="mailto:unitvpro.oficial2026@gmail.com" className="text-white font-extrabold underline hover:text-emerald-400 transition-colors">
+                unitvpro.oficial2026@gmail.com
               </a>
             </div>
           </div>
