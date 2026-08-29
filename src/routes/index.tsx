@@ -425,7 +425,7 @@ function AnimatedHeroHeadline() {
   }, []);
 
   return (
-    <div className="relative min-h-[4rem] sm:min-h-[5.5rem] md:min-h-[6.5rem] flex items-center justify-center">
+    <div className="relative min-h-[5rem] sm:min-h-[7rem] md:min-h-[8.5rem] flex items-center justify-center mb-3 sm:mb-4 md:mb-5">
       {/* FRASE 1 (INICIAL): Filmes, séries e lançamentos em um só lugar. */}
       <h1
         className={`absolute inset-x-0 flex items-center justify-center font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.1] text-white tracking-tight max-w-2xl mx-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
@@ -549,7 +549,7 @@ function Index() {
           <AnimatedHeroHeadline />
 
           {/* SUBTÍTULO */}
-          <p className="mt-1 sm:mt-1.5 text-sm sm:text-lg font-medium text-white/85 max-w-xl mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+          <p className="text-sm sm:text-lg font-medium text-white/85 max-w-xl mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             Doramas, animes, novelas turcas, canais ao vivo e muito mais para assistir na TV, celular ou tablet.
           </p>
 
