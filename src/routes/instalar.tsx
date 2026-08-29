@@ -316,46 +316,46 @@ function InstalarPage() {
   return (
     <div className="relative min-h-screen bg-[#060606] text-white overflow-x-hidden">
       {/* FUNDO ANIMADO COM MULTI-LINHAS DE CAPINHAS DE FILMES (MARQUEES INFINITOS) */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-25 select-none">
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-65 select-none">
         <div className="flex flex-col gap-3.5 -rotate-6 scale-110 -translate-y-12">
           <div className="flex overflow-hidden">
             <div className="animate-marquee-slow flex shrink-0 items-center gap-3.5 pr-3.5">
               {[...linha1, ...linha1, ...linha1].map((p, idx) => (
-                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-44 sm:h-56 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_6px_25px_rgba(0,0,0,0.8)] border border-white/25 brightness-105" />
               ))}
             </div>
           </div>
           <div className="flex overflow-hidden">
             <div className="animate-marquee-reverse-slow flex shrink-0 items-center gap-3.5 pr-3.5">
               {[...linha2, ...linha2, ...linha2].map((p, idx) => (
-                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-44 sm:h-56 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_6px_25px_rgba(0,0,0,0.8)] border border-white/25 brightness-105" />
               ))}
             </div>
           </div>
           <div className="flex overflow-hidden">
             <div className="animate-marquee-slow flex shrink-0 items-center gap-3.5 pr-3.5">
               {[...linha3, ...linha3, ...linha3].map((p, idx) => (
-                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-44 sm:h-56 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_6px_25px_rgba(0,0,0,0.8)] border border-white/25 brightness-105" />
               ))}
             </div>
           </div>
           <div className="flex overflow-hidden">
             <div className="animate-marquee-reverse-slow flex shrink-0 items-center gap-3.5 pr-3.5">
               {[...linha4, ...linha4, ...linha4].map((p, idx) => (
-                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-44 sm:h-56 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_6px_25px_rgba(0,0,0,0.8)] border border-white/25 brightness-105" />
               ))}
             </div>
           </div>
           <div className="flex overflow-hidden">
             <div className="animate-marquee-slow flex shrink-0 items-center gap-3.5 pr-3.5">
               {[...linha5, ...linha5, ...linha5].map((p, idx) => (
-                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-40 sm:h-52 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-44 sm:h-56 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_6px_25px_rgba(0,0,0,0.8)] border border-white/25 brightness-105" />
               ))}
             </div>
           </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060606] via-[#060606]/85 to-[#060606]" />
-        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#060606]/65 via-[#060606]/35 to-[#060606]/85" />
+        <div className="absolute inset-0 bg-black/25" />
       </div>
 
       <PermissionModal
