@@ -425,7 +425,7 @@ function AnimatedHeroHeadline() {
   }, []);
 
   return (
-    <div className="relative min-h-[5.5rem] sm:min-h-[7rem] md:min-h-[8rem] flex items-center justify-center">
+    <div className="relative min-h-[4rem] sm:min-h-[5.5rem] md:min-h-[6.5rem] flex items-center justify-center">
       {/* FRASE 1 (INICIAL): Filmes, séries e lançamentos em um só lugar. */}
       <h1
         className={`absolute inset-x-0 flex items-center justify-center font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.1] text-white tracking-tight max-w-2xl mx-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
@@ -544,17 +544,17 @@ function Index() {
         ))}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#080808]" />
 
-        <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-36 pb-10 sm:pt-48 sm:pb-14 text-center">
+        <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-44 pb-10 sm:pt-56 sm:pb-14 text-center">
           {/* TÍTULO PRINCIPAL ANIMADO - TRANSIÇÃO SUAVE ENTRE FRASES DE IMPACTO */}
           <AnimatedHeroHeadline />
 
           {/* SUBTÍTULO */}
-          <p className="mt-4 text-sm sm:text-lg font-medium text-white/85 max-w-xl mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+          <p className="mt-1 sm:mt-1.5 text-sm sm:text-lg font-medium text-white/85 max-w-xl mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             Doramas, animes, novelas turcas, canais ao vivo e muito mais para assistir na TV, celular ou tablet.
           </p>
 
           {/* BOTÕES PRINCIPAIS - HIERARQUIA VISUAL PERFEITA */}
-          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-[320px] sm:max-w-md mx-auto">
+          <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-[320px] sm:max-w-md mx-auto">
             <Link
               to="/instalar"
               className="btn-cta w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-[0_0_25px_rgba(220,38,38,0.5)] hover:shadow-[0_0_35px_rgba(220,38,38,0.7)] flex items-center justify-center gap-2 rounded-xl transition-all"
