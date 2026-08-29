@@ -310,14 +310,13 @@ export const animes: Title[] = [
 ];
 
 export const novelasTurcas: Title[] = [
-  { title: "Será Isso Amor? (Sen Çal Kapımı)", poster: "/bE71f9A3eztjcd5JT3MmHB8MbzA.jpg", year: "2020", tag: "🔥 #1 Fenômeno" },
+  { title: "Será Isso Amor? (Sen Çal Kapımı)", poster: "/cccW8YiPphlbcbOzj84imtDSPZN.jpg", year: "2020", tag: "🔥 #1 Fenômeno" },
   { title: "Meu Nome é Farah (Adım Farah)", poster: "/Aj4qfs1KxhdfcPphWyJiTNYXirE.jpg", year: "2023", tag: "🔥 Drama & Romance" },
   { title: "Fatmagül: A Força do Amor", poster: "/zRbndORP3qUuIFOxhgPmgEA3Mul.jpg", year: "2010", tag: "⭐ Clássico Inesquecível" },
-  { title: "Segredos de Família (Yargı)", poster: "/c2WubXZ2npBH14uTqirRREzFY0h.jpg", year: "2021", tag: "🔥 Emmy Internacional" },
-  { title: "O Canto do Pássaro (Yalı Çapkını)", poster: "/cgf5R2XrfRQGp2sTu3cncbnFxRy.jpg", year: "2022", tag: "🔥 Sucesso 2026" },
-  { title: "Hercai: Amor e Vingança", poster: "/6VGJ281Lk2gbrTqZlegKqevzG7D.jpg", year: "2019", tag: "🔥 Sucesso" },
-  { title: "Amor Eterno (Kara Sevda)", poster: "/qEkRGqfoV9ziKiPLOa3fZaaYjhG.jpg", year: "2015", tag: "Emmy Internacional" },
-  { title: "Pássaro Sonhador (Erkenci Kuş)", poster: "/6OKMA1gxATeO6JmKB1JOs6wEfqY.jpg", year: "2018", tag: "Comédia Romântica" },
+  { title: "Segredos de Família (Yargı)", poster: "/2oMk0CFflhAodqPJD1Kua9RKpDD.jpg", year: "2021", tag: "🔥 Emmy Internacional" },
+  { title: "Hercai: Amor e Vingança", poster: "/iilYRWFCXwv4zKC96QkFwpIxbfg.jpg", year: "2019", tag: "🔥 Sucesso" },
+  { title: "Amor Eterno (Kara Sevda)", poster: "/uDSk3PCQLWbrxyjiNrYzO6GqyR7.jpg", year: "2015", tag: "Emmy Internacional" },
+  { title: "Pássaro Sonhador (Erkenci Kuş)", poster: "/mndpDoIc8xAagZc162xKNNvPROY.jpg", year: "2018", tag: "Comédia Romântica" },
   { title: "Segredos do Destino (Kızılcık Şerbeti)", poster: "/fXATVTtJDNizWjKpHgJEZegr6R2.jpg", year: "2022", tag: "Em Alta" },
   { title: "Botões Vermelhos (Kızıl Goncalar)", poster: "/nTNGJnl1qA4nVSxl0RUGX7plo4R.jpg", year: "2026", tag: "🔥 Sucesso 2026" },
   { title: "Outro Amor (Bambaşka Biri)", poster: "/wRK8sm4WJRnkzTfD4tjDfy48Vtx.jpg", year: "2023", tag: "Mistério & Drama" },

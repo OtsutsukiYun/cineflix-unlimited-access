@@ -785,7 +785,7 @@ function Index() {
               banners: [
                 "/9qq8LpOoBLYq8MxiMugn0gf9qJd.jpg", // Será Isso Amor? (Sen Çal Kapımı)
                 "/fCwZOi3cTEOi2UkhjJNbFQnl4IW.jpg", // Segredos de Família (Yargı)
-                "/vDqCoaMU5FUAuUs0EvL4OAUCxJk.jpg", // O Canto do Pássaro (Yalı Çapkını)
+                "/ebtobUiMRbq0T3R1mBVI69Ux937.jpg", // Meu Nome é Farah (Adım Farah)
               ],
               objectPosition: "object-cover",
               gradient: "from-purple-600 via-rose-600 to-amber-600",
@@ -796,7 +796,7 @@ function Index() {
               titleHover: "group-hover:text-rose-200",
               t: "Novelas Turcas",
               qtd: "Sucessos Internacionais",
-              d: "As novelas turcas de maior audiência (Será Isso Amor?, Segredos de Família, O Canto do Pássaro, Hercai) dubladas ou legendadas em HD.",
+              d: "As novelas turcas de maior audiência (Será Isso Amor?, Meu Nome é Farah, Fatmagül, Segredos de Família) dubladas ou legendadas em HD.",
               tabId: "novelas-turcas",
             },
             {
