@@ -502,39 +502,46 @@ function Index() {
         ))}
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#080808]" />
 
-        <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-32 sm:pb-12 text-center">
-          <p className="mb-3 text-xs sm:text-sm font-extrabold text-red-500 uppercase tracking-widest">
-            🔥 Cansado de procurar um filme e não encontrar onde assistir?
-          </p>
+        <div className="relative z-10 mx-auto w-[94%] max-w-3xl pt-28 pb-10 sm:pt-36 sm:pb-14 text-center">
+          {/* BADGE DE TOPO */}
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-950/60 px-4 py-1.5 backdrop-blur-md shadow-[0_0_20px_rgba(220,38,38,0.2)]">
+            <span className="text-xs sm:text-sm font-bold tracking-wide text-red-400">
+              🔥 Cansado de procurar um filme e não encontrar onde assistir?
+            </span>
+          </div>
 
-          <h1 className="font-display text-2xl font-black sm:text-4xl md:text-5xl leading-[1.14] text-white tracking-tight max-w-2xl mx-auto">
-            Filmes, séries e lançamentos em <span className="text-red-500">um só lugar.</span>
+          {/* TÍTULO PRINCIPAL - HIERARQUIA TIPOGRÁFICA DE DESTAQUE */}
+          <h1 className="font-display text-3xl font-black sm:text-5xl md:text-6xl leading-[1.1] text-white tracking-tight max-w-2xl mx-auto drop-shadow-[0_4px_24px_rgba(0,0,0,0.9)]">
+            Filmes, séries e lançamentos em <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">um só lugar.</span>
           </h1>
 
-          <p className="mt-3 text-xs sm:text-base text-white/90 max-w-[360px] sm:max-w-xl mx-auto leading-snug sm:leading-relaxed text-balance">
+          {/* SUBTÍTULO */}
+          <p className="mt-4 text-sm sm:text-lg font-medium text-white/85 max-w-xl mx-auto leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             Doramas, animes, novelas turcas, canais ao vivo e muito mais para assistir na TV, celular ou tablet.
           </p>
 
-          <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 w-full max-w-[280px] sm:max-w-[340px] mx-auto">
+          {/* BOTÕES PRINCIPAIS - HIERARQUIA VISUAL PERFEITA */}
+          <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-[320px] sm:max-w-md mx-auto">
             <Link
               to="/instalar"
-              className="btn-cta w-full sm:w-1/2 h-9 sm:h-9.5 px-3 py-1.5 text-[11px] sm:text-xs font-black tracking-wider uppercase shadow-md flex items-center justify-center gap-1.5"
+              className="btn-cta w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-[0_0_25px_rgba(220,38,38,0.5)] hover:shadow-[0_0_35px_rgba(220,38,38,0.7)] flex items-center justify-center gap-2 rounded-xl transition-all"
             >
+              <Sparkles className="size-4 text-white" />
               TESTAR GRÁTIS
             </Link>
             <SmoothLink
               href={CTA_HREF}
-              className="btn-ghost w-full sm:w-1/2 h-9 sm:h-9.5 px-3 py-1.5 text-[11px] sm:text-xs font-black tracking-wider uppercase shadow-md border border-white/20 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-1.5"
+              className="btn-ghost w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-md border border-white/25 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2 rounded-xl"
             >
               VER PLANOS
             </SmoothLink>
           </div>
 
           <DOMIntegrityShield />
-          <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-5 text-xs sm:text-sm text-white font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,1)]">
-            <span className="flex items-center gap-1.5"><Users className="size-3.5 text-red-500" /> +30.000 assinantes ativos</span>
-            <span className="flex items-center gap-1.5"><Star className="size-3.5 fill-red-500 text-red-500" /> 4.9 de satisfação</span>
-            <span className="flex items-center gap-1.5"><ShieldCheck className="size-3.5 text-red-500" /> Garantia de 7 dias</span>
+          <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-white/90 font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,1)]">
+            <span className="flex items-center gap-1.5"><Users className="size-4 text-red-500" /> +30.000 assinantes ativos</span>
+            <span className="flex items-center gap-1.5"><Star className="size-4 fill-red-500 text-red-500" /> 4.9 de satisfação</span>
+            <span className="flex items-center gap-1.5"><ShieldCheck className="size-4 text-red-500" /> Garantia de 7 dias</span>
           </div>
 
           <div className="mt-7 flex justify-center gap-2">
