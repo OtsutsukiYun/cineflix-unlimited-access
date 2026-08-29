@@ -50,6 +50,7 @@ import {
   animes,
   heroSlides,
   img,
+  novelasTurcas,
   series,
   terror,
 } from "@/data/catalog";
@@ -345,10 +346,13 @@ const CATALOG_TABS = [
       { title: "Demon Slayer", poster: "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", year: "Série", tag: "Em alta" },
       { title: "Solo Leveling", poster: "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", year: "Série", tag: "Lançamento" },
       { title: "Jujutsu Kaisen", poster: "/fHpKWq9ayzSk8nSwqRuaAUemRKh.jpg", year: "Série", tag: "Em alta" },
-      { title: "Attack on Titan", poster: "/hTP1DtLGFamjfu8WqjnuQdP1n4i.jpg", year: "Série", tag: "Ação" },
-      { title: "Monster", poster: "/n5XNKXnoXpoXyfiCtXHOf8q8PFM.jpg", year: "2004", tag: "⭐ Clássico" },
       { title: "One Piece", poster: "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", year: "Série", tag: "Clássico" },
     ],
+  },
+  {
+    id: "novelas-turcas",
+    label: "🇹🇷 Novelas Turcas",
+    items: novelasTurcas,
   },
 ];
 
@@ -779,9 +783,9 @@ function Index() {
             {
               icon: Sparkles,
               banners: [
-                "/vN48XjM3S9P0oH7yW2u6u69.jpg", // Sen Çal Kapımı
-                "/c4jX8aQ7h5tW5Y8s2K0XgXk1000.jpg", // Yargı
-                "/j2fX7k73K0a6n78X9.jpg", // Yalı Çapkını
+                "/9qq8LpOoBLYq8MxiMugn0gf9qJd.jpg", // Será Isso Amor? (Sen Çal Kapımı)
+                "/fCwZOi3cTEOi2UkhjJNbFQnl4IW.jpg", // Segredos de Família (Yargı)
+                "/vDqCoaMU5FUAuUs0EvL4OAUCxJk.jpg", // O Canto do Pássaro (Yalı Çapkını)
               ],
               objectPosition: "object-cover",
               gradient: "from-purple-600 via-rose-600 to-amber-600",
@@ -792,8 +796,8 @@ function Index() {
               titleHover: "group-hover:text-rose-200",
               t: "Novelas Turcas",
               qtd: "Sucessos Internacionais",
-              d: "As novelas turcas de maior audiência (Sen Çal Kapımı, Yargı, Yalı Çapkını, Hercai) dubladas e legendadas em alta definição.",
-              tabId: "series",
+              d: "As novelas turcas de maior audiência (Será Isso Amor?, Segredos de Família, O Canto do Pássaro, Hercai) dubladas e legendadas em HD.",
+              tabId: "novelas-turcas",
             },
             {
               icon: Flame,

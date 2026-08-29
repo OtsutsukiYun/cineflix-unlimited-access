@@ -34,8 +34,8 @@ export const heroSlides: HeroSlide[] = [
     tagline: "Quando o desejo se torna um pesadelo sem saída.",
     backdrop: "/r013C8Me2bZ0pUi0OWJRh0h7MzT.jpg",
     poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
-    objectPosition: "center 18%",
-    objectPositionMobile: "50% 12%",
+    objectPosition: "center 2%",
+    objectPositionMobile: "50% 0%",
     brightness: "brightness(1.3)",
   },
   {
@@ -310,14 +310,16 @@ export const animes: Title[] = [
 ];
 
 export const novelasTurcas: Title[] = [
-  { title: "Sen Çal Kapımı (Serkan & Eda)", poster: "/vN48XjM3S9P0oH7yW2u6u69.jpg", year: "Série", tag: "🔥 Sucesso Mundial" },
-  { title: "Yargı (Segredos de Família)", poster: "/c4jX8aQ7h5tW5Y8s2K0XgXk1000.jpg", year: "Série", tag: "🔥 Emmy Internacional" },
-  { title: "Yalı Çapkını (O Canto do Pássaro)", poster: "/j2fX7k73K0a6n78X9.jpg", year: "Série", tag: "Em Alta" },
-  { title: "Hercai: Amor e Vingança", poster: "/h5b05K6Z4lX6g9n0X1.jpg", year: "Série" },
-  { title: "Kara Sevda (Amor Eterno)", poster: "/9vL8J57n3g6h9m0K.jpg", year: "Série" },
-  { title: "Erkenci Kuş (Pássaro Sonhador)", poster: "/vW2K5L7X8y9w2Q1.jpg", year: "Série" },
-  { title: "Kızılcık Şerbeti", poster: "/e17N1g6k6h9m2X1.jpg", year: "Série" },
-  { title: "Şahmaran", poster: "/sXn1w6m7L0a1n9X.jpg", year: "Série" },
+  { title: "Será Isso Amor? (Sen Çal Kapımı)", poster: "/bE71f9A3eztjcd5JT3MmHB8MbzA.jpg", year: "2020", tag: "🔥 #1 Fenômeno" },
+  { title: "Segredos de Família (Yargı)", poster: "/c2WubXZ2npBH14uTqirRREzFY0h.jpg", year: "2021", tag: "🔥 Emmy Internacional" },
+  { title: "O Canto do Pássaro (Yalı Çapkını)", poster: "/cgf5R2XrfRQGp2sTu3cncbnFxRy.jpg", year: "2022", tag: "🔥 Sucesso 2026" },
+  { title: "Hercai: Amor e Vingança", poster: "/6VGJ281Lk2gbrTqZlegKqevzG7D.jpg", year: "2019", tag: "🔥 Sucesso" },
+  { title: "Amor Eterno (Kara Sevda)", poster: "/qEkRGqfoV9ziKiPLOa3fZaaYjhG.jpg", year: "2015", tag: "Emmy Internacional" },
+  { title: "Pássaro Sonhador (Erkenci Kuş)", poster: "/6OKMA1gxATeO6JmKB1JOs6wEfqY.jpg", year: "2018", tag: "Comédia Romântica" },
+  { title: "Segredos do Destino (Kızılcık Şerbeti)", poster: "/fXATVTtJDNizWjKpHgJEZegr6R2.jpg", year: "2022", tag: "Em Alta" },
+  { title: "Botões Vermelhos (Kızıl Goncalar)", poster: "/nTNGJnl1qA4nVSxl0RUGX7plo4R.jpg", year: "2026", tag: "🔥 Sucesso 2026" },
+  { title: "Outro Amor (Bambaşka Biri)", poster: "/wRK8sm4WJRnkzTfD4tjDfy48Vtx.jpg", year: "2023", tag: "Mistério & Drama" },
+  { title: "Şahmaran: Lenda das Serpentes", poster: "/Syz73lDTw9A4AeUIVDJvaYbXJh.jpg", year: "2023", tag: "Fantasia & Romance" },
 ];
 
 export const infantil: Title[] = [
