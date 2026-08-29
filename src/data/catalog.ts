@@ -56,8 +56,8 @@ export const heroSlides: HeroSlide[] = [
     tagline: "Na Detroit dos anos 70, um homem em busca de vingança enfrenta a máfia local após ser incriminado.",
     backdrop: "/l7asYmqOad01F2u0oCMM8nQjoEP.jpg",
     poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg",
-    objectPosition: "93% 20%",
-    objectPositionMobile: "88% 15%",
+    objectPosition: "88% 20%",
+    objectPositionMobile: "83% 15%",
     brightness: "brightness(0.85)",
   },
   {
