@@ -375,7 +375,7 @@ const CATALOG_TABS = [
   },
   {
     id: "novelas-turcas",
-    label: "🇹🇷 Novelas Turcas",
+    label: "✨ Novelas Turcas",
     items: novelasTurcas,
   },
 ];
