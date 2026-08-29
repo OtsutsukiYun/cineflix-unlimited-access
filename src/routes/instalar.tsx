@@ -380,7 +380,7 @@ function InstalarPage() {
             Como instalar o <span className="text-red-500">UniTV Pro</span>
           </h1>
           <p className="text-xs sm:text-base text-white/80 max-w-md mx-auto leading-relaxed font-medium">
-            Instale em passos simples no seu aparelho:
+            Instale em aparelhos com sistema operacional Android:
           </p>
         </div>
 
@@ -427,7 +427,7 @@ function InstalarPage() {
                     <h2 className="text-base sm:text-lg font-black text-white">
                       Smart TV, TV Box &amp; Projetor
                     </h2>
-                    <p className="text-xs text-white/60">Instalação direta pelo app Downloader</p>
+                    <p className="text-xs text-white/60">Para dispositivos com sistema operacional Android (ou Fire Stick / TV Box)</p>
                   </div>
                 </div>
 
@@ -498,7 +498,7 @@ function InstalarPage() {
                     <h2 className="text-base sm:text-lg font-black text-white">
                       Celular &amp; Tablet
                     </h2>
-                    <p className="text-xs text-white/60">Download do aplicativo oficial</p>
+                    <p className="text-xs text-white/60">Para celulares e tablets com sistema operacional Android</p>
                   </div>
                 </div>
 
