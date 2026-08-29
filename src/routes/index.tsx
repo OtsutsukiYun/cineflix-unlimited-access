@@ -274,6 +274,7 @@ const CATALOG_TABS = [
       { title: "A Morte do Demônio: Em Chamas", poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg", year: "2026", tag: "🔥 Top 2" },
       { title: "Leviticus", poster: "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", year: "2026", tag: "🔥 Top 3" },
       { title: "Colony (A Colônia)", poster: "/tN799oUR0f1gUKDYdMNrDaY7I51.jpg", year: "2026", tag: "🔥 Terror 2026" },
+      { title: "Código Vingança", poster: "/gVZgjKIsXZOT3cNZm5PJZBtQRaG.jpg", year: "2026", tag: "🔥 Ação 2026" },
       { title: "Panor 2", poster: "/du6XOg3cd6SlRBQ1fxZDKpgavW0.jpg", year: "2026", tag: "🔥 Terror 2026" },
       { title: "Martyrs", poster: "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", year: "2008", tag: "🔥 Clássico do Terror" },
       { title: "Strange Harvest", poster: "/fYe0FNJNy0EIb8q4JUMLbbSmCth.jpg", year: "2025", tag: "🔥 Terror & Ocultismo" },
@@ -290,6 +291,8 @@ const CATALOG_TABS = [
     label: "🚀 Próximos Lançamentos (2026)",
     items: [
       { title: "Sobrenatural: Agora Entre Nós", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
+      { title: "Ponto Sem Retorno", poster: "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
+      { title: "Coyote vs. Acme", poster: "/fqnp3doSeUFLGUFIolHVPA41O4E.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
       { title: "Other Mommy (A Outra Mãe)", poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
       { title: "Resident Evil: O Retorno", poster: "/zP83bIkBViw5b1s9bDemYJ3AAgX.jpg", year: "2026", tag: "🔥 Estreia Set/2026" },
       { title: "O Sorveteiro", poster: "/c987gxFjXqYOxZEZKcTkS1ONTWH.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
@@ -304,6 +307,7 @@ const CATALOG_TABS = [
     label: "🎬 Filmes & Lançamentos",
     items: [
       { title: "Motor City", poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", year: "2026", tag: "🔥 Ação 2026" },
+      { title: "Código Vingança", poster: "/gVZgjKIsXZOT3cNZm5PJZBtQRaG.jpg", year: "2026", tag: "🔥 Ação 2026" },
       { title: "O Diabo Veste Prada 2", poster: "/50yWyY981TyUHhoxxSEKwO70FmQ.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "The Invite (O Convite)", poster: "/b7Dr8Chzse8VagexAporUu2RtLx.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Batman: Knightfall - Parte 1", poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg", year: "2026", tag: "🔥 DC 2026" },
@@ -520,6 +524,12 @@ function Index() {
     return () => clearInterval(timer);
   }, [isPopupOpen]);
 
+  useEffect(() => {
+    if (catalogScrollRef.current) {
+      catalogScrollRef.current.scrollLeft = 0;
+    }
+  }, [activeTab]);
+
   const currentTabObj = CATALOG_TABS.find((t) => t.id === activeTab) || CATALOG_TABS[0]!;
 
   return (
@@ -652,16 +662,17 @@ function Index() {
               <h2 className="text-2xl font-extrabold sm:text-4xl text-white">
                 O que você quer assistir <span className="text-red-500">hoje?</span>
               </h2>
-              <div className="mt-2 min-h-[2.5rem] sm:min-h-[2rem] flex items-center justify-center px-2">
-                <p className="text-xs sm:text-sm text-white/60 font-medium max-w-xl mx-auto text-center transition-opacity duration-200">
+              <div className="mt-2 h-10 sm:h-8 flex items-center justify-center px-2 overflow-hidden">
+                <p className="text-xs sm:text-sm text-white/60 font-medium max-w-xl mx-auto text-center transition-opacity duration-200 line-clamp-2">
                   {
                     {
+                      "em-alta": "Os filmes e séries mais assistidos do momento que estão bombando entre nossos assinantes.",
+                      "proximos": "As próximas grandes estreias inéditas e lançamentos confirmados que nossos membros mais estão aguardando.",
                       "filmes": "Os filmes mais assistidos da semana recém-saídos do cinema com áudio e imagem em alta definição.",
-                      "novelas-turcas": "As novelas turcas mais apaixonantes e emocionantes do momento com episódios completos dublados ou legendados em português.",
+                      "novelas-turcas": "As novelas turcas mais apaixonantes do momento com episódios completos dublados ou legendados.",
                       "terror-raro": "As produções de terror exclusivas e raras da Ásia que estão dominando as telas dos nossos assinantes.",
                       "series": "As séries mais maratonadas do momento com temporadas completas dubladas ou legendadas para você assistir.",
                       "animes": "Os animes e episódios mais bombados da temporada atual com simulcast semanal e dublagem em português.",
-                      "proximos": "As próximas grandes estreias inéditas e lançamentos confirmados que nossos membros mais estão aguardando.",
                     }[activeTab] || "Confira o que nossos assinantes mais têm assistido ultimamente em nosso catálogo completo."
                   }
                 </p>
@@ -675,9 +686,9 @@ function Index() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`rounded-full px-4 py-2 text-xs font-bold transition-all backdrop-blur-md ${
+                className={`rounded-full px-4 py-2 text-xs font-bold transition-colors duration-200 backdrop-blur-md cursor-pointer ${
                   activeTab === tab.id
-                    ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] scale-105"
+                    ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-red-500"
                     : "bg-zinc-900/70 border border-white/20 text-white/80 hover:bg-zinc-800/90 hover:border-white/35 hover:text-white shadow-sm"
                 }`}
               >
