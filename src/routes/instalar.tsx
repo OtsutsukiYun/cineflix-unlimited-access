@@ -24,7 +24,6 @@ import {
   Award,
 } from "lucide-react";
 import { img } from "@/data/catalog";
-import { PromoBanner } from "@/components/PromoBanner";
 import { WhatsAppIcon } from "@/components/icons";
 import {
   DOWNLOADER_OFFICIAL_CODE,
@@ -369,14 +368,9 @@ function InstalarPage() {
       <div className="pointer-events-none fixed top-1/3 left-10 size-[500px] rounded-full bg-rose-900/15 blur-[160px] z-0" />
       <div className="pointer-events-none fixed bottom-10 right-10 size-[600px] rounded-full bg-red-900/15 blur-[160px] z-0" />
 
-      {/* BARRA PROMOCIONAL DO TOPO */}
-      <div className="fixed inset-x-0 top-0 z-[60]">
-        <PromoBanner />
-      </div>
-
       {/* HEADER VIDRO */}
-      <header className="fixed inset-x-0 top-8 z-50 transition-all duration-300">
-        <div className="mx-auto mt-2 flex w-[92%] max-w-5xl items-center justify-between rounded-full px-5 py-2.5 border border-white/15 backdrop-blur-2xl bg-black/60 shadow-[0_8px_32px_rgba(0,0,0,0.8)]">
+      <header className="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+        <div className="mx-auto mt-3.5 flex w-[92%] max-w-5xl items-center justify-between rounded-full px-5 py-2.5 border border-white/15 backdrop-blur-2xl bg-black/60 shadow-[0_8px_32px_rgba(0,0,0,0.8)]">
           <Link to="/" className="flex items-center gap-2.5">
             <span className="relative flex size-8 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_15px_rgba(220,38,38,0.7)] border border-white/20">
               <svg className="size-4 fill-white" viewBox="0 0 24 24">

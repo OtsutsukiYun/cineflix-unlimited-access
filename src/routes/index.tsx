@@ -42,7 +42,6 @@ import {
   Users,
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
-import { PromoBanner } from "@/components/PromoBanner";
 import { Faq } from "@/components/Faq";
 import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
 import { Torii, WhatsAppIcon } from "@/components/icons";
@@ -457,32 +456,29 @@ function Index() {
       </div>
 
       {/* NAVBAR */}
-      <div className="fixed inset-x-0 top-0 z-50 flex flex-col [transform:translateZ(0)]">
-        <div className="z-[60]"><PromoBanner /></div>
-        <header className="z-50">
-          <div className="glass mx-auto mt-2 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-4 sm:px-6 py-2.5 sm:py-3 border border-white/15 bg-black/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-            <SmoothLink href="#" className="flex items-center gap-2">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-600 to-red-800 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)]">
-                <Play className="size-4 fill-current ml-0.5" />
-              </span>
-              <span className="font-display text-xl font-extrabold tracking-tight text-white">
-                UniTV<span className="text-red-500"> Pro</span>
-              </span>
-            </SmoothLink>
+      <header className="fixed inset-x-0 top-0 z-50 [transform:translateZ(0)]">
+        <div className="glass mx-auto mt-3.5 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-4 sm:px-6 py-2.5 sm:py-3 border border-white/15 bg-black/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+          <SmoothLink href="#" className="flex items-center gap-2">
+            <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-600 to-red-800 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)]">
+              <Play className="size-4 fill-current ml-0.5" />
+            </span>
+            <span className="font-display text-xl font-extrabold tracking-tight text-white">
+              UniTV<span className="text-red-500"> Pro</span>
+            </span>
+          </SmoothLink>
 
-            <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
-              <SmoothLink href="#planos" className="text-white/80 transition-colors hover:text-white">Planos</SmoothLink>
-              <SmoothLink href="#faq" className="text-white/80 transition-colors hover:text-white">Dúvidas</SmoothLink>
-              <Link to="/instalar" className="text-white/80 transition-colors hover:text-white">Como Instalar</Link>
-              <SmoothLink href="#suporte" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</SmoothLink>
-            </nav>
+          <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
+            <SmoothLink href="#planos" className="text-white/80 transition-colors hover:text-white">Planos</SmoothLink>
+            <SmoothLink href="#faq" className="text-white/80 transition-colors hover:text-white">Dúvidas</SmoothLink>
+            <Link to="/instalar" className="text-white/80 transition-colors hover:text-white">Como Instalar</Link>
+            <SmoothLink href="#suporte" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</SmoothLink>
+          </nav>
 
-            <SmoothLink href={CTA_HREF} className="btn-cta px-3.5 py-1.5 text-[11px] font-extrabold tracking-wide">
-              QUERO ASSINAR
-            </SmoothLink>
-          </div>
-        </header>
-      </div>
+          <SmoothLink href={CTA_HREF} className="btn-cta px-3.5 py-1.5 text-[11px] font-extrabold tracking-wide">
+            QUERO ASSINAR
+          </SmoothLink>
+        </div>
+      </header>
 
       {/* HERO — centralizado, texto super enxuto e equilibrado */}
       <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden text-center">
@@ -743,6 +739,25 @@ function Index() {
               tabId: "series",
             },
             {
+              icon: Trophy,
+              banners: [
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Erling_Haaland_France_v_Norway_26_June_26-008.jpg/1280px-Erling_Haaland_France_v_Norway_26_June_26-008.jpg", // Haaland
+                "https://upload.wikimedia.org/wikipedia/commons/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg", // Mbappe 2026
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg/1280px-Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg", // Harry Kane
+              ],
+              objectPosition: "object-cover object-[center_20%]",
+              gradient: "from-emerald-500 via-green-600 to-teal-600",
+              glow: "shadow-[0_0_22px_rgba(16,185,129,0.85)] border-emerald-300/80",
+              corBorda: "border border-emerald-500/40 hover:border-emerald-300",
+              corGlow: "shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_50px_rgba(16,185,129,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
+              titleHover: "group-hover:text-emerald-200",
+              t: "Esportes ao vivo",
+              qtd: "Centenas de Canais de Esporte",
+              d: "Centenas de canais de esportes ao vivo (Brasileirão, Champions League, Premier League, UFC e F1 sem travamentos).",
+              tabId: "series",
+            },
+            {
               icon: Heart,
               banners: [
                 "/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", // Rainha das Lágrimas (Queen of Tears)
@@ -759,6 +774,25 @@ function Index() {
               t: "Doramas & Produções Asiáticas",
               qtd: "Disponíveis na Aba Séries",
               d: "Assista a Rainha das Lágrimas, Pousando no Amor, A Lição e os maiores sucessos asiáticos dublados. Os Doramas estão localizados na categoria Séries do aplicativo.",
+              tabId: "series",
+            },
+            {
+              icon: Sparkles,
+              banners: [
+                "/vN48XjM3S9P0oH7yW2u6u69.jpg", // Sen Çal Kapımı
+                "/c4jX8aQ7h5tW5Y8s2K0XgXk1000.jpg", // Yargı
+                "/j2fX7k73K0a6n78X9.jpg", // Yalı Çapkını
+              ],
+              objectPosition: "object-cover",
+              gradient: "from-purple-600 via-rose-600 to-amber-600",
+              glow: "shadow-[0_0_22px_rgba(217,70,239,0.85)] border-rose-300/80",
+              corBorda: "border border-purple-500/40 hover:border-rose-300",
+              corGlow: "shadow-[0_0_30px_rgba(217,70,239,0.2)] hover:shadow-[0_0_50px_rgba(217,70,239,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
+              titleHover: "group-hover:text-rose-200",
+              t: "Novelas Turcas",
+              qtd: "Sucessos Internacionais",
+              d: "As novelas turcas de maior audiência (Sen Çal Kapımı, Yargı, Yalı Çapkını, Hercai) dubladas e legendadas em alta definição.",
               tabId: "series",
             },
             {
@@ -798,25 +832,6 @@ function Index() {
               qtd: "Espaço Kids & Animações",
               d: "Filmes infantis, desenhos animados, animações e canais 24h para a diversão de toda a família.",
               tabId: "filmes",
-            },
-            {
-              icon: Trophy,
-              banners: [
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Erling_Haaland_France_v_Norway_26_June_26-008.jpg/1280px-Erling_Haaland_France_v_Norway_26_June_26-008.jpg", // Haaland
-                "https://upload.wikimedia.org/wikipedia/commons/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg", // Mbappe 2026
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg/1280px-Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg", // Harry Kane
-              ],
-              objectPosition: "object-cover object-[center_20%]",
-              gradient: "from-emerald-500 via-green-600 to-teal-600",
-              glow: "shadow-[0_0_22px_rgba(16,185,129,0.85)] border-emerald-300/80",
-              corBorda: "border border-emerald-500/40 hover:border-emerald-300",
-              corGlow: "shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_50px_rgba(16,185,129,0.55)]",
-              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
-              titleHover: "group-hover:text-emerald-200",
-              t: "Esportes ao vivo",
-              qtd: "Centenas de Canais de Esporte",
-              d: "Centenas de canais de esportes ao vivo (Brasileirão, Champions League, Premier League, UFC e F1 sem travamentos).",
-              tabId: "series",
             },
           ].map((f, i) => (
             <SmoothCardReveal key={f.t} delay={100 + i * 80}>

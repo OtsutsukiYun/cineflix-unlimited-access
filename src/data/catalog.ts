@@ -309,6 +309,17 @@ export const animes: Title[] = [
   { title: "Death Note", poster: "/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg", year: "Série" },
 ];
 
+export const novelasTurcas: Title[] = [
+  { title: "Sen Çal Kapımı (Serkan & Eda)", poster: "/vN48XjM3S9P0oH7yW2u6u69.jpg", year: "Série", tag: "🔥 Sucesso Mundial" },
+  { title: "Yargı (Segredos de Família)", poster: "/c4jX8aQ7h5tW5Y8s2K0XgXk1000.jpg", year: "Série", tag: "🔥 Emmy Internacional" },
+  { title: "Yalı Çapkını (O Canto do Pássaro)", poster: "/j2fX7k73K0a6n78X9.jpg", year: "Série", tag: "Em Alta" },
+  { title: "Hercai: Amor e Vingança", poster: "/h5b05K6Z4lX6g9n0X1.jpg", year: "Série" },
+  { title: "Kara Sevda (Amor Eterno)", poster: "/9vL8J57n3g6h9m0K.jpg", year: "Série" },
+  { title: "Erkenci Kuş (Pássaro Sonhador)", poster: "/vW2K5L7X8y9w2Q1.jpg", year: "Série" },
+  { title: "Kızılcık Şerbeti", poster: "/e17N1g6k6h9m2X1.jpg", year: "Série" },
+  { title: "Şahmaran", poster: "/sXn1w6m7L0a1n9X.jpg", year: "Série" },
+];
+
 export const infantil: Title[] = [
   { title: "Bluey", poster: "/9p4pNoGcuyCfHcGWKNrTopqMWtq.jpg", year: "Série" },
   { title: "Patrulha Canina", poster: "/pQ0bBHR9Q3wurjNMjnqal0gJaYo.jpg", year: "Série" },
