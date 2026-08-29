@@ -380,7 +380,7 @@ function InstalarPage() {
             Como instalar o <span className="text-red-500">UniTV Pro</span>
           </h1>
           <p className="text-xs sm:text-base text-white/80 max-w-md mx-auto leading-relaxed font-medium">
-            Guia passo a passo para Smart TV Android, TV Box, Fire Stick, Projetor Android, Celular ou Tablet:
+            Instale em passos simples no seu aparelho:
           </p>
         </div>
 
@@ -425,9 +425,9 @@ function InstalarPage() {
                   <DownloaderAppIcon />
                   <div>
                     <h2 className="text-base sm:text-lg font-black text-white">
-                      Smart TV Android, TV Box &amp; Projetor <span className="text-xs sm:text-sm font-bold text-red-400 block sm:inline sm:ml-2">(Instale em 2 minutos)</span>
+                      Smart TV, TV Box &amp; Projetor
                     </h2>
-                    <p className="text-xs text-white/60">Para Smart TVs com sistema Android, TV Box, Fire Stick e Projetores Android</p>
+                    <p className="text-xs text-white/60">Instalação direta pelo app Downloader</p>
                   </div>
                 </div>
 
@@ -458,10 +458,11 @@ function InstalarPage() {
                       01
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Abra a loja de aplicativos do seu aparelho (Google Play Store ou Amazon Store) e instale o app{" "}
+                      Baixe o app{" "}
                       <a href={DOWNLOADER_PLAYSTORE_URL} target="_blank" rel="noopener noreferrer" className="text-red-400 font-bold underline">
                         Downloader <ExternalLink className="inline size-3" />
-                      </a>.
+                      </a>{" "}
+                      na loja do seu aparelho.
                     </p>
                   </li>
 
@@ -470,7 +471,7 @@ function InstalarPage() {
                       02
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-                      Abra o app <strong>Downloader</strong> e digite o código de instalação:
+                      Abra o Downloader e digite o código:
                       <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
                     </div>
                   </li>
@@ -480,16 +481,7 @@ function InstalarPage() {
                       03
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Clique em <strong>"Go"</strong> para baixar e toque em instalar quando concluir.
-                    </p>
-                  </li>
-
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
-                      04
-                    </span>
-                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Permita a instalação e abra o UniTV Pro para aproveitar seus 3 dias grátis!
+                      Clique em <strong>"Go"</strong> e confirme a instalação!
                     </p>
                   </li>
                 </ol>
@@ -504,9 +496,9 @@ function InstalarPage() {
                   </div>
                   <div>
                     <h2 className="text-base sm:text-lg font-black text-white">
-                      Celular &amp; Tablet <span className="text-xs sm:text-sm font-bold text-emerald-400 block sm:inline sm:ml-2">(Instale em 1 minuto)</span>
+                      Celular &amp; Tablet
                     </h2>
-                    <p className="text-xs text-white/60">Smartphones e tablets Android</p>
+                    <p className="text-xs text-white/60">Download do aplicativo oficial</p>
                   </div>
                 </div>
 
@@ -533,27 +525,20 @@ function InstalarPage() {
 
                 {/* AVISO TIKTOK (EXCLUSIVO PARA QUEM VEM DO TIKTOK) */}
                 {isTikTokUser && (
-                  <div className="rounded-2xl border border-amber-500/70 bg-gradient-to-r from-amber-950/95 via-amber-900/80 to-amber-950/95 p-4 sm:p-5 text-left text-xs sm:text-sm text-amber-200 shadow-[0_0_30px_rgba(245,158,11,0.35)] backdrop-blur-md">
-                    <div className="flex items-center gap-2 font-black text-amber-300 text-xs sm:text-sm mb-2 uppercase tracking-wide">
-                      <span className="flex size-6 items-center justify-center rounded-lg bg-amber-500/20 text-amber-300 font-bold">⚠️</span>
-                      <span>ATENÇÃO PARA QUEM VEIO DO TIKTOK:</span>
+                  <div className="rounded-2xl border border-amber-500/70 bg-gradient-to-r from-amber-950/95 via-amber-900/80 to-amber-950/95 p-4 text-left text-xs sm:text-sm text-amber-200 shadow-md backdrop-blur-md">
+                    <div className="flex items-center gap-2 font-black text-amber-300 text-xs sm:text-sm mb-1.5 uppercase tracking-wide">
+                      <span className="flex size-5 items-center justify-center rounded bg-amber-500/20 text-amber-300 font-bold">⚠️</span>
+                      <span>ATENÇÃO (TIKTOK):</span>
                     </div>
-                    <p className="text-xs sm:text-sm text-amber-100 leading-relaxed font-semibold mb-2">
-                      O TikTok bloqueia a instalação direta de aplicativos. Para instalar sem erros, utilize o <strong className="text-white font-extrabold underline">Método do Downloader</strong>:
+                    <p className="text-xs text-amber-100 font-semibold mb-2">
+                      O TikTok bloqueia o download direto. Baixe pelo <strong>Downloader (código 9884830)</strong> ou abra no navegador (⋮).
                     </p>
-                    <div className="rounded-xl border border-amber-500/40 bg-black/60 p-3 text-xs text-amber-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-                      <div>
-                        1. Abra o app <strong className="text-white font-black">Downloader</strong>
-                        <br />
-                        2. Digite o código oficial: <strong className="text-amber-300 font-black text-sm">9884830</strong>
-                      </div>
-                      <button
-                        onClick={() => setDeviceTab("tv")}
-                        className="px-3 py-1.5 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold text-xs border border-amber-500/40 transition-colors"
-                      >
-                        Ver Tutorial do Downloader ➔
-                      </button>
-                    </div>
+                    <button
+                      onClick={() => setDeviceTab("tv")}
+                      className="px-3 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold text-xs border border-amber-500/40 transition-colors"
+                    >
+                      Usar Método do Downloader ➔
+                    </button>
                   </div>
                 )}
 
@@ -563,7 +548,7 @@ function InstalarPage() {
                       01
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-                      Toque no botão abaixo para baixar o instalador oficial:
+                      Baixe o APK oficial:
                       <a
                         href={APK_MEDIAFIRE_URL}
                         onClick={handleApkDownloadClick}
@@ -580,7 +565,7 @@ function InstalarPage() {
                       02
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Abra a pasta <strong>Downloads</strong> e toque no arquivo <strong>unitv_RS-NPWN.apk</strong>.
+                      Abra o arquivo baixado e confirme a instalação.
                     </p>
                   </li>
 
@@ -589,7 +574,7 @@ function InstalarPage() {
                       03
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-                      Ou instale o app{" "}
+                      Ou use o{" "}
                       <a
                         href={DOWNLOADER_PLAYSTORE_URL}
                         target="_blank"
@@ -598,7 +583,7 @@ function InstalarPage() {
                       >
                         Downloader na Play Store <ExternalLink className="size-3 inline shrink-0" />
                       </a>{" "}
-                      e digite o código:
+                      com o código:
                       <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
                     </div>
                   </li>
