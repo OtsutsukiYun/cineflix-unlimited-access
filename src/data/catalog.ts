@@ -311,14 +311,19 @@ export const animes: Title[] = [
 
 export const novelasTurcas: Title[] = [
   { title: "Será Isso Amor? (Sen Çal Kapımı)", poster: "/cccW8YiPphlbcbOzj84imtDSPZN.jpg", year: "2020", tag: "🔥 #1 Fenômeno" },
+  { title: "Mãe (Anne)", poster: "/p5SrEMWe1UiETqy5QkwRrBFcyna.jpg", year: "2016", tag: "🔥 Sucesso Absoluto" },
   { title: "Meu Nome é Farah (Adım Farah)", poster: "/Aj4qfs1KxhdfcPphWyJiTNYXirE.jpg", year: "2023", tag: "🔥 Drama & Romance" },
+  { title: "Um Milagre (Mucize Doktor)", poster: "/29ifz2K8kqZD6eb2sTKBP9Hlc3N.jpg", year: "2019", tag: "🔥 Top no Brasil" },
+  { title: "Iludida (Sadakatsiz)", poster: "/i4dD4K0udXVosxOa7wBXpkCKgP1.jpg", year: "2020", tag: "🔥 Suspense & Drama" },
   { title: "Segredos de Família (Yargı)", poster: "/2oMk0CFflhAodqPJD1Kua9RKpDD.jpg", year: "2021", tag: "🔥 Emmy Internacional" },
   { title: "Hercai: Amor e Vingança", poster: "/iilYRWFCXwv4zKC96QkFwpIxbfg.jpg", year: "2019", tag: "🔥 Sucesso" },
+  { title: "Meus Irmãos (Kardeşlerim)", poster: "/p2wOxI0GAlckcgoGF14r31dYiPr.jpg", year: "2021", tag: "Drama & Emoção" },
+  { title: "Senhor Errado (Bay Yanlış)", poster: "/gLIgB9hWc14ffEnH7MLV9V2E1OP.jpg", year: "2020", tag: "Comédia Romântica" },
   { title: "Amor Eterno (Kara Sevda)", poster: "/uDSk3PCQLWbrxyjiNrYzO6GqyR7.jpg", year: "2015", tag: "Emmy Internacional" },
+  { title: "Terra Amarga (Bir Zamanlar Çukurova)", poster: "/eqSfCYEnNWSmsnCPYI8jzR80ML4.jpg", year: "2018", tag: "Épico Inesquecível" },
   { title: "Pássaro Sonhador (Erkenci Kuş)", poster: "/mndpDoIc8xAagZc162xKNNvPROY.jpg", year: "2018", tag: "Comédia Romântica" },
-  { title: "Segredos do Destino (Kızılcık Şerbeti)", poster: "/fXATVTtJDNizWjKpHgJEZegr6R2.jpg", year: "2022", tag: "Em Alta" },
+  { title: "Segredos do Destino (Kızılcık Şerbeti)", poster: "/fXATVTtJDNizWjKpHgJEZegr6R2.jpg", year: "2022", tag: "Em Alta 2026" },
   { title: "Botões Vermelhos (Kızıl Goncalar)", poster: "/nTNGJnl1qA4nVSxl0RUGX7plo4R.jpg", year: "2026", tag: "🔥 Sucesso 2026" },
-  { title: "Outro Amor (Bambaşka Biri)", poster: "/wRK8sm4WJRnkzTfD4tjDfy48Vtx.jpg", year: "2023", tag: "Mistério & Drama" },
   { title: "Şahmaran: Lenda das Serpentes", poster: "/Syz73lDTw9A4AeUIVDJvaYbXJh.jpg", year: "2023", tag: "Fantasia & Romance" },
 ];
 
