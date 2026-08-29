@@ -74,12 +74,27 @@ const TESTE_GRATIS_POSTERS = [
 
 import { isPromoExpired } from "@/utils/promo";
 
-// ── INSTAGRAM POPUP ─────────────────────────────────────────────────────────
+// ── INSTAGRAM / TIKTOK POPUP ─────────────────────────────────────────────────
 function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => void }) {
   const [open, setOpen] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
+  const [isTikTok, setIsTikTok] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      const search = window.location.search.toLowerCase();
+      const ref = document.referrer.toLowerCase();
+      if (
+        search.includes("tiktok") ||
+        search.includes("tt=1") ||
+        search.includes("ref=tiktok") ||
+        search.includes("vt") ||
+        ref.includes("tiktok")
+      ) {
+        setIsTikTok(true);
+      }
+    }
+
     // Se o cronômetro de 24h já se esgotou para esta pessoa, o popup NÃO deve aparecer
     if (isPromoExpired()) {
       return;
@@ -111,6 +126,8 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
     setConfirmed(true);
   }
 
+  const platformName = isTikTok ? "TikTok" : "Instagram";
+
   if (!open || isPromoExpired()) return null;
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 backdrop-blur-md bg-black/80 transition-all duration-300" role="dialog" aria-modal="true">
@@ -124,12 +141,12 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
             <div className="mx-auto mb-5 flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-red-900 shadow-[0_0_30px_rgba(220,38,38,0.6)]">
               <Gift className="size-8 text-white" />
             </div>
-            <p className="mb-1 text-xs font-extrabold tracking-[0.2em] text-red-400 uppercase">Exclusivo Instagram · CinePesadelo</p>
+            <p className="mb-1 text-xs font-extrabold tracking-[0.2em] text-red-400 uppercase">Exclusivo {platformName} · CinePesadelo</p>
             <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
               🎁 Teste Grátis<br /><span className="text-red-400">por 3 dias!</span>
             </h2>
             <p className="text-sm text-white/70 leading-relaxed mb-6">
-              Você veio pelo Instagram do <strong className="text-white">CinePesadelo</strong> e por isso está ganhando{" "}
+              Você veio pelo {platformName} do <strong className="text-white">CinePesadelo</strong> e por isso está ganhando{" "}
               <strong className="text-red-300">3 dias de teste grátis</strong> no UniTV Pro — todos os filmes, séries e o maior catálogo de terror.
             </p>
             <button
@@ -155,7 +172,7 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               🎉 3 Dias Liberados!
             </h2>
             <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto">
-              Seu benefício exclusivo do <strong className="text-white">CinePesadelo</strong> foi ativado com sucesso! Navegue pelo site e clique em <strong className="text-white">"Resgatar Teste Grátis"</strong> a qualquer momento para instalar o aplicativo.
+              Seu benefício exclusivo do {platformName} do <strong className="text-white">CinePesadelo</strong> foi ativado com sucesso! Navegue pelo site e clique em <strong className="text-white">"Resgatar Teste Grátis"</strong> a qualquer momento para instalar o aplicativo.
             </p>
             <button
               onClick={close}
