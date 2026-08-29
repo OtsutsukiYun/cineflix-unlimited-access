@@ -443,7 +443,7 @@ function AnimatedHeroHeadline() {
 
   return (
     <div className="grid grid-cols-1 grid-rows-1 place-items-center w-full max-w-2xl mx-auto mb-2 sm:mb-2.5">
-      {/* FRASE 1 (INICIAL): Filmes, séries e lançamentos em um só lugar. */}
+      {/* FRASE 1 (INICIAL): Seus filmes, séries e lançamentos em um só lugar. */}
       <h1
         className={`col-start-1 row-start-1 font-display text-2xl sm:text-4xl md:text-5xl font-black leading-[1.12] text-white tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
           headlineIndex === 0
@@ -452,11 +452,11 @@ function AnimatedHeroHeadline() {
         }`}
       >
         <span>
-          Filmes, séries e lançamentos em <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">um só lugar.</span>
+          Seus filmes, séries e lançamentos em <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">um só lugar.</span>
         </span>
       </h1>
 
-      {/* FRASE 2: Cansado de procurar um filme e não encontrar onde assistir? */}
+      {/* FRASE 2: Chega de procurar e não encontrar onde assistir. */}
       <h1
         className={`col-start-1 row-start-1 font-display text-2xl sm:text-4xl md:text-5xl font-black leading-[1.12] text-white tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
           headlineIndex === 1
@@ -465,7 +465,7 @@ function AnimatedHeroHeadline() {
         }`}
       >
         <span>
-          Cansado de procurar um filme <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">e não encontrar onde assistir?</span>
+          Chega de procurar <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">e não encontrar onde assistir.</span>
         </span>
       </h1>
     </div>
