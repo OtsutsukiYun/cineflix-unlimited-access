@@ -585,6 +585,21 @@
   }
 }
 
+@keyframes float-3d {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg) scale(1);
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.6));
+  }
+  50% {
+    transform: translateY(-9px) rotateX(8deg) rotateY(-6deg) scale(1.05);
+    filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.8));
+  }
+}
+
 .animate-levitate {
   animation: levitate-float 3.6s ease-in-out infinite;
+}
+
+.animate-float-3d {
+  animation: float-3d 4s ease-in-out infinite;
 }
