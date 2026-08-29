@@ -641,11 +641,12 @@ function Index() {
                   {
                     {
                       "filmes": "Os filmes mais assistidos da semana recém-saídos do cinema com áudio e imagem em alta definição.",
+                      "novelas-turcas": "As novelas turcas mais apaixonantes e emocionantes do momento com episódios completos dublados ou legendados em português.",
                       "terror-raro": "As produções de terror exclusivas e raras da Ásia que estão dominando as telas dos nossos assinantes.",
                       "series": "As séries mais maratonadas do momento com temporadas completas dubladas ou legendadas para você assistir.",
                       "animes": "Os animes e episódios mais bombados da temporada atual com simulcast semanal e dublagem em português.",
                       "proximos": "As próximas grandes estreias inéditas e lançamentos confirmados que nossos membros mais estão aguardando.",
-                    }[activeTab] || "Confira o que nossos assinantes mais têm assistido ultimamente em filmes, séries e lançamentos de terror."
+                    }[activeTab] || "Confira o que nossos assinantes mais têm assistido ultimamente em nosso catálogo completo."
                   }
                 </p>
               </div>
