@@ -585,7 +585,7 @@ function Index() {
                     {
                       "filmes": "Os filmes mais assistidos da semana recém-saídos do cinema com áudio e imagem em alta definição.",
                       "terror-raro": "As produções de terror exclusivas e raras da Ásia que estão dominando as telas dos nossos assinantes.",
-                      "series": "As séries mais maratonadas do momento com temporadas completas dubladas e legendadas para você assistir.",
+                      "series": "As séries mais maratonadas do momento com temporadas completas dubladas ou legendadas para você assistir.",
                       "animes": "Os animes e episódios mais bombados da temporada atual com simulcast semanal e dublagem em português.",
                       "proximos": "As próximas grandes estreias inéditas e lançamentos confirmados que nossos membros mais estão aguardando.",
                     }[activeTab] || "Confira o que nossos assinantes mais têm assistido ultimamente em filmes, séries e lançamentos de terror."
@@ -739,7 +739,7 @@ function Index() {
               titleHover: "group-hover:text-rose-200",
               t: "Séries imperdíveis",
               qtd: "Séries Completas",
-              d: "Séries das maiores plataformas mundiais com temporadas completas dubladas e legendadas.",
+              d: "Séries das maiores plataformas mundiais com temporadas completas dubladas ou legendadas.",
               tabId: "series",
             },
             {
@@ -796,7 +796,7 @@ function Index() {
               titleHover: "group-hover:text-rose-200",
               t: "Novelas Turcas",
               qtd: "Sucessos Internacionais",
-              d: "As novelas turcas de maior audiência (Será Isso Amor?, Segredos de Família, O Canto do Pássaro, Hercai) dubladas e legendadas em HD.",
+              d: "As novelas turcas de maior audiência (Será Isso Amor?, Segredos de Família, O Canto do Pássaro, Hercai) dubladas ou legendadas em HD.",
               tabId: "novelas-turcas",
             },
             {
