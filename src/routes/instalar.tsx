@@ -213,14 +213,14 @@ function CodeCopyBox({ code, onCopyClick }: { code: string; onCopyClick?: () => 
   };
 
   return (
-    <div className="relative overflow-hidden my-3 rounded-2xl p-4 border border-white/25 bg-white/[0.08] backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+    <div className="relative overflow-hidden my-3 rounded-2xl p-4 sm:p-5 border border-white/25 bg-white/[0.08] backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
       <div className="pointer-events-none absolute -right-10 -bottom-10 size-36 rounded-full bg-red-600/20 blur-2xl" />
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 relative z-10">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left relative z-10">
+        <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left w-full sm:w-auto justify-center sm:justify-start">
           <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-red-600/30 text-red-300 border border-white/20 font-mono font-black text-xl backdrop-blur-md shadow-inner">
             <Hash className="size-5" />
           </div>
-          <div>
+          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
             <span className="text-[10px] font-bold uppercase tracking-widest text-red-400 block">
               Código de Instalação Rápida (Protegido 🔒)
             </span>
