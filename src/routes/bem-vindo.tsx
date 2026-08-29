@@ -122,99 +122,51 @@ function BemVindoPage() {
             Agora é só baixar o aplicativo e seguir o passo a passo de instalação abaixo. Leva apenas alguns minutos.
           </p>
 
-          {/* DICA ESPECIAL CASO O USUÁRIO VENHA EXCLUSIVAMENTE DO TIKTOK */}
-          {isTikTokUser && (
-            <div className="my-5 max-w-xl mx-auto rounded-2xl border border-amber-500/70 bg-gradient-to-r from-amber-950/95 via-amber-900/80 to-amber-950/95 p-4 sm:p-5 text-left text-xs sm:text-sm text-amber-200 shadow-[0_0_30px_rgba(245,158,11,0.35)] backdrop-blur-md">
-              <div className="flex items-center gap-2 font-black text-amber-300 text-xs sm:text-sm mb-2 uppercase tracking-wide">
-                <span className="flex size-6 items-center justify-center rounded-lg bg-amber-500/20 text-amber-300 font-bold">⚠️</span>
-                <span>ATENÇÃO PARA QUEM VEIO DO TIKTOK:</span>
-              </div>
-              <p className="text-xs sm:text-sm text-amber-100 leading-relaxed font-semibold mb-2">
-                O aplicativo do TikTok bloqueia o clique de download direto. Você pode usar o <strong className="text-white font-extrabold underline">Método do Downloader</strong> ou <strong>copiar o link do MediaFire</strong> para colar no seu navegador (Chrome/Safari):
+          {/* BOTÃO PRINCIPAL OU CAIXA DE CÓPIA DO TIKTOK */}
+          {isTikTokUser ? (
+            <div className="my-5 max-w-md mx-auto rounded-2xl border border-amber-500/60 bg-amber-950/40 p-4 text-xs text-amber-200 text-center shadow-lg backdrop-blur-md">
+              <p className="font-bold text-amber-100 text-sm mb-2">
+                Copie o link abaixo e cole no seu navegador:
               </p>
-              
-              <div className="rounded-xl border border-amber-500/40 bg-black/60 p-3 text-xs text-amber-200 flex flex-col gap-2.5 mb-2.5">
-                <div className="flex items-center justify-between gap-2">
-                  <span className="font-mono text-[11px] text-amber-200 truncate select-all pr-2">
-                    https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file
-                  </span>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      navigator.clipboard.writeText("https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file");
-                      setCopiedMediaFire(true);
-                      setTimeout(() => setCopiedMediaFire(false), 2500);
-                    }}
-                    className="shrink-0 flex items-center gap-1 px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-black text-xs transition-colors cursor-pointer shadow-md"
-                  >
-                    {copiedMediaFire ? (
-                      <>
-                        <Check className="size-3.5" /> COPIADO!
-                      </>
-                    ) : (
-                      <>
-                        <Copy className="size-3.5" /> COPIAR LINK MEDIAFIRE
-                      </>
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-amber-500/30 bg-black/40 p-3 text-xs text-amber-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
-                <div>
-                  1. Baixe o app{" "}
-                  <a
-                    href="https://play.google.com/store/apps/details?id=com.esaba.downloader"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-amber-300 font-extrabold underline hover:text-amber-200 inline-flex items-center gap-1"
-                  >
-                    Downloader na Play Store <ExternalLink className="size-3 inline shrink-0" />
-                  </a>
-                  <br />
-                  2. Digite o código oficial: <strong className="text-amber-300 font-black text-sm">9884830</strong>
-                </div>
-                <span className="text-[11px] text-amber-300/80 italic">
-                  (Ou toque nos 3 pontinhos <strong className="text-white font-bold">⋮</strong> e escolha <strong>"Abrir no Navegador"</strong>)
+              <div className="flex items-center justify-between gap-2 rounded-xl bg-black/70 p-2.5 border border-amber-500/40 text-left">
+                <span className="font-mono text-[11px] text-amber-200 truncate select-all pr-2">
+                  https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file
                 </span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    navigator.clipboard.writeText("https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file");
+                    setCopiedMediaFire(true);
+                    setTimeout(() => setCopiedMediaFire(false), 2500);
+                  }}
+                  className="shrink-0 flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-black font-black text-xs transition-colors cursor-pointer shadow-md"
+                >
+                  {copiedMediaFire ? (
+                    <>
+                      <Check className="size-3.5" /> COPIADO!
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="size-3.5" /> COPIAR LINK
+                    </>
+                  )}
+                </button>
               </div>
+            </div>
+          ) : (
+            <div className="max-w-md mx-auto mb-4">
+              <a
+                href={APK_DIRECT_URL}
+                onClick={handleDownloadClick}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 px-8 py-5 text-lg sm:text-xl font-black text-white shadow-[0_0_35px_rgba(16,185,129,0.7)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_50px_rgba(16,185,129,0.9)] border border-white/25 active:scale-[0.98]"
+              >
+                <Download className="size-6 transition-transform group-hover:translate-y-1 animate-bounce text-white" />
+                <span>⬇️ INICIAR DOWNLOAD</span>
+              </a>
             </div>
           )}
-
-          {/* IMAGEM DE ONDE CLICAR NO MEDIAFIRE (ANTES DO BOTÃO DE DOWNLOAD) - MAIOR E MAIS CLARA */}
-          <div className="my-6 max-w-xl mx-auto overflow-hidden rounded-3xl border border-blue-500/50 bg-[#070e1b] p-5 sm:p-7 shadow-[0_0_40px_rgba(37,99,235,0.3)] relative text-left backdrop-blur-xl">
-            <div className="flex items-center gap-2 text-xs sm:text-sm font-extrabold text-blue-400 uppercase mb-2.5">
-              <ExternalLink className="size-4 shrink-0 text-blue-400" />
-              <span>Onde clicar na tela a seguir (MediaFire):</span>
-            </div>
-            <p className="text-xs sm:text-sm text-white/90 mb-4 font-medium leading-relaxed">
-              Ao clicar no <strong className="text-emerald-400 font-black">botão verde abaixo</strong>, você verá esta tela. Clique na <strong>barra azul grande</strong> para iniciar o download:
-            </p>
-            <div className="relative mx-auto overflow-hidden rounded-2xl border border-white/25 shadow-[0_0_35px_rgba(37,99,235,0.5)] bg-black/80 p-3 sm:p-4">
-              <img
-                src="/mediafire_tutorial.png"
-                alt="Onde clicar no MediaFire para baixar o UniTV Pro"
-                className="w-full object-contain max-h-[360px] sm:max-h-[420px] rounded-xl shadow-md"
-              />
-              <div className="mt-3 text-center text-xs sm:text-sm text-blue-200 font-extrabold bg-gradient-to-r from-blue-950 via-blue-900 to-blue-950 p-3 rounded-xl border border-blue-500/40 shadow-inner">
-                👈 Clique na <strong>barra azul retangular grande</strong> (Download 37.17MB)
-              </div>
-            </div>
-          </div>
-
-          {/* BOTÃO PRINCIPAL SOLICITADO: ⬇️ INICIAR DOWNLOAD (VERDE CONVIDATIVO) */}
-          <div className="max-w-md mx-auto mb-4">
-            <a
-              href={APK_DIRECT_URL}
-              onClick={handleDownloadClick}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 px-8 py-5 text-lg sm:text-xl font-black text-white shadow-[0_0_35px_rgba(16,185,129,0.7)] transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_50px_rgba(16,185,129,0.9)] border border-white/25 active:scale-[0.98]"
-            >
-              <Download className="size-6 transition-transform group-hover:translate-y-1 animate-bounce text-white" />
-              <span>⬇️ INICIAR DOWNLOAD</span>
-            </a>
-          </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-white/70">
             <span className="flex items-center gap-1.5"><ShieldCheck className="size-4 text-emerald-400" /> Versão Oficial Protegida</span>

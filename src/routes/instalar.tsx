@@ -523,49 +523,16 @@ function InstalarPage() {
                   </div>
                 </div>
 
-                {/* AVISO TIKTOK (EXCLUSIVO PARA QUEM VEM DO TIKTOK) */}
-                {isTikTokUser && (
-                  <div className="rounded-2xl border border-amber-500/70 bg-gradient-to-r from-amber-950/95 via-amber-900/80 to-amber-950/95 p-4 text-left text-xs sm:text-sm text-amber-200 shadow-md backdrop-blur-md">
-                    <div className="flex items-center gap-2 font-black text-amber-300 text-xs sm:text-sm mb-1.5 uppercase tracking-wide">
-                      <span className="flex size-5 items-center justify-center rounded bg-amber-500/20 text-amber-300 font-bold">⚠️</span>
-                      <span>ATENÇÃO (TIKTOK):</span>
-                    </div>
-                    <p className="text-xs text-amber-100 font-semibold mb-2">
-                      O TikTok bloqueia o download direto. Baixe pelo <strong>Downloader (código 9884830)</strong> ou abra no navegador (⋮).
-                    </p>
-                    <button
-                      onClick={() => setDeviceTab("tv")}
-                      className="px-3 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-bold text-xs border border-amber-500/40 transition-colors"
-                    >
-                      Usar Método do Downloader ➔
-                    </button>
-                  </div>
-                )}
-
                 <ol className="space-y-4 pt-1">
                   <li className="flex items-start gap-3">
                     <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
                       01
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-                      Baixe o APK oficial:
-                      <a
-                        href={APK_MEDIAFIRE_URL}
-                        onClick={handleApkDownloadClick}
-                        className="flex items-center justify-center gap-2 my-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-3 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30 cursor-pointer"
-                      >
-                        <Download className="size-4 animate-bounce" />
-                        BAIXAR APK UNITV PRO (DIRETO)
-                      </a>
-
-                      {/* CAIXA DE COPIAR LINK MEDIAFIRE EXCLUSIVA PARA QUEM VEM DO TIKTOK */}
-                      {isTikTokUser && (
-                        <div className="mt-2.5 rounded-xl border border-amber-500/50 bg-amber-950/60 p-3 text-amber-100 shadow-md">
-                          <p className="font-extrabold text-amber-300 text-xs mb-1 uppercase flex items-center gap-1.5">
-                            <span>📋</span> Para quem veio do TikTok:
-                          </p>
-                          <p className="text-[11px] text-amber-200/90 mb-2 leading-tight">
-                            Como o TikTok bloqueia o clique direto, <strong>copie o link do MediaFire</strong> abaixo e cole no seu navegador (Chrome/Safari):
+                      {isTikTokUser ? (
+                        <div className="my-1 rounded-xl border border-amber-500/50 bg-amber-950/60 p-3 text-amber-100 shadow-md">
+                          <p className="text-xs font-bold text-amber-100 mb-2">
+                            Copie o link abaixo e cole no seu navegador:
                           </p>
                           <div className="flex items-center justify-between gap-2 rounded-lg bg-black/70 p-2 border border-amber-500/40">
                             <span className="font-mono text-[10px] text-amber-200 truncate select-all pr-2">
@@ -578,7 +545,7 @@ function InstalarPage() {
                                 setCopiedMediaFire(true);
                                 setTimeout(() => setCopiedMediaFire(false), 2500);
                               }}
-                              className="shrink-0 flex items-center gap-1 px-2.5 py-1 rounded-md bg-amber-500 hover:bg-amber-400 text-black font-black text-[11px] transition-colors cursor-pointer"
+                              className="shrink-0 flex items-center gap-1 px-2.5 py-1.5 rounded-md bg-amber-500 hover:bg-amber-400 text-black font-black text-[11px] transition-colors cursor-pointer"
                             >
                               {copiedMediaFire ? (
                                 <>
@@ -586,12 +553,24 @@ function InstalarPage() {
                                 </>
                               ) : (
                                 <>
-                                  <Copy className="size-3" /> COPIAR LINK MEDIAFIRE
+                                  <Copy className="size-3" /> COPIAR LINK
                                 </>
                               )}
                             </button>
                           </div>
                         </div>
+                      ) : (
+                        <>
+                          Baixe o APK oficial:
+                          <a
+                            href={APK_MEDIAFIRE_URL}
+                            onClick={handleApkDownloadClick}
+                            className="flex items-center justify-center gap-2 my-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-3 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30 cursor-pointer"
+                          >
+                            <Download className="size-4 animate-bounce" />
+                            BAIXAR APK UNITV PRO (DIRETO)
+                          </a>
+                        </>
                       )}
                     </div>
                   </li>
