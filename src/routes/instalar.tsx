@@ -708,7 +708,7 @@ function InstalarPage() {
             {/* 🌟 LISTA EXATA DE 10 RECURSOS E BENEFÍCIOS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left max-w-lg mx-auto pt-3 pb-1 border-t border-white/15">
               {[
-                "1 Tela simultânea (Smart TV Android, TV Box ou Celular)",
+                "1 Tela simultânea (Smart TV Android, TV Box, Celular ou Tablet)",
                 "Milhares de Filmes & Séries",
                 "Lançamentos semanais inéditos de terror & cinema",
                 "Canais Ao Vivo & Esportes sem travar (4K & Full HD)",
