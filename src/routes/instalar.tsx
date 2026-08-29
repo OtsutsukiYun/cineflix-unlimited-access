@@ -213,40 +213,40 @@ function CodeCopyBox({ code, onCopyClick }: { code: string; onCopyClick?: () => 
   };
 
   return (
-    <div className="relative overflow-hidden my-3 rounded-2xl p-4 sm:p-5 border border-white/20 bg-white/[0.08] backdrop-blur-xl shadow-md max-w-md mx-auto text-center">
+    <div className="relative overflow-hidden my-2.5 rounded-2xl p-3.5 sm:p-4 border border-white/20 bg-white/[0.08] backdrop-blur-xl shadow-md max-w-md mx-auto text-center">
       <div className="pointer-events-none absolute -right-10 -bottom-10 size-36 rounded-full bg-red-600/20 blur-2xl" />
-      <div className="flex flex-col items-center justify-center gap-2.5 relative z-10 w-full text-center">
+      <div className="flex flex-col items-center justify-center gap-2 relative z-10 w-full text-center">
         {/* CRISP CENTERED BADGE */}
-        <div className="flex items-center justify-center gap-2">
-          <div className="flex size-6 items-center justify-center rounded-lg bg-red-600/30 text-red-300 border border-white/15 font-mono font-bold text-xs backdrop-blur-md">
-            <Hash className="size-3.5" />
+        <div className="flex items-center justify-center gap-1.5">
+          <div className="flex size-5.5 items-center justify-center rounded-md bg-red-600/30 text-red-300 border border-white/15 font-mono font-bold text-xs backdrop-blur-md">
+            <Hash className="size-3" />
           </div>
-          <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-red-400">
+          <span className="text-[10px] font-bold uppercase tracking-widest text-red-400">
             Código de Instalação 🔒
           </span>
         </div>
 
         {/* CENTERED CODE NUMBER */}
-        <div className="font-mono font-black text-3xl sm:text-4xl tracking-widest text-white drop-shadow-md leading-none my-0.5">
+        <div className="font-mono font-black text-2xl sm:text-3xl tracking-widest text-white drop-shadow-md leading-none my-0.5">
           {verifiedCode}
         </div>
 
         {/* CENTERED COPY BUTTON */}
         <button
           onClick={handleCopy}
-          className={`w-full sm:w-auto min-w-[180px] inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 text-xs font-black tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-md backdrop-blur-md active:scale-95 ${
+          className={`w-full sm:w-auto min-w-[160px] inline-flex items-center justify-center gap-1.5 rounded-xl px-4 py-2 text-xs font-black tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-md backdrop-blur-md active:scale-95 ${
             copied
               ? "bg-emerald-500 text-black border border-emerald-400 font-extrabold"
-              : "bg-red-600 hover:bg-red-500 text-white border border-white/20 shadow-[0_0_15px_rgba(220,38,38,0.5)]"
+              : "bg-red-600 hover:bg-red-500 text-white border border-white/20 shadow-[0_0_12px_rgba(220,38,38,0.5)]"
           }`}
         >
           {copied ? (
             <>
-              <Check className="size-4 stroke-[3]" /> COPIADO!
+              <Check className="size-3.5 stroke-[3]" /> COPIADO!
             </>
           ) : (
             <>
-              <Copy className="size-4" /> COPIAR CÓDIGO
+              <Copy className="size-3.5" /> COPIAR CÓDIGO
             </>
           )}
         </button>
