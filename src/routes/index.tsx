@@ -606,10 +606,10 @@ function Index() {
               TESTAR GRÁTIS
             </Link>
             <SmoothLink
-              href={CTA_HREF}
+              href="#catalogo"
               className="btn-ghost w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-md border border-white/25 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2 rounded-xl"
             >
-              VER PLANOS
+              VER CATÁLOGO
             </SmoothLink>
           </div>
 
