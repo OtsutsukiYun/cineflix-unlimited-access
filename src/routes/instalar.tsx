@@ -344,7 +344,7 @@ function InstalarPage() {
           <div className="p-6 sm:p-8 space-y-6">
             <div className="flex items-center justify-center gap-2 rounded-xl border border-red-500/30 bg-red-950/40 p-3 text-center text-xs sm:text-sm font-extrabold text-red-200 backdrop-blur-md">
               <Play className="size-4 text-red-500 fill-red-500 shrink-0" />
-              <span>Assista ao vídeo abaixo para aprender o passo a passo de instalação:</span>
+              <span>Assista ao vídeo abaixo para aprender a instalar:</span>
             </div>
             {deviceTab === "tv" && (
               <>
@@ -364,9 +364,6 @@ function InstalarPage() {
                       <Play className="size-3.5 text-red-500 fill-red-500" />
                       <span className="text-red-400 font-black">🎥 Assista ao vídeo de 2 minutos para instalar</span>
                     </div>
-                    <span className="text-[10px] text-red-400 font-extrabold uppercase">
-                      <Flame className="size-3 inline mr-1" /> Passo a Passo
-                    </span>
                   </div>
                   <div className="relative aspect-video w-full bg-black z-20">
                     <iframe
@@ -437,9 +434,6 @@ function InstalarPage() {
                       <Play className="size-3.5 text-red-500 fill-red-500" />
                       <span className="text-emerald-400 font-black">🎥 Assista ao vídeo de 1 minuto para instalar</span>
                     </div>
-                    <span className="text-[10px] text-emerald-400 font-extrabold uppercase">
-                      <Flame className="size-3 inline mr-1" /> Passo a Passo
-                    </span>
                   </div>
                   <div className="relative aspect-video w-full bg-black z-20">
                     <iframe
