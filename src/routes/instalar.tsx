@@ -309,6 +309,11 @@ function InstalarPage() {
             Instale o aplicativo e aproveite 3 dias para explorar filmes, séries, lançamentos, canais e muito mais.
           </p>
 
+          <div className="inline-flex items-center gap-2 rounded-2xl border border-red-500/40 bg-red-950/50 px-4 py-2.5 text-xs sm:text-sm font-black text-red-200 backdrop-blur-xl shadow-lg animate-bounce">
+            <Play className="size-4 text-red-500 fill-red-500" />
+            <span>Assista ao vídeo curto abaixo para instalar sem erros! 👇</span>
+          </div>
+
         </div>
 
         {/* 💎 TUTORIAL DE INSTALAÇÃO VISUAL */}
@@ -358,7 +363,7 @@ function InstalarPage() {
                   <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs font-bold text-white bg-white/[0.04]">
                     <div className="flex items-center gap-2">
                       <Play className="size-3.5 text-red-500 fill-red-500" />
-                      <span>Instale em 2 minutos</span>
+                      <span className="text-red-400 font-black">🎥 Assista ao vídeo de 2 minutos para instalar</span>
                     </div>
                     <span className="text-[10px] text-red-400 font-extrabold uppercase">
                       <Flame className="size-3 inline mr-1" /> Passo a Passo
@@ -431,7 +436,7 @@ function InstalarPage() {
                   <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs font-bold text-white bg-white/[0.04]">
                     <div className="flex items-center gap-2">
                       <Play className="size-3.5 text-red-500 fill-red-500" />
-                      <span>Instale em 1 minuto</span>
+                      <span className="text-emerald-400 font-black">🎥 Assista ao vídeo de 1 minuto para instalar</span>
                     </div>
                     <span className="text-[10px] text-emerald-400 font-extrabold uppercase">
                       <Flame className="size-3 inline mr-1" /> Passo a Passo
