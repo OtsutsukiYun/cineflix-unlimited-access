@@ -156,7 +156,7 @@ function PermissionModal({
 
         <div className="relative z-10 text-xs text-white/95 leading-relaxed mb-5 text-center bg-white/[0.06] p-4 rounded-2xl border border-white/20 backdrop-blur-2xl shadow-inner">
           <p className="font-medium">
-            Dependendo da sua versão do Android, poderá aparecer uma solicitação para permitir a instalação de aplicativos fora da Play Store. Nesse caso, autorize a instalação para continuar.
+            Dependendo da sua versão do Android, poderá aparecer uma solicitação para permitir a instalação de aplicativos fora da Play Store. Quando aparecer, autorize a instalação para continuar.
           </p>
         </div>
 
