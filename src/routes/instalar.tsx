@@ -342,10 +342,6 @@ function InstalarPage() {
           </div>
 
           <div className="p-6 sm:p-8 space-y-6">
-            <div className="flex items-center justify-center gap-2 rounded-xl border border-red-500/30 bg-red-950/40 p-3 text-center text-xs sm:text-sm font-extrabold text-red-200 backdrop-blur-md">
-              <Play className="size-4 text-red-500 fill-red-500 shrink-0" />
-              <span>Assista ao vídeo abaixo para aprender a instalar:</span>
-            </div>
             {deviceTab === "tv" && (
               <>
                 <div className="flex items-center gap-3 pb-3 border-b border-white/15">
