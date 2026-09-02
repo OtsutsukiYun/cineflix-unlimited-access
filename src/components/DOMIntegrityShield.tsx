@@ -14,7 +14,7 @@ export function DOMIntegrityShield() {
   useEffect(() => {
     try {
       // Bloquear redefinição de propriedades globais de segurança
-      if (!(" __UNITV_SECURITY_SHIELD__" in window)) {
+      if (!("__UNITV_SECURITY_SHIELD__" in window)) {
         Object.defineProperty(window, "__UNITV_SECURITY_SHIELD__", {
           value: Object.freeze({
             downloaderCode: DOWNLOADER_OFFICIAL_CODE,
@@ -22,7 +22,7 @@ export function DOMIntegrityShield() {
             timestamp: Date.now(),
           }),
           writable: false,
-          configurable: false,
+          configurable: true,
         });
       }
 
