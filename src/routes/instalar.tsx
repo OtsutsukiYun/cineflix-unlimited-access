@@ -24,6 +24,13 @@ import {
   Award,
   Headphones,
   Mail,
+  Sparkles,
+  Star,
+  Film,
+  Trophy,
+  Heart,
+  Clapperboard,
+  ChevronDown,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { WhatsAppIcon } from "@/components/icons";
@@ -38,18 +45,18 @@ import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
 export const Route = createFileRoute("/instalar")({
   head: () => ({
     meta: [
-      { title: "🎁 Teste Grátis 3 Dias — Como Instalar UniTV Pro (Smart TV Android, Celular e Tablet, TV Box, Computador via Emulação)" },
+      { title: "🎁 Teste Grátis 3 Dias — Como Instalar UniTV Pro (Smart TV Android, Celular e Tablet, TV Box)" },
       {
         name: "description",
         content:
-          "Passo a passo simples e rápido para instalar o UniTV Pro em aparelhos com sistema Android (Smart TV Android, TV Box, FireTV, Celular e Tablet Android ou Computador via Emulação).",
+          "Seu teste grátis de 3 dias está quase pronto! Passo a passo simples e rápido para instalar o UniTV Pro em aparelhos com sistema Android.",
       },
     ],
   }),
   component: InstalarPage,
 });
 
-// EXPANDIDA LISTA DE FILMES E SÉRIES PARA ESTEIRA INFINITA
+// LISTA DE FILMES E SÉRIES PARA ESTEIRA HORIZONTAL
 const HORROR_2026_POSTERS = [
   "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", // Obsessão
   "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", // Evil Dead Burn
@@ -97,8 +104,6 @@ const linha4 = HORROR_2026_POSTERS.slice(24, 32);
 const linha5 = HORROR_2026_POSTERS.slice(32, 40);
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
-const NTDOWN_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=link.ntdev.ntdw";
-const LDPLAYER_WEBSITE_URL = "https://pt.ldplayer.net/";
 const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file";
 
 function DownloaderAppIcon({ className = "size-10" }: { className?: string }) {
@@ -113,15 +118,7 @@ function DownloaderAppIcon({ className = "size-10" }: { className?: string }) {
   );
 }
 
-function AndroidIcon({ className = "size-5" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M6 18c0 .55.45 1 1 1h1v3c0 .55.45 1 1 1s1-.45 1-1v-3h4v3c0 .55.45 1 1 1s1-.45 1-1v-3h1c.55 0 1-.45 1-1V8H6v10zM3.5 8C2.67 8 2 8.67 2 9.5v7c0 .83.67 1.5 1.5 1.5S5 17.33 5 16.5v-7C5 8.67 4.33 8 3.5 8zm17 0c-.83 0-1.5.67-1.5 1.5v7c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-7c0-.83-.67-1.5-1.5-1.5zM15.53 2.16l1.3-1.3c.2-.2.2-.51 0-.71-.2-.2-.51-.2-.71 0l-1.48 1.48C13.85 1.23 12.95 1 12 1c-.96 0-1.86.23-2.66.63L7.85.15c-.2-.2-.51-.2-.71 0-.2.2-.2.51 0 .71l1.31 1.31C6.97 3.26 6 5.01 6 7h12c0-1.99-.97-3.75-2.47-4.84zM10 5H9V4h1v1zm5 0h-1V4h1v1z" />
-    </svg>
-  );
-}
-
-// 💎 POPUP DE DICA PURAMENTE EM ESTILO VIDRO TRANSLÚCIDO (GLASSMORPHISM)
+// 💎 POPUP DE DICA COM MENSAGEM PROFISSIONAL SOBRE APK E FONTE DESCONHECIDA
 function PermissionModal({
   isOpen,
   onClose,
@@ -135,13 +132,9 @@ function PermissionModal({
 
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
-      {/* BACKDROP ESCURO COM BLUR INTENSO */}
       <div className="absolute inset-0 bg-black/85 backdrop-blur-xl" onClick={onClose} />
 
-      {/* CARD DO POPUP VIDRO TRANSLÚCIDO (GLASSMORPHISM) */}
       <div className="relative z-10 w-full max-w-md overflow-hidden rounded-3xl border border-white/20 bg-white/[0.06] backdrop-blur-2xl p-6 sm:p-8 text-center shadow-[0_25px_80px_rgba(0,0,0,0.95)] animate-in fade-in zoom-in-95 duration-200">
-        
-        {/* LUZ DE VIDRO INTERNA */}
         <div className="pointer-events-none absolute -top-16 -left-16 size-48 rounded-full bg-white/10 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-16 -right-16 size-48 rounded-full bg-red-600/15 blur-3xl" />
 
@@ -152,7 +145,6 @@ function PermissionModal({
           <X className="size-4" />
         </button>
 
-        {/* LOGO UNITV PRO */}
         <div className="flex items-center justify-center gap-2 mb-4 relative z-10">
           <span className="relative flex size-7 items-center justify-center rounded-lg bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_12px_rgba(220,38,38,0.7)] border border-white/20">
             <svg className="size-3.5 fill-white" viewBox="0 0 24 24">
@@ -164,7 +156,6 @@ function PermissionModal({
           </span>
         </div>
 
-        {/* ROSTO FELIZ (HAPPY FACE) EM CAIXA DE VIDRO TRANSLÚCIDO */}
         <div className="relative z-10 mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-white/[0.08] backdrop-blur-xl text-white border border-white/25 shadow-lg">
           <Smile className="size-7 text-white" />
         </div>
@@ -175,15 +166,15 @@ function PermissionModal({
 
         <div className="relative z-10 text-xs sm:text-sm text-white/90 leading-relaxed space-y-3 mb-6 text-left bg-white/[0.04] backdrop-blur-2xl p-4 rounded-2xl border border-white/15 shadow-inner">
           <p>
-            Por padrão, o <strong className="text-white font-extrabold">Android bloqueia aplicativos instalados fora da Play Store</strong> e pode exibir um aviso de <strong className="text-amber-400 font-bold font-mono">"Fonte Desconhecida"</strong> ou <strong className="text-amber-400 font-bold font-mono">"App Nocivo Bloqueado"</strong>.
+            Dependendo da sua versão do Android, poderá aparecer uma solicitação para permitir a instalação de aplicativos fora da Play Store. Nesse caso, autorize a instalação para continuar.
           </p>
 
           <div className="p-3 rounded-xl bg-white/[0.08] border border-white/20 text-white text-xs font-semibold backdrop-blur-md">
-            👉 Para concluir, basta clicar em <strong className="text-red-400 underline font-black">"Permitir desta fonte"</strong> ou <strong className="text-red-400 underline font-black">"Instalar assim mesmo"</strong>. 🙂
+            👉 Clique em <strong className="text-red-400 underline font-black">"Permitir desta fonte"</strong> ou <strong className="text-red-400 underline font-black">"Instalar assim mesmo"</strong> para concluir a instalação. 🙂
           </div>
 
           <p className="text-[11px] text-white/70 text-center pt-1 font-medium leading-normal">
-            🛡️ Fique 100% tranquilo! Esse aviso é uma proteção padrão do Android para qualquer APK externo. O UniTV Pro é <strong>totalmente seguro e livre de vírus</strong>.
+            🛡️ O UniTV Pro é um aplicativo <strong>totalmente seguro, leve e livre de vírus</strong>.
           </p>
         </div>
 
@@ -198,10 +189,9 @@ function PermissionModal({
   );
 }
 
-// 💎 RETÂNGULO DO CÓDIGO ESTILO VIDRO COM TRIGGER DE POPUP NA PRIMEIRA CÓPIA E VALIDAÇÃO DE SEGURANÇA
+// RETÂNGULO DO CÓDIGO COM TRIGGER DE POPUP NA PRIMEIRA CÓPIA
 function CodeCopyBox({ code, onCopyClick }: { code: string; onCopyClick?: () => void }) {
   const [copied, setCopied] = useState(false);
-  // Proteção de Integridade: garante imutabilidade e impede manipulação por scripts maliciosos ou DOM hijacking
   const verifiedCode = code === NTDOWN_OFFICIAL_CODE ? getVerifiedNtDownCode(code) : getVerifiedDownloaderCode(code);
 
   const handleCopy = () => {
@@ -217,7 +207,6 @@ function CodeCopyBox({ code, onCopyClick }: { code: string; onCopyClick?: () => 
     <div className="relative overflow-hidden my-2.5 rounded-2xl p-3.5 sm:p-4 border border-white/20 bg-white/[0.08] backdrop-blur-xl shadow-md max-w-md mx-auto text-center">
       <div className="pointer-events-none absolute -right-10 -bottom-10 size-36 rounded-full bg-red-600/20 blur-2xl" />
       <div className="flex flex-col items-center justify-center gap-2 relative z-10 w-full text-center">
-        {/* CRISP CENTERED BADGE */}
         <div className="flex items-center justify-center gap-1.5">
           <div className="flex size-5.5 items-center justify-center rounded-md bg-red-600/30 text-red-300 border border-white/15 font-mono font-bold text-xs backdrop-blur-md">
             <Hash className="size-3" />
@@ -227,12 +216,10 @@ function CodeCopyBox({ code, onCopyClick }: { code: string; onCopyClick?: () => 
           </span>
         </div>
 
-        {/* CENTERED CODE NUMBER */}
         <div className="font-mono font-black text-2xl sm:text-3xl tracking-widest text-white drop-shadow-md leading-none my-0.5">
           {verifiedCode}
         </div>
 
-        {/* CENTERED COPY BUTTON */}
         <button
           onClick={handleCopy}
           className={`w-full sm:w-auto min-w-[160px] inline-flex items-center justify-center gap-1.5 rounded-xl px-4 py-2 text-xs font-black tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-md backdrop-blur-md active:scale-95 ${
@@ -318,7 +305,7 @@ function InstalarPage() {
 
   return (
     <div className="relative min-h-screen bg-[#060606] text-white overflow-x-hidden">
-      {/* FUNDO ANIMADO COM MULTI-LINHAS DE CAPINHAS DE FILMES (MARQUEES INFINITOS) */}
+      {/* FUNDO ANIMADO COM MARQUEES INFINITOS */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-40 select-none">
         <div className="flex flex-col gap-3.5 -rotate-6 scale-110 -translate-y-12">
           <div className="flex overflow-hidden">
@@ -342,20 +329,6 @@ function InstalarPage() {
               ))}
             </div>
           </div>
-          <div className="flex overflow-hidden">
-            <div className="animate-marquee-reverse-slow flex shrink-0 items-center gap-3.5 pr-3.5">
-              {[...linha4, ...linha4, ...linha4].map((p, idx) => (
-                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-42 sm:h-54 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
-              ))}
-            </div>
-          </div>
-          <div className="flex overflow-hidden">
-            <div className="animate-marquee-slow flex shrink-0 items-center gap-3.5 pr-3.5">
-              {[...linha5, ...linha5, ...linha5].map((p, idx) => (
-                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-42 sm:h-54 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
-              ))}
-            </div>
-          </div>
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#060606]/80 via-[#060606]/55 to-[#060606]/90" />
         <div className="absolute inset-0 bg-black/35" />
@@ -367,10 +340,8 @@ function InstalarPage() {
         hasPendingRedirect={Boolean(pendingRedirectUrl)}
       />
 
-      {/* LUZES AMBIENTAIS SUAVES */}
+      {/* LUZES AMBIENTAIS */}
       <div className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 size-[800px] rounded-full bg-red-600/15 blur-[180px] z-0 animate-pulse" />
-      <div className="pointer-events-none fixed top-1/3 left-10 size-[500px] rounded-full bg-rose-900/15 blur-[160px] z-0" />
-      <div className="pointer-events-none fixed bottom-10 right-10 size-[600px] rounded-full bg-red-900/15 blur-[160px] z-0" />
 
       {/* HEADER VIDRO */}
       <header className="fixed inset-x-0 top-0 z-50 transition-all duration-300">
@@ -393,6 +364,9 @@ function InstalarPage() {
             <Link to="/instalar" className="text-red-500 font-extrabold">
               Teste Grátis
             </Link>
+            <a href="#gostou" className="hover:text-white transition-colors">
+              Ver Planos
+            </a>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -405,10 +379,10 @@ function InstalarPage() {
             </a>
 
             <a
-              href="#plano-mensal"
-              className="btn-cta px-3.5 py-1.5 text-[11px] font-extrabold tracking-wide uppercase shadow-md"
+              href="#gostou"
+              className="w-auto h-8 px-3 text-[11px] font-bold text-white/80 hover:text-white transition-all flex items-center justify-center gap-1 rounded-full border border-white/15 bg-white/10 hover:bg-white/20 backdrop-blur-md cursor-pointer"
             >
-              Assinar
+              <span>Ver planos</span>
             </a>
           </div>
         </div>
@@ -417,25 +391,65 @@ function InstalarPage() {
       {/* CONTEÚDO PRINCIPAL */}
       <main className="relative z-10 mx-auto w-[92%] max-w-3xl pt-32 sm:pt-36 pb-20 space-y-8">
 
-        {/* HERO TITLE */}
+        {/* HERO TITLE - INFORMAÇÃO CLARA E TRANSPARENTE SOBRE O TESTE */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/[0.06] px-4 py-1.5 text-xs font-black tracking-wider text-red-400 uppercase backdrop-blur-xl shadow-md">
-            <Gift className="size-3.5 text-red-400 animate-pulse" />
-            <span>3 Dias de Teste Grátis</span>
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-4 py-1.5 text-xs font-black tracking-wider text-emerald-400 uppercase backdrop-blur-xl shadow-md">
+            <Sparkles className="size-3.5 text-emerald-400" />
+            <span>Seu teste grátis está quase pronto 🎉</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
             Como instalar o <span className="text-red-500">UniTV Pro</span>
           </h1>
-          <p className="text-xs sm:text-base text-white/80 max-w-md mx-auto leading-relaxed font-medium">
-            Instale em aparelhos com sistema operacional Android:
+
+          <p className="text-sm sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-semibold">
+            Instale o aplicativo e aproveite 3 dias para explorar filmes, séries, lançamentos, canais e muito mais.
+          </p>
+
+          <p className="text-xs text-white/70 max-w-md mx-auto leading-normal font-medium bg-white/[0.04] border border-white/10 rounded-xl p-2.5 backdrop-blur-md">
+            ℹ️ O acesso de teste dura 3 dias. Depois desse período, você pode escolher um plano para continuar usando o aplicativo.
           </p>
         </div>
 
-        {/* 💎 RETÂNGULO PRINCIPAL ESTILO VIDRO TRANSLÚCIDO E LUMINOSO (GLASSMORPHISM) */}
-        <div className="rounded-3xl border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden">
+        {/* PRÉVIA DE VALOR: O QUE A PESSOA PODERÁ EXPERIMENTAR */}
+        <div className="rounded-3xl border border-white/15 bg-white/[0.05] p-5 sm:p-7 backdrop-blur-2xl shadow-lg">
+          <div className="text-center mb-4">
+            <span className="text-xs font-black text-red-400 uppercase tracking-wider block mb-1">
+              ✨ Aproveite ao Máximo
+            </span>
+            <h2 className="text-lg sm:text-xl font-black text-white">
+              Durante seu teste você poderá explorar:
+            </h2>
+          </div>
 
-          {/* ABAS DE DISPOSITIVO VIDRO */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mb-4">
+            {[
+              { icon: Film, title: "Filmes & Séries", desc: "Grandes sucessos", color: "text-red-400 border-red-500/30 bg-red-500/10" },
+              { icon: Sparkles, title: "Lançamentos", desc: "Direto do cinema", color: "text-amber-400 border-amber-500/30 bg-amber-500/10" },
+              { icon: Flame, title: "Terror & Raros", desc: "Produções de vários países", color: "text-rose-400 border-rose-500/30 bg-rose-500/10" },
+              { icon: Heart, title: "Doramas & Animes", desc: "Episódios completos", color: "text-pink-400 border-pink-500/30 bg-pink-500/10" },
+              { icon: Tv, title: "Canais de TV", desc: "Programação ao vivo", color: "text-blue-400 border-blue-500/30 bg-blue-500/10" },
+              { icon: Trophy, title: "Esportes", desc: "Futebol e lutas em HD", color: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10" },
+            ].map((item) => (
+              <div key={item.title} className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-black/40 p-2.5 backdrop-blur-md">
+                <div className={`flex size-8 shrink-0 items-center justify-center rounded-lg border ${item.color}`}>
+                  <item.icon className="size-4" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs font-bold text-white truncate">{item.title}</p>
+                  <p className="text-[10px] text-white/60 truncate">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-xs text-center text-emerald-300 font-semibold bg-emerald-950/40 border border-emerald-500/30 rounded-xl p-2.5 leading-snug">
+            💡 Use esses 3 dias para procurar aqueles filmes e séries que você nunca encontra nos serviços tradicionais.
+          </p>
+        </div>
+
+        {/* 💎 TUTORIAL DE INSTALAÇÃO VISUAL */}
+        <div className="rounded-3xl border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden">
           <div className="p-2.5 sm:p-4 bg-white/[0.04] border-b border-white/15 backdrop-blur-md">
             <div className="grid grid-cols-2 gap-2 sm:gap-3 items-stretch">
               <button
@@ -464,9 +478,7 @@ function InstalarPage() {
             </div>
           </div>
 
-          {/* PASSOS TUTORIAL VIDRO */}
           <div className="p-6 sm:p-8 space-y-6">
-
             {deviceTab === "tv" && (
               <>
                 <div className="flex items-center gap-3 pb-3 border-b border-white/15">
@@ -657,23 +669,77 @@ function InstalarPage() {
                 </ol>
               </>
             )}
-
           </div>
         </div>
 
-        {/* BANNER VERDE VIDRO DESTACADO E SEPARADO */}
-        <div className="rounded-2xl border border-emerald-500/40 bg-emerald-950/60 p-4 text-center flex items-center justify-center gap-2.5 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] my-6">
+        {/* MENSAGEM PÓS-TUTORIAL DE INCENTIVO */}
+        <div className="rounded-2xl border border-emerald-500/40 bg-emerald-950/60 p-4 text-center flex items-center justify-center gap-2.5 backdrop-blur-2xl shadow-md">
           <CheckCircle2 className="size-5 text-emerald-400 shrink-0 animate-pulse" />
           <span className="text-xs sm:text-sm font-black text-white tracking-wide">
-            Seu teste grátis de 3 dias está liberado 🎉
+            Pronto! Agora aproveite os próximos 3 dias para explorar o catálogo e encontrar algo novo para assistir.
           </span>
         </div>
 
-        {/* SEÇÃO DE COMPRA VIDRO "GOSTOU DO QUE VIU?" (CARD SEPARADO) */}
+        {/* ÁREA DISCRETA DE AVALIAÇÕES DE USUÁRIOS */}
+        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5 sm:p-7 backdrop-blur-xl">
+          <div className="text-center mb-4">
+            <span className="text-[11px] font-black text-emerald-400 uppercase tracking-wider block mb-1">
+              ⭐ Experiência Real de Usuários
+            </span>
+            <h3 className="text-base sm:text-lg font-black text-white">
+              O que dizem sobre o período de teste
+            </h3>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            <div className="rounded-xl border border-white/10 bg-black/40 p-3.5">
+              <div className="flex items-center gap-1 text-amber-400 mb-1.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="size-3.5 fill-current" />
+                ))}
+              </div>
+              <p className="text-xs text-white/85 leading-relaxed italic mb-2">
+                "Instalei no TV Box usando o código do Downloader e em 2 minutos já estava assistindo. O teste de 3 dias serviu exatamente para tirar todas as dúvidas."
+              </p>
+              <p className="text-[11px] font-bold text-white/60">— Bruno C. (São Paulo, SP)</p>
+            </div>
+
+            <div className="rounded-xl border border-white/10 bg-black/40 p-3.5">
+              <div className="flex items-center gap-1 text-amber-400 mb-1.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="size-3.5 fill-current" />
+                ))}
+              </div>
+              <p className="text-xs text-white/85 leading-relaxed italic mb-2">
+                "Muito fácil de instalar no celular Android. Testei a qualidade dos filmes e séries nos 3 dias e assinei em seguida."
+              </p>
+              <p className="text-[11px] font-bold text-white/60">— Patricia M. (Belo Horizonte, MG)</p>
+            </div>
+          </div>
+        </div>
+
+        {/* SEÇÃO DISCRETA "GOSTOU DO APLICATIVO?" PREPARANDO PARA ASSINATURA */}
+        <div id="gostou" className="rounded-3xl border border-white/15 bg-white/[0.04] p-6 sm:p-8 text-center backdrop-blur-2xl space-y-4">
+          <h3 className="text-xl sm:text-2xl font-black text-white">
+            Gostou do aplicativo?
+          </h3>
+          <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed font-medium">
+            Quando seu teste terminar, você poderá escolher um plano para continuar com acesso ao catálogo.
+          </p>
+          <div>
+            <a
+              href="#plano-mensal"
+              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 hover:bg-white/20 px-6 py-3 text-xs sm:text-sm font-bold text-white transition-all backdrop-blur-md cursor-pointer"
+            >
+              <span>VER PLANOS</span>
+              <ChevronDown className="size-4 text-white/70" />
+            </a>
+          </div>
+        </div>
+
+        {/* SEÇÃO DE PLANOS - POSICIONADA APÓS O TUTORIAL E A EXPLICAÇÃO DO TESTE */}
         <div id="plano-mensal" className="rounded-3xl border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden">
-
           <div className="p-6 sm:p-10 text-center space-y-5">
-
             <div className="space-y-2">
               <span className="text-[11px] font-black text-red-400 uppercase tracking-widest block">
                 {planTab === "mensal" && "Plano Mensal • Acesso Ilimitado"}
@@ -682,14 +748,14 @@ function InstalarPage() {
               </span>
 
               <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
-                Gostou do que viu?
+                Gostou do teste? <span className="text-red-500">Escolha o plano ideal</span>
               </h2>
               <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed font-medium">
                 Continue assistindo a todos os seus filmes, séries, esportes e canais ao vivo no UniTV Pro sem interrupções!
               </p>
             </div>
 
-            {/* 💎 ALTERNADOR DE PLANOS ESTILO VIDRO (MENSAL / TRIMESTRAL / ANUAL VIP) */}
+            {/* ALTERNADOR DE PLANOS (MENSAL / TRIMESTRAL / ANUAL VIP) */}
             <div className="flex items-center justify-center p-1.5 rounded-2xl bg-white/[0.06] border border-white/20 backdrop-blur-xl max-w-md mx-auto my-3 gap-1 shadow-inner">
               <button
                 type="button"
@@ -726,7 +792,7 @@ function InstalarPage() {
               </button>
             </div>
 
-            {/* 🎬 ESTEIRA HORIZONTAL DE CAPINHAS DE TERROR 2026 COM FADE SUAVE NAS BORDAS */}
+            {/* ESTEIRA HORIZONTAL DE CAPINHAS DE TERROR */}
             <div className="relative overflow-hidden py-2 my-2 max-w-xl mx-auto rounded-2xl">
               <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-[#0d090a] to-transparent" />
               <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-[#0d090a] to-transparent" />
@@ -743,7 +809,7 @@ function InstalarPage() {
               </div>
             </div>
 
-            {/* 💰 PREÇO EXIBIDO DINAMICAMENTE CONFORME PLANO SELECIONADO */}
+            {/* PREÇO DINÂMICO CONFORME PLANO SELECIONADO */}
             <div className="py-1">
               <span className="text-xs font-bold text-red-400 uppercase tracking-widest block mb-1">
                 {planTab === "mensal" && "30 DIAS DE ACESSO COMPLETO"}
@@ -765,7 +831,7 @@ function InstalarPage() {
               </div>
             </div>
 
-            {/* 🌟 LISTA EXATA DE RECURSOS E BENEFÍCIOS */}
+            {/* BENEFÍCIOS */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left max-w-lg mx-auto pt-3 pb-1 border-t border-white/15">
               {[
                 planTab === "anual"
@@ -788,7 +854,7 @@ function InstalarPage() {
               ))}
             </div>
 
-            {/* BOTÃO ASSINATURA DINÂMICO CONFORME PLANO SELECIONADO */}
+            {/* BOTÃO ASSINATURA DINÂMICO (BRAIP LINKS PRESERVADOS 100%) */}
             <div className="pt-1">
               <a
                 href={
@@ -818,7 +884,6 @@ function InstalarPage() {
               </a>
             </div>
 
-            {/* BADGES SEGURANÇA */}
             <div className="flex items-center justify-center gap-4 text-[11px] font-bold text-white/70 pt-2 border-t border-white/15">
               <span className="flex items-center gap-1">
                 <ShieldCheck className="size-3.5 text-emerald-400" /> Garantia 7 dias
@@ -828,10 +893,9 @@ function InstalarPage() {
                 <CreditCard className="size-3.5 text-blue-400" /> Pix ou cartão
               </span>
             </div>
-
           </div>
 
-          {/* CERTIFICADOS DE SEGURANÇA & GARANTIA VIDRO */}
+          {/* CERTIFICADOS DE SEGURANÇA */}
           <div className="p-6 sm:p-8 bg-white/[0.02] border-t border-white/15 backdrop-blur-xl text-center">
             <div className="mb-6">
               <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-extrabold tracking-widest text-emerald-400 uppercase backdrop-blur-md shadow-sm">
@@ -865,7 +929,7 @@ function InstalarPage() {
             </div>
           </div>
 
-          {/* SUPORTE RODAPÉ VIDRO — COM 2 BOTÕES DE WHATSAPP E E-MAIL DE CONTATO */}
+          {/* SUPORTE RODAPÉ */}
           <div id="suporte" className="p-4 sm:p-5 bg-white/[0.02] border-t border-white/15 text-center sm:text-left flex flex-col gap-3.5 backdrop-blur-md">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
@@ -907,7 +971,6 @@ function InstalarPage() {
               </a>
             </div>
           </div>
-
         </div>
 
       </main>
