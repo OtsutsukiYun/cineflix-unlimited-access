@@ -152,7 +152,7 @@ function PermissionModal({
 
         <div className="text-xs text-white/90 leading-relaxed mb-5 text-center bg-white/[0.04] p-3.5 rounded-2xl border border-white/15 backdrop-blur-md">
           <p className="font-medium">
-            Se o seu celular ou TV pedir confirmação para instalar, basta clicar em <strong className="text-emerald-400 font-black">"Permitir"</strong> para concluir em segundos.
+            Dependendo da sua versão do Android, poderá aparecer uma solicitação para permitir a instalação de aplicativos fora da Play Store. Nesse caso, autorize a instalação para continuar.
           </p>
         </div>
 
