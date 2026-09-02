@@ -358,7 +358,7 @@ function InstalarPage() {
                   <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs font-bold text-white bg-white/[0.04]">
                     <div className="flex items-center gap-2">
                       <Play className="size-3.5 text-red-500 fill-red-500" />
-                      <span className="text-red-400 font-black">🎥 Assista ao vídeo de 2 minutos para instalar</span>
+                      <span className="text-emerald-400 font-black">🎥 Assista ao vídeo de 2 minutos para instalar</span>
                     </div>
                   </div>
                   <div className="relative aspect-video w-full bg-black z-20">
