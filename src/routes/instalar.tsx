@@ -156,8 +156,9 @@ function PermissionModal({
           </span>
         </div>
 
-        <div className="relative z-10 mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-white/[0.08] backdrop-blur-xl text-white border border-white/25 shadow-lg">
-          <Smile className="size-7 text-white" />
+        {/* ÍCONE DE SEGURANÇA E PROTEÇÃO */}
+        <div className="relative z-10 mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-emerald-500/10 backdrop-blur-xl text-emerald-400 border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
+          <ShieldCheck className="size-7 text-emerald-400" />
         </div>
 
         <h3 className="relative z-10 text-xl sm:text-2xl font-black text-white mb-2 tracking-tight">
@@ -170,7 +171,7 @@ function PermissionModal({
           </p>
 
           <div className="p-3 rounded-xl bg-white/[0.08] border border-white/20 text-white text-xs font-semibold backdrop-blur-md">
-            👉 Clique em <strong className="text-red-400 underline font-black">"Permitir desta fonte"</strong> ou <strong className="text-red-400 underline font-black">"Instalar assim mesmo"</strong> para concluir a instalação. 🙂
+            👉 Clique em <strong className="text-red-400 underline font-black">"Permitir desta fonte"</strong> ou <strong className="text-red-400 underline font-black">"Instalar assim mesmo"</strong> para concluir a instalação.
           </div>
 
           <p className="text-[11px] text-white/70 text-center pt-1 font-medium leading-normal">
