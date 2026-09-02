@@ -301,8 +301,8 @@ function InstalarPage() {
             <span>Seu teste grátis está quase pronto 🎉</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-            Como instalar o <span className="text-red-500">UniTV Pro</span>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+            Como instalar o <span className="whitespace-nowrap">UniTV <span className="text-red-500">Pro</span></span>
           </h1>
 
           <p className="text-sm sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-semibold">
