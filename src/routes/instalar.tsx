@@ -134,23 +134,27 @@ function PermissionModal({
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/85 backdrop-blur-xl" onClick={onClose} />
 
-      <div className="relative z-10 w-full max-w-sm overflow-hidden rounded-3xl border border-white/20 bg-zinc-950/95 backdrop-blur-2xl p-6 text-center shadow-[0_25px_80px_rgba(0,0,0,0.95)] animate-in fade-in zoom-in-95 duration-200">
+      <div className="glass relative z-10 w-full max-w-sm overflow-hidden rounded-3xl border border-white/25 bg-white/[0.08] backdrop-blur-3xl p-6 text-center shadow-[0_25px_80px_rgba(0,0,0,0.95)] animate-in fade-in zoom-in-95 duration-200">
+        {/* LUZES AMBIENTAIS DE VIDRO INTERNAS */}
+        <div className="pointer-events-none absolute -top-16 -left-16 size-48 rounded-full bg-white/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -right-16 size-48 rounded-full bg-red-600/20 blur-3xl" />
+
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors cursor-pointer border border-white/10 z-20 backdrop-blur-md"
+          className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white/70 hover:text-white transition-colors cursor-pointer border border-white/15 backdrop-blur-xl z-20"
         >
           <X className="size-4" />
         </button>
 
-        <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 shadow-md">
-          <ShieldCheck className="size-6 text-emerald-400" />
+        <div className="relative z-10 mx-auto mb-3 flex size-13 items-center justify-center rounded-2xl bg-white/[0.12] border border-white/25 text-emerald-400 backdrop-blur-xl shadow-lg">
+          <ShieldCheck className="size-6 text-emerald-400 drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
         </div>
 
-        <h3 className="text-lg font-black text-white mb-2 tracking-tight">
+        <h3 className="relative z-10 text-lg font-black text-white mb-2 tracking-tight drop-shadow-md">
           Dica de instalação 💡
         </h3>
 
-        <div className="text-xs text-white/90 leading-relaxed mb-5 text-center bg-white/[0.04] p-3.5 rounded-2xl border border-white/15 backdrop-blur-md">
+        <div className="relative z-10 text-xs text-white/95 leading-relaxed mb-5 text-center bg-white/[0.06] p-4 rounded-2xl border border-white/20 backdrop-blur-2xl shadow-inner">
           <p className="font-medium">
             Dependendo da sua versão do Android, poderá aparecer uma solicitação para permitir a instalação de aplicativos fora da Play Store. Nesse caso, autorize a instalação para continuar.
           </p>
@@ -158,7 +162,7 @@ function PermissionModal({
 
         <button
           onClick={onClose}
-          className="w-full rounded-xl bg-red-600 hover:bg-red-500 py-3 text-xs font-black text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] transition-all hover:scale-[1.02] cursor-pointer uppercase tracking-wider border border-white/20"
+          className="relative z-10 w-full rounded-xl bg-red-600 hover:bg-red-500 py-3 text-xs font-black text-white shadow-[0_0_20px_rgba(220,38,38,0.5)] backdrop-blur-md transition-all hover:scale-[1.02] cursor-pointer uppercase tracking-wider border border-white/20"
         >
           {hasPendingRedirect ? "CONTINUAR PARA DOWNLOAD 🚀" : "ENTENDI, CONTINUAR 🚀"}
         </button>
