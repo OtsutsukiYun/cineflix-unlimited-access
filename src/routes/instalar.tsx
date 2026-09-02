@@ -364,7 +364,7 @@ function InstalarPage() {
             <Link to="/instalar" className="text-red-500 font-extrabold">
               Teste Grátis
             </Link>
-            <a href="#gostou" className="hover:text-white transition-colors">
+            <a href="#plano-mensal" className="hover:text-white transition-colors">
               Ver Planos
             </a>
           </nav>
@@ -379,7 +379,7 @@ function InstalarPage() {
             </a>
 
             <a
-              href="#gostou"
+              href="#plano-mensal"
               className="w-auto h-8 px-3 text-[11px] font-bold text-white/80 hover:text-white transition-all flex items-center justify-center gap-1 rounded-full border border-white/15 bg-white/10 hover:bg-white/20 backdrop-blur-md cursor-pointer"
             >
               <span>Ver planos</span>
@@ -638,63 +638,6 @@ function InstalarPage() {
           <span className="text-xs sm:text-sm font-black text-white tracking-wide">
             Pronto! Agora aproveite os próximos 3 dias para explorar o catálogo e encontrar algo novo para assistir.
           </span>
-        </div>
-
-        {/* ÁREA DISCRETA DE AVALIAÇÕES DE USUÁRIOS */}
-        <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-5 sm:p-7 backdrop-blur-xl">
-          <div className="text-center mb-4">
-            <span className="text-[11px] font-black text-emerald-400 uppercase tracking-wider block mb-1">
-              ⭐ Experiência Real de Usuários
-            </span>
-            <h3 className="text-base sm:text-lg font-black text-white">
-              O que dizem sobre o período de teste
-            </h3>
-          </div>
-
-          <div className="grid gap-3 sm:grid-cols-2">
-            <div className="rounded-xl border border-white/10 bg-black/40 p-3.5">
-              <div className="flex items-center gap-1 text-amber-400 mb-1.5">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="size-3.5 fill-current" />
-                ))}
-              </div>
-              <p className="text-xs text-white/85 leading-relaxed italic mb-2">
-                "Instalei no TV Box usando o código do Downloader e em 2 minutos já estava assistindo. O teste de 3 dias serviu exatamente para tirar todas as dúvidas."
-              </p>
-              <p className="text-[11px] font-bold text-white/60">— Bruno C. (São Paulo, SP)</p>
-            </div>
-
-            <div className="rounded-xl border border-white/10 bg-black/40 p-3.5">
-              <div className="flex items-center gap-1 text-amber-400 mb-1.5">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="size-3.5 fill-current" />
-                ))}
-              </div>
-              <p className="text-xs text-white/85 leading-relaxed italic mb-2">
-                "Muito fácil de instalar no celular Android. Testei a qualidade dos filmes e séries nos 3 dias e assinei em seguida."
-              </p>
-              <p className="text-[11px] font-bold text-white/60">— Patricia M. (Belo Horizonte, MG)</p>
-            </div>
-          </div>
-        </div>
-
-        {/* SEÇÃO DISCRETA "GOSTOU DO APLICATIVO?" PREPARANDO PARA ASSINATURA */}
-        <div id="gostou" className="rounded-3xl border border-white/15 bg-white/[0.04] p-6 sm:p-8 text-center backdrop-blur-2xl space-y-4">
-          <h3 className="text-xl sm:text-2xl font-black text-white">
-            Gostou do aplicativo?
-          </h3>
-          <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed font-medium">
-            Quando seu teste terminar, você poderá escolher um plano para continuar com acesso ao catálogo.
-          </p>
-          <div>
-            <a
-              href="#plano-mensal"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 hover:bg-white/20 px-6 py-3 text-xs sm:text-sm font-bold text-white transition-all backdrop-blur-md cursor-pointer"
-            >
-              <span>VER PLANOS</span>
-              <ChevronDown className="size-4 text-white/70" />
-            </a>
-          </div>
         </div>
 
         {/* SEÇÃO DE PLANOS - POSICIONADA APÓS O TUTORIAL E A EXPLICAÇÃO DO TESTE */}
