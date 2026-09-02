@@ -408,43 +408,6 @@ function InstalarPage() {
 
         </div>
 
-        {/* PRÉVIA DE VALOR: O QUE A PESSOA PODERÁ EXPERIMENTAR */}
-        <div className="rounded-3xl border border-white/15 bg-white/[0.05] p-5 sm:p-7 backdrop-blur-2xl shadow-lg">
-          <div className="text-center mb-4">
-            <span className="text-xs font-black text-red-400 uppercase tracking-wider block mb-1">
-              ✨ Aproveite ao Máximo
-            </span>
-            <h2 className="text-lg sm:text-xl font-black text-white">
-              Durante seu teste você poderá explorar:
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 mb-4">
-            {[
-              { icon: Film, title: "Filmes & Séries", desc: "Grandes sucessos", color: "text-red-400 border-red-500/30 bg-red-500/10" },
-              { icon: Sparkles, title: "Lançamentos", desc: "Direto do cinema", color: "text-amber-400 border-amber-500/30 bg-amber-500/10" },
-              { icon: Flame, title: "Terror & Raros", desc: "Produções de vários países", color: "text-rose-400 border-rose-500/30 bg-rose-500/10" },
-              { icon: Heart, title: "Doramas & Animes", desc: "Episódios completos", color: "text-pink-400 border-pink-500/30 bg-pink-500/10" },
-              { icon: Tv, title: "Canais de TV", desc: "Programação ao vivo", color: "text-blue-400 border-blue-500/30 bg-blue-500/10" },
-              { icon: Trophy, title: "Esportes", desc: "Futebol e lutas em HD", color: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10" },
-            ].map((item) => (
-              <div key={item.title} className="flex items-center gap-2.5 rounded-xl border border-white/10 bg-black/40 p-2.5 backdrop-blur-md">
-                <div className={`flex size-8 shrink-0 items-center justify-center rounded-lg border ${item.color}`}>
-                  <item.icon className="size-4" />
-                </div>
-                <div className="min-w-0">
-                  <p className="text-xs font-bold text-white truncate">{item.title}</p>
-                  <p className="text-[10px] text-white/60 truncate">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <p className="text-xs text-center text-emerald-300 font-semibold bg-emerald-950/40 border border-emerald-500/30 rounded-xl p-2.5 leading-snug">
-            💡 Use esses 3 dias para procurar aqueles filmes e séries que você nunca encontra nos serviços tradicionais.
-          </p>
-        </div>
-
         {/* 💎 TUTORIAL DE INSTALAÇÃO VISUAL */}
         <div className="rounded-3xl border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden">
           <div className="p-2.5 sm:p-4 bg-white/[0.04] border-b border-white/15 backdrop-blur-md">
