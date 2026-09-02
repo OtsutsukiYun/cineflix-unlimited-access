@@ -406,9 +406,6 @@ function InstalarPage() {
             Instale o aplicativo e aproveite 3 dias para explorar filmes, séries, lançamentos, canais e muito mais.
           </p>
 
-          <p className="text-xs text-white/70 max-w-md mx-auto leading-normal font-medium bg-white/[0.04] border border-white/10 rounded-xl p-2.5 backdrop-blur-md">
-            ℹ️ O acesso de teste dura 3 dias. Depois desse período, você pode escolher um plano para continuar usando o aplicativo.
-          </p>
         </div>
 
         {/* PRÉVIA DE VALOR: O QUE A PESSOA PODERÁ EXPERIMENTAR */}
