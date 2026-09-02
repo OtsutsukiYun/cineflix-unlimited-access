@@ -398,7 +398,7 @@ function InstalarPage() {
                         Abra o Downloader e digite o código:
                       </p>
                     </div>
-                    <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
+                    <CodeCopyBox code="9884830" />
                   </li>
 
                   <li className="flex items-start gap-3">
@@ -528,7 +528,7 @@ function InstalarPage() {
                         com o código:
                       </div>
                     </div>
-                    <CodeCopyBox code="9884830" onCopyClick={handleCopyTrigger} />
+                    <CodeCopyBox code="9884830" />
                   </li>
                 </ol>
               </>
