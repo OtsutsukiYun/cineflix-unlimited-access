@@ -774,135 +774,156 @@ function Index() {
         </div>
       </section>
 
-      {/* CATEGORIAS DO CATÁLOGO DE CONTEÚDO (SUPER COMPACTO) */}
-      <section id="categorias" className="relative z-10 mx-auto w-[94%] max-w-6xl py-4 sm:py-5">
+      {/* CATEGORIAS DO CATÁLOGO DE CONTEÚDO */}
+      <section id="categorias" className="relative z-10 mx-auto w-[94%] max-w-6xl py-6 sm:py-8">
         <SmoothCardReveal>
-          <div className="text-center mb-3 sm:mb-4">
-            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/40 px-3.5 py-1 text-[11px] font-extrabold tracking-wider text-red-400 uppercase mb-1.5">
-              <Sparkles className="size-3" /> Variedade Imbatível
+          <div className="text-center mb-4 sm:mb-5">
+            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/40 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3">
+              <Sparkles className="size-3.5" /> Variedade Imbatível
             </span>
-            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-4xl font-black tracking-tight text-white max-w-2xl mx-auto">
               Conteúdos que você <span className="text-red-500">não encontra em outros streamings</span>
             </h2>
           </div>
         </SmoothCardReveal>
 
-        <div className="grid gap-2.5 sm:gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
               icon: Film,
               banners: [
-                "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
-                "/eZ239CUp1d6OryZEBPnO2n87gMG.jpg",
-                "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg",
+                "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg", // Deadpool & Wolverine
+                "/eZ239CUp1d6OryZEBPnO2n87gMG.jpg", // Dune Part Two
+                "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg", // Backrooms
               ],
               objectPosition: "object-cover",
-              gradient: "from-red-600 to-amber-600",
-              corBorda: "border-red-500/35 hover:border-red-400",
-              corGlow: "hover:shadow-[0_0_20px_rgba(239,68,68,0.35)]",
-              t: "Filmes Incríveis",
-              qtd: "Lançamentos de Cinema",
-              d: "Lançamentos recém-saídos do cinema e produções em HD.",
+              gradient: "from-red-600 via-orange-600 to-amber-600",
+              glow: "shadow-[0_0_22px_rgba(239,68,68,0.85)] border-red-400/80",
+              corBorda: "border border-red-500/40 hover:border-red-400",
+              corGlow: "shadow-[0_0_30px_rgba(239,68,68,0.2)] hover:shadow-[0_0_50px_rgba(239,68,68,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
+              titleHover: "group-hover:text-red-300",
+              t: "Filmes incríveis",
+              qtd: "Todos os Lançamentos",
+              d: "Lançamentos recém-saídos do cinema, produções exclusivas e superproduções em alta definição.",
               tabId: "filmes",
             },
             {
               icon: Tv,
               banners: [
-                "/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg",
-                "/n6vVs6z8obNbExdD3QHTr4Utu1Z.jpg",
-                "/iHSwvRVsRyxpX7FE7GbviaDvgGZ.jpg",
+                "/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg", // Fallout
+                "/n6vVs6z8obNbExdD3QHTr4Utu1Z.jpg", // The Boys
+                "/iHSwvRVsRyxpX7FE7GbviaDvgGZ.jpg", // Wandinha (Wednesday)
               ],
               objectPosition: "object-cover",
-              gradient: "from-red-600 to-rose-700",
-              corBorda: "border-rose-500/35 hover:border-rose-400",
-              corGlow: "hover:shadow-[0_0_20px_rgba(225,29,72,0.35)]",
-              t: "Séries Imperdíveis",
+              gradient: "from-red-600 via-rose-600 to-red-800",
+              glow: "shadow-[0_0_22px_rgba(225,29,72,0.85)] border-rose-400/80",
+              corBorda: "border border-rose-500/40 hover:border-rose-300",
+              corGlow: "shadow-[0_0_30px_rgba(225,29,72,0.2)] hover:shadow-[0_0_50px_rgba(225,29,72,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
+              titleHover: "group-hover:text-rose-200",
+              t: "Séries imperdíveis",
               qtd: "Séries Completas",
-              d: "Temporadas completas dubladas e legendadas dos grandes serviços.",
+              d: "Séries das maiores plataformas mundiais com temporadas completas dubladas ou legendadas.",
               tabId: "series",
             },
             {
               icon: Trophy,
               banners: [
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Erling_Haaland_France_v_Norway_26_June_26-008.jpg/1280px-Erling_Haaland_France_v_Norway_26_June_26-008.jpg",
-                "https://upload.wikimedia.org/wikipedia/commons/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg",
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg/1280px-Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Erling_Haaland_France_v_Norway_26_June_26-008.jpg/1280px-Erling_Haaland_France_v_Norway_26_June_26-008.jpg", // Haaland
+                "https://upload.wikimedia.org/wikipedia/commons/9/95/Kylian_Mbappe_France_v_Senegal_16_June_2026-391_%28cropped%29.jpg", // Mbappe 2026
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg/1280px-Harry_Kane_England_v_Ghana_23_June_2026-219_%28cropped%29.jpg", // Harry Kane
               ],
               objectPosition: "object-cover object-[center_20%]",
-              gradient: "from-emerald-500 to-teal-600",
-              corBorda: "border-emerald-500/35 hover:border-emerald-400",
-              corGlow: "hover:shadow-[0_0_20px_rgba(16,185,129,0.35)]",
-              t: "Esportes Ao Vivo",
-              qtd: "Centenas de Canais",
-              d: "Brasileirão, Champions League, UFC, F1 e canais 24h.",
+              gradient: "from-emerald-500 via-green-600 to-teal-600",
+              glow: "shadow-[0_0_22px_rgba(16,185,129,0.85)] border-emerald-300/80",
+              corBorda: "border border-emerald-500/40 hover:border-emerald-300",
+              corGlow: "shadow-[0_0_30px_rgba(16,185,129,0.2)] hover:shadow-[0_0_50px_rgba(16,185,129,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
+              titleHover: "group-hover:text-emerald-200",
+              t: "Esportes ao vivo",
+              qtd: "Centenas de Canais de Esporte",
+              d: "Centenas de canais de esportes ao vivo (Brasileirão, Champions League, Premier League, UFC e F1 sem travamentos).",
               tabId: "series",
             },
             {
               icon: Heart,
               banners: [
-                "/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg",
-                "/3yEHM2HT2vrUtO93YzTJNgEfiZG.jpg",
-                "/AjwoDj77HLlqcpwEGqsnvMXm5my.jpg",
+                "/wcP3FsRLog4GNEs9PFrDKKQdcof.jpg", // Rainha das Lágrimas (Queen of Tears)
+                "/3yEHM2HT2vrUtO93YzTJNgEfiZG.jpg", // Pousando no Amor (Crash Landing on You)
+                "/AjwoDj77HLlqcpwEGqsnvMXm5my.jpg", // A Lição (The Glory)
               ],
               objectPosition: "object-cover",
-              gradient: "from-pink-600 to-red-700",
-              corBorda: "border-pink-500/35 hover:border-pink-400",
-              corGlow: "hover:shadow-[0_0_20px_rgba(244,63,94,0.35)]",
-              t: "Doramas & Asiáticos",
-              qtd: "Aba Séries",
-              d: "Rainha das Lágrimas, Pousando no Amor e sucessos asiáticos.",
+              gradient: "from-pink-600 via-rose-600 to-red-700",
+              glow: "shadow-[0_0_22px_rgba(244,63,94,0.85)] border-pink-300/80",
+              corBorda: "border border-pink-500/40 hover:border-pink-300",
+              corGlow: "shadow-[0_0_30px_rgba(244,63,94,0.2)] hover:shadow-[0_0_50px_rgba(244,63,94,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
+              titleHover: "group-hover:text-pink-200",
+              t: "Doramas & Produções Asiáticas",
+              qtd: "Disponíveis na Aba Séries",
+              d: "Assista a Rainha das Lágrimas, Pousando no Amor, A Lição e os maiores sucessos asiáticos dublados. Os Doramas estão localizados na categoria Séries do aplicativo.",
               tabId: "series",
             },
             {
               icon: Sparkles,
               banners: [
-                "/9qq8LpOoBLYq8MxiMugn0gf9qJd.jpg",
-                "/fCwZOi3cTEOi2UkhjJNbFQnl4IW.jpg",
-                "/ebtobUiMRbq0T3R1mBVI69Ux937.jpg",
+                "/9qq8LpOoBLYq8MxiMugn0gf9qJd.jpg", // Será Isso Amor? (Sen Çal Kapımı)
+                "/fCwZOi3cTEOi2UkhjJNbFQnl4IW.jpg", // Segredos de Família (Yargı)
+                "/ebtobUiMRbq0T3R1mBVI69Ux937.jpg", // Meu Nome é Farah (Adım Farah)
               ],
               objectPosition: "object-cover",
-              gradient: "from-purple-600 to-amber-600",
-              corBorda: "border-purple-500/35 hover:border-purple-400",
-              corGlow: "hover:shadow-[0_0_20px_rgba(217,70,239,0.35)]",
+              gradient: "from-purple-600 via-rose-600 to-amber-600",
+              glow: "shadow-[0_0_22px_rgba(217,70,239,0.85)] border-rose-300/80",
+              corBorda: "border border-purple-500/40 hover:border-rose-300",
+              corGlow: "shadow-[0_0_30px_rgba(217,70,239,0.2)] hover:shadow-[0_0_50px_rgba(217,70,239,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
+              titleHover: "group-hover:text-rose-200",
               t: "Novelas Turcas",
-              qtd: "Sucessos Globais",
-              d: "Será Isso Amor?, Meu Nome é Farah, Fatmagül e mais.",
+              qtd: "Sucessos Internacionais",
+              d: "As novelas turcas de maior audiência (Será Isso Amor?, Meu Nome é Farah, Fatmagül, Segredos de Família) dubladas ou legendadas em HD.",
               tabId: "novelas-turcas",
             },
             {
               icon: Flame,
               banners: [
-                "/xMNH87maNLt9n2bMDYeI6db5VFm.jpg",
-                "/1RgPyOhN4DRs225BGTlHJqCudII.jpg",
-                "/lthkKBLe1rX6iThgVFg22O02sJw.jpg",
+                "/xMNH87maNLt9n2bMDYeI6db5VFm.jpg", // Solo Leveling
+                "/1RgPyOhN4DRs225BGTlHJqCudII.jpg", // Demon Slayer
+                "/lthkKBLe1rX6iThgVFg22O02sJw.jpg", // Jujutsu Kaisen
               ],
               objectPosition: "object-cover",
-              gradient: "from-amber-500 to-red-600",
-              corBorda: "border-amber-500/35 hover:border-amber-400",
-              corGlow: "hover:shadow-[0_0_20px_rgba(245,158,11,0.35)]",
-              t: "Animes Atualizados",
+              gradient: "from-amber-500 via-orange-600 to-red-600",
+              glow: "shadow-[0_0_22px_rgba(245,158,11,0.85)] border-amber-300/80",
+              corBorda: "border border-amber-500/40 hover:border-amber-300",
+              corGlow: "shadow-[0_0_30px_rgba(245,158,11,0.2)] hover:shadow-[0_0_50px_rgba(245,158,11,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
+              titleHover: "group-hover:text-amber-200",
+              t: "Animes atualizados",
               qtd: "Animes da Temporada",
-              d: "Classicos, lançamentos com simulcast semanal e opções dubladas.",
+              d: "Animes em alta, grandes clássicos, lançamentos da temporada, simulcast semanal e opções dubladas em português.",
               tabId: "animes",
             },
             {
               icon: Baby,
               banners: [
-                "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg",
-                "/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg",
-                "/twsxsfao6ZOVvT8LfudH603MMi6.jpg",
+                "/vYqt6kb4lcF8wwqsMMaULkP9OEn.jpg", // Moana 2
+                "/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg", // Divertida Mente 2
+                "/twsxsfao6ZOVvT8LfudH603MMi6.jpg", // Meu Malvado Favorito 4
               ],
               objectPosition: "object-cover",
-              gradient: "from-sky-500 to-indigo-600",
-              corBorda: "border-sky-500/35 hover:border-sky-400",
-              corGlow: "hover:shadow-[0_0_20px_rgba(14,165,233,0.35)] sm:col-span-2 lg:col-span-1",
-              t: "Conteúdos Infantis",
-              qtd: "Espaço Kids",
-              d: "Desenhos animados, filmes infantis e animações para a família.",
+              gradient: "from-blue-500 via-sky-500 to-indigo-600",
+              glow: "shadow-[0_0_22px_rgba(14,165,233,0.85)] border-sky-300/80",
+              corBorda: "border border-sky-500/40 hover:border-sky-300",
+              corGlow: "shadow-[0_0_30px_rgba(14,165,233,0.2)] hover:shadow-[0_0_50px_rgba(14,165,233,0.55)]",
+              bgOverlay: "bg-gradient-to-t from-black/90 via-black/60 to-black/20",
+              titleHover: "group-hover:text-sky-200",
+              t: "Conteúdos infantis",
+              qtd: "Espaço Kids & Animações",
+              d: "Filmes infantis, desenhos animados, animações e canais 24h para a diversão de toda a família.",
               tabId: "filmes",
             },
           ].map((f, i) => (
-            <SmoothCardReveal key={f.t}>
+            <SmoothCardReveal key={f.t} delay={100 + i * 80}>
               <div
                 onClick={() => {
                   if (f.tabId) {
@@ -910,29 +931,39 @@ function Index() {
                     document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className={`glass group relative flex items-center gap-3 overflow-hidden rounded-xl p-3 sm:p-3.5 border bg-zinc-950/75 backdrop-blur-md ${f.corBorda} ${f.corGlow} transition-all duration-300 hover:-translate-y-0.5 cursor-pointer min-h-[82px] sm:min-h-[88px]`}
+                className={`glass group relative h-full min-h-[220px] sm:min-h-[240px] overflow-hidden rounded-3xl p-6 sm:p-7 ${f.corBorda} ${f.corGlow} transition-all duration-500 hover:-translate-y-2 bg-zinc-950/60 backdrop-blur-2xl cursor-pointer`}
               >
-                {/* SLIDESHOW BANNERS DE FUNDO */}
+                {/* IMAGEM BANNER ILUSTRATIVA DE FUNDO COM SLIDESHOW */}
                 <SlideshowBanner banners={f.banners} alt={`Ilustração ${f.t}`} objectPosition={f.objectPosition} delayMs={i * 600} />
-                {/* OVERLAY ESCURO PARA LEITURA LIMPA E COMPACTA */}
-                <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/95 via-black/85 to-black/60 pointer-events-none" />
+                {/* SOBREPOSIÇÃO DE GRADIENTE ESCURO PROFUNDO EM Z-20 PARA CONTRASTE PERFEITO SEM VAZAR IMAGEM DO FUNDO */}
+                <div className={`absolute inset-0 z-20 ${f.bgOverlay} opacity-85 transition-opacity duration-500 group-hover:opacity-90 pointer-events-none`} />
+                <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/85 via-black/45 to-transparent pointer-events-none" />
 
-                <div className="relative z-20 flex size-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-red-600 to-red-800 text-white shadow-md border border-white/20">
-                  <f.icon className="size-4 text-white" />
-                </div>
+                <div className="relative z-30 flex flex-col justify-between h-full">
+                  {/* ÍCONE RELUZENTE E BADGE DE QUANTIDADE */}
+                  <div className="relative mb-6 shrink-0 flex items-center justify-between">
+                    <div
+                      style={{ animationDelay: `${i * 0.4}s` }}
+                      className={`animate-levitate relative flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br ${f.gradient} p-0.5 border ${f.glow} transform-gpu transition-all duration-300 group-hover:scale-110 shadow-lg`}
+                    >
+                      <div className="relative flex size-full items-center justify-center rounded-[14px] bg-black/30 overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-90" />
+                        <f.icon className="size-7 text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.9)] relative z-10" />
+                      </div>
+                    </div>
 
-                <div className="relative z-20 min-w-0 flex-1">
-                  <div className="flex items-center justify-between gap-1.5 mb-0.5">
-                    <h3 className="text-xs sm:text-sm font-black text-white group-hover:text-red-400 transition-colors truncate drop-shadow-md">
-                      {f.t}
-                    </h3>
-                    <span className="shrink-0 rounded-full border border-white/20 bg-black/60 px-2 py-0.5 text-[9px] font-bold text-white/90">
+                    {/* BADGE DE QUANTIDADE EM ESTILO VIDRO LIQUIDO (GLASSMORPHISM) */}
+                    <span className="glass inline-flex items-center gap-1.5 rounded-full border border-white/35 bg-white/10 backdrop-blur-xl px-3.5 py-1 text-xs font-black text-white shadow-[0_4px_20px_rgba(0,0,0,0.6)] hover:bg-white/20 transition-all">
                       {f.qtd}
                     </span>
                   </div>
-                  <p className="text-[10px] sm:text-[11px] text-white/80 leading-snug line-clamp-1 font-medium drop-shadow-sm">
-                    {f.d}
-                  </p>
+
+                  <div>
+                    <h3 className={`mb-2 text-xl font-black text-white tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.95)] transition-colors duration-300 ${f.titleHover}`}>{f.t}</h3>
+                    <p className="text-xs sm:text-sm leading-relaxed text-white/95 font-semibold drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]">
+                      {f.d}
+                    </p>
+                  </div>
                 </div>
               </div>
             </SmoothCardReveal>
