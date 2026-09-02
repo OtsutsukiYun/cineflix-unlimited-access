@@ -971,73 +971,68 @@ function Index() {
         </div>
       </section>
 
-      {/* RECURSOS EXCLUSIVOS DA PLATAFORMA (EFEITO VIDRO LIQUIDO PREMIUM) */}
-      <section className="relative z-10 mx-auto w-[94%] max-w-5xl py-5 sm:py-7">
+      {/* RECURSOS EXCLUSIVOS DA PLATAFORMA (COMPACTO) */}
+      <section className="relative z-10 mx-auto w-[94%] max-w-5xl py-4 sm:py-5">
         <SmoothCardReveal>
-          <div className="glass rounded-3xl border border-white/20 bg-zinc-900/40 p-6 sm:p-9 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.7)] relative overflow-hidden">
-            {/* LUZ DE FUNDO EM DEGRADÊ DE VIDRO */}
-            <div className="pointer-events-none absolute -top-24 -left-24 size-72 rounded-full bg-red-600/15 blur-3xl" />
-            <div className="pointer-events-none absolute -bottom-24 -right-24 size-72 rounded-full bg-rose-600/15 blur-3xl" />
-
-            <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4 mb-8 pb-6 border-b border-white/15">
-              <div className="flex items-center gap-3.5">
-                <span className="flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 via-rose-600 to-red-800 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)]">
-                  <Zap className="size-5 fill-current" />
+          <div className="glass rounded-2xl border border-white/15 bg-zinc-950/50 p-4 sm:p-6 backdrop-blur-xl shadow-md relative overflow-hidden">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 mb-4 pb-3.5 border-b border-white/10">
+              <div className="flex items-center gap-3">
+                <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-600 to-red-800 text-white shadow-md">
+                  <Zap className="size-4.5 fill-current" />
                 </span>
                 <div>
-                  <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                  <h2 className="text-base sm:text-lg font-black text-white tracking-tight">
                     Recursos Exclusivos da Plataforma
                   </h2>
-                  <p className="text-xs text-white/70 font-medium">
+                  <p className="text-[11px] text-white/60 font-medium">
                     Tecnologia e ferramentas avançadas para sua melhor transmissão
                   </p>
                 </div>
               </div>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-black/70 border border-white/20 px-4 py-1.5 text-[11px] font-extrabold text-red-300 uppercase tracking-wider shrink-0 backdrop-blur-md shadow-md">
+              <span className="inline-flex items-center gap-1 rounded-full bg-red-500/10 border border-red-500/30 px-3 py-1 text-[10px] font-black text-red-300 uppercase tracking-wider self-start sm:self-center">
                 ⭐ 100% Incluído no Acesso
               </span>
             </div>
 
-            {/* GRADE EM 2 COLUNAS COM EFEITO VIDRO TRANSLÚCIDO NO HOVER */}
-            <div className="relative z-10 grid gap-4 sm:gap-6 sm:grid-cols-2">
+            <div className="grid gap-2.5 sm:gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
               {[
                 {
                   icon: RotateCcw,
-                  badgeColor: "text-red-400 bg-red-500/20 border-red-500/40 shadow-[0_0_15px_rgba(239,68,68,0.3)]",
                   title: "Volte 7 Dias na Grade",
-                  desc: "Perdeu o jogo, novela ou programa? Use o Playback para retomar a programação dos últimos 7 dias.",
+                  desc: "Use o Playback para retomar a programação dos últimos 7 dias.",
+                  badgeColor: "text-red-400 bg-red-500/15 border-red-500/30",
                 },
                 {
                   icon: Activity,
-                  badgeColor: "text-amber-400 bg-amber-500/20 border-amber-500/40 shadow-[0_0_15px_rgba(245,158,11,0.3)]",
                   title: "Sinal P2P Estável",
-                  desc: "A rede peer-to-peer espalha o conteúdo de forma inteligente, mantendo a transmissão fluida sem travar.",
+                  desc: "Rede inteligente que mantém a transmissão fluida sem travar.",
+                  badgeColor: "text-amber-400 bg-amber-500/15 border-amber-500/30",
                 },
                 {
                   icon: Lock,
-                  badgeColor: "text-emerald-400 bg-emerald-500/20 border-emerald-500/40 shadow-[0_0_15px_rgba(16,185,129,0.3)]",
                   title: "Bloqueio Por Perfil",
-                  desc: "Trave conteúdos adultos com senha para garantir que as crianças vejam só o que é apropriado.",
+                  desc: "Trave conteúdos adultos com senha para proteção infantil.",
+                  badgeColor: "text-emerald-400 bg-emerald-500/15 border-emerald-500/30",
                 },
                 {
                   icon: ListOrdered,
-                  badgeColor: "text-blue-400 bg-blue-500/20 border-blue-500/40 shadow-[0_0_15px_rgba(59,130,246,0.3)]",
                   title: "Programação Completa",
-                  desc: "O guia EPG mostra o que passa em cada canal, com horário, sinopse e ordem por categoria.",
+                  desc: "Guia EPG com horários, sinopses e ordem de canais.",
+                  badgeColor: "text-blue-400 bg-blue-500/15 border-blue-500/30",
                 },
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="group/item flex items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4.5 backdrop-blur-md transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08] hover:shadow-lg"
+                  className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.03] p-3 backdrop-blur-md hover:border-white/20 transition-all"
                 >
-                  <div className={`mt-0.5 flex size-11 shrink-0 items-center justify-center rounded-2xl border ${item.badgeColor} backdrop-blur-md transition-transform duration-300 group-hover/item:scale-110`}>
-                    <item.icon className="size-5" />
+                  <div className={`mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-lg border ${item.badgeColor}`}>
+                    <item.icon className="size-4" />
                   </div>
                   <div>
-                    <h3 className="text-base sm:text-lg font-black text-white mb-1 group-hover/item:text-red-400 transition-colors">
+                    <h3 className="text-xs sm:text-sm font-bold text-white mb-0.5">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-medium">
+                    <p className="text-[11px] text-white/70 leading-snug">
                       {item.desc}
                     </p>
                   </div>
