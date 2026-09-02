@@ -292,7 +292,7 @@ function InstalarPage() {
       </header>
 
       {/* CONTEÚDO PRINCIPAL */}
-      <main className="relative z-10 mx-auto w-[92%] max-w-3xl pt-32 sm:pt-36 pb-20 space-y-8">
+      <main className="relative z-10 mx-auto w-[92%] max-w-3xl pt-28 sm:pt-32 pb-20 space-y-4 sm:space-y-5">
 
         {/* HERO TITLE - INFORMAÇÃO CLARA E TRANSPARENTE SOBRE O TESTE */}
         <div className="text-center space-y-3">
