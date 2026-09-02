@@ -774,51 +774,51 @@ function Index() {
         </div>
       </section>
 
-      {/* CATEGORIAS DO CATÁLOGO DE CONTEÚDO (COMPACTO) */}
-      <section id="categorias" className="relative z-10 mx-auto w-[94%] max-w-6xl py-5 sm:py-7">
+      {/* CATEGORIAS DO CATÁLOGO DE CONTEÚDO (SUPER COMPACTO) */}
+      <section id="categorias" className="relative z-10 mx-auto w-[94%] max-w-6xl py-4 sm:py-5">
         <SmoothCardReveal>
-          <div className="text-center mb-5 sm:mb-6">
-            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/40 px-4 py-1.5 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-2">
-              <Sparkles className="size-3.5" /> Variedade Imbatível
+          <div className="text-center mb-3 sm:mb-4">
+            <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/40 px-3.5 py-1 text-[11px] font-extrabold tracking-wider text-red-400 uppercase mb-1.5">
+              <Sparkles className="size-3" /> Variedade Imbatível
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white max-w-2xl mx-auto">
+            <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white max-w-2xl mx-auto">
               Conteúdos que você <span className="text-red-500">não encontra em outros streamings</span>
             </h2>
           </div>
         </SmoothCardReveal>
 
-        <div className="grid gap-3.5 sm:gap-4.5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-2.5 sm:gap-3 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
               icon: Film,
               banners: [
-                "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg", // Deadpool & Wolverine
-                "/eZ239CUp1d6OryZEBPnO2n87gMG.jpg", // Dune Part Two
-                "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg", // Backrooms
+                "/by8z9Fe8y7p4jo2YlW2SZDnptyT.jpg",
+                "/eZ239CUp1d6OryZEBPnO2n87gMG.jpg",
+                "/wjwMC7u3xWKkrronolBqsIy4L0L.jpg",
               ],
               objectPosition: "object-cover",
               gradient: "from-red-600 to-amber-600",
               corBorda: "border-red-500/35 hover:border-red-400",
-              corGlow: "hover:shadow-[0_0_25px_rgba(239,68,68,0.35)]",
+              corGlow: "hover:shadow-[0_0_20px_rgba(239,68,68,0.35)]",
               t: "Filmes Incríveis",
               qtd: "Lançamentos de Cinema",
-              d: "Lançamentos recém-saídos do cinema, produções exclusivas e superproduções.",
+              d: "Lançamentos recém-saídos do cinema e produções em HD.",
               tabId: "filmes",
             },
             {
               icon: Tv,
               banners: [
-                "/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg", // Fallout
-                "/n6vVs6z8obNbExdD3QHTr4Utu1Z.jpg", // The Boys
-                "/iHSwvRVsRyxpX7FE7GbviaDvgGZ.jpg", // Wandinha
+                "/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg",
+                "/n6vVs6z8obNbExdD3QHTr4Utu1Z.jpg",
+                "/iHSwvRVsRyxpX7FE7GbviaDvgGZ.jpg",
               ],
               objectPosition: "object-cover",
               gradient: "from-red-600 to-rose-700",
               corBorda: "border-rose-500/35 hover:border-rose-400",
-              corGlow: "hover:shadow-[0_0_25px_rgba(225,29,72,0.35)]",
+              corGlow: "hover:shadow-[0_0_20px_rgba(225,29,72,0.35)]",
               t: "Séries Imperdíveis",
               qtd: "Séries Completas",
-              d: "Séries das maiores plataformas com temporadas completas dubladas ou legendadas.",
+              d: "Temporadas completas dubladas e legendadas dos grandes serviços.",
               tabId: "series",
             },
             {
@@ -831,10 +831,10 @@ function Index() {
               objectPosition: "object-cover object-[center_20%]",
               gradient: "from-emerald-500 to-teal-600",
               corBorda: "border-emerald-500/35 hover:border-emerald-400",
-              corGlow: "hover:shadow-[0_0_25px_rgba(16,185,129,0.35)]",
+              corGlow: "hover:shadow-[0_0_20px_rgba(16,185,129,0.35)]",
               t: "Esportes Ao Vivo",
               qtd: "Centenas de Canais",
-              d: "Canais de esportes ao vivo (Brasileirão, Champions League, UFC e F1).",
+              d: "Brasileirão, Champions League, UFC, F1 e canais 24h.",
               tabId: "series",
             },
             {
@@ -847,10 +847,10 @@ function Index() {
               objectPosition: "object-cover",
               gradient: "from-pink-600 to-red-700",
               corBorda: "border-pink-500/35 hover:border-pink-400",
-              corGlow: "hover:shadow-[0_0_25px_rgba(244,63,94,0.35)]",
+              corGlow: "hover:shadow-[0_0_20px_rgba(244,63,94,0.35)]",
               t: "Doramas & Asiáticos",
-              qtd: "Aba Séries do App",
-              d: "Rainha das Lágrimas, Pousando no Amor, A Lição e os maiores sucessos asiáticos.",
+              qtd: "Aba Séries",
+              d: "Rainha das Lágrimas, Pousando no Amor e sucessos asiáticos.",
               tabId: "series",
             },
             {
@@ -863,10 +863,10 @@ function Index() {
               objectPosition: "object-cover",
               gradient: "from-purple-600 to-amber-600",
               corBorda: "border-purple-500/35 hover:border-purple-400",
-              corGlow: "hover:shadow-[0_0_25px_rgba(217,70,239,0.35)]",
+              corGlow: "hover:shadow-[0_0_20px_rgba(217,70,239,0.35)]",
               t: "Novelas Turcas",
-              qtd: "Sucessos Internacionais",
-              d: "Será Isso Amor?, Meu Nome é Farah, Fatmagül e Segredos de Família em HD.",
+              qtd: "Sucessos Globais",
+              d: "Será Isso Amor?, Meu Nome é Farah, Fatmagül e mais.",
               tabId: "novelas-turcas",
             },
             {
@@ -879,10 +879,10 @@ function Index() {
               objectPosition: "object-cover",
               gradient: "from-amber-500 to-red-600",
               corBorda: "border-amber-500/35 hover:border-amber-400",
-              corGlow: "hover:shadow-[0_0_25px_rgba(245,158,11,0.35)]",
+              corGlow: "hover:shadow-[0_0_20px_rgba(245,158,11,0.35)]",
               t: "Animes Atualizados",
               qtd: "Animes da Temporada",
-              d: "Animes em alta, clássicos, simulcast semanal e opções dubladas.",
+              d: "Classicos, lançamentos com simulcast semanal e opções dubladas.",
               tabId: "animes",
             },
             {
@@ -895,10 +895,10 @@ function Index() {
               objectPosition: "object-cover",
               gradient: "from-sky-500 to-indigo-600",
               corBorda: "border-sky-500/35 hover:border-sky-400",
-              corGlow: "hover:shadow-[0_0_25px_rgba(14,165,233,0.35)] sm:col-span-2 lg:col-span-1",
+              corGlow: "hover:shadow-[0_0_20px_rgba(14,165,233,0.35)] sm:col-span-2 lg:col-span-1",
               t: "Conteúdos Infantis",
               qtd: "Espaço Kids",
-              d: "Filmes infantis, desenhos animados e animações para toda a família.",
+              d: "Desenhos animados, filmes infantis e animações para a família.",
               tabId: "filmes",
             },
           ].map((f, i) => (
@@ -910,31 +910,29 @@ function Index() {
                     document.getElementById("catalogo")?.scrollIntoView({ behavior: "smooth" });
                   }
                 }}
-                className={`glass group relative flex flex-col justify-between h-full min-h-[145px] sm:min-h-[155px] overflow-hidden rounded-2xl p-4 sm:p-4.5 border bg-zinc-950/70 backdrop-blur-xl ${f.corBorda} ${f.corGlow} transition-all duration-300 hover:-translate-y-1 cursor-pointer`}
+                className={`glass group relative flex items-center gap-3 overflow-hidden rounded-xl p-3 sm:p-3.5 border bg-zinc-950/75 backdrop-blur-md ${f.corBorda} ${f.corGlow} transition-all duration-300 hover:-translate-y-0.5 cursor-pointer min-h-[82px] sm:min-h-[88px]`}
               >
                 {/* SLIDESHOW BANNERS DE FUNDO */}
                 <SlideshowBanner banners={f.banners} alt={`Ilustração ${f.t}`} objectPosition={f.objectPosition} delayMs={i * 600} />
-                {/* OVERLAY ESCURO PARA CONTRASTE EXCELENTE */}
-                <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/95 via-black/80 to-black/40 pointer-events-none" />
+                {/* OVERLAY ESCURO PARA LEITURA LIMPA E COMPACTA */}
+                <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/95 via-black/85 to-black/60 pointer-events-none" />
 
-                <div className="relative z-20 flex flex-col justify-between h-full">
-                  <div className="flex items-center justify-between gap-2 mb-2">
-                    <div className={`flex size-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br ${f.gradient} text-white shadow-md border border-white/20`}>
-                      <f.icon className="size-4.5 text-white" />
-                    </div>
-                    <span className="inline-block rounded-full border border-white/25 bg-black/60 backdrop-blur-md px-2.5 py-0.5 text-[10px] font-bold text-white shadow-sm">
+                <div className="relative z-20 flex size-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-red-600 to-red-800 text-white shadow-md border border-white/20">
+                  <f.icon className="size-4 text-white" />
+                </div>
+
+                <div className="relative z-20 min-w-0 flex-1">
+                  <div className="flex items-center justify-between gap-1.5 mb-0.5">
+                    <h3 className="text-xs sm:text-sm font-black text-white group-hover:text-red-400 transition-colors truncate drop-shadow-md">
+                      {f.t}
+                    </h3>
+                    <span className="shrink-0 rounded-full border border-white/20 bg-black/60 px-2 py-0.5 text-[9px] font-bold text-white/90">
                       {f.qtd}
                     </span>
                   </div>
-
-                  <div>
-                    <h3 className="text-sm sm:text-base font-black text-white group-hover:text-red-400 transition-colors mb-0.5 drop-shadow-md">
-                      {f.t}
-                    </h3>
-                    <p className="text-[11px] text-white/85 leading-snug font-medium drop-shadow-sm">
-                      {f.d}
-                    </p>
-                  </div>
+                  <p className="text-[10px] sm:text-[11px] text-white/80 leading-snug line-clamp-1 font-medium drop-shadow-sm">
+                    {f.d}
+                  </p>
                 </div>
               </div>
             </SmoothCardReveal>
