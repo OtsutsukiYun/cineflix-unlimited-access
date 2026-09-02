@@ -150,12 +150,9 @@ function PermissionModal({
           Dica de instalação 💡
         </h3>
 
-        <div className="text-xs text-white/90 leading-relaxed space-y-2 mb-5 text-center bg-white/[0.04] p-3.5 rounded-2xl border border-white/15 backdrop-blur-md">
+        <div className="text-xs text-white/90 leading-relaxed mb-5 text-center bg-white/[0.04] p-3.5 rounded-2xl border border-white/15 backdrop-blur-md">
           <p className="font-medium">
             Se o seu celular ou TV pedir confirmação para instalar, basta clicar em <strong className="text-emerald-400 font-black">"Permitir"</strong> para concluir em segundos.
-          </p>
-          <p className="text-[11px] text-white/60 pt-1 font-normal border-t border-white/10">
-            🛡️ Aplicativo UniTV Pro 100% seguro e livre de vírus.
           </p>
         </div>
 
