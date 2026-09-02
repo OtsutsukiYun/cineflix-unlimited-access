@@ -564,7 +564,7 @@ function Index() {
           </nav>
 
           <SmoothLink href={CTA_HREF} className="btn-cta px-3.5 py-1.5 text-[11px] font-extrabold tracking-wide">
-            QUERO ASSINAR
+            VER PLANOS
           </SmoothLink>
         </div>
       </header>
