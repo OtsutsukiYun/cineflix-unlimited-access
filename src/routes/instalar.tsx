@@ -130,14 +130,14 @@ function CodeCopyBox({ code }: { code: string }) {
   };
 
   return (
-    <div className="relative overflow-hidden my-2.5 rounded-2xl p-3.5 sm:p-4 border border-white/20 bg-white/[0.08] backdrop-blur-xl shadow-md max-w-md mx-auto text-center">
-      <div className="pointer-events-none absolute -right-10 -bottom-10 size-36 rounded-full bg-red-600/20 blur-2xl" />
+    <div className="relative overflow-hidden my-2.5 rounded-2xl p-3.5 sm:p-4 border border-emerald-500/30 bg-emerald-950/20 backdrop-blur-xl shadow-md max-w-md mx-auto text-center">
+      <div className="pointer-events-none absolute -right-10 -bottom-10 size-36 rounded-full bg-emerald-500/15 blur-2xl" />
       <div className="flex flex-col items-center justify-center gap-2 relative z-10 w-full text-center">
         <div className="flex items-center justify-center gap-1.5">
-          <div className="flex size-5.5 items-center justify-center rounded-md bg-red-600/30 text-red-300 border border-white/15 font-mono font-bold text-xs backdrop-blur-md">
+          <div className="flex size-5.5 items-center justify-center rounded-md bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-mono font-bold text-xs backdrop-blur-md">
             <Hash className="size-3" />
           </div>
-          <span className="text-[10px] font-bold uppercase tracking-widest text-red-400">
+          <span className="text-[10px] font-extrabold uppercase tracking-widest text-emerald-400">
             Código de Instalação 🔒
           </span>
         </div>
@@ -150,8 +150,8 @@ function CodeCopyBox({ code }: { code: string }) {
           onClick={handleCopy}
           className={`w-full sm:w-auto min-w-[160px] inline-flex items-center justify-center gap-1.5 rounded-xl px-4 py-2 text-xs font-black tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-md backdrop-blur-md active:scale-95 ${
             copied
-              ? "bg-emerald-500 text-black border border-emerald-400 font-extrabold"
-              : "bg-red-600 hover:bg-red-500 text-white border border-white/20 shadow-[0_0_12px_rgba(220,38,38,0.5)]"
+              ? "bg-white text-black border border-white font-extrabold"
+              : "bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-400/30 shadow-[0_0_15px_rgba(16,185,129,0.5)]"
           }`}
         >
           {copied ? (
@@ -379,7 +379,7 @@ function InstalarPage() {
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
                       Baixe o app{" "}
-                      <a href={DOWNLOADER_PLAYSTORE_URL} target="_blank" rel="noopener noreferrer" className="text-red-400 font-bold underline">
+                      <a href={DOWNLOADER_PLAYSTORE_URL} target="_blank" rel="noopener noreferrer" className="text-emerald-400 font-extrabold underline hover:text-emerald-300">
                         Downloader <ExternalLink className="inline size-3" />
                       </a>{" "}
                       na loja do seu aparelho.
