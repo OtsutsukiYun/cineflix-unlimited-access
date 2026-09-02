@@ -134,56 +134,32 @@ function PermissionModal({
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/85 backdrop-blur-xl" onClick={onClose} />
 
-      <div className="relative z-10 w-full max-w-md overflow-hidden rounded-3xl border border-white/20 bg-white/[0.06] backdrop-blur-2xl p-6 sm:p-8 text-center shadow-[0_25px_80px_rgba(0,0,0,0.95)] animate-in fade-in zoom-in-95 duration-200">
-        <div className="pointer-events-none absolute -top-16 -left-16 size-48 rounded-full bg-white/10 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-16 -right-16 size-48 rounded-full bg-red-600/15 blur-3xl" />
-
+      <div className="relative z-10 w-full max-w-sm overflow-hidden rounded-2xl border border-white/20 bg-zinc-950/90 backdrop-blur-2xl p-5 text-center shadow-[0_25px_60px_rgba(0,0,0,0.9)] animate-in fade-in zoom-in-95 duration-200">
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors cursor-pointer border border-white/10 backdrop-blur-md z-20"
+          className="absolute top-3 right-3 flex size-7 items-center justify-center rounded-full bg-white/10 text-white/70 hover:bg-white/20 hover:text-white transition-colors cursor-pointer border border-white/10 z-20"
         >
-          <X className="size-4" />
+          <X className="size-3.5" />
         </button>
 
-        <div className="flex items-center justify-center gap-2 mb-4 relative z-10">
-          <span className="relative flex size-7 items-center justify-center rounded-lg bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_12px_rgba(220,38,38,0.7)] border border-white/20">
-            <svg className="size-3.5 fill-white" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z" />
-            </svg>
+        <div className="flex items-center justify-center gap-2 mb-3">
+          <span className="flex size-7 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+            <Sparkles className="size-4" />
           </span>
-          <span className="font-display text-sm font-black tracking-wider text-white">
-            UniTV <span className="text-red-500">Pro</span>
-          </span>
+          <h3 className="text-base font-black text-white tracking-tight">
+            Dica de instalação 💡
+          </h3>
         </div>
 
-        {/* ÍCONE DE SEGURANÇA E PROTEÇÃO */}
-        <div className="relative z-10 mx-auto mb-4 flex size-14 items-center justify-center rounded-2xl bg-emerald-500/10 backdrop-blur-xl text-emerald-400 border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-          <ShieldCheck className="size-7 text-emerald-400" />
-        </div>
-
-        <h3 className="relative z-10 text-xl sm:text-2xl font-black text-white mb-2 tracking-tight">
-          Aviso do Android 💡
-        </h3>
-
-        <div className="relative z-10 text-xs sm:text-sm text-white/90 leading-relaxed space-y-3 mb-6 text-left bg-white/[0.04] backdrop-blur-2xl p-4 rounded-2xl border border-white/15 shadow-inner">
-          <p>
-            Dependendo da sua versão do Android, poderá aparecer uma solicitação para permitir a instalação de aplicativos fora da Play Store. Nesse caso, autorize a instalação para continuar.
-          </p>
-
-          <div className="p-3 rounded-xl bg-white/[0.08] border border-white/20 text-white text-xs font-semibold backdrop-blur-md">
-            👉 Clique em <strong className="text-red-400 underline font-black">"Permitir desta fonte"</strong> ou <strong className="text-red-400 underline font-black">"Instalar assim mesmo"</strong> para concluir a instalação.
-          </div>
-
-          <p className="text-[11px] text-white/70 text-center pt-1 font-medium leading-normal">
-            🛡️ O UniTV Pro é um aplicativo <strong>totalmente seguro, leve e livre de vírus</strong>.
-          </p>
-        </div>
+        <p className="text-xs text-white/90 leading-relaxed mb-4 font-medium bg-white/[0.05] p-3 rounded-xl border border-white/10">
+          Se o seu aparelho pedir permissão para instalar, basta clicar em <strong className="text-emerald-400 font-extrabold">"Permitir"</strong> para concluir.
+        </p>
 
         <button
           onClick={onClose}
-          className="relative z-10 w-full rounded-xl bg-red-600 hover:bg-red-500 py-3.5 text-xs font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] backdrop-blur-md transition-all hover:scale-[1.02] cursor-pointer uppercase tracking-wider border border-white/20"
+          className="w-full rounded-xl bg-red-600 hover:bg-red-500 py-2.5 text-xs font-black text-white shadow-md transition-all hover:scale-[1.02] cursor-pointer uppercase tracking-wider border border-white/20"
         >
-          {hasPendingRedirect ? "ENTENDI, CONTINUAR PARA DOWNLOAD 🚀" : "ENTENDI, CONTINUAR"}
+          {hasPendingRedirect ? "CONTINUAR PARA DOWNLOAD 🚀" : "ENTENDI"}
         </button>
       </div>
     </div>
