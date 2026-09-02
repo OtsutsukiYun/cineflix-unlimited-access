@@ -272,10 +272,10 @@ function InstalarPage() {
             </a>
           </nav>
 
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <a
               href="#suporte"
-              className="hidden sm:inline-flex px-3 sm:px-3.5 py-1.5 text-[11px] font-extrabold tracking-wide uppercase rounded-full border border-white/20 bg-white/10 hover:bg-white/20 text-white/90 hover:text-white transition-all items-center gap-1.5 backdrop-blur-md cursor-pointer"
+              className="inline-flex px-2.5 sm:px-3.5 py-1.5 text-[11px] font-extrabold tracking-wide uppercase rounded-full border border-white/20 bg-white/10 hover:bg-white/20 text-white/90 hover:text-white transition-all items-center gap-1 backdrop-blur-md cursor-pointer"
             >
               <Headphones className="size-3.5 text-emerald-400" />
               <span>Suporte</span>
@@ -283,7 +283,7 @@ function InstalarPage() {
 
             <a
               href="#plano-mensal"
-              className="btn-cta px-6 py-2.5 text-xs font-black tracking-wider uppercase rounded-full shadow-[0_0_20px_rgba(220,38,38,0.7)] flex items-center justify-center shrink-0 hover:scale-105 transition-all sm:px-5 sm:py-2 sm:text-xs"
+              className="btn-cta px-4 sm:px-5 py-1.5 sm:py-2 text-xs font-black tracking-wider uppercase rounded-full shadow-[0_0_15px_rgba(220,38,38,0.6)] flex items-center justify-center shrink-0 hover:scale-105 transition-all"
             >
               <span>ASSINAR</span>
             </a>

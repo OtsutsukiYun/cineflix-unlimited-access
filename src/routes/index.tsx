@@ -606,11 +606,11 @@ function Index() {
               TESTAR GRÁTIS
             </Link>
             <SmoothLink
-              href="#catalogo"
+              href={CTA_HREF}
               className="btn-ghost w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-md border border-white/25 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2 rounded-xl"
             >
-              <Film className="size-4 text-white" />
-              VER CATÁLOGO
+              <Zap className="size-4 text-red-500 fill-red-500" />
+              ASSINAR
             </SmoothLink>
           </div>
 
