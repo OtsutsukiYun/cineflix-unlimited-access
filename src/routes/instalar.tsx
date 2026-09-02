@@ -350,7 +350,6 @@ function InstalarPage() {
                     <h2 className="text-base sm:text-lg font-black text-white">
                       Smart TV, TV Box, Fire Stick, Xiaomi Stick &amp; Projetor
                     </h2>
-                    <p className="text-xs text-white/60">Xiaomi Stick, Fire Stick, Smart TV Android, TV Box e Projetor Android</p>
                   </div>
                 </div>
 
