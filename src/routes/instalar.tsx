@@ -306,7 +306,7 @@ function InstalarPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-semibold">
-            Instale o aplicativo e aproveite 3 dias para explorar filmes, séries, lançamentos, canais e muito mais.
+            Instale em aparelhos com sistema operacional Android
           </p>
 
         </div>
