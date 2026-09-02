@@ -705,7 +705,7 @@ function InstalarPage() {
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 gap-2 sm:gap-3 sm:grid-cols-3 lg:grid-cols-6 text-center">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3.5 sm:grid-cols-3 lg:grid-cols-6 text-center">
               {[
                 { icon: Lock, title: "SSL 256-bit", desc: "Ambiente Criptografado", color: "text-emerald-400" },
                 { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
@@ -716,15 +716,13 @@ function InstalarPage() {
               ].map((c) => (
                 <div
                   key={c.title}
-                  className="group flex flex-row sm:flex-col items-center justify-start sm:justify-center gap-2 rounded-xl sm:rounded-2xl border border-white/10 bg-white/[0.04] p-2 sm:p-3.5 backdrop-blur-xl transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08]"
+                  className="group flex flex-col items-center justify-center text-center gap-1 rounded-xl sm:rounded-2xl border border-white/10 bg-white/[0.04] p-2.5 sm:p-3.5 backdrop-blur-xl transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08]"
                 >
-                  <div className={`flex size-8 sm:size-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.06] border border-white/10 ${c.color} shadow-inner transition-transform group-hover:scale-110`}>
-                    <c.icon className="size-4 sm:size-4.5" />
+                  <div className={`flex size-7 sm:size-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.06] border border-white/10 ${c.color} shadow-inner transition-transform group-hover:scale-110 mb-0.5`}>
+                    <c.icon className="size-3.5 sm:size-4.5" />
                   </div>
-                  <div className="text-left sm:text-center min-w-0">
-                    <p className="text-[11px] sm:text-xs font-black text-white truncate">{c.title}</p>
-                    <p className="text-[9px] sm:text-[10px] text-white/50 leading-tight font-medium truncate">{c.desc}</p>
-                  </div>
+                  <p className="text-[11px] sm:text-xs font-black text-white leading-tight break-words w-full">{c.title}</p>
+                  <p className="text-[9.5px] sm:text-[10px] text-white/50 leading-tight font-medium break-words w-full">{c.desc}</p>
                 </div>
               ))}
             </div>
