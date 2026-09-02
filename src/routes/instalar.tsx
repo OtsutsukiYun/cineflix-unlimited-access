@@ -336,7 +336,7 @@ function InstalarPage() {
                 }`}
               >
                 <Smartphone className="size-5 sm:size-6 text-emerald-400 shrink-0" />
-                <span className="break-words max-w-full">Celular e Tablet</span>
+                <span className="break-words max-w-full">Celular &amp; Tablet Android</span>
               </button>
             </div>
           </div>
@@ -417,9 +417,8 @@ function InstalarPage() {
                   </div>
                   <div>
                     <h2 className="text-base sm:text-lg font-black text-white">
-                      Celular &amp; Tablet
+                      Celular &amp; Tablet Android
                     </h2>
-                    <p className="text-xs text-white/60">Para celulares e tablets com sistema operacional Android</p>
                   </div>
                 </div>
 
