@@ -283,7 +283,7 @@ function InstalarPage() {
 
             <a
               href="#plano-mensal"
-              className="btn-cta px-4 sm:px-5 py-1.5 sm:py-2 text-xs font-black tracking-wider uppercase rounded-full shadow-[0_0_15px_rgba(220,38,38,0.6)] flex items-center justify-center shrink-0"
+              className="btn-cta px-5 sm:px-7 py-2 sm:py-2.5 text-xs sm:text-sm font-black tracking-wider uppercase rounded-full shadow-[0_0_20px_rgba(220,38,38,0.7)] flex items-center justify-center shrink-0 hover:scale-105 transition-all"
             >
               <span>ASSINAR</span>
             </a>
