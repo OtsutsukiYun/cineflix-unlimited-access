@@ -695,17 +695,17 @@ function InstalarPage() {
           </div>
 
           {/* CERTIFICADOS DE SEGURANÇA */}
-          <div className="p-6 sm:p-8 bg-white/[0.02] border-t border-white/15 backdrop-blur-xl text-center">
-            <div className="mb-6">
-              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-extrabold tracking-widest text-emerald-400 uppercase backdrop-blur-md shadow-sm">
-                <ShieldCheck className="size-3.5" /> Compra 100% Segura &amp; Protegida
+          <div className="p-4 sm:p-8 bg-white/[0.02] border-t border-white/15 backdrop-blur-xl text-center">
+            <div className="mb-4 sm:mb-6">
+              <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-[11px] font-extrabold tracking-wider sm:tracking-widest text-emerald-400 uppercase backdrop-blur-md shadow-sm">
+                <ShieldCheck className="size-3 sm:size-3.5" /> Compra 100% Segura &amp; Protegida
               </span>
-              <h3 className="mt-2 text-lg sm:text-xl font-black text-white">
+              <h3 className="mt-1.5 sm:mt-2 text-sm sm:text-xl font-black text-white">
                 Ambiente seguro com <span className="text-emerald-400">garantia total</span>
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 text-center">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3 sm:grid-cols-3 lg:grid-cols-6 text-center">
               {[
                 { icon: Lock, title: "SSL 256-bit", desc: "Ambiente Criptografado", color: "text-emerald-400" },
                 { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
@@ -716,13 +716,15 @@ function InstalarPage() {
               ].map((c) => (
                 <div
                   key={c.title}
-                  className="group flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] p-3.5 backdrop-blur-xl transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08]"
+                  className="group flex flex-row sm:flex-col items-center justify-start sm:justify-center gap-2 rounded-xl sm:rounded-2xl border border-white/10 bg-white/[0.04] p-2 sm:p-3.5 backdrop-blur-xl transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08]"
                 >
-                  <div className={`flex size-10 items-center justify-center rounded-xl bg-white/[0.06] border border-white/10 ${c.color} shadow-inner transition-transform group-hover:scale-110`}>
-                    <c.icon className="size-4.5" />
+                  <div className={`flex size-8 sm:size-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.06] border border-white/10 ${c.color} shadow-inner transition-transform group-hover:scale-110`}>
+                    <c.icon className="size-4 sm:size-4.5" />
                   </div>
-                  <p className="text-xs font-black text-white">{c.title}</p>
-                  <p className="text-[10px] text-white/50 leading-tight font-medium">{c.desc}</p>
+                  <div className="text-left sm:text-center min-w-0">
+                    <p className="text-[11px] sm:text-xs font-black text-white truncate">{c.title}</p>
+                    <p className="text-[9px] sm:text-[10px] text-white/50 leading-tight font-medium truncate">{c.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>

@@ -1308,35 +1308,37 @@ function Index() {
 
       {/* CERTIFICADOS DE SEGURANÇA & GARANTIA */}
       <Reveal>
-        <section className="relative z-10 border-t border-white/10 bg-white/[0.02] py-12 backdrop-blur-md">
+        <section className="relative z-10 border-t border-white/10 bg-white/[0.02] py-6 sm:py-12 backdrop-blur-md">
           <div className="mx-auto w-[94%] max-w-5xl">
-            <div className="text-center mb-8">
-              <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-1.5 text-[11px] font-extrabold tracking-widest text-emerald-400 uppercase backdrop-blur-md shadow-sm">
-                <ShieldCheck className="size-3.5" /> Compra 100% Segura &amp; Protegida
+            <div className="text-center mb-4 sm:mb-8">
+              <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-[11px] font-extrabold tracking-wider sm:tracking-widest text-emerald-400 uppercase backdrop-blur-md shadow-sm">
+                <ShieldCheck className="size-3 sm:size-3.5" /> Compra 100% Segura &amp; Protegida
               </span>
-              <h3 className="mt-3 text-xl sm:text-2xl font-black text-white">
+              <h3 className="mt-1.5 sm:mt-3 text-sm sm:text-2xl font-black text-white">
                 Sua compra com total <span className="text-emerald-400">segurança e garantia</span>
               </h3>
             </div>
 
-            <div className="grid grid-cols-2 gap-3.5 sm:grid-cols-3 lg:grid-cols-6">
+            <div className="grid grid-cols-2 gap-2 sm:gap-3.5 sm:grid-cols-3 lg:grid-cols-6">
               {[
                 { icon: Lock, title: "SSL 256-bit", desc: "Ambiente Criptografado", color: "text-emerald-400" },
                 { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
                 { icon: Zap, title: "Envio Imediato", desc: "Envio no E-mail", color: "text-amber-400" },
-                { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão em até 12x", color: "text-purple-400" },
+                { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão 12x", color: "text-purple-400" },
                 { icon: Award, title: "+30.000 Clientes", desc: "Assinantes Ativos", color: "text-rose-400" },
                 { icon: CheckCircle2, title: "Sem Fidelidade", desc: "Cancele quando quiser", color: "text-teal-400" },
               ].map((c) => (
                 <div
                   key={c.title}
-                  className="group relative flex flex-col items-center gap-2 rounded-2xl border border-white/10 bg-white/[0.04] p-4 text-center backdrop-blur-xl transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08] hover:-translate-y-1 shadow-md"
+                  className="group relative flex flex-row sm:flex-col items-center justify-start sm:justify-center gap-2 rounded-xl sm:rounded-2xl border border-white/10 bg-white/[0.04] p-2.5 sm:p-4 text-left sm:text-center backdrop-blur-xl transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08] hover:-translate-y-1 shadow-md"
                 >
-                  <div className={`flex size-11 items-center justify-center rounded-xl bg-white/[0.06] border border-white/10 ${c.color} shadow-inner transition-transform group-hover:scale-110`}>
-                    <c.icon className="size-5" />
+                  <div className={`flex size-8 sm:size-11 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.06] border border-white/10 ${c.color} shadow-inner transition-transform group-hover:scale-110`}>
+                    <c.icon className="size-4 sm:size-5" />
                   </div>
-                  <p className="text-xs font-black text-white">{c.title}</p>
-                  <p className="text-[10px] text-white/50 leading-tight font-medium">{c.desc}</p>
+                  <div className="text-left sm:text-center min-w-0">
+                    <p className="text-[11px] sm:text-xs font-black text-white truncate">{c.title}</p>
+                    <p className="text-[9px] sm:text-[10px] text-white/50 leading-tight font-medium truncate">{c.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
