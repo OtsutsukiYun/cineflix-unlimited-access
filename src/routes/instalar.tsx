@@ -354,7 +354,7 @@ function InstalarPage() {
 
             <a
               href="#plano-mensal"
-              className="w-auto h-8 px-3 text-[11px] font-bold text-white/80 hover:text-white transition-all flex items-center justify-center gap-1 rounded-full border border-white/15 bg-white/10 hover:bg-white/20 backdrop-blur-md cursor-pointer"
+              className="w-auto px-4 py-1.5 text-xs font-black text-white hover:text-white transition-all flex items-center justify-center gap-1 rounded-full border border-white/20 bg-white/15 hover:bg-white/25 backdrop-blur-md cursor-pointer shadow-md hover:scale-105 tracking-wider"
             >
               <span>Ver planos</span>
             </a>
