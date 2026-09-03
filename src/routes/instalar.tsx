@@ -752,23 +752,23 @@ function InstalarPage() {
 
               <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full md:w-auto shrink-0">
                 <a
-                  href="https://wa.me/556184016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20para%20instalar"
+                  href="https://wa.me/556184016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20instala%C3%A7%C3%A3o%20do%20UniTV%20Pro"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-emerald-600/90 hover:bg-emerald-500 px-4 py-2.5 text-xs font-bold text-white transition-colors border border-emerald-400/30 shadow-md"
                 >
                   <WhatsAppIcon className="size-3.5 fill-current" />
-                  DÚVIDAS / INSTALAÇÃO
+                  🛠️ AJUDA COM A INSTALAÇÃO
                 </a>
 
                 <a
-                  href="https://wa.me/556182743140?text=J%C3%A1%20sou%20cliente%20e%20preciso%20de%20suporte%20com%20meu%20acesso"
+                  href="https://wa.me/556182743140?text=Ol%C3%A1!%20Quero%20falar%20com%20o%20vendedor%20sobre%20as%20recargas%20do%20UniTV%20Pro"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 px-4 py-2.5 text-xs font-bold text-white transition-colors border border-blue-400/30 shadow-md"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 px-4 py-2.5 text-xs font-black text-black transition-colors border border-yellow-300 shadow-md"
                 >
-                  <WhatsAppIcon className="size-3.5 fill-current" />
-                  JÁ SOU CLIENTE (SUPORTE)
+                  <WhatsAppIcon className="size-3.5 fill-current text-black" />
+                  💬 FALAR COM O VENDEDOR
                 </a>
               </div>
             </div>

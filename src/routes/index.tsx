@@ -1315,23 +1315,23 @@ function Index() {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="https://wa.me/556184016006?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20o%20UniTV%20Pro"
+              href="https://wa.me/556184016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20instala%C3%A7%C3%A3o%20do%20UniTV%20Pro"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-6 py-3.5 text-xs sm:text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.4)] transition-all hover:scale-[1.02]"
             >
               <WhatsAppIcon className="size-4.5 fill-current" />
-              Suporte Geral (Dúvidas &amp; Teste)
+              🛠️ AJUDA COM A INSTALAÇÃO
             </a>
 
             <a
-              href="https://wa.me/556182743140?text=Ol%C3%A1!%20J%C3%A1%20comprei%20minha%20recarga%20e%20preciso%20de%20suporte"
+              href="https://wa.me/556182743140?text=Ol%C3%A1!%20Quero%20falar%20com%20o%20vendedor%20sobre%20as%20recargas%20do%20UniTV%20Pro"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-zinc-900/90 border border-emerald-500/40 hover:bg-zinc-800 px-6 py-3.5 text-xs sm:text-sm font-black text-emerald-300 shadow-md transition-all hover:scale-[1.02]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-400 px-6 py-3.5 text-xs sm:text-sm font-black text-black shadow-[0_0_25px_rgba(245,158,11,0.4)] transition-all hover:scale-[1.02]"
             >
-              <WhatsAppIcon className="size-4.5 fill-current text-emerald-400" />
-              Já Comprei! Suporte ao Cliente
+              <WhatsAppIcon className="size-4.5 fill-current text-black" />
+              💬 FALAR COM O VENDEDOR
             </a>
           </div>
 
