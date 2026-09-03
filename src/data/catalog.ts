@@ -111,8 +111,8 @@ export const heroSlides: HeroSlide[] = [
     tagline: "Din Djarin e Grogu se unem em uma nova e divertida aventura intergaláctica de LEGO.",
     backdrop: "/upecGaCuQOIbSpdz85mrJ395UMg.jpg",
     poster: "/x3HEvYXWOW6WHqsHmg2MUVy3SLm.jpg",
-    objectPosition: "center 20%",
-    objectPositionMobile: "50% 15%",
+    objectPosition: "75% 20%",
+    objectPositionMobile: "82% 15%",
     brightness: "brightness(1.0)",
   },
   {
