@@ -94,6 +94,17 @@ export const heroSlides: HeroSlide[] = [
     brightness: "brightness(1.0)",
   },
   {
+    title: "Silo",
+    year: "2024",
+    genre: "Série de Sci-Fi / Mistério",
+    tagline: "Em um futuro tóxico e destruído, milhares vivem em um gigantesco silo subterrâneo sem saber a verdade.",
+    backdrop: "/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg",
+    poster: "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+    brightness: "brightness(0.95)",
+  },
+  {
     title: "Evil Dead Burn: A Morte do Demônio",
     year: "2026",
     genre: "Terror / Gore",
@@ -280,6 +291,7 @@ export const top10Hoje: Title[] = [
 
 export const series: Title[] = [
   { title: "Lanternas", poster: "/gpC7h43xPMEV3goYMQShfJbTtLq.jpg", year: "2026", tag: "🔥 DC 2026" },
+  { title: "Silo", poster: "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", year: "2024", tag: "🔥 Sucesso Sci-Fi" },
   { title: "Fúria (Furious)", poster: "/xnxxrEKtBaIcI1ewq50pLkOMU6u.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "O Segredo de Widow's Bay", poster: "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", year: "2026", tag: "Novo" },
   { title: "Revenant (O Diabo)", poster: "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", year: "2023", tag: "Dorama de Terror" },
