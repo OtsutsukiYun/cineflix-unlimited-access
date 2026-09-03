@@ -154,8 +154,8 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               onClick={handleClaim}
               className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-emerald-500 via-green-600 to-emerald-600 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(16,185,129,0.7)] active:scale-95 mb-3 cursor-pointer"
             >
-              <Gift className="size-4 text-amber-300" />
-              RESGATAR MEU TESTE GRÁTIS
+              <Sparkles className="size-4 text-amber-300" />
+              TESTAR GRÁTIS
             </button>
             <button onClick={close} className="text-xs text-white/40 hover:text-white/70 transition-colors underline underline-offset-2">
               Agora não, fechar
@@ -173,7 +173,7 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               🎉 3 Dias Liberados!
             </h2>
             <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto">
-              Seu benefício exclusivo do {platformName} foi ativado com sucesso! Navegue pelo site e clique em <strong className="text-white">"Resgatar Teste Grátis"</strong> a qualquer momento para instalar o aplicativo.
+              Seu benefício exclusivo do {platformName} foi ativado com sucesso! Navegue pelo site e clique em <strong className="text-white">"Testar Grátis"</strong> a qualquer momento para instalar o aplicativo.
             </p>
             <button
               onClick={close}
