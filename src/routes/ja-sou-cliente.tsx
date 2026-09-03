@@ -20,6 +20,8 @@ import {
   Mail,
   Sparkles,
   ChevronDown,
+  ArrowLeft,
+  ChevronRight,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { WhatsAppIcon } from "@/components/icons";
@@ -38,7 +40,7 @@ export const Route = createFileRoute("/ja-sou-cliente")({
       {
         name: "description",
         content:
-          "Área exclusiva para clientes UniTV Pro. Acesse o tutorial de instalação para Smart TV, TV Box e celular ou entre em contato com nosso suporte.",
+          "Área exclusiva para clientes UniTV Pro. Escolha entre o tutorial de instalação ou suporte direto via WhatsApp.",
       },
     ],
   }),
@@ -146,18 +148,17 @@ function CodeCopyBox({ code }: { code: string }) {
 }
 
 function JaSouClientePage() {
-  const [mainTab, setMainTab] = useState<"instalacao" | "suporte">("instalacao");
+  const [currentView, setCurrentView] = useState<"hub" | "instalacao" | "suporte">("hub");
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile">("tv");
-  const [copiedMediaFire, setCopiedMediaFire] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const search = window.location.search;
       if (search.includes("aba=suporte") || search.includes("tab=suporte")) {
-        setMainTab("suporte");
+        setCurrentView("suporte");
       } else if (search.includes("aba=instalacao") || search.includes("tab=instalacao")) {
-        setMainTab("instalacao");
+        setCurrentView("instalacao");
       }
     }
   }, []);
@@ -217,24 +218,14 @@ function JaSouClientePage() {
               Início
             </Link>
             <button
-              onClick={() => setMainTab("instalacao")}
+              onClick={() => setCurrentView("hub")}
               className={`px-3 py-1 rounded-full text-xs font-black transition-all cursor-pointer ${
-                mainTab === "instalacao"
-                  ? "bg-red-600 text-white shadow-md"
+                currentView === "hub"
+                  ? "bg-white/20 text-white border border-white/30"
                   : "text-white/80 hover:text-white hover:bg-white/10"
               }`}
             >
-              Instalação
-            </button>
-            <button
-              onClick={() => setMainTab("suporte")}
-              className={`px-3 py-1 rounded-full text-xs font-black transition-all cursor-pointer ${
-                mainTab === "suporte"
-                  ? "bg-amber-500 text-black shadow-md"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
-              }`}
-            >
-              Suporte
+              Área do Cliente
             </button>
           </nav>
 
@@ -253,56 +244,136 @@ function JaSouClientePage() {
       </header>
 
       {/* CONTEÚDO PRINCIPAL */}
-      <main className="relative z-10 mx-auto w-[92%] max-w-3xl pt-20 sm:pt-24 pb-20 space-y-6">
+      <main className="relative z-10 mx-auto w-[92%] max-w-4xl pt-20 sm:pt-24 pb-20 space-y-6">
 
-        {/* HERO TITLE - ÁREA DO CLIENTE COM 2 BOTÕES PRINCIPAIS */}
-        <div className="text-center space-y-4">
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-3.5 py-1 text-[11px] font-black tracking-wider text-emerald-400 uppercase backdrop-blur-xl shadow-md">
-            <Sparkles className="size-3 text-emerald-400" />
-            <span>Área do Cliente UniTV Pro</span>
+        {/* ==================== VISTA 1: HUB PRINCIPAL (APENAS OS 2 BOTÕES 3D) ==================== */}
+        {currentView === "hub" && (
+          <div className="space-y-8 animate-fade-in text-center py-4">
+            <div className="space-y-3">
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-3.5 py-1 text-[11px] font-black tracking-wider text-emerald-400 uppercase backdrop-blur-xl shadow-md">
+                <Sparkles className="size-3 text-emerald-400 animate-pulse" />
+                <span>Área do Cliente UniTV Pro</span>
+              </div>
+
+              <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+                O que você precisa no momento?
+              </h1>
+
+              <p className="text-sm sm:text-base text-white/80 max-w-md mx-auto leading-relaxed font-semibold">
+                Selecione uma das opções abaixo para acessar o tutorial de instalação ou falar com o suporte:
+              </p>
+            </div>
+
+            {/* OS 2 BOTÕES 3D DE ALTAS ANIMAÇÕES */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto pt-2">
+              
+              {/* BOTÃO 1 3D: INSTALAÇÃO */}
+              <button
+                type="button"
+                onClick={() => setCurrentView("instalacao")}
+                className="group relative flex flex-col items-center justify-between p-8 sm:p-10 rounded-3xl border border-red-500/40 bg-gradient-to-b from-red-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-500 hover:scale-[1.04] hover:border-red-400 hover:shadow-[0_0_60px_rgba(220,38,38,0.5)] cursor-pointer text-center overflow-hidden"
+              >
+                {/* Efeito de Luz 3D de Fundo */}
+                <div className="absolute -top-20 -left-20 size-44 rounded-full bg-red-600/30 blur-3xl group-hover:bg-red-500/50 transition-all duration-500" />
+
+                {/* ÍCONE 3D ANIMADO DE INSTALAÇÃO */}
+                <div className="relative my-4 flex size-28 items-center justify-center">
+                  {/* Aura 3D pulsante */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-red-600 to-rose-500 blur-xl opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
+                  
+                  {/* Container 3D em Camadas de Vidro */}
+                  <div className="relative size-24 rounded-2xl bg-gradient-to-br from-red-500 via-rose-600 to-red-900 p-0.5 shadow-[0_15px_35px_rgba(220,38,38,0.6)] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                    <div className="flex size-full items-center justify-center rounded-2xl bg-black/70 backdrop-blur-md border border-white/30">
+                      <Tv className="size-12 text-white drop-shadow-[0_4px_12px_rgba(255,255,255,0.6)] animate-bounce" />
+                    </div>
+                  </div>
+                  
+                  {/* Badge 3D Flutuante */}
+                  <div className="absolute -bottom-2 -right-2 flex size-9 items-center justify-center rounded-xl bg-emerald-500 text-white shadow-lg border border-white/50 font-mono text-xs font-black animate-pulse">
+                    <Download className="size-5" />
+                  </div>
+                </div>
+
+                <div className="space-y-2 mt-4 z-10">
+                  <h2 className="text-2xl sm:text-3xl font-black text-white group-hover:text-red-400 transition-colors uppercase tracking-wider drop-shadow-md">
+                    Instalação
+                  </h2>
+                  <p className="text-xs sm:text-sm text-white/70 font-medium max-w-xs leading-relaxed">
+                    Vídeo tutorial em 2min, códigos do Downloader e guia de instalação para TV e Celular.
+                  </p>
+                </div>
+
+                <div className="mt-8 w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-red-600 to-rose-600 group-hover:from-red-500 group-hover:to-rose-500 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all flex items-center justify-center gap-2">
+                  <span>Acessar Tutorial</span>
+                  <ChevronRight className="size-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </button>
+
+              {/* BOTÃO 2 3D: SUPORTE */}
+              <button
+                type="button"
+                onClick={() => setCurrentView("suporte")}
+                className="group relative flex flex-col items-center justify-between p-8 sm:p-10 rounded-3xl border border-amber-500/40 bg-gradient-to-b from-amber-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-500 hover:scale-[1.04] hover:border-amber-300 hover:shadow-[0_0_60px_rgba(245,158,11,0.5)] cursor-pointer text-center overflow-hidden"
+              >
+                {/* Efeito de Luz 3D de Fundo */}
+                <div className="absolute -top-20 -right-20 size-44 rounded-full bg-amber-500/30 blur-3xl group-hover:bg-amber-400/50 transition-all duration-500" />
+
+                {/* ÍCONE 3D ANIMADO DE SUPORTE */}
+                <div className="relative my-4 flex size-28 items-center justify-center">
+                  {/* Aura 3D pulsante */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-amber-500 to-yellow-400 blur-xl opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
+                  
+                  {/* Container 3D em Camadas de Vidro */}
+                  <div className="relative size-24 rounded-2xl bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 p-0.5 shadow-[0_15px_35px_rgba(245,158,11,0.6)] transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                    <div className="flex size-full items-center justify-center rounded-2xl bg-black/70 backdrop-blur-md border border-white/30">
+                      <Headphones className="size-12 text-amber-400 drop-shadow-[0_4px_12px_rgba(245,158,11,0.8)] animate-pulse" />
+                    </div>
+                  </div>
+                  
+                  {/* Badge 3D Flutuante WhatsApp */}
+                  <div className="absolute -bottom-2 -right-2 flex size-9 items-center justify-center rounded-xl bg-emerald-500 text-white shadow-lg border border-white/50 font-mono text-xs font-black">
+                    <WhatsAppIcon className="size-5 fill-current" />
+                  </div>
+                </div>
+
+                <div className="space-y-2 mt-4 z-10">
+                  <h2 className="text-2xl sm:text-3xl font-black text-white group-hover:text-amber-400 transition-colors uppercase tracking-wider drop-shadow-md">
+                    Suporte
+                  </h2>
+                  <p className="text-xs sm:text-sm text-white/70 font-medium max-w-xs leading-relaxed">
+                    Contatos do WhatsApp para recargas, envio de acessos, tirar dúvidas ou solicitar reembolso.
+                  </p>
+                </div>
+
+                <div className="mt-8 w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 group-hover:from-amber-400 group-hover:to-yellow-400 text-black font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(245,158,11,0.5)] transition-all flex items-center justify-center gap-2">
+                  <span>Ver Contatos de Suporte</span>
+                  <ChevronRight className="size-4 group-hover:translate-x-1 transition-transform text-black" />
+                </div>
+              </button>
+
+            </div>
           </div>
+        )}
 
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-            Área do Cliente
-          </h1>
-
-          <p className="text-sm sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-semibold">
-            Escolha o que você precisa no momento:
-          </p>
-
-          {/* 2 BOTÕES PRINCIPAIS DA ÁREA DO CLIENTE: INSTALAÇÃO E SUPORTE */}
-          <div className="grid grid-cols-2 gap-3 max-w-md mx-auto pt-2">
-            <button
-              type="button"
-              onClick={() => setMainTab("instalacao")}
-              className={`flex flex-col sm:flex-row items-center justify-center gap-2 py-4 px-4 rounded-2xl font-black text-xs sm:text-sm uppercase tracking-wider transition-all cursor-pointer border shadow-lg ${
-                mainTab === "instalacao"
-                  ? "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white border-red-400 shadow-[0_0_25px_rgba(220,38,38,0.6)] scale-[1.02]"
-                  : "bg-white/[0.06] text-white/80 hover:text-white hover:bg-white/10 border-white/15"
-              }`}
-            >
-              <Tv className="size-5 sm:size-6 text-white" />
-              <span>Instalação</span>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => setMainTab("suporte")}
-              className={`flex flex-col sm:flex-row items-center justify-center gap-2 py-4 px-4 rounded-2xl font-black text-xs sm:text-sm uppercase tracking-wider transition-all cursor-pointer border shadow-lg ${
-                mainTab === "suporte"
-                  ? "bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-black border-yellow-300 shadow-[0_0_25px_rgba(245,158,11,0.6)] scale-[1.02]"
-                  : "bg-white/[0.06] text-white/80 hover:text-white hover:bg-white/10 border-white/15"
-              }`}
-            >
-              <Headphones className="size-5 sm:size-6" />
-              <span>Suporte</span>
-            </button>
-          </div>
-        </div>
-
-        {/* ==================== ABA 1: INSTALAÇÃO ==================== */}
-        {mainTab === "instalacao" && (
+        {/* ==================== VISTA 2: PÁGINA ESPECÍFICA DE INSTALAÇÃO ==================== */}
+        {currentView === "instalacao" && (
           <div className="space-y-6 animate-fade-in">
+            {/* BARRA DE VOLTAR */}
+            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <button
+                type="button"
+                onClick={() => setCurrentView("hub")}
+                className="inline-flex items-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 px-4 py-2 text-xs font-extrabold text-white transition-all cursor-pointer border border-white/15"
+              >
+                <ArrowLeft className="size-4" />
+                <span>Voltar para a Área do Cliente</span>
+              </button>
+
+              <div className="text-xs font-black text-red-500 uppercase tracking-widest hidden sm:block">
+                Tutorial de Instalação UniTV Pro
+              </div>
+            </div>
+
             {/* TUTORIAL DE INSTALAÇÃO VISUAL */}
             <div className="rounded-3xl border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden">
               <div className="p-2.5 sm:p-4 bg-white/[0.04] border-b border-white/15 backdrop-blur-md">
@@ -491,13 +562,13 @@ function JaSouClientePage() {
               </span>
             </div>
 
-            {/* CALLOUT PARA MUDAR PARA ABA SUPORTE */}
+            {/* CALLOUT PARA IR PARA PÁGINA DE SUPORTE */}
             <div className="rounded-2xl border border-white/15 bg-white/[0.04] p-5 text-center space-y-3 backdrop-blur-xl">
               <p className="text-xs sm:text-sm text-white/80 font-bold">
                 Precisa de ajuda durante a instalação ou com sua recarga?
               </p>
               <button
-                onClick={() => setMainTab("suporte")}
+                onClick={() => setCurrentView("suporte")}
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 hover:bg-amber-400 px-5 py-2.5 text-xs font-black text-black shadow-md transition-all hover:scale-105 cursor-pointer"
               >
                 <Headphones className="size-4" />
@@ -507,13 +578,29 @@ function JaSouClientePage() {
           </div>
         )}
 
-        {/* ==================== ABA 2: SUPORTE ==================== */}
-        {mainTab === "suporte" && (
+        {/* ==================== VISTA 3: PÁGINA ESPECÍFICA DE SUPORTE ==================== */}
+        {currentView === "suporte" && (
           <div className="space-y-6 animate-fade-in">
-            {/* CARD PRINCIPAL DE SUPORTE WHATSAPP */}
+            {/* BARRA DE VOLTAR */}
+            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <button
+                type="button"
+                onClick={() => setCurrentView("hub")}
+                className="inline-flex items-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 px-4 py-2 text-xs font-extrabold text-white transition-all cursor-pointer border border-white/15"
+              >
+                <ArrowLeft className="size-4" />
+                <span>Voltar para a Área do Cliente</span>
+              </button>
+
+              <div className="text-xs font-black text-amber-400 uppercase tracking-widest hidden sm:block">
+                Central de Suporte UniTV Pro
+              </div>
+            </div>
+
+            {/* CARD PRINCIPAL DE SUPORTE WHATSAPP COM OS 2 BOTÕES DE CONTATO */}
             <div className="rounded-3xl border border-amber-500/40 bg-gradient-to-b from-amber-950/40 via-zinc-900 to-zinc-950 p-6 sm:p-8 text-center space-y-5 backdrop-blur-2xl shadow-[0_15px_50px_rgba(245,158,11,0.2)]">
-              <div className="flex size-14 items-center justify-center rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-400 mx-auto shadow-inner">
-                <Headphones className="size-7" />
+              <div className="flex size-16 items-center justify-center rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-400 mx-auto shadow-inner animate-pulse">
+                <Headphones className="size-8" />
               </div>
 
               <div className="space-y-2">
@@ -525,8 +612,9 @@ function JaSouClientePage() {
                 </p>
               </div>
 
+              {/* OS 2 BOTÕES DE CONTATO DO WHATSAPP */}
               <div className="flex flex-col gap-3.5 max-w-lg mx-auto pt-2">
-                {/* BOTAO VENDEDOR (1º LUGAR) */}
+                {/* BOTÃO VENDEDOR (1º LUGAR) */}
                 <a
                   href={WHATSAPP_VENDEDOR_URL}
                   target="_blank"
@@ -537,7 +625,7 @@ function JaSouClientePage() {
                   <span>💬 QUERO MEU ACESSO, RECARGA OU REEMBOLSO</span>
                 </a>
 
-                {/* BOTAO INSTALACAO (2º LUGAR) */}
+                {/* BOTÃO INSTALAÇÃO (2º LUGAR) */}
                 <a
                   href={WHATSAPP_INSTALACAO_URL}
                   target="_blank"
@@ -568,7 +656,7 @@ function JaSouClientePage() {
                 {[
                   {
                     q: "Onde encontro meu código de recarga ou dados de acesso?",
-                    a: "Assim que seu pagamento é confirmedo, você recebe no seu e-mail cadastrado o código de recarga ou os dados de login. Caso não encontre, verifique a pasta de Spam ou fale no nosso WhatsApp de vendas.",
+                    a: "Assim que seu pagamento é confirmado, você recebe no seu e-mail cadastrado o código de recarga ou os dados de login. Caso não encontre, verifique a pasta de Spam ou fale no nosso WhatsApp de vendas.",
                   },
                   {
                     q: "Como renovar ou adicionar uma nova recarga?",
