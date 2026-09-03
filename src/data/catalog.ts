@@ -319,7 +319,9 @@ export const animes: Title[] = [
 ];
 
 export const doramas: Title[] = [
-  { title: "Rainha das Lágrimas", poster: "/7ZXLZ3KYL3IVvsSHBZaHjcNQzNU.jpg", year: "2024", tag: "🔥 #1 Em Alta" },
+  { title: "Um Grude de Amor (Our Sticky Love)", poster: "/tSZ4aFpTGc8Oj52SuzPUUZ7WKL0.jpg", year: "2026", tag: "⭐ #1 Em Alta 2026" },
+  { title: "Assustadoramente Apaixonados (Spooky in Love)", poster: "/acVOH8Pr5LEZ7WKZCbzwNuHVr9x.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
+  { title: "Rainha das Lágrimas", poster: "/7ZXLZ3KYL3IVvsSHBZaHjcNQzNU.jpg", year: "2024", tag: "🔥 Em Alta" },
   { title: "Pousando no Amor", poster: "/fgBNLPr6mC8pxuR79ENAJY4nBmj.jpg", year: "2019", tag: "🔥 Sucesso Absoluto" },
   { title: "Pretendente Surpresa", poster: "/iLh7L8ZuvgdxFaM9sImyv2iKYLe.jpg", year: "2022", tag: "🔥 Comédia Romântica" },
   { title: "Alquimia das Almas", poster: "/gvOZN1NlAoL8iz9ghpES1zWA3w3.jpg", year: "2022", tag: "🔥 Fantasia & Ação" },
