@@ -752,6 +752,16 @@ function InstalarPage() {
 
               <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full md:w-auto shrink-0">
                 <a
+                  href="https://wa.me/556182743140?text=Ol%C3%A1!%20Comprei%20minha%20recarga%2C%20quero%20meu%20acesso%2C%20tenho%20d%C3%BAvidas%20ou%20preciso%20de%20reembolso"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 px-4 py-2.5 text-xs font-black text-black transition-colors border border-yellow-300 shadow-md"
+                >
+                  <WhatsAppIcon className="size-3.5 fill-current text-black" />
+                  💬 QUERO MEU ACESSO, RECARGA OU REEMBOLSO
+                </a>
+
+                <a
                   href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20instala%C3%A7%C3%A3o%20do%20UniTV%20Pro"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -759,16 +769,6 @@ function InstalarPage() {
                 >
                   <WhatsAppIcon className="size-3.5 fill-current" />
                   🛠️ AJUDA COM A INSTALAÇÃO
-                </a>
-
-                <a
-                  href="https://wa.me/556182743140?text=Ol%C3%A1!%20Comprei%20minha%20recarga%20e%20quero%20meu%20acesso%2C%20tenho%20d%C3%BAvidas%20ou%20preciso%20de%20reembolso"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 px-4 py-2.5 text-xs font-black text-black transition-colors border border-yellow-300 shadow-md"
-                >
-                  <WhatsAppIcon className="size-3.5 fill-current text-black" />
-                  💬 QUERO MEU ACESSO, RECARGA E REEMBOLSO
                 </a>
               </div>
             </div>
