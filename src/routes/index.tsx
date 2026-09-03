@@ -132,27 +132,27 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
   if (!open || isPromoExpired()) return null;
   return (
     <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 backdrop-blur-md bg-black/80 transition-all duration-300" role="dialog" aria-modal="true">
-      <div className={`relative z-10 w-full max-w-md rounded-3xl border ${confirmed ? "border-emerald-500/40 bg-[#07140b] shadow-[0_0_60px_rgba(16,185,129,0.35)]" : "border-white/10 bg-[#0e0e0e] shadow-[0_40px_80px_rgba(0,0,0,0.95)]"} p-7 sm:p-9 text-center transition-all duration-500`}>
+      <div className="relative z-10 w-full max-w-md rounded-3xl border border-emerald-500/40 bg-[#07140b] shadow-[0_0_60px_rgba(16,185,129,0.35)] p-7 sm:p-9 text-center transition-all duration-500">
         <button onClick={close} aria-label="Fechar" className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white/60 hover:bg-white/20 hover:text-white transition-all">
           <X className="size-4" />
         </button>
 
         {!confirmed ? (
           <>
-            <div className="mx-auto mb-5 flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-red-600 to-red-900 shadow-[0_0_30px_rgba(220,38,38,0.6)]">
+            <div className="mx-auto mb-5 flex size-16 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 via-green-600 to-emerald-800 shadow-[0_0_30px_rgba(16,185,129,0.6)]">
               <Gift className="size-8 text-white" />
             </div>
-            <p className="mb-1 text-xs font-extrabold tracking-[0.2em] text-red-400 uppercase">Exclusivo {platformName} · CinePesadelo</p>
+            <p className="mb-1 text-xs font-extrabold tracking-[0.2em] text-emerald-400 uppercase">Exclusivo {platformName} · UniTV Pro</p>
             <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
-              🎁 Teste Grátis<br /><span className="text-red-400">por 3 dias!</span>
+              🎁 Teste Grátis<br /><span className="text-emerald-400">por 3 dias!</span>
             </h2>
-            <p className="text-sm text-white/70 leading-relaxed mb-6">
-              Você veio pelo {platformName} do <strong className="text-white">CinePesadelo</strong> e por isso está ganhando{" "}
-              <strong className="text-red-300">3 dias de teste grátis</strong> no UniTV Pro — todos os filmes, séries e o maior catálogo de terror.
+            <p className="text-sm text-white/80 leading-relaxed mb-6">
+              Você veio pelo {platformName} e por isso está ganhando{" "}
+              <strong className="text-emerald-300">3 dias de teste grátis</strong> no UniTV Pro — o maior catálogo de filmes, séries, animes, doramas e canais ao vivo.
             </p>
             <button
               onClick={handleClaim}
-              className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(220,38,38,0.7)] active:scale-95 mb-3 cursor-pointer"
+              className="flex w-full items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-emerald-500 via-green-600 to-emerald-600 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.5)] transition-all hover:scale-[1.02] hover:shadow-[0_0_35px_rgba(16,185,129,0.7)] active:scale-95 mb-3 cursor-pointer"
             >
               <Gift className="size-4 text-amber-300" />
               RESGATAR MEU TESTE GRÁTIS
@@ -173,7 +173,7 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               🎉 3 Dias Liberados!
             </h2>
             <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto">
-              Seu benefício exclusivo do {platformName} do <strong className="text-white">CinePesadelo</strong> foi ativado com sucesso! Navegue pelo site e clique em <strong className="text-white">"Resgatar Teste Grátis"</strong> a qualquer momento para instalar o aplicativo.
+              Seu benefício exclusivo do {platformName} foi ativado com sucesso! Navegue pelo site e clique em <strong className="text-white">"Resgatar Teste Grátis"</strong> a qualquer momento para instalar o aplicativo.
             </p>
             <button
               onClick={close}
@@ -192,17 +192,17 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
 export const Route = createFileRoute("/")(({
   head: () => ({
     meta: [
-      { title: "UniTV Pro — Filmes, Séries, Esportes e Terror em Alta Definição" },
+      { title: "UniTV Pro — Filmes, Séries, Animes, Doramas e Esportes em Alta Definição" },
       {
         name: "description",
         content:
-          "Todos os streamings reunidos: filmes recém-saídos do cinema, séries completas, animes, doramas, esportes ao vivo e o maior acervo de terror em Alta Definição.",
+          "Todos os streamings reunidos: filmes recém-saídos do cinema, séries completas, animes, doramas, esportes ao vivo e o maior catálogo de entretenimento em Alta Definição.",
       },
-      { property: "og:title", content: "UniTV Pro — Filmes, Séries, Esportes e Terror em Alta Definição" },
+      { property: "og:title", content: "UniTV Pro — Filmes, Séries, Animes, Doramas e Esportes em Alta Definição" },
       {
         property: "og:description",
         content:
-          "Filmes, séries de sucesso, esportes ao vivo e o maior catálogo de terror em Alta Definição.",
+          "Filmes, séries de sucesso, esportes ao vivo e o maior catálogo de streaming em Alta Definição.",
       },
     ],
   }),
