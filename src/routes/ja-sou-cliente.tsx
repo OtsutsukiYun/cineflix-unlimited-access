@@ -96,7 +96,7 @@ const linha3 = CATALOG_2026_POSTERS.slice(16, 24);
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file";
-const WHATSAPP_SUPPORT_URL = "https://wa.me/556182743140?text=Ol%C3%A1!%20J%C3%A1%20sou%20cliente%20e%20preciso%20de%20suporte%20com%20meu%20acesso%2Frecarga";
+const WHATSAPP_SUPPORT_URL = "https://wa.me/556182743140?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20recarga%2C%20d%C3%BAvidas%20sobre%20meu%20acesso%20ou%20reembolso";
 
 function DownloaderAppIcon({ className = "size-10" }: { className?: string }) {
   return (
@@ -514,7 +514,7 @@ function JaSouClientePage() {
               Precisa de ajuda com sua recarga ou acesso?
             </h2>
             <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed">
-              Nossa equipe de suporte está online no WhatsApp para te auxiliar na instalação ou envio de códigos em minutos.
+              Nossa equipe de suporte está online no WhatsApp para te auxiliar na instalação, recargas, dúvidas sobre seu acesso e solicitações de reembolso.
             </p>
           </div>
 
@@ -530,13 +530,13 @@ function JaSouClientePage() {
             </a>
 
             <a
-              href="https://wa.me/556182743140?text=Ol%C3%A1!%20J%C3%A1%20comprei%20minha%20recarga%20e%20quero%20meu%20acesso"
+              href="https://wa.me/556182743140?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20recarga%2C%20d%C3%BAvidas%20sobre%20meu%20acesso%20ou%20reembolso"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-400 px-6 py-3.5 text-xs sm:text-sm font-black text-black uppercase tracking-wider transition-all hover:scale-105 shadow-[0_0_30px_rgba(245,158,11,0.5)] border border-yellow-300 cursor-pointer w-full sm:w-auto"
             >
               <WhatsAppIcon className="size-5 text-black" />
-              <span>💬 COMPREI E QUERO MEU ACESSO</span>
+              <span>💬 RECARGA, DÚVIDAS E REEMBOLSO</span>
             </a>
           </div>
         </div>

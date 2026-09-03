@@ -1310,7 +1310,7 @@ function Index() {
           </div>
           <h3 className="text-xl sm:text-2xl font-black text-white mb-2">Precisa de ajuda ou suporte?</h3>
           <p className="text-xs sm:text-sm text-white/60 mb-6 max-w-md mx-auto leading-relaxed">
-            Fale com a nossa equipe no WhatsApp para tirar dúvidas ou solicitar suporte pós-compra! Atendimento 7 dias por semana.
+            Fale com a nossa equipe no WhatsApp para instalação, recargas, dúvidas sobre seu acesso ou reembolso! Atendimento 7 dias por semana.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -1325,13 +1325,13 @@ function Index() {
             </a>
 
             <a
-              href="https://wa.me/556182743140?text=Ol%C3%A1!%20J%C3%A1%20comprei%20minha%20recarga%20e%20quero%20meu%20acesso"
+              href="https://wa.me/556182743140?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20recarga%2C%20d%C3%BAvidas%20sobre%20meu%20acesso%20ou%20reembolso"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-400 px-6 py-3.5 text-xs sm:text-sm font-black text-black shadow-[0_0_25px_rgba(245,158,11,0.4)] transition-all hover:scale-[1.02]"
             >
               <WhatsAppIcon className="size-4.5 fill-current text-black" />
-              💬 COMPREI E QUERO MEU ACESSO
+              💬 RECARGA, DÚVIDAS E REEMBOLSO
             </a>
           </div>
 

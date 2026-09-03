@@ -762,13 +762,13 @@ function InstalarPage() {
                 </a>
 
                 <a
-                  href="https://wa.me/556182743140?text=Ol%C3%A1!%20J%C3%A1%20comprei%20minha%20recarga%20e%20quero%20meu%20acesso"
+                  href="https://wa.me/556182743140?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20recarga%2C%20d%C3%BAvidas%20sobre%20meu%20acesso%20ou%20reembolso"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 px-4 py-2.5 text-xs font-black text-black transition-colors border border-yellow-300 shadow-md"
                 >
                   <WhatsAppIcon className="size-3.5 fill-current text-black" />
-                  💬 COMPREI E QUERO MEU ACESSO
+                  💬 RECARGA, DÚVIDAS E REEMBOLSO
                 </a>
               </div>
             </div>
