@@ -844,7 +844,7 @@ function Index() {
               titleHover: "group-hover:text-emerald-200",
               t: "Esportes ao vivo",
               qtd: "Centenas de Canais de Esporte",
-              d: "Centenas de canais de esportes ao vivo (Brasileirão, Champions League, Premier League, UFC e F1 sem travamentos).",
+              d: "Centenas de canais de esportes ao vivo (Brasileirão, Champions League, UFC e F1 sem travamentos).",
               tabId: "series",
             },
             {
