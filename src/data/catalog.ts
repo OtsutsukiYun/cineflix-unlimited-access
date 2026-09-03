@@ -89,8 +89,8 @@ export const heroSlides: HeroSlide[] = [
     tagline: "Um jogo mortal de vingança e falsa morte onde ninguém é quem parece ser.",
     backdrop: "/lBWfbmUj9Jw0EM1OYtDXr0B5FPW.jpg",
     poster: "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg",
-    objectPosition: "center 20%",
-    objectPositionMobile: "50% 15%",
+    objectPosition: "40% 20%",
+    objectPositionMobile: "35% 15%",
     brightness: "brightness(1.0)",
   },
   {
