@@ -74,7 +74,7 @@ const CATALOG_2026_POSTERS = [
   "/1EwNyiiNFd863H4e8nWEzutnZD7.jpg", // Longlegs (Terror)
   "/xGvz7nlGQeePcVOpAzOcHsC7kRt.jpg", // Moana 2 (Animação)
   "/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg", // Nosferatu (Terror 2026)
-  "/wHQrLuXFGiXAYyRWiYTRlDZ8T5u.jpg", // Meu Malvado Favorito 4 (Animação)
+  "/s8BefU3RIJrfipTpsDtOiatlp8j.jpg", // Meu Malvado Favorito 4 (Animação)
   "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg", // Pecadores (Terror 2026)
   "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg", // Deadpool & Wolverine (Marvel)
   "/40nHGUfypLhlr7gJx8At1IbYkaK.jpg", // Invocação do Mal 4 (Terror 2026)
@@ -553,7 +553,7 @@ function InstalarPage() {
                 Faça parte da família <span className="text-red-500">UniTV Pro</span> hoje mesmo.
               </h2>
               <p className="text-xs sm:text-sm text-white/80 max-w-lg mx-auto leading-relaxed font-medium">
-                Planos pré-pagos, sem fidelidade, sem surpresas e de forma simples. Garantia de reembolso de 7 dias em todos os planos.
+                Planos pré-pagos e sem fidelidade com 7 dias de garantia de reembolso.
               </p>
             </div>
 

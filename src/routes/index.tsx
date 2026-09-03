@@ -1074,7 +1074,7 @@ function Index() {
             Faça parte da família <span className="text-red-500">UniTV Pro</span> hoje mesmo.
           </h2>
           <p className="text-sm sm:text-base text-white/70 max-w-xl mx-auto leading-relaxed font-medium">
-            Planos pré-pagos, sem fidelidade, sem surpresas e de forma simples. Garantia de reembolso de 7 dias em todos os planos.
+            Planos pré-pagos e sem fidelidade com 7 dias de garantia de reembolso.
           </p>
         </Reveal>
 
