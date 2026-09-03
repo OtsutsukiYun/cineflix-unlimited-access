@@ -547,10 +547,10 @@ function InstalarPage() {
               </span>
 
               <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
-                Gostou do teste? <span className="text-red-500">Escolha o plano ideal</span>
+                Faça parte da família <span className="text-red-500">UniTV Pro</span> hoje mesmo.
               </h2>
-              <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed font-medium">
-                Continue assistindo a todos os seus filmes, séries, esportes e canais ao vivo no UniTV Pro sem interrupções!
+              <p className="text-xs sm:text-sm text-white/80 max-w-lg mx-auto leading-relaxed font-medium">
+                Planos pré-pagos, sem fidelidade, sem surpresas e de forma simples. Garantia de reembolso de 7 dias em todos os planos.
               </p>
             </div>
 

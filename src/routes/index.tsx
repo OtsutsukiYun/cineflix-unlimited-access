@@ -1070,11 +1070,11 @@ function Index() {
           <span className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-950/30 px-4 py-2 text-xs font-extrabold tracking-wider text-red-400 uppercase mb-3">
             <Sparkles className="size-3.5 animate-spin" /> Ative Seu Acesso VIP
           </span>
-          <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white mb-2">
-            Escolha seu <span className="text-red-500">plano</span>
+          <h2 className="text-3xl font-black sm:text-5xl tracking-tight text-white mb-2 max-w-2xl mx-auto">
+            Faça parte da família <span className="text-red-500">UniTV Pro</span> hoje mesmo.
           </h2>
-          <p className="text-sm sm:text-base text-white/60 max-w-md mx-auto leading-relaxed">
-            Sem fidelidade. Cancele quando quiser. Garantia de reembolso de 7 dias em todos os planos.
+          <p className="text-sm sm:text-base text-white/70 max-w-xl mx-auto leading-relaxed font-medium">
+            Planos pré-pagos, sem fidelidade, sem surpresas e de forma simples. Garantia de reembolso de 7 dias em todos os planos.
           </p>
         </Reveal>
 
