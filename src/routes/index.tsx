@@ -369,6 +369,7 @@ const CATALOG_TABS = [
     items: [
       { title: "Frieren e a Jornada Para o Fim", poster: "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", year: "2023", tag: "🔥 #1 Em Alta" },
       { title: "Bleach: Thousand-Year Blood War", poster: "/tEaeXZZO7SEcDr6yRP31UrrxcX0.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
+      { title: "Liar Game", poster: "/w8yyntTxZlDlZ2TR8kb4C92pmcO.jpg", year: "2026", tag: "🔥 Anime 2026" },
       { title: "Journal with Witch", poster: "/g6lhU9a8YOWKJyfJ7J2aajzKm4k.jpg", year: "2026", tag: "🔥 Anime 2026" },
       { title: "Witch Hat Atelier", poster: "/78m1Tv3suHmUryTI9VNPwKLKjHZ.jpg", year: "2026", tag: "🔥 Anime 2026" },
       { title: "Chainsaw Man", poster: "/npdB6eFzizki0WaZ1OvKcJrWe97.jpg", year: "Série", tag: "🔥 Sucesso" },
