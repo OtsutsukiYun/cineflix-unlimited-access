@@ -1248,30 +1248,37 @@ function Index() {
 
         {/* Garantia e pagamento */}
         <SmoothCardReveal delay={200}>
-          <div className="glass mx-auto max-w-4xl rounded-2xl p-5 sm:p-7 border border-white/10 bg-black/60 mt-8 grid gap-5 sm:grid-cols-2 items-center">
-            <div className="flex items-center gap-4">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-red-500/10 border border-red-500/20 text-red-400">
-                <ShieldCheck className="size-6" />
+          <div className="glass mx-auto max-w-4xl rounded-2xl p-5 sm:p-7 border border-white/10 bg-black/60 mt-8 flex flex-col gap-4">
+            <div className="grid gap-5 sm:grid-cols-2 items-center">
+              <div className="flex items-center gap-4">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-full bg-red-500/10 border border-red-500/20 text-red-400">
+                  <ShieldCheck className="size-6" />
+                </div>
+                <div>
+                  <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-red-400">Garantia</p>
+                  <h4 className="font-bold text-white text-sm">7 Dias sem risco</h4>
+                  <p className="text-xs text-white/50">Satisfação garantida ou seu dinheiro de volta.</p>
+                </div>
               </div>
-              <div>
-                <p className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-red-400">Garantia</p>
-                <h4 className="font-bold text-white text-sm">7 Dias sem risco</h4>
-                <p className="text-xs text-white/50">Satisfação garantida ou seu dinheiro de volta.</p>
+              <div className="flex flex-col gap-2 sm:border-l sm:border-white/10 sm:pl-6">
+                <div className="flex items-center gap-1.5">
+                  <Lock className="size-3.5 text-green-400" />
+                  <span className="text-xs font-bold text-white">Pagamento 100% Seguro</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <span className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-white/70">
+                    <QrCode className="size-3" /> Pix Instantâneo
+                  </span>
+                  <span className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-white/70">
+                    <CreditCard className="size-3" /> Cartão de Crédito
+                  </span>
+                </div>
               </div>
             </div>
-            <div className="flex flex-col gap-2 sm:border-l sm:border-white/10 sm:pl-6">
-              <div className="flex items-center gap-1.5">
-                <Lock className="size-3.5 text-green-400" />
-                <span className="text-xs font-bold text-white">Pagamento 100% Seguro</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <span className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-white/70">
-                  <QrCode className="size-3" /> Pix Instantâneo
-                </span>
-                <span className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-2.5 py-1 text-[10px] font-bold text-white/70">
-                  <CreditCard className="size-3" /> Cartão de Crédito
-                </span>
-              </div>
+
+            <div className="pt-3 border-t border-white/10 flex items-center justify-center gap-2 text-center text-xs sm:text-sm font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 rounded-xl p-3.5 shadow-sm">
+              <CheckCircle2 className="size-4.5 shrink-0 text-emerald-400" />
+              <span>Assim que o pagamento for confirmado, você recebe no seu e-mail o código de recarga ou os dados de acesso à sua conta.</span>
             </div>
           </div>
         </SmoothCardReveal>

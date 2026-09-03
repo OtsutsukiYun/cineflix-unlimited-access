@@ -683,6 +683,11 @@ function InstalarPage() {
               </a>
             </div>
 
+            <div className="mt-4 pt-4 border-t border-white/10 flex items-center justify-center gap-2 text-center text-xs sm:text-sm font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 rounded-xl p-3.5 max-w-lg mx-auto shadow-sm">
+              <CheckCircle2 className="size-4.5 shrink-0 text-emerald-400" />
+              <span>Assim que o pagamento for confirmado, você recebe no seu e-mail o código de recarga ou os dados de acesso à sua conta.</span>
+            </div>
+
             <div className="flex items-center justify-center gap-4 text-[11px] font-bold text-white/70 pt-2 border-t border-white/15">
               <span className="flex items-center gap-1">
                 <ShieldCheck className="size-3.5 text-emerald-400" /> Garantia 7 dias
