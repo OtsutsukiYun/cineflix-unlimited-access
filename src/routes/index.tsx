@@ -616,20 +616,20 @@ function Index() {
 
           {/* BOTÕES PRINCIPAIS - HIERARQUIA VISUAL PERFEITA */}
           <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-[320px] sm:max-w-md mx-auto">
+            <SmoothLink
+              href={CTA_HREF}
+              className="btn-cta w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-[0_0_25px_rgba(220,38,38,0.5)] hover:shadow-[0_0_35px_rgba(220,38,38,0.7)] flex items-center justify-center gap-2 rounded-xl transition-all"
+            >
+              <Zap className="size-4 text-white fill-white" />
+              ASSINAR AGORA
+            </SmoothLink>
             <Link
               to="/instalar"
-              className="btn-cta w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-[0_0_25px_rgba(220,38,38,0.5)] hover:shadow-[0_0_35px_rgba(220,38,38,0.7)] flex items-center justify-center gap-2 rounded-xl transition-all"
+              className="btn-ghost w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-md border border-white/25 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2 rounded-xl"
             >
               <Sparkles className="size-4 text-white" />
               TESTAR GRÁTIS
             </Link>
-            <SmoothLink
-              href={CTA_HREF}
-              className="btn-ghost w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-md border border-white/25 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2 rounded-xl"
-            >
-              <Zap className="size-4 text-red-500 fill-red-500" />
-              ASSINAR
-            </SmoothLink>
           </div>
 
           <DOMIntegrityShield />
