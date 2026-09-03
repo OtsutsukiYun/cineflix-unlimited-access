@@ -382,13 +382,13 @@ const CATALOG_TABS = [
       { title: "Shiki", poster: "/zsWbTnNwNjqWvgZ9gqTcK9WLoWy.jpg", year: "2010", tag: "🔥 Terror & Vampiros" },
       { title: "Mirai Nikki", poster: "/rQScQD92q6CYAGL0DWQQNxjuVVh.jpg", year: "2011", tag: "🔥 Thriller Psicológico" },
       { title: "Demon Slayer", poster: "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", year: "Série", tag: "Em alta" },
-      { title: "Solo Leveling", poster: "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", year: "Série", tag: "Lançamento" },
+      { title: "Solo Leveling", poster: "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", year: "Série", tag: "Em alta" },
       { title: "One Piece", poster: "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", year: "Série", tag: "Clássico" },
     ],
   },
   {
     id: "doramas",
-    label: "🇰🇷 Doramas em Alta",
+    label: "💖 Doramas em Alta",
     items: doramas,
   },
   {
