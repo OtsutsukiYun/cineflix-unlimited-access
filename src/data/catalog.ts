@@ -127,6 +127,17 @@ export const heroSlides: HeroSlide[] = [
     brightness: "brightness(0.70)",
   },
   {
+    title: "O Segredo de Widow's Bay",
+    year: "2026",
+    genre: "Série de Terror / Mistério",
+    tagline: "Uma cidade amaldiçoada onde os segredos do passado voltam à tona.",
+    backdrop: "/6h23WrCtrojF92ZgU2MhWcyqBMy.jpg",
+    poster: "/vKq8XEJKxQTHd2Bm5zZMFPUrke7.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+    brightness: "brightness(1.0)",
+  },
+  {
     title: "Passageiro do Mal",
     year: "2026",
     genre: "Terror / Suspense",
@@ -178,17 +189,6 @@ export const heroSlides: HeroSlide[] = [
     poster: "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg",
     objectPosition: "center 20%",
     objectPositionMobile: "50% 15%",
-  },
-  {
-    title: "O Segredo de Widow's Bay",
-    year: "2026",
-    genre: "Série de Terror / Mistério",
-    tagline: "Uma cidade amaldiçoada onde os segredos do passado voltam à tona.",
-    backdrop: "/6h23WrCtrojF92ZgU2MhWcyqBMy.jpg",
-    poster: "/vKq8XEJKxQTHd2Bm5zZMFPUrke7.jpg",
-    objectPosition: "center 20%",
-    objectPositionMobile: "50% 15%",
-    brightness: "brightness(1.0)",
   },
 ];
 
