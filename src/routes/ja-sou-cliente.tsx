@@ -230,15 +230,14 @@ function JaSouClientePage() {
           </nav>
 
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            <a
-              href={WHATSAPP_VENDEDOR_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => setCurrentView("suporte")}
               className="inline-flex px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs font-black tracking-wide uppercase rounded-full border border-amber-400/50 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black transition-all items-center gap-1.5 backdrop-blur-md cursor-pointer shadow-[0_0_15px_rgba(245,158,11,0.5)]"
             >
               <WhatsAppIcon className="size-3.5 fill-current text-black" />
-              <span>WhatsApp</span>
-            </a>
+              <span>Suporte WhatsApp</span>
+            </button>
           </div>
         </div>
       </header>
