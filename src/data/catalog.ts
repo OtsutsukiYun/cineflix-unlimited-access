@@ -89,8 +89,8 @@ export const heroSlides: HeroSlide[] = [
     tagline: "Wile E. Coyote decide processar a Acme Corporation após anos de falhas nas suas invenções.",
     backdrop: "/7GOW6jod9lLurW5utokAatxg7ql.jpg",
     poster: "/vhv7lBWYM0DUuNU2a0V7Rhq21dD.jpg",
-    objectPosition: "center 20%",
-    objectPositionMobile: "50% 15%",
+    objectPosition: "center 25%",
+    objectPositionMobile: "30% 20%",
     brightness: "brightness(1.0)",
   },
   {
