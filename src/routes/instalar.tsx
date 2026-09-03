@@ -634,10 +634,10 @@ function InstalarPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left max-w-lg mx-auto pt-3 pb-1 border-t border-white/15">
               {[
                 planTab === "anual"
-                  ? "2 Telas simultâneas (Smart TV Android, TV Box, Celular, Tablet ou Projetor Android)"
-                  : "1 Tela simultânea (Smart TV Android, TV Box, Celular, Tablet ou Projetor Android)",
+                  ? "2 Telas simultâneas"
+                  : "1 Tela simultânea",
                 "Milhares de Filmes & Séries",
-                "Lançamentos semanais inéditos de terror & cinema",
+                "Lançamentos semanais e produções inéditas",
                 "Canais Ao Vivo & Esportes sem travar (4K & Full HD)",
                 "Animes, Doramas & Novelas Turcas atualizadas",
                 "Programação Infantil & Desenhos Dublados",
