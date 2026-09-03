@@ -326,6 +326,7 @@ export const doramas: Title[] = [
   { title: "O Amor Pode Ser Traduzido?", poster: "/zgUh4cgalSzBjbsT5P0qmU7Rjzk.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "Namorado por Assinatura", poster: "/1WSuH8eK44KDavNggmWhKS5zUCF.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "My Royal Nemesis", poster: "/rYLQbyIvbEd0lF84iXrx7CbPcBB.jpg", year: "2026", tag: "🔥 Dorama 2026" },
+  { title: "Revenant (O Diabo)", poster: "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", year: "2023", tag: "🔥 Terror & Mistério" },
   { title: "Agente Kim: Reativado", poster: "/mxa7YxVln3Rwnd2Va82PoclTznj.jpg", year: "2026", tag: "🔥 Dorama 2026" },
   { title: "A Leste do Palácio", poster: "/yfYohBszGqoAW8oM0qydOtJ4kPh.jpg", year: "2026", tag: "🔥 Dorama 2026" },
   { title: "The Art of Sarah", poster: "/8hZqZB4DAC1Ebzbk80zc0H80SNa.jpg", year: "2026", tag: "🔥 Dorama 2026" },
@@ -336,7 +337,6 @@ export const doramas: Title[] = [
   { title: "A Lição (The Glory)", poster: "/bnTXjwOwdUz8MKFyQCNf0hG4fdL.jpg", year: "2022", tag: "🔥 Drama & Vingança" },
   { title: "Tudo Bem Não Ser Normal", poster: "/8yLqWlFSLMucnotlXFC8SHkfNTj.jpg", year: "2020", tag: "🔥 Romance Emocionante" },
   { title: "Vincenzo", poster: "/opMEH9JLmkYumUTJib321REvezr.jpg", year: "2021", tag: "🔥 Ação & Mafioso" },
-  { title: "Revenant (O Diabo)", poster: "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", year: "2023", tag: "🔥 Terror & Mistério" },
 ];
 
 export const novelasTurcas: Title[] = [
