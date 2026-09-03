@@ -318,6 +318,17 @@ export const animes: Title[] = [
   { title: "Death Note", poster: "/tCZFfYTIwrR7n94J6G14Y4hAFU6.jpg", year: "Série" },
 ];
 
+export const doramas: Title[] = [
+  { title: "Rainha das Lágrimas", poster: "/7ZXLZ3KYL3IVvsSHBZaHjcNQzNU.jpg", year: "2024", tag: "🔥 #1 Em Alta" },
+  { title: "Pousando no Amor", poster: "/fgBNLPr6mC8pxuR79ENAJY4nBmj.jpg", year: "2019", tag: "🔥 Sucesso Absoluto" },
+  { title: "Pretendente Surpresa", poster: "/iLh7L8ZuvgdxFaM9sImyv2iKYLe.jpg", year: "2022", tag: "🔥 Comédia Romântica" },
+  { title: "Alquimia das Almas", poster: "/gvOZN1NlAoL8iz9ghpES1zWA3w3.jpg", year: "2022", tag: "🔥 Fantasia & Ação" },
+  { title: "A Lição (The Glory)", poster: "/uUM4LVlPgIrww07OoEKrGWlS1Ej.jpg", year: "2022", tag: "🔥 Drama & Vingança" },
+  { title: "Tudo Bem Não Ser Normal", poster: "/8XSJfLeImX8NszDUFnK1lbseCi8.jpg", year: "2020", tag: "🔥 Romance Emocionante" },
+  { title: "Vincenzo", poster: "/qbkSS1cTjT4DzIwD44bdhTuYgdT.jpg", year: "2021", tag: "🔥 Ação & Mafioso" },
+  { title: "Revenant (O Diabo)", poster: "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", year: "2023", tag: "🔥 Terror & Mistério" },
+];
+
 export const novelasTurcas: Title[] = [
   { title: "Será Isso Amor? (Sen Çal Kapımı)", poster: "/cccW8YiPphlbcbOzj84imtDSPZN.jpg", year: "2020", tag: "🔥 #1 Fenômeno" },
   { title: "Longe Demais (Uzak Şehir)", poster: "/vPvxzUFy4CYEAThOQim8wuyCqHt.jpg", year: "2024", tag: "🔥 Em Alta 2026" },

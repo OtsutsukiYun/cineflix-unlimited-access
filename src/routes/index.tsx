@@ -48,6 +48,7 @@ import { Torii, WhatsAppIcon } from "@/components/icons";
 import { SocialProof } from "@/components/SocialProof";
 import {
   animes,
+  doramas,
   heroSlides,
   img,
   novelasTurcas,
@@ -382,6 +383,11 @@ const CATALOG_TABS = [
       { title: "Solo Leveling", poster: "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", year: "Série", tag: "Lançamento" },
       { title: "One Piece", poster: "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", year: "Série", tag: "Clássico" },
     ],
+  },
+  {
+    id: "doramas",
+    label: "🇰🇷 Doramas em Alta",
+    items: doramas,
   },
   {
     id: "novelas-turcas",
