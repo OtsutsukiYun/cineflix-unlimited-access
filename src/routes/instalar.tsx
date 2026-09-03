@@ -642,7 +642,7 @@ function InstalarPage() {
                 "Animes, Doramas & Novelas Turcas atualizadas",
                 "Programação Infantil & Desenhos Dublados",
                 "Guia de Programação EPG & Replay de 7 dias",
-                "Suporte VIP via WhatsApp",
+                "Suporte 7 dias por semana via WhatsApp",
                 "Garantia incondicional de reembolso por 7 dias",
                 "Sem fidelidade ou multa (Cancele quando quiser)",
               ].map((f, idx) => (
@@ -715,7 +715,7 @@ function InstalarPage() {
                 { icon: Lock, title: "SSL 256-bit", desc: "Ambiente Criptografado", color: "text-emerald-400" },
                 { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
                 { icon: Zap, title: "Envio Imediato", desc: "Envio no E-mail", color: "text-amber-400" },
-                { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão 12x", color: "text-purple-400" },
+                { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão", color: "text-purple-400" },
                 { icon: Award, title: "+30.000 Clientes", desc: "Assinantes Ativos", color: "text-rose-400" },
                 { icon: CheckCircle2, title: "Sem Fidelidade", desc: "Cancele quando quiser", color: "text-teal-400" },
               ].map((c) => (

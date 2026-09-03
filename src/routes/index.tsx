@@ -1140,7 +1140,7 @@ function Index() {
                 "365 dias de acesso total liberado",
                 "Canais Ao Vivo & Esportes em Full HD e 4K",
                 "Compatível com Smart TV Android, TV Box, Stick, Celular, Tablet e Projetor",
-                "Suporte VIP 7 dias por semana via WhatsApp",
+                "Suporte 7 dias por semana via WhatsApp",
                 "Garantia de reembolso de 7 dias",
               ],
             },
@@ -1349,7 +1349,7 @@ function Index() {
                 { icon: Lock, title: "SSL 256-bit", desc: "Ambiente Criptografado", color: "text-emerald-400" },
                 { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
                 { icon: Zap, title: "Envio Imediato", desc: "Envio no E-mail", color: "text-amber-400" },
-                { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão 12x", color: "text-purple-400" },
+                { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão", color: "text-purple-400" },
                 { icon: Award, title: "+30.000 Clientes", desc: "Assinantes Ativos", color: "text-rose-400" },
                 { icon: CheckCircle2, title: "Sem Fidelidade", desc: "Cancele quando quiser", color: "text-teal-400" },
               ].map((c) => (
