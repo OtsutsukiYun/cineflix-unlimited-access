@@ -267,39 +267,39 @@ function JaSouClientePage() {
               <button
                 type="button"
                 onClick={() => setCurrentView("instalacao")}
-                className="group relative flex flex-col items-center justify-between p-8 sm:p-10 rounded-3xl border border-red-500/40 bg-gradient-to-b from-red-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-500 hover:scale-[1.04] hover:border-red-400 hover:shadow-[0_0_60px_rgba(220,38,38,0.5)] cursor-pointer text-center overflow-hidden"
+                className="group relative flex flex-col items-center justify-between p-5 sm:p-6 rounded-2xl border border-red-500/40 bg-gradient-to-b from-red-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-300 hover:scale-[1.03] hover:border-red-400 hover:shadow-[0_0_50px_rgba(220,38,38,0.5)] cursor-pointer text-center overflow-hidden"
               >
                 {/* Efeito de Luz 3D de Fundo */}
-                <div className="absolute -top-20 -left-20 size-44 rounded-full bg-red-600/30 blur-3xl group-hover:bg-red-500/50 transition-all duration-500" />
+                <div className="absolute -top-16 -left-16 size-36 rounded-full bg-red-600/30 blur-2xl group-hover:bg-red-500/50 transition-all duration-300" />
 
                 {/* ÍCONE 3D ANIMADO DE INSTALAÇÃO */}
-                <div className="relative my-4 flex size-28 items-center justify-center">
+                <div className="relative my-2 flex size-20 items-center justify-center">
                   {/* Aura 3D pulsante */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-red-600 to-rose-500 blur-xl opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-red-600 to-rose-500 blur-lg opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
                   
                   {/* Container 3D em Camadas de Vidro */}
-                  <div className="relative size-24 rounded-2xl bg-gradient-to-br from-red-500 via-rose-600 to-red-900 p-0.5 shadow-[0_15px_35px_rgba(220,38,38,0.6)] transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
-                    <div className="flex size-full items-center justify-center rounded-2xl bg-black/70 backdrop-blur-md border border-white/30">
-                      <Tv className="size-12 text-white drop-shadow-[0_4px_12px_rgba(255,255,255,0.6)] animate-bounce" />
+                  <div className="relative size-16 rounded-xl bg-gradient-to-br from-red-500 via-rose-600 to-red-900 p-0.5 shadow-lg transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
+                    <div className="flex size-full items-center justify-center rounded-xl bg-black/70 backdrop-blur-md border border-white/30">
+                      <Tv className="size-8 text-white drop-shadow-md animate-bounce" />
                     </div>
                   </div>
                   
                   {/* Badge 3D Flutuante */}
-                  <div className="absolute -bottom-2 -right-2 flex size-9 items-center justify-center rounded-xl bg-emerald-500 text-white shadow-lg border border-white/50 font-mono text-xs font-black animate-pulse">
-                    <Download className="size-5" />
+                  <div className="absolute -bottom-1 -right-1 flex size-7 items-center justify-center rounded-lg bg-emerald-500 text-white shadow-md border border-white/50 animate-pulse">
+                    <Download className="size-4" />
                   </div>
                 </div>
 
-                <div className="space-y-2 mt-4 z-10">
-                  <h2 className="text-2xl sm:text-3xl font-black text-white group-hover:text-red-400 transition-colors uppercase tracking-wider drop-shadow-md">
+                <div className="space-y-1.5 mt-2 z-10">
+                  <h2 className="text-3xl sm:text-4xl font-black text-white group-hover:text-red-400 transition-colors uppercase tracking-wider drop-shadow-md">
                     Instalação
                   </h2>
-                  <p className="text-xs sm:text-sm text-white/70 font-medium max-w-xs leading-relaxed">
-                    Vídeo tutorial em 2min, códigos do Downloader e guia de instalação para TV e Celular.
+                  <p className="text-sm sm:text-base text-white/90 font-extrabold max-w-xs leading-snug">
+                    Vídeo tutorial em 2 minutos e códigos para instalar na TV ou Celular.
                   </p>
                 </div>
 
-                <div className="mt-8 w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-red-600 to-rose-600 group-hover:from-red-500 group-hover:to-rose-500 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all flex items-center justify-center gap-2">
+                <div className="mt-5 w-full py-3 px-5 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 group-hover:from-red-500 group-hover:to-rose-500 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2">
                   <span>Acessar Tutorial</span>
                   <ChevronRight className="size-4 group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -309,39 +309,39 @@ function JaSouClientePage() {
               <button
                 type="button"
                 onClick={() => setCurrentView("suporte")}
-                className="group relative flex flex-col items-center justify-between p-8 sm:p-10 rounded-3xl border border-amber-500/40 bg-gradient-to-b from-amber-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-500 hover:scale-[1.04] hover:border-amber-300 hover:shadow-[0_0_60px_rgba(245,158,11,0.5)] cursor-pointer text-center overflow-hidden"
+                className="group relative flex flex-col items-center justify-between p-5 sm:p-6 rounded-2xl border border-amber-500/40 bg-gradient-to-b from-amber-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-300 hover:scale-[1.03] hover:border-amber-300 hover:shadow-[0_0_50px_rgba(245,158,11,0.5)] cursor-pointer text-center overflow-hidden"
               >
                 {/* Efeito de Luz 3D de Fundo */}
-                <div className="absolute -top-20 -right-20 size-44 rounded-full bg-amber-500/30 blur-3xl group-hover:bg-amber-400/50 transition-all duration-500" />
+                <div className="absolute -top-16 -right-16 size-36 rounded-full bg-amber-500/30 blur-2xl group-hover:bg-amber-400/50 transition-all duration-300" />
 
                 {/* ÍCONE 3D ANIMADO DE SUPORTE */}
-                <div className="relative my-4 flex size-28 items-center justify-center">
+                <div className="relative my-2 flex size-20 items-center justify-center">
                   {/* Aura 3D pulsante */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-amber-500 to-yellow-400 blur-xl opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-400 blur-lg opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
                   
                   {/* Container 3D em Camadas de Vidro */}
-                  <div className="relative size-24 rounded-2xl bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 p-0.5 shadow-[0_15px_35px_rgba(245,158,11,0.6)] transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
-                    <div className="flex size-full items-center justify-center rounded-2xl bg-black/70 backdrop-blur-md border border-white/30">
-                      <Headphones className="size-12 text-amber-400 drop-shadow-[0_4px_12px_rgba(245,158,11,0.8)] animate-pulse" />
+                  <div className="relative size-16 rounded-xl bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 p-0.5 shadow-lg transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-110">
+                    <div className="flex size-full items-center justify-center rounded-xl bg-black/70 backdrop-blur-md border border-white/30">
+                      <Headphones className="size-8 text-amber-400 drop-shadow-md animate-pulse" />
                     </div>
                   </div>
                   
                   {/* Badge 3D Flutuante WhatsApp */}
-                  <div className="absolute -bottom-2 -right-2 flex size-9 items-center justify-center rounded-xl bg-emerald-500 text-white shadow-lg border border-white/50 font-mono text-xs font-black">
-                    <WhatsAppIcon className="size-5 fill-current" />
+                  <div className="absolute -bottom-1 -right-1 flex size-7 items-center justify-center rounded-lg bg-emerald-500 text-white shadow-md border border-white/50">
+                    <WhatsAppIcon className="size-4 fill-current" />
                   </div>
                 </div>
 
-                <div className="space-y-2 mt-4 z-10">
-                  <h2 className="text-2xl sm:text-3xl font-black text-white group-hover:text-amber-400 transition-colors uppercase tracking-wider drop-shadow-md">
+                <div className="space-y-1.5 mt-2 z-10">
+                  <h2 className="text-3xl sm:text-4xl font-black text-white group-hover:text-amber-400 transition-colors uppercase tracking-wider drop-shadow-md">
                     Suporte
                   </h2>
-                  <p className="text-xs sm:text-sm text-white/70 font-medium max-w-xs leading-relaxed">
-                    Contatos do WhatsApp para recargas, envio de acessos, tirar dúvidas ou solicitar reembolso.
+                  <p className="text-sm sm:text-base text-white/90 font-extrabold max-w-xs leading-snug">
+                    WhatsApp para recargas, dados de acesso, dúvidas e reembolso.
                   </p>
                 </div>
 
-                <div className="mt-8 w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 group-hover:from-amber-400 group-hover:to-yellow-400 text-black font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(245,158,11,0.5)] transition-all flex items-center justify-center gap-2">
+                <div className="mt-5 w-full py-3 px-5 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 group-hover:from-amber-400 group-hover:to-yellow-400 text-black font-black text-xs sm:text-sm uppercase tracking-wider shadow-md transition-all flex items-center justify-center gap-2">
                   <span>Ver Contatos de Suporte</span>
                   <ChevronRight className="size-4 group-hover:translate-x-1 transition-transform text-black" />
                 </div>
