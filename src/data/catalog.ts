@@ -83,6 +83,17 @@ export const heroSlides: HeroSlide[] = [
     brightness: "brightness(1.0)",
   },
   {
+    title: "Just Play Dead",
+    year: "2026",
+    genre: "Suspense / Policial",
+    tagline: "Um jogo mortal de vingança e falsa morte onde ninguém é quem parece ser.",
+    backdrop: "/lBWfbmUj9Jw0EM1OYtDXr0B5FPW.jpg",
+    poster: "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg",
+    objectPosition: "center 20%",
+    objectPositionMobile: "50% 15%",
+    brightness: "brightness(1.0)",
+  },
+  {
     title: "Evil Dead Burn: A Morte do Demônio",
     year: "2026",
     genre: "Terror / Gore",
@@ -171,6 +182,7 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
+  { title: "Just Play Dead", poster: "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "Código Vingança", poster: "/gVZgjKIsXZOT3cNZm5PJZBtQRaG.jpg", year: "2026", tag: "🔥 Ação 2026", rating: "5.0" },
   { title: "Ponto Sem Retorno", poster: "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
   { title: "Coyote vs. Acme", poster: "/fqnp3doSeUFLGUFIolHVPA41O4E.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
@@ -251,6 +263,7 @@ export const terror: Title[] = [
 ];
 
 export const top10Hoje: Title[] = [
+  { title: "Just Play Dead", poster: "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", year: "2026", tag: "🔥 Top Em Alta", rating: "5.0" },
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
   { title: "A Morte do Demônio: Em Chamas", poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
   { title: "Todo Mundo em Pânico 6", poster: "/y9yJd2qIIwhZcllHeKHsz5eRvNr.jpg", year: "2026", tag: "🔥 Top 3", rating: "5.0" },
@@ -386,6 +399,7 @@ export const infantil: Title[] = [
 
 
 export const proximosLancamentos: Title[] = [
+  { title: "Just Play Dead", poster: "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "A Queda 2: No Limite", poster: "/p73G56bJGPa5y52cyqWscHR6NnN.jpg", year: "2026", tag: "🔥 Em Breve" },
   { title: "Sobrenatural: Agora Entre Nós", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Em Breve" },
   { title: "Ponto Sem Retorno", poster: "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", year: "2026", tag: "🔥 Em Breve" },
