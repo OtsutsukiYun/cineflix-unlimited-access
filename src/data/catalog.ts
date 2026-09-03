@@ -322,7 +322,7 @@ export const doramas: Title[] = [
   { title: "Um Grude de Amor (Our Sticky Love)", poster: "/tSZ4aFpTGc8Oj52SuzPUUZ7WKL0.jpg", year: "2026", tag: "⭐ #1 Em Alta 2026" },
   { title: "Assustadoramente Apaixonados (Spooky in Love)", poster: "/acVOH8Pr5LEZ7WKZCbzwNuHVr9x.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "Rainha das Lágrimas", poster: "/7ZXLZ3KYL3IVvsSHBZaHjcNQzNU.jpg", year: "2024", tag: "🔥 Em Alta" },
-  { title: "Aprendendo a Lição", poster: "/nZDeIfKCzp0qhu4N3HxrcKWN59J.jpg", year: "2025", tag: "🔥 Lançamento 2025" },
+  { title: "Aprendendo a Lição", poster: "/fMECSPrTmRClSViMsXFYmiYIcWP.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "O Amor Pode Ser Traduzido?", poster: "/zgUh4cgalSzBjbsT5P0qmU7Rjzk.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "Namorado por Assinatura", poster: "/1WSuH8eK44KDavNggmWhKS5zUCF.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "My Royal Nemesis", poster: "/rYLQbyIvbEd0lF84iXrx7CbPcBB.jpg", year: "2026", tag: "🔥 Dorama 2026" },
