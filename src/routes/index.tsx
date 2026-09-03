@@ -282,8 +282,7 @@ const CATALOG_TABS = [
       { title: "Silo", poster: "/cxB16Cc7xZuqWgNDo7QlqLMlinu.jpg", year: "Série", tag: "Em alta" },
       { title: "Toy Story 5", poster: "/sfQtVlIHljToOwYjhe21KPGzZWK.jpg", year: "2026", tag: "🔥 Lançamento" },
       { title: "Minions & Monstros", poster: "/s8BefU3RIJrfipTpsDtOiatlp8j.jpg", year: "2026", tag: "🔥 Animação 2026" },
-      { title: "LEGO Star Wars", poster: "/r3N1371qX0a13.jpg", year: "2026", tag: "🔥 Animação 2026" },
-      { title: "LEGO Star Wars: The Mandalorian", poster: "/r3N1371qX0a13.jpg", year: "2026", tag: "🔥 Animação 2026" },
+      { title: "LEGO Star Wars: The Mandalorian", poster: "/x3HEvYXWOW6WHqsHmg2MUVy3SLm.jpg", year: "2026", tag: "🔥 Animação 2026" },
       { title: "Hokum", poster: "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "A Maldição da Múmia", poster: "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Devoradores de Estrelas", poster: "/yihdXomYb5kTeSivtFndMy5iDmf.jpg", year: "2026", tag: "🔥 Sci-Fi 2026" },
@@ -295,7 +294,6 @@ const CATALOG_TABS = [
     id: "proximos",
     label: "🚀 Próximos Lançamentos (2026)",
     items: [
-      { title: "LEGO Star Wars: The Mandalorian", poster: "/r3N1371qX0a13.jpg", year: "2026", tag: "🔥 Estreia Set/2026" },
       { title: "A Queda 2: No Limite", poster: "/v28T5FhumB0gR9Yv9Y6372chv2x.jpg", year: "2026", tag: "🔥 Estreia Set/2026" },
       { title: "Sobrenatural: Agora Entre Nós", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
       { title: "Ponto Sem Retorno", poster: "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
