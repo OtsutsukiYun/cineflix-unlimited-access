@@ -248,20 +248,20 @@ function JaSouClientePage() {
 
         {/* ==================== VISTA 1: HUB PRINCIPAL (APENAS OS 2 BOTÕES 3D) ==================== */}
         {currentView === "hub" && (
-          <div className="space-y-8 animate-fade-in text-center py-4">
-            <div className="space-y-3">
-              <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-3.5 py-1 text-[11px] font-black tracking-wider text-emerald-400 uppercase backdrop-blur-xl shadow-md">
+          <div className="space-y-4 animate-fade-in text-center py-1">
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-3 py-0.5 text-[11px] font-black tracking-wider text-emerald-400 uppercase backdrop-blur-xl shadow-md">
                 <Sparkles className="size-3 text-emerald-400 animate-pulse" />
                 <span>Área do Cliente UniTV Pro</span>
               </div>
 
-              <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
+              <h1 className="text-2xl sm:text-4xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                 O que você precisa no momento?
               </h1>
             </div>
 
             {/* OS 2 BOTÕES 3D DE ALTAS ANIMAÇÕES */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto pt-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-3xl mx-auto">
               
               {/* BOTÃO 1 3D: INSTALAÇÃO */}
               <button
