@@ -585,10 +585,10 @@ function Index() {
           <div className="flex items-center gap-2">
             <Link
               to="/ja-sou-cliente"
-              className="hidden sm:inline-flex px-3 py-1.5 text-xs font-black tracking-wider uppercase rounded-full border border-emerald-500/40 bg-emerald-950/60 text-emerald-400 hover:bg-emerald-900/70 transition-all items-center gap-1.5 backdrop-blur-md"
+              className="px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-black tracking-wider uppercase rounded-full border border-emerald-500/40 bg-emerald-950/70 hover:bg-emerald-900 text-emerald-400 hover:text-emerald-300 transition-all flex items-center gap-1.5 backdrop-blur-md shadow-[0_0_15px_rgba(16,185,129,0.4)] hover:scale-105 cursor-pointer"
             >
-              <CheckCircle2 className="size-3.5 text-emerald-400" />
-              <span>Já sou cliente</span>
+              <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0" />
+              <span>JÁ SOU CLIENTE</span>
             </Link>
             <SmoothLink href={CTA_HREF} className="btn-cta px-4 sm:px-5 py-2 text-xs font-black tracking-wider shadow-md hover:scale-105 transition-all">
               VER PLANOS
@@ -649,7 +649,7 @@ function Index() {
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/40 bg-emerald-950/60 hover:bg-emerald-900/70 text-emerald-400 hover:text-emerald-300 text-xs sm:text-sm font-black tracking-wider uppercase backdrop-blur-xl transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:scale-105"
             >
               <CheckCircle2 className="size-4 text-emerald-400" />
-              <span>JÁ SOU CLIENTE (Acessar Tutorial)</span>
+              <span>JÁ SOU CLIENTE</span>
             </Link>
           </div>
 
