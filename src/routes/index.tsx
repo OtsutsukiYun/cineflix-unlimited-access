@@ -564,12 +564,12 @@ function Index() {
 
       {/* NAVBAR */}
       <header className="fixed inset-x-0 top-0 z-50 [transform:translateZ(0)]">
-        <div className="glass mx-auto mt-3.5 flex w-[94%] max-w-6xl items-center justify-between rounded-full px-4 sm:px-6 py-2.5 sm:py-3 border border-white/15 bg-black/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-          <SmoothLink href="#" className="flex items-center gap-2">
-            <span className="flex size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-600 to-red-800 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)]">
-              <Play className="size-4 fill-current ml-0.5" />
+        <div className="glass mx-auto mt-3.5 flex w-[94%] max-w-6xl items-center justify-between gap-2 rounded-full px-3 sm:px-6 py-2 sm:py-3 border border-white/15 bg-black/60 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+          <SmoothLink href="#" className="flex items-center gap-1.5 sm:gap-2 shrink-0 whitespace-nowrap">
+            <span className="flex size-7.5 sm:size-9 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-600 to-red-800 text-white shadow-[0_0_15px_rgba(220,38,38,0.5)] shrink-0">
+              <Play className="size-3.5 sm:size-4 fill-current ml-0.5" />
             </span>
-            <span className="font-display text-xl font-extrabold tracking-tight text-white">
+            <span className="font-display text-base sm:text-xl font-extrabold tracking-tight text-white whitespace-nowrap">
               UniTV<span className="text-red-500"> Pro</span>
             </span>
           </SmoothLink>
@@ -582,15 +582,15 @@ function Index() {
             <SmoothLink href="#suporte" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</SmoothLink>
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <Link
               to="/ja-sou-cliente"
-              className="px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-black tracking-wider uppercase rounded-full border border-emerald-500/40 bg-emerald-950/70 hover:bg-emerald-900 text-emerald-400 hover:text-emerald-300 transition-all flex items-center gap-1.5 backdrop-blur-md shadow-[0_0_15px_rgba(16,185,129,0.4)] hover:scale-105 cursor-pointer"
+              className="px-2.5 sm:px-3.5 py-1.5 text-[10px] sm:text-xs font-black tracking-wider uppercase rounded-full border border-emerald-500/40 bg-emerald-950/80 hover:bg-emerald-900 text-emerald-400 hover:text-emerald-300 transition-all flex items-center gap-1 sm:gap-1.5 backdrop-blur-md shadow-[0_0_12px_rgba(16,185,129,0.3)] hover:scale-105 shrink-0 whitespace-nowrap cursor-pointer"
             >
-              <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0" />
-              <span>JÁ SOU CLIENTE</span>
+              <CheckCircle2 className="size-3 sm:size-3.5 text-emerald-400 shrink-0" />
+              <span>Já Sou Cliente</span>
             </Link>
-            <SmoothLink href={CTA_HREF} className="btn-cta px-4 sm:px-5 py-2 text-xs font-black tracking-wider shadow-md hover:scale-105 transition-all">
+            <SmoothLink href={CTA_HREF} className="btn-cta px-3 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-xs font-black tracking-wider shadow-md hover:scale-105 transition-all shrink-0 whitespace-nowrap">
               VER PLANOS
             </SmoothLink>
           </div>
@@ -625,31 +625,20 @@ function Index() {
           </p>
 
           {/* BOTÕES PRINCIPAIS - HIERARQUIA VISUAL PERFEITA */}
-          <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-[320px] sm:max-w-md mx-auto">
+          <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-2.5 w-full max-w-[320px] sm:max-w-md mx-auto">
             <SmoothLink
               href={CTA_HREF}
-              className="btn-cta w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-[0_0_25px_rgba(220,38,38,0.5)] hover:shadow-[0_0_35px_rgba(220,38,38,0.7)] flex items-center justify-center gap-2 rounded-xl transition-all"
+              className="btn-cta w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-[0_0_25px_rgba(220,38,38,0.5)] hover:shadow-[0_0_35px_rgba(220,38,38,0.7)] flex items-center justify-center gap-2 rounded-xl transition-all shrink-0"
             >
               <Zap className="size-4 text-white fill-white" />
               ASSINAR AGORA
             </SmoothLink>
             <Link
               to="/instalar"
-              className="btn-ghost w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-md border border-white/25 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2 rounded-xl"
+              className="btn-ghost w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-md border border-white/25 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2 rounded-xl shrink-0"
             >
               <Sparkles className="size-4 text-white" />
               TESTAR GRÁTIS
-            </Link>
-          </div>
-
-          {/* BOTÃO JÁ SOU CLIENTE */}
-          <div className="mt-3 flex justify-center">
-            <Link
-              to="/ja-sou-cliente"
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/40 bg-emerald-950/60 hover:bg-emerald-900/70 text-emerald-400 hover:text-emerald-300 text-xs sm:text-sm font-black tracking-wider uppercase backdrop-blur-xl transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:scale-105"
-            >
-              <CheckCircle2 className="size-4 text-emerald-400" />
-              <span>JÁ SOU CLIENTE</span>
             </Link>
           </div>
 
