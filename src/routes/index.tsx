@@ -582,9 +582,18 @@ function Index() {
             <SmoothLink href="#suporte" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</SmoothLink>
           </nav>
 
-          <SmoothLink href={CTA_HREF} className="btn-cta px-4 sm:px-5 py-2 text-xs font-black tracking-wider shadow-md hover:scale-105 transition-all">
-            VER PLANOS
-          </SmoothLink>
+          <div className="flex items-center gap-2">
+            <Link
+              to="/ja-sou-cliente"
+              className="hidden sm:inline-flex px-3 py-1.5 text-xs font-black tracking-wider uppercase rounded-full border border-emerald-500/40 bg-emerald-950/60 text-emerald-400 hover:bg-emerald-900/70 transition-all items-center gap-1.5 backdrop-blur-md"
+            >
+              <CheckCircle2 className="size-3.5 text-emerald-400" />
+              <span>Já sou cliente</span>
+            </Link>
+            <SmoothLink href={CTA_HREF} className="btn-cta px-4 sm:px-5 py-2 text-xs font-black tracking-wider shadow-md hover:scale-105 transition-all">
+              VER PLANOS
+            </SmoothLink>
+          </div>
         </div>
       </header>
 
@@ -630,6 +639,17 @@ function Index() {
             >
               <Sparkles className="size-4 text-white" />
               TESTAR GRÁTIS
+            </Link>
+          </div>
+
+          {/* BOTÃO JÁ SOU CLIENTE */}
+          <div className="mt-3 flex justify-center">
+            <Link
+              to="/ja-sou-cliente"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-emerald-500/40 bg-emerald-950/60 hover:bg-emerald-900/70 text-emerald-400 hover:text-emerald-300 text-xs sm:text-sm font-black tracking-wider uppercase backdrop-blur-xl transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)] hover:scale-105"
+            >
+              <CheckCircle2 className="size-4 text-emerald-400" />
+              <span>JÁ SOU CLIENTE (Acessar Tutorial)</span>
             </Link>
           </div>
 
