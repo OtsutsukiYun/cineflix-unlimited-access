@@ -295,6 +295,7 @@ const CATALOG_TABS = [
     id: "proximos",
     label: "🚀 Próximos Lançamentos (2026)",
     items: [
+      { title: "Just Play Dead", poster: "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "A Queda 2: No Limite", poster: "/p73G56bJGPa5y52cyqWscHR6NnN.jpg", year: "2026", tag: "🔥 Em Breve" },
       { title: "Sobrenatural: Agora Entre Nós", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Em Breve" },
       { title: "Ponto Sem Retorno", poster: "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", year: "2026", tag: "🔥 Em Breve" },
@@ -311,6 +312,7 @@ const CATALOG_TABS = [
     id: "filmes",
     label: "🎬 Filmes & Lançamentos",
     items: [
+      { title: "Just Play Dead", poster: "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Motor City", poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", year: "2026", tag: "🔥 Ação 2026" },
       { title: "Código Vingança", poster: "/gVZgjKIsXZOT3cNZm5PJZBtQRaG.jpg", year: "2026", tag: "🔥 Ação 2026" },
       { title: "O Diabo Veste Prada 2", poster: "/50yWyY981TyUHhoxxSEKwO70FmQ.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
