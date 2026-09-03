@@ -56,52 +56,55 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-// LISTA DE FILMES E SÉRIES PARA ESTEIRA HORIZONTAL
-const HORROR_2026_POSTERS = [
-  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", // Obsessão
-  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", // Evil Dead Burn
-  "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", // Motor City
-  "/kNxRgcTeqeU5jauBackTERoO2De.jpg", // Other Mommy
-  "/2PFgFMnrdCPXWiZl1PUvky7Mo9D.jpg", // Undertone
-  "/360qdtu2hLnqMu8SVHMywn420w1.jpg", // Batman Knightfall
-  "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg", // Passageiro do Mal
-  "/x6rHcQFiYcczLQPrmxXPAicm54E.jpg", // Hokum
-  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", // Backrooms
-  "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", // Omukade
-  "/sT5ITTlTcnPOeFzHEu5j0hTZUvD.jpg", // Martyrs
-  "/ju10W5gl3PPK3b7TjEmVOZap51I.jpg", // Terrifier 3
-  "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg", // Smile 2
-  "/2uSWRTtCG336nuBiG8jOTEUKSy8.jpg", // Alien Romulus
-  "/uYJvxMWMb9W4zIY3cbM50sj3dpC.jpg", // The Substance
-  "/1EwNyiiNFd863H4e8nWEzutnZD7.jpg", // Longlegs
-  "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg", // Evil Dead Rise
-  "/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg", // Nosferatu
-  "/fr96XzlzsONrQrGfdLMiwtQjott.jpg", // Heretic
-  "/omV2IW2OlFTSw6Hih13hz6lFdvP.jpg", // A Freira 2
-  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
-  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo
-  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
-  "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", // Salmokji
-  "/ojWSVt7O92ZLtEUyQs8u5pRI40b.jpg", // Dia Bukan Ibu
-  "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", // A Maldição da Múmia
-  "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg", // A Boca do Diabo
-  "/psEJSjQr6I9GSJTdW28CKC4Kffs.jpg", // A Hora do Mal
-  "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg", // Pecadores
-  "/40nHGUfypLhlr7gJx8At1IbYkaK.jpg", // Invocação do Mal 4
-  "/p3epSUdF9qSWWHTBlA3mJ0w2i2Y.jpg", // O Telefone Preto 2
-  "/xfmnUz6C5WRboIMQZD0j3SNDT7v.jpg", // Faça Ela Voltar
-  "/temIXpcua7j5v4FipOxmzTfrB06.jpg", // Premonição 6
-  "/12H82Xrr2ijDF0lJWUarqGFV7bC.jpg", // Five Nights at Freddy's 2
-  "/skwydfnpaQdRQZfXMroh59FMJyY.jpg", // Rua do Medo Rainha do Baile
-  "/2jME1L29XGE3T4f0zUHgpiKsPrV.jpg", // O Macaco
+// LISTA DIVERSIFICADA DE FILMES 2026, SÉRIES, ANIMES E DORAMAS PARA A ESTEIRA DO FUNDO
+const CATALOG_2026_POSTERS = [
+  "/7GV5rrUJf0BRUhoh2cyFoeNthlQ.jpg", // Star Wars: O Mandaloriano e Grogu (2026)
+  "/360qdtu2hLnqMu8SVHMywn420w1.jpg", // Batman Knightfall (DC 2026)
+  "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", // Motor City (2026)
+  "/gVZgjKIsXZOT3cNZm5PJZBtQRaG.jpg", // Código Vingança (2026)
+  "/gpC7h43xPMEV3goYMQShfJbTtLq.jpg", // Lanternas (DC 2026)
+  "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", // Silo (Apple TV+)
+  "/bh2OuKvq19jBHsloUVCfPSZZw81.jpg", // Vingadores: Doutor Destino (2026)
+  "/xGvz7nlGQeePcVOpAzOcHsC7kRt.jpg", // Moana 2
+  "/wHQrLuXFGiXAYyRWiYTRlDZ8T5u.jpg", // Meu Malvado Favorito 4
+  "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg", // Deadpool & Wolverine
+  "/50yWyY981TyUHhoxxSEKwO70FmQ.jpg", // O Diabo Veste Prada 2 (2026)
+  "/rYLQbyIvbEd0lF84iXrx7CbPcBB.jpg", // My Royal Nemesis (Dorama 2026)
+  "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", // Demon Slayer
+  "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", // Solo Leveling
+  "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", // One Piece
+  "/xnxxrEKtBaIcI1ewq50pLkOMU6u.jpg", // Fúria (Furious 2026)
+  "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", // Ponto Sem Retorno (2026)
+  "/p73G56bJGPa5y52cyqWscHR6NnN.jpg", // A Queda 2: No Limite (2026)
+  "/mxa7YxVln3Rwnd2Va82PoclTznj.jpg", // Agente Kim: Reativado (Dorama 2026)
+  "/w8yyntTxZlDlZ2TR8kb4C92pmcO.jpg", // Liar Game (Anime 2026)
+  "/78m1Tv3suHmUryTI9VNPwKLKjHZ.jpg", // Witch Hat Atelier (Anime 2026)
+  "/yfYohBszGqoAW8oM0qydOtJ4kPh.jpg", // A Leste do Palácio (Dorama 2026)
+  "/pmff1wjKrgJi92PPr346lAifzlg.jpg", // Dia D (Disclosure Day 2026)
+  "/8hZqZB4DAC1Ebzbk80zc0H80SNa.jpg", // The Art of Sarah (Dorama 2026)
+  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", // Obsessão (2026)
+  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", // Evil Dead Burn (2026)
+  "/kNxRgcTeqeU5jauBackTERoO2De.jpg", // Other Mommy (2026)
+  "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", // Just Play Dead (2026)
+  "/2sOEJzhPzjTkZSlPbGxOJ7xgIyS.jpg", // Passageiro do Mal (2026)
+  "/zP83bIkBViw5b1s9bDemYJ3AAgX.jpg", // Resident Evil: O Retorno (2026)
+  "/imnkSt4PSQpxIuyiRpJCiLk3SZz.jpg", // Werwulf (O Lobisomem 2026)
+  "/c987gxFjXqYOxZEZKcTkS1ONTWH.jpg", // O Sorveteiro (2026)
+  "/5Cz1EJOKpZ8hqvBNZYF9C2zTB2T.jpg", // Acampamento Miasma (2026)
+  "/tENVMxKvOkslv8kagVNdIEQ13RT.jpg", // Cuidado com Boiúna (2026)
+  "/5jCpQnWPikggmQZoDp1eAi6BI6w.jpg", // Clayface (2026)
   "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg", // FROM (Origem)
+  "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", // Revenant (O Diabo)
+  "/9DugI1HXkRAHQsjVMDnyTT8hQZx.jpg", // Ghost in the Cell (2026)
+  "/tN799oUR0f1gUKDYdMNrDaY7I51.jpg", // Colony (2026)
+  "/5M2dI8TJeRNY3Aeidhp3Ujrb3aI.jpg", // Leviticus (2026)
 ];
 
-const linha1 = HORROR_2026_POSTERS.slice(0, 8);
-const linha2 = HORROR_2026_POSTERS.slice(8, 16);
-const linha3 = HORROR_2026_POSTERS.slice(16, 24);
-const linha4 = HORROR_2026_POSTERS.slice(24, 32);
-const linha5 = HORROR_2026_POSTERS.slice(32, 40);
+const linha1 = CATALOG_2026_POSTERS.slice(0, 8);
+const linha2 = CATALOG_2026_POSTERS.slice(8, 16);
+const linha3 = CATALOG_2026_POSTERS.slice(16, 24);
+const linha4 = CATALOG_2026_POSTERS.slice(24, 32);
+const linha5 = CATALOG_2026_POSTERS.slice(32, 40);
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file";
@@ -597,7 +600,7 @@ function InstalarPage() {
               <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-[#0d090a] to-transparent" />
 
               <div className="flex w-max gap-3 animate-marquee-slow">
-                {HORROR_2026_POSTERS.concat(HORROR_2026_POSTERS, HORROR_2026_POSTERS).map((p, i) => (
+                {CATALOG_2026_POSTERS.concat(CATALOG_2026_POSTERS).map((p, i) => (
                   <img
                     key={`p-marquee-${i}`}
                     src={img(p, "w185")}
