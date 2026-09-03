@@ -268,7 +268,7 @@ const CATALOG_TABS = [
     id: "em-alta",
     label: "🔥 Em Alta",
     items: [
-      { title: "Coyote vs. Acme", poster: "/fqnp3doSeUFLGUFIolHVPA41O4E.jpg", year: "2026", tag: "🔥 Lançamento" },
+      { title: "Star Wars: O Mandaloriano e Grogu", poster: "/7GV5rrUJf0BRUhoh2cyFoeNthlQ.jpg", year: "2026", tag: "🔥 Sci-Fi 2026" },
       { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1" },
       { title: "Motor City", poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", year: "2026", tag: "🔥 Ação 2026" },
       { title: "Batman: Knightfall - Parte 1", poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg", year: "2026", tag: "🔥 DC 2026" },

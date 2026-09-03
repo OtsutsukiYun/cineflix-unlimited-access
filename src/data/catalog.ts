@@ -196,7 +196,7 @@ export const terror: Title[] = [
   { title: "Just Play Dead", poster: "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "Código Vingança", poster: "/gVZgjKIsXZOT3cNZm5PJZBtQRaG.jpg", year: "2026", tag: "🔥 Ação 2026", rating: "5.0" },
   { title: "Ponto Sem Retorno", poster: "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
-  { title: "Coyote vs. Acme", poster: "/fqnp3doSeUFLGUFIolHVPA41O4E.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
+  { title: "Star Wars: O Mandaloriano e Grogu", poster: "/7GV5rrUJf0BRUhoh2cyFoeNthlQ.jpg", year: "2026", tag: "🔥 Sci-Fi 2026", rating: "5.0" },
   { title: "Motor City", poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", year: "2026", tag: "🔥 Ação 2026", rating: "4.9" },
   { title: "Batman: Knightfall - Parte 1", poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "Dark Water: Água Negra", poster: "/iSq6J55RFLfwcceDKxYtMjOr1sz.jpg", year: "2002", tag: "Clássico Japonês", rating: "4.9" },
