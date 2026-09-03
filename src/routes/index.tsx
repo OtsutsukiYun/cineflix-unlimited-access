@@ -1325,13 +1325,13 @@ function Index() {
             </a>
 
             <a
-              href="https://wa.me/556182743140?text=Ol%C3%A1!%20Quero%20falar%20com%20o%20vendedor%20sobre%20as%20recargas%20do%20UniTV%20Pro"
+              href="https://wa.me/556182743140?text=Ol%C3%A1!%20J%C3%A1%20comprei%20minha%20recarga%20e%20quero%20meu%20acesso"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-400 px-6 py-3.5 text-xs sm:text-sm font-black text-black shadow-[0_0_25px_rgba(245,158,11,0.4)] transition-all hover:scale-[1.02]"
             >
               <WhatsAppIcon className="size-4.5 fill-current text-black" />
-              💬 FALAR COM O VENDEDOR
+              💬 COMPREI E QUERO MEU ACESSO
             </a>
           </div>
 

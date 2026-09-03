@@ -762,13 +762,13 @@ function InstalarPage() {
                 </a>
 
                 <a
-                  href="https://wa.me/556182743140?text=Ol%C3%A1!%20Quero%20falar%20com%20o%20vendedor%20sobre%20as%20recargas%20do%20UniTV%20Pro"
+                  href="https://wa.me/556182743140?text=Ol%C3%A1!%20J%C3%A1%20comprei%20minha%20recarga%20e%20quero%20meu%20acesso"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 px-4 py-2.5 text-xs font-black text-black transition-colors border border-yellow-300 shadow-md"
                 >
                   <WhatsAppIcon className="size-3.5 fill-current text-black" />
-                  💬 FALAR COM O VENDEDOR
+                  💬 COMPREI E QUERO MEU ACESSO
                 </a>
               </div>
             </div>
