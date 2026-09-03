@@ -1102,7 +1102,7 @@ function Index() {
               features: [
                 "1 Tela simultânea",
                 "O maior catálogo de filmes e séries dos streamings",
-                "Lançamentos semanais e produções inéditas",
+                "Lançamentos semanais e produções exclusivas",
                 "Filmes e séries do mundo todo que ainda nem estrearam no Brasil",
                 "Animes, Doramas & Novelas Turcas (disponíveis na aba Séries do App)",
                 "Canais Ao Vivo & Esportes em Full HD e 4K",
@@ -1134,7 +1134,7 @@ function Index() {
               features: [
                 "2 Telas simultâneas",
                 "O maior catálogo de filmes e séries dos streamings",
-                "Lançamentos semanais e produções inéditas",
+                "Lançamentos semanais e produções exclusivas",
                 "Filmes e séries do mundo todo que ainda nem estrearam no Brasil",
                 "Animes, Doramas & Novelas Turcas (disponíveis na aba Séries do App)",
                 "365 dias de acesso total liberado",
@@ -1166,7 +1166,7 @@ function Index() {
               features: [
                 "1 Tela simultânea",
                 "O maior catálogo de filmes e séries dos streamings",
-                "Lançamentos semanais e produções inéditas",
+                "Lançamentos semanais e produções exclusivas",
                 "Filmes e séries do mundo todo que ainda nem estrearam no Brasil",
                 "Animes, Doramas & Novelas Turcas (disponíveis na aba Séries do App)",
                 "90 dias de acesso total liberado",
