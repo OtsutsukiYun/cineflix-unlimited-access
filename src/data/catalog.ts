@@ -288,6 +288,7 @@ export const series: Title[] = [
 ];
 
 export const animes: Title[] = [
+  { title: "Witch Hat Atelier", poster: "/78m1Tv3suHmUryTI9VNPwKLKjHZ.jpg", year: "2026", tag: "🔥 Anime 2026" },
   { title: "Bleach: Thousand-Year Blood War", poster: "/tEaeXZZO7SEcDr6yRP31UrrxcX0.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "Frieren e a Jornada para o Além", poster: "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", year: "Série", tag: "🔥 #1 Em Alta" },
   { title: "Chainsaw Man", poster: "/npdB6eFzizki0WaZ1OvKcJrWe97.jpg", year: "Série", tag: "🔥 Sucesso" },
