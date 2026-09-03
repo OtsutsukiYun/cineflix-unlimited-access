@@ -350,20 +350,20 @@ export const infantil: Title[] = [
 
 
 export const proximosLancamentos: Title[] = [
-  { title: "A Queda 2: No Limite", poster: "/p73G56bJGPa5y52cyqWscHR6NnN.jpg", year: "2026", tag: "🔥 Estreia Set/2026" },
-  { title: "Sobrenatural: Agora Entre Nós", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
-  { title: "Ponto Sem Retorno", poster: "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
-  { title: "Other Mommy (A Outra Mãe)", poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
-  { title: "Resident Evil: O Retorno", poster: "/zP83bIkBViw5b1s9bDemYJ3AAgX.jpg", year: "2026", tag: "🔥 Estreia Set/2026" },
-  { title: "O Sorveteiro", poster: "/c987gxFjXqYOxZEZKcTkS1ONTWH.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
-  { title: "Werwulf (O Lobisomem)", poster: "/imnkSt4PSQpxIuyiRpJCiLk3SZz.jpg", year: "2026", tag: "🔥 Estreia Dez/2026" },
-  { title: "Acampamento Miasma", poster: "/5Cz1EJOKpZ8hqvBNZYF9C2zTB2T.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
-  { title: "Cuidado com Boiúna", poster: "/tENVMxKvOkslv8kagVNdIEQ13RT.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
-  { title: "Clayface: Rituais das Sombras", poster: "/5jCpQnWPikggmQZoDp1eAi6BI6w.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
-  { title: "Vingadores: Doutor Destino", poster: "/bh2OuKvq19jBHsloUVCfPSZZw81.jpg", year: "2026", tag: "🔥 Estreia Dez/2026" },
-  { title: "Duna: Parte 3", poster: "/d43fvHQsIMa4kpyhKXw0haEJIvI.jpg", year: "2026", tag: "🔥 Estreia Dez/2026" },
-  { title: "HOPE", poster: "/bcK5naYzzfY0JBCgrPrsrbV6NO1.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
-  { title: "O Fim da Rua", poster: "/fYXqpgPmHMphSF2W30GbTeJVIa5.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
+  { title: "A Queda 2: No Limite", poster: "/p73G56bJGPa5y52cyqWscHR6NnN.jpg", year: "2026", tag: "🔥 Em Breve" },
+  { title: "Sobrenatural: Agora Entre Nós", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Em Breve" },
+  { title: "Ponto Sem Retorno", poster: "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", year: "2026", tag: "🔥 Em Breve" },
+  { title: "Other Mommy (A Outra Mãe)", poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg", year: "2026", tag: "🔥 Em Breve" },
+  { title: "Resident Evil: O Retorno", poster: "/zP83bIkBViw5b1s9bDemYJ3AAgX.jpg", year: "2026", tag: "🔥 Em Breve" },
+  { title: "O Sorveteiro", poster: "/c987gxFjXqYOxZEZKcTkS1ONTWH.jpg", year: "2026", tag: "🔥 Em Breve" },
+  { title: "Werwulf (O Lobisomem)", poster: "/imnkSt4PSQpxIuyiRpJCiLk3SZz.jpg", year: "2026", tag: "🔥 Em Breve" },
+  { title: "Acampamento Miasma", poster: "/5Cz1EJOKpZ8hqvBNZYF9C2zTB2T.jpg", year: "2026", tag: "🔥 Em Breve" },
+  { title: "Cuidado com Boiúna", poster: "/tENVMxKvOkslv8kagVNdIEQ13RT.jpg", year: "2026", tag: "🔥 Em Breve" },
+  { title: "Clayface: Rituais das Sombras", poster: "/5jCpQnWPikggmQZoDp1eAi6BI6w.jpg", year: "2026", tag: "🔥 Em Breve" },
+  { title: "Vingadores: Doutor Destino", poster: "/bh2OuKvq19jBHsloUVCfPSZZw81.jpg", year: "2026", tag: "🔥 Em Breve" },
+  { title: "Duna: Parte 3", poster: "/d43fvHQsIMa4kpyhKXw0haEJIvI.jpg", year: "2026", tag: "🔥 Em Breve" },
+  { title: "HOPE", poster: "/bcK5naYzzfY0JBCgrPrsrbV6NO1.jpg", year: "2026", tag: "🔥 Em Breve" },
+  { title: "O Fim da Rua", poster: "/fYXqpgPmHMphSF2W30GbTeJVIa5.jpg", year: "2026", tag: "🔥 Em Breve" },
 ];
 
 export const icon = (slug: string) => `https://cdn.simpleicons.org/${slug}/white`;
