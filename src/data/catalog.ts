@@ -335,7 +335,7 @@ export const doramas: Title[] = [
   { title: "Alquimia das Almas", poster: "/gvOZN1NlAoL8iz9ghpES1zWA3w3.jpg", year: "2022", tag: "🔥 Fantasia & Ação" },
   { title: "A Lição (The Glory)", poster: "/bnTXjwOwdUz8MKFyQCNf0hG4fdL.jpg", year: "2022", tag: "🔥 Drama & Vingança" },
   { title: "Tudo Bem Não Ser Normal", poster: "/8yLqWlFSLMucnotlXFC8SHkfNTj.jpg", year: "2020", tag: "🔥 Romance Emocionante" },
-  { title: "Vincenzo", poster: "/qbkSS1cTjT4DzIwD44bdhTuYgdT.jpg", year: "2021", tag: "🔥 Ação & Mafioso" },
+  { title: "Vincenzo", poster: "/opMEH9JLmkYumUTJib321REvezr.jpg", year: "2021", tag: "🔥 Ação & Mafioso" },
   { title: "Revenant (O Diabo)", poster: "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", year: "2023", tag: "🔥 Terror & Mistério" },
 ];
 
