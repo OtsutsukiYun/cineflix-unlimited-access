@@ -288,6 +288,7 @@ export const series: Title[] = [
 ];
 
 export const animes: Title[] = [
+  { title: "Bleach: Thousand-Year Blood War", poster: "/tEaeXZZO7SEcDr6yRP31UrrxcX0.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
   { title: "Frieren e a Jornada para o Além", poster: "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", year: "Série", tag: "🔥 #1 Em Alta" },
   { title: "Chainsaw Man", poster: "/npdB6eFzizki0WaZ1OvKcJrWe97.jpg", year: "Série", tag: "🔥 Sucesso" },
   { title: "Mushoku Tensei (3ª Temporada)", poster: "/kZNFYvX1brcjubHXNa1naMwRoov.jpg", year: "2026", tag: "🔥 3ª Temporada" },
@@ -349,7 +350,7 @@ export const infantil: Title[] = [
 
 
 export const proximosLancamentos: Title[] = [
-  { title: "A Queda 2: No Limite", poster: "/v28T5FhumB0gR9Yv9Y6372chv2x.jpg", year: "2026", tag: "🔥 Estreia Set/2026" },
+  { title: "A Queda 2: No Limite", poster: "/p73G56bJGPa5y52cyqWscHR6NnN.jpg", year: "2026", tag: "🔥 Estreia Set/2026" },
   { title: "Sobrenatural: Agora Entre Nós", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
   { title: "Ponto Sem Retorno", poster: "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
   { title: "Other Mommy (A Outra Mãe)", poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
