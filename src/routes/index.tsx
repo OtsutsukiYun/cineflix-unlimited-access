@@ -574,10 +574,11 @@ function Index() {
             </span>
           </SmoothLink>
 
-          <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
+          <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
             <SmoothLink href="#planos" className="text-white/80 transition-colors hover:text-white">Planos</SmoothLink>
             <SmoothLink href="#faq" className="text-white/80 transition-colors hover:text-white">Dúvidas</SmoothLink>
             <Link to="/instalar" className="text-white/80 transition-colors hover:text-white">Como Instalar</Link>
+            <Link to="/ja-sou-cliente" className="text-emerald-400 font-black transition-colors hover:text-emerald-300">Já Sou Cliente</Link>
             <SmoothLink href="#suporte" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</SmoothLink>
           </nav>
 

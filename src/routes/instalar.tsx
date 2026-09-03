@@ -267,6 +267,9 @@ function InstalarPage() {
             <Link to="/" className="hover:text-white transition-colors">
               Início
             </Link>
+            <Link to="/ja-sou-cliente" className="text-emerald-400 font-black transition-colors hover:text-emerald-300">
+              Já Sou Cliente
+            </Link>
             <Link to="/instalar" className="text-red-500 font-extrabold">
               Teste Grátis
             </Link>

@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as BemVindoRouteImport } from './routes/bem-vindo'
 import { Route as CatalogoRouteImport } from './routes/catalogo'
 import { Route as InstalarRouteImport } from './routes/instalar'
+import { Route as JaSouClienteRouteImport } from './routes/ja-sou-cliente'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +35,25 @@ const InstalarRoute = InstalarRouteImport.update({
   path: '/instalar',
   getParentRoute: () => rootRouteImport,
 } as any)
+const JaSouClienteRoute = JaSouClienteRouteImport.update({
+  id: '/ja-sou-cliente',
+  path: '/ja-sou-cliente',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/bem-vindo': typeof BemVindoRoute
   '/catalogo': typeof CatalogoRoute
   '/instalar': typeof InstalarRoute
+  '/ja-sou-cliente': typeof JaSouClienteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/bem-vindo': typeof BemVindoRoute
   '/catalogo': typeof CatalogoRoute
   '/instalar': typeof InstalarRoute
+  '/ja-sou-cliente': typeof JaSouClienteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,20 @@ export interface FileRoutesById {
   '/bem-vindo': typeof BemVindoRoute
   '/catalogo': typeof CatalogoRoute
   '/instalar': typeof InstalarRoute
+  '/ja-sou-cliente': typeof JaSouClienteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/bem-vindo' | '/catalogo' | '/instalar'
+  fullPaths: '/' | '/bem-vindo' | '/catalogo' | '/instalar' | '/ja-sou-cliente'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/bem-vindo' | '/catalogo' | '/instalar'
-  id: '__root__' | '/' | '/bem-vindo' | '/catalogo' | '/instalar'
+  to: '/' | '/bem-vindo' | '/catalogo' | '/instalar' | '/ja-sou-cliente'
+  id:
+    | '__root__'
+    | '/'
+    | '/bem-vindo'
+    | '/catalogo'
+    | '/instalar'
+    | '/ja-sou-cliente'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +82,7 @@ export interface RootRouteChildren {
   BemVindoRoute: typeof BemVindoRoute
   CatalogoRoute: typeof CatalogoRoute
   InstalarRoute: typeof InstalarRoute
+  JaSouClienteRoute: typeof JaSouClienteRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +115,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof InstalarRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/ja-sou-cliente': {
+      id: '/ja-sou-cliente'
+      path: '/ja-sou-cliente'
+      fullPath: '/ja-sou-cliente'
+      preLoaderRoute: typeof JaSouClienteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +130,7 @@ const rootRouteChildren: RootRouteChildren = {
   BemVindoRoute: BemVindoRoute,
   CatalogoRoute: CatalogoRoute,
   InstalarRoute: InstalarRoute,
+  JaSouClienteRoute: JaSouClienteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
