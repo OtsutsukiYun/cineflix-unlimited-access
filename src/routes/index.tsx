@@ -485,7 +485,7 @@ function AnimatedHeroHeadline() {
         </span>
       </h1>
 
-      {/* FRASE 3: Um catálogo muito mais completo, com lançamentos, conteúdos exclusivos e opções que você não encontra em outros streamings. */}
+      {/* FRASE 3: Um catálogo muito mais completo, com conteúdos que você não encontra em outros streamings. */}
       <h1
         className={`col-start-1 row-start-1 font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black leading-[1.15] text-white tracking-tight drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)] transition-all duration-700 ease-in-out transform-gpu ${
           headlineIndex === 2
@@ -494,7 +494,7 @@ function AnimatedHeroHeadline() {
         }`}
       >
         <span>
-          Um catálogo muito mais completo, com lançamentos, conteúdos exclusivos e opções que você <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">não encontra em outros streamings.</span>
+          Um catálogo muito mais completo, com conteúdos que você <span className="bg-gradient-to-r from-red-500 via-rose-500 to-red-600 bg-clip-text text-transparent">não encontra em outros streamings.</span>
         </span>
       </h1>
     </div>
