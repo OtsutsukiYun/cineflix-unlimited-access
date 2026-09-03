@@ -292,6 +292,7 @@ const CATALOG_TABS = [
     id: "proximos",
     label: "🚀 Próximos Lançamentos (2026)",
     items: [
+      { title: "A Queda 2: No Limite", poster: "/v28T5FhumB0gR9Yv9Y6372chv2x.jpg", year: "2026", tag: "🔥 Estreia Set/2026" },
       { title: "Sobrenatural: Agora Entre Nós", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
       { title: "Ponto Sem Retorno", poster: "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", year: "2026", tag: "🔥 Estreia Ago/2026" },
       { title: "Other Mommy (A Outra Mãe)", poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg", year: "2026", tag: "🔥 Estreia Out/2026" },
