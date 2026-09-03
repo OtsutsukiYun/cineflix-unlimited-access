@@ -68,7 +68,7 @@ export const heroSlides: HeroSlide[] = [
     backdrop: "/ziXF8wIBguHNCeplNthUlDTCZP8.jpg",
     poster: "/uxCaBoYXsDC4A0SqTm3SISj0OwK.jpg",
     objectPosition: "center 20%",
-    objectPositionMobile: "50% 15%",
+    objectPositionMobile: "30% 15%",
     brightness: "brightness(0.9)",
   },
   {
