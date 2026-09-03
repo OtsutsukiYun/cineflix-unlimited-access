@@ -6,30 +6,20 @@ import {
   Hash,
   ExternalLink,
   Tv,
-  Monitor,
   Copy,
   Check,
   Play,
-  Gift,
   CheckCircle2,
   ShieldCheck,
   Zap,
   CreditCard,
   HelpCircle,
-  ArrowRight,
-  Flame,
-  Smile,
   X,
   Lock,
   Award,
   Headphones,
   Mail,
   Sparkles,
-  Star,
-  Film,
-  Trophy,
-  Heart,
-  Clapperboard,
   ChevronDown,
 } from "lucide-react";
 import { img } from "@/data/catalog";
@@ -42,18 +32,18 @@ import {
 } from "@/config/security";
 import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
 
-export const Route = createFileRoute("/instalar")({
+export const Route = createFileRoute("/ja-sou-cliente")({
   head: () => ({
     meta: [
-      { title: "🎁 Teste Grátis 3 Dias — Como Instalar UniTV Pro (Smart TV Android, Celular e Tablet, TV Box)" },
+      { title: "Já Sou Cliente — Como Instalar e Ativar o UniTV Pro" },
       {
         name: "description",
         content:
-          "Seu teste grátis de 3 dias está quase pronto! Passo a passo simples e rápido para instalar o UniTV Pro em aparelhos com sistema Android.",
+          "Tutorial completo para clientes UniTV Pro. Veja como instalar ou atualizar o aplicativo na sua Smart TV Android, TV Box, celular ou tablet.",
       },
     ],
   }),
-  component: InstalarPage,
+  component: JaSouClientePage,
 });
 
 // LISTA DIVERSIFICADA (AÇÃO, FICÇÃO, TERROR 2026, ANIMAÇÃO, DORAMAS E ANIMES) PARA A ESTEIRA DO FUNDO
@@ -103,11 +93,10 @@ const CATALOG_2026_POSTERS = [
 const linha1 = CATALOG_2026_POSTERS.slice(0, 8);
 const linha2 = CATALOG_2026_POSTERS.slice(8, 16);
 const linha3 = CATALOG_2026_POSTERS.slice(16, 24);
-const linha4 = CATALOG_2026_POSTERS.slice(24, 32);
-const linha5 = CATALOG_2026_POSTERS.slice(32, 40);
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file";
+const WHATSAPP_SUPPORT_URL = "https://wa.me/556182743140?text=Ol%C3%A1!%20J%C3%A1%20sou%20cliente%20e%20preciso%20de%20suporte%20com%20meu%20acesso%2Frecarga";
 
 function DownloaderAppIcon({ className = "size-10" }: { className?: string }) {
   return (
@@ -172,11 +161,11 @@ function CodeCopyBox({ code }: { code: string }) {
   );
 }
 
-function InstalarPage() {
+function JaSouClientePage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile">("tv");
-  const [planTab, setPlanTab] = useState<"mensal" | "trimestral" | "anual">("mensal");
   const [isTikTokUser, setIsTikTokUser] = useState(false);
   const [copiedMediaFire, setCopiedMediaFire] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   useEffect(() => {
     const ua = (typeof navigator !== "undefined" ? navigator.userAgent : "") || "";
@@ -194,29 +183,10 @@ function InstalarPage() {
     }
   }, []);
 
-  const openApkWithTikTokBypass = (url: string) => {
-    const ua = (typeof navigator !== "undefined" ? navigator.userAgent : "") || "";
-    const isTikTok = /TikTok|Musical_ly|Bytedance/i.test(ua);
-    const isAndroid = /Android/i.test(ua);
-
-    if (isTikTok && isAndroid) {
-      const cleanUrl = url.replace(/^https?:\/\//, "");
-      window.location.href = `intent://${cleanUrl}#Intent;scheme=https;package=com.android.chrome;end;`;
-      return;
-    }
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
-
-  const handleCloseModal = () => {
-    setShowPermissionModal(false);
-    if (pendingRedirectUrl) {
-      openApkWithTikTokBypass(pendingRedirectUrl);
-      setPendingRedirectUrl(null);
-    }
-  };
-
   return (
     <div className="relative min-h-screen bg-[#060606] text-white overflow-x-hidden">
+      <DOMIntegrityShield />
+
       {/* FUNDO ANIMADO COM MARQUEES INFINITOS */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-40 select-none">
         <div className="flex flex-col gap-3.5 -rotate-6 scale-110 -translate-y-12">
@@ -267,54 +237,45 @@ function InstalarPage() {
             <Link to="/" className="hover:text-white transition-colors">
               Início
             </Link>
-            <Link to="/ja-sou-cliente" className="text-emerald-400 font-black transition-colors hover:text-emerald-300">
+            <Link to="/ja-sou-cliente" className="text-red-500 font-extrabold">
               Já Sou Cliente
             </Link>
-            <Link to="/instalar" className="text-red-500 font-extrabold">
-              Teste Grátis
+            <Link to="/instalar" className="hover:text-white transition-colors">
+              Como Instalar
             </Link>
-            <a href="#plano-mensal" className="hover:text-white transition-colors">
-              Planos
-            </a>
           </nav>
 
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <a
-              href="#suporte"
-              className="inline-flex px-2.5 sm:px-3.5 py-1.5 text-[11px] font-extrabold tracking-wide uppercase rounded-full border border-white/20 bg-white/10 hover:bg-white/20 text-white/90 hover:text-white transition-all items-center gap-1 backdrop-blur-md cursor-pointer"
+              href={WHATSAPP_SUPPORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs font-black tracking-wide uppercase rounded-full border border-emerald-400/40 bg-emerald-600 hover:bg-emerald-500 text-white transition-all items-center gap-1.5 backdrop-blur-md cursor-pointer shadow-[0_0_15px_rgba(16,185,129,0.5)]"
             >
-              <Headphones className="size-3.5 text-emerald-400" />
-              <span>Suporte</span>
-            </a>
-
-            <a
-              href="#plano-mensal"
-              className="btn-cta px-4 sm:px-5 py-1.5 sm:py-2 text-xs font-black tracking-wider uppercase rounded-full shadow-[0_0_15px_rgba(220,38,38,0.6)] flex items-center justify-center shrink-0 hover:scale-105 transition-all"
-            >
-              <span>ASSINAR</span>
+              <WhatsAppIcon className="size-3.5" />
+              <span>Suporte WhatsApp</span>
             </a>
           </div>
         </div>
       </header>
 
       {/* CONTEÚDO PRINCIPAL */}
-      <main className="relative z-10 mx-auto w-[92%] max-w-3xl pt-20 sm:pt-24 pb-20 space-y-4 sm:space-y-5">
+      <main className="relative z-10 mx-auto w-[92%] max-w-3xl pt-20 sm:pt-24 pb-20 space-y-5">
 
-        {/* HERO TITLE - INFORMAÇÃO CLARA E TRANSPARENTE SOBRE O TESTE */}
+        {/* HERO TITLE - PARA CLIENTES ATIVOS */}
         <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-3 py-1 text-[11px] font-black tracking-wider text-emerald-400 uppercase backdrop-blur-xl shadow-md">
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-3.5 py-1 text-[11px] font-black tracking-wider text-emerald-400 uppercase backdrop-blur-xl shadow-md">
             <Sparkles className="size-3 text-emerald-400" />
-            <span>Seu teste grátis está quase pronto 🎉</span>
+            <span>Área do Cliente UniTV Pro</span>
           </div>
 
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-            Como instalar o <span className="whitespace-nowrap">UniTV <span className="text-red-500">Pro</span></span>
+            Já é cliente? <span className="text-red-500">Veja como instalar</span>
           </h1>
 
           <p className="text-sm sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-semibold">
-            Instale em aparelhos com sistema operacional Android
+            Siga o tutorial passo a passo abaixo para instalar ou atualizar o aplicativo na sua Smart TV Android, TV Box, celular ou tablet.
           </p>
-
         </div>
 
         {/* 💎 TUTORIAL DE INSTALAÇÃO VISUAL */}
@@ -387,7 +348,7 @@ function InstalarPage() {
                       <a href={DOWNLOADER_PLAYSTORE_URL} target="_blank" rel="noopener noreferrer" className="text-emerald-400 font-extrabold underline hover:text-emerald-300">
                         Downloader <ExternalLink className="inline size-3" />
                       </a>{" "}
-                      na loja do seu aparelho.
+                      na loja de aplicativos do seu aparelho.
                     </p>
                   </li>
 
@@ -397,7 +358,7 @@ function InstalarPage() {
                         02
                       </span>
                       <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                        Abra o Downloader e digite o código:
+                        Abra o Downloader e digite o código oficial:
                       </p>
                     </div>
                     <CodeCopyBox code="9884830" />
@@ -408,7 +369,7 @@ function InstalarPage() {
                       03
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Clique em <strong>"Go"</strong> e confirme a instalação!
+                      Clique em <strong>"Go"</strong>, confirme o download e abra o UniTV Pro! Insira seu código de recarga ou dados de login.
                     </p>
                   </li>
                 </ol>
@@ -484,7 +445,7 @@ function InstalarPage() {
                         </div>
                       ) : (
                         <>
-                          Baixe o APK oficial:
+                          Baixe o APK oficial diretamente no seu celular:
                           <a
                             href={APK_MEDIAFIRE_URL}
                             target="_blank"
@@ -504,7 +465,7 @@ function InstalarPage() {
                       02
                     </span>
                     <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Abra o arquivo baixado e confirme a instalação.
+                      Abra o arquivo baixado nas suas Notificações ou Downloads e confirme a instalação.
                     </p>
                   </li>
 
@@ -514,7 +475,7 @@ function InstalarPage() {
                         03
                       </span>
                       <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                        Ou use o{" "}
+                        Ou use o app{" "}
                         <a
                           href={DOWNLOADER_PLAYSTORE_URL}
                           target="_blank"
@@ -534,252 +495,119 @@ function InstalarPage() {
           </div>
         </div>
 
-        {/* MENSAGEM PÓS-TUTORIAL DE INCENTIVO */}
+        {/* MENSAGEM CONFIRMAÇÃO CLIENTE */}
         <div className="rounded-2xl border border-emerald-500/40 bg-emerald-950/60 p-4 text-center flex items-center justify-center gap-2.5 backdrop-blur-2xl shadow-md">
-          <CheckCircle2 className="size-5 text-emerald-400 shrink-0 animate-pulse" />
+          <CheckCircle2 className="size-5 text-emerald-400 shrink-0" />
           <span className="text-xs sm:text-sm font-black text-white tracking-wide">
-            Pronto! Agora aproveite os próximos 3 dias para explorar o catálogo e encontrar algo novo para assistir.
+            Pronto! Insira seu código de recarga ou os dados de login enviados ao seu e-mail para ter acesso ilimitado.
           </span>
         </div>
 
-        {/* SEÇÃO DE PLANOS - POSICIONADA APÓS O TUTORIAL E A EXPLICAÇÃO DO TESTE */}
-        <div id="plano-mensal" className="rounded-3xl border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden">
-          <div className="p-6 sm:p-10 text-center space-y-5">
-            <div className="space-y-2">
-              <span className="text-[11px] font-black text-red-400 uppercase tracking-widest block">
-                {planTab === "mensal" && "Plano Mensal • Acesso Ilimitado"}
-                {planTab === "trimestral" && "Plano Trimestral • Economize no 90 Dias"}
-                {planTab === "anual" && "👑 Plano Anual VIP • 2 Telas • Melhor Custo-Benefício"}
-              </span>
-
-              <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
-                Faça parte da família <span className="text-red-500">UniTV Pro</span> hoje mesmo.
-              </h2>
-              <p className="text-xs sm:text-sm text-white/80 max-w-lg mx-auto leading-relaxed font-medium">
-                Planos pré-pagos e sem fidelidade com 7 dias de garantia de reembolso.
-              </p>
-            </div>
-
-            {/* ALTERNADOR DE PLANOS (MENSAL / TRIMESTRAL / ANUAL VIP) */}
-            <div className="flex items-center justify-center p-1.5 rounded-2xl bg-white/[0.06] border border-white/20 backdrop-blur-xl max-w-md mx-auto my-3 gap-1 shadow-inner">
-              <button
-                type="button"
-                onClick={() => setPlanTab("mensal")}
-                className={`flex-1 py-2.5 px-3 rounded-xl text-xs font-black transition-all cursor-pointer ${
-                  planTab === "mensal"
-                    ? "bg-red-600 text-white shadow-[0_0_15px_rgba(220,38,38,0.7)] border border-white/30"
-                    : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
-                }`}
-              >
-                Mensal
-              </button>
-              <button
-                type="button"
-                onClick={() => setPlanTab("trimestral")}
-                className={`flex-1 py-2.5 px-3 rounded-xl text-xs font-black transition-all cursor-pointer ${
-                  planTab === "trimestral"
-                    ? "bg-emerald-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.7)] border border-white/30"
-                    : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
-                }`}
-              >
-                Trimestral
-              </button>
-              <button
-                type="button"
-                onClick={() => setPlanTab("anual")}
-                className={`flex-1 py-2.5 px-3 rounded-xl text-xs font-black transition-all cursor-pointer ${
-                  planTab === "anual"
-                    ? "bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-black shadow-[0_0_20px_rgba(245,158,11,0.8)] border border-amber-200 font-extrabold"
-                    : "text-amber-300 hover:bg-white/10 border border-amber-500/30"
-                }`}
-              >
-                Anual VIP 👑
-              </button>
-            </div>
-
-            {/* ESTEIRA HORIZONTAL DE CAPINHAS DE TERROR */}
-            <div className="relative overflow-hidden py-2 my-2 max-w-xl mx-auto rounded-2xl">
-              <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-[#0d090a] to-transparent" />
-              <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-[#0d090a] to-transparent" />
-
-              <div className="flex w-max gap-3 animate-marquee-slow">
-                {CATALOG_2026_POSTERS.concat(CATALOG_2026_POSTERS).map((p, i) => (
-                  <img
-                    key={`p-marquee-${i}`}
-                    src={img(p, "w185")}
-                    alt=""
-                    className="h-28 w-19 rounded-xl object-cover shadow-lg border border-red-500/30 shrink-0 transition-transform hover:scale-105"
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* PREÇO DINÂMICO CONFORME PLANO SELECIONADO */}
-            <div className="py-1">
-              <span className="text-xs font-bold text-red-400 uppercase tracking-widest block mb-1">
-                {planTab === "mensal" && "30 DIAS DE ACESSO COMPLETO"}
-                {planTab === "trimestral" && "⚡ 90 DIAS DE ACESSO COMPLETO"}
-                {planTab === "anual" && "👑 365 DIAS DE ACESSO (2 TELAS SIMULTÂNEAS)"}
-              </span>
-              <div className="flex items-baseline justify-center gap-2 flex-nowrap whitespace-nowrap">
-                <span className="text-xs sm:text-sm font-bold text-white/60">Apenas</span>
-                <span className="text-6xl sm:text-7xl font-black text-white tracking-tight drop-shadow-[0_0_35px_rgba(255,255,255,0.8)]">
-                  {planTab === "mensal" && "R$ 34,99"}
-                  {planTab === "trimestral" && "R$ 99,99"}
-                  {planTab === "anual" && "R$ 179,99"}
-                </span>
-                <span className="text-xs sm:text-sm font-bold text-white/80">
-                  {planTab === "mensal" && "/mês"}
-                  {planTab === "trimestral" && "/3 meses"}
-                  {planTab === "anual" && "/ano"}
-                </span>
-              </div>
-            </div>
-
-            {/* BENEFÍCIOS */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-left max-w-lg mx-auto pt-3 pb-1 border-t border-white/15">
-              {[
-                planTab === "anual"
-                  ? "2 Telas simultâneas"
-                  : "1 Tela simultânea",
-                "Milhares de Filmes & Séries",
-                "Lançamentos semanais e produções exclusivas",
-                "Canais Ao Vivo & Esportes sem travar (4K & Full HD)",
-                "Animes, Doramas & Novelas Turcas atualizadas",
-                "Programação Infantil & Desenhos Dublados",
-                "Guia de Programação EPG & Replay de 7 dias",
-                "Suporte 7 dias por semana via WhatsApp",
-                "Garantia incondicional de reembolso por 7 dias",
-                "Sem fidelidade ou multa (Cancele quando quiser)",
-              ].map((f, idx) => (
-                <div key={idx} className="flex items-start gap-2.5">
-                  <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <span className="text-xs text-white/90 font-medium leading-relaxed">{f}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* BOTÃO ASSINATURA DINÂMICO (BRAIP LINKS PRESERVADOS 100%) */}
-            <div className="pt-1">
-              <a
-                href={
-                  planTab === "mensal"
-                    ? "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2"
-                    : planTab === "trimestral"
-                      ? "https://pay.braip.co/ref?pl=pla1qqq6&ck=che7eo0g&af=afixjm3pn2"
-                      : "https://pay.braip.co/ref?pl=pla6lllo&ck=che7eo0g&af=afixjm3pn2"
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-xs sm:text-sm font-black transition-all hover:scale-105 cursor-pointer w-full sm:w-auto backdrop-blur-md uppercase tracking-wider ${
-                  planTab === "anual"
-                    ? "bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-black shadow-[0_0_35px_rgba(245,158,11,0.9)] border border-yellow-200"
-                    : planTab === "trimestral"
-                      ? "bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white shadow-[0_0_30px_rgba(16,185,129,0.7)] border border-emerald-400/50"
-                      : "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white shadow-[0_0_30px_rgba(220,38,38,0.7)] border border-red-400/40"
-                }`}
-              >
-                <Zap className="size-4 fill-current" />
-                <span>
-                  {planTab === "mensal" && "ASSINAR PLANO MENSAL"}
-                  {planTab === "trimestral" && "ASSINAR PLANO TRIMESTRAL"}
-                  {planTab === "anual" && "ASSINAR PLANO ANUAL VIP (2 TELAS)"}
-                </span>
-                <ArrowRight className="size-4" />
-              </a>
-            </div>
-
-            <div className="mt-4 pt-4 border-t border-white/10 flex items-center justify-center gap-2 text-center text-xs sm:text-sm font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 rounded-xl p-3.5 max-w-lg mx-auto shadow-sm">
-              <CheckCircle2 className="size-4.5 shrink-0 text-emerald-400" />
-              <span>Assim que o pagamento for confirmado, você recebe no seu e-mail o código de recarga ou os dados de acesso à sua conta.</span>
-            </div>
-
-            <div className="flex items-center justify-center gap-4 text-[11px] font-bold text-white/70 pt-2 border-t border-white/15">
-              <span className="flex items-center gap-1">
-                <ShieldCheck className="size-3.5 text-emerald-400" /> Garantia 7 dias
-              </span>
-              <span>•</span>
-              <span className="flex items-center gap-1">
-                <CreditCard className="size-3.5 text-blue-400" /> Pix ou cartão
-              </span>
-            </div>
+        {/* SEÇÃO SUPORTE EXCLUSIVO WHATSAPP */}
+        <div className="rounded-3xl border border-emerald-500/40 bg-gradient-to-b from-emerald-950/80 via-zinc-900 to-zinc-950 p-6 sm:p-8 text-center space-y-4 backdrop-blur-2xl shadow-[0_15px_50px_rgba(16,185,129,0.2)]">
+          <div className="flex size-14 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-400 mx-auto shadow-inner">
+            <WhatsAppIcon className="size-7" />
           </div>
 
-          {/* CERTIFICADOS DE SEGURANÇA */}
-          <div className="p-4 sm:p-8 bg-white/[0.02] border-t border-white/15 backdrop-blur-xl text-center">
-            <div className="mb-4 sm:mb-6">
-              <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] sm:text-[11px] font-extrabold tracking-wider sm:tracking-widest text-emerald-400 uppercase backdrop-blur-md shadow-sm">
-                <ShieldCheck className="size-3 sm:size-3.5" /> Compra 100% Segura &amp; Protegida
-              </span>
-              <h3 className="mt-1.5 sm:mt-2 text-sm sm:text-xl font-black text-white">
-                Ambiente seguro com <span className="text-emerald-400">garantia total</span>
-              </h3>
-            </div>
+          <div className="space-y-1.5">
+            <h2 className="text-xl sm:text-2xl font-black text-white">
+              Precisa de ajuda com sua recarga ou acesso?
+            </h2>
+            <p className="text-xs sm:text-sm text-white/80 max-w-md mx-auto leading-relaxed">
+              Nossa equipe de suporte está online no WhatsApp para te auxiliar na instalação ou envio de códigos em minutos.
+            </p>
+          </div>
 
-            <div className="grid grid-cols-2 gap-2 sm:gap-3.5 sm:grid-cols-3 lg:grid-cols-6 text-center">
-              {[
-                { icon: Lock, title: "SSL 256-bit", desc: "Ambiente Criptografado", color: "text-emerald-400" },
-                { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
-                { icon: Zap, title: "Envio Imediato", desc: "Envio no E-mail", color: "text-amber-400" },
-                { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão", color: "text-purple-400" },
-                { icon: Award, title: "+30.000 Clientes", desc: "Assinantes Ativos", color: "text-rose-400" },
-                { icon: CheckCircle2, title: "Sem Fidelidade", desc: "Cancele quando quiser", color: "text-teal-400" },
-              ].map((c) => (
-                <div
-                  key={c.title}
-                  className="group flex flex-col items-center justify-center text-center gap-1 rounded-xl sm:rounded-2xl border border-white/10 bg-white/[0.04] p-2.5 sm:p-3.5 backdrop-blur-xl transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08]"
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20instala%C3%A7%C3%A3o%20do%20UniTV%20Pro"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 px-6 py-3.5 text-xs sm:text-sm font-black text-white uppercase tracking-wider transition-all hover:scale-105 shadow-[0_0_30px_rgba(16,185,129,0.5)] border border-emerald-400/50 cursor-pointer w-full sm:w-auto"
+            >
+              <WhatsAppIcon className="size-5" />
+              <span>🛠️ AJUDA COM A INSTALAÇÃO</span>
+            </a>
+
+            <a
+              href="https://wa.me/556182743140?text=Ol%C3%A1!%20J%C3%A1%20comprei%20minha%20recarga%20e%20quero%20meu%20acesso"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-400 px-6 py-3.5 text-xs sm:text-sm font-black text-black uppercase tracking-wider transition-all hover:scale-105 shadow-[0_0_30px_rgba(245,158,11,0.5)] border border-yellow-300 cursor-pointer w-full sm:w-auto"
+            >
+              <WhatsAppIcon className="size-5 text-black" />
+              <span>💬 COMPREI E QUERO MEU ACESSO</span>
+            </a>
+          </div>
+        </div>
+
+        {/* DUVIDAS FREQUENTES CLIENTES */}
+        <div className="space-y-3 pt-4">
+          <h3 className="text-lg font-black text-white text-center flex items-center justify-center gap-2">
+            <HelpCircle className="size-5 text-red-500" /> Perguntas Frequentes
+          </h3>
+
+          <div className="space-y-2">
+            {[
+              {
+                q: "Onde encontro meu código de recarga ou dados de acesso?",
+                a: "Assim que seu pagamento é confirmado, você recebe no seu e-mail cadastrado o código de recarga ou os dados de login. Caso não encontre, verifique a pasta de Spam/Lixo Eletrônico ou chame nosso suporte no WhatsApp.",
+              },
+              {
+                q: "Como renovar ou adicionar uma nova recarga?",
+                a: "Para renovar seu acesso, basta adquirir uma nova recarga em nosso site e digitar o código recebido diretamente no menu 'Recarga' dentro do aplicativo UniTV Pro no seu aparelho.",
+              },
+              {
+                q: "Posso usar a mesma conta em mais de um aparelho?",
+                a: "No Plano Anual VIP você possui 2 telas simultâneas liberadas. Nos planos mensal e trimestral o acesso é para 1 tela simultânea.",
+              },
+            ].map((faq, idx) => (
+              <div
+                key={idx}
+                className="rounded-2xl border border-white/15 bg-white/[0.04] overflow-hidden backdrop-blur-xl transition-all"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                  className="w-full p-4 text-left flex items-center justify-between gap-3 text-xs sm:text-sm font-bold text-white hover:text-red-400 transition-colors"
                 >
-                  <div className={`flex size-7 sm:size-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.06] border border-white/10 ${c.color} shadow-inner transition-transform group-hover:scale-110 mb-0.5`}>
-                    <c.icon className="size-3.5 sm:size-4.5" />
+                  <span>{faq.q}</span>
+                  <ChevronDown className={`size-4 shrink-0 transition-transform ${openFaq === idx ? "rotate-180 text-red-400" : "text-white/60"}`} />
+                </button>
+                {openFaq === idx && (
+                  <div className="px-4 pb-4 text-xs text-white/80 leading-relaxed border-t border-white/10 pt-3">
+                    {faq.a}
                   </div>
-                  <p className="text-[11px] sm:text-xs font-black text-white leading-tight break-words w-full">{c.title}</p>
-                  <p className="text-[9.5px] sm:text-[10px] text-white/50 leading-tight font-medium break-words w-full">{c.desc}</p>
-                </div>
-              ))}
-            </div>
+                )}
+              </div>
+            ))}
           </div>
+        </div>
 
-          {/* SUPORTE RODAPÉ */}
-          <div id="suporte" className="p-4 sm:p-5 bg-white/[0.02] border-t border-white/15 text-center sm:text-left flex flex-col gap-3.5 backdrop-blur-md">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <HelpCircle className="size-5 text-emerald-400 shrink-0" />
-                <div>
-                  <p className="text-xs sm:text-sm text-white font-bold">Precisa de ajuda ou suporte?</p>
-                  <p className="text-[11px] text-white/60 font-medium">Atendimento via WhatsApp 7 dias por semana.</p>
+        {/* CERTIFICADOS DE SEGURANÇA */}
+        <div className="pt-6 border-t border-white/15">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3.5 sm:grid-cols-3 lg:grid-cols-6 text-center">
+            {[
+              { icon: Lock, title: "SSL 256-bit", desc: "Ambiente Criptografado", color: "text-emerald-400" },
+              { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
+              { icon: Zap, title: "Envio Imediato", desc: "Envio no E-mail", color: "text-amber-400" },
+              { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão", color: "text-purple-400" },
+              { icon: Award, title: "+30.000 Clientes", desc: "Assinantes Ativos", color: "text-rose-400" },
+              { icon: CheckCircle2, title: "Sem Fidelidade", desc: "Cancele quando quiser", color: "text-teal-400" },
+            ].map((c) => (
+              <div
+                key={c.title}
+                className="group flex flex-col items-center justify-center text-center gap-1 rounded-xl sm:rounded-2xl border border-white/10 bg-white/[0.04] p-2.5 sm:p-3.5 backdrop-blur-xl transition-all duration-300 hover:border-white/25 hover:bg-white/[0.08]"
+              >
+                <div className={`flex size-7 sm:size-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/[0.06] border border-white/10 ${c.color} shadow-inner`}>
+                  <c.icon className="size-4 sm:size-5" />
+                </div>
+                <div className="space-y-0.5">
+                  <h4 className="font-extrabold text-white text-[11px] sm:text-xs leading-tight">{c.title}</h4>
+                  <p className="text-[9px] sm:text-[10px] text-white/50 leading-tight">{c.desc}</p>
                 </div>
               </div>
-
-              <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full md:w-auto shrink-0">
-                <a
-                  href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20instala%C3%A7%C3%A3o%20do%20UniTV%20Pro"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-emerald-600/90 hover:bg-emerald-500 px-4 py-2.5 text-xs font-bold text-white transition-colors border border-emerald-400/30 shadow-md"
-                >
-                  <WhatsAppIcon className="size-3.5 fill-current" />
-                  🛠️ AJUDA COM A INSTALAÇÃO
-                </a>
-
-                <a
-                  href="https://wa.me/556182743140?text=Ol%C3%A1!%20J%C3%A1%20comprei%20minha%20recarga%20e%20quero%20meu%20acesso"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 px-4 py-2.5 text-xs font-black text-black transition-colors border border-yellow-300 shadow-md"
-                >
-                  <WhatsAppIcon className="size-3.5 fill-current text-black" />
-                  💬 COMPREI E QUERO MEU ACESSO
-                </a>
-              </div>
-            </div>
-
-            <div className="pt-2.5 border-t border-white/10 text-center text-xs text-white/60 flex items-center justify-center gap-1.5 flex-wrap">
-              <Mail className="size-3.5 text-emerald-400 shrink-0" />
-              <span>Ou se preferir, envie um e-mail para:</span>
-              <a href="mailto:unitvpro.oficial2026@gmail.com" className="text-white font-extrabold underline hover:text-emerald-400 transition-colors">
-                unitvpro.oficial2026@gmail.com
-              </a>
-            </div>
+            ))}
           </div>
         </div>
 
