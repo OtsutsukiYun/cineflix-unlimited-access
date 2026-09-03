@@ -254,6 +254,7 @@ export const top10Hoje: Title[] = [
 ];
 
 export const series: Title[] = [
+  { title: "Lanternas", poster: "/gpC7h43xPMEV3goYMQShfJbTtLq.jpg", year: "2026", tag: "🔥 DC 2026" },
   { title: "O Segredo de Widow's Bay", poster: "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", year: "2026", tag: "Novo" },
   { title: "Revenant (O Diabo)", poster: "/o2Sk7VEZpR5WOCjtjO6ClGBKSji.jpg", year: "2023", tag: "Dorama de Terror" },
   { title: "Origem (From)", poster: "/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg", year: "Série" },
