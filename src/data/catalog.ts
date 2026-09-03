@@ -83,17 +83,6 @@ export const heroSlides: HeroSlide[] = [
     brightness: "brightness(0.70)",
   },
   {
-    title: "Coyote vs. Acme",
-    year: "2026",
-    genre: "Comédia / Animação / Ação",
-    tagline: "Wile E. Coyote decide processar a Acme Corporation após anos de falhas nas suas invenções.",
-    backdrop: "/7GOW6jod9lLurW5utokAatxg7ql.jpg",
-    poster: "/vhv7lBWYM0DUuNU2a0V7Rhq21dD.jpg",
-    objectPosition: "center 25%",
-    objectPositionMobile: "30% 20%",
-    brightness: "brightness(1.0)",
-  },
-  {
     title: "Corrida Contra o Tempo (The Runner)",
     year: "2026",
     genre: "Ação / Suspense",
