@@ -350,6 +350,7 @@ const CATALOG_TABS = [
     label: "📺 Séries",
     items: [
       { title: "Lanternas", poster: "/gpC7h43xPMEV3goYMQShfJbTtLq.jpg", year: "2026", tag: "🔥 DC 2026" },
+      { title: "Fúria (Furious)", poster: "/xnxxrEKtBaIcI1ewq50pLkOMU6u.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "O Segredo de Widow's Bay", poster: "/hazWZ75ml5Er3MQsFetIzoeWs99.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "FROM (Origem)", poster: "/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg", year: "Série", tag: "🔥 Terror & Mistério" },
       { title: "Terror (The Terror)", poster: "/fUVn5mScv83FfwrRUUR694yA7bd.jpg", year: "Série", tag: "🔥 Série de Terror" },
