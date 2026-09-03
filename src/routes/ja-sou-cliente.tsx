@@ -258,10 +258,6 @@ function JaSouClientePage() {
               <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
                 O que você precisa no momento?
               </h1>
-
-              <p className="text-sm sm:text-base text-white/80 max-w-md mx-auto leading-relaxed font-semibold">
-                Selecione uma das opções abaixo para acessar o tutorial de instalação ou falar com o suporte:
-              </p>
             </div>
 
             {/* OS 2 BOTÕES 3D DE ALTAS ANIMAÇÕES */}
