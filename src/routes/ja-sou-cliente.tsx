@@ -22,7 +22,6 @@ import {
   ChevronDown,
   ArrowLeft,
   ChevronRight,
-  Film,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { WhatsAppIcon } from "@/components/icons";
@@ -74,22 +73,17 @@ const CATALOG_2026_POSTERS = [
   "/p3epSUdF9qSWWHTBlA3mJ0w2i2Y.jpg",
   "/rYLQbyIvbEd0lF84iXrx7CbPcBB.jpg",
   "/temIXpcua7j5v4FipOxmzTfrB06.jpg",
+  "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg",
+  "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg",
+  "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg",
+  "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg",
+  "/pmff1wjKrgJi92PPr346lAifzlg.jpg",
+  "/yihdXomYb5kTeSivtFndMy5iDmf.jpg",
 ];
 
-const CAPINHAS_SHOWCASE = [
-  { title: "Deadpool & Wolverine", poster: "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" },
-  { title: "Mandalorian & Grogu", poster: "/7GV5rrUJf0BRUhoh2cyFoeNthlQ.jpg" },
-  { title: "Batman Knightfall", poster: "/360qdtu2hLnqMu8SVHMywn420w1.jpg" },
-  { title: "Alien Romulus", poster: "/2uSWRTtCG336nuBiG8jOTEUKSy8.jpg" },
-  { title: "Demon Slayer", poster: "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg" },
-  { title: "Moana 2", poster: "/xGvz7nlGQeePcVOpAzOcHsC7kRt.jpg" },
-  { title: "FROM (Origem)", poster: "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg" },
-  { title: "Terrifier 3", poster: "/ju10W5gl3PPK3b7TjEmVOZap51I.jpg" },
-];
-
-const linha1 = CATALOG_2026_POSTERS.slice(0, 8);
-const linha2 = CATALOG_2026_POSTERS.slice(8, 16);
-const linha3 = CATALOG_2026_POSTERS.slice(16, 24);
+const linha1 = CATALOG_2026_POSTERS.slice(0, 10);
+const linha2 = CATALOG_2026_POSTERS.slice(10, 20);
+const linha3 = CATALOG_2026_POSTERS.slice(20, 30);
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file";
@@ -180,7 +174,7 @@ function JaSouClientePage() {
       <DOMIntegrityShield />
 
       {/* FUNDO ANIMADO COM MARQUEES INFINITOS DE CAPINHAS */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-65 select-none">
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-80 select-none">
         <div className="flex flex-col gap-3.5 -rotate-6 scale-110 -translate-y-12">
           <div className="flex overflow-hidden">
             <div className="animate-marquee-slow flex shrink-0 items-center gap-3.5 pr-3.5">
@@ -204,8 +198,8 @@ function JaSouClientePage() {
             </div>
           </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060606]/70 via-[#060606]/40 to-[#060606]/85" />
-        <div className="absolute inset-0 bg-black/25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#060606]/50 via-[#060606]/25 to-[#060606]/70" />
+        <div className="absolute inset-0 bg-black/15" />
       </div>
 
       {/* LUZES AMBIENTAIS */}
@@ -581,29 +575,7 @@ function JaSouClientePage() {
               </div>
             </div>
 
-            {/* SHOWCASE DE CAPINHAS DE FILMES E SÉRIES */}
-            <div className="space-y-3 pt-2">
-              <div className="flex items-center justify-between">
-                <h3 className="text-sm sm:text-base font-black text-white flex items-center gap-2">
-                  <Film className="size-4 text-red-500" />
-                  Filmes &amp; Séries Liberados no UniTV Pro
-                </h3>
-                <span className="text-[11px] font-bold text-emerald-400">
-                  +100.000 Conteúdos
-                </span>
-              </div>
 
-              <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
-                {CAPINHAS_SHOWCASE.map((item, idx) => (
-                  <div key={idx} className="group relative aspect-[2/3] rounded-xl overflow-hidden border border-white/15 shadow-lg bg-zinc-900 transition-all hover:scale-105 hover:border-red-500">
-                    <img src={img(item.poster, "w342")} alt={item.title} className="size-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-1.5">
-                      <span className="text-[9px] font-extrabold text-white leading-tight">{item.title}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             {/* CONFIRMAÇÃO CLIENTE */}
             <div className="rounded-2xl border border-emerald-500/40 bg-emerald-950/60 p-4 text-center flex items-center justify-center gap-2.5 backdrop-blur-2xl shadow-md">
@@ -697,29 +669,7 @@ function JaSouClientePage() {
               </div>
             </div>
 
-            {/* SHOWCASE DE CAPINHAS DE FILMES E SÉRIES */}
-            <div className="space-y-3 pt-2">
-              <div className="flex items-center justify-between">
-                <h3 className="text-sm sm:text-base font-black text-white flex items-center gap-2">
-                  <Film className="size-4 text-red-500" />
-                  Filmes &amp; Séries Liberados no UniTV Pro
-                </h3>
-                <span className="text-[11px] font-bold text-emerald-400">
-                  +100.000 Conteúdos
-                </span>
-              </div>
 
-              <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
-                {CAPINHAS_SHOWCASE.map((item, idx) => (
-                  <div key={idx} className="group relative aspect-[2/3] rounded-xl overflow-hidden border border-white/15 shadow-lg bg-zinc-900 transition-all hover:scale-105 hover:border-red-500">
-                    <img src={img(item.poster, "w342")} alt={item.title} className="size-full object-cover" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-1.5">
-                      <span className="text-[9px] font-extrabold text-white leading-tight">{item.title}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
 
             {/* DUVIDAS FREQUENTES CLIENTES */}
             <div className="space-y-3 pt-2">
