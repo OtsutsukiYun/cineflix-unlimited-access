@@ -56,55 +56,87 @@ export const Route = createFileRoute("/instalar")({
   component: InstalarPage,
 });
 
-// LISTA DIVERSIFICADA (AÇÃO, FICÇÃO, TERROR 2026, ANIMAÇÃO, DORAMAS E ANIMES) PARA A ESTEIRA DO FUNDO
+// LISTA VASTA E DIVERSIFICADA (FILMES 2025/2026, SUSPENSE, TERROR, AÇÃO E SÉRIES)
 const CATALOG_2026_POSTERS = [
-  "/7GV5rrUJf0BRUhoh2cyFoeNthlQ.jpg", // Star Wars: O Mandaloriano e Grogu (2026)
-  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", // Obsessão (Terror 2026)
-  "/360qdtu2hLnqMu8SVHMywn420w1.jpg", // Batman Knightfall (DC 2026)
-  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", // Evil Dead Burn (Terror 2026)
-  "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", // Motor City (Ação 2026)
-  "/ju10W5gl3PPK3b7TjEmVOZap51I.jpg", // Terrifier 3 (Terror)
-  "/gVZgjKIsXZOT3cNZm5PJZBtQRaG.jpg", // Código Vingança (Ação 2026)
-  "/ht8Uv9QPv9y7K0RvUyJIaXOZTfd.jpg", // Smile 2 (Terror)
-  "/gpC7h43xPMEV3goYMQShfJbTtLq.jpg", // Lanternas (DC 2026)
-  "/2uSWRTtCG336nuBiG8jOTEUKSy8.jpg", // Alien Romulus (Terror Sci-Fi)
-  "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", // Silo (Apple TV+)
-  "/uYJvxMWMb9W4zIY3cbM50sj3dpC.jpg", // The Substance (Terror Thriller)
-  "/bh2OuKvq19jBHsloUVCfPSZZw81.jpg", // Vingadores: Doutor Destino (2026)
-  "/1EwNyiiNFd863H4e8nWEzutnZD7.jpg", // Longlegs (Terror)
-  "/xGvz7nlGQeePcVOpAzOcHsC7kRt.jpg", // Moana 2 (Animação)
-  "/5qGIxdEO841C0tdY8vOdLoRVrr0.jpg", // Nosferatu (Terror 2026)
-  "/s8BefU3RIJrfipTpsDtOiatlp8j.jpg", // Meu Malvado Favorito 4 (Animação)
-  "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg", // Pecadores (Terror 2026)
-  "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg", // Deadpool & Wolverine (Marvel)
-  "/40nHGUfypLhlr7gJx8At1IbYkaK.jpg", // Invocação do Mal 4 (Terror 2026)
-  "/50yWyY981TyUHhoxxSEKwO70FmQ.jpg", // O Diabo Veste Prada 2 (2026)
-  "/p3epSUdF9qSWWHTBlA3mJ0w2i2Y.jpg", // O Telefone Preto 2 (Terror 2026)
-  "/rYLQbyIvbEd0lF84iXrx7CbPcBB.jpg", // My Royal Nemesis (Dorama 2026)
-  "/temIXpcua7j5v4FipOxmzTfrB06.jpg", // Premonição 6 (Terror 2026)
-  "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", // Demon Slayer (Anime)
-  "/12H82Xrr2ijDF0lJWUarqGFV7bC.jpg", // Five Nights at Freddy's 2 (Terror 2026)
-  "/geCRueV3ElhRTr0xtJuEWJt6dJ1.jpg", // Solo Leveling (Anime)
-  "/skwydfnpaQdRQZfXMroh59FMJyY.jpg", // Rua do Medo Rainha do Baile (Terror 2026)
-  "/9ltisibeD4gzqjM1AzmQwCdyirQ.jpg", // One Piece (Anime)
-  "/2jME1L29XGE3T4f0zUHgpiKsPrV.jpg", // O Macaco (Terror 2026)
-  "/xnxxrEKtBaIcI1ewq50pLkOMU6u.jpg", // Fúria (Furious 2026)
-  "/kNxRgcTeqeU5jauBackTERoO2De.jpg", // Other Mommy (Terror 2026)
-  "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", // Ponto Sem Retorno (Ação 2026)
-  "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", // Just Play Dead (Terror 2026)
-  "/mxa7YxVln3Rwnd2Va82PoclTznj.jpg", // Agente Kim: Reativado (Dorama 2026)
-  "/zP83bIkBViw5b1s9bDemYJ3AAgX.jpg", // Resident Evil: O Retorno (Terror Sci-Fi 2026)
-  "/yfYohBszGqoAW8oM0qydOtJ4kPh.jpg", // A Leste do Palácio (Dorama 2026)
-  "/imnkSt4PSQpxIuyiRpJCiLk3SZz.jpg", // Werwulf (O Lobisomem 2026)
-  "/pmff1wjKrgJi92PPr346lAifzlg.jpg", // Dia D (Disclosure Day 2026)
-  "/pRtJagIxpfODzzb0T0NAvZSzErC.jpg", // FROM (Origem / Série de Terror)
+  // Linha 1: Lançamentos 2026 & Suspense/Ação
+  "/7GV5rrUJf0BRUhoh2cyFoeNthlQ.jpg", // Mandalorian & Grogu 2026
+  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", // Obsessão 2026
+  "/360qdtu2hLnqMu8SVHMywn420w1.jpg", // Batman Knightfall 2026
+  "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", // Motor City 2026
+  "/gVZgjKIsXZOT3cNZm5PJZBtQRaG.jpg", // Código Vingança 2026
+  "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", // Ponto Sem Retorno 2026
+  "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", // Michael 2026
+  "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", // Socorro! 2026
+  "/pmff1wjKrgJi92PPr346lAifzlg.jpg", // Dia D 2026
+  "/yihdXomYb5kTeSivtFndMy5iDmf.jpg", // Devoradores de Estrelas 2026
+
+  // Linha 2: Terror & Suspense Lançamentos 2025/2026
+  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", // Evil Dead Burn 2026
+  "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", // Just Play Dead 2026
+  "/kNxRgcTeqeU5jauBackTERoO2De.jpg", // Other Mommy 2026
+  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", // Backrooms 2026
+  "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", // Omukade 2026
+  "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", // Hokum 2026
+  "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", // A Maldição da Múmia 2026
+  "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg", // A Boca do Diabo 2026
+  "/psEJSjQr6I9GSJTdW28CKC4Kffs.jpg", // A Hora do Mal 2025
+  "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg", // Pecadores 2025
+
+  // Linha 3: Sucessos 2025 de Suspense & Terror
+  "/40nHGUfypLhlr7gJx8At1IbYkaK.jpg", // Invocação do Mal 4 (2025)
+  "/p3epSUdF9qSWWHTBlA3mJ0w2i2Y.jpg", // O Telefone Preto 2 (2025)
+  "/xfmnUz6C5WRboIMQZD0j3SNDT7v.jpg", // Faça Ela Voltar (2025)
+  "/temIXpcua7j5v4FipOxmzTfrB06.jpg", // Premonição 6 (2025)
+  "/12H82Xrr2ijDF0lJWUarqGFV7bC.jpg", // FNAF 2 (2025)
+  "/skwydfnpaQdRQZfXMroh59FMJyY.jpg", // Rua do Medo (2025)
+  "/2jME1L29XGE3T4f0zUHgpiKsPrV.jpg", // O Macaco (2025)
+  "/7LbrEQvturE05hljvTCWST7rLQL.jpg", // Acompanhante Perfeita (2025)
+  "/f3yLlUrJDdDL8d4nxywyotN45SL.jpg", // Predador (2025)
+  "/fbkUfzmVzEBFSt6p7VigknREIJT.jpg", // Nosferatu (2024/2025)
+
+  // Linha 4: Séries & Destaques de Suspense
+  "/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg", // Origem / FROM
+  "/gMTfrLvrDaD0zrhpLZ7zXIIpKfJ.jpg", // IT: Bem-Vindos a Derry 2025
+  "/bdblQNZ4rP8AVJPqvGi82woxZkg.jpg", // The Terror 2026
+  "/twfKp60THrcOIep9sjHODOOfO8d.jpg", // Stranger Things
+  "/7rxiQrZjrer0RB9qNA8rHYFo53R.jpg", // Wandinha
+  "/xsrkiXg8EuNNtbPtbmvCxg95gK7.jpg", // Lucky 2026
+  "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", // Silo
+  "/gpC7h43xPMEV3goYMQShfJbTtLq.jpg", // Lanternas DC 2026
+  "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", // Channel Zero
+  "/xnxxrEKtBaIcI1ewq50pLkOMU6u.jpg", // Fúria 2026
+
+  // Linha 5: Suspense Psicológico & Terror Clássico/Moderno
+  "/j5e2YS1PRUVC1YgSool0JJyNLxJ.jpg", // Herege (2024)
+  "/vWeOgzlhnP1sS23H3rzctGHB9Nb.jpg", // A Substância (2024)
+  "/3HeKb5H89HjzWTkVkAqomu9mek.jpg", // Terrifier 3 (2024)
+  "/ypHiYvSJmHIyRDRiosZuE595uir.jpg", // Sorria 2 (2024)
+  "/uURBOrqLFyU8iKODcI3t2Xkbhqs.jpg", // Longlegs (2024)
+  "/5gKKSoD3iezjoL7YqZONjmyAiRA.jpg", // Abigail (2024)
+  "/6EYfWxIGPc23m1GFs9Gt3kzTl5O.jpg", // Imaculada (2024)
+  "/zppeHKLHljU2uI7NBJ1JyDNpn6L.jpg", // A Primeira Profecia (2024)
+  "/jB0W9tn4w07MFn7sTfqRTBLVytF.jpg", // Alien: Romulus (2024)
+  "/pN9BtzUeqPIKybAu9baihz6YzyO.jpg", // Um Lugar Silencioso: Dia Um
+
+  // Linha 6: Animes & Suspense Coreano/Asiático
+  "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", // Demon Slayer
+  "/uxCaBoYXsDC4A0SqTm3SISj0OwK.jpg", // Demon Slayer Castelo Infinito
+  "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", // Frieren
+  "/tEaeXZZO7SEcDr6yRP31UrrxcX0.jpg", // Bleach 2026
+  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo
+  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
+  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
+  "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", // Salmokji 2026
+  "/xGvz7nlGQeePcVOpAzOcHsC7kRt.jpg", // Moana 2
+  "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg", // Deadpool & Wolverine
 ];
 
-const linha1 = CATALOG_2026_POSTERS.slice(0, 8);
-const linha2 = CATALOG_2026_POSTERS.slice(8, 16);
-const linha3 = CATALOG_2026_POSTERS.slice(16, 24);
-const linha4 = CATALOG_2026_POSTERS.slice(24, 32);
-const linha5 = CATALOG_2026_POSTERS.slice(32, 40);
+const linha1 = CATALOG_2026_POSTERS.slice(0, 10);
+const linha2 = CATALOG_2026_POSTERS.slice(10, 20);
+const linha3 = CATALOG_2026_POSTERS.slice(20, 30);
+const linha4 = CATALOG_2026_POSTERS.slice(30, 40);
+const linha5 = CATALOG_2026_POSTERS.slice(40, 50);
+const linha6 = CATALOG_2026_POSTERS.slice(50, 60);
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file";
@@ -217,33 +249,54 @@ function InstalarPage() {
 
   return (
     <div className="relative min-h-screen bg-[#060606] text-white overflow-x-hidden">
-      {/* FUNDO ANIMADO COM MARQUEES INFINITOS */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-40 select-none">
-        <div className="flex flex-col gap-3.5 -rotate-6 scale-110 -translate-y-12">
+      {/* FUNDO ANIMADO COM MARQUEES INFINITOS DE CAPINHAS (COBRINDO TODO O FUNDO COM EXCELENTE CONTRASTE) */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-35 select-none">
+        <div className="flex flex-col gap-3.5 -rotate-6 scale-125 -translate-y-16">
           <div className="flex overflow-hidden">
             <div className="animate-marquee-slow flex shrink-0 items-center gap-3.5 pr-3.5">
               {[...linha1, ...linha1, ...linha1].map((p, idx) => (
-                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-42 sm:h-54 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-36 sm:h-48 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/10" />
               ))}
             </div>
           </div>
           <div className="flex overflow-hidden">
             <div className="animate-marquee-reverse-slow flex shrink-0 items-center gap-3.5 pr-3.5">
               {[...linha2, ...linha2, ...linha2].map((p, idx) => (
-                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-42 sm:h-54 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-36 sm:h-48 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/10" />
               ))}
             </div>
           </div>
           <div className="flex overflow-hidden">
             <div className="animate-marquee-slow flex shrink-0 items-center gap-3.5 pr-3.5">
               {[...linha3, ...linha3, ...linha3].map((p, idx) => (
-                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-42 sm:h-54 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/20" />
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-36 sm:h-48 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/10" />
+              ))}
+            </div>
+          </div>
+          <div className="flex overflow-hidden">
+            <div className="animate-marquee-reverse-slow flex shrink-0 items-center gap-3.5 pr-3.5">
+              {[...linha4, ...linha4, ...linha4].map((p, idx) => (
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-36 sm:h-48 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/10" />
+              ))}
+            </div>
+          </div>
+          <div className="flex overflow-hidden">
+            <div className="animate-marquee-slow flex shrink-0 items-center gap-3.5 pr-3.5">
+              {[...linha5, ...linha5, ...linha5].map((p, idx) => (
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-36 sm:h-48 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/10" />
+              ))}
+            </div>
+          </div>
+          <div className="flex overflow-hidden">
+            <div className="animate-marquee-reverse-slow flex shrink-0 items-center gap-3.5 pr-3.5">
+              {[...linha6, ...linha6, ...linha6].map((p, idx) => (
+                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-36 sm:h-48 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/10" />
               ))}
             </div>
           </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060606]/80 via-[#060606]/55 to-[#060606]/90" />
-        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#060606]/85 via-[#060606]/75 to-[#060606]/90" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* LUZES AMBIENTAIS */}
