@@ -201,25 +201,26 @@ function JaSouClientePage() {
 
       {/* HEADER VIDRO */}
       <header className="fixed inset-x-0 top-0 z-50 transition-all duration-300">
-        <div className="mx-auto mt-3 sm:mt-4 flex w-[94%] max-w-5xl items-center justify-between rounded-full px-4 sm:px-6 py-2 sm:py-2.5 border border-white/15 backdrop-blur-2xl bg-black/60 shadow-[0_8px_32px_rgba(0,0,0,0.8)]">
+        <div className="mx-auto mt-3 sm:mt-4 flex w-[94%] max-w-5xl items-center justify-between rounded-full px-4 sm:px-6 py-2 sm:py-2.5 border border-white/15 backdrop-blur-2xl bg-black/60 shadow-[0_8px_32px_rgba(0,0,0,0.8)] gap-2">
           <Link to="/" className="flex items-center gap-2 sm:gap-2.5 shrink-0 whitespace-nowrap">
             <span className="relative flex size-7 sm:size-8 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_15px_rgba(220,38,38,0.7)] border border-white/20 shrink-0">
               <svg className="size-3.5 sm:size-4 fill-white" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
             </span>
-            <span className="font-display text-xs sm:text-base font-black tracking-wider text-white whitespace-nowrap">
+            <span className="font-display text-sm sm:text-base font-black tracking-wider text-white whitespace-nowrap shrink-0">
               UniTV <span className="text-red-500">Pro</span>
             </span>
           </Link>
 
-          <nav className="flex items-center gap-2 sm:gap-4 text-xs font-bold">
-            <Link to="/" className="hidden sm:inline-block text-white/70 hover:text-white transition-colors">
+          <nav className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm font-bold shrink-0 whitespace-nowrap">
+            <Link to="/" className="hidden md:inline-block text-white/70 hover:text-white transition-colors shrink-0 whitespace-nowrap">
               Início
             </Link>
             <button
+              type="button"
               onClick={() => setCurrentView("hub")}
-              className={`px-3 py-1 rounded-full text-xs font-black transition-all cursor-pointer ${
+              className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-black transition-all cursor-pointer shrink-0 whitespace-nowrap ${
                 currentView === "hub"
                   ? "bg-white/20 text-white border border-white/30"
                   : "text-white/80 hover:text-white hover:bg-white/10"
@@ -229,14 +230,14 @@ function JaSouClientePage() {
             </button>
           </nav>
 
-          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          <div className="flex items-center gap-2 shrink-0 whitespace-nowrap">
             <button
               type="button"
               onClick={() => setCurrentView("suporte")}
-              className="inline-flex px-3 sm:px-4 py-1.5 text-[11px] sm:text-xs font-black tracking-wide uppercase rounded-full border border-amber-400/50 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black transition-all items-center gap-1.5 backdrop-blur-md cursor-pointer shadow-[0_0_15px_rgba(245,158,11,0.5)]"
+              className="inline-flex px-3 sm:px-4 py-1.5 text-xs font-black tracking-wide uppercase rounded-full border border-amber-400/50 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black transition-all items-center gap-1.5 backdrop-blur-md cursor-pointer shadow-[0_0_15px_rgba(245,158,11,0.5)] shrink-0 whitespace-nowrap"
             >
-              <WhatsAppIcon className="size-3.5 fill-current text-black" />
-              <span>Suporte WhatsApp</span>
+              <WhatsAppIcon className="size-3.5 fill-current text-black shrink-0" />
+              <span className="shrink-0 whitespace-nowrap">Suporte WhatsApp</span>
             </button>
           </div>
         </div>
