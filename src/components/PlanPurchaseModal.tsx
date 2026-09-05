@@ -26,12 +26,12 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl animate-fade-in">
       {/* OVERLAY CLICK TO CLOSE */}
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* MODAL CARD */}
-      <div className="relative z-10 w-full max-w-md overflow-hidden rounded-3xl border border-emerald-500/40 bg-zinc-950 p-6 sm:p-8 shadow-[0_0_60px_rgba(16,185,129,0.3)] text-white animate-scale-up">
+      <div className="relative z-10 w-full max-w-md overflow-hidden rounded-3xl border border-emerald-500/40 bg-zinc-950/90 backdrop-blur-2xl p-6 sm:p-8 shadow-[0_0_60px_rgba(16,185,129,0.3)] text-white animate-scale-up">
         {/* BUTTON CLOSE */}
         <button
           type="button"
@@ -90,7 +90,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
             </div>
             <div className="flex items-center gap-2">
               <Check className="size-4 text-emerald-400 shrink-0" />
-              <span>Envio: <strong className="text-white">Imediato via E-mail e WhatsApp</strong></span>
+              <span>Envio: <strong className="text-white">Imediato via E-mail</strong></span>
             </div>
           </div>
         </div>
