@@ -624,13 +624,7 @@ function InstalarPage() {
           </div>
         </div>
 
-        {/* MENSAGEM PÓS-TUTORIAL DE INCENTIVO */}
-        <div className="rounded-2xl border border-emerald-500/40 bg-emerald-950/60 p-4 text-center flex items-center justify-center gap-2.5 backdrop-blur-2xl shadow-md">
-          <CheckCircle2 className="size-5 text-emerald-400 shrink-0 animate-pulse" />
-          <span className="text-xs sm:text-sm font-black text-white tracking-wide">
-            Pronto! Agora aproveite os próximos 3 dias para explorar o catálogo e encontrar algo novo para assistir.
-          </span>
-        </div>
+
 
         {/* SEÇÃO DE PLANOS - POSICIONADA APÓS O TUTORIAL E A EXPLICAÇÃO DO TESTE */}
         <div id="plano-mensal" className="rounded-3xl border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden">
