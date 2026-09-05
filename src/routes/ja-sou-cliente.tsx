@@ -716,7 +716,7 @@ function JaSouClientePage() {
                   <span>💬 QUERO MEU ACESSO, RECARGA OU REEMBOLSO</span>
                 </a>
 
-                {/* BOTÃO 2: AJUDA COM A INSTALAÇÃO (AMARELO) */}
+                {/* BOTÃO 2: INSTALAÇÃO E ATIVAÇÃO DE PLANO (AMARELO) */}
                 <a
                   href={WHATSAPP_INSTALACAO_URL}
                   target="_blank"
@@ -724,7 +724,7 @@ function JaSouClientePage() {
                   className="w-full min-h-[60px] sm:min-h-[68px] inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-400 px-4 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm md:text-base font-black text-black uppercase tracking-wide transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(245,158,11,0.5)] border border-yellow-300 cursor-pointer text-center leading-snug"
                 >
                   <WhatsAppIcon className="size-5 sm:size-6 text-black fill-current shrink-0" />
-                  <span>🛠️ AJUDA COM A INSTALAÇÃO</span>
+                  <span>🛠️ INSTALAÇÃO E ATIVAÇÃO DE PLANO</span>
                 </a>
               </div>
 
