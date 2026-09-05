@@ -703,16 +703,16 @@ function JaSouClientePage() {
                 </p>
               </div>
 
-              {/* OS 2 BOTÕES DE CONTATO DO WHATSAPP (MAIORES E CADA UM DE UMA COR) */}
-              <div className="flex flex-col gap-4 sm:gap-5 max-w-xl sm:max-w-2xl mx-auto pt-2">
+              {/* OS 2 BOTÕES DE CONTATO DO WHATSAPP (PROPORCIONAIS E SEM VAZAMENTO DE TEXTO) */}
+              <div className="flex flex-col gap-3.5 sm:gap-4 max-w-xl mx-auto pt-2">
                 {/* BOTÃO 1: ACESSO, RECARGA OU REEMBOLSO (VERDE) */}
                 <a
                   href={WHATSAPP_VENDEDOR_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2.5 sm:gap-3 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 px-5 sm:px-8 py-5 sm:py-6 text-sm sm:text-base md:text-lg font-black text-white uppercase tracking-wider transition-all hover:scale-[1.03] shadow-[0_0_35px_rgba(16,185,129,0.5)] border border-emerald-400/60 cursor-pointer text-center leading-tight"
+                  className="w-full min-h-[60px] sm:min-h-[68px] inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 px-4 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm md:text-base font-black text-white uppercase tracking-wide transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(16,185,129,0.5)] border border-emerald-400/60 cursor-pointer text-center leading-snug"
                 >
-                  <WhatsAppIcon className="size-6 sm:size-7 text-white fill-current shrink-0" />
+                  <WhatsAppIcon className="size-5 sm:size-6 text-white fill-current shrink-0" />
                   <span>💬 QUERO MEU ACESSO, RECARGA OU REEMBOLSO</span>
                 </a>
 
@@ -721,9 +721,9 @@ function JaSouClientePage() {
                   href={WHATSAPP_INSTALACAO_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2.5 sm:gap-3 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-400 px-5 sm:px-8 py-5 sm:py-6 text-sm sm:text-base md:text-lg font-black text-black uppercase tracking-wider transition-all hover:scale-[1.03] shadow-[0_0_35px_rgba(245,158,11,0.5)] border border-yellow-300 cursor-pointer text-center leading-tight"
+                  className="w-full min-h-[60px] sm:min-h-[68px] inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-400 px-4 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm md:text-base font-black text-black uppercase tracking-wide transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(245,158,11,0.5)] border border-yellow-300 cursor-pointer text-center leading-snug"
                 >
-                  <WhatsAppIcon className="size-6 sm:size-7 text-black fill-current shrink-0" />
+                  <WhatsAppIcon className="size-5 sm:size-6 text-black fill-current shrink-0" />
                   <span>🛠️ AJUDA COM A INSTALAÇÃO</span>
                 </a>
               </div>
