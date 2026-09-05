@@ -756,10 +756,10 @@ function InstalarPage() {
                 onClick={() => handleOpenPlanModal(planTab)}
                 className={`inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-xs sm:text-sm font-black transition-all hover:scale-105 cursor-pointer w-full sm:w-auto backdrop-blur-md uppercase tracking-wider ${
                   planTab === "anual"
-                    ? "bg-gradient-to-r from-orange-500 via-amber-500 to-red-600 hover:from-orange-400 hover:to-red-500 text-white shadow-[0_0_35px_rgba(245,158,11,0.9)] border border-orange-300"
+                    ? "bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-black shadow-[0_0_35px_rgba(245,158,11,0.9)] border border-yellow-200"
                     : planTab === "trimestral"
-                      ? "bg-gradient-to-r from-orange-600 via-amber-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white shadow-[0_0_30px_rgba(234,88,12,0.7)] border border-orange-400/50"
-                      : "bg-gradient-to-r from-orange-600 via-amber-600 to-red-600 hover:from-orange-500 hover:to-red-500 text-white shadow-[0_0_30px_rgba(234,88,12,0.7)] border border-orange-400/40"
+                      ? "bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white shadow-[0_0_30px_rgba(16,185,129,0.7)] border border-emerald-400/50"
+                      : "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white shadow-[0_0_30px_rgba(220,38,38,0.7)] border border-red-400/40"
                 }`}
               >
                 <Zap className="size-4 fill-current" />

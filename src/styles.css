@@ -82,22 +82,21 @@
   --input: oklch(1 0 0 / 12%);
   --ring: oklch(0.55 0.24 27);
 
-  /* Gradiente laranja escuro para vermelho vibrante */
+  /* Gradiente vermelho puro e vibrante (sem tons azuis) */
   --gradient-hot: linear-gradient(
     100deg,
-    #ea580c 0%,
-    #f97316 30%,
-    #dc2626 70%,
-    #991b1b 100%
+    oklch(0.62 0.26 27),
+    oklch(0.52 0.24 25),
+    oklch(0.42 0.20 20)
   );
   --gradient-glass: linear-gradient(
     160deg,
     oklch(1 0 0 / 6%),
     oklch(1 0 0 / 1.5%)
   );
-  --shadow-glow: 0 18px 50px -14px rgba(234, 88, 12, 0.75);
-  --shadow-neon: 0 0 0 1px rgba(234, 88, 12, 0.45),
-    0 24px 60px -18px rgba(220, 38, 38, 0.65);
+  --shadow-glow: 0 18px 50px -14px oklch(0.55 0.24 27 / 80%);
+  --shadow-neon: 0 0 0 1px oklch(0.55 0.24 27 / 45%),
+    0 24px 60px -18px oklch(0.55 0.24 27 / 65%);
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
