@@ -132,8 +132,8 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
 
   if (!open || isPromoExpired()) return null;
   return (
-    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 backdrop-blur-xl bg-black/80 transition-all duration-300" role="dialog" aria-modal="true">
-      <div className="relative z-10 w-full max-w-md rounded-3xl border border-emerald-500/40 bg-[#07140b]/90 backdrop-blur-2xl shadow-[0_0_60px_rgba(16,185,129,0.35)] p-7 sm:p-9 text-center transition-all duration-500">
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 bg-black/80 transition-all duration-300" role="dialog" aria-modal="true">
+      <div className="relative z-10 w-full max-w-md rounded-3xl border border-emerald-500/40 bg-[#07140b] shadow-[0_0_60px_rgba(16,185,129,0.35)] p-7 sm:p-9 text-center transition-all duration-500">
         <button onClick={close} aria-label="Fechar" className="absolute top-4 right-4 flex size-8 items-center justify-center rounded-full bg-white/10 text-white/60 hover:bg-white/20 hover:text-white transition-all">
           <X className="size-4" />
         </button>

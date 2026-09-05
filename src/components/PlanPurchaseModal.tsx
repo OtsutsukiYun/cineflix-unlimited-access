@@ -26,12 +26,12 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl animate-fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 animate-fade-in">
       {/* OVERLAY CLICK TO CLOSE */}
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* MODAL CARD */}
-      <div className="relative z-10 w-full max-w-md overflow-hidden rounded-3xl border border-emerald-500/40 bg-zinc-950/90 backdrop-blur-2xl p-6 sm:p-8 shadow-[0_0_60px_rgba(16,185,129,0.3)] text-white animate-scale-up">
+      <div className="relative z-10 w-full max-w-md overflow-hidden rounded-3xl border border-emerald-500/40 bg-zinc-950 p-6 sm:p-8 shadow-[0_0_60px_rgba(16,185,129,0.3)] text-white animate-scale-up">
         {/* BUTTON CLOSE */}
         <button
           type="button"
@@ -59,7 +59,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
         </div>
 
         {/* PLAN DETAILS CARD */}
-        <div className="my-5 rounded-2xl border border-white/15 bg-white/[0.04] p-4.5 space-y-3 backdrop-blur-md">
+        <div className="my-5 rounded-2xl border border-white/15 bg-white/[0.04] p-4.5 space-y-3">
           <div className="flex items-center justify-between border-b border-white/10 pb-3">
             <div>
               <p className="text-[11px] font-extrabold text-white/60 uppercase tracking-wider">Plano Selecionado</p>
