@@ -301,14 +301,17 @@ function JaSouClientePage() {
             </button>
           </nav>
 
-          <div className="flex items-center gap-2 shrink-0 whitespace-nowrap">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               type="button"
               onClick={() => setCurrentView("suporte")}
-              className="inline-flex px-3 sm:px-4 py-1.5 text-xs font-black tracking-wide uppercase rounded-full border border-amber-400/50 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black transition-all items-center gap-1.5 backdrop-blur-md cursor-pointer shadow-[0_0_15px_rgba(245,158,11,0.5)] shrink-0 whitespace-nowrap"
+              className="inline-flex px-2.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black tracking-wide uppercase rounded-full border border-amber-400/50 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black transition-all items-center gap-1 sm:gap-1.5 backdrop-blur-md cursor-pointer shadow-[0_0_15px_rgba(245,158,11,0.5)] shrink-0"
             >
               <WhatsAppIcon className="size-3.5 fill-current text-black shrink-0" />
-              <span className="shrink-0 whitespace-nowrap">Suporte WhatsApp</span>
+              <span>
+                <span className="hidden sm:inline">Suporte WhatsApp</span>
+                <span className="sm:hidden">Suporte</span>
+              </span>
             </button>
           </div>
         </div>
@@ -707,9 +710,9 @@ function JaSouClientePage() {
                   href={WHATSAPP_VENDEDOR_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-400 px-6 py-4 text-xs sm:text-sm font-black text-black uppercase tracking-wider transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(245,158,11,0.5)] border border-yellow-300 cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-400 px-4 sm:px-6 py-3.5 sm:py-4 text-[11px] sm:text-xs md:text-sm font-black text-black uppercase tracking-wider transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(245,158,11,0.5)] border border-yellow-300 cursor-pointer text-center leading-tight"
                 >
-                  <WhatsAppIcon className="size-5 text-black" />
+                  <WhatsAppIcon className="size-4.5 sm:size-5 text-black shrink-0" />
                   <span>💬 QUERO MEU ACESSO, RECARGA OU REEMBOLSO</span>
                 </a>
 
@@ -718,9 +721,9 @@ function JaSouClientePage() {
                   href={WHATSAPP_INSTALACAO_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 px-6 py-4 text-xs sm:text-sm font-black text-white uppercase tracking-wider transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(16,185,129,0.5)] border border-emerald-400/50 cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 px-4 sm:px-6 py-3.5 sm:py-4 text-[11px] sm:text-xs md:text-sm font-black text-white uppercase tracking-wider transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(16,185,129,0.5)] border border-emerald-400/50 cursor-pointer text-center leading-tight"
                 >
-                  <WhatsAppIcon className="size-5" />
+                  <WhatsAppIcon className="size-4.5 sm:size-5 shrink-0" />
                   <span>🛠️ AJUDA COM A INSTALAÇÃO</span>
                 </a>
               </div>
