@@ -41,6 +41,7 @@ import {
   getVerifiedNtDownCode,
 } from "@/config/security";
 import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
+import { PlanPurchaseModal, PlanDetails } from "@/components/PlanPurchaseModal";
 
 export const Route = createFileRoute("/instalar")({
   head: () => ({
@@ -209,6 +210,42 @@ function InstalarPage() {
   const [planTab, setPlanTab] = useState<"mensal" | "trimestral" | "anual">("mensal");
   const [isTikTokUser, setIsTikTokUser] = useState(false);
   const [copiedMediaFire, setCopiedMediaFire] = useState(false);
+  const [selectedPlanForModal, setSelectedPlanForModal] = useState<PlanDetails | null>(null);
+  const [isPlanModalOpen, setIsPlanModalOpen] = useState(false);
+
+  const handleOpenPlanModal = (tab: "mensal" | "trimestral" | "anual") => {
+    let planData: PlanDetails;
+    if (tab === "mensal") {
+      planData = {
+        nome: "Plano Mensal",
+        preco: "R$34,99",
+        periodo: "mês",
+        dias: "30 dias",
+        telas: "1 tela",
+        link: "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2",
+      };
+    } else if (tab === "trimestral") {
+      planData = {
+        nome: "Plano Trimestral",
+        preco: "R$99,99",
+        periodo: "3 meses",
+        dias: "90 dias",
+        telas: "1 tela",
+        link: "https://pay.braip.co/ref?pl=pla1qqq6&ck=che7eo0g&af=afixjm3pn2",
+      };
+    } else {
+      planData = {
+        nome: "Plano Anual VIP",
+        preco: "R$179,99",
+        periodo: "ano",
+        dias: "365 dias",
+        telas: "2 telas",
+        link: "https://pay.braip.co/ref?pl=pla6lllo&ck=che7eo0g&af=afixjm3pn2",
+      };
+    }
+    setSelectedPlanForModal(planData);
+    setIsPlanModalOpen(true);
+  };
 
   useEffect(() => {
     const ua = (typeof navigator !== "undefined" ? navigator.userAgent : "") || "";
@@ -712,18 +749,11 @@ function InstalarPage() {
               ))}
             </div>
 
-            {/* BOTÃO ASSINATURA DINÂMICO (BRAIP LINKS PRESERVADOS 100%) */}
+            {/* BOTÃO ASSINATURA DINÂMICO (ABRE MODAL DE CONFIRMAÇÃO COM PROSSEGUIR VERDE) */}
             <div className="pt-1">
-              <a
-                href={
-                  planTab === "mensal"
-                    ? "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2"
-                    : planTab === "trimestral"
-                      ? "https://pay.braip.co/ref?pl=pla1qqq6&ck=che7eo0g&af=afixjm3pn2"
-                      : "https://pay.braip.co/ref?pl=pla6lllo&ck=che7eo0g&af=afixjm3pn2"
-                }
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => handleOpenPlanModal(planTab)}
                 className={`inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-xs sm:text-sm font-black transition-all hover:scale-105 cursor-pointer w-full sm:w-auto backdrop-blur-md uppercase tracking-wider ${
                   planTab === "anual"
                     ? "bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-black shadow-[0_0_35px_rgba(245,158,11,0.9)] border border-yellow-200"
@@ -739,7 +769,7 @@ function InstalarPage() {
                   {planTab === "anual" && "ASSINAR PLANO ANUAL VIP (2 TELAS)"}
                 </span>
                 <ArrowRight className="size-4" />
-              </a>
+              </button>
             </div>
 
             <div className="mt-4 pt-4 border-t border-white/10 flex items-center justify-center gap-2 text-center text-xs sm:text-sm font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 rounded-xl p-3.5 max-w-lg mx-auto shadow-sm">
@@ -837,6 +867,12 @@ function InstalarPage() {
         </div>
 
       </main>
+
+      <PlanPurchaseModal
+        isOpen={isPlanModalOpen}
+        onClose={() => setIsPlanModalOpen(false)}
+        plan={selectedPlanForModal}
+      />
     </div>
   );
 }

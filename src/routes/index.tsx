@@ -46,6 +46,7 @@ import { Faq } from "@/components/Faq";
 import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
 import { Torii, WhatsAppIcon } from "@/components/icons";
 import { SocialProof } from "@/components/SocialProof";
+import { PlanPurchaseModal, PlanDetails } from "@/components/PlanPurchaseModal";
 import {
   animes,
   doramas,
@@ -516,6 +517,8 @@ function Index() {
   const [activeTab, setActiveTab] = useState("em-alta");
   const [isMobile, setIsMobile] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedPlanForModal, setSelectedPlanForModal] = useState<PlanDetails | null>(null);
+  const [isPlanModalOpen, setIsPlanModalOpen] = useState(false);
   const [expandedTabs, setExpandedTabs] = useState<Record<string, boolean>>({});
   const catalogScrollRef = useRef<HTMLDivElement>(null);
 
@@ -1228,16 +1231,24 @@ function Index() {
                     </div>
                   </div>
 
-                  <a
-                    href={p.link}
-                    target={p.link.startsWith("http") ? "_blank" : undefined}
-                    rel={p.link.startsWith("http") ? "noopener noreferrer" : undefined}
-                    onClick={p.link === "#planos" ? (e) => { e.preventDefault(); } : undefined}
-                    className={`mt-6 w-full flex items-center justify-center gap-2 text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 ${p.btnStyle}`}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSelectedPlanForModal({
+                        nome: p.nome,
+                        preco: p.preco,
+                        periodo: p.periodo,
+                        dias: p.dias,
+                        telas: p.telas,
+                        link: p.link,
+                      });
+                      setIsPlanModalOpen(true);
+                    }}
+                    className={`mt-6 w-full flex items-center justify-center gap-2 text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 cursor-pointer ${p.btnStyle}`}
                   >
                     <Zap className={p.destaque ? "size-5 fill-black text-black" : "size-4"} />
                     {p.btnText}
-                  </a>
+                  </button>
 
                   <div className={`my-5 h-px w-full ${p.destaque ? "bg-amber-400/40" : "bg-white/10"}`} />
 
@@ -1396,6 +1407,12 @@ function Index() {
       </Reveal>
 
       <SocialProof />
+
+      <PlanPurchaseModal
+        isOpen={isPlanModalOpen}
+        onClose={() => setIsPlanModalOpen(false)}
+        plan={selectedPlanForModal}
+      />
     </div>
   );
 }
