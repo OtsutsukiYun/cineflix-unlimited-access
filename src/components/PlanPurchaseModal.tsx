@@ -31,7 +31,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* MODAL CARD */}
-      <div className="relative z-10 w-full max-w-md overflow-hidden rounded-3xl border border-orange-500/40 bg-zinc-950 p-6 sm:p-8 shadow-[0_0_60px_rgba(249,115,22,0.25)] text-white animate-scale-up">
+      <div className="relative z-10 w-full max-w-md overflow-hidden rounded-3xl border border-orange-500/40 bg-zinc-950 p-6 sm:p-8 shadow-[0_0_60px_rgba(234,88,12,0.25)] text-white animate-scale-up">
         {/* BUTTON CLOSE */}
         <button
           type="button"
@@ -44,12 +44,12 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
 
         {/* HEADER BADGE & ICON */}
         <div className="text-center space-y-3">
-          <div className="inline-flex size-14 items-center justify-center rounded-2xl bg-orange-500/20 border border-orange-400/40 text-orange-400 shadow-inner animate-pulse">
+          <div className="inline-flex size-14 items-center justify-center rounded-2xl bg-gradient-to-br from-orange-500/20 to-red-500/20 border border-orange-500/40 text-orange-400 shadow-inner animate-pulse">
             <ShieldCheck className="size-8" />
           </div>
 
           <div className="space-y-1">
-            <span className="inline-block rounded-full bg-orange-500/20 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-orange-300 border border-orange-500/30">
+            <span className="inline-block rounded-full bg-gradient-to-r from-orange-500/20 to-red-500/20 px-3 py-1 text-[11px] font-black uppercase tracking-wider text-orange-300 border border-orange-500/40">
               🔒 Ambiente Criptografado &amp; Seguro
             </span>
             <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight pt-1">
@@ -95,11 +95,11 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
           </div>
         </div>
 
-        {/* ORANGE DARK PROCEED BUTTON */}
+        {/* ORANGE DARK TO RED GRADIENT BUTTON */}
         <button
           type="button"
           onClick={handleProceed}
-          className="w-full inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 hover:from-amber-500 hover:to-orange-500 px-6 py-4 text-sm sm:text-base font-black text-white uppercase tracking-wider transition-all hover:scale-[1.02] shadow-[0_0_35px_rgba(234,88,12,0.6)] border border-orange-400/60 cursor-pointer"
+          className="w-full inline-flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-r from-orange-600 via-orange-500 to-red-600 hover:from-orange-500 hover:to-red-500 px-6 py-4 text-sm sm:text-base font-black text-white uppercase tracking-wider transition-all hover:scale-[1.02] shadow-[0_0_35px_rgba(234,88,12,0.6)] border border-orange-400/60 cursor-pointer"
         >
           <span>PROSSEGUIR COM A COMPRA</span>
           <ArrowRight className="size-5 text-white" />
