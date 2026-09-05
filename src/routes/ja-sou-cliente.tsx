@@ -305,9 +305,9 @@ function JaSouClientePage() {
             <button
               type="button"
               onClick={() => setCurrentView("suporte")}
-              className="inline-flex px-2.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black tracking-wide uppercase rounded-full border border-amber-400/50 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black transition-all items-center gap-1 sm:gap-1.5 backdrop-blur-md cursor-pointer shadow-[0_0_15px_rgba(245,158,11,0.5)] shrink-0"
+              className="inline-flex px-2.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black tracking-wide uppercase rounded-full border border-emerald-500/50 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 text-white transition-all items-center gap-1 sm:gap-1.5 backdrop-blur-md cursor-pointer shadow-[0_0_15px_rgba(16,185,129,0.5)] shrink-0"
             >
-              <WhatsAppIcon className="size-3.5 fill-current text-black shrink-0" />
+              <WhatsAppIcon className="size-3.5 fill-current text-white shrink-0" />
               <span>
                 <span className="hidden sm:inline">Suporte WhatsApp</span>
                 <span className="sm:hidden">Suporte</span>
@@ -341,20 +341,20 @@ function JaSouClientePage() {
               <button
                 type="button"
                 onClick={() => setCurrentView("instalacao")}
-                className="group relative flex flex-col items-center justify-between p-6 sm:p-8 md:p-10 rounded-3xl border border-red-500/40 bg-gradient-to-b from-red-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-500 hover:scale-[1.04] hover:border-red-400 hover:shadow-[0_0_60px_rgba(220,38,38,0.6)] cursor-pointer text-center overflow-hidden min-h-[340px] md:min-h-[420px]"
+                className="group relative flex flex-col items-center justify-between p-6 sm:p-8 md:p-10 rounded-3xl border border-amber-500/40 bg-gradient-to-b from-amber-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-500 hover:scale-[1.04] hover:border-amber-300 hover:shadow-[0_0_60px_rgba(245,158,11,0.6)] cursor-pointer text-center overflow-hidden min-h-[340px] md:min-h-[420px]"
               >
                 {/* Efeito de Luz 3D de Fundo */}
-                <div className="absolute -top-20 -left-20 size-48 rounded-full bg-red-600/30 blur-3xl group-hover:bg-red-500/50 transition-all duration-500" />
+                <div className="absolute -top-20 -left-20 size-48 rounded-full bg-amber-500/30 blur-3xl group-hover:bg-amber-400/50 transition-all duration-500" />
 
                 {/* ÍCONE 3D ANIMADO DE INSTALAÇÃO */}
                 <div className="relative my-3 flex size-24 md:size-32 items-center justify-center">
                   {/* Aura 3D pulsante */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-red-600 to-rose-500 blur-xl opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-amber-500 to-yellow-400 blur-xl opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
                   
                   {/* Container 3D em Camadas de Vidro */}
-                  <div className="relative size-18 md:size-26 rounded-2xl bg-gradient-to-br from-red-500 via-rose-600 to-red-900 p-0.5 shadow-xl transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                  <div className="relative size-18 md:size-26 rounded-2xl bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 p-0.5 shadow-xl transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
                     <div className="flex size-full items-center justify-center rounded-2xl bg-black/70 backdrop-blur-md border border-white/30">
-                      <Tv className="size-9 md:size-13 text-white drop-shadow-md animate-bounce" />
+                      <Tv className="size-9 md:size-13 text-amber-400 drop-shadow-md animate-bounce" />
                     </div>
                   </div>
                   
@@ -365,7 +365,7 @@ function JaSouClientePage() {
                 </div>
 
                 <div className="space-y-2 mt-2 z-10">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white group-hover:text-red-400 transition-colors uppercase tracking-wider drop-shadow-md">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white group-hover:text-amber-400 transition-colors uppercase tracking-wider drop-shadow-md">
                     Instalação
                   </h2>
                   <p className="text-sm sm:text-base md:text-lg text-white/90 font-extrabold max-w-xs md:max-w-sm leading-relaxed">
@@ -373,9 +373,9 @@ function JaSouClientePage() {
                   </p>
                 </div>
 
-                <div className="mt-6 w-full py-3.5 md:py-4 px-6 rounded-2xl bg-gradient-to-r from-red-600 to-rose-600 group-hover:from-red-500 group-hover:to-rose-500 text-white font-black text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all flex items-center justify-center gap-2">
+                <div className="mt-6 w-full py-3.5 md:py-4 px-6 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 group-hover:from-amber-400 hover:to-yellow-400 text-black font-black text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-[0_0_25px_rgba(245,158,11,0.5)] transition-all flex items-center justify-center gap-2">
                   <span>Acessar Tutorial</span>
-                  <ChevronRight className="size-4 md:size-5 group-hover:translate-x-1 transition-transform" />
+                  <ChevronRight className="size-4 md:size-5 group-hover:translate-x-1 transition-transform text-black" />
                 </div>
               </button>
 
@@ -383,20 +383,20 @@ function JaSouClientePage() {
               <button
                 type="button"
                 onClick={() => setCurrentView("suporte")}
-                className="group relative flex flex-col items-center justify-between p-6 sm:p-8 md:p-10 rounded-3xl border border-amber-500/40 bg-gradient-to-b from-amber-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-500 hover:scale-[1.04] hover:border-amber-300 hover:shadow-[0_0_60px_rgba(245,158,11,0.6)] cursor-pointer text-center overflow-hidden min-h-[340px] md:min-h-[420px]"
+                className="group relative flex flex-col items-center justify-between p-6 sm:p-8 md:p-10 rounded-3xl border border-emerald-500/40 bg-gradient-to-b from-emerald-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-500 hover:scale-[1.04] hover:border-emerald-400 hover:shadow-[0_0_60px_rgba(16,185,129,0.6)] cursor-pointer text-center overflow-hidden min-h-[340px] md:min-h-[420px]"
               >
                 {/* Efeito de Luz 3D de Fundo */}
-                <div className="absolute -top-20 -right-20 size-48 rounded-full bg-amber-500/30 blur-3xl group-hover:bg-amber-400/50 transition-all duration-500" />
+                <div className="absolute -top-20 -right-20 size-48 rounded-full bg-emerald-500/30 blur-3xl group-hover:bg-emerald-400/50 transition-all duration-500" />
 
                 {/* ÍCONE 3D ANIMADO DE SUPORTE */}
                 <div className="relative my-3 flex size-24 md:size-32 items-center justify-center">
                   {/* Aura 3D pulsante */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-amber-500 to-yellow-400 blur-xl opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-emerald-600 to-teal-500 blur-xl opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
                   
                   {/* Container 3D em Camadas de Vidro */}
-                  <div className="relative size-18 md:size-26 rounded-2xl bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 p-0.5 shadow-xl transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                  <div className="relative size-18 md:size-26 rounded-2xl bg-gradient-to-br from-emerald-500 via-teal-600 to-emerald-700 p-0.5 shadow-xl transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
                     <div className="flex size-full items-center justify-center rounded-2xl bg-black/70 backdrop-blur-md border border-white/30">
-                      <Headphones className="size-9 md:size-13 text-amber-400 drop-shadow-md animate-pulse" />
+                      <Headphones className="size-9 md:size-13 text-emerald-400 drop-shadow-md animate-pulse" />
                     </div>
                   </div>
                   
@@ -407,7 +407,7 @@ function JaSouClientePage() {
                 </div>
 
                 <div className="space-y-2 mt-2 z-10">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white group-hover:text-amber-400 transition-colors uppercase tracking-wider drop-shadow-md">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white group-hover:text-emerald-400 transition-colors uppercase tracking-wider drop-shadow-md">
                     Suporte
                   </h2>
                   <p className="text-sm sm:text-base md:text-lg text-white/90 font-extrabold max-w-xs md:max-w-sm leading-relaxed">
@@ -415,9 +415,9 @@ function JaSouClientePage() {
                   </p>
                 </div>
 
-                <div className="mt-6 w-full py-3.5 md:py-4 px-6 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 group-hover:from-amber-400 hover:to-yellow-400 text-black font-black text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-[0_0_25px_rgba(245,158,11,0.5)] transition-all flex items-center justify-center gap-2">
+                <div className="mt-6 w-full py-3.5 md:py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 group-hover:from-emerald-500 hover:to-teal-500 text-white font-black text-xs sm:text-sm md:text-base uppercase tracking-wider shadow-[0_0_25px_rgba(16,185,129,0.5)] transition-all flex items-center justify-center gap-2">
                   <span>Ver Contatos de Suporte</span>
-                  <ChevronRight className="size-4 md:size-5 group-hover:translate-x-1 transition-transform text-black" />
+                  <ChevronRight className="size-4 md:size-5 group-hover:translate-x-1 transition-transform text-white" />
                 </div>
               </button>
 
@@ -439,7 +439,7 @@ function JaSouClientePage() {
                 <span>Voltar para a Área do Cliente</span>
               </button>
 
-              <div className="text-xs font-black text-red-500 uppercase tracking-widest hidden sm:block">
+              <div className="text-xs font-black text-amber-400 uppercase tracking-widest hidden sm:block">
                 Tutorial de Instalação UniTV Pro
               </div>
             </div>
@@ -452,11 +452,11 @@ function JaSouClientePage() {
                     onClick={() => setDeviceTab("tv")}
                     className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl p-2.5 sm:py-3.5 sm:px-4 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[56px] w-full overflow-hidden ${
                       deviceTab === "tv"
-                        ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
+                        ? "bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-black shadow-[0_0_20px_rgba(245,158,11,0.6)] border border-amber-300"
                         : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                     }`}
                   >
-                    <Tv className="size-5 sm:size-6 text-white shrink-0" />
+                    <Tv className="size-5 sm:size-6 text-black shrink-0" />
                     <span className="break-words max-w-full">Smart TV, TV Box &amp; Projetor</span>
                   </button>
 
@@ -464,11 +464,11 @@ function JaSouClientePage() {
                     onClick={() => setDeviceTab("mobile")}
                     className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl p-2.5 sm:py-3.5 sm:px-4 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[56px] w-full overflow-hidden ${
                       deviceTab === "mobile"
-                        ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
+                        ? "bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-black shadow-[0_0_20px_rgba(245,158,11,0.6)] border border-amber-300"
                         : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
                     }`}
                   >
-                    <Smartphone className="size-5 sm:size-6 text-emerald-400 shrink-0" />
+                    <Smartphone className="size-5 sm:size-6 text-black shrink-0" />
                     <span className="break-words max-w-full">Celular &amp; Tablet Android</span>
                   </button>
                 </div>
@@ -489,7 +489,7 @@ function JaSouClientePage() {
                     <div className="overflow-hidden rounded-2xl border border-white/20 bg-zinc-900 shadow-md">
                       <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs font-bold text-white bg-white/[0.04]">
                         <div className="flex items-center gap-2">
-                          <Play className="size-3.5 text-red-500 fill-red-500" />
+                          <Play className="size-3.5 text-amber-400 fill-amber-400" />
                           <span className="text-emerald-400 font-black">🎥 Assista ao vídeo de 2 minutos para instalar</span>
                         </div>
                       </div>
@@ -506,7 +506,7 @@ function JaSouClientePage() {
 
                     <ol className="space-y-4 pt-1">
                       <li className="flex items-start gap-3">
-                        <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                        <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-amber-500 text-black font-mono text-xs font-black shadow-md border border-amber-300">
                           01
                         </span>
                         <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -520,7 +520,7 @@ function JaSouClientePage() {
 
                       <li className="space-y-2">
                         <div className="flex items-start gap-3">
-                          <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                          <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-amber-500 text-black font-mono text-xs font-black shadow-md border border-amber-300">
                             02
                           </span>
                           <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -531,7 +531,7 @@ function JaSouClientePage() {
                       </li>
 
                       <li className="flex items-start gap-3">
-                        <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                        <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-amber-500 text-black font-mono text-xs font-black shadow-md border border-amber-300">
                           03
                         </span>
                         <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -557,7 +557,7 @@ function JaSouClientePage() {
                 {deviceTab === "mobile" && (
                   <>
                     <div className="flex items-center gap-3 pb-3 border-b border-white/15">
-                      <Smartphone className="size-8 text-emerald-400 shrink-0" />
+                      <Smartphone className="size-8 text-amber-400 shrink-0" />
                       <div>
                         <h2 className="text-base sm:text-lg font-black text-white">
                           Celular &amp; Tablet Android
@@ -569,7 +569,7 @@ function JaSouClientePage() {
                     <div className="overflow-hidden rounded-2xl border border-white/20 bg-zinc-900 shadow-md">
                       <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs font-bold text-white bg-white/[0.04]">
                         <div className="flex items-center gap-2">
-                          <Play className="size-3.5 text-red-500 fill-red-500" />
+                          <Play className="size-3.5 text-amber-400 fill-amber-400" />
                           <span className="text-emerald-400 font-black">🎥 Assista ao vídeo de 2 minutos para instalar no celular</span>
                         </div>
                       </div>
@@ -587,7 +587,7 @@ function JaSouClientePage() {
                     <ol className="space-y-4 pt-2">
                       <li className="space-y-2">
                         <div className="flex items-start gap-3">
-                          <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                          <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-amber-500 text-black font-mono text-xs font-black shadow-md border border-amber-300">
                             01
                           </span>
                           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -609,7 +609,7 @@ function JaSouClientePage() {
                       </li>
 
                       <li className="flex items-start gap-3">
-                        <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                        <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-amber-500 text-black font-mono text-xs font-black shadow-md border border-amber-300">
                           02
                         </span>
                         <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -619,7 +619,7 @@ function JaSouClientePage() {
 
                       <li className="space-y-2">
                         <div className="flex items-center gap-3">
-                          <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
+                          <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-amber-500 text-black font-mono text-xs font-black shadow-md border border-amber-300">
                             03
                           </span>
                           <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
@@ -683,14 +683,14 @@ function JaSouClientePage() {
                 <span>Voltar para a Área do Cliente</span>
               </button>
 
-              <div className="text-xs font-black text-amber-400 uppercase tracking-widest hidden sm:block">
+              <div className="text-xs font-black text-emerald-400 uppercase tracking-widest hidden sm:block">
                 Central de Suporte UniTV Pro
               </div>
             </div>
 
             {/* CARD PRINCIPAL DE SUPORTE WHATSAPP COM OS 2 BOTÕES DE CONTATO */}
-            <div className="rounded-3xl border border-amber-500/40 bg-gradient-to-b from-amber-950/40 via-zinc-900 to-zinc-950 p-6 sm:p-8 text-center space-y-5 backdrop-blur-2xl shadow-[0_15px_50px_rgba(245,158,11,0.2)]">
-              <div className="flex size-16 items-center justify-center rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-400 mx-auto shadow-inner animate-pulse">
+            <div className="rounded-3xl border border-emerald-500/40 bg-gradient-to-b from-emerald-950/40 via-zinc-900 to-zinc-950 p-6 sm:p-8 text-center space-y-5 backdrop-blur-2xl shadow-[0_15px_50px_rgba(16,185,129,0.2)]">
+              <div className="flex size-16 items-center justify-center rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-400 mx-auto shadow-inner animate-pulse">
                 <Headphones className="size-8" />
               </div>
 
@@ -710,9 +710,9 @@ function JaSouClientePage() {
                   href={WHATSAPP_VENDEDOR_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-400 px-4 sm:px-6 py-3.5 sm:py-4 text-[11px] sm:text-xs md:text-sm font-black text-black uppercase tracking-wider transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(245,158,11,0.5)] border border-yellow-300 cursor-pointer text-center leading-tight"
+                  className="w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 px-4 sm:px-6 py-3.5 sm:py-4 text-[11px] sm:text-xs md:text-sm font-black text-white uppercase tracking-wider transition-all hover:scale-[1.02] shadow-[0_0_30px_rgba(16,185,129,0.5)] border border-emerald-400/50 cursor-pointer text-center leading-tight"
                 >
-                  <WhatsAppIcon className="size-4.5 sm:size-5 text-black shrink-0" />
+                  <WhatsAppIcon className="size-4.5 sm:size-5 text-white fill-current shrink-0" />
                   <span>💬 QUERO MEU ACESSO, RECARGA OU REEMBOLSO</span>
                 </a>
 
@@ -729,9 +729,9 @@ function JaSouClientePage() {
               </div>
 
               <div className="pt-3 text-xs text-white/40 flex items-center justify-center gap-2 flex-wrap">
-                <Mail className="size-4 text-amber-400 shrink-0" />
+                <Mail className="size-4 text-emerald-400 shrink-0" />
                 <span>E-mail oficial:</span>
-                <a href="mailto:unitvpro.oficial2026@gmail.com" className="text-white font-bold underline hover:text-amber-400">
+                <a href="mailto:unitvpro.oficial2026@gmail.com" className="text-white font-bold underline hover:text-emerald-400">
                   unitvpro.oficial2026@gmail.com
                 </a>
               </div>
