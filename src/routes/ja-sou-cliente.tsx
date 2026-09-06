@@ -315,19 +315,6 @@ function JaSouClientePage() {
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               type="button"
-              onClick={() => navigateView("ativacao")}
-              className={`inline-flex px-2.5 sm:px-3.5 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black tracking-wide uppercase rounded-full transition-all items-center gap-1 sm:gap-1.5 backdrop-blur-md cursor-pointer shrink-0 ${
-                currentView === "ativacao"
-                  ? "bg-red-600 text-white border border-red-400 shadow-[0_0_15px_rgba(220,38,38,0.5)]"
-                  : "bg-white/10 hover:bg-white/20 text-white border border-white/20"
-              }`}
-            >
-              <Zap className="size-3.5 text-red-400 shrink-0 fill-current" />
-              <span>Ativar Plano</span>
-            </button>
-
-            <button
-              type="button"
               onClick={() => navigateView("suporte")}
               className="inline-flex px-2.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black tracking-wide uppercase rounded-full border border-emerald-500/50 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 text-white transition-all items-center gap-1 sm:gap-1.5 backdrop-blur-md cursor-pointer shadow-[0_0_15px_rgba(16,185,129,0.5)] shrink-0"
             >
