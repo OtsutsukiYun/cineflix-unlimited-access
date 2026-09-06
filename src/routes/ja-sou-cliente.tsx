@@ -506,10 +506,10 @@ function JaSouClientePage() {
                     className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl p-2.5 sm:py-3.5 sm:px-4 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[56px] w-full overflow-hidden ${
                       deviceTab === "tv"
                         ? "bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-black shadow-[0_0_20px_rgba(245,158,11,0.6)] border border-amber-300"
-                        : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
+                        : "text-white/80 hover:text-white hover:bg-white/10 border border-white/10"
                     }`}
                   >
-                    <Tv className="size-5 sm:size-6 text-black shrink-0" />
+                    <Tv className={`size-5 sm:size-6 shrink-0 ${deviceTab === "tv" ? "text-black" : "text-amber-400"}`} />
                     <span className="break-words max-w-full">Smart TV, TV Box &amp; Projetor</span>
                   </button>
 
@@ -518,10 +518,10 @@ function JaSouClientePage() {
                     className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl p-2.5 sm:py-3.5 sm:px-4 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[56px] w-full overflow-hidden ${
                       deviceTab === "mobile"
                         ? "bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 text-black shadow-[0_0_20px_rgba(245,158,11,0.6)] border border-amber-300"
-                        : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
+                        : "text-white/80 hover:text-white hover:bg-white/10 border border-white/10"
                     }`}
                   >
-                    <Smartphone className="size-5 sm:size-6 text-black shrink-0" />
+                    <Smartphone className={`size-5 sm:size-6 shrink-0 ${deviceTab === "mobile" ? "text-black" : "text-amber-400"}`} />
                     <span className="break-words max-w-full">Celular &amp; Tablet Android</span>
                   </button>
                 </div>
@@ -600,7 +600,9 @@ function JaSouClientePage() {
                 {deviceTab === "mobile" && (
                   <>
                     <div className="flex items-center gap-3 pb-3 border-b border-white/15">
-                      <Smartphone className="size-8 text-amber-400 shrink-0" />
+                      <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-600 text-black shadow-md border border-amber-300">
+                        <Smartphone className="size-6 text-black shrink-0" />
+                      </div>
                       <div>
                         <h2 className="text-base sm:text-lg font-black text-white">
                           Celular &amp; Tablet Android
