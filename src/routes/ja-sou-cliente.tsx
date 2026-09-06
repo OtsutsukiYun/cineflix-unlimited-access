@@ -22,6 +22,8 @@ import {
   ChevronDown,
   ArrowLeft,
   ChevronRight,
+  User,
+  KeyRound,
 } from "lucide-react";
 import { img } from "@/data/catalog";
 import { WhatsAppIcon } from "@/components/icons";
@@ -202,6 +204,13 @@ function JaSouClientePage() {
   const [deviceTab, setDeviceTab] = useState<"tv" | "mobile">("tv");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  const navigateView = (view: "hub" | "instalacao" | "suporte" | "ativacao") => {
+    setCurrentView(view);
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       const search = window.location.search;
@@ -292,7 +301,7 @@ function JaSouClientePage() {
             </Link>
             <button
               type="button"
-              onClick={() => setCurrentView("hub")}
+              onClick={() => navigateView("hub")}
               className={`px-3 sm:px-4 py-1.5 rounded-full text-xs sm:text-sm font-black transition-all cursor-pointer shrink-0 whitespace-nowrap ${
                 currentView === "hub"
                   ? "bg-white/20 text-white border border-white/30"
@@ -306,7 +315,7 @@ function JaSouClientePage() {
           <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <button
               type="button"
-              onClick={() => setCurrentView("ativacao")}
+              onClick={() => navigateView("ativacao")}
               className={`inline-flex px-2.5 sm:px-3.5 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black tracking-wide uppercase rounded-full transition-all items-center gap-1 sm:gap-1.5 backdrop-blur-md cursor-pointer shrink-0 ${
                 currentView === "ativacao"
                   ? "bg-red-600 text-white border border-red-400 shadow-[0_0_15px_rgba(220,38,38,0.5)]"
@@ -319,7 +328,7 @@ function JaSouClientePage() {
 
             <button
               type="button"
-              onClick={() => setCurrentView("suporte")}
+              onClick={() => navigateView("suporte")}
               className="inline-flex px-2.5 sm:px-4 py-1 sm:py-1.5 text-[11px] sm:text-xs font-black tracking-wide uppercase rounded-full border border-emerald-500/50 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-500 hover:from-emerald-500 hover:to-teal-500 text-white transition-all items-center gap-1 sm:gap-1.5 backdrop-blur-md cursor-pointer shadow-[0_0_15px_rgba(16,185,129,0.5)] shrink-0"
             >
               <WhatsAppIcon className="size-3.5 fill-current text-white shrink-0" />
@@ -355,7 +364,49 @@ function JaSouClientePage() {
               {/* BOTÃO 1 3D: ATIVAR PLANO / RECARGA */}
               <button
                 type="button"
-                onClick={() => setCurrentView("ativacao")}
+                onClick={() => navigateView("ativacao")}
+                className="group relative flex flex-col items-center justify-between p-6 sm:p-7 md:p-8 rounded-3xl border border-red-500/40 bg-gradient-to-b from-red-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-500 hover:scale-[1.04] hover:border-red-400 hover:shadow-[0_0_60px_rgba(220,38,38,0.6)] cursor-pointer text-center overflow-hidden min-h-[340px] md:min-h-[400px]"
+              >
+                {/* Efeito de Luz 3D de Fundo */}
+                <div className="absolute -top-20 -left-20 size-48 rounded-full bg-red-600/30 blur-3xl group-hover:bg-red-500/50 transition-all duration-500" />
+
+                {/* ÍCONE 3D ANIMADO DE ATIVAÇÃO */}
+                <div className="relative my-3 flex size-24 md:size-28 items-center justify-center">
+                  {/* Aura 3D pulsante */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-red-600 to-rose-500 blur-xl opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
+                  
+                  {/* Container 3D em Camadas de Vidro */}
+                  <div className="relative size-18 md:size-24 rounded-2xl bg-gradient-to-br from-red-500 via-rose-600 to-red-900 p-0.5 shadow-xl transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                    <div className="flex size-full items-center justify-center rounded-2xl bg-black/70 backdrop-blur-md border border-white/30">
+                      <Zap className="size-9 md:size-12 text-red-400 drop-shadow-md animate-pulse" />
+                    </div>
+                  </div>
+                  
+                  {/* Badge 3D Flutuante */}
+                  <div className="absolute -bottom-1 -right-1 flex size-8 md:size-9 items-center justify-center rounded-xl bg-amber-500 text-black shadow-lg border border-white/50 animate-pulse">
+                    <Sparkles className="size-4 md:size-4.5" />
+                  </div>
+                </div>
+
+                <div className="space-y-2 mt-2 z-10">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white group-hover:text-red-400 transition-colors uppercase tracking-wider drop-shadow-md">
+                    Ativar Plano
+                  </h2>
+                  <p className="text-xs sm:text-sm md:text-base text-white/90 font-extrabold max-w-xs leading-relaxed">
+                    Vídeo tutorial e passo a passo para ativar ou renovar sua recarga no app.
+                  </p>
+                </div>
+
+                <div className="mt-6 w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 group-hover:from-red-500 group-hover:to-rose-500 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all flex items-center justify-center gap-2">
+                  <span>Ativar Meu Plano</span>
+                  <ChevronRight className="size-4 md:size-5 group-hover:translate-x-1 transition-transform text-white" />
+                </div>
+              </button>
+
+              {/* BOTÃO 2 3D: INSTALAÇÃO */}
+              <button
+                type="button"
+                onClick={() => navigateView("instalacao")}
                 className="group relative flex flex-col items-center justify-between p-6 sm:p-7 md:p-8 rounded-3xl border border-red-500/40 bg-gradient-to-b from-red-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-500 hover:scale-[1.04] hover:border-red-400 hover:shadow-[0_0_60px_rgba(220,38,38,0.6)] cursor-pointer text-center overflow-hidden min-h-[340px] md:min-h-[400px]"
               >
                 {/* Efeito de Luz 3D de Fundo */}
@@ -791,7 +842,11 @@ function JaSouClientePage() {
                       01
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-snug pt-0.5">
-                      Na parte superior do aplicativo, toque no <strong>ícone do seu Perfil</strong>.
+                      Na parte superior do aplicativo, toque no <strong>ícone do seu Perfil</strong>{" "}
+                      <span className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 py-0.5 text-xs font-extrabold text-amber-300 border border-white/20 ml-1">
+                        <User className="size-3.5 text-amber-400 shrink-0" />
+                        <span>Perfil</span>
+                      </span>
                     </div>
                   </li>
 
@@ -800,7 +855,11 @@ function JaSouClientePage() {
                       02
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-snug pt-0.5">
-                      Acesse a opção <strong>Centro de Recarga</strong>.
+                      Acesse a opção <strong>Centro de Recarga</strong>{" "}
+                      <span className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 py-0.5 text-xs font-extrabold text-emerald-300 border border-white/20 ml-1">
+                        <CreditCard className="size-3.5 text-emerald-400 shrink-0" />
+                        <span>Recarga</span>
+                      </span>
                     </div>
                   </li>
 
@@ -809,7 +868,11 @@ function JaSouClientePage() {
                       03
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-snug pt-0.5">
-                      Digite o <strong>código de recarga</strong> referente ao plano comprado (enviado por e-mail).
+                      Digite o <strong>código de recarga</strong> referente ao plano comprado (enviado por e-mail).{" "}
+                      <span className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 py-0.5 text-xs font-extrabold text-red-300 border border-white/20 ml-1">
+                        <KeyRound className="size-3.5 text-red-400 shrink-0" />
+                        <span>Código</span>
+                      </span>
                     </div>
                   </li>
 
@@ -818,7 +881,11 @@ function JaSouClientePage() {
                       04
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-snug pt-0.5">
-                      Clique em <strong>Confirmar</strong>! Seu plano será ativado e o período começará a valer na hora.
+                      Clique em <strong>Confirmar</strong>! Seu plano será ativado e o período começará a valer na hora.{" "}
+                      <span className="inline-flex items-center gap-1 rounded-md bg-emerald-500/20 px-2 py-0.5 text-xs font-black text-emerald-300 border border-emerald-400/30 ml-1">
+                        <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0" />
+                        <span>Ativado!</span>
+                      </span>
                     </div>
                   </li>
                 </ol>
