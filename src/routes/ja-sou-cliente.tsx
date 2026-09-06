@@ -548,7 +548,7 @@ function JaSouClientePage() {
                       </div>
                       <div className="relative aspect-video w-full bg-black z-20">
                         <iframe
-                          src="https://www.youtube.com/embed/u2X4iUABhq4?rel=0&enablejsapi=1"
+                          src="https://www.youtube.com/embed/epO1RY5s2to?rel=0&enablejsapi=1"
                           title="Vídeo Tutorial de Instalação na Smart TV Android e TV Box"
                           className="size-full border-0 relative z-20 pointer-events-auto"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
