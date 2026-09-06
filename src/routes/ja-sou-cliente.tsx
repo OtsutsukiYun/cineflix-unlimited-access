@@ -618,7 +618,7 @@ function JaSouClientePage() {
                       </div>
                       <div className="relative aspect-video w-full bg-black z-20">
                         <iframe
-                          src="https://www.youtube.com/embed/0dSJ_Q4DDus?rel=0&enablejsapi=1"
+                          src="https://www.youtube.com/embed/aRywCalh0z4?rel=0&enablejsapi=1"
                           title="Vídeo Tutorial de Instalação no Celular Android"
                           className="size-full border-0 relative z-20 pointer-events-auto"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
