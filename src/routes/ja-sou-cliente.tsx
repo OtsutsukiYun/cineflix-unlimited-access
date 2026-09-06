@@ -347,50 +347,7 @@ function JaSouClientePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 max-w-5xl mx-auto w-full pt-2">
               
               {/* BOTÃO 1 3D: ATIVAR PLANO / RECARGA */}
-              <button
-                type="button"
-                onClick={() => navigateView("ativacao")}
-                className="group relative flex flex-col items-center justify-between p-6 sm:p-7 md:p-8 rounded-3xl border border-red-500/40 bg-gradient-to-b from-red-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-500 hover:scale-[1.04] hover:border-red-400 hover:shadow-[0_0_60px_rgba(220,38,38,0.6)] cursor-pointer text-center overflow-hidden min-h-[340px] md:min-h-[400px]"
-              >
-                {/* Efeito de Luz 3D de Fundo */}
-                <div className="absolute -top-20 -left-20 size-48 rounded-full bg-red-600/30 blur-3xl group-hover:bg-red-500/50 transition-all duration-500" />
-
-                {/* ÍCONE 3D ANIMADO DE ATIVAÇÃO */}
-                <div className="relative my-3 flex size-24 md:size-28 items-center justify-center">
-                  {/* Aura 3D pulsante */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-red-600 to-rose-500 blur-xl opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
-                  
-                  {/* Container 3D em Camadas de Vidro */}
-                  <div className="relative size-18 md:size-24 rounded-2xl bg-gradient-to-br from-red-500 via-rose-600 to-red-900 p-0.5 shadow-xl transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
-                    <div className="flex size-full items-center justify-center rounded-2xl bg-black/70 backdrop-blur-md border border-white/30">
-                      <Zap className="size-9 md:size-12 text-red-400 drop-shadow-md animate-pulse" />
-                    </div>
-                  </div>
-                  
-                  {/* Badge 3D Flutuante */}
-                  <div className="absolute -bottom-1 -right-1 flex size-8 md:size-9 items-center justify-center rounded-xl bg-amber-500 text-black shadow-lg border border-white/50 animate-pulse">
-                    <Sparkles className="size-4 md:size-4.5" />
-                  </div>
-                </div>
-
-                <div className="space-y-2 mt-2 z-10">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white group-hover:text-red-400 transition-colors uppercase tracking-wider drop-shadow-md">
-                    Ativar Plano
-                  </h2>
-                  <p className="text-xs sm:text-sm md:text-base text-white/90 font-extrabold max-w-xs leading-relaxed">
-                    Vídeo tutorial e passo a passo para ativar ou renovar sua recarga no app.
-                  </p>
-                </div>
-
-                <div className="mt-6 w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 group-hover:from-red-500 group-hover:to-rose-500 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all flex items-center justify-center gap-2">
-                  <span>Ativar Meu Plano</span>
-                  <ChevronRight className="size-4 md:size-5 group-hover:translate-x-1 transition-transform text-white" />
-                </div>
-              </button>
-
-
-
-              {/* BOTÃO 2 3D: INSTALAÇÃO */}
+              {/* BOTÃO 1 3D: INSTALAÇÃO */}
               <button
                 type="button"
                 onClick={() => setCurrentView("instalacao")}
@@ -429,6 +386,48 @@ function JaSouClientePage() {
                 <div className="mt-6 w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 group-hover:from-amber-400 hover:to-yellow-400 text-black font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(245,158,11,0.5)] transition-all flex items-center justify-center gap-2">
                   <span>Acessar Tutorial</span>
                   <ChevronRight className="size-4 md:size-5 group-hover:translate-x-1 transition-transform text-black" />
+                </div>
+              </button>
+
+              {/* BOTÃO 2 3D: ATIVAR PLANO / RECARGA */}
+              <button
+                type="button"
+                onClick={() => navigateView("ativacao")}
+                className="group relative flex flex-col items-center justify-between p-6 sm:p-7 md:p-8 rounded-3xl border border-red-500/40 bg-gradient-to-b from-red-950/50 via-zinc-900/90 to-zinc-950 backdrop-blur-2xl transition-all duration-500 hover:scale-[1.04] hover:border-red-400 hover:shadow-[0_0_60px_rgba(220,38,38,0.6)] cursor-pointer text-center overflow-hidden min-h-[340px] md:min-h-[400px]"
+              >
+                {/* Efeito de Luz 3D de Fundo */}
+                <div className="absolute -top-20 -left-20 size-48 rounded-full bg-red-600/30 blur-3xl group-hover:bg-red-500/50 transition-all duration-500" />
+
+                {/* ÍCONE 3D ANIMADO DE ATIVAÇÃO */}
+                <div className="relative my-3 flex size-24 md:size-28 items-center justify-center">
+                  {/* Aura 3D pulsante */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-red-600 to-rose-500 blur-xl opacity-70 group-hover:opacity-100 transition-opacity animate-pulse" />
+                  
+                  {/* Container 3D em Camadas de Vidro */}
+                  <div className="relative size-18 md:size-24 rounded-2xl bg-gradient-to-br from-red-500 via-rose-600 to-red-900 p-0.5 shadow-xl transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110">
+                    <div className="flex size-full items-center justify-center rounded-2xl bg-black/70 backdrop-blur-md border border-white/30">
+                      <Zap className="size-9 md:size-12 text-red-400 drop-shadow-md animate-pulse" />
+                    </div>
+                  </div>
+                  
+                  {/* Badge 3D Flutuante */}
+                  <div className="absolute -bottom-1 -right-1 flex size-8 md:size-9 items-center justify-center rounded-xl bg-amber-500 text-black shadow-lg border border-white/50 animate-pulse">
+                    <Sparkles className="size-4 md:size-4.5" />
+                  </div>
+                </div>
+
+                <div className="space-y-2 mt-2 z-10">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white group-hover:text-red-400 transition-colors uppercase tracking-wider drop-shadow-md">
+                    Ativar Plano
+                  </h2>
+                  <p className="text-xs sm:text-sm md:text-base text-white/90 font-extrabold max-w-xs leading-relaxed">
+                    Vídeo tutorial e passo a passo para ativar ou renovar sua recarga no app.
+                  </p>
+                </div>
+
+                <div className="mt-6 w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 group-hover:from-red-500 group-hover:to-rose-500 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all flex items-center justify-center gap-2">
+                  <span>Ativar Meu Plano</span>
+                  <ChevronRight className="size-4 md:size-5 group-hover:translate-x-1 transition-transform text-white" />
                 </div>
               </button>
 
