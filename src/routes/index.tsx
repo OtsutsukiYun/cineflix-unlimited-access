@@ -1368,7 +1368,7 @@ function Index() {
               {[
                 { icon: Lock, title: "SSL 256-bit", desc: "Ambiente Criptografado", color: "text-emerald-400" },
                 { icon: ShieldCheck, title: "Garantia 7 Dias", desc: "Reembolso Garantido", color: "text-blue-400" },
-                { icon: Zap, title: "Envio Imediato", desc: "E-mail e WhatsApp", color: "text-amber-400" },
+                { icon: Zap, title: "Envio Imediato", desc: "via WhatsApp", color: "text-amber-400" },
                 { icon: CreditCard, title: "Pagamento Seguro", desc: "PIX ou Cartão", color: "text-purple-400" },
                 { icon: Award, title: "+30.000 Clientes", desc: "Assinantes Ativos", color: "text-rose-400" },
                 { icon: CheckCircle2, title: "Sem Fidelidade", desc: "Cancele quando quiser", color: "text-teal-400" },

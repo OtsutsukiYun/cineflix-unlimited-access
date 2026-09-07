@@ -91,11 +91,11 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
             </div>
             <div className="flex items-center gap-2">
               <UserCheck className="size-4 text-emerald-400 shrink-0" />
-              <span>Tipo de Acesso: <strong className="text-white">Conta com Usuário e Senha</strong> <span className="text-emerald-300 font-bold">(ao invés de código)</span></span>
+              <span>Tipo de Acesso: <strong className="text-white">Conta com Usuário e Senha</strong></span>
             </div>
             <div className="flex items-center gap-2">
               <WhatsAppIcon className="size-4 fill-emerald-400 text-emerald-400 shrink-0" />
-              <span>Forma de Recebimento: <strong className="text-white">Imediato via E-mail e WhatsApp</strong></span>
+              <span>Forma de Recebimento: <strong className="text-white">Imediato via WhatsApp</strong></span>
             </div>
           </div>
         </div>
