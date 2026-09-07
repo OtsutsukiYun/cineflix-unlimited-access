@@ -1,4 +1,5 @@
-import { X, ShieldCheck, Check, ArrowRight, Lock } from "lucide-react";
+import { X, ShieldCheck, Check, ArrowRight, Lock, UserCheck } from "lucide-react";
+import { WhatsAppIcon } from "@/components/icons";
 
 export type PlanDetails = {
   nome: string;
@@ -71,7 +72,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
             </div>
           </div>
 
-          <div className="space-y-2 pt-1 text-xs text-white/85">
+          <div className="space-y-2.5 pt-1 text-xs text-white/85">
             {plan.dias && (
               <div className="flex items-center gap-2">
                 <Check className="size-4 text-emerald-400 shrink-0" />
@@ -89,8 +90,12 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
               <span>Garantia: <strong className="text-white">7 dias de reembolso total</strong></span>
             </div>
             <div className="flex items-center gap-2">
-              <Check className="size-4 text-emerald-400 shrink-0" />
-              <span>Envio: <strong className="text-white">Imediato via E-mail</strong></span>
+              <UserCheck className="size-4 text-emerald-400 shrink-0" />
+              <span>Tipo de Acesso: <strong className="text-white">Conta com Usuário e Senha</strong> <span className="text-emerald-300 font-bold">(ao invés de código)</span></span>
+            </div>
+            <div className="flex items-center gap-2">
+              <WhatsAppIcon className="size-4 fill-emerald-400 text-emerald-400 shrink-0" />
+              <span>Forma de Recebimento: <strong className="text-white">Imediato via E-mail e WhatsApp</strong></span>
             </div>
           </div>
         </div>
