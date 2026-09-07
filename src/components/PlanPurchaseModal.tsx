@@ -82,7 +82,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
             {plan.telas && (
               <div className="flex items-center gap-2">
                 <Check className="size-4 text-emerald-400 shrink-0" />
-                <span>Telas: <strong className="text-white">{plan.telas}</strong> simultâneas</span>
+                <span>Telas: <strong className="text-white">{plan.telas}</strong></span>
               </div>
             )}
             <div className="flex items-center gap-2">
