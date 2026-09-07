@@ -221,7 +221,7 @@ function InstalarPage() {
         preco: "R$34,99",
         periodo: "mês",
         dias: "30 dias",
-        telas: "1 tela (não simultânea)",
+        telas: "1 tela simultânea",
         link: "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2",
       };
     } else if (tab === "trimestral") {
@@ -230,7 +230,7 @@ function InstalarPage() {
         preco: "R$99,99",
         periodo: "3 meses",
         dias: "90 dias",
-        telas: "1 tela (não simultânea)",
+        telas: "1 tela simultânea",
         link: "https://pay.braip.co/ref?pl=pla1qqq6&ck=che7eo0g&af=afixjm3pn2",
       };
     } else {
