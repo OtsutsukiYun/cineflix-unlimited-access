@@ -28,6 +28,17 @@ export type Title = {
 /** Destaques do carrossel de fundo (lançamentos de terror reais - TMDB) */
 export const heroSlides: HeroSlide[] = [
   {
+    title: "The End of Oak Street",
+    year: "2026",
+    genre: "Terror / Sci-Fi / Suspense",
+    tagline: "Uma rua inteira de 1982 é transportada para uma era pré-histórica aterrorizante com dinossauros.",
+    backdrop: "/u9jha7bkttIrc5RO1TWeSn7QVyI.jpg",
+    poster: "/3SifFCwwFzXdU1Ew0nA4Z92Bs15.jpg",
+    objectPosition: "center 30%",
+    objectPositionMobile: "50% 25%",
+    brightness: "brightness(1.15)",
+  },
+  {
     title: "Obsessão",
     year: "2026",
     genre: "Terror / Suspense",
@@ -193,6 +204,7 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const terror: Title[] = [
+  { title: "The End of Oak Street", poster: "/3SifFCwwFzXdU1Ew0nA4Z92Bs15.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "Just Play Dead", poster: "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "5.0" },
   { title: "Código Vingança", poster: "/gVZgjKIsXZOT3cNZm5PJZBtQRaG.jpg", year: "2026", tag: "🔥 Ação 2026", rating: "5.0" },
   { title: "Ponto Sem Retorno", poster: "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", year: "2026", tag: "🔥 Lançamento 2026", rating: "4.9" },
@@ -274,6 +286,7 @@ export const terror: Title[] = [
 ];
 
 export const top10Hoje: Title[] = [
+  { title: "The End of Oak Street", poster: "/3SifFCwwFzXdU1Ew0nA4Z92Bs15.jpg", year: "2026", tag: "🔥 Top Em Alta", rating: "5.0" },
   { title: "Just Play Dead", poster: "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", year: "2026", tag: "🔥 Top Em Alta", rating: "5.0" },
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
   { title: "A Morte do Demônio: Em Chamas", poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
@@ -424,7 +437,6 @@ export const proximosLancamentos: Title[] = [
   { title: "Vingadores: Doutor Destino", poster: "/bh2OuKvq19jBHsloUVCfPSZZw81.jpg", year: "2026", tag: "🔥 Em Breve" },
   { title: "Duna: Parte 3", poster: "/d43fvHQsIMa4kpyhKXw0haEJIvI.jpg", year: "2026", tag: "🔥 Em Breve" },
   { title: "HOPE", poster: "/bcK5naYzzfY0JBCgrPrsrbV6NO1.jpg", year: "2026", tag: "🔥 Em Breve" },
-  { title: "O Fim da Rua", poster: "/fYXqpgPmHMphSF2W30GbTeJVIa5.jpg", year: "2026", tag: "🔥 Em Breve" },
 ];
 
 export const icon = (slug: string) => `https://cdn.simpleicons.org/${slug}/white`;

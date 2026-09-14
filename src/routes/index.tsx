@@ -269,6 +269,7 @@ const CATALOG_TABS = [
     id: "em-alta",
     label: "🔥 Em Alta",
     items: [
+      { title: "The End of Oak Street", poster: "/3SifFCwwFzXdU1Ew0nA4Z92Bs15.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Star Wars: O Mandaloriano e Grogu", poster: "/7GV5rrUJf0BRUhoh2cyFoeNthlQ.jpg", year: "2026", tag: "🔥 Sci-Fi 2026" },
       { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1" },
       { title: "Motor City", poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", year: "2026", tag: "🔥 Ação 2026" },
@@ -312,6 +313,7 @@ const CATALOG_TABS = [
     id: "filmes",
     label: "🎬 Filmes & Lançamentos",
     items: [
+      { title: "The End of Oak Street", poster: "/3SifFCwwFzXdU1Ew0nA4Z92Bs15.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Just Play Dead", poster: "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", year: "2026", tag: "🔥 Lançamento 2026" },
       { title: "Motor City", poster: "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", year: "2026", tag: "🔥 Ação 2026" },
       { title: "Código Vingança", poster: "/gVZgjKIsXZOT3cNZm5PJZBtQRaG.jpg", year: "2026", tag: "🔥 Ação 2026" },
