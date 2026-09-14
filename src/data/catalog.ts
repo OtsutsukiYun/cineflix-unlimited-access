@@ -28,17 +28,6 @@ export type Title = {
 /** Destaques do carrossel de fundo (lançamentos de terror reais - TMDB) */
 export const heroSlides: HeroSlide[] = [
   {
-    title: "The End of Oak Street",
-    year: "2026",
-    genre: "Terror / Sci-Fi / Suspense",
-    tagline: "Uma rua inteira de 1982 é transportada para uma era pré-histórica aterrorizante com dinossauros.",
-    backdrop: "/8d5QK7dDU0XdhSdHfnGal0eV9Y7.jpg",
-    poster: "/3SifFCwwFzXdU1Ew0nA4Z92Bs15.jpg",
-    objectPosition: "center 20%",
-    objectPositionMobile: "50% 20%",
-    brightness: "brightness(0.95)",
-  },
-  {
     title: "Obsessão",
     year: "2026",
     genre: "Terror / Suspense",
