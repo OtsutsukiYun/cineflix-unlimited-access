@@ -624,7 +624,7 @@ function Index() {
           <AnimatedHeroHeadline />
 
           {/* SUBTÍTULO */}
-          <p className="text-[13px] sm:text-base font-medium text-white/80 w-[96%] sm:w-full max-w-xl mx-auto px-3 sm:px-0 leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
+          <p className="text-[13px] sm:text-base font-medium text-white/80 w-[96%] sm:w-full max-w-2xl mx-auto px-3 sm:px-0 leading-relaxed text-balance drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
             Doramas, animes, novelas turcas, canais ao vivo e muito mais para assistir nos seus dispositivos Android (Smart TV Android, TV Box, smartphone Android, tablet ou projetor).
           </p>
 
