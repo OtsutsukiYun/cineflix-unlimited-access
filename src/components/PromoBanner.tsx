@@ -31,7 +31,7 @@ export function PromoBanner() {
       <Gift className="size-3.5 shrink-0 text-red-500 animate-bounce drop-shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
 
       <span className="text-[10.5px] sm:text-xs font-extrabold tracking-wide text-white/90 whitespace-nowrap">
-        Resgate seu teste de 3 dias grátis hoje
+        Resgate seu teste de 3 dias grátis em dispositivos Android hoje
         {date ? (
           <>
             ,{" "}

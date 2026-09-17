@@ -394,7 +394,7 @@ function InstalarPage() {
         <div className="text-center space-y-3">
           <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-3 py-1 text-[11px] font-black tracking-wider text-emerald-400 uppercase backdrop-blur-xl shadow-md">
             <Sparkles className="size-3 text-emerald-400" />
-            <span>Seu teste grátis está quase pronto 🎉</span>
+            <span>Seu teste grátis em dispositivos Android está quase pronto 🎉</span>
           </div>
 
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
@@ -402,7 +402,7 @@ function InstalarPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-semibold">
-            Instale em aparelhos com sistema operacional Android
+            Exclusivo para dispositivos Android (Smart TV Android, TV Box, celular, tablet e projetor)
           </p>
 
         </div>

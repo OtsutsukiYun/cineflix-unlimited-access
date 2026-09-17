@@ -145,11 +145,11 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
             </div>
             <p className="mb-1 text-xs font-extrabold tracking-[0.2em] text-emerald-400 uppercase">Exclusivo {platformName} · UniTV Pro</p>
             <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
-              🎁 Teste Grátis<br /><span className="text-emerald-400">por 3 dias!</span>
+              🎁 Teste Grátis<br /><span className="text-emerald-400">para Dispositivos Android!</span>
             </h2>
             <p className="text-sm text-white/80 leading-relaxed mb-6">
               Você veio pelo {platformName} e por isso está ganhando{" "}
-              <strong className="text-emerald-300">3 dias de teste grátis</strong> no UniTV Pro — o maior catálogo de filmes, séries, animes, doramas e canais ao vivo.
+              <strong className="text-emerald-300">3 dias de teste grátis em dispositivos Android</strong> no UniTV Pro — o maior catálogo de filmes, séries, animes, doramas e canais ao vivo.
             </p>
             <button
               onClick={handleClaim}
