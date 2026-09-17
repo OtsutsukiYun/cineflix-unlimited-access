@@ -1,4 +1,4 @@
-import { X, ShieldCheck, Check, ArrowRight, Lock, UserCheck } from "lucide-react";
+import { X, ShieldCheck, Check, ArrowRight, Lock, UserCheck, Smartphone } from "lucide-react";
 import { WhatsAppIcon } from "@/components/icons";
 
 export type PlanDetails = {
@@ -88,6 +88,10 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
             <div className="flex items-center gap-2">
               <Check className="size-4 text-emerald-400 shrink-0" />
               <span>Garantia: <strong className="text-white">7 dias de reembolso total</strong></span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Smartphone className="size-4 text-emerald-400 shrink-0" />
+              <span>Compatibilidade: <strong className="text-white">Dispositivos Android e Smartphone Android</strong></span>
             </div>
             <div className="flex items-center gap-2">
               <UserCheck className="size-4 text-emerald-400 shrink-0" />
