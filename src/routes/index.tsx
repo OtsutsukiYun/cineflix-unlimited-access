@@ -1401,6 +1401,9 @@ function Index() {
             <p className="max-w-md text-sm text-white/40">
               A televisão do futuro é pela internet — sem antenas, sem decodificadores. Assista quando e onde quiser.
             </p>
+            <p className="max-w-2xl text-[11px] sm:text-xs text-white/35 leading-relaxed px-4 py-2.5 rounded-2xl bg-white/[0.02] border border-white/5 shadow-inner">
+              <strong className="text-white/50 font-bold">Aviso Legal:</strong> O UniTV Pro não armazena, hospeda ou transmite arquivos de mídia em seus servidores. Nosso aplicativo funciona como um organizador de links e conteúdos de terceiros disponíveis publicamente na internet.
+            </p>
             <p className="text-xs text-white/30">
               © {new Date().getFullYear()} UniTV Pro. Imagens de divulgação dos respectivos estúdios (fonte: TMDB).
             </p>
