@@ -91,7 +91,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
             </div>
             <div className="flex items-center gap-2">
               <AndroidIcon className="size-4 fill-emerald-400 text-emerald-400 shrink-0" />
-              <span>Compatibilidade: <strong className="text-white">Dispositivos Android (Celular Android, TV Box, Smart TV)</strong></span>
+              <span>Compatibilidade: <strong className="text-white">Dispositivos Android (Smart TV, TV Box, Celular Android e Tablet)</strong></span>
             </div>
             <div className="flex items-center gap-2">
               <UserCheck className="size-4 text-emerald-400 shrink-0" />
