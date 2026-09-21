@@ -341,11 +341,35 @@ function InstalarPage() {
                   <h3 className="text-base sm:text-lg font-black text-white">
                     Instalação na Smart TV, TV Box ou Projetor Android
                   </h3>
-                  <p className="text-xs text-white/60 font-medium">Siga os 3 passos simples abaixo:</p>
+                  <p className="text-xs text-white/60 font-medium">Assista ao vídeo ou siga os 3 passos simples abaixo:</p>
                 </div>
               </div>
 
-              <div className="space-y-5">
+              {/* VÍDEO DO TUTORIAL NA PARTE DE CIMA */}
+              <div className="space-y-3 pb-2">
+                <div className="text-center space-y-1">
+                  <h4 className="text-base sm:text-lg font-black text-white">
+                    Prefere assistir ao passo a passo em vídeo?
+                  </h4>
+                  <p className="text-xs text-white/60 font-medium">
+                    Veja o tutorial completo de instalação (2 min).
+                  </p>
+                </div>
+
+                <div className="overflow-hidden rounded-2xl border border-white/20 bg-zinc-900 shadow-md max-w-xl mx-auto">
+                  <div className="relative aspect-video w-full bg-black z-20">
+                    <iframe
+                      src="https://www.youtube.com/embed/u2X4iUABhq4?rel=0&enablejsapi=1"
+                      title="Vídeo Tutorial de Instalação na Smart TV Android e TV Box"
+                      className="size-full border-0 relative z-20 pointer-events-auto"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-5 pt-2 border-t border-white/10">
                 {/* PASSO 1 */}
                 <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
                   <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-red-600 text-white font-mono text-sm font-black shadow-md border border-white/20">
@@ -389,30 +413,6 @@ function InstalarPage() {
                   </div>
                 </div>
               </div>
-
-              {/* 4. VÍDEO DO TUTORIAL (POSICIONADO APÓS OS 3 PASSOS) */}
-              <div className="mt-8 pt-6 border-t border-white/15 space-y-3">
-                <div className="text-center space-y-1">
-                  <h4 className="text-base sm:text-lg font-black text-white">
-                    Prefere assistir ao passo a passo?
-                  </h4>
-                  <p className="text-xs text-white/60 font-medium">
-                    Veja o tutorial completo de instalação.
-                  </p>
-                </div>
-
-                <div className="overflow-hidden rounded-2xl border border-white/20 bg-zinc-900 shadow-md max-w-xl mx-auto">
-                  <div className="relative aspect-video w-full bg-black z-20">
-                    <iframe
-                      src="https://www.youtube.com/embed/u2X4iUABhq4?rel=0&enablejsapi=1"
-                      title="Vídeo Tutorial de Instalação na Smart TV Android e TV Box"
-                      className="size-full border-0 relative z-20 pointer-events-auto"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
-                  </div>
-                </div>
-              </div>
             </div>
           )}
 
@@ -426,11 +426,35 @@ function InstalarPage() {
                   <h3 className="text-base sm:text-lg font-black text-white">
                     Instalação no Celular ou Tablet Android
                   </h3>
-                  <p className="text-xs text-white/60 font-medium">Siga os passos rápidos abaixo:</p>
+                  <p className="text-xs text-white/60 font-medium">Assista ao vídeo ou siga os passos rápidos abaixo:</p>
                 </div>
               </div>
 
-              <div className="space-y-5">
+              {/* VÍDEO DO TUTORIAL NA PARTE DE CIMA */}
+              <div className="space-y-3 pb-2">
+                <div className="text-center space-y-1">
+                  <h4 className="text-base sm:text-lg font-black text-white">
+                    Prefere assistir ao passo a passo em vídeo?
+                  </h4>
+                  <p className="text-xs text-white/60 font-medium">
+                    Veja o tutorial completo de instalação no celular (1 min).
+                  </p>
+                </div>
+
+                <div className="overflow-hidden rounded-2xl border border-white/20 bg-zinc-900 shadow-md max-w-xl mx-auto">
+                  <div className="relative aspect-video w-full bg-black z-20">
+                    <iframe
+                      src="https://www.youtube.com/embed/0dSJ_Q4DDus?rel=0&enablejsapi=1"
+                      title="Vídeo Tutorial Celular e Tablet"
+                      className="size-full border-0 relative z-20 pointer-events-auto"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-5 pt-2 border-t border-white/10">
                 {/* PASSO 1 */}
                 <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
                   <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-red-600 text-white font-mono text-sm font-black shadow-md border border-white/20">
@@ -512,30 +536,6 @@ function InstalarPage() {
                     <p className="text-xs sm:text-sm text-emerald-400 leading-relaxed font-black">
                       Depois disso, o teste grátis estará disponível no aplicativo.
                     </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* 4. VÍDEO DO TUTORIAL (POSICIONADO APÓS OS PASSOS) */}
-              <div className="mt-8 pt-6 border-t border-white/15 space-y-3">
-                <div className="text-center space-y-1">
-                  <h4 className="text-base sm:text-lg font-black text-white">
-                    Prefere assistir ao passo a passo?
-                  </h4>
-                  <p className="text-xs text-white/60 font-medium">
-                    Veja o tutorial completo de instalação.
-                  </p>
-                </div>
-
-                <div className="overflow-hidden rounded-2xl border border-white/20 bg-zinc-900 shadow-md max-w-xl mx-auto">
-                  <div className="relative aspect-video w-full bg-black z-20">
-                    <iframe
-                      src="https://www.youtube.com/embed/0dSJ_Q4DDus?rel=0&enablejsapi=1"
-                      title="Vídeo Tutorial Celular e Tablet"
-                      className="size-full border-0 relative z-20 pointer-events-auto"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
                   </div>
                 </div>
               </div>
