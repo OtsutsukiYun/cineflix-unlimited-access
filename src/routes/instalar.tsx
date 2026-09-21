@@ -4,140 +4,79 @@ import {
   Download,
   Smartphone,
   Hash,
-  ExternalLink,
   Tv,
-  Monitor,
   Copy,
   Check,
   Play,
-  Gift,
-  CheckCircle2,
-  ShieldCheck,
+  Sparkles,
   Zap,
   CreditCard,
-  HelpCircle,
-  ArrowRight,
-  Flame,
-  Smile,
-  X,
   Lock,
-  Award,
-  Headphones,
-  Mail,
-  Sparkles,
-  Star,
+  ShieldCheck,
+  CheckCircle2,
   Film,
-  Trophy,
-  Heart,
+  Tv2,
   Clapperboard,
-  ChevronDown,
+  ArrowRight,
+  ChevronRight,
+  Award,
+  Crown,
 } from "lucide-react";
 import { img } from "@/data/catalog";
-import { WhatsAppIcon } from "@/components/icons";
-import {
-  DOWNLOADER_OFFICIAL_CODE,
-  NTDOWN_OFFICIAL_CODE,
-  getVerifiedDownloaderCode,
-  getVerifiedNtDownCode,
-} from "@/config/security";
 import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
 import { PlanPurchaseModal, PlanDetails } from "@/components/PlanPurchaseModal";
 
 export const Route = createFileRoute("/instalar")({
   head: () => ({
     meta: [
-      { title: "🎁 Teste Grátis 3 Dias — Como Instalar UniTV Pro (Smart TV Android, Celular e Tablet, TV Box)" },
+      { title: "🎁 Teste o UniTV Pro Grátis por 3 Dias — Instalação Rápida" },
       {
         name: "description",
         content:
-          "Seu teste grátis de 3 dias está quase pronto! Passo a passo simples e rápido para instalar o UniTV Pro em aparelhos com sistema Android.",
+          "Teste o UniTV Pro grátis por 3 dias! Passo a passo simples e rápido para instalar na sua Smart TV Android, TV Box, Celular ou Projetor.",
       },
     ],
   }),
   component: InstalarPage,
 });
 
-// LISTA VASTA E DIVERSIFICADA (FILMES 2025/2026, SUSPENSE, TERROR, AÇÃO E SÉRIES)
+// LISTA DE POSTERS PARA O MARQUEE INFINITO DE FUNDO
 const CATALOG_2026_POSTERS = [
-  // Linha 1: Lançamentos 2026 & Suspense/Ação
-  "/7GV5rrUJf0BRUhoh2cyFoeNthlQ.jpg", // Mandalorian & Grogu 2026
-  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", // Obsessão 2026
-  "/360qdtu2hLnqMu8SVHMywn420w1.jpg", // Batman Knightfall 2026
-  "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg", // Motor City 2026
-  "/gVZgjKIsXZOT3cNZm5PJZBtQRaG.jpg", // Código Vingança 2026
-  "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", // Ponto Sem Retorno 2026
-  "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg", // Michael 2026
-  "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg", // Socorro! 2026
-  "/pmff1wjKrgJi92PPr346lAifzlg.jpg", // Dia D 2026
-  "/yihdXomYb5kTeSivtFndMy5iDmf.jpg", // Devoradores de Estrelas 2026
-
-  // Linha 2: Terror & Suspense Lançamentos 2025/2026
-  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg", // Evil Dead Burn 2026
-  "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", // Just Play Dead 2026
-  "/kNxRgcTeqeU5jauBackTERoO2De.jpg", // Other Mommy 2026
-  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg", // Backrooms 2026
-  "/rB495nxugPfNlBmFDUjN5kaTy90.jpg", // Omukade 2026
-  "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg", // Hokum 2026
-  "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg", // A Maldição da Múmia 2026
-  "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg", // A Boca do Diabo 2026
-  "/psEJSjQr6I9GSJTdW28CKC4Kffs.jpg", // A Hora do Mal 2025
-  "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg", // Pecadores 2025
-
-  // Linha 3: Sucessos 2025 de Suspense & Terror
-  "/40nHGUfypLhlr7gJx8At1IbYkaK.jpg", // Invocação do Mal 4 (2025)
-  "/p3epSUdF9qSWWHTBlA3mJ0w2i2Y.jpg", // O Telefone Preto 2 (2025)
-  "/xfmnUz6C5WRboIMQZD0j3SNDT7v.jpg", // Faça Ela Voltar (2025)
-  "/temIXpcua7j5v4FipOxmzTfrB06.jpg", // Premonição 6 (2025)
-  "/12H82Xrr2ijDF0lJWUarqGFV7bC.jpg", // FNAF 2 (2025)
-  "/skwydfnpaQdRQZfXMroh59FMJyY.jpg", // Rua do Medo (2025)
-  "/2jME1L29XGE3T4f0zUHgpiKsPrV.jpg", // O Macaco (2025)
-  "/7LbrEQvturE05hljvTCWST7rLQL.jpg", // Acompanhante Perfeita (2025)
-  "/f3yLlUrJDdDL8d4nxywyotN45SL.jpg", // Predador (2025)
-  "/fbkUfzmVzEBFSt6p7VigknREIJT.jpg", // Nosferatu (2024/2025)
-
-  // Linha 4: Séries & Destaques de Suspense
-  "/eK9ZDIq7gPFRJ0GGaWvgrXLZgXX.jpg", // Origem / FROM
-  "/gMTfrLvrDaD0zrhpLZ7zXIIpKfJ.jpg", // IT: Bem-Vindos a Derry 2025
-  "/bdblQNZ4rP8AVJPqvGi82woxZkg.jpg", // The Terror 2026
-  "/twfKp60THrcOIep9sjHODOOfO8d.jpg", // Stranger Things
-  "/7rxiQrZjrer0RB9qNA8rHYFo53R.jpg", // Wandinha
-  "/xsrkiXg8EuNNtbPtbmvCxg95gK7.jpg", // Lucky 2026
-  "/gMYZZvnkVNTqSVnVCphWbPXwWwb.jpg", // Silo
-  "/gpC7h43xPMEV3goYMQShfJbTtLq.jpg", // Lanternas DC 2026
-  "/oCutmhFznao1Pzy6wM1C32kxAEu.jpg", // Channel Zero
-  "/xnxxrEKtBaIcI1ewq50pLkOMU6u.jpg", // Fúria 2026
-
-  // Linha 5: Suspense Psicológico & Terror Clássico/Moderno
-  "/j5e2YS1PRUVC1YgSool0JJyNLxJ.jpg", // Herege (2024)
-  "/vWeOgzlhnP1sS23H3rzctGHB9Nb.jpg", // A Substância (2024)
-  "/3HeKb5H89HjzWTkVkAqomu9mek.jpg", // Terrifier 3 (2024)
-  "/ypHiYvSJmHIyRDRiosZuE595uir.jpg", // Sorria 2 (2024)
-  "/uURBOrqLFyU8iKODcI3t2Xkbhqs.jpg", // Longlegs (2024)
-  "/5gKKSoD3iezjoL7YqZONjmyAiRA.jpg", // Abigail (2024)
-  "/6EYfWxIGPc23m1GFs9Gt3kzTl5O.jpg", // Imaculada (2024)
-  "/zppeHKLHljU2uI7NBJ1JyDNpn6L.jpg", // A Primeira Profecia (2024)
-  "/jB0W9tn4w07MFn7sTfqRTBLVytF.jpg", // Alien: Romulus (2024)
-  "/pN9BtzUeqPIKybAu9baihz6YzyO.jpg", // Um Lugar Silencioso: Dia Um
-
-  // Linha 6: Animes & Suspense Coreano/Asiático
-  "/4RuJf3ufe8DgQVycdyMZrJHGK1s.jpg", // Demon Slayer
-  "/uxCaBoYXsDC4A0SqTm3SISj0OwK.jpg", // Demon Slayer Castelo Infinito
-  "/dqZENchTd7lp5zht7BdlqM7RBhD.jpg", // Frieren
-  "/tEaeXZZO7SEcDr6yRP31UrrxcX0.jpg", // Bleach 2026
-  "/zp5NrmYp80axIGiEiYPmm1CW6uH.jpg", // Eu Vi o Diabo
-  "/mL4vGghS5XtgeNIPjhoTg8Tv5cJ.jpg", // O Lamento
-  "/1ZTrQWpuhxMr32uC1fQBRnkVYlf.jpg", // Pemandi Jenazah
-  "/bOl0rJ86WWxVYlQlGttHhHuYiPQ.jpg", // Salmokji 2026
-  "/xGvz7nlGQeePcVOpAzOcHsC7kRt.jpg", // Moana 2
-  "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg", // Deadpool & Wolverine
+  "/7GV5rrUJf0BRUhoh2cyFoeNthlQ.jpg",
+  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
+  "/360qdtu2hLnqMu8SVHMywn420w1.jpg",
+  "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg",
+  "/gVZgjKIsXZOT3cNZm5PJZBtQRaG.jpg",
+  "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg",
+  "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg",
+  "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg",
+  "/pmff1wjKrgJi92PPr346lAifzlg.jpg",
+  "/yihdXomYb5kTeSivtFndMy5iDmf.jpg",
+  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
+  "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg",
+  "/kNxRgcTeqeU5jauBackTERoO2De.jpg",
+  "/qEl4BDBTGnhLiadZx0c9nHM8vBF.jpg",
+  "/rB495nxugPfNlBmFDUjN5kaTy90.jpg",
+  "/fn5QNtG3LLXC3e7ZTQDYP92kFYc.jpg",
+  "/fI6XBw8k5CWNwxLEYZwpjA89TPg.jpg",
+  "/lH8k9uCWYn2b2gsYleqYBDPbWa8.jpg",
+  "/psEJSjQr6I9GSJTdW28CKC4Kffs.jpg",
+  "/v0Ljeti537c6cNKweuEN0iaU3x4.jpg",
+  "/40nHGUfypLhlr7gJx8At1IbYkaK.jpg",
+  "/p3epSUdF9qSWWHTBlA3mJ0w2i2Y.jpg",
+  "/xfmnUz6C5WRboIMQZD0j3SNDT7v.jpg",
+  "/temIXpcua7j5v4FipOxmzTfrB06.jpg",
+  "/12H82Xrr2ijDF0lJWUarqGFV7bC.jpg",
+  "/skwydfnpaQdRQZfXMroh59FMJyY.jpg",
+  "/2jME1L29XGE3T4f0zUHgpiKsPrV.jpg",
+  "/7LbrEQvturE05hljvTCWST7rLQL.jpg",
+  "/f3yLlUrJDdDL8d4nxywyotN45SL.jpg",
+  "/fbkUfzmVzEBFSt6p7VigknREIJT.jpg",
 ];
 
 const linha1 = CATALOG_2026_POSTERS.slice(0, 10);
 const linha2 = CATALOG_2026_POSTERS.slice(10, 20);
 const linha3 = CATALOG_2026_POSTERS.slice(20, 30);
-const linha4 = CATALOG_2026_POSTERS.slice(30, 40);
-const linha5 = CATALOG_2026_POSTERS.slice(40, 50);
-const linha6 = CATALOG_2026_POSTERS.slice(50, 60);
 
 const DOWNLOADER_PLAYSTORE_URL = "https://play.google.com/store/apps/details?id=com.esaba.downloader";
 const APK_MEDIAFIRE_URL = "https://www.mediafire.com/file/3g5ftk7ep3tq9ao/unitv_RS-NPWN.apk/file";
@@ -154,49 +93,44 @@ function DownloaderAppIcon({ className = "size-10" }: { className?: string }) {
   );
 }
 
-// RETÂNGULO DO CÓDIGO
-function CodeCopyBox({ code }: { code: string }) {
+// RETÂNGULO DO CÓDIGO - EXTREMAMENTE DESTACADO E GRANDE
+function CodeCopyBox({ code = "9884830" }: { code?: string }) {
   const [copied, setCopied] = useState(false);
-  const verifiedCode = code === NTDOWN_OFFICIAL_CODE ? getVerifiedNtDownCode(code) : getVerifiedDownloaderCode(code);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(verifiedCode);
+    navigator.clipboard.writeText(code);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   };
 
   return (
-    <div className="relative overflow-hidden my-2.5 rounded-2xl p-3.5 sm:p-4 border border-emerald-500/30 bg-emerald-950/20 backdrop-blur-xl shadow-md max-w-md mx-auto text-center">
-      <div className="pointer-events-none absolute -right-10 -bottom-10 size-36 rounded-full bg-emerald-500/15 blur-2xl" />
-      <div className="flex flex-col items-center justify-center gap-2 relative z-10 w-full text-center">
-        <div className="flex items-center justify-center gap-1.5">
-          <div className="flex size-5.5 items-center justify-center rounded-md bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-mono font-bold text-xs backdrop-blur-md">
-            <Hash className="size-3" />
-          </div>
-          <span className="text-[10px] font-extrabold uppercase tracking-widest text-emerald-400">
-            Código de Instalação 🔒
-          </span>
-        </div>
+    <div className="relative overflow-hidden my-3 rounded-2xl p-4 sm:p-5 border-2 border-emerald-400 bg-gradient-to-b from-emerald-950/80 via-zinc-900 to-zinc-950 shadow-[0_0_40px_rgba(16,185,129,0.3)] max-w-md mx-auto text-center">
+      <div className="pointer-events-none absolute -right-10 -bottom-10 size-40 rounded-full bg-emerald-500/20 blur-2xl" />
+      <div className="flex flex-col items-center justify-center gap-2.5 relative z-10 w-full text-center">
+        <span className="text-xs font-black uppercase tracking-widest text-emerald-400 bg-emerald-500/20 px-3 py-1 rounded-full border border-emerald-500/30">
+          🔑 CÓDIGO DO DOWNLOADER
+        </span>
 
-        <div className="font-mono font-black text-2xl sm:text-3xl tracking-widest text-white drop-shadow-md leading-none my-0.5">
-          {verifiedCode}
+        <div className="font-mono font-black text-4xl sm:text-5xl tracking-widest text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] my-1 select-all">
+          {code}
         </div>
 
         <button
+          type="button"
           onClick={handleCopy}
-          className={`w-full sm:w-auto min-w-[160px] inline-flex items-center justify-center gap-1.5 rounded-xl px-4 py-2 text-xs font-black tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-md backdrop-blur-md active:scale-95 ${
+          className={`w-full sm:w-auto min-w-[200px] h-12 inline-flex items-center justify-center gap-2 rounded-xl px-6 text-sm font-black tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-lg active:scale-95 ${
             copied
-              ? "bg-white text-black border border-white font-extrabold"
-              : "bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-400/30 shadow-[0_0_15px_rgba(16,185,129,0.5)]"
+              ? "bg-white text-black border border-white"
+              : "bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-400 hover:to-emerald-500 text-white border border-emerald-400/50 shadow-[0_0_20px_rgba(16,185,129,0.5)]"
           }`}
         >
           {copied ? (
             <>
-              <Check className="size-3.5 stroke-[3]" /> COPIADO!
+              <Check className="size-4 stroke-[3]" /> COPIADO!
             </>
           ) : (
             <>
-              <Copy className="size-3.5" /> COPIAR CÓDIGO
+              <Copy className="size-4" /> COPIAR CÓDIGO
             </>
           )}
         </button>
@@ -263,31 +197,10 @@ function InstalarPage() {
     }
   }, []);
 
-  const openApkWithTikTokBypass = (url: string) => {
-    const ua = (typeof navigator !== "undefined" ? navigator.userAgent : "") || "";
-    const isTikTok = /TikTok|Musical_ly|Bytedance/i.test(ua);
-    const isAndroid = /Android/i.test(ua);
-
-    if (isTikTok && isAndroid) {
-      const cleanUrl = url.replace(/^https?:\/\//, "");
-      window.location.href = `intent://${cleanUrl}#Intent;scheme=https;package=com.android.chrome;end;`;
-      return;
-    }
-    window.open(url, "_blank", "noopener,noreferrer");
-  };
-
-  const handleCloseModal = () => {
-    setShowPermissionModal(false);
-    if (pendingRedirectUrl) {
-      openApkWithTikTokBypass(pendingRedirectUrl);
-      setPendingRedirectUrl(null);
-    }
-  };
-
   return (
     <div className="relative min-h-screen bg-[#060606] text-white overflow-x-hidden">
-      {/* FUNDO ANIMADO COM MARQUEES INFINITOS DE CAPINHAS (COBRINDO TODO O FUNDO COM EXCELENTE CONTRASTE) */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-35 select-none">
+      {/* FUNDO ANIMADO COM MARQUEES INFINITOS */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-25 select-none">
         <div className="flex flex-col gap-3.5 -rotate-6 scale-125 -translate-y-16">
           <div className="flex overflow-hidden">
             <div className="animate-marquee-slow flex shrink-0 items-center gap-3.5 pr-3.5">
@@ -310,152 +223,185 @@ function InstalarPage() {
               ))}
             </div>
           </div>
-          <div className="flex overflow-hidden">
-            <div className="animate-marquee-reverse-slow flex shrink-0 items-center gap-3.5 pr-3.5">
-              {[...linha4, ...linha4, ...linha4].map((p, idx) => (
-                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-36 sm:h-48 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/10" />
-              ))}
-            </div>
-          </div>
-          <div className="flex overflow-hidden">
-            <div className="animate-marquee-slow flex shrink-0 items-center gap-3.5 pr-3.5">
-              {[...linha5, ...linha5, ...linha5].map((p, idx) => (
-                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-36 sm:h-48 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/10" />
-              ))}
-            </div>
-          </div>
-          <div className="flex overflow-hidden">
-            <div className="animate-marquee-reverse-slow flex shrink-0 items-center gap-3.5 pr-3.5">
-              {[...linha6, ...linha6, ...linha6].map((p, idx) => (
-                <img key={p + idx} src={img(p, "w342")} alt="" aria-hidden="true" decoding="async" className="h-36 sm:h-48 w-auto aspect-[2/3] rounded-xl object-cover shadow-[0_4px_20px_rgba(0,0,0,0.6)] border border-white/10" />
-              ))}
-            </div>
-          </div>
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#060606]/85 via-[#060606]/75 to-[#060606]/90" />
         <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* LUZES AMBIENTAIS */}
-      <div className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 size-[800px] rounded-full bg-red-600/15 blur-[180px] z-0 animate-pulse" />
+      <div className="pointer-events-none fixed top-0 left-1/2 -translate-x-1/2 size-[700px] rounded-full bg-red-600/15 blur-[180px] z-0 animate-pulse" />
 
-      {/* HEADER VIDRO */}
+      {/* HEADER VIDRO MINIMALISTA - SEM MENUS QUE DISTRAIAM O USUÁRIO */}
       <header className="fixed inset-x-0 top-0 z-50 transition-all duration-300">
-        <div className="mx-auto mt-3 sm:mt-4 flex w-[94%] max-w-5xl items-center justify-between rounded-full px-4 sm:px-6 py-2 sm:py-2.5 border border-white/15 backdrop-blur-2xl bg-black/60 shadow-[0_8px_32px_rgba(0,0,0,0.8)]">
-          <Link to="/" className="flex items-center gap-2 sm:gap-2.5 shrink-0 whitespace-nowrap">
-            <span className="relative flex size-7 sm:size-8 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_15px_rgba(220,38,38,0.7)] border border-white/20 shrink-0">
-              <svg className="size-3.5 sm:size-4 fill-white" viewBox="0 0 24 24">
+        <div className="mx-auto mt-3 sm:mt-4 flex w-[94%] max-w-5xl items-center justify-between rounded-full px-5 py-2.5 border border-white/15 backdrop-blur-2xl bg-black/70 shadow-[0_8px_32px_rgba(0,0,0,0.8)]">
+          <Link to="/" className="flex items-center gap-2.5 shrink-0">
+            <span className="relative flex size-8 items-center justify-center rounded-xl bg-gradient-to-br from-red-600 via-rose-700 to-red-900 shadow-[0_0_15px_rgba(220,38,38,0.7)] border border-white/20 shrink-0">
+              <svg className="size-4 fill-white" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z" />
               </svg>
             </span>
-            <span className="font-display text-xs sm:text-base font-black tracking-wider text-white whitespace-nowrap">
+            <span className="font-display text-base font-black tracking-wider text-white">
               UniTV <span className="text-red-500">Pro</span>
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6 text-xs font-bold text-white/80">
-            <Link to="/" className="hover:text-white transition-colors">
-              Início
-            </Link>
-            <Link to="/ja-sou-cliente" className="text-emerald-400 font-black transition-colors hover:text-emerald-300">
-              Já Sou Cliente
-            </Link>
-            <Link to="/instalar" className="text-red-500 font-extrabold">
-              Teste Grátis
-            </Link>
-            <a href="#plano-mensal" className="hover:text-white transition-colors">
-              Planos
-            </a>
-          </nav>
-
-          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            <a
-              href="#suporte"
-              className="inline-flex px-2.5 sm:px-3.5 py-1.5 text-[11px] font-extrabold tracking-wide uppercase rounded-full border border-white/20 bg-white/10 hover:bg-white/20 text-white/90 hover:text-white transition-all items-center gap-1 backdrop-blur-md cursor-pointer"
-            >
-              <Headphones className="size-3.5 text-emerald-400" />
-              <span>Suporte</span>
-            </a>
-
-            <a
-              href="#plano-mensal"
-              className="btn-cta px-4 sm:px-5 py-1.5 sm:py-2 text-xs font-black tracking-wider uppercase rounded-full shadow-[0_0_15px_rgba(220,38,38,0.6)] flex items-center justify-center shrink-0 hover:scale-105 transition-all"
-            >
-              <span>ASSINAR</span>
-            </a>
-          </div>
+          <a
+            href="#plano-mensal"
+            className="btn-cta px-4 sm:px-5 py-1.5 sm:py-2 text-xs font-black tracking-wider uppercase rounded-full shadow-[0_0_15px_rgba(220,38,38,0.6)] flex items-center justify-center shrink-0 hover:scale-105 transition-all"
+          >
+            <span>VER PLANOS</span>
+          </a>
         </div>
       </header>
 
-      {/* CONTEÚDO PRINCIPAL */}
-      <main className="relative z-10 mx-auto w-[92%] max-w-3xl pt-20 sm:pt-24 pb-20 space-y-4 sm:space-y-5">
+      {/* CONTEÚDO PRINCIPAL DE CONVERSÃO INSTAGRAM */}
+      <main className="relative z-10 mx-auto w-[92%] max-w-3xl pt-20 sm:pt-24 pb-20 space-y-6 sm:space-y-7">
 
-        {/* HERO TITLE - INFORMAÇÃO CLARA E TRANSPARENTE SOBRE O TESTE */}
-        <div className="text-center space-y-3">
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-950/40 px-3 py-1 text-[11px] font-black tracking-wider text-emerald-400 uppercase backdrop-blur-xl shadow-md">
-            <Sparkles className="size-3 text-emerald-400" />
-            <span>Seu teste grátis em dispositivos Android está quase pronto 🎉</span>
+        {/* 1. NOVO TOPO DA PÁGINA */}
+        <div className="text-center space-y-3.5 pt-2 sm:pt-4">
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-red-500/40 bg-red-950/40 px-3.5 py-1 text-xs font-black tracking-wider text-red-400 uppercase backdrop-blur-xl shadow-md">
+            <Sparkles className="size-3.5 text-red-400" />
+            <span>TESTE GRÁTIS DE 3 DIAS</span>
           </div>
 
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-            Como instalar o <span className="whitespace-nowrap">UniTV <span className="text-red-500">Pro</span></span>
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] max-w-xl mx-auto leading-tight">
+            Teste o UniTV Pro <span className="text-red-500">grátis por 3 dias</span>
           </h1>
 
-          <p className="text-sm sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-semibold">
-            Exclusivo para dispositivos Android (Smart TV Android, TV Box, Celular Android, tablet e projetor)
+          <p className="text-sm sm:text-base text-white/90 max-w-md mx-auto leading-relaxed font-semibold">
+            Escolha onde você vai assistir e siga os passos abaixo para liberar seu acesso.
           </p>
 
-        </div>
-
-        {/* 💎 TUTORIAL DE INSTALAÇÃO VISUAL */}
-        <div className="rounded-3xl border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden">
-          <div className="p-2.5 sm:p-4 bg-white/[0.04] border-b border-white/15 backdrop-blur-md">
-            <div className="grid grid-cols-2 gap-2 sm:gap-3 items-stretch">
-              <button
-                onClick={() => setDeviceTab("tv")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl p-2.5 sm:py-3.5 sm:px-4 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[56px] w-full overflow-hidden ${
-                  deviceTab === "tv"
-                    ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
-                    : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
-                }`}
-              >
-                <Tv className="size-5 sm:size-6 text-white shrink-0" />
-                <span className="break-words max-w-full">Smart TV, TV Box &amp; Projetor</span>
-              </button>
-
-              <button
-                onClick={() => setDeviceTab("mobile")}
-                className={`flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 rounded-xl p-2.5 sm:py-3.5 sm:px-4 text-xs sm:text-sm font-black transition-all cursor-pointer backdrop-blur-md text-center sm:text-left leading-tight min-h-[56px] w-full overflow-hidden ${
-                  deviceTab === "mobile"
-                    ? "bg-red-600 text-white shadow-[0_0_20px_rgba(220,38,38,0.6)] border border-white/30"
-                    : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
-                }`}
-              >
-                <Smartphone className="size-5 sm:size-6 text-emerald-400 shrink-0" />
-                <span className="break-words max-w-full">Celular &amp; Tablet Android</span>
-              </button>
-            </div>
+          {/* 3 PEQUENOS BENEFÍCIOS EM CARDS DISCRETOS EM LINHA */}
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 text-xs sm:text-sm font-extrabold text-white/90 pt-1 pb-1">
+            <span className="flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.05] px-3 py-1.5 backdrop-blur-md">
+              <Film className="size-3.5 text-red-500" /> Filmes e séries
+            </span>
+            <span className="flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.05] px-3 py-1.5 backdrop-blur-md">
+              <Tv2 className="size-3.5 text-red-500" /> Canais ao vivo
+            </span>
+            <span className="flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.05] px-3 py-1.5 backdrop-blur-md">
+              <Clapperboard className="size-3.5 text-red-500" /> Lançamentos e conteúdos exclusivos
+            </span>
           </div>
 
-          <div className="p-6 sm:p-8 space-y-6">
-            {deviceTab === "tv" && (
-              <>
-                <div className="flex items-center gap-3 pb-3 border-b border-white/15">
-                  <DownloaderAppIcon />
-                  <div>
-                    <h2 className="text-base sm:text-lg font-black text-white">
-                      Smart TV, TV Box, Fire Stick, Xiaomi Stick &amp; Projetor
-                    </h2>
+          {/* 7. LINK DISCRETO PARA CONHECER MELHOR A PLATAFORMA */}
+          <div className="pt-0.5">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-1.5 text-xs text-white/50 hover:text-white/90 transition-colors underline underline-offset-4 decoration-white/20 font-medium"
+            >
+              Quer conhecer melhor antes de testar? Veja tudo que você encontra na plataforma <ChevronRight className="size-3" />
+            </Link>
+          </div>
+        </div>
+
+        {/* 2. ESCOLHA DO DISPOSITIVO */}
+        <div className="pt-2 space-y-3 text-center">
+          <h2 className="text-lg sm:text-2xl font-black text-white tracking-tight">
+            Onde você quer assistir?
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl mx-auto">
+            <button
+              type="button"
+              onClick={() => setDeviceTab("tv")}
+              className={`flex items-center justify-center gap-3 rounded-2xl p-4 sm:p-5 text-sm sm:text-base font-black transition-all cursor-pointer backdrop-blur-md leading-tight min-h-[64px] border ${
+                deviceTab === "tv"
+                  ? "bg-red-600 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border-white/40 scale-[1.02]"
+                  : "bg-white/[0.06] text-white/80 hover:text-white hover:bg-white/15 border-white/15"
+              }`}
+            >
+              <Tv className="size-6 text-white shrink-0" />
+              <span>Smart TV / TV Box / Projetor Android</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setDeviceTab("mobile")}
+              className={`flex items-center justify-center gap-3 rounded-2xl p-4 sm:p-5 text-sm sm:text-base font-black transition-all cursor-pointer backdrop-blur-md leading-tight min-h-[64px] border ${
+                deviceTab === "mobile"
+                  ? "bg-red-600 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border-white/40 scale-[1.02]"
+                  : "bg-white/[0.06] text-white/80 hover:text-white hover:bg-white/15 border-white/15"
+              }`}
+            >
+              <Smartphone className="size-6 text-emerald-400 shrink-0" />
+              <span>Celular / Tablet Android</span>
+            </button>
+          </div>
+        </div>
+
+        {/* 3. INSTALAÇÃO EM APENAS 3 PASSOS */}
+        <div className="rounded-3xl border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden p-6 sm:p-8 space-y-6">
+          {deviceTab === "tv" && (
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 pb-3 border-b border-white/15">
+                <DownloaderAppIcon className="size-11" />
+                <div>
+                  <h3 className="text-base sm:text-lg font-black text-white">
+                    Instalação na Smart TV, TV Box ou Projetor Android
+                  </h3>
+                  <p className="text-xs text-white/60 font-medium">Siga os 3 passos simples abaixo:</p>
+                </div>
+              </div>
+
+              <div className="space-y-5">
+                {/* PASSO 1 */}
+                <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                  <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-red-600 text-white font-mono text-sm font-black shadow-md border border-white/20">
+                    1
+                  </span>
+                  <div className="space-y-1 pt-0.5">
+                    <h4 className="text-sm sm:text-base font-black text-white">
+                      Passo 1: Abra a Play Store e instale o aplicativo Downloader.
+                    </h4>
+                    <p className="text-xs text-white/70 leading-relaxed font-medium">
+                      Procure por "Downloader" na loja da sua TV e clique em instalar.
+                    </p>
                   </div>
                 </div>
 
-                <div className="overflow-hidden rounded-2xl border border-white/20 bg-zinc-900 shadow-md">
-                  <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs font-bold text-white bg-white/[0.04]">
-                    <div className="flex items-center gap-2">
-                      <Play className="size-3.5 text-red-500 fill-red-500" />
-                      <span className="text-emerald-400 font-black">🎥 Assista ao vídeo de 2 minutos para instalar</span>
-                    </div>
+                {/* PASSO 2 */}
+                <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-emerald-950/30 border border-emerald-500/30">
+                  <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-emerald-600 text-white font-mono text-sm font-black shadow-md border border-white/20">
+                    2
+                  </span>
+                  <div className="space-y-2 pt-0.5 w-full">
+                    <h4 className="text-sm sm:text-base font-black text-white">
+                      Passo 2: Abra o Downloader e digite o código:
+                    </h4>
+                    <CodeCopyBox code="9884830" />
                   </div>
+                </div>
+
+                {/* PASSO 3 */}
+                <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                  <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-red-600 text-white font-mono text-sm font-black shadow-md border border-white/20">
+                    3
+                  </span>
+                  <div className="space-y-1 pt-0.5">
+                    <h4 className="text-sm sm:text-base font-black text-white">
+                      Passo 3: Baixe o aplicativo, instale e abra.
+                    </h4>
+                    <p className="text-xs sm:text-sm text-emerald-400 leading-relaxed font-black">
+                      Depois disso, o teste grátis estará disponível no aplicativo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 4. VÍDEO DO TUTORIAL (POSICIONADO APÓS OS 3 PASSOS) */}
+              <div className="mt-8 pt-6 border-t border-white/15 space-y-3">
+                <div className="text-center space-y-1">
+                  <h4 className="text-base sm:text-lg font-black text-white">
+                    Prefere assistir ao passo a passo?
+                  </h4>
+                  <p className="text-xs text-white/60 font-medium">
+                    Veja o tutorial completo de instalação.
+                  </p>
+                </div>
+
+                <div className="overflow-hidden rounded-2xl border border-white/20 bg-zinc-900 shadow-md max-w-xl mx-auto">
                   <div className="relative aspect-video w-full bg-black z-20">
                     <iframe
                       src="https://www.youtube.com/embed/u2X4iUABhq4?rel=0&enablejsapi=1"
@@ -466,65 +412,122 @@ function InstalarPage() {
                     />
                   </div>
                 </div>
+              </div>
+            </div>
+          )}
 
-                <ol className="space-y-4 pt-1">
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
-                      01
-                    </span>
-                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Baixe o app{" "}
-                      <a href={DOWNLOADER_PLAYSTORE_URL} target="_blank" rel="noopener noreferrer" className="text-emerald-400 font-extrabold underline hover:text-emerald-300">
-                        Downloader <ExternalLink className="inline size-3" />
-                      </a>{" "}
-                      na loja do seu aparelho.
-                    </p>
-                  </li>
+          {deviceTab === "mobile" && (
+            <div className="space-y-6">
+              <div className="flex items-center gap-3 pb-3 border-b border-white/15">
+                <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-black font-bold shadow-md">
+                  <Smartphone className="size-6" />
+                </div>
+                <div>
+                  <h3 className="text-base sm:text-lg font-black text-white">
+                    Instalação no Celular ou Tablet Android
+                  </h3>
+                  <p className="text-xs text-white/60 font-medium">Siga os passos rápidos abaixo:</p>
+                </div>
+              </div>
 
-                  <li className="space-y-2">
-                    <div className="flex items-center gap-3">
-                      <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
-                        02
-                      </span>
-                      <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                        Abra o Downloader e digite o código:
-                      </p>
-                    </div>
-                    <CodeCopyBox code="9884830" />
-                  </li>
-
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
-                      03
-                    </span>
-                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Clique em <strong>"Go"</strong> e confirme a instalação!
-                    </p>
-                  </li>
-                </ol>
-              </>
-            )}
-
-            {deviceTab === "mobile" && (
-              <>
-                <div className="flex items-center gap-3 pb-3 border-b border-white/15">
-                  <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 text-black font-bold shadow-md">
-                    <Smartphone className="size-5" />
-                  </div>
-                  <div>
-                    <h2 className="text-base sm:text-lg font-black text-white">
-                      Celular &amp; Tablet Android
-                    </h2>
+              <div className="space-y-5">
+                {/* PASSO 1 */}
+                <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                  <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-red-600 text-white font-mono text-sm font-black shadow-md border border-white/20">
+                    1
+                  </span>
+                  <div className="space-y-2 pt-0.5 w-full">
+                    <h4 className="text-sm sm:text-base font-black text-white">
+                      Passo 1: Baixe o aplicativo oficial UniTV Pro
+                    </h4>
+                    {isTikTokUser ? (
+                      <div className="my-1 rounded-xl border border-amber-500/50 bg-amber-950/60 p-3 text-amber-100 shadow-md">
+                        <p className="text-xs font-bold text-amber-100 mb-2">
+                          Copie o link abaixo e cole no seu navegador:
+                        </p>
+                        <div className="flex items-center justify-between gap-2 rounded-lg bg-black/70 p-2 border border-amber-500/40">
+                          <span className="font-mono text-[10px] text-amber-200 truncate select-all pr-2">
+                            {APK_MEDIAFIRE_URL}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              navigator.clipboard.writeText(APK_MEDIAFIRE_URL);
+                              setCopiedMediaFire(true);
+                              setTimeout(() => setCopiedMediaFire(false), 2500);
+                            }}
+                            className="shrink-0 flex items-center gap-1 px-2.5 py-1.5 rounded-md bg-amber-500 hover:bg-amber-400 text-black font-black text-[11px] transition-colors cursor-pointer"
+                          >
+                            {copiedMediaFire ? (
+                              <>
+                                <Check className="size-3" /> COPIADO!
+                              </>
+                            ) : (
+                              <>
+                                <Copy className="size-3" /> COPIAR LINK
+                              </>
+                            )}
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <a
+                        href={APK_MEDIAFIRE_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 my-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-3.5 text-sm font-black text-white transition-all shadow-md border border-emerald-400/30 cursor-pointer active:scale-95"
+                      >
+                        <Download className="size-4 animate-bounce" />
+                        BAIXAR APK UNITV PRO (DIRETO)
+                      </a>
+                    )}
                   </div>
                 </div>
 
-                <div className="overflow-hidden rounded-2xl border border-white/20 bg-zinc-900 shadow-md">
-                  <div className="flex items-center justify-between border-b border-white/15 px-4 py-2 text-xs font-bold text-white bg-white/[0.04]">
-                    <div className="flex items-center gap-2">
-                      <Play className="size-3.5 text-red-500 fill-red-500" />
-                      <span className="text-emerald-400 font-black">🎥 Assista ao vídeo de 1 minuto para instalar</span>
-                    </div>
+                {/* PASSO 2 */}
+                <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                  <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-red-600 text-white font-mono text-sm font-black shadow-md border border-white/20">
+                    2
+                  </span>
+                  <div className="space-y-1 pt-0.5">
+                    <h4 className="text-sm sm:text-base font-black text-white">
+                      Passo 2: Abra o arquivo baixado e confirme a instalação.
+                    </h4>
+                    <p className="text-xs text-white/70 leading-relaxed font-medium">
+                      Caso o celular solicite permissão para fontes desconhecidas, clique em permitir.
+                    </p>
                   </div>
+                </div>
+
+                {/* PASSO 3 */}
+                <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                  <span className="shrink-0 flex size-8 items-center justify-center rounded-xl bg-emerald-600 text-white font-mono text-sm font-black shadow-md border border-white/20">
+                    3
+                  </span>
+                  <div className="space-y-2 pt-0.5 w-full">
+                    <h4 className="text-sm sm:text-base font-black text-white">
+                      Passo 3: Ou use o Downloader com o código:
+                    </h4>
+                    <CodeCopyBox code="9884830" />
+                    <p className="text-xs sm:text-sm text-emerald-400 leading-relaxed font-black">
+                      Depois disso, o teste grátis estará disponível no aplicativo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* 4. VÍDEO DO TUTORIAL (POSICIONADO APÓS OS PASSOS) */}
+              <div className="mt-8 pt-6 border-t border-white/15 space-y-3">
+                <div className="text-center space-y-1">
+                  <h4 className="text-base sm:text-lg font-black text-white">
+                    Prefere assistir ao passo a passo?
+                  </h4>
+                  <p className="text-xs text-white/60 font-medium">
+                    Veja o tutorial completo de instalação.
+                  </p>
+                </div>
+
+                <div className="overflow-hidden rounded-2xl border border-white/20 bg-zinc-900 shadow-md max-w-xl mx-auto">
                   <div className="relative aspect-video w-full bg-black z-20">
                     <iframe
                       src="https://www.youtube.com/embed/0dSJ_Q4DDus?rel=0&enablejsapi=1"
@@ -535,108 +538,35 @@ function InstalarPage() {
                     />
                   </div>
                 </div>
-
-                <ol className="space-y-4 pt-1">
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
-                      01
-                    </span>
-                    <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5 w-full">
-                      {isTikTokUser ? (
-                        <div className="my-1 rounded-xl border border-amber-500/50 bg-amber-950/60 p-3 text-amber-100 shadow-md">
-                          <p className="text-xs font-bold text-amber-100 mb-2">
-                            Copie o link abaixo e cole no seu navegador:
-                          </p>
-                          <div className="flex items-center justify-between gap-2 rounded-lg bg-black/70 p-2 border border-amber-500/40">
-                            <span className="font-mono text-[10px] text-amber-200 truncate select-all pr-2">
-                              {APK_MEDIAFIRE_URL}
-                            </span>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                navigator.clipboard.writeText(APK_MEDIAFIRE_URL);
-                                setCopiedMediaFire(true);
-                                setTimeout(() => setCopiedMediaFire(false), 2500);
-                              }}
-                              className="shrink-0 flex items-center gap-1 px-2.5 py-1.5 rounded-md bg-amber-500 hover:bg-amber-400 text-black font-black text-[11px] transition-colors cursor-pointer"
-                            >
-                              {copiedMediaFire ? (
-                                <>
-                                  <Check className="size-3" /> COPIADO!
-                                </>
-                              ) : (
-                                <>
-                                  <Copy className="size-3" /> COPIAR LINK
-                                </>
-                              )}
-                            </button>
-                          </div>
-                        </div>
-                      ) : (
-                        <>
-                          Baixe o APK oficial:
-                          <a
-                            href={APK_MEDIAFIRE_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2 my-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-5 py-3 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30 cursor-pointer"
-                          >
-                            <Download className="size-4 animate-bounce" />
-                            BAIXAR APK UNITV PRO (DIRETO)
-                          </a>
-                        </>
-                      )}
-                    </div>
-                  </li>
-
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
-                      02
-                    </span>
-                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Abra o arquivo baixado e confirme a instalação.
-                    </p>
-                  </li>
-
-                  <li className="space-y-2">
-                    <div className="flex items-center gap-3">
-                      <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
-                        03
-                      </span>
-                      <div className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                        Ou use o{" "}
-                        <a
-                          href={DOWNLOADER_PLAYSTORE_URL}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-black text-emerald-400 underline underline-offset-2 hover:text-emerald-300 inline-flex items-center gap-1"
-                        >
-                          Downloader na Play Store <ExternalLink className="size-3 inline shrink-0" />
-                        </a>{" "}
-                        com o código:
-                      </div>
-                    </div>
-                    <CodeCopyBox code="9884830" />
-                  </li>
-                </ol>
-              </>
-            )}
-          </div>
+              </div>
+            </div>
+          )}
         </div>
 
+        {/* 5. CTA APÓS A INSTALAÇÃO */}
+        <div className="rounded-3xl border border-emerald-500/40 bg-gradient-to-b from-emerald-950/60 via-zinc-900/90 to-zinc-950 p-6 sm:p-8 text-center space-y-3 shadow-[0_0_50px_rgba(16,185,129,0.2)]">
+          <div className="inline-flex size-12 items-center justify-center rounded-2xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 mb-1">
+            <CheckCircle2 className="size-6" />
+          </div>
 
+          <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+            Já instalou o aplicativo?
+          </h3>
 
-        {/* SEÇÃO DE PLANOS - POSICIONADA APÓS O TUTORIAL E A EXPLICAÇÃO DO TESTE */}
+          <p className="text-sm sm:text-base text-emerald-300 font-extrabold max-w-md mx-auto leading-relaxed">
+            Abra o app e aproveite seu teste grátis por 3 dias.
+          </p>
+        </div>
+
+        {/* 6. PLANOS */}
         <div id="plano-mensal" className="rounded-3xl border border-white/20 bg-white/[0.05] backdrop-blur-2xl shadow-[0_25px_80px_rgba(0,0,0,0.8)] overflow-hidden">
           <div className="p-6 sm:p-10 text-center space-y-5">
-            <div className="space-y-2">
-              <span className="text-[11px] font-black text-red-400 uppercase tracking-widest block">
-                {planTab === "mensal" && "Plano Mensal • Acesso Ilimitado"}
-                {planTab === "trimestral" && "Plano Trimestral • Economize no 90 Dias"}
-                {planTab === "anual" && "👑 Plano Anual VIP • 2 Telas • Melhor Custo-Benefício"}
+            <div className="space-y-3">
+              <span className="text-xs sm:text-sm font-black text-emerald-400 uppercase tracking-wider block bg-emerald-500/10 py-1.5 px-4 rounded-full border border-emerald-500/30 max-w-lg mx-auto">
+                Gostou da experiência? Continue assistindo sem interrupções.
               </span>
 
-              <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
+              <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight pt-1">
                 Faça parte da família <span className="text-red-500">UniTV Pro</span> hoje mesmo.
               </h2>
               <p className="text-xs sm:text-sm text-white/80 max-w-lg mx-auto leading-relaxed font-medium">
@@ -681,23 +611,6 @@ function InstalarPage() {
               </button>
             </div>
 
-            {/* ESTEIRA HORIZONTAL DE CAPINHAS DE TERROR */}
-            <div className="relative overflow-hidden py-2 my-2 max-w-xl mx-auto rounded-2xl">
-              <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-r from-[#0d090a] to-transparent" />
-              <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 z-10 bg-gradient-to-l from-[#0d090a] to-transparent" />
-
-              <div className="flex w-max gap-3 animate-marquee-slow">
-                {CATALOG_2026_POSTERS.concat(CATALOG_2026_POSTERS).map((p, i) => (
-                  <img
-                    key={`p-marquee-${i}`}
-                    src={img(p, "w185")}
-                    alt=""
-                    className="h-28 w-19 rounded-xl object-cover shadow-lg border border-red-500/30 shrink-0 transition-transform hover:scale-105"
-                  />
-                ))}
-              </div>
-            </div>
-
             {/* PREÇO DINÂMICO CONFORME PLANO SELECIONADO */}
             <div className="py-1">
               <span className="text-xs font-bold text-red-400 uppercase tracking-widest block mb-1">
@@ -732,7 +645,6 @@ function InstalarPage() {
                 "Animes, Doramas & Novelas Turcas atualizadas",
                 "Programação Infantil & Desenhos Dublados",
                 "Guia de Programação EPG & Replay de 7 dias",
-                "Suporte 7 dias por semana via WhatsApp",
                 "Garantia incondicional de reembolso por 7 dias",
                 "Sem fidelidade ou multa (Cancele quando quiser)",
               ].map((f, idx) => (
@@ -743,7 +655,7 @@ function InstalarPage() {
               ))}
             </div>
 
-            {/* BOTÃO ASSINATURA DINÂMICO (ABRE MODAL DE CONFIRMAÇÃO COM PROSSEGUIR VERDE) */}
+            {/* BOTÃO ASSINATURA DINÂMICO */}
             <div className="pt-1">
               <button
                 type="button"
@@ -813,49 +725,6 @@ function InstalarPage() {
                   <p className="text-[9.5px] sm:text-[10px] text-white/50 leading-tight font-medium break-words w-full">{c.desc}</p>
                 </div>
               ))}
-            </div>
-          </div>
-
-          {/* SUPORTE RODAPÉ */}
-          <div id="suporte" className="p-4 sm:p-5 bg-white/[0.02] border-t border-white/15 text-center sm:text-left flex flex-col gap-3.5 backdrop-blur-md">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-3">
-                <HelpCircle className="size-5 text-emerald-400 shrink-0" />
-                <div>
-                  <p className="text-xs sm:text-sm text-white font-bold">Precisa de ajuda ou suporte?</p>
-                  <p className="text-[11px] text-white/60 font-medium">Atendimento via WhatsApp 7 dias por semana.</p>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full md:w-auto shrink-0">
-                <a
-                  href="https://wa.me/556182743140?text=Ol%C3%A1!%20Comprei%20minha%20recarga%2C%20quero%20meu%20acesso%2C%20tenho%20d%C3%BAvidas%20ou%20preciso%20de%20reembolso"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 px-4 py-2.5 text-xs font-black text-black transition-colors border border-yellow-300 shadow-md"
-                >
-                  <WhatsAppIcon className="size-3.5 fill-current text-black" />
-                  💬 QUERO MEU ACESSO, RECARGA OU REEMBOLSO
-                </a>
-
-                <a
-                  href="https://wa.me/5561984016006?text=Ol%C3%A1!%20Preciso%20de%20ajuda%20com%20a%20instala%C3%A7%C3%A3o%20do%20UniTV%20Pro"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-emerald-600/90 hover:bg-emerald-500 px-4 py-2.5 text-xs font-bold text-white transition-colors border border-emerald-400/30 shadow-md"
-                >
-                  <WhatsAppIcon className="size-3.5 fill-current" />
-                  🛠️ AJUDA COM A INSTALAÇÃO
-                </a>
-              </div>
-            </div>
-
-            <div className="pt-2.5 border-t border-white/10 text-center text-xs text-white/60 flex items-center justify-center gap-1.5 flex-wrap">
-              <Mail className="size-3.5 text-emerald-400 shrink-0" />
-              <span>Ou se preferir, envie um e-mail para:</span>
-              <a href="mailto:unitvpro.oficial2026@gmail.com" className="text-white font-extrabold underline hover:text-emerald-400 transition-colors">
-                unitvpro.oficial2026@gmail.com
-              </a>
             </div>
           </div>
         </div>
