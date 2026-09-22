@@ -492,15 +492,6 @@ function InstalarPage() {
                     </div>
                     <CodeCopyBox code="9884830" />
                   </li>
-
-                  <li className="flex items-start gap-3">
-                    <span className="shrink-0 flex size-6 items-center justify-center rounded-full bg-red-600 text-white font-mono text-xs font-black shadow-md border border-white/20">
-                      03
-                    </span>
-                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                      Clique em <strong>"Go"</strong> e confirme a instalação!
-                    </p>
-                  </li>
                 </ol>
               </>
             )}
