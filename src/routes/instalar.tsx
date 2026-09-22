@@ -401,10 +401,6 @@ function InstalarPage() {
             Como instalar o <span className="whitespace-nowrap">UniTV <span className="text-red-500">Pro</span></span>
           </h1>
 
-          <p className="text-sm sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-semibold">
-            Exclusivo para dispositivos Android
-          </p>
-
         </div>
 
         {/* 💎 TUTORIAL DE INSTALAÇÃO VISUAL */}
