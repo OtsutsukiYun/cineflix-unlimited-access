@@ -1305,7 +1305,7 @@ function Index() {
 
             <div className="pt-3 border-t border-white/10 flex items-center justify-center gap-2 text-center text-xs sm:text-sm font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 rounded-xl p-3.5 shadow-sm">
               <CheckCircle2 className="size-4.5 shrink-0 text-emerald-400" />
-              <span>Assim que o pagamento for confirmado, você recebe no seu WhatsApp o código de recarga ou os dados de acesso à sua conta.</span>
+              <span>Assim que o pagamento for confirmado, você recebe no seu WhatsApp seu usuário e senha de acesso à sua conta.</span>
             </div>
           </div>
         </SmoothCardReveal>
