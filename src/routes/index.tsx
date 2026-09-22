@@ -300,7 +300,7 @@ const CATALOG_TABS = [
     label: "🚀 Próximos Lançamentos (2026)",
     items: [
       { title: "Coração Selvagem", poster: "/1ApfSA8JTqeha3GTFEY8syV4auq.jpg", year: "2026", tag: "🔥 Em Breve" },
-      { title: "Resident Evil 2026", poster: "/qayga07ICNDswm0cMJ8P3VwklFZ.jpg", year: "2026", tag: "🔥 Em Breve" },
+      { title: "Resident Evil 2026", poster: "https://criticopolis.com.br/media/file/movie/1423191/poster/28820319.jpg?w=500", year: "2026", tag: "🔥 Em Breve" },
       { title: "A Queda 2: No Limite", poster: "/p73G56bJGPa5y52cyqWscHR6NnN.jpg", year: "2026", tag: "🔥 Em Breve" },
       { title: "Sobrenatural: Agora Entre Nós", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Em Breve" },
       { title: "Ponto Sem Retorno", poster: "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", year: "2026", tag: "🔥 Em Breve" },
