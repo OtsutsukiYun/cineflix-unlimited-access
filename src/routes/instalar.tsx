@@ -401,9 +401,22 @@ function InstalarPage() {
             Como instalar o <span className="whitespace-nowrap">UniTV <span className="text-red-500">Pro</span></span>
           </h1>
 
-          <p className="text-sm sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-semibold">
-            Exclusivo para dispositivos Android (Smart TV Android, TV Box, Celular Android, tablet e projetor)
+          <p className="text-sm sm:text-base text-white/90 max-w-xl mx-auto leading-relaxed font-semibold">
+            Filmes, séries e canais ao vivo. Exclusivo para dispositivos Android (Smart TV Android, TV Box, Celular Android, tablet e projetor).
           </p>
+
+          {/* BENEFÍCIOS EM CARDS/BADGES DISCRETOS */}
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-white/90 border border-white/15 backdrop-blur-md">
+              🎬 Filmes e séries
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-white/90 border border-white/15 backdrop-blur-md">
+              📺 Canais ao vivo
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/10 text-white/90 border border-white/15 backdrop-blur-md">
+              🔥 Lançamentos e conteúdos exclusivos
+            </span>
+          </div>
 
         </div>
 
@@ -446,6 +459,9 @@ function InstalarPage() {
                     <h2 className="text-base sm:text-lg font-black text-white">
                       Smart TV, TV Box, Fire Stick, Xiaomi Stick &amp; Projetor
                     </h2>
+                    <p className="text-xs font-semibold text-white/70">
+                      Filmes, séries, canais ao vivo e lançamentos
+                    </p>
                   </div>
                 </div>
 
@@ -515,6 +531,9 @@ function InstalarPage() {
                     <h2 className="text-base sm:text-lg font-black text-white">
                       Celular &amp; Tablet Android
                     </h2>
+                    <p className="text-xs font-semibold text-white/70">
+                      Filmes, séries, canais ao vivo e lançamentos
+                    </p>
                   </div>
                 </div>
 
