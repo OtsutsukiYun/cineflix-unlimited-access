@@ -440,7 +440,7 @@ function InstalarPage() {
                   <DownloaderAppIcon />
                   <div>
                     <h2 className="text-base sm:text-lg font-black text-white">
-                      Instale o aplicativo pelo Downloader
+                      Instalação rápida pelo aplicativo Downloader
                     </h2>
                   </div>
                 </div>
