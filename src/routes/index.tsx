@@ -681,7 +681,7 @@ function Index() {
                 <span className="flex items-center gap-2"><Film className="size-3.5 text-red-500" /> Cinema & Lançamentos</span>
                 <span className="flex items-center gap-2 text-blue-300"><Tv className="size-3.5 text-blue-400" /> Todos os Lançamentos</span>
                 <span className="flex items-center gap-2"><MonitorPlay className="size-3.5 text-red-500" /> Smart TV Android & TV Box</span>
-                <span className="flex items-center gap-2 text-red-300"><RefreshCcw className="size-3.5 text-red-500" /> Atualizações Semanais</span>
+                <span className="flex items-center gap-2 text-red-300"><RefreshCcw className="size-3.5 text-red-500" /> Conteúdos Novos Todos os Dias</span>
                 <span className="flex items-center gap-2"><Zap className="size-3.5 text-red-500" /> Ativação Imediata</span>
               </Fragment>
             ))}
