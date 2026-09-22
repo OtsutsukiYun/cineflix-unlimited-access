@@ -402,7 +402,7 @@ function InstalarPage() {
           </h1>
 
           <p className="text-sm sm:text-base text-white/90 max-w-lg mx-auto leading-relaxed font-semibold">
-            Exclusivo para dispositivos Android (Smart TV Android, TV Box, Celular Android, tablet e projetor)
+            Exclusivo para dispositivos Android
           </p>
 
         </div>
