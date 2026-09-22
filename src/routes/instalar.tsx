@@ -416,7 +416,7 @@ function InstalarPage() {
                 }`}
               >
                 <Tv className="size-5 sm:size-6 text-white shrink-0" />
-                <span className="break-words max-w-full">Smart TV, TV Box &amp; Projetor</span>
+                <span className="break-words max-w-full">Smart TV, TV Box, Fire Stick, Xiaomi Stick &amp; Projetor</span>
               </button>
 
               <button
@@ -440,7 +440,7 @@ function InstalarPage() {
                   <DownloaderAppIcon />
                   <div>
                     <h2 className="text-base sm:text-lg font-black text-white">
-                      Smart TV, TV Box, Fire Stick, Xiaomi Stick &amp; Projetor
+                      Smart TV Android, TV Box, Fire Stick, Xiaomi Stick &amp; Projetor
                     </h2>
                   </div>
                 </div>
@@ -483,7 +483,7 @@ function InstalarPage() {
                         02
                       </span>
                       <p className="text-xs sm:text-sm text-white/90 leading-relaxed pt-0.5">
-                        Abra o Downloader e digite o código:
+                        Abra o Downloader e digite o código. Depois, confirme a instalação:
                       </p>
                     </div>
                     <CodeCopyBox code="9884830" />
