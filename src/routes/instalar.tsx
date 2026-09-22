@@ -440,7 +440,7 @@ function InstalarPage() {
                   <DownloaderAppIcon />
                   <div>
                     <h2 className="text-base sm:text-lg font-black text-white">
-                      Smart TV Android, TV Box, Fire Stick, Xiaomi Stick &amp; Projetor
+                      Instale o aplicativo pelo Downloader
                     </h2>
                   </div>
                 </div>
