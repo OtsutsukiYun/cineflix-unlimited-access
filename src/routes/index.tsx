@@ -299,11 +299,12 @@ const CATALOG_TABS = [
     id: "proximos",
     label: "🚀 Próximos Lançamentos (2026)",
     items: [
+      { title: "Coração Selvagem", poster: "/1ApfSA8JTqeha3GTFEY8syV4auq.jpg", year: "2026", tag: "🔥 Brad Pitt 2026" },
+      { title: "Resident Evil 2026", poster: "/ddfXMkaPViSrg0P5aoYGFMc58x2.jpg", year: "2026", tag: "🔥 Em Breve" },
       { title: "A Queda 2: No Limite", poster: "/p73G56bJGPa5y52cyqWscHR6NnN.jpg", year: "2026", tag: "🔥 Em Breve" },
       { title: "Sobrenatural: Agora Entre Nós", poster: "/4tTrW9dXCByS5wt2pXVWb58zNjz.jpg", year: "2026", tag: "🔥 Em Breve" },
       { title: "Ponto Sem Retorno", poster: "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg", year: "2026", tag: "🔥 Em Breve" },
       { title: "Other Mommy (A Outra Mãe)", poster: "/kNxRgcTeqeU5jauBackTERoO2De.jpg", year: "2026", tag: "🔥 Em Breve" },
-      { title: "Resident Evil: O Retorno", poster: "/zP83bIkBViw5b1s9bDemYJ3AAgX.jpg", year: "2026", tag: "🔥 Em Breve" },
       { title: "Werwulf (O Lobisomem)", poster: "/imnkSt4PSQpxIuyiRpJCiLk3SZz.jpg", year: "2026", tag: "🔥 Em Breve" },
       { title: "Cuidado com Boiúna", poster: "/tENVMxKvOkslv8kagVNdIEQ13RT.jpg", year: "2026", tag: "🔥 Em Breve" },
       { title: "Clayface: Rituais das Sombras", poster: "/5jCpQnWPikggmQZoDp1eAi6BI6w.jpg", year: "2026", tag: "🔥 Em Breve" },
