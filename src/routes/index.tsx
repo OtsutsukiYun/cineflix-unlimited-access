@@ -653,7 +653,7 @@ function Index() {
 
           <DOMIntegrityShield />
           <div className="mt-6 sm:mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs sm:text-sm text-white/90 font-medium drop-shadow-[0_2px_8px_rgba(0,0,0,1)]">
-            <span className="flex items-center gap-1.5"><Sparkles className="size-4 text-red-500" /> Mais conteúdos que os outros streamings</span>
+            <span className="flex items-center gap-1.5"><Sparkles className="size-4 text-red-500" /> Mais conteúdos que os outros aplicativos</span>
             <span className="flex items-center gap-1.5"><Users className="size-4 text-red-500" /> +30.000 assinantes ativos</span>
             <span className="flex items-center gap-1.5"><ShieldCheck className="size-4 text-red-500" /> Garantia de 7 dias</span>
           </div>
