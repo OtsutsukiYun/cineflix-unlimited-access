@@ -166,37 +166,37 @@ function CodeCopyBox({ code }: { code: string }) {
   };
 
   return (
-    <div className="relative overflow-hidden my-2.5 rounded-2xl p-3.5 sm:p-4 border border-emerald-500/30 bg-emerald-950/20 backdrop-blur-xl shadow-md max-w-md mx-auto text-center">
-      <div className="pointer-events-none absolute -right-10 -bottom-10 size-36 rounded-full bg-emerald-500/15 blur-2xl" />
-      <div className="flex flex-col items-center justify-center gap-2 relative z-10 w-full text-center">
+    <div className="relative overflow-hidden my-2 rounded-xl p-2.5 sm:p-3 border border-emerald-500/30 bg-emerald-950/20 backdrop-blur-xl shadow-md max-w-xs sm:max-w-sm mx-auto text-center">
+      <div className="pointer-events-none absolute -right-10 -bottom-10 size-28 rounded-full bg-emerald-500/15 blur-2xl" />
+      <div className="flex flex-col items-center justify-center gap-1.5 relative z-10 w-full text-center">
         <div className="flex items-center justify-center gap-1.5">
-          <div className="flex size-5.5 items-center justify-center rounded-md bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-mono font-bold text-xs backdrop-blur-md">
+          <div className="flex size-5 items-center justify-center rounded-md bg-emerald-500/30 text-emerald-300 border border-emerald-500/30 font-mono font-bold text-[11px] backdrop-blur-md">
             <Hash className="size-3" />
           </div>
-          <span className="text-[10px] font-extrabold uppercase tracking-widest text-emerald-400">
+          <span className="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-emerald-400">
             Código de Instalação 🔒
           </span>
         </div>
 
-        <div className="font-mono font-black text-2xl sm:text-3xl tracking-widest text-white drop-shadow-md leading-none my-0.5">
+        <div className="font-mono font-black text-xl sm:text-2xl tracking-widest text-white drop-shadow-md leading-none my-0.5">
           {verifiedCode}
         </div>
 
         <button
           onClick={handleCopy}
-          className={`w-full sm:w-auto min-w-[160px] inline-flex items-center justify-center gap-1.5 rounded-xl px-4 py-2 text-xs font-black tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-md backdrop-blur-md active:scale-95 ${
+          className={`w-full sm:w-auto min-w-[140px] inline-flex items-center justify-center gap-1.5 rounded-lg px-3.5 py-1.5 text-[11px] font-black tracking-wider uppercase transition-all duration-200 cursor-pointer shadow-md backdrop-blur-md active:scale-95 ${
             copied
               ? "bg-white text-black border border-white font-extrabold"
-              : "bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-400/30 shadow-[0_0_15px_rgba(16,185,129,0.5)]"
+              : "bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-400/30 shadow-[0_0_12px_rgba(16,185,129,0.4)]"
           }`}
         >
           {copied ? (
             <>
-              <Check className="size-3.5 stroke-[3]" /> COPIADO!
+              <Check className="size-3 stroke-[3]" /> COPIADO!
             </>
           ) : (
             <>
-              <Copy className="size-3.5" /> COPIAR CÓDIGO
+              <Copy className="size-3" /> COPIAR CÓDIGO
             </>
           )}
         </button>
