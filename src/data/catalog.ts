@@ -276,7 +276,9 @@ export const terror: Title[] = [
 
 export const top10Hoje: Title[] = [
   { title: "The End of Oak Street", poster: "/3SifFCwwFzXdU1Ew0nA4Z92Bs15.jpg", year: "2026", tag: "🔥 Top Em Alta", rating: "5.0" },
-  { title: "Just Play Dead", poster: "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg", year: "2026", tag: "🔥 Top Em Alta", rating: "5.0" },
+  { title: "Acampamento Miasma", poster: "/5Cz1EJOKpZ8hqvBNZYF9C2zTB2T.jpg", year: "2026", tag: "🔥 Top Em Alta", rating: "5.0" },
+  { title: "O Sorveteiro", poster: "/c987gxFjXqYOxZEZKcTkS1ONTWH.jpg", year: "2026", tag: "🔥 Top Em Alta", rating: "5.0" },
+  { title: "O Último Tiro Certo", poster: "/hMLxNLCXRDd62acfCBn6mIyW1HU.jpg", year: "2026", tag: "🔥 Lançamento", rating: "5.0" },
   { title: "Obsessão", poster: "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg", year: "2026", tag: "🔥 Top 1", rating: "5.0" },
   { title: "A Morte do Demônio: Em Chamas", poster: "/fteLdvfRnltfLjAEnsl5E3vImnW.jpg", year: "2026", tag: "🔥 Top 2", rating: "5.0" },
   { title: "Todo Mundo em Pânico 6", poster: "/y9yJd2qIIwhZcllHeKHsz5eRvNr.jpg", year: "2026", tag: "🔥 Top 3", rating: "5.0" },
