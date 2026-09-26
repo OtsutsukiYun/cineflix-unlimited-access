@@ -192,12 +192,13 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
           {[
             selectedTab === "anual" ? "2 Telas simultâneas" : "1 Tela simultânea",
             "Milhares de filmes e séries exclusivos",
-            "Lançamentos semanais (assista primeiro aqui)",
             "Canais Ao Vivo & Esportes em 4K e Full HD",
-            "Animes, Doramas & Novelas Turcas",
+            "Lançamentos semanais direto do cinema — assista primeiro aqui",
+            "Novos conteúdos adicionados todos os dias",
+            "Animes, Doramas, Novelas Turcas & Cinema Asiático",
             "Suporte 7 dias por semana no WhatsApp",
             "Garantia incondicional de 7 dias",
-            "Sem fidelidade (Cancele quando quiser)",
+            "Sem fidelidade — cancele quando quiser",
           ].map((f, idx) => (
             <div key={idx} className="flex items-start gap-2">
               <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />

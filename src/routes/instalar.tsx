@@ -720,14 +720,13 @@ function InstalarPage() {
                   ? "2 Telas simultâneas"
                   : "1 Tela simultânea",
                 "Milhares de filmes e séries exclusivos",
-                "Lançamentos semanais (assista primeiro aqui)",
-                "Canais Ao Vivo & Esportes sem travar (4K & Full HD)",
-                "Animes, Doramas & Novelas Turcas atualizadas",
-                "Programação Infantil & Desenhos Dublados",
-                "Guia de Programação EPG & Replay de 7 dias",
-                "Suporte 7 dias por semana via WhatsApp",
-                "Garantia incondicional de reembolso por 7 dias",
-                "Sem fidelidade ou multa (Cancele quando quiser)",
+                "Canais Ao Vivo & Esportes em 4K e Full HD",
+                "Lançamentos semanais direto do cinema — assista primeiro aqui",
+                "Novos conteúdos adicionados todos os dias",
+                "Animes, Doramas, Novelas Turcas & Cinema Asiático",
+                "Suporte 7 dias por semana no WhatsApp",
+                "Garantia incondicional de 7 dias",
+                "Sem fidelidade — cancele quando quiser",
               ].map((f, idx) => (
                 <div key={idx} className="flex items-start gap-2.5">
                   <CheckCircle2 className="size-4 text-emerald-400 shrink-0 mt-0.5" />
