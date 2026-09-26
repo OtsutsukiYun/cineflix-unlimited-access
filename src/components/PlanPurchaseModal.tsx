@@ -207,10 +207,10 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
         </div>
 
         {/* INFORMAÇÃO DE ENTREGA DE USUÁRIO E SENHA VIA WHATSAPP */}
-        <div className="my-2.5 p-3 rounded-2xl bg-emerald-500/15 border border-emerald-500/35 text-center flex items-center justify-center gap-2.5 shrink-0 shadow-sm">
-          <CheckCircle2 className="size-4 shrink-0 text-emerald-400" />
-          <p className="text-[11px] sm:text-xs font-bold text-emerald-300 leading-snug">
-            Assim que o pagamento for confirmado, você recebe no seu <strong className="text-white font-extrabold">WhatsApp</strong> seu <strong className="text-white font-black">usuário e senha</strong> pra ativar o seu plano.
+        <div className="my-2 p-2.5 rounded-xl bg-white/[0.04] border border-white/15 text-center flex items-center justify-center gap-2 shrink-0">
+          <CheckCircle2 className="size-3.5 shrink-0 text-emerald-400" />
+          <p className="text-[11px] sm:text-xs font-medium text-white/90">
+            Receba seu <strong className="text-emerald-400 font-bold">usuário e senha</strong> no WhatsApp logo após a confirmação do pagamento.
           </p>
         </div>
 
