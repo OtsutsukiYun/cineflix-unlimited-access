@@ -83,12 +83,12 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
   };
 
   return (
-    <div className="fixed inset-0 z-[300] flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-xl animate-fade-in">
+    <div className="fixed inset-0 z-[300] flex items-center justify-center p-3 sm:p-4 bg-black/70 backdrop-blur-xl animate-fade-in">
       {/* OVERLAY CLICK TO CLOSE */}
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* MODAL CARD */}
-      <div className="glass relative z-10 w-full max-w-lg overflow-hidden rounded-3xl border border-white/25 bg-[#0a0707]/80 backdrop-blur-2xl p-5 sm:p-7 shadow-[0_0_80px_rgba(220,38,38,0.5)] text-white animate-scale-up max-h-[92vh] flex flex-col overflow-y-auto">
+      <div className="glass relative z-10 w-full max-w-lg overflow-hidden rounded-3xl border border-white/30 bg-zinc-950/65 backdrop-blur-2xl p-5 sm:p-7 shadow-[0_0_80px_rgba(220,38,38,0.5)] text-white animate-scale-up max-h-[92vh] flex flex-col overflow-y-auto">
         {/* BUTTON CLOSE */}
         <button
           type="button"
@@ -154,8 +154,8 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
 
         {/* ESTEIRA HORIZONTAL ANIMADA DE CAPINHAS DE FILMES E SÉRIES ("OS FILMES PASSANDO") */}
         <div className="relative overflow-hidden py-1.5 my-1 rounded-2xl shrink-0 bg-black/40 border border-white/10">
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 z-10 bg-gradient-to-r from-zinc-950 to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 z-10 bg-gradient-to-l from-zinc-950 to-transparent" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 z-10 bg-gradient-to-r from-zinc-950/80 to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 z-10 bg-gradient-to-l from-zinc-950/80 to-transparent" />
 
           <div className="flex w-max gap-2.5 animate-marquee-slow">
             {POSTERS_MARQUEE.concat(POSTERS_MARQUEE).map((p, i) => (
@@ -206,12 +206,12 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
           ))}
         </div>
 
-        {/* BOTÃO ASSINATURA DINÂMICO */}
+        {/* BOTÃO ASSINATURA DINÂMICO (SEM QUEBRA DE LINHA DO PREÇO) */}
         <div className="pt-2 shrink-0">
           <button
             type="button"
             onClick={handleProceed}
-            className={`flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-3.5 text-xs sm:text-sm font-black transition-all hover:scale-[1.02] cursor-pointer backdrop-blur-md uppercase tracking-wider ${
+            className={`flex w-full items-center justify-center gap-2 rounded-2xl px-4 py-3.5 text-xs sm:text-sm font-black transition-all hover:scale-[1.02] cursor-pointer backdrop-blur-md uppercase tracking-wider whitespace-nowrap ${
               selectedTab === "anual"
                 ? "bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-black shadow-[0_0_30px_rgba(245,158,11,0.9)] border border-yellow-200"
                 : selectedTab === "trimestral"
@@ -219,13 +219,13 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
                   : "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-400/40"
             }`}
           >
-            <Zap className="size-4 fill-current" />
-            <span>
-              {selectedTab === "mensal" && "ASSINAR PLANO MENSAL (R$ 34,99)"}
-              {selectedTab === "trimestral" && "ASSINAR PLANO TRIMESTRAL (R$ 99,99)"}
-              {selectedTab === "anual" && "ASSINAR PLANO ANUAL VIP (R$ 179,99)"}
+            <Zap className="size-4 fill-current shrink-0" />
+            <span className="whitespace-nowrap">
+              {selectedTab === "mensal" && "ASSINAR PLANO MENSAL"}
+              {selectedTab === "trimestral" && "ASSINAR PLANO TRIMESTRAL"}
+              {selectedTab === "anual" && "ASSINAR PLANO ANUAL VIP"}
             </span>
-            <ArrowRight className="size-4 ml-1" />
+            <ArrowRight className="size-4 ml-0.5 shrink-0" />
           </button>
         </div>
 
