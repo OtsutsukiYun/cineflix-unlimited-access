@@ -126,7 +126,7 @@ function InstagramPopup({ onOpenChange, onOpenTrialModal }: { onOpenChange?: (op
     e.preventDefault();
     sessionStorage.setItem("ig_popup_seen", "1");
     sessionStorage.setItem("ig_trial_activated", "1");
-    close();
+    setConfirmed(true);
   }
 
   const platformName = isTikTok ? "TikTok" : "Instagram";
@@ -172,16 +172,16 @@ function InstagramPopup({ onOpenChange, onOpenTrialModal }: { onOpenChange?: (op
               <Sparkles className="size-3.5" /> Teste Grátis Ativado
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
-              🎉 3 Dias Liberados!
+              🎉 Teste grátis resgatado com sucesso!
             </h2>
             <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto">
-              Seu benefício exclusivo do {platformName} foi ativado com sucesso! Veja as instruções para instalar no seu aparelho.
+              Seu benefício exclusivo do {platformName} foi ativado! Aproveite seus 3 dias de teste no UniTV Pro.
             </p>
             <button
-              onClick={handleOpenTrial}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
+              onClick={close}
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all hover:scale-[1.02] active:scale-95 cursor-pointer uppercase tracking-wider"
             >
-              🚀 INSTALAR AGORA
+              CONTINUAR NO SITE
             </button>
           </div>
         )}
