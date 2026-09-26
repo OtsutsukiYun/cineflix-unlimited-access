@@ -588,3 +588,34 @@
 .animate-levitate {
   animation: levitate-float 3.6s ease-in-out infinite;
 }
+
+@keyframes vibrate-pulse {
+  0%, 100% {
+    transform: scale(1) translate(0, 0);
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+  }
+  12%, 32%, 52% {
+    transform: scale(1.02) translate(-1.2px, 0);
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.75);
+  }
+  22%, 42% {
+    transform: scale(1.02) translate(1.2px, 0);
+    box-shadow: 0 0 30px rgba(239, 68, 68, 0.75);
+  }
+  62% {
+    transform: scale(1.025) translate(0, 0);
+    box-shadow: 0 0 35px rgba(239, 68, 68, 0.85);
+  }
+  78% {
+    transform: scale(1) translate(0, 0);
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.4);
+  }
+}
+
+@utility animate-vibrate {
+  animation: vibrate-pulse 3.2s ease-in-out infinite;
+}
+
+.animate-vibrate {
+  animation: vibrate-pulse 3.2s ease-in-out infinite;
+}

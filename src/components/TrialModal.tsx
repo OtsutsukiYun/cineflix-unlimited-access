@@ -226,9 +226,9 @@ export function TrialModal({
           <button
             type="button"
             onClick={handleSubscribeClick}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-500 px-4 py-3 text-xs sm:text-sm font-black text-white uppercase tracking-wider shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all hover:scale-[1.02] cursor-pointer"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-500 px-4 py-3 text-xs sm:text-sm font-black text-white uppercase tracking-wider shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all hover:scale-[1.02] cursor-pointer animate-vibrate"
           >
-            <Zap className="size-4 fill-white text-white" />
+            <Zap className="size-4 fill-white text-white animate-pulse" />
             <span>QUERO ACESSO ILIMITADO AOS CONTEÚDOS</span>
           </button>
         </div>
