@@ -509,7 +509,7 @@ function JaSouClientePage() {
                     }`}
                   >
                     <Tv className={`size-5 sm:size-6 shrink-0 ${deviceTab === "tv" ? "text-black" : "text-amber-400"}`} />
-                    <span className="break-words max-w-full">Smart TV, TV Box &amp; Projetor</span>
+                    <span className="break-words max-w-full"><span className="whitespace-nowrap">Smart TV</span>, <span className="whitespace-nowrap">TV Box</span> &amp; Projetor</span>
                   </button>
 
                   <button
@@ -533,7 +533,7 @@ function JaSouClientePage() {
                       <DownloaderAppIcon />
                       <div>
                         <h2 className="text-base sm:text-lg font-black text-white">
-                          Smart TV, TV Box, Fire Stick, Xiaomi Stick &amp; Projetor
+                          <span className="whitespace-nowrap">Smart TV</span>, <span className="whitespace-nowrap">TV Box</span>, Fire Stick, Xiaomi Stick &amp; Projetor
                         </h2>
                       </div>
                     </div>

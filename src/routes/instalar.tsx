@@ -417,7 +417,7 @@ function InstalarPage() {
                 }`}
               >
                 <Tv className="size-5 sm:size-6 text-white shrink-0" />
-                <span className="break-words max-w-full">Smart TV Android, TV Box, Fire Stick, Xiaomi Stick &amp; Projetor</span>
+                <span className="break-words max-w-full"><span className="whitespace-nowrap">Smart TV Android</span>, <span className="whitespace-nowrap">TV Box</span>, Fire Stick, Xiaomi Stick &amp; Projetor</span>
               </button>
 
               <button
