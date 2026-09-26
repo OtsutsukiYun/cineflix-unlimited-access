@@ -804,7 +804,7 @@ function JaSouClientePage() {
                       03
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-snug pt-0.5">
-                      Digite o <strong>código de recarga</strong> referente ao plano comprado (enviado por e-mail).{" "}
+                      Digite o <strong>código de recarga</strong> referente ao plano comprado (enviado pelo WhatsApp).{" "}
                       <span className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 py-0.5 text-xs font-extrabold text-red-300 border border-white/20 ml-1">
                         <KeyRound className="size-3.5 text-red-400 shrink-0" />
                         <span>Código</span>
@@ -834,7 +834,7 @@ function JaSouClientePage() {
                   <span>Precisa receber o seu código ou ajuda com a recarga?</span>
                 </div>
                 <p className="text-xs text-white/80">
-                  Caso tenha dúvidas sobre a compra ou queira receber seu código via WhatsApp, fale com o suporte oficial:
+                  Caso não tenha recebido seus dados automaticamente após a compra, entre no contato do WhatsApp e envie o seu comprovante de pagamento para atendimento imediato! 😊
                 </p>
                 <a
                   href={WHATSAPP_VENDEDOR_URL}
@@ -931,7 +931,7 @@ function JaSouClientePage() {
                 {[
                   {
                     q: "Onde encontro meu código de recarga ou dados de acesso?",
-                    a: "Assim que seu pagamento é confirmado, você recebe no seu e-mail cadastrado o código de recarga ou os dados de login. Caso não encontre, verifique a pasta de Spam ou fale no nosso WhatsApp de vendas.",
+                    a: "Seus dados de acesso ou código de recarga são enviados diretamente no seu WhatsApp após a confirmação do pagamento. Se você não recebeu automaticamente, entre no contato do WhatsApp e envie o seu comprovante de pagamento que nossa equipe libera o seu acesso imediatamente! 😊",
                   },
                   {
                     q: "Como renovar ou adicionar uma nova recarga?",
