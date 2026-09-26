@@ -171,26 +171,26 @@ export function TrialModal({
                 </div>
               </div>
 
+              {/* BOTÃO DE LINK DO DOWNLOADER NA PLAY STORE */}
+              <div className="pt-1">
+                <a
+                  href={DOWNLOADER_PLAYSTORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-4 py-3.5 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30 cursor-pointer uppercase tracking-wider text-center shadow-[0_0_18px_rgba(16,185,129,0.4)]"
+                >
+                  <Download className="size-4" />
+                  <span>Baixar Downloader na Play Store</span>
+                  <ExternalLink className="size-3.5" />
+                </a>
+              </div>
+
               {/* CÓDIGO COM BOTÃO DE COPIAR */}
               <div className="text-center space-y-1">
                 <p className="text-xs sm:text-sm font-bold text-white/90">
                   Abra o app Downloader na sua TV e digite o código:
                 </p>
                 <CodeCopyBox code="9884830" />
-              </div>
-
-              {/* BOTÕES DE LINK */}
-              <div className="pt-1">
-                <a
-                  href={DOWNLOADER_PLAYSTORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-4 py-3 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30 cursor-pointer uppercase tracking-wider text-center"
-                >
-                  <Download className="size-4" />
-                  <span>Baixar Downloader na Play Store</span>
-                  <ExternalLink className="size-3.5" />
-                </a>
               </div>
             </>
           )}
