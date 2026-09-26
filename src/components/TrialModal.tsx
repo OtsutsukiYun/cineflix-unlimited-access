@@ -39,16 +39,16 @@ function CodeCopyBox({ code }: { code: string }) {
   };
 
   return (
-    <div className="flex items-center justify-center gap-3 my-2 mx-auto max-w-xs rounded-xl p-2 px-3.5 border border-emerald-500/40 bg-emerald-950/40 backdrop-blur-md shadow-sm text-center">
-      <div className="flex items-center gap-1.5 font-mono font-black text-lg sm:text-xl tracking-widest text-white">
-        <Hash className="size-3.5 text-emerald-400 shrink-0" />
+    <div className="flex items-center justify-center gap-3.5 my-2.5 mx-auto max-w-xs rounded-xl p-2.5 px-4 border border-emerald-500/40 bg-emerald-950/40 backdrop-blur-md shadow-sm text-center">
+      <div className="flex items-center gap-1.5 font-mono font-black text-xl sm:text-2xl tracking-widest text-white">
+        <Hash className="size-4 text-emerald-400 shrink-0" />
         <span>{verifiedCode}</span>
       </div>
 
       <button
         onClick={handleCopy}
         type="button"
-        className={`px-3 py-1 text-[11px] font-black rounded-lg transition-all cursor-pointer shrink-0 ${
+        className={`px-3.5 py-1.5 text-xs font-black rounded-lg transition-all cursor-pointer shrink-0 ${
           copied
             ? "bg-white text-black font-extrabold"
             : "bg-emerald-600 hover:bg-emerald-500 text-white shadow-sm"
