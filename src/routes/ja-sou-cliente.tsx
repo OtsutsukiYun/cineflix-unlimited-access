@@ -693,7 +693,7 @@ function JaSouClientePage() {
             <div className="rounded-2xl border border-emerald-500/40 bg-emerald-950/60 p-4 text-center flex items-center justify-center gap-2.5 backdrop-blur-2xl shadow-md">
               <CheckCircle2 className="size-5 text-emerald-400 shrink-0" />
               <span className="text-xs sm:text-sm font-black text-white tracking-wide">
-                Pronto! Insira seu código de recarga ou dados de login para ter acesso ilimitado.
+                Pronto! Insira seus dados de acesso (usuário e senha) para ter acesso ilimitado.
               </span>
             </div>
 
@@ -804,10 +804,10 @@ function JaSouClientePage() {
                       03
                     </span>
                     <div className="text-xs sm:text-sm text-white/90 leading-snug pt-0.5">
-                      Digite o <strong>código de recarga</strong> referente ao plano comprado (enviado pelo WhatsApp).{" "}
+                      Digite os seus <strong>dados de acesso</strong> referentes ao plano comprado (enviados pelo WhatsApp).{" "}
                       <span className="inline-flex items-center gap-1 rounded-md bg-white/10 px-2 py-0.5 text-xs font-extrabold text-red-300 border border-white/20 ml-1">
                         <KeyRound className="size-3.5 text-red-400 shrink-0" />
-                        <span>Código</span>
+                        <span>Dados de Acesso</span>
                       </span>
                     </div>
                   </li>
@@ -930,8 +930,8 @@ function JaSouClientePage() {
               <div className="space-y-2">
                 {[
                   {
-                    q: "Onde encontro meu código de recarga ou dados de acesso?",
-                    a: "Seus dados de acesso ou código de recarga são enviados diretamente no seu WhatsApp após a confirmação do pagamento. Se você não recebeu automaticamente, entre no contato do WhatsApp e envie o seu comprovante de pagamento que nossa equipe libera o seu acesso imediatamente! 😊",
+                    q: "Onde encontro meus dados de acesso?",
+                    a: "Seus dados de acesso (usuário e senha) são enviados diretamente no seu WhatsApp após a confirmação do pagamento. Se você não recebeu automaticamente, entre no contato do WhatsApp e envie o seu comprovante de pagamento que nossa equipe libera o seu acesso imediatamente! 😊",
                   },
                   {
                     q: "Como renovar ou adicionar uma nova recarga?",

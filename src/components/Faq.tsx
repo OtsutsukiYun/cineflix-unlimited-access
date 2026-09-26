@@ -20,8 +20,8 @@ const PERGUNTAS = [
     a: "Você pode fazer login em até dois aparelhos com o mesmo acesso, caso escolha o Plano Anual (2 telas). Os planos Mensal e Trimestral permitem 1 tela simultânea.",
   },
   {
-    q: "Onde encontro meus dados de acesso ou código UniTV Pro?",
-    a: "Seus dados de acesso ou código de recarga são enviados diretamente no seu WhatsApp após a confirmação do pagamento. Se você não recebeu automaticamente, entre no contato do WhatsApp e envie o seu comprovante de pagamento que nossa equipe libera o seu acesso imediatamente! 😊",
+    q: "Onde encontro meus dados de acesso UniTV Pro?",
+    a: "Seus dados de acesso (usuário e senha) são enviados diretamente no seu WhatsApp após a confirmação do pagamento. Se você não recebeu automaticamente, entre no contato do WhatsApp e envie o seu comprovante de pagamento que nossa equipe libera o seu acesso imediatamente! 😊",
   },
   {
     q: "Como utilizar o período de teste grátis?",
