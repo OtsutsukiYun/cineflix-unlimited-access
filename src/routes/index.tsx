@@ -175,7 +175,7 @@ function InstagramPopup({ onOpenChange, onOpenTrialModal }: { onOpenChange?: (op
               🎉 Teste grátis resgatado com sucesso!
             </h2>
             <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto font-medium">
-              Agora é só clicar em <strong className="text-emerald-300 font-bold">Teste Grátis</strong> no site para instalar o aplicativo e ativar seus benefícios!
+              Agora é só clicar em <strong className="text-emerald-300 font-bold">Teste Grátis</strong> no site e selecionar o tipo de dispositivo em que deseja instalar o aplicativo!
             </p>
             <button
               onClick={close}

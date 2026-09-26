@@ -401,7 +401,9 @@ function InstalarPage() {
             Como instalar o <span className="whitespace-nowrap">UniTV <span className="text-red-500">Pro</span></span> em menos de{" "}
             {deviceTab === "mobile" ? "1 minuto" : "2 minutos"}
           </h1>
-
+          <p className="text-xs sm:text-sm text-white/70 font-medium pt-1">
+            Selecione o tipo de dispositivo em que deseja instalar o aplicativo:
+          </p>
         </div>
 
         {/* 💎 TUTORIAL DE INSTALAÇÃO VISUAL */}

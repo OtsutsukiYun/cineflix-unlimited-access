@@ -108,6 +108,9 @@ export function TrialModal({
             Como instalar o <span className="text-emerald-400">UniTV Pro</span> em menos de{" "}
             {deviceTab === "mobile" ? "1 minuto" : "2 minutos"}
           </h2>
+          <p className="text-xs text-white/70 font-medium pt-1">
+            Selecione o tipo de dispositivo em que deseja instalar o aplicativo:
+          </p>
         </div>
 
         {/* NOME DOS DISPOSITIVOS (ABAS) */}
