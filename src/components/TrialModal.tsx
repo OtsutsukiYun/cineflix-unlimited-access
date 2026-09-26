@@ -129,7 +129,7 @@ export function TrialModal({
             }`}
           >
             <Tv className="size-4 shrink-0" />
-            <span>Smart TV &amp; TV Box</span>
+            <span>Smart TV, TV Box, Stick &amp; Projetor</span>
           </button>
 
           <button
