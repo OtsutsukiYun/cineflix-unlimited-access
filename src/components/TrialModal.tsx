@@ -167,7 +167,7 @@ export function TrialModal({
               {/* CÓDIGO COM BOTÃO DE COPIAR */}
               <div className="text-center space-y-1.5 pt-1">
                 <p className="text-xs sm:text-sm font-bold text-white/90">
-                  Abra o aplicativo{" "}
+                  Instale e abra o aplicativo{" "}
                   <a
                     href={DOWNLOADER_PLAYSTORE_URL}
                     target="_blank"
@@ -176,7 +176,7 @@ export function TrialModal({
                   >
                     Downloader <ExternalLink className="size-3" />
                   </a>{" "}
-                  na sua TV e digite o código:
+                  <span className="whitespace-nowrap">na sua TV e digite o código:</span>
                 </p>
                 <CodeCopyBox code="9884830" />
               </div>
