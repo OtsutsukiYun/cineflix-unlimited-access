@@ -114,7 +114,7 @@ export function TrialModal({
           </div>
 
           <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-            Como instalar o <span className="text-red-500">UniTV Pro</span>
+            Como instalar o <span className="text-red-500">UniTV Pro</span> em menos de 2 minutos
           </h2>
         </div>
 

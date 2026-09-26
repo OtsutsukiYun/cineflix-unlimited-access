@@ -398,7 +398,7 @@ function InstalarPage() {
           </div>
 
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)]">
-            Como instalar o <span className="whitespace-nowrap">UniTV <span className="text-red-500">Pro</span></span>
+            Como instalar o <span className="whitespace-nowrap">UniTV <span className="text-red-500">Pro</span></span> em menos de 2 minutos
           </h1>
 
         </div>
