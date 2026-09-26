@@ -122,7 +122,7 @@ export function TrialModal({
             }`}
           >
             <Tv className="size-4 shrink-0" />
-            <span>Smart TV, TV Box, <span className="whitespace-nowrap">Stick &amp; Projetor</span></span>
+            <span>Smart TV Android, TV Box, <span className="whitespace-nowrap">Stick &amp; Projetor</span></span>
           </button>
 
           <button
@@ -135,7 +135,7 @@ export function TrialModal({
             }`}
           >
             <Smartphone className="size-4 text-emerald-400 shrink-0" />
-            <span>Celular &amp; Tablet</span>
+            <span>Celular &amp; Tablet Android</span>
           </button>
         </div>
 
