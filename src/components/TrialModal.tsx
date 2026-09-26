@@ -218,36 +218,17 @@ export function TrialModal({
                 </div>
               </div>
 
-              {/* BOTÕES DE LINK */}
-              <div className="space-y-2 pt-1">
+              {/* BOTÃO DE DOWNLOAD DIRETO */}
+              <div className="pt-1">
                 <a
                   href={APK_MEDIAFIRE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-4 py-3 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30 cursor-pointer uppercase tracking-wider text-center"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-4 py-3.5 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30 cursor-pointer uppercase tracking-wider text-center shadow-[0_0_20px_rgba(16,185,129,0.4)]"
                 >
                   <Download className="size-4 animate-bounce" />
-                  <span>Baixar APK UniTV Pro (Direto)</span>
+                  <span>Baixar APK UniTV Pro (Download Direto)</span>
                 </a>
-
-                <a
-                  href={DOWNLOADER_PLAYSTORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 px-4 py-2.5 text-xs font-bold text-white/90 transition-colors cursor-pointer text-center"
-                >
-                  <Download className="size-3.5" />
-                  <span>Ou usar Downloader na Play Store</span>
-                  <ExternalLink className="size-3" />
-                </a>
-              </div>
-
-              {/* CÓDIGO COM BOTÃO DE COPIAR */}
-              <div className="text-center pt-2">
-                <p className="text-xs text-white/80 font-semibold mb-1">
-                  Código de instalação no Downloader:
-                </p>
-                <CodeCopyBox code="9884830" />
               </div>
             </>
           )}
