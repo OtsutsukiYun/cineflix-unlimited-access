@@ -82,11 +82,11 @@ export function TrialModal({
 
   return (
     <div
-      className="fixed inset-0 z-[250] flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-xl overflow-y-auto animate-in fade-in duration-200"
+      className="fixed inset-0 z-[250] flex items-center justify-center p-3 sm:p-4 bg-black/50 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200"
       role="dialog"
       aria-modal="true"
     >
-      <div className="glass relative z-10 w-full max-w-lg rounded-3xl border border-white/25 bg-[#0a0707]/80 backdrop-blur-2xl shadow-[0_0_80px_rgba(220,38,38,0.5)] p-4 sm:p-6 text-center my-auto max-h-[92vh] flex flex-col overflow-y-auto">
+      <div className="glass relative z-10 w-full max-w-lg rounded-3xl border border-white/25 bg-zinc-950/45 backdrop-blur-2xl shadow-[0_0_80px_rgba(220,38,38,0.4)] p-4 sm:p-6 text-center my-auto max-h-[92vh] flex flex-col overflow-y-auto">
         {/* BOTÃO FECHAR */}
         <button
           onClick={onClose}

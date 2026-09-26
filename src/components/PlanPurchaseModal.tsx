@@ -83,12 +83,12 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
   };
 
   return (
-    <div className="fixed inset-0 z-[300] flex items-center justify-center p-3 sm:p-4 bg-black/70 backdrop-blur-xl animate-fade-in">
+    <div className="fixed inset-0 z-[300] flex items-center justify-center p-3 sm:p-4 bg-black/50 backdrop-blur-md animate-fade-in">
       {/* OVERLAY CLICK TO CLOSE */}
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* MODAL CARD */}
-      <div className="glass relative z-10 w-full max-w-lg overflow-hidden rounded-3xl border border-white/30 bg-zinc-950/65 backdrop-blur-2xl p-5 sm:p-7 shadow-[0_0_80px_rgba(220,38,38,0.5)] text-white animate-scale-up max-h-[92vh] flex flex-col overflow-y-auto">
+      <div className="glass relative z-10 w-full max-w-lg overflow-hidden rounded-3xl border border-white/25 bg-zinc-950/45 backdrop-blur-2xl p-5 sm:p-7 shadow-[0_0_80px_rgba(220,38,38,0.4)] text-white animate-scale-up max-h-[92vh] flex flex-col overflow-y-auto">
         {/* BUTTON CLOSE */}
         <button
           type="button"
@@ -153,9 +153,9 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
         </div>
 
         {/* ESTEIRA HORIZONTAL ANIMADA DE CAPINHAS DE FILMES E SÉRIES ("OS FILMES PASSANDO") */}
-        <div className="relative overflow-hidden py-1.5 my-1 rounded-2xl shrink-0 bg-black/40 border border-white/10">
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 z-10 bg-gradient-to-r from-zinc-950/80 to-transparent" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 z-10 bg-gradient-to-l from-zinc-950/80 to-transparent" />
+        <div className="relative overflow-hidden py-2 my-1 rounded-2xl shrink-0 border border-white/15 bg-white/[0.04]">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 z-10 bg-gradient-to-r from-black/40 to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 z-10 bg-gradient-to-l from-black/40 to-transparent" />
 
           <div className="flex w-max gap-2.5 animate-marquee-slow">
             {POSTERS_MARQUEE.concat(POSTERS_MARQUEE).map((p, i) => (
