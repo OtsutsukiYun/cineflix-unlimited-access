@@ -88,7 +88,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* MODAL CARD */}
-      <div className="glass relative z-10 w-full max-w-lg overflow-hidden rounded-3xl border border-white/25 bg-zinc-950/45 backdrop-blur-2xl p-5 sm:p-7 shadow-[0_0_80px_rgba(220,38,38,0.4)] text-white animate-scale-up max-h-[92vh] flex flex-col overflow-y-auto">
+      <div className="glass relative z-10 w-full max-w-lg overflow-hidden rounded-3xl border border-white/25 bg-zinc-950/45 backdrop-blur-2xl p-5 sm:p-7 shadow-[0_0_80px_rgba(16,185,129,0.4)] text-white animate-scale-up max-h-[92vh] flex flex-col overflow-y-auto">
         {/* BUTTON CLOSE */}
         <button
           type="button"
@@ -101,14 +101,14 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
 
         {/* HEADER TITLE */}
         <div className="text-center space-y-2 shrink-0 pr-6 pl-2 pt-1">
-          <span className="inline-flex items-center gap-1 rounded-full bg-red-500/20 border border-red-500/40 px-3 py-0.5 text-[10.5px] font-black text-red-300 uppercase tracking-wider">
+          <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 px-3 py-0.5 text-[10.5px] font-black text-emerald-300 uppercase tracking-wider">
             {selectedTab === "mensal" && "Plano Mensal • Acesso Ilimitado"}
             {selectedTab === "trimestral" && "Plano Trimestral • Economize nos 90 Dias"}
             {selectedTab === "anual" && "👑 Plano Anual VIP • 2 Telas Simultâneas"}
           </span>
 
           <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-            Faça parte da família <span className="text-red-500">UniTV Pro</span> hoje mesmo.
+            Faça parte da família <span className="text-emerald-400">UniTV Pro</span> hoje mesmo.
           </h2>
           <p className="text-xs text-white/70 max-w-sm mx-auto leading-relaxed font-medium">
             Planos pré-pagos e sem fidelidade com 7 dias de garantia de reembolso.
@@ -122,7 +122,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
             onClick={() => setSelectedTab("mensal")}
             className={`flex-1 py-2 px-2 rounded-xl text-xs font-black transition-all cursor-pointer ${
               selectedTab === "mensal"
-                ? "bg-red-600 text-white shadow-[0_0_15px_rgba(220,38,38,0.7)] border border-white/30"
+                ? "bg-emerald-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.7)] border border-white/30"
                 : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
             }`}
           >
@@ -163,7 +163,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
                 key={`poster-modal-${i}`}
                 src={img(p, "w185")}
                 alt=""
-                className="h-24 w-16 rounded-lg object-cover shadow-md border border-red-500/30 shrink-0"
+                className="h-24 w-16 rounded-lg object-cover shadow-md border border-emerald-500/30 shrink-0"
               />
             ))}
           </div>
@@ -171,7 +171,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
 
         {/* PREÇO DINÂMICO CONFORME PLANO SELECIONADO */}
         <div className="py-2 text-center shrink-0">
-          <span className="text-[10.5px] font-black text-red-400 uppercase tracking-widest block mb-0.5">
+          <span className="text-[10.5px] font-black text-emerald-400 uppercase tracking-widest block mb-0.5">
             {selectedTab === "mensal" && "⚡ 30 DIAS DE ACESSO TOTAL"}
             {selectedTab === "trimestral" && "⚡ 90 DIAS DE ACESSO TOTAL"}
             {selectedTab === "anual" && "👑 365 DIAS DE ACESSO (2 TELAS SIMULTÂNEAS)"}
@@ -216,7 +216,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
                 ? "bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-black shadow-[0_0_30px_rgba(245,158,11,0.9)] border border-yellow-200"
                 : selectedTab === "trimestral"
                   ? "bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white shadow-[0_0_25px_rgba(16,185,129,0.7)] border border-emerald-400/50"
-                  : "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-400/40"
+                  : "bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white shadow-[0_0_25px_rgba(16,185,129,0.7)] border border-emerald-400/40"
             }`}
           >
             <Zap className="size-4 fill-current shrink-0" />

@@ -86,7 +86,7 @@ export function TrialModal({
       role="dialog"
       aria-modal="true"
     >
-      <div className="glass relative z-10 w-full max-w-lg rounded-3xl border border-white/25 bg-zinc-950/45 backdrop-blur-2xl shadow-[0_0_80px_rgba(220,38,38,0.4)] p-4 sm:p-6 text-center my-auto max-h-[92vh] flex flex-col overflow-y-auto">
+      <div className="glass relative z-10 w-full max-w-lg rounded-3xl border border-white/25 bg-zinc-950/45 backdrop-blur-2xl shadow-[0_0_80px_rgba(16,185,129,0.4)] p-4 sm:p-6 text-center my-auto max-h-[92vh] flex flex-col overflow-y-auto">
         {/* BOTÃO FECHAR */}
         <button
           onClick={onClose}
@@ -105,7 +105,7 @@ export function TrialModal({
           </div>
 
           <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-            Como instalar o <span className="text-red-500">UniTV Pro</span> em menos de 2 minutos
+            Como instalar o <span className="text-emerald-400">UniTV Pro</span> em menos de 2 minutos
           </h2>
         </div>
 
@@ -116,7 +116,7 @@ export function TrialModal({
             onClick={() => setDeviceTab("tv")}
             className={`flex items-center justify-center gap-2 rounded-xl py-2.5 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer ${
               deviceTab === "tv"
-                ? "bg-red-600 text-white shadow-[0_0_15px_rgba(220,38,38,0.6)] border border-white/30"
+                ? "bg-emerald-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.6)] border border-white/30"
                 : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
             }`}
           >
@@ -129,7 +129,7 @@ export function TrialModal({
             onClick={() => setDeviceTab("mobile")}
             className={`flex items-center justify-center gap-2 rounded-xl py-2.5 px-3 text-xs sm:text-sm font-black transition-all cursor-pointer ${
               deviceTab === "mobile"
-                ? "bg-red-600 text-white shadow-[0_0_15px_rgba(220,38,38,0.6)] border border-white/30"
+                ? "bg-emerald-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.6)] border border-white/30"
                 : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
             }`}
           >
