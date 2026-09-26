@@ -47,6 +47,7 @@ import { DOMIntegrityShield } from "@/components/DOMIntegrityShield";
 import { Torii, WhatsAppIcon } from "@/components/icons";
 import { SocialProof } from "@/components/SocialProof";
 import { PlanPurchaseModal, PlanDetails } from "@/components/PlanPurchaseModal";
+import { TrialModal } from "@/components/TrialModal";
 import {
   animes,
   doramas,
@@ -77,7 +78,7 @@ const TESTE_GRATIS_POSTERS = [
 import { isPromoExpired } from "@/utils/promo";
 
 // ── INSTAGRAM / TIKTOK POPUP ─────────────────────────────────────────────────
-function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => void }) {
+function InstagramPopup({ onOpenChange, onOpenTrialModal }: { onOpenChange?: (open: boolean) => void; onOpenTrialModal?: () => void }) {
   const [open, setOpen] = useState(false);
   const [confirmed, setConfirmed] = useState(false);
   const [isTikTok, setIsTikTok] = useState(false);
@@ -128,6 +129,11 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
     setConfirmed(true);
   }
 
+  function handleOpenTrial() {
+    close();
+    onOpenTrialModal?.();
+  }
+
   const platformName = isTikTok ? "TikTok" : "Instagram";
 
   if (!open || isPromoExpired()) return null;
@@ -174,13 +180,13 @@ function InstagramPopup({ onOpenChange }: { onOpenChange?: (open: boolean) => vo
               🎉 3 Dias Liberados!
             </h2>
             <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto">
-              Seu benefício exclusivo do {platformName} foi ativado com sucesso! Navegue pelo site e clique em <strong className="text-white">"Testar Grátis"</strong> a qualquer momento para instalar o aplicativo.
+              Seu benefício exclusivo do {platformName} foi ativado com sucesso! Veja as instruções para instalar no seu aparelho.
             </p>
             <button
-              onClick={close}
+              onClick={handleOpenTrial}
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-emerald-500 to-green-600 px-6 py-3.5 text-sm font-black text-white shadow-[0_0_25px_rgba(16,185,129,0.45)] transition-all hover:scale-[1.02] active:scale-95 cursor-pointer"
             >
-              ENTENDI, CONTINUAR
+              🚀 INSTALAR AGORA
             </button>
           </div>
         )}
@@ -526,6 +532,7 @@ function Index() {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedPlanForModal, setSelectedPlanForModal] = useState<PlanDetails | null>(null);
   const [isPlanModalOpen, setIsPlanModalOpen] = useState(false);
+  const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   const [expandedTabs, setExpandedTabs] = useState<Record<string, boolean>>({});
   const catalogScrollRef = useRef<HTMLDivElement>(null);
 
@@ -562,7 +569,7 @@ function Index() {
 
   return (
     <div className="relative w-full overflow-x-hidden min-h-screen bg-[#080808] font-sans text-foreground antialiased selection:bg-red-600 selection:text-white">
-      <InstagramPopup onOpenChange={setIsPopupOpen} />
+      <InstagramPopup onOpenChange={setIsPopupOpen} onOpenTrialModal={() => setIsTrialModalOpen(true)} />
 
       {/* FUNDO CINEMÁTICO — gradiente vermelho/preto limpo de alta legibilidade */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden [transform:translateZ(0)]">
@@ -587,7 +594,7 @@ function Index() {
           <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
             <SmoothLink href="#planos" className="text-white/80 transition-colors hover:text-white">Planos</SmoothLink>
             <SmoothLink href="#faq" className="text-white/80 transition-colors hover:text-white">Dúvidas</SmoothLink>
-            <Link to="/instalar" className="text-white/80 transition-colors hover:text-white">Como Instalar</Link>
+            <button onClick={() => setIsTrialModalOpen(true)} className="text-white/80 transition-colors hover:text-white cursor-pointer">Como Instalar</button>
             <SmoothLink href="#suporte" className="text-green-400 transition-colors hover:text-green-300 font-semibold">Suporte</SmoothLink>
           </nav>
 
@@ -642,13 +649,13 @@ function Index() {
               <Zap className="size-4 text-white fill-white" />
               ASSINAR AGORA
             </SmoothLink>
-            <Link
-              to="/instalar"
-              className="btn-ghost w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-md border border-white/25 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2 rounded-xl shrink-0"
+            <button
+              onClick={() => setIsTrialModalOpen(true)}
+              className="btn-ghost w-full sm:w-1/2 h-10 sm:h-11 px-5 text-xs sm:text-sm font-black tracking-wider uppercase shadow-md border border-white/25 bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all flex items-center justify-center gap-2 rounded-xl shrink-0 cursor-pointer"
             >
               <Sparkles className="size-4 text-white" />
               TESTAR GRÁTIS
-            </Link>
+            </button>
           </div>
 
           <DOMIntegrityShield />
@@ -1422,6 +1429,11 @@ function Index() {
         isOpen={isPlanModalOpen}
         onClose={() => setIsPlanModalOpen(false)}
         plan={selectedPlanForModal}
+      />
+
+      <TrialModal
+        isOpen={isTrialModalOpen}
+        onClose={() => setIsTrialModalOpen(false)}
       />
     </div>
   );
