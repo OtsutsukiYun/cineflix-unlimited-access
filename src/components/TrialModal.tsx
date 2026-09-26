@@ -105,7 +105,8 @@ export function TrialModal({
           </div>
 
           <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-            Como instalar o <span className="text-emerald-400">UniTV Pro</span> em menos de 2 minutos
+            Como instalar o <span className="text-emerald-400">UniTV Pro</span> em menos de{" "}
+            {deviceTab === "mobile" ? "1 minuto" : "2 minutos"}
           </h2>
         </div>
 
