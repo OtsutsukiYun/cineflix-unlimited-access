@@ -223,7 +223,7 @@ export function TrialModal({
         </div>
 
         {/* BOTÃO PARA ABRIÇÃO DO MODAL DE PLANOS E VALORES */}
-        <div className="pt-3 border-t border-white/10 mt-3 shrink-0">
+        <div className="pt-4 border-t border-white/15 mt-6 sm:mt-7 shrink-0">
           <button
             type="button"
             onClick={handleSubscribeClick}
