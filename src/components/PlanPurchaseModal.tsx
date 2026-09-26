@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { X, ShieldCheck, Check, ArrowRight, Lock, UserCheck } from "lucide-react";
-import { WhatsAppIcon, AndroidIcon } from "@/components/icons";
+import { X, ShieldCheck, CheckCircle2, ArrowRight, Lock, Zap, Crown } from "lucide-react";
+import { img } from "@/data/catalog";
 
 export type PlanDetails = {
   nome: string;
@@ -10,6 +10,21 @@ export type PlanDetails = {
   telas?: string;
   link: string;
 };
+
+const POSTERS_MARQUEE = [
+  "/7GV5rrUJf0BRUhoh2cyFoeNthlQ.jpg",
+  "/wUc6IDf5ChjM1UyQye21qFBeJY0.jpg",
+  "/360qdtu2hLnqMu8SVHMywn420w1.jpg",
+  "/cWAVzTWm9xdc8skHH7h1vreUtcD.jpg",
+  "/gVZgjKIsXZOT3cNZm5PJZBtQRaG.jpg",
+  "/1C2qbfUW3lTzb8vpZeG8pjYzW3Q.jpg",
+  "/zm0KAbOjlt9eR5y7vDiL2dEOwMl.jpg",
+  "/rpU5DGrTVdqcygZBB9npt1WMFch.jpg",
+  "/pmff1wjKrgJi92PPr346lAifzlg.jpg",
+  "/yihdXomYb5kTeSivtFndMy5iDmf.jpg",
+  "/uRxrNXQWkHoENm3nwVOZDYSCx2F.jpg",
+  "/e0WaDBrrBAMcq2stAXCR7rXEsiw.jpg",
+];
 
 const DEFAULT_PLANS: Record<"mensal" | "trimestral" | "anual", PlanDetails> = {
   mensal: {
@@ -68,12 +83,12 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
   };
 
   return (
-    <div className="fixed inset-0 z-[300] flex items-center justify-center p-4 bg-black/85 backdrop-blur-md animate-fade-in">
+    <div className="fixed inset-0 z-[300] flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-fade-in">
       {/* OVERLAY CLICK TO CLOSE */}
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* MODAL CARD */}
-      <div className="relative z-10 w-full max-w-md overflow-hidden rounded-3xl border border-emerald-500/40 bg-zinc-950 p-5 sm:p-7 shadow-[0_0_60px_rgba(16,185,129,0.3)] text-white animate-scale-up max-h-[92vh] flex flex-col overflow-y-auto">
+      <div className="relative z-10 w-full max-w-lg overflow-hidden rounded-3xl border border-white/20 bg-zinc-950 p-5 sm:p-7 shadow-[0_0_70px_rgba(220,38,38,0.4)] text-white animate-scale-up max-h-[92vh] flex flex-col overflow-y-auto">
         {/* BUTTON CLOSE */}
         <button
           type="button"
@@ -84,31 +99,31 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
           <X className="size-4.5" />
         </button>
 
-        {/* HEADER BADGE & ICON */}
-        <div className="text-center space-y-2.5">
-          <div className="inline-flex size-12 items-center justify-center rounded-2xl bg-emerald-500/20 border border-emerald-400/40 text-emerald-400 shadow-inner animate-pulse">
-            <ShieldCheck className="size-7" />
-          </div>
+        {/* HEADER TITLE */}
+        <div className="text-center space-y-2 shrink-0 pr-6 pl-2 pt-1">
+          <span className="inline-flex items-center gap-1 rounded-full bg-red-500/20 border border-red-500/40 px-3 py-0.5 text-[10.5px] font-black text-red-300 uppercase tracking-wider">
+            {selectedTab === "mensal" && "Plano Mensal • Acesso Ilimitado"}
+            {selectedTab === "trimestral" && "Plano Trimestral • Economize nos 90 Dias"}
+            {selectedTab === "anual" && "👑 Plano Anual VIP • 2 Telas Simultâneas"}
+          </span>
 
-          <div className="space-y-1">
-            <span className="inline-block rounded-full bg-emerald-500/20 px-3 py-0.5 text-[10.5px] font-black uppercase tracking-wider text-emerald-300 border border-emerald-500/30">
-              🔒 Ambiente Criptografado &amp; Seguro
-            </span>
-            <h3 className="text-lg sm:text-2xl font-black text-white tracking-tight pt-0.5">
-              Escolha seu plano <span className="text-emerald-400">UniTV Pro</span>
-            </h3>
-          </div>
+          <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+            Faça parte da família <span className="text-red-500">UniTV Pro</span> hoje mesmo.
+          </h2>
+          <p className="text-xs text-white/70 max-w-sm mx-auto leading-relaxed font-medium">
+            Planos pré-pagos e sem fidelidade com 7 dias de garantia de reembolso.
+          </p>
         </div>
 
         {/* ALTERNADOR DE PLANOS (MENSAL / TRIMESTRAL / ANUAL VIP) */}
-        <div className="flex items-center justify-center p-1 rounded-2xl bg-white/[0.06] border border-white/15 my-3.5 gap-1 shadow-inner shrink-0">
+        <div className="flex items-center justify-center p-1 rounded-2xl bg-white/[0.06] border border-white/15 my-3 gap-1 shadow-inner shrink-0">
           <button
             type="button"
             onClick={() => setSelectedTab("mensal")}
             className={`flex-1 py-2 px-2 rounded-xl text-xs font-black transition-all cursor-pointer ${
               selectedTab === "mensal"
-                ? "bg-red-600 text-white shadow-[0_0_12px_rgba(220,38,38,0.7)] border border-white/30"
-                : "text-white/70 hover:text-white"
+                ? "bg-red-600 text-white shadow-[0_0_15px_rgba(220,38,38,0.7)] border border-white/30"
+                : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
             }`}
           >
             Mensal
@@ -118,8 +133,8 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
             onClick={() => setSelectedTab("trimestral")}
             className={`flex-1 py-2 px-2 rounded-xl text-xs font-black transition-all cursor-pointer ${
               selectedTab === "trimestral"
-                ? "bg-emerald-600 text-white shadow-[0_0_12px_rgba(16,185,129,0.7)] border border-white/30"
-                : "text-white/70 hover:text-white"
+                ? "bg-emerald-600 text-white shadow-[0_0_15px_rgba(16,185,129,0.7)] border border-white/30"
+                : "text-white/70 hover:text-white hover:bg-white/10 border border-transparent"
             }`}
           >
             Trimestral
@@ -129,73 +144,95 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
             onClick={() => setSelectedTab("anual")}
             className={`flex-1 py-2 px-2 rounded-xl text-xs font-black transition-all cursor-pointer ${
               selectedTab === "anual"
-                ? "bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-black shadow-[0_0_15px_rgba(245,158,11,0.8)] border border-amber-200 font-extrabold"
-                : "text-amber-300 hover:text-amber-200"
+                ? "bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-500 text-black shadow-[0_0_20px_rgba(245,158,11,0.8)] border border-amber-200 font-extrabold"
+                : "text-amber-300 hover:text-amber-200 hover:bg-white/10 border border-amber-500/30"
             }`}
           >
             Anual VIP 👑
           </button>
         </div>
 
-        {/* PLAN DETAILS CARD */}
-        <div className="my-1 rounded-2xl border border-white/15 bg-white/[0.04] p-4 space-y-3 shrink-0">
-          <div className="flex items-center justify-between border-b border-white/10 pb-3">
-            <div>
-              <p className="text-[10.5px] font-extrabold text-white/60 uppercase tracking-wider">Plano Selecionado</p>
-              <h4 className="text-base sm:text-lg font-black text-white">{activePlan.nome}</h4>
-            </div>
-            <div className="text-right">
-              <span className="text-xl sm:text-2xl font-black text-emerald-400">{activePlan.preco}</span>
-              {activePlan.periodo && <span className="text-[11px] text-white/50 block">/{activePlan.periodo}</span>}
-            </div>
-          </div>
+        {/* ESTEIRA HORIZONTAL ANIMADA DE CAPINHAS DE FILMES E SÉRIES ("OS FILMES PASSANDO") */}
+        <div className="relative overflow-hidden py-1.5 my-1 rounded-2xl shrink-0 bg-black/40 border border-white/10">
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 z-10 bg-gradient-to-r from-zinc-950 to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 z-10 bg-gradient-to-l from-zinc-950 to-transparent" />
 
-          <div className="space-y-2 pt-0.5 text-xs text-white/85">
-            {activePlan.dias && (
-              <div className="flex items-center gap-2">
-                <Check className="size-4 text-emerald-400 shrink-0" />
-                <span>Duração: <strong className="text-white">{activePlan.dias}</strong> de acesso total</span>
-              </div>
-            )}
-            {activePlan.telas && (
-              <div className="flex items-center gap-2">
-                <Check className="size-4 text-emerald-400 shrink-0" />
-                <span>Telas: <strong className="text-white">{activePlan.telas}</strong></span>
-              </div>
-            )}
-            <div className="flex items-center gap-2">
-              <Check className="size-4 text-emerald-400 shrink-0" />
-              <span>Garantia: <strong className="text-white">7 dias de reembolso total</strong></span>
-            </div>
-            <div className="flex items-center gap-2">
-              <AndroidIcon className="size-4 fill-emerald-400 text-emerald-400 shrink-0" />
-              <span>Compatibilidade: <strong className="text-white">Smart TV Android, TV Box, Stick, Celular e Tablet</strong></span>
-            </div>
-            <div className="flex items-center gap-2">
-              <UserCheck className="size-4 text-emerald-400 shrink-0" />
-              <span>Tipo de Acesso: <strong className="text-white">Usuário e Senha</strong></span>
-            </div>
-            <div className="flex items-center gap-2">
-              <WhatsAppIcon className="size-4 fill-emerald-400 text-emerald-400 shrink-0" />
-              <span>Forma de Recebimento: <strong className="text-white">Imediato via WhatsApp</strong></span>
-            </div>
+          <div className="flex w-max gap-2.5 animate-marquee-slow">
+            {POSTERS_MARQUEE.concat(POSTERS_MARQUEE).map((p, i) => (
+              <img
+                key={`poster-modal-${i}`}
+                src={img(p, "w185")}
+                alt=""
+                className="h-24 w-16 rounded-lg object-cover shadow-md border border-red-500/30 shrink-0"
+              />
+            ))}
           </div>
         </div>
 
-        {/* GREEN PROCEED BUTTON */}
-        <button
-          type="button"
-          onClick={handleProceed}
-          className="mt-3 w-full inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-400 hover:from-emerald-400 hover:to-teal-400 px-5 py-3.5 text-xs sm:text-sm font-black text-black uppercase tracking-wider transition-all hover:scale-[1.02] shadow-[0_0_35px_rgba(16,185,129,0.7)] border border-emerald-300 cursor-pointer shrink-0"
-        >
-          <span>PROSSEGUIR PARA O PAGAMENTO SEGURO</span>
-          <ArrowRight className="size-4.5 text-black" />
-        </button>
+        {/* PREÇO DINÂMICO CONFORME PLANO SELECIONADO */}
+        <div className="py-2 text-center shrink-0">
+          <span className="text-[10.5px] font-black text-red-400 uppercase tracking-widest block mb-0.5">
+            {selectedTab === "mensal" && "⚡ 30 DIAS DE ACESSO TOTAL"}
+            {selectedTab === "trimestral" && "⚡ 90 DIAS DE ACESSO TOTAL"}
+            {selectedTab === "anual" && "👑 365 DIAS DE ACESSO (2 TELAS SIMULTÂNEAS)"}
+          </span>
+          <div className="flex items-baseline justify-center gap-1.5 whitespace-nowrap">
+            <span className="text-xs font-bold text-white/60">Apenas</span>
+            <span className="text-4xl sm:text-5xl font-black text-white tracking-tight drop-shadow-[0_0_25px_rgba(255,255,255,0.8)]">
+              {activePlan.preco}
+            </span>
+            <span className="text-xs font-bold text-white/80">
+              /{activePlan.periodo}
+            </span>
+          </div>
+        </div>
 
-        {/* SECURITY FOOTER */}
-        <div className="mt-3 text-center text-[10.5px] text-white/40 flex items-center justify-center gap-1.5 flex-wrap shrink-0">
-          <Lock className="size-3.5 text-emerald-400 shrink-0" />
-          <span>Pagamento 100% Seguro via Braip Pay</span>
+        {/* BENEFÍCIOS DO PLANO */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left max-w-md mx-auto py-2.5 border-t border-white/15 shrink-0">
+          {[
+            selectedTab === "anual" ? "2 Telas simultâneas" : "1 Tela simultânea",
+            "Milhares de Filmes & Séries",
+            "Lançamentos semanais exclusivos",
+            "Canais Ao Vivo & Esportes em 4K e Full HD",
+            "Animes, Doramas & Novelas Turcas",
+            "Suporte 7 dias por semana no WhatsApp",
+            "Garantia incondicional de 7 dias",
+            "Sem fidelidade (Cancele quando quiser)",
+          ].map((f, idx) => (
+            <div key={idx} className="flex items-start gap-2">
+              <CheckCircle2 className="size-3.5 text-emerald-400 shrink-0 mt-0.5" />
+              <span className="text-[11px] sm:text-xs text-white/90 font-medium leading-tight">{f}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* BOTÃO ASSINATURA DINÂMICO */}
+        <div className="pt-2 shrink-0">
+          <button
+            type="button"
+            onClick={handleProceed}
+            className={`flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-3.5 text-xs sm:text-sm font-black transition-all hover:scale-[1.02] cursor-pointer backdrop-blur-md uppercase tracking-wider ${
+              selectedTab === "anual"
+                ? "bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 text-black shadow-[0_0_30px_rgba(245,158,11,0.9)] border border-yellow-200"
+                : selectedTab === "trimestral"
+                  ? "bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white shadow-[0_0_25px_rgba(16,185,129,0.7)] border border-emerald-400/50"
+                  : "bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-600 text-white shadow-[0_0_25px_rgba(220,38,38,0.7)] border border-red-400/40"
+            }`}
+          >
+            <Zap className="size-4 fill-current" />
+            <span>
+              {selectedTab === "mensal" && "ASSINAR PLANO MENSAL (R$ 34,99)"}
+              {selectedTab === "trimestral" && "ASSINAR PLANO TRIMESTRAL (R$ 99,99)"}
+              {selectedTab === "anual" && "ASSINAR PLANO ANUAL VIP (R$ 179,99)"}
+            </span>
+            <ArrowRight className="size-4 ml-1" />
+          </button>
+        </div>
+
+        {/* FOOTER SEGURANÇA */}
+        <div className="mt-3 text-center text-[10.5px] text-white/40 flex items-center justify-center gap-1.5 shrink-0">
+          <Lock className="size-3 text-emerald-400 shrink-0" />
+          <span>Pagamento 100% Seguro · Recebimento Imediato via WhatsApp</span>
         </div>
       </div>
     </div>
