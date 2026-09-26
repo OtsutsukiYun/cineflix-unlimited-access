@@ -1434,6 +1434,19 @@ function Index() {
       <TrialModal
         isOpen={isTrialModalOpen}
         onClose={() => setIsTrialModalOpen(false)}
+        onOpenPlanModal={(plan) => {
+          setSelectedPlanForModal(
+            plan || {
+              nome: "Plano Mensal",
+              preco: "R$ 34,99",
+              periodo: "mês",
+              dias: "30 dias",
+              telas: "1 tela simultânea",
+              link: "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2",
+            }
+          );
+          setIsPlanModalOpen(true);
+        }}
       />
     </div>
   );
