@@ -127,12 +127,6 @@ function InstagramPopup({ onOpenChange, onOpenTrialModal }: { onOpenChange?: (op
     sessionStorage.setItem("ig_popup_seen", "1");
     sessionStorage.setItem("ig_trial_activated", "1");
     close();
-    window.location.href = "/instalar";
-  }
-
-  function handleOpenTrial() {
-    close();
-    window.location.href = "/instalar";
   }
 
   const platformName = isTikTok ? "TikTok" : "Instagram";
