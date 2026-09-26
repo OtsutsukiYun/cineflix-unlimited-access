@@ -637,7 +637,7 @@ function Index() {
 
           {/* SUBTÍTULO */}
           <p className="text-sm sm:text-base font-medium text-white/85 max-w-2xl mx-auto px-4 leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] text-balance">
-            O maior catálogo de filmes, séries, canais ao vivo, doramas, animes e novelas turcas para assistir nos seus dispositivos Android.
+            O maior catálogo de filmes, séries, doramas, canais ao vivo, animes e novelas turcas para assistir nos seus dispositivos Android.
           </p>
 
           {/* BOTÕES PRINCIPAIS - HIERARQUIA VISUAL PERFEITA */}
