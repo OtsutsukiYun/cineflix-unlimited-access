@@ -39,12 +39,10 @@ function CodeCopyBox({ code }: { code: string }) {
   };
 
   return (
-    <div className="flex items-center justify-between gap-2.5 my-1.5 mx-auto max-w-xs rounded-xl p-2 px-3 border border-emerald-500/40 bg-emerald-950/40 backdrop-blur-md shadow-sm">
-      <div className="flex items-center gap-2">
+    <div className="flex items-center justify-center gap-3 my-2 mx-auto max-w-xs rounded-xl p-2 px-3.5 border border-emerald-500/40 bg-emerald-950/40 backdrop-blur-md shadow-sm text-center">
+      <div className="flex items-center gap-1.5 font-mono font-black text-lg sm:text-xl tracking-widest text-white">
         <Hash className="size-3.5 text-emerald-400 shrink-0" />
-        <span className="font-mono font-black text-lg tracking-widest text-white">
-          {verifiedCode}
-        </span>
+        <span>{verifiedCode}</span>
       </div>
 
       <button
