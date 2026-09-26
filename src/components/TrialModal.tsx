@@ -10,6 +10,7 @@ import {
   Hash,
   Copy,
   Check,
+  Zap,
 } from "lucide-react";
 import {
   DOWNLOADER_OFFICIAL_CODE,
@@ -171,26 +172,23 @@ export function TrialModal({
                 </div>
               </div>
 
-              {/* BOTÃO DE LINK DO DOWNLOADER NA PLAY STORE */}
-              <div className="pt-1">
-                <a
-                  href={DOWNLOADER_PLAYSTORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-4 py-3.5 text-xs font-black text-white transition-colors shadow-md border border-emerald-400/30 cursor-pointer uppercase tracking-wider text-center shadow-[0_0_18px_rgba(16,185,129,0.4)]"
-                >
-                  <Download className="size-4" />
-                  <span>Baixar Downloader na Play Store</span>
-                  <ExternalLink className="size-3.5" />
-                </a>
-              </div>
-
               {/* CÓDIGO COM BOTÃO DE COPIAR */}
-              <div className="text-center space-y-1">
-                <p className="text-xs sm:text-sm font-bold text-white/90">
+              <div className="text-center space-y-1.5 pt-1">
+                <p className="text-xs font-bold text-white/90">
                   Abra o app Downloader na sua TV e digite o código:
                 </p>
                 <CodeCopyBox code="9884830" />
+                <p className="text-[11px] text-white/60 pt-1">
+                  Não tem o Downloader na TV?{" "}
+                  <a
+                    href={DOWNLOADER_PLAYSTORE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-400 hover:text-emerald-300 underline font-bold inline-flex items-center gap-0.5"
+                  >
+                    Baixar na Play Store <ExternalLink className="size-3" />
+                  </a>
+                </p>
               </div>
             </>
           )}
@@ -232,6 +230,29 @@ export function TrialModal({
               </div>
             </>
           )}
+        </div>
+
+        {/* BOTÃO PARA ASSINAR AGORA */}
+        <div className="pt-3 border-t border-white/10 mt-3 shrink-0 space-y-1.5">
+          <a
+            href="#planos"
+            onClick={(e) => {
+              onClose();
+              const el = document.querySelector("#planos");
+              if (el) {
+                e.preventDefault();
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+                window.history.replaceState(null, "", "#planos");
+              }
+            }}
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-500 px-4 py-3 text-xs sm:text-sm font-black text-white uppercase tracking-wider shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all hover:scale-[1.02] cursor-pointer"
+          >
+            <Zap className="size-4 fill-white text-white" />
+            <span>QUERO ASSINAR UM PLANO AGORA</span>
+          </a>
+          <p className="text-[10.5px] text-white/50 text-center font-medium">
+            Planos a partir de R$34,99/mês · Liberação imediata
+          </p>
         </div>
       </div>
     </div>
