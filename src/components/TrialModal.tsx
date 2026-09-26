@@ -174,21 +174,19 @@ export function TrialModal({
 
               {/* CÓDIGO COM BOTÃO DE COPIAR */}
               <div className="text-center space-y-1.5 pt-1">
-                <p className="text-xs font-bold text-white/90">
-                  Abra o app Downloader na sua TV e digite o código:
-                </p>
-                <CodeCopyBox code="9884830" />
-                <p className="text-[11px] text-white/60 pt-1">
-                  Não tem o Downloader na TV?{" "}
+                <p className="text-xs sm:text-sm font-bold text-white/90">
+                  Abra o aplicativo{" "}
                   <a
                     href={DOWNLOADER_PLAYSTORE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-emerald-400 hover:text-emerald-300 underline font-bold inline-flex items-center gap-0.5"
+                    className="text-emerald-400 hover:text-emerald-300 underline font-black inline-flex items-center gap-0.5 cursor-pointer"
                   >
-                    Baixar na Play Store <ExternalLink className="size-3" />
-                  </a>
+                    Downloader <ExternalLink className="size-3" />
+                  </a>{" "}
+                  na sua TV e digite o código:
                 </p>
+                <CodeCopyBox code="9884830" />
               </div>
             </>
           )}
@@ -233,7 +231,7 @@ export function TrialModal({
         </div>
 
         {/* BOTÃO PARA ASSINAR AGORA */}
-        <div className="pt-3 border-t border-white/10 mt-3 shrink-0 space-y-1.5">
+        <div className="pt-3 border-t border-white/10 mt-3 shrink-0">
           <a
             href="#planos"
             onClick={(e) => {
@@ -250,9 +248,6 @@ export function TrialModal({
             <Zap className="size-4 fill-white text-white" />
             <span>QUERO ASSINAR UM PLANO AGORA</span>
           </a>
-          <p className="text-[10.5px] text-white/50 text-center font-medium">
-            Planos a partir de R$34,99/mês · Liberação imediata
-          </p>
         </div>
       </div>
     </div>
