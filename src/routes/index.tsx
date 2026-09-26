@@ -127,6 +127,9 @@ function InstagramPopup({ onOpenChange, onOpenTrialModal }: { onOpenChange?: (op
     sessionStorage.setItem("ig_popup_seen", "1");
     sessionStorage.setItem("ig_trial_activated", "1");
     close();
+    setTimeout(() => {
+      document.getElementById("planos")?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
   }
 
   const platformName = isTikTok ? "TikTok" : "Instagram";
