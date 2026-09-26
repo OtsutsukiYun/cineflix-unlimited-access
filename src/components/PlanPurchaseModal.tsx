@@ -193,7 +193,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
             selectedTab === "anual" ? "2 Telas simultâneas" : "1 Tela simultânea",
             "Milhares de filmes e séries exclusivos",
             "Canais Ao Vivo & Esportes em 4K e Full HD",
-            "Lançamentos semanais direto do cinema — assista primeiro aqui",
+            "Lançamentos do cinema — assista primeiro aqui",
             "Novos conteúdos adicionados todos os dias",
             "Animes, Doramas, Novelas Turcas & Cinema Asiático",
             "Suporte 7 dias por semana no WhatsApp",
