@@ -1127,8 +1127,8 @@ function Index() {
               link: "https://pay.braip.co/ref?pl=plajge84&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "1 Tela simultânea",
-                "O maior catálogo de filmes e séries dos streamings",
-                "Lançamentos semanais e produções exclusivas",
+                "Milhares de filmes e séries exclusivos",
+                "Lançamentos semanais (assista primeiro aqui)",
                 "Filmes e séries do mundo todo que ainda nem estrearam no Brasil",
                 "Animes, Doramas & Novelas Turcas (disponíveis na aba Séries do App)",
                 "Canais Ao Vivo & Esportes em Full HD e 4K",
@@ -1159,8 +1159,8 @@ function Index() {
               link: "https://pay.braip.co/ref?pl=pla6lllo&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "2 Telas simultâneas",
-                "O maior catálogo de filmes e séries dos streamings",
-                "Lançamentos semanais e produções exclusivas",
+                "Milhares de filmes e séries exclusivos",
+                "Lançamentos semanais (assista primeiro aqui)",
                 "Filmes e séries do mundo todo que ainda nem estrearam no Brasil",
                 "Animes, Doramas & Novelas Turcas (disponíveis na aba Séries do App)",
                 "365 dias de acesso total liberado",
@@ -1191,8 +1191,8 @@ function Index() {
               link: "https://pay.braip.co/ref?pl=pla1qqq6&ck=che7eo0g&af=afixjm3pn2",
               features: [
                 "1 Tela simultânea",
-                "O maior catálogo de filmes e séries dos streamings",
-                "Lançamentos semanais e produções exclusivas",
+                "Milhares de filmes e séries exclusivos",
+                "Lançamentos semanais (assista primeiro aqui)",
                 "Filmes e séries do mundo todo que ainda nem estrearam no Brasil",
                 "Animes, Doramas & Novelas Turcas (disponíveis na aba Séries do App)",
                 "90 dias de acesso total liberado",

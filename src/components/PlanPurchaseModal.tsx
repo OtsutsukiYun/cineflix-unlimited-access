@@ -191,8 +191,8 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left max-w-md mx-auto py-2.5 border-t border-white/15 shrink-0">
           {[
             selectedTab === "anual" ? "2 Telas simultâneas" : "1 Tela simultânea",
-            "Milhares de Filmes & Séries",
-            "Lançamentos semanais exclusivos",
+            "Milhares de filmes e séries exclusivos",
+            "Lançamentos semanais (assista primeiro aqui)",
             "Canais Ao Vivo & Esportes em 4K e Full HD",
             "Animes, Doramas & Novelas Turcas",
             "Suporte 7 dias por semana no WhatsApp",

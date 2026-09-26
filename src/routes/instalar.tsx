@@ -719,8 +719,8 @@ function InstalarPage() {
                 planTab === "anual"
                   ? "2 Telas simultâneas"
                   : "1 Tela simultânea",
-                "Milhares de Filmes & Séries",
-                "Lançamentos semanais e produções exclusivas",
+                "Milhares de filmes e séries exclusivos",
+                "Lançamentos semanais (assista primeiro aqui)",
                 "Canais Ao Vivo & Esportes sem travar (4K & Full HD)",
                 "Animes, Doramas & Novelas Turcas atualizadas",
                 "Programação Infantil & Desenhos Dublados",
