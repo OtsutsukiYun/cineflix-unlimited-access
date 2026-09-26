@@ -83,12 +83,12 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
   };
 
   return (
-    <div className="fixed inset-0 z-[300] flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-fade-in">
+    <div className="fixed inset-0 z-[300] flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-xl animate-fade-in">
       {/* OVERLAY CLICK TO CLOSE */}
       <div className="absolute inset-0" onClick={onClose} />
 
       {/* MODAL CARD */}
-      <div className="relative z-10 w-full max-w-lg overflow-hidden rounded-3xl border border-white/20 bg-zinc-950 p-5 sm:p-7 shadow-[0_0_70px_rgba(220,38,38,0.4)] text-white animate-scale-up max-h-[92vh] flex flex-col overflow-y-auto">
+      <div className="glass relative z-10 w-full max-w-lg overflow-hidden rounded-3xl border border-white/25 bg-[#0a0707]/80 backdrop-blur-2xl p-5 sm:p-7 shadow-[0_0_80px_rgba(220,38,38,0.5)] text-white animate-scale-up max-h-[92vh] flex flex-col overflow-y-auto">
         {/* BUTTON CLOSE */}
         <button
           type="button"
