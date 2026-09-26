@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { X, ShieldCheck, CheckCircle2, ArrowRight, Lock, Zap, Crown } from "lucide-react";
+import { X, ShieldCheck, CheckCircle2, ArrowRight, Zap, Crown } from "lucide-react";
 import { img } from "@/data/catalog";
 
 export type PlanDetails = {
@@ -237,11 +237,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
           </button>
         </div>
 
-        {/* FOOTER SEGURANÇA */}
-        <div className="mt-3 text-center text-[10.5px] text-white/40 flex items-center justify-center gap-1.5 shrink-0">
-          <Lock className="size-3 text-emerald-400 shrink-0" />
-          <span>Pagamento 100% Seguro · Recebimento Imediato via WhatsApp</span>
-        </div>
+
       </div>
     </div>
   );
