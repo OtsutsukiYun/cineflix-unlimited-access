@@ -107,8 +107,8 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
             {selectedTab === "anual" && "👑 Plano Anual VIP • 2 Telas Simultâneas"}
           </span>
 
-          <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-            Faça parte da família <span className="text-emerald-400">UniTV Pro</span> hoje mesmo.
+          <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight [text-wrap:balance]">
+            Você está prestes a adquirir o <span className="text-emerald-400">UniTV Pro</span>
           </h2>
           <p className="text-xs text-white/70 max-w-sm mx-auto leading-relaxed font-medium">
             Planos pré-pagos e sem fidelidade com 7 dias de garantia de reembolso.

@@ -629,8 +629,8 @@ function InstalarPage() {
                 {planTab === "anual" && "👑 Plano Anual VIP • 2 Telas • Melhor Custo-Benefício"}
               </span>
 
-              <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
-                Faça parte da família <span className="text-red-500">UniTV Pro</span> hoje mesmo.
+              <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight [text-wrap:balance]">
+                Você está prestes a adquirir o <span className="text-red-500">UniTV Pro</span>
               </h2>
               <p className="text-xs sm:text-sm text-white/80 max-w-lg mx-auto leading-relaxed font-medium">
                 Planos pré-pagos e sem fidelidade com 7 dias de garantia de reembolso.
