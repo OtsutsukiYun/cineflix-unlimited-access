@@ -174,8 +174,8 @@ function InstagramPopup({ onOpenChange, onOpenTrialModal }: { onOpenChange?: (op
             <h2 className="text-2xl sm:text-3xl font-black text-white leading-tight mb-3">
               🎉 Teste grátis resgatado com sucesso!
             </h2>
-            <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto">
-              Seu benefício exclusivo do {platformName} foi ativado! Aproveite seus 3 dias de teste no UniTV Pro.
+            <p className="text-sm text-emerald-200/80 leading-relaxed mb-6 max-w-xs mx-auto font-medium">
+              Agora é só clicar em <strong className="text-emerald-300 font-bold">Testar Grátis</strong> no site para instalar o aplicativo e ativar seus benefícios!
             </p>
             <button
               onClick={close}
