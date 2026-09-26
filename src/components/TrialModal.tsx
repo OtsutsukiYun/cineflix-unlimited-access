@@ -223,13 +223,13 @@ export function TrialModal({
         </div>
 
         {/* BOTÃO PARA ABRIÇÃO DO MODAL DE PLANOS E VALORES */}
-        <div className="pt-4 border-t border-white/15 mt-6 sm:mt-7 shrink-0">
+        <div className="pt-3.5 border-t border-white/15 mt-5 shrink-0">
           <button
             type="button"
             onClick={handleSubscribeClick}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-500 px-4 py-3 text-xs sm:text-sm font-black text-white uppercase tracking-wider shadow-[0_0_25px_rgba(220,38,38,0.5)] transition-all hover:scale-[1.02] cursor-pointer animate-vibrate"
+            className="flex w-full max-w-xs mx-auto items-center justify-center gap-1.5 rounded-xl bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-500 px-3 py-2 text-[11px] font-extrabold text-white uppercase tracking-wider shadow-[0_0_20px_rgba(220,38,38,0.4)] transition-all hover:scale-[1.02] cursor-pointer animate-vibrate"
           >
-            <Zap className="size-4 fill-white text-white animate-pulse" />
+            <Zap className="size-3.5 fill-white text-white animate-pulse" />
             <span>QUERO ACESSO ILIMITADO AOS CONTEÚDOS</span>
           </button>
         </div>
