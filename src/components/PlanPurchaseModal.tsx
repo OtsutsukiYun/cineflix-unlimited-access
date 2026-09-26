@@ -210,7 +210,7 @@ export function PlanPurchaseModal({ isOpen, onClose, plan }: PlanPurchaseModalPr
         <div className="my-2 p-2.5 rounded-xl bg-white/[0.04] border border-white/15 text-center flex items-center justify-center gap-2 shrink-0">
           <CheckCircle2 className="size-3.5 shrink-0 text-emerald-400" />
           <p className="text-[11px] sm:text-xs font-medium text-white/90">
-            Receba seu <strong className="text-emerald-400 font-bold">usuário e senha</strong> no WhatsApp logo após a confirmação do pagamento.
+            Você receberá seu <strong className="text-emerald-400 font-bold">usuário e senha no WhatsApp</strong> logo após a confirmação do pagamento.
           </p>
         </div>
 

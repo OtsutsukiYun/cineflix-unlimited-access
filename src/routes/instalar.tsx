@@ -762,7 +762,7 @@ function InstalarPage() {
             <div className="mt-3 pt-3 border-t border-white/10 flex items-center justify-center gap-2 text-center text-xs sm:text-sm font-medium text-white/90 bg-white/[0.04] border border-white/15 rounded-xl p-3 max-w-lg mx-auto shadow-sm">
               <CheckCircle2 className="size-4 shrink-0 text-emerald-400" />
               <span>
-                Receba seu <strong className="text-emerald-400 font-bold">usuário e senha</strong> no WhatsApp logo após a confirmação do pagamento.
+                Você receberá seu <strong className="text-emerald-400 font-bold">usuário e senha no WhatsApp</strong> logo após a confirmação do pagamento.
               </span>
             </div>
 
