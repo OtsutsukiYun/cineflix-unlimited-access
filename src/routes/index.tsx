@@ -636,8 +636,8 @@ function Index() {
           <AnimatedHeroHeadline />
 
           {/* SUBTÍTULO */}
-          <p className="text-sm sm:text-base font-medium text-white/80 max-w-xl mx-auto px-2 leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)]">
-            O maior catálogo de conteúdos, com filmes, séries, canais ao vivo, doramas, animes e novelas turcas para assistir nos seus dispositivos Android.
+          <p className="text-sm sm:text-base font-medium text-white/80 max-w-xl mx-auto px-2 leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] [text-wrap:balance]">
+            O maior catálogo de conteúdos, com filmes, séries, canais ao vivo, doramas, animes e novelas turcas para assistir nos seus <span className="whitespace-nowrap">dispositivos Android.</span>
           </p>
 
           {/* BOTÕES PRINCIPAIS - HIERARQUIA VISUAL PERFEITA */}

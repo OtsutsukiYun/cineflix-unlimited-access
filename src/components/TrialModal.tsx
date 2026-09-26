@@ -207,7 +207,7 @@ export function TrialModal({
               </div>
 
               {/* BOTÃO DE DOWNLOAD DIRETO */}
-              <div className="pt-1">
+              <div className="pt-1 space-y-2">
                 <a
                   href={APK_MEDIAFIRE_URL}
                   target="_blank"
@@ -217,6 +217,12 @@ export function TrialModal({
                   <Download className="size-4 animate-bounce" />
                   <span>Baixar APK UniTV Pro (Download Direto)</span>
                 </a>
+
+                {/* AVISO COMPATIBILIDADE ANDROID / IPHONE */}
+                <div className="flex items-center justify-center gap-1.5 text-[11px] font-bold text-amber-300 bg-amber-500/10 border border-amber-500/25 rounded-xl px-3 py-1.5 text-center shadow-sm">
+                  <Smartphone className="size-3.5 shrink-0 text-amber-400" />
+                  <span>Exclusivo para Android • Indisponível para iPhone / iOS</span>
+                </div>
               </div>
             </>
           )}
